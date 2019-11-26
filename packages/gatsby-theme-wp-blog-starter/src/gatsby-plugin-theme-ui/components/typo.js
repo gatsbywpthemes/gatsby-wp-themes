@@ -42,7 +42,8 @@ const heading = {
 
 export const a = {
   variant: `transitions.m`,
-  color: 'text',
+  color: 'accent',
+  fontWeight: `bold`,
   textDecoration: 'none',
   '&:hover': {
     color: 'primary',

@@ -6,16 +6,24 @@ export default {
     boxShadow: `small`,
     borderRadius: `5px 5px 0 0`,
   },
+
   '.content': {
     variant: `card.default`,
     borderRadius: `0 0 5px 5px`,
     '&.page-content, &.no-img': {
       borderRadius: `s`,
     },
-    p: {
-      overflowWrap: 'break-word',
-      wordWrap: 'break-word',
-      hyphens: 'auto',
+
+    overflowWrap: 'break-word',
+    wordWrap: 'break-word',
+    hyphens: 'auto',
+    '.entry-title': {
+      a: {
+        color: `text`,
+        '&:hover': {
+          color: `accent`,
+        },
+      },
     },
   },
   '.entry-content': {
