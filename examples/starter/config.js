@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `https://wp-pehaa.com/demo-pehaa1/`,
+  wordPressUrl: `http://gatsbydemo.wst/`,
   // postsPrefix: `posts`,
   /* use false or slug, for example 'home' */
   // staticHomePagePath: `home`,
