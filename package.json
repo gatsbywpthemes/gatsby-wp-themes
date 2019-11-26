@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "dependencies": {
+    "lerna": "^3.19.0"
+  },
+  "name": "gatsby-wp-themes"
+}
