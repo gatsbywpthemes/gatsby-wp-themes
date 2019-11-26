@@ -60,7 +60,12 @@ const Page = ({ page }) => {
                 className="page-title"
                 dangerouslySetInnerHTML={{ __html: title }}
               />
-              <ContentParser content={content} customFn={[cf7ParserFunction]} />
+              <Styled.root>
+                <ContentParser
+                  content={content}
+                  customFn={[cf7ParserFunction]}
+                />
+              </Styled.root>
             </div>
           </article>
           {sidebarPage && <Sidebar />}
