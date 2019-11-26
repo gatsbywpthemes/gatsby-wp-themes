@@ -8,15 +8,17 @@ const primary = `#607d8b`
 const secondary = `#455a64`
 const lightGrey = `#cfd8dc`
 const grey = `#90a4ae`
-const accent = `#ffab91`
+const accentDark = `#ffab91`
+const accentLight = `#c2185b`
 
 export const colors = {
-  primary: primary,
-  secondary: secondary,
-  accent: accent,
-  light: light,
-  dark: dark,
-  lightGrey: lightGrey,
+  primary,
+  secondary,
+  light,
+  dark,
+  lightGrey,
+  accentDark,
+  accent: accentLight,
   background: light,
   bgInverse: dark,
   text: dark,
@@ -29,7 +31,7 @@ export const colors = {
   border: lightGrey,
   headerBg: dark,
   headerColor: light,
-  headerColorHover: accent,
+  headerColorHover: accentDark,
   footerBg: dark,
   footerColor: light,
   infoBg: light,
@@ -37,7 +39,7 @@ export const colors = {
   archiveTitleBg: grey,
   searchResultsHeaderBg: grey,
   searchResultsHeaderColor: `white`,
-  highlightColor: accent,
+  highlightColor: accentDark,
   searchColor: grey,
   modes: {
     dark: {
@@ -49,6 +51,7 @@ export const colors = {
       infoBg: dark3,
       archiveTitleBg: secondary,
       searchColor: primary,
+      accent: accentDark,
     },
   },
 }

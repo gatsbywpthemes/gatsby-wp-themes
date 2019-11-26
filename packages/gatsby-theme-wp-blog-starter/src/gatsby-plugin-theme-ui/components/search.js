@@ -12,7 +12,7 @@ export const search = {
       height: `20px`,
       pr: `xs`,
       boxSizing: `content-box`,
-      borderRight: t => `1px solid ${t.colors.accent}`,
+      borderRight: t => `1px solid ${t.colors.accentDark}`,
     },
   },
   //searchBox
