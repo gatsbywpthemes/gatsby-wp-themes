@@ -21,4 +21,7 @@ export const Header = {
       py: `xxs`,
     },
   },
+  '.search-box': {
+    width: [`80%`, `90%`, `auto`],
+  },
 }

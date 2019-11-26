@@ -1,6 +1,8 @@
 import { lighten } from '@theme-ui/color'
 import { a } from './typo.js'
 export const search = {
+  width: `100%`,
+  mb: [`-15px`, 0],
   //searchIcon
   icon: {
     p: 0,
@@ -18,6 +20,7 @@ export const search = {
   //searchBox
   box: {
     position: 'relative',
+
     'button[type=submit]': {
       display: `none`,
     },
@@ -55,13 +58,13 @@ export const search = {
   },
   //searchResults
   results: {
-    maxHeight: `60vh`,
+    maxHeight: [`100vh`, `100vh`, `60vh`],
     bg: lighten(`background`, 0.05),
     overflow: `scroll`,
     position: `absolute`,
     left: 0,
-    top: 88,
-    width: [`100%`, `600px`],
+    top: [65, 65, 88],
+    width: [`100%`, `100%`, `600px`],
     zIndex: 2,
     color: `text`,
     '.headroom--pinned &': {

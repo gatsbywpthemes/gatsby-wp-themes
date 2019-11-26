@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx, Flex } from 'theme-ui'
-import { SearchBox } from 'react-instantsearch-dom'
-import { Button } from 'grommet'
-import { Search as SearchIcon } from 'grommet-icons'
+import { jsx, Flex } from "theme-ui"
+import { SearchBox } from "react-instantsearch-dom"
+import { Button } from "grommet"
+import { Search as SearchIcon } from "grommet-icons"
 const SearchTrigger = ({ openSearch, setOpenSearch }) => (
-  <Flex>
+  <Flex sx={{ variant: `search` }}>
     <Button
       a11yTitle="Search here"
       icon={<SearchIcon />}
@@ -15,7 +15,7 @@ const SearchTrigger = ({ openSearch, setOpenSearch }) => (
     <SearchBox
       className="search-box"
       sx={{
-        variant: `search.box`,
+        variant: `search.box`
       }}
     />
   </Flex>
