@@ -13,6 +13,9 @@ import articleStyles from '../../styles/articleStyles'
 
 const PostEntry = ({ post, location, postsPrefix }) => {
   const noImgClass = !post.featuredImage && 'no-img'
+  const media = post.featuredImage
+    ? post.featuredImage.imageFile.childImageSharp.fluid.src
+    : null
   return (
     <article className="entry" sx={articleStyles}>
       <PostEntryMedia
@@ -58,10 +61,7 @@ const PostEntry = ({ post, location, postsPrefix }) => {
           <SocialShare
             url={normalize(`/${postsPrefix}/${post.uri}`)}
             title={post.title}
-            media={
-              post.featuredImage &&
-              post.featuredImage.imageFile.childImageSharp.fluid.src
-            }
+            media={media}
           />
         )}
       </div>
