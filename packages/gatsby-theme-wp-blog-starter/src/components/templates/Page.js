@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import { jsx, Styled, Container, Flex } from 'theme-ui'
 import Layout from '../Layout'
+import ParsedContent from '../../utils/ParsedContent'
 import SEO from '../seo/Seo'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Sidebar from '../Sidebar'
 import articleStyles from '../../styles/articleStyles'
-import ContentParser from 'gatsby-plugin-wordpress-parser'
-import { cf7ParserFunction } from 'gatsby-plugin-wpcf7'
 
 const Page = ({ page }) => {
   const { title, excerpt, content, slug, uri } = page
@@ -71,10 +70,7 @@ const Page = ({ page }) => {
                 dangerouslySetInnerHTML={{ __html: title }}
               />
               <Styled.root>
-                <ContentParser
-                  content={content}
-                  customFn={[cf7ParserFunction]}
-                />
+                <ParsedContent content={content} />
               </Styled.root>
             </div>
           </article>
