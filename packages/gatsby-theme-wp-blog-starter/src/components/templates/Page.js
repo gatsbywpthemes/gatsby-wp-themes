@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled, Container, Flex } from 'theme-ui'
 import Layout from '../Layout'
-import SEO from '../Seo'
+import SEO from '../seo/Seo'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Sidebar from '../Sidebar'
 import articleStyles from '../../styles/articleStyles'
@@ -9,10 +9,15 @@ import ContentParser from 'gatsby-plugin-wordpress-parser'
 import { cf7ParserFunction } from 'gatsby-plugin-wpcf7'
 
 const Page = ({ page }) => {
-  const { title, excerpt, content, slug } = page
+  const { title, excerpt, content, slug, uri } = page
   const {
     widgetAreas: { sidebar },
+    staticHomePagePath,
   } = useThemeOptions()
+  const ogType =
+    !!staticHomePagePath && page.uri === staticHomePagePath
+      ? 'website'
+      : 'article'
   const { widgets } = sidebar
   const sidebarPage =
     sidebar.location.pages === 'all' || sidebar.location.pages.includes(slug)
@@ -39,7 +44,12 @@ const Page = ({ page }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={excerpt} />
+      <SEO
+        title={title}
+        description={excerpt}
+        ogType={ogType}
+        ogUrl={ogType === 'website' ? '' : uri}
+      />
       <Container sx={{ ...containerStyles }}>
         <Flex
           sx={{

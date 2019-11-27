@@ -1,16 +1,20 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from 'theme-ui'
 import Layout from '../Layout'
-import SEO from '../Seo'
+import SEO from '../seo/Seo'
 import PostEntry from '../../components/post/PostEntry'
 import CommentsList from '../../components/comments/CommentsList'
 import { DiscussionEmbed } from 'disqus-react'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import normalize from 'normalize-path'
 import Sidebar from '../Sidebar'
 
 const Post = ({ post }) => {
-  const { title, excerpt, slug } = post
-
+  const { title, excerpt, slug, featuredImage, uri } = post
+  const media = featuredImage
+    ? featuredImage.imageFile.childImageSharp.fluid.src
+    : null
+  const { postsPrefix } = useThemeOptions()
   const {
     disqus,
     addComments,
@@ -45,7 +49,13 @@ const Post = ({ post }) => {
   }
   return (
     <Layout>
-      <SEO title={title} description={excerpt} />
+      <SEO
+        title={title}
+        description={excerpt}
+        media={media}
+        ogType="article"
+        ogUrl={normalize(`/${postsPrefix}/${uri}`)}
+      />
       <Container sx={{ ...containerStyles }}>
         <Flex
           sx={{

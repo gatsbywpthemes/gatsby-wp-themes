@@ -1,14 +1,21 @@
 import React from 'react'
 import Layout from '../Layout'
-import SEO from '../Seo'
+import SEO from '../seo/Seo'
 import ArchiveContent from '../archive/ArchiveContent'
 
 const Category = ({ category, ctx }) => {
   const { name, posts, slug } = category
+  const { pageNumber } = ctx
+  const url = `category/${slug}/`
 
   return (
     <Layout>
-      <SEO title={name} description={`Posts for ${name} category`} />
+      <SEO
+        title={`${name} Archives`}
+        pageNumber={pageNumber}
+        ogType="object"
+        ogUrl={url}
+      />
 
       <ArchiveContent
         posts={posts.nodes}
