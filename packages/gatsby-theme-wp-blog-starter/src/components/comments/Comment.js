@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 import moment from 'moment'
 import CommentForm from './CommentForm'
 import commentStyles from '../../styles/commentStyles'
@@ -49,7 +49,7 @@ const Comment = props => {
     <li className="comment" sx={commentStyles.comment}>
       <Author name={comment.author.name} url={comment.author.url} />
       {moment(comment.date).format(`MMMM D, YYYY`)}
-      <div dangerouslySetInnerHTML={{ __html: comment.content }} />
+      <Styled.root dangerouslySetInnerHTML={{ __html: comment.content }} />
       {withReply ? (
         activeComment === comment.commentId ? (
           <CommentForm
