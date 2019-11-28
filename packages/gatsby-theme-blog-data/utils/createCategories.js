@@ -1,9 +1,9 @@
 const addPagination = require('./addPagination.js')
 
 const BASEQUERY = `
-    query GET_CATEGORIES($first: Int) {
+    query GET_CATEGORIES($first: Int $after:String) {
       wp {
-        categories(first: $first) {
+        categories(first: $first after: $after) {
           pageInfo {
             hasNextPage
             endCursor

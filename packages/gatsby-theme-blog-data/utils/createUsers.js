@@ -1,9 +1,9 @@
 const addPagination = require('./addPagination.js')
 
 const GET_USERS = `
-    query GET_USERS($first: Int) {
+    query GET_USERS($first: Int $after:String) {
       wp {
-        users(first: $first) {
+        users(first: $first after: $after) {
           pageInfo {
             hasNextPage
             endCursor

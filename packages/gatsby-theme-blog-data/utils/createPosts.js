@@ -137,7 +137,6 @@ module.exports = async ({ actions, graphql }, options) => {
         allPosts,
         pageNumber: pageNumber + 1,
         hasNextPage,
-        options,
         postsPerPage,
       },
     })

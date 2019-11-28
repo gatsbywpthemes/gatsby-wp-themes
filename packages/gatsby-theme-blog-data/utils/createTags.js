@@ -1,8 +1,8 @@
 const addPagination = require('./addPagination.js')
 const GET_TAGS = `
-    query GET_TAGS($first: Int) {
+    query GET_TAGS($first: Int $after:String) {
       wp {
-        tags(first: $first) {
+        tags(first: $first after: $after) {
           pageInfo {
             hasNextPage
             endCursor

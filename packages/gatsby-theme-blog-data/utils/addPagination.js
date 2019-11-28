@@ -34,8 +34,8 @@ module.exports = async ({
 
   const pageCreation = async all => {
     const allPages = []
-    for (let i = 0; i < allItems.length; i++) {
-      const item = allItems[i]
+    for (let i = 0; i < all.length; i++) {
+      const item = all[i]
       let go = true
       let pageNumber = 0
       let variables = { id: item.id, first: postsPerPage, after: null }
@@ -63,7 +63,6 @@ module.exports = async ({
             ids: nodeIds,
             pageNumber: pageNumber + 1,
             hasNextPage,
-            options,
             postsPerPage,
           },
         })

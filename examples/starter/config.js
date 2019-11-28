@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `http://gatsbydemo.wst/`,
+  wordPressUrl: `https://gatsby-theme-demo.alexaspalato.website/`,
   // postsPrefix: `posts`,
   /* use false or slug, for example 'home' */
   // staticHomePagePath: `home`,
