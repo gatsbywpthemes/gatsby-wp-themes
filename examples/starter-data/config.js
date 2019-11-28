@@ -2,7 +2,6 @@ const config = {
   wordPressUrl: `https://gatsby-test-2.alexaspalato.website/`,
   // postsPrefix: `posts`,
   /* use false or slug, for example 'home' */
-  // staticHomePagePath: `home`,
   /* make sure to leave it as empty string if staticHomePage is false.
         Otherwise make sur to set a path, for example: 'blog' */
   // postsPath: `blog`,
@@ -18,11 +17,11 @@ const config = {
     },
     sidebar: {
       widgets: [`Categories`, `SocialFollow`, `RecentPosts`, `Tags`],
-      position: "right",
+      position: 'right',
       location: {
         archive: true,
         single: false,
-        pages: ["typography"],
+        pages: ['typography'],
       },
     },
   },

@@ -27,6 +27,8 @@ const GET_PAGES = `
             id
             uri
             pageId
+            isFrontPage
+            isRestricted
           }
       }
     }
@@ -76,10 +78,7 @@ module.exports = async ({ actions, graphql }, options) => {
       if (page.uri === options.postsPath) {
         return
       }
-      const path =
-        !!options.staticHomePagePath && page.uri === options.staticHomePagePath
-          ? `/`
-          : `/${page.uri}`
+      const path = page.isFrontPage ? `/` : `/${page.uri}`
       console.log(`create page: ${page.uri}`)
       createPage({
         path,

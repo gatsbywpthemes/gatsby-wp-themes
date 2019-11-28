@@ -6,7 +6,6 @@ const DEFAULT_OPTIONS = {
   wordPressUrl: ``,
   uploadsPath: `wp-content/uploads`,
   postsPrefix: ``,
-  staticHomePagePath: false,
   postsPath: ``,
   paginationPrefix: `page`,
   postsPerPage: 10,

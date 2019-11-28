@@ -12,6 +12,7 @@ export const pageQuery = graphql`
         excerpt
         uri
         slug
+        isFrontPage
       }
     }
   }

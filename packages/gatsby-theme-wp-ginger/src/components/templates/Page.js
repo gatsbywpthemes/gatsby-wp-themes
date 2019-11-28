@@ -7,11 +7,7 @@ import SEO from '../seo/Seo'
 
 const Page = ({ page }) => {
   const { content } = page
-  const { staticHomePagePath } = useThemeOptions()
-  const ogType =
-    !!staticHomePagePath && page.uri === staticHomePagePath
-      ? 'website'
-      : 'article'
+  const ogType = page.isFrontPage ? 'website' : 'article'
 
   return (
     <Layout useContainer={false}>

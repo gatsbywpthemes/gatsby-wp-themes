@@ -42,7 +42,6 @@ module.exports = {
         wordPressUrl: config.wordPressUrl,
         postsPrefix: ``,
         /* use false or slug, for example 'home' */
-        staticHomePagePath: `home`,
         /* make sure to leave it as empty string if staticHomePage is false. 
         Otherwise make sur to set a path, for example: 'blog' */
         postsPath: `blog`,

@@ -11,12 +11,8 @@ const Page = ({ page }) => {
   const { title, excerpt, content, slug, uri } = page
   const {
     widgetAreas: { sidebar },
-    staticHomePagePath,
   } = useThemeOptions()
-  const ogType =
-    !!staticHomePagePath && page.uri === staticHomePagePath
-      ? 'website'
-      : 'article'
+  const ogType = page.isFrontPage ? 'website' : 'article'
   const { widgets } = sidebar
   const sidebarPage =
     sidebar.location.pages === 'all' || sidebar.location.pages.includes(slug)
