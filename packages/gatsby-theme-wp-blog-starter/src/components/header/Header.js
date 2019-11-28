@@ -26,7 +26,7 @@ const Header = () => {
     }
   `)
 
-  const { title, url } = data.wp.generalSettings
+  const { title } = data.wp.generalSettings
 
   return (
     <Fragment>
@@ -58,7 +58,7 @@ const Header = () => {
                 justifyContent: `flex-end`,
               }}
             >
-              <SlideSidebar wordPressUrl={url} />
+              <SlideSidebar />
             </Box>
           </Container>
         </StyledHeader>

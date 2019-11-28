@@ -9,7 +9,7 @@ import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Widgets from '../widgets/Widgets'
 import slideSidebarStyles from '../../styles/slideSidebarStyles'
 
-const SlideSidebar = ({ wordPressUrl }) => {
+const SlideSidebar = () => {
   const [isMenuOpen, setOpenMenu] = useState(false)
   const [openClass, setOpenClass] = useState(false)
   const {
@@ -63,7 +63,7 @@ const SlideSidebar = ({ wordPressUrl }) => {
             onClick={closeMenu}
           />
 
-          <Menu wordPressUrl={wordPressUrl} />
+          <Menu />
 
           {widgets &&
             widgets.length > 0 &&
