@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { Fragment } from 'react'
 import PublicationDate from './PublicationDate'
 import PostEntryTitle from './PostEntryTitle'
 import PostEntryExcerpt from './PostEntryExcerpt'
@@ -38,7 +39,12 @@ const PostEntryIntro = ({
       <PostEntryTitle {...{ post, postsPrefix, location }} />
       <PostEntryExcerpt {...{ post, location }} />
       <footer sx={{ variant: 'special' }} className="entry-meta">
-        <Author {...{ post }} /> / <Categories {...{ post }} />
+        <Author {...{ post }} />{' '}
+        {post.categories.length && (
+          <Fragment>
+            / <Categories {...{ post }} />
+          </Fragment>
+        )}
       </footer>
       {location === 'single' && (
         <PrevNextPostNavigation

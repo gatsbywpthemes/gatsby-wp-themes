@@ -36,11 +36,17 @@ export default {
       p: 0,
 
       listStyle: 'none',
-      a: {
+      '.menu-item': {
         display: 'block',
         py: `xs`,
         borderBottom: '1px solid rgba(255,255,255,.15)',
         color: `light`,
+        a: {
+          color: `light`,
+        },
+        '&:last-of-type': {
+          border: `none`,
+        },
       },
       'ul a': {
         pl: `m`,
