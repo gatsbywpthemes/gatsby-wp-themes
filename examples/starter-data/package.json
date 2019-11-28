@@ -33,6 +33,7 @@
     "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-theme-algolia": "*",
     "gatsby-theme-blog-data": "*",
+    "gatsby-plugin-wpcf7": "*",
     "gatsby-theme-style-guide": "^0.2.49",
     "grommet": "^2.8.1",
     "grommet-icons": "^4.4.0",
