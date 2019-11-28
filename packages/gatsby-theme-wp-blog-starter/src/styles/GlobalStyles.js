@@ -91,7 +91,8 @@ const globalStyles = css`
     width: 1px !important;
   }
   img,
-  figure {
+  figure,
+  .gatsby-image-wrapper {
     max-width: 100%;
     height: auto;
   }
