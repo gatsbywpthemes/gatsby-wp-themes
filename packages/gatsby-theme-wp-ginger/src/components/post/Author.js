@@ -4,12 +4,20 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import { Link } from 'gatsby'
 const Author = ({ post }) => {
+  console.log('post', post)
   return (
     <>
-      <span>by </span>
-      <Link sx={{ variant: 'special.link' }} to={`/author/${post.author.slug}`}>
-        {post.author.name}
-      </Link>
+      {post.author && (
+        <>
+          <span>by </span>
+          <Link
+            sx={{ variant: 'special.link' }}
+            to={`/author/${post.author.slug}`}
+          >
+            {post.author.name}
+          </Link>
+        </>
+      )}
     </>
   )
 }
