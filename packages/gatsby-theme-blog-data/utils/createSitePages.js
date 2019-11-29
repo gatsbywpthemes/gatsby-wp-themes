@@ -4,33 +4,51 @@ const GET_PAGES = `
   # Define our query variables
   query GET_PAGES($first:Int $after:String) {
     wp {
-      # Ask for pages
-      pages(
-          # Ask for the first XX number of pages
-          first: $first
-
-          # A Cursor to where in the dataset our query should start
-          # and get items _after_ that point
-          after:$after
-      ) {
-          # In response, we'll want pageInfo so we know if we need
-          # to fetch more pages or not.
-          pageInfo {
-              # If true, we need to ask for more data.
-              hasNextPage
-
-              # This cursor will be used for the value for $after
-              # if we need to ask for more data
-              endCursor
-          }
+      pages(first: $first after: $after) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          ...BuildQueryPageFields
+        }
+      }
+    }
+  }
+  fragment BuildQueryPageFields on WP_Page {
+    uri
+      parent {
+        ... on WP_Page {
+          id
+          uri
+        }
+      }
+    isFrontPage
+    isRestricted
+    id
+    pageId
+  }
+  `
+const GET_CHILDREN_PAGES = `
+  # Define our query variables
+  query GET_CHILDREN_PAGES($id: ID! $first:Int $after:String) {
+    wp {
+      page(id: $id) {
+childPages(first: $first after: $after) {
           nodes {
-            id
             uri
-            pageId
             isFrontPage
             isRestricted
+            id
+            pageId
           }
-      }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+        }
+        }
+      
     }
   }
   `
@@ -52,7 +70,31 @@ const allPages = []
 
 module.exports = async ({ actions, graphql }, options) => {
   const { createPage } = actions
-  const allPages = []
+  let allPages = []
+  const fetchChildrenPages = async variables =>
+    await graphql(GET_CHILDREN_PAGES, variables).then(({ data }) => {
+      const {
+        wp: {
+          page: {
+            childPages: {
+              nodes,
+              pageInfo: { hasNextPage, endCursor },
+            },
+          },
+        },
+      } = data
+      nodes.forEach(child => {
+        allPages.push(child)
+      })
+      if (hasNextPage) {
+        return fetchChildrenPages({
+          id: variables.id,
+          first: variables.first,
+          after: endCursor,
+        })
+      }
+      return allPages
+    })
   const fetchPages = async variables =>
     await graphql(GET_PAGES, variables).then(({ data }) => {
       const {
@@ -64,17 +106,30 @@ module.exports = async ({ actions, graphql }, options) => {
         },
       } = data
 
-      nodes.map(page => {
-        allPages.push(page)
-      })
-      if (hasNextPage) {
-        return fetchPages({ first: variables.first, after: endCursor })
+      const getChildren = async () => {
+        for (let index = 0; index < nodes.length; index++) {
+          allPages.push(nodes[index])
+          allPages = await fetchChildrenPages({
+            id: nodes[index].id,
+            first: variables.first,
+            after: null,
+          })
+        }
+        if (hasNextPage) {
+          return fetchPages({
+            first: variables.first,
+            after: endCursor,
+          })
+        }
+        return allPages
       }
-      return allPages
+
+      return getChildren()
     })
 
   await fetchPages({ first: 100, after: null }).then(allPages => {
     allPages.map(page => {
+      /* dont create page for postsPath */
       if (page.uri === options.postsPath) {
         return
       }
