@@ -1,5 +1,4 @@
 const pageTemplate = require.resolve(`../src/templates/page-query.js`)
-
 const GET_PAGES = `
   # Define our query variables
   query GET_PAGES($first:Int $after:String) {
@@ -10,56 +9,42 @@ const GET_PAGES = `
           endCursor
         }
         nodes {
-          ...BuildQueryPageFields
+          uri
+          isFrontPage
+          isRestricted
+          id
         }
       }
     }
-  }
-  fragment BuildQueryPageFields on WP_Page {
-    uri
-      parent {
-        ... on WP_Page {
-          id
-          uri
-        }
-      }
-    isFrontPage
-    isRestricted
-    id
-    pageId
-  }
+  } 
   `
 const GET_CHILDREN_PAGES = `
   # Define our query variables
   query GET_CHILDREN_PAGES($id: ID! $first:Int $after:String) {
     wp {
       page(id: $id) {
-childPages(first: $first after: $after) {
+        childPages(first: $first after: $after) {
           nodes {
             uri
             isFrontPage
             isRestricted
             id
-            pageId
           }
           pageInfo {
             hasNextPage
             endCursor
           }
         }
-        }
-      
+      }      
     }
   }
   `
 /**
- * Array to store allpagess. We make paginated requests
- * to WordPress to get allpagess, and once we have all pages,
- * then we iterate over them to create pages.
+ * Array to store all pages.
  *
  * @type {Array}
  */
-const allPages = []
+let allPages = []
 
 /**
  * This is the export which Gatbsy will use to process.
@@ -70,65 +55,68 @@ const allPages = []
 
 module.exports = async ({ actions, graphql }, options) => {
   const { createPage } = actions
-  let allPages = []
+
   const fetchChildrenPages = async variables =>
     await graphql(GET_CHILDREN_PAGES, variables).then(({ data }) => {
       const {
         wp: {
           page: {
-            childPages: {
-              nodes,
-              pageInfo: { hasNextPage, endCursor },
-            },
+            childPages: { nodes, pageInfo },
           },
         },
       } = data
       nodes.forEach(child => {
         allPages.push(child)
       })
-      if (hasNextPage) {
-        return fetchChildrenPages({
-          id: variables.id,
-          first: variables.first,
-          after: endCursor,
-        })
-      }
-      return allPages
+      return getChildren({ nodes, variables, pageInfo })
     })
   const fetchPages = async variables =>
     await graphql(GET_PAGES, variables).then(({ data }) => {
       const {
         wp: {
-          pages: {
-            nodes,
-            pageInfo: { hasNextPage, endCursor },
-          },
+          pages: { nodes, pageInfo },
         },
       } = data
-
-      const getChildren = async () => {
-        for (let index = 0; index < nodes.length; index++) {
-          allPages.push(nodes[index])
-          allPages = await fetchChildrenPages({
-            id: nodes[index].id,
-            first: variables.first,
-            after: null,
-          })
-        }
-        if (hasNextPage) {
-          return fetchPages({
-            first: variables.first,
-            after: endCursor,
-          })
-        }
-        return allPages
-      }
-
-      return getChildren()
+      nodes.forEach(node => {
+        allPages.push(node)
+      })
+      return getChildren({ nodes, variables, pageInfo })
     })
+
+  const getChildren = async ({ nodes, variables, pageInfo }) => {
+    for (let index = 0; index < nodes.length; index++) {
+      allPages = await fetchChildrenPages({
+        id: nodes[index].id,
+        first: variables.first,
+        after: null,
+      })
+    }
+    if (pageInfo.hasNextPage) {
+      if (variables.id) {
+        return fetchChildrenPages({
+          id: variables.id,
+          first: variables.first,
+          after: pageInfo.endCursor,
+        })
+      }
+      return fetchPages({
+        first: variables.first,
+        after: pageInfo.endCursor,
+      })
+    }
+    return allPages
+  }
 
   await fetchPages({ first: 100, after: null }).then(allPages => {
     allPages.map(page => {
+      /* dont create page if is restricted */
+      if (page.isRestricted) {
+        return
+      }
+      /* dont create page for postsPath */
+      if (page.uri === options.postsPath) {
+        return
+      }
       /* dont create page for postsPath */
       if (page.uri === options.postsPath) {
         return
