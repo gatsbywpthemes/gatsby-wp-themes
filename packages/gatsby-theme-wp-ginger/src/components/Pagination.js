@@ -19,11 +19,11 @@ const renderPreviousLink = props => {
 
   return (
     <Link
-      className="newer"
+      className="left"
       sx={{ variant: `paginationLink`, fontSize: 1 }}
       to={previousLink}
     >
-      <span>Newer posts</span>
+      <span>Previous</span>
     </Link>
   )
 }
@@ -38,11 +38,11 @@ const renderNextLink = props => {
     )
     return (
       <Link
-        className="older"
+        className="right"
         sx={{ variant: `paginationLink`, fontSize: 1 }}
         to={nextLink}
       >
-        <span>Older posts</span>
+        <span>Next</span>
       </Link>
     )
   } else {

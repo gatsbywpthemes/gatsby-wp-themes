@@ -8,10 +8,10 @@ export const pagination = {
   '&> :first-child, &> :last-child': {
     flex: 1,
   },
-  '.newer': {
+  '.left': {
     textAlign: 'left',
   },
-  '.older': {
+  '.right': {
     textAlign: 'right',
   },
   '> span': {
@@ -21,16 +21,16 @@ export const pagination = {
 
 export const paginationLink = {
   transition: '.6s',
-  '&.older': {
+  '&.right': {
     transform: 'translate3d(1.75rem, 0, 0)',
   },
-  '&.newer': {
+  '&.left': {
     transform: 'translate3d(-1.75rem, 0, 0)',
   },
   ':hover': {
     transform: `translate3d(0, 0, 0)`,
   },
-  '&.newer::before,&.older::after': {
+  '&.left::before,&.right::after': {
     content: '""',
     width: '1.5rem',
     height: '1px',

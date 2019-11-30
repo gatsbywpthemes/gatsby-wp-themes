@@ -11,11 +11,7 @@ const renderPreviousLink = ({ prev, postsPrefix }) => {
   }
 
   return (
-    <Link
-      className="older"
-      sx={{ variant: `paginationLink` }}
-      to={previousLink}
-    >
+    <Link className="left" sx={{ variant: `paginationLink` }} to={previousLink}>
       <span>Previous</span>
     </Link>
   )
@@ -25,7 +21,7 @@ const renderNextLink = ({ next, postsPrefix }) => {
   if (next) {
     return (
       <Link
-        className="newer"
+        className="right"
         sx={{ variant: `paginationLink` }}
         to={postsPrefix ? `/${postsPrefix}/${next.uri}` : `/${next.uri}`}
       >
@@ -40,8 +36,8 @@ const renderNextLink = ({ next, postsPrefix }) => {
 const PrevNextPostNavigation = ({ ctx, style }) => {
   return (
     <nav sx={{ variant: `pagination`, ...style }}>
-      {renderNextLink(ctx)}
       {renderPreviousLink(ctx)}
+      {renderNextLink(ctx)}
     </nav>
   )
 }
