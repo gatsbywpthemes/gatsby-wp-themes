@@ -17,7 +17,6 @@ const subdirectoryCorrection = (path, wordPressUrl) => {
 }
 const renderLink = (menuItem, wordPressUrl, postsPath) => {
   let url = menuItem.url
-
   if (menuItem.connectedObject.__typename === 'WP_MenuItem') {
     const parsedUrl = new URIParser(url)
     if (menuItem.url === `#`) {
@@ -89,10 +88,10 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
   )
 }
 
-const Menu = ({ wordPressUrl }) => {
+const Menu = () => {
   const menuItems = useMenuQuery()
 
-  const { postsPath } = useThemeOptions()
+  const { postsPath, wordPressUrl } = useThemeOptions()
 
   if (menuItems) {
     return (

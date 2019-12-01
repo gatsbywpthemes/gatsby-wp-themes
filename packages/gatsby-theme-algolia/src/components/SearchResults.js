@@ -1,7 +1,8 @@
 /** @jsx jsx */
-import { jsx, Box, Styled } from 'theme-ui'
-import { Hits, Index, connectStateResults } from 'react-instantsearch-dom'
-import * as hitComps from './hitComps'
+import { jsx, Box, Styled, Flex } from "theme-ui"
+import { Hits, Index, connectStateResults } from "react-instantsearch-dom"
+import algoliaLogo from "../images/algolia-logo.svg"
+import * as hitComps from "./hitComps"
 
 const Results = connectStateResults(
   ({ searchState: state, searchResults: res, children }) => {
@@ -21,7 +22,7 @@ const SearchResults = ({ indices, query }) => {
       className="search-results"
       sx={{
         ...showResults,
-        variant: `search.results`,
+        variant: `search.results`
       }}
     >
       {indices.map(({ name, title, hitComp }) => (
@@ -39,6 +40,30 @@ const SearchResults = ({ indices, query }) => {
           </Box>
         </Index>
       ))}
+      <footer
+        sx={{ px: `m`, pt: `xxs`, mt: `xxs`, borderTop: `1px solid #666` }}
+      >
+        <Flex
+          sx={{
+            justifyContent: `flex-end`,
+            fontSize: `xs`,
+            fontWeight: 300
+          }}
+        >
+          search by{" "}
+          <a
+            href="https://www.algolia.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={algoliaLogo}
+              alt="Algolia logo"
+              sx={{ width: 60, ml: `xxs`, mt: 6, mb: 6 }}
+            />
+          </a>
+        </Flex>
+      </footer>
     </Box>
   )
 }

@@ -1,14 +1,21 @@
-# Gatsby Theme WordPress Starter
+# gatsby-theme-blog-data
 
-This is a gatsby theme using WordPress as source and allowing to build a standard blog.
-See the [live demo](https://gatsby-theme-wordpress-blog.netlify.com/)
+## Description
+
+This theme provide all the necessary configuration to get the raw data from a wordpress source
+it brings all the necessary data to build blog and pages, including pagination for all archives
 
 ## Dependencies
 
 -This theme uses GraphQL API to source WordPress content. Therefore the source WordPress site must use the [WPGraphQL](https://www.wpgraphql.com/) plugin.
 
-- Twenty nineteen themes needs to be activated in order to have the right meny location
-- You can use this plugins to directly new posts from WordPress https://fr.wordpress.org/plugins/webhook-netlify-deploy/
+- Twenty twenty theme needs to be activated in order to have the right meny location
+
+- You can use this plugin to directly deploy new posts from WordPress https://fr.wordpress.org/plugins/webhook-netlify-deploy/
+
+- This theme is already installed in all of our themes, but you can use it as standalone if you need to build a totally custom markup and styling
+  in this case we recommend to take our starter-data starter, and to modify it
+  or to take as structure model
 
 ## Installation
 
@@ -16,61 +23,72 @@ To use this theme in your Gatsby sites, follow these instructions:
 
 1.  Install the theme
 
-    ```sh
-    npm install --save @alexadark/gatsby-theme-wordpress-blog
-    ```
-
-    or
-
-    ```sh
-    yarn add @alexadark/gatsby-theme-wordpress-blog
-    ```
+    copy the theme files into `packages`
+    in your json file add `"gatsby-theme-blog-data": "*"`
 
 2.  Add the theme to your `gatsby-config.js`:
 
-    ```js
-    module.exports = {
-      plugins: [
-        {
-      resolve: `@alexadark/gatsby-theme-wordpress-blog`,
-      options: {
-        wordPressUrl: `http://alexandraspalato.com/webstantly/`,
-        postsPrefix: `posts`,
-        postsPath: ``,
-        paginationPrefix: `blog`,
-        postsPerPage: 8,
-      },
-      ]
-    }
+
+       ``` {
+          resolve: `gatsby-theme-blog-data`,
+          options: {
+            wordPressUrl: ``,
+            uploadsPath: `wp-content/uploads`,
+            postsPrefix: `, postsPath:`,
+            paginationPrefix: `page`,
+            postsPerPage: 10,
+            disqus: ``,
+            addComments: 1,
+            gaTrackingId: 0,
+            googleTagManagerId: 0,
+            addSiteMap: false,
+            siteMapOptions: {},
+              widgetAreas: {
+                slideMenu: {
+                  widgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
+                          },
+                sidebar: {
+                  widgets: [],
+                  position: 'right',
+                  location: {
+                  archive: false,
+                  single: false,
+                    pages: false, //options: all for all pages or array of page slugs
+                      },
+                  },
+                },
+              },
+            }
     ```
 
 3.  Start your site
     ```sh
-    gatsby develop
+    yarn workspace yourSiteName develop
     ```
 
 ## Options
 
-`wordPressUrl` - source site.
-
+`wordPressUrl` - source site. mandatory
+`uploadsPath` - path to uploads if it's different from `wp-content/uploads`
 `postsPath` - the path for your posts, let it empty if you want them as home page
-in your WordPress installation if you want the blog as home page, then make sure to not have any page with slug 'home'.
-if you want the blog to another page, then create a custom link in your menu, with the postsPath as url (example : /blog), and make sure to not have any page with slug = postsPath
-create a page with slug: 'home' in this case
 
 `paginationPrefix` - the prefix of the pages
 
 `postsPrefix`
 
-`postsPrePage`
+`postsPerPage`
+
+`addComments` : write false or 0 if you don't want comments
+
+`widgetAreas`: 2 areas slideMenu and sidebar, they will be active only if you have widgets inside
+the available widgets are `socialFollow`,`recentPosts`, `Categories`,`Tags` , just write them in the order you want them to appear
+for the sidebar widget area you can also define the the position: `right` or `left`, and the location : `archive`: it will appear on blog, category, Tag, and Author archives
+`single`: it will appear on single posts
+`pages`: write the slugs where you want to see the sidebar in an array
 
 ## Features
 
-- 2 levels menu
-- pagination on posts page
+- 3 levels menu
+- pagination on all archives
 - categories, tags and users
 - Works with twenty nineteen theme to have the right menu location
-
-## How to contribute
-
-This is a WIP and any contribution, feedback and PRs are very welcome. Issues is a preferred way of submitting feedback, but you can also email to [alexaspalato@gmail.com](mailto:alexaspalato@gmail.com).
