@@ -10,13 +10,13 @@ export const pageQuery = graphql`
         content
         ...PostTemplateFragment
         commentStatus
-        comments {
+        comments(where: { order: ASC }) {
           nodes {
             ...CommentFields
-            children {
+            children(where: { order: ASC }) {
               nodes {
                 ...CommentFields
-                children {
+                children(where: { order: ASC }) {
                   nodes {
                     ...CommentFields
                   }
