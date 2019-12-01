@@ -28,43 +28,40 @@ To use this theme in your Gatsby sites, follow these instructions:
 
 2.  Add the theme to your `gatsby-config.js`:
 
-    ```js
-    {
-      resolve: `gatsby-theme-blog-data`,
-      options: {
-        wordPressUrl: ``,
-    uploadsPath: `wp-content/uploads`,
-    postsPrefix: ``,
-    postsPath: ``,
-    paginationPrefix: `page`,
-    postsPerPage: 10,
-    disqus: ``,
-    addComments: 1,
-    gaTrackingId: 0,
-    googleTagManagerId: 0,
-    addSiteMap: false,
-    siteMapOptions: {},
+
+       ``` {
+          resolve: `gatsby-theme-blog-data`,
+          options: {
+            wordPressUrl: ``,
+            uploadsPath: `wp-content/uploads`,
+            postsPrefix: `, postsPath:`,
+            paginationPrefix: `page`,
+            postsPerPage: 10,
+            disqus: ``,
+            addComments: 1,
+            gaTrackingId: 0,
+            googleTagManagerId: 0,
+            addSiteMap: false,
+            siteMapOptions: {},
+              widgetAreas: {
+                slideMenu: {
+                  widgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
+                          },
+                sidebar: {
+                  widgets: [],
+                  position: 'right',
+                  location: {
+                  archive: false,
+                  single: false,
+                    pages: false, //options: all for all pages or array of page slugs
+                      },
+                  },
+                },
+              },
+            }
     ```
 
-widgetAreas: {
-slideMenu: {
-widgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
-},
-sidebar: {
-widgets: [],
-position: 'right',
-location: {
-archive: false,
-single: false,
-pages: false, //options: all for all pages or array of page slugs
-},
-},
-},
-},
-}
-```
-
-4.  Start your site
+3.  Start your site
     ```sh
     yarn workspace yourSiteName develop
     ```
