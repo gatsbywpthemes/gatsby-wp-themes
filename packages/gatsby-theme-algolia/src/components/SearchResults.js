@@ -40,7 +40,9 @@ const SearchResults = ({ indices, query }) => {
           </Box>
         </Index>
       ))}
-      <footer sx={{ px: `m`, pt: `xxs`, mt: `m`, borderTop: `1px solid #666` }}>
+      <footer
+        sx={{ px: `m`, pt: `xxs`, mt: `xxs`, borderTop: `1px solid #666` }}
+      >
         <Flex
           sx={{
             justifyContent: `flex-end`,
