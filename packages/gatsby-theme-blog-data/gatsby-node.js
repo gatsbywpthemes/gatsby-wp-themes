@@ -16,11 +16,11 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   }
 
   reporter.warn('make sure to load data from somewhere!')
-  // await createPosts({ actions, graphql }, mergedOptions)
-  // await createSitePages({ actions, graphql }, mergedOptions)
-  // createCategories({ actions, graphql }, mergedOptions)
-  // createTags({ actions, graphql }, mergedOptions)
-  //createUsers({ actions, graphql }, mergedOptions)
+  await createPosts({ actions, graphql }, mergedOptions)
+  await createSitePages({ actions, graphql }, mergedOptions)
+  //await createCategories({ actions, graphql }, mergedOptions)
+  await createTags({ actions, graphql }, mergedOptions)
+  await createUsers({ actions, graphql }, mergedOptions)
   await createCategoriesHierarchy({ actions, graphql }, mergedOptions)
 }
 

@@ -1,5 +1,5 @@
 //const pageTemplate = require.resolve(`../src/templates/page-query.js`)
-//const addPagination = require('./addPagination.js')
+const addPagination = require('./addPagination.js')
 
 const GET_CATEGORIES1 = `
   # Define our query variables
@@ -17,7 +17,7 @@ const GET_CATEGORIES1 = `
       }
     }
   } 
-  `
+`
 const GET_CHILDREN_CATEGORIES = `
   # Define our query variables
   query GET_CHILDREN_CATEGORIES($id: ID! $first:Int $after:String) {
@@ -34,16 +34,41 @@ const GET_CHILDREN_CATEGORIES = `
             endCursor
           }
         }
-      }      
+      }
     }
   }
-  `
+`
+const PAGINATIONQUERY = `
+  # Define our query variables
+  query GET_POSTS_BY_CATEGORY($id: ID! $first:Int $after:String) {
+    wp {
+      category(id: $id) {
+        name
+        slug
+        posts(first: $first after: $after) {
+          pageInfo {
+              # If true, we need to ask for more data.
+              hasNextPage
+
+              # This cursor will be used for the value for $after
+              # if we need to ask for more data
+              endCursor
+          }
+          nodes {
+            id
+            slug
+            postId
+          }
+        }
+      }
+    }
+  }
+`
 /**
  * Array to store all pages.
  *
  * @type {Array}
  */
-let allCategories = []
 
 /**
  * This is the export which Gatbsy will use to process.
@@ -54,6 +79,12 @@ let allCategories = []
 
 module.exports = async ({ actions, graphql }, options) => {
   const { createPage } = actions
+  let allCategories = []
+  const categoryTemplatePath = options.overrideCategoryTemplate
+    ? `../../${options.overrideCategoryTemplate}`
+    : `../src/templates/category-query.js`
+
+  const categoryTemplate = require.resolve(categoryTemplatePath)
 
   const fetchChildrenCategories = async variables => {
     const { parentSlug, ...queryVariables } = variables
@@ -124,23 +155,16 @@ module.exports = async ({ actions, graphql }, options) => {
     }
     return allCategories
   }
-
-  await fetchCategories({ first: 100, after: null }).then(all => {
-    all.map(item => {
-      console.log(item)
-      /*       const path = page.isFrontPage ? `/` : `/${page.uri}`
-      console.log(`create page: ${page.uri}`)
-      createPage({
-        path,
-        component: pageTemplate,
-        context: {
-          ...page,
-          postsPrefix: options.postsPrefix,
-          postsPath: options.postsPath,
-          wordPressUrl: options.wordPressUrl,
-          uploadsUrl: options.uploadsUrl,
-        },
-      }) */
-    })
+  const all = await fetchCategories({ first: 100, after: null })
+  await addPagination({
+    actions,
+    graphql,
+    options,
+    paginationQuery: PAGINATIONQUERY,
+    template: categoryTemplate,
+    baseType: 'categories',
+    paginationType: 'category',
+    pathPrefix: 'category',
+    allItems: all,
   })
 }

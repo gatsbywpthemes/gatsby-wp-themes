@@ -2,33 +2,35 @@ module.exports = async ({
   actions,
   graphql,
   options,
-  baseQuery,
+  baseQuery = null,
   paginationQuery,
   template,
   baseType,
   paginationType,
   pathPrefix,
+  allItems = [],
 }) => {
   const { postsPerPage, paginationPrefix } = options
 
   const { createPage } = actions
   let variables = { first: 100, after: null }
   let go = true
-  const allItems = []
-  while (go) {
-    const { data } = await graphql(baseQuery, variables)
-    const {
-      nodes,
-      pageInfo: { hasNextPage, endCursor },
-    } = data.wp[baseType]
+  if (baseQuery) {
+    while (go) {
+      const { data } = await graphql(baseQuery, variables)
+      const {
+        nodes,
+        pageInfo: { hasNextPage, endCursor },
+      } = data.wp[baseType]
 
-    nodes.map(item => {
-      allItems.push(item)
-    })
-    if (hasNextPage) {
-      variables.after = endCursor
-    } else {
-      go = false
+      nodes.map(item => {
+        allItems.push(item)
+      })
+      if (hasNextPage) {
+        variables.after = endCursor
+      } else {
+        go = false
+      }
     }
   }
 
