@@ -1,10 +1,9 @@
-const sharedFormStyles = {}
-
-export const comments = {
-  ...sharedFormStyles,
-
+export const commentStyles = {
   form: {
     variant: 'form',
+    mb: 6,
+    py: 7,
+    px: 6,
     boxShadow: '0 20px 40px rgba(0,0,0,.15)',
     '.comment &': {
       boxShadow: 'none',
@@ -38,7 +37,6 @@ export const comments = {
     py: [2, 4],
     px: [3, 5],
     zIndex: 0,
-
     '&:before': {
       content: '""',
       position: 'absolute',

@@ -127,8 +127,4 @@ export const form = {
   mb: 6,
   py: 7,
   px: 6,
-
-  raw: {
-    ...sharedFormStyles,
-  },
 }

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { ThemeProvider, jsx } from 'theme-ui'
+import { ThemeProvider, useThemeUI, jsx } from 'theme-ui'
 import { useState } from 'react'
 import { Layer } from 'grommet'
 import { FiMenu, FiX } from 'react-icons/fi'
@@ -13,7 +13,8 @@ const searchIndices = [
   { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
 ]
 
-const SlideSidebar = ({ theme }) => {
+const SlideSidebar = () => {
+  const theme = useThemeUI()
   const {
     widgetAreas: {
       slideMenu: { widgets },

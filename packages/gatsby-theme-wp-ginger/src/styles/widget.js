@@ -35,7 +35,7 @@ const sharedStyles = {
   },
   '.widget-recent-posts': {},
 }
-export const widget = {
+const widget = {
   categories: {
     ...sharedStyles,
     a: {
@@ -105,3 +105,7 @@ export const widget = {
     },
   },
 }
+
+export const widgetCategories = widget.categories
+export const widgetTags = widget.tags
+export const widgetRecentPosts = widget.recentPosts

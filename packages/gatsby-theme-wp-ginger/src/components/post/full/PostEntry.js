@@ -7,6 +7,7 @@ import Tags from '../Tags'
 import CommentsList from '../../comments/CommentsList'
 import { FiChevronsDown } from 'react-icons/fi'
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import { article } from '../../../styles/article'
 
 const PostEntry = ({ ctx, post }) => {
   const bgStyles = !!post.featuredImage
@@ -14,12 +15,12 @@ const PostEntry = ({ ctx, post }) => {
         backgroundImage: `url(${post.featuredImage.imageFile.childImageSharp.fluid.src})`,
       }
     : {}
-  console.log(bgStyles)
+  console.log(article)
   return (
     <article data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
       <Flex
         sx={{
-          variant: 'article.full.splash',
+          ...article.full.splash,
           ...bgStyles,
         }}
         className="splash"
@@ -34,7 +35,7 @@ const PostEntry = ({ ctx, post }) => {
         <button
           type="button"
           sx={{
-            variant: `article.button.scrolldown`,
+            ...article.button.scrolldown,
           }}
           aria-label="Scroll to content"
           onClick={() => scrollTo('#content')}
@@ -45,7 +46,7 @@ const PostEntry = ({ ctx, post }) => {
       <div
         id="content"
         sx={{
-          variant: 'article.full.content',
+          ...article.full.content,
         }}
       >
         <PostEntryContent ctx={ctx} content={post.content} location="single" />
@@ -58,7 +59,7 @@ const PostEntry = ({ ctx, post }) => {
           data-sal-duration="1000"
           data-sal-easing="ease"
           sx={{
-            variant: 'article.full.content.dark',
+            ...article.full.content.dark,
           }}
         >
           <CommentsList post={post} />

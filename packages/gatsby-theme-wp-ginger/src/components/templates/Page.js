@@ -2,13 +2,13 @@
 import { jsx } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import SEO from '../seo/Seo'
+import pageStyles from '../../styles/page'
 
 const Page = ({ page }) => {
   const { content } = page
   const ogType = page.isFrontPage ? 'website' : 'article'
-
+  console.log(pageStyles)
   return (
     <Layout useContainer={false}>
       <SEO
@@ -22,7 +22,7 @@ const Page = ({ page }) => {
           sx={{ variant: 'title.page' }}
           dangerouslySetInnerHTML={{ __html: page.title }}
         />
-        <div className="entry-content" sx={{ variant: 'article.page' }}>
+        <div className="entry-content" sx={pageStyles}>
           <ParsedContent content={content} />
         </div>
       </article>

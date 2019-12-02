@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import React from 'react'
+import { Fragment } from 'react'
 import Date from './Date'
 import { Link } from 'gatsby'
 
@@ -18,7 +18,7 @@ const PublicationDate = ({ post, postsPrefix, location }) => {
       )}
     </>
   ) : (
-    <>
+    <Fragment>
       {post.date && (
         <span
           sx={{ variant: 'special', mb: 3, display: 'inline-block' }}
@@ -27,7 +27,7 @@ const PublicationDate = ({ post, postsPrefix, location }) => {
           / <Date date={post.date} /> /
         </span>
       )}
-    </>
+    </Fragment>
   )
 }
 

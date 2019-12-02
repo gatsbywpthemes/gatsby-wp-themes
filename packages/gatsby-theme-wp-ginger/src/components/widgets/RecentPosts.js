@@ -6,6 +6,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'
 import Img from 'gatsby-image'
 import normalize from 'normalize-path'
+import { widgetRecentPosts } from '../../styles/widget'
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {
@@ -40,7 +41,7 @@ const RecentPosts = () => {
   const { posts } = data.wp
   return (
     <section
-      sx={{ variant: 'widget.recentPosts' }}
+      sx={{ ...widgetRecentPosts }}
       className="widget widget-recent-posts"
     >
       <h2 className="widget-title">Recent Posts</h2>
