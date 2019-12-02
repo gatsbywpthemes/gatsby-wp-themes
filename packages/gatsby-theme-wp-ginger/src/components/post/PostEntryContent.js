@@ -9,9 +9,9 @@ const PostEntryContent = ({ content, location = 'archive' }) => {
     <>
       {location === 'single' && (
         <div
-          data-sal="slide-up"
+          /* data-sal="fade"
           data-sal-duration="1000"
-          data-sal-easing="ease"
+          data-sal-easing="ease" */
           className="entry-content"
           sx={{ mb: 6 }}
         >

@@ -15,15 +15,17 @@ const PostEntry = ({ ctx, post }) => {
         backgroundImage: `url(${post.featuredImage.imageFile.childImageSharp.fluid.src})`,
       }
     : {}
-  console.log(article)
   return (
-    <article data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
+    <article>
       <Flex
         sx={{
           ...article.full.splash,
           ...bgStyles,
         }}
         className="splash"
+        data-sal="fade"
+        data-sal-duration="1000"
+        data-sal-easing="ease"
       >
         <PostEntryIntro
           post={post}
