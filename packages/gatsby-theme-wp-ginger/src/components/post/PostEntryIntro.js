@@ -17,6 +17,7 @@ const PostEntryIntro = ({
   location = 'archive',
   variant = { variant: 'card.blog' },
 }) => {
+  console.log(post)
   return (
     <div
       sx={variant}
@@ -40,7 +41,7 @@ const PostEntryIntro = ({
       <PostEntryExcerpt {...{ post, location }} />
       <footer sx={{ variant: 'special' }} className="entry-meta">
         <Author {...{ post }} />{' '}
-        {post.categories.length && (
+        {post.categories.nodes.length && (
           <Fragment>
             / <Categories {...{ post }} />
           </Fragment>
