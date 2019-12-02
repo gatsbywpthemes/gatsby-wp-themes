@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 
 const PublicationDate = ({ post, postsPrefix, location }) => {
   return location === 'archive' ? (
-    <>
+    <Fragment>
       {post.date && (
         <Link
           sx={{ variant: 'special.link', display: 'inline-block', mb: 3 }}
@@ -16,7 +16,7 @@ const PublicationDate = ({ post, postsPrefix, location }) => {
           <Date date={post.date} />
         </Link>
       )}
-    </>
+    </Fragment>
   ) : (
     <Fragment>
       {post.date && (
