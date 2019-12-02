@@ -15,7 +15,7 @@ const DEFAULT_OPTIONS = {
   googleTagManagerId: 0,
   addSiteMap: false,
   siteMapOptions: {},
-
+  search: false,
   widgetAreas: {
     slideMenu: {
       widgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],

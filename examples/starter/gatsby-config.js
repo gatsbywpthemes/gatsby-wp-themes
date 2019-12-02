@@ -36,7 +36,6 @@ module.exports = {
     ],
   },
   plugins: [
-    "gatsby-theme-style-guide",
     {
       resolve: `gatsby-theme-wp-blog-starter`,
       options: {

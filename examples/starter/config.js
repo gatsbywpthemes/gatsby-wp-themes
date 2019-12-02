@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `https://gatsby-theme-demo.alexaspalato.website/`,
+  wordPressUrl: `https://gatsby-test-2.alexaspalato.website/`,
   // postsPrefix: `posts`,
   /* use false or slug, for example 'home' */
   // staticHomePagePath: `home`,
@@ -11,13 +11,13 @@ const config = {
   // disqus: `webstantly`,
 
   // addComments: false,
-
+  search: "basic",
   widgetAreas: {
     slideMenu: {
-      widgets: [`Categories`, `RecentPosts`, `SocialFollow`, `Tags`],
+      widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],
     },
     sidebar: {
-      widgets: [`Categories`, `SocialFollow`, `RecentPosts`, `Tags`],
+      widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],
       position: "right",
       location: {
         archive: true,
