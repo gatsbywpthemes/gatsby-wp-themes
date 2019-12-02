@@ -590,6 +590,12 @@ section.wp-block-cover-image > h2 {
   padding: 0;
   margin: 0;
 }
+@supports not (object-fit: cover) {
+  .blocks-gallery-grid,
+  .wp-block-gallery {
+    align-items: flex-end;
+  }
+}
 
 .blocks-gallery-grid .blocks-gallery-image,
 .blocks-gallery-grid .blocks-gallery-item,
