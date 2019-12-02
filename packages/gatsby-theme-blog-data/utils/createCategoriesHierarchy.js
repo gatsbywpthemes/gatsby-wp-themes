@@ -1,8 +1,8 @@
 const addPagination = require('./addPagination.js')
 
-const GET_CATEGORIES1 = `
+const GET_CATEGORIES = `
   # Define our query variables
-  query GET_CATEGORIES1($first:Int $after:String) {
+  query GET_PARENT_CATEGORIES($first:Int $after:String) {
     wp {
       categories(first: $first after: $after) {
         pageInfo {
@@ -111,7 +111,7 @@ module.exports = async ({ actions, graphql }, options) => {
     )
   }
   const fetchCategories = async variables =>
-    await graphql(GET_CATEGORIES1, variables).then(({ data }) => {
+    await graphql(GET_CATEGORIES, variables).then(({ data }) => {
       const {
         wp: {
           categories: { nodes, pageInfo },
