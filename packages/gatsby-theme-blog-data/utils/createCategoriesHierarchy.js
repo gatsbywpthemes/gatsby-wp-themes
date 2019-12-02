@@ -1,4 +1,3 @@
-//const pageTemplate = require.resolve(`../src/templates/page-query.js`)
 const addPagination = require('./addPagination.js')
 
 const GET_CATEGORIES1 = `
