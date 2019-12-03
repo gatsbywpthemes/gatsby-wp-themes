@@ -73,13 +73,13 @@ A relative path to your uploads directory. This is a default value for any WordP
 
 **postsPrefix** (optional)
 
-(default `""`)
+`(default "")`
 
 The prefix for the posts. If you change it, make sure to set the permalinks structure on your WordPress site accordingly.
 
 **postsPath** (optional)
 
-(default `""`)
+`(default "")`
 
 This is an important settings. It should be left empty if your WordPress homepage displays your latest posts. This corresponds to the default setting in Settings > Reading > Your homepage displays.
 If you choose a static page and set a Posts page, you should use the Posts page slug as your postsPath.
@@ -88,19 +88,29 @@ Example postsPath: 'blog'
 
 **paginationPrefix** (optional)
 
-(default `page`)
+`(default 'page')`
 
 The page number prefix for paginated content.
 You should not modify it unless you changed this on your WordPress site.
 
 **postsPerPage** (optional)
 
-(type Integer, default `10`)
+`(type Integer, default 10)`
 
 This setting will disappear - we will retrieve this value from your WordPress settings.
 The number of posts per archive page.
 
-Example postsPath: 'blog'
+**addComments** (optional)
+
+`(type Boolean, default true)`
+
+Whether comments funcionnality should be activated. This is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments" on the WordPress side.
+Please note, that we only support two levels of comments nesting.
+
+**gaTrackingId** (optional)
+`(default 0)`
+
+Your google analytics UA code. Set to 0 to disable Google Analytics.
 
 ## 🧐 What's inside?
 
