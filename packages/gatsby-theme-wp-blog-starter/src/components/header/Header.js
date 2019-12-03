@@ -8,6 +8,7 @@ import SiteBranding from './SiteBranding'
 
 import Headroom from 'react-headroom'
 import Search from 'gatsby-theme-algolia/src/components/Search'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
@@ -15,6 +16,11 @@ const searchIndices = [
 ]
 
 const Header = () => {
+  const { search } = useThemeOptions()
+  const styles = search
+    ? { justifyContent: [`flex-start`, `flex-start`, `center`] }
+    : { justifyContent: `flex-start` }
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       wp {
@@ -33,20 +39,22 @@ const Header = () => {
       <Headroom>
         <StyledHeader className="header">
           <Container className="container">
-            <Box
-              sx={{
-                width: [`100%`, `100%`, `33%`],
-                display: `flex`,
-                justifyContent: [`center`, `center`, `flex-start`],
-              }}
-            >
-              <Search indices={searchIndices} />
-            </Box>
+            {search === 'algolia' && (
+              <Box
+                sx={{
+                  width: [`100%`, `100%`, `33%`],
+                  display: `flex`,
+                  justifyContent: [`center`, `center`, `flex-start`],
+                }}
+              >
+                <Search indices={searchIndices} />
+              </Box>
+            )}
             <Box
               sx={{
                 width: [`50%`, `50%`, `33%`],
                 display: `flex`,
-                justifyContent: [`flex-start`, `flex-start`, `center`],
+                ...styles,
               }}
             >
               <SiteBranding title={title} />

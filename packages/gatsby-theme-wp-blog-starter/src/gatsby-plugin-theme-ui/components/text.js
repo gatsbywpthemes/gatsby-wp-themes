@@ -18,7 +18,6 @@ export const text = {
     fontFamily: `heading`,
     fontWeight: 500,
     letterSpacing: 4,
-    textAlign: 'center',
     lineHeight: 1.5,
 
     m: 0,
