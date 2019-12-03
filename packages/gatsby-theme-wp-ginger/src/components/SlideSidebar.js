@@ -19,6 +19,7 @@ const SlideSidebar = () => {
     widgetAreas: {
       slideMenu: { widgets },
     },
+    useAlgoliaSearch,
   } = useThemeOptions()
   const [isMenuOpen, setOpenMenu] = useState(false)
   const [openClass, setOpenClass] = useState(false)
@@ -66,9 +67,12 @@ const SlideSidebar = () => {
             >
               <FiX />
             </button>
-            <div className="search-wrapper">
-              <Search indices={searchIndices} />
-            </div>
+            {useAlgoliaSearch && (
+              <div className="search-wrapper">
+                <Search indices={searchIndices} />
+              </div>
+            )}
+
             <Menu />
             {!!widgets &&
               widgets.map(widget => (
