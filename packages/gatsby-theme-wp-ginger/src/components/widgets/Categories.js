@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import { widgetCategories } from '../../styles/widget'
 
 const ALL_CATEGORIES_QUERY = graphql`
   query GetCategories {
@@ -19,10 +20,7 @@ const CategoriesWidget = () => {
   const data = useStaticQuery(ALL_CATEGORIES_QUERY)
   const { categories } = data.wp
   return (
-    <section
-      sx={{ variant: 'widget.categories' }}
-      className="widget widget-categories"
-    >
+    <section sx={{ ...widgetCategories }} className="widget widget-categories">
       <h2 className="widget-title">Categories</h2>
       <ul>
         {categories.nodes.length

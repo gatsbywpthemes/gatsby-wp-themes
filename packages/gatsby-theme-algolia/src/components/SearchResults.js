@@ -2,7 +2,7 @@
 import { jsx, Box, Styled, Flex } from "theme-ui"
 import { Hits, Index, connectStateResults } from "react-instantsearch-dom"
 import algoliaLogo from "../images/algolia-logo.svg"
-import * as hitComps from "./hitComps"
+import * as hitComps from "./HitComps"
 
 const Results = connectStateResults(
   ({ searchState: state, searchResults: res, children }) => {

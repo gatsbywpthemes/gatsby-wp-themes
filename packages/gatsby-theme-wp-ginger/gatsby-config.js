@@ -8,8 +8,9 @@ module.exports = options => {
         el.toLowerCase().indexOf(`abril fatface`) === -1
     )
   }
+  options.useAlgoliSearch = options.useAlgoliSearch || false
+
   const plugins = [
-    `gatsby-theme-algolia`,
     {
       resolve: `gatsby-theme-blog-data`,
       options: {
@@ -45,6 +46,14 @@ module.exports = options => {
         display: 'swap',
       },
     })
+  }
+
+  /**
+   * Conditionally add google fonts plugin
+   * to avoid errors on build
+   */
+  if (options.useAlgoliaSearch) {
+    plugins.push(`gatsby-theme-algolia`)
   }
 
   return {

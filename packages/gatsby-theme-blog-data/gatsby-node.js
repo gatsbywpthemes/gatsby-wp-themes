@@ -2,6 +2,7 @@ const defaultOptions = require(`./utils/defaultOptions`)
 const createPosts = require(`./utils/createPosts`)
 const createSitePages = require(`./utils/createSitePages`)
 const createCategories = require(`./utils/createCategories`)
+//const createCategoriesHierarchy = require(`./utils/createCategoriesHierarchy`)
 const createTags = require(`./utils/createTags`)
 const createUsers = require(`./utils/createUsers`)
 
@@ -20,6 +21,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   await createCategories({ actions, graphql }, mergedOptions)
   await createTags({ actions, graphql }, mergedOptions)
   await createUsers({ actions, graphql }, mergedOptions)
+  //await createCategoriesHierarchy({ actions, graphql }, mergedOptions)
 }
 
 const { createRemoteFileNode } = require('gatsby-source-filesystem')

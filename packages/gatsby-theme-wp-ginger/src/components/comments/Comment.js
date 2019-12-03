@@ -4,11 +4,12 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import Date from '../post/Date'
 import CommentForm from './CommentForm'
+import { commentStyles } from '../../styles/comments'
 
 const Reply = ({ commentId, actionOnClick }) => {
   return (
     <button
-      sx={{ variant: 'comments.replyButton' }}
+      sx={{ ...commentStyles.replyButton }}
       type="button"
       onClick={() => actionOnClick(commentId)}
       className="comment-button-reply"
@@ -47,7 +48,7 @@ const Comment = props => {
     cancelReply,
   } = props
   return (
-    <li className="comment" sx={{ variant: 'comments.comment' }}>
+    <li className="comment" sx={{ ...commentStyles.comment }}>
       <Author name={comment.author.name} url={comment.author.url} />
       <Date date={comment.date} />
       <div dangerouslySetInnerHTML={{ __html: comment.content }} />

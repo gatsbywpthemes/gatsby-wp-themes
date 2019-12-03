@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import { widgetTags } from '../../styles/widget'
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {
@@ -21,7 +22,7 @@ const TagsWidget = () => {
   const { tags } = data.wp
   return (
     tags.nodes.length && (
-      <section sx={{ variant: 'widget.tags' }} className="widget widget-tags">
+      <section sx={{ ...widgetTags }} className="widget widget-tags">
         <h2 className="widget-title">Tags</h2>
         <ul>
           {tags.nodes

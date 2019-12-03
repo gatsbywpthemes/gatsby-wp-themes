@@ -3,6 +3,8 @@ import { jsx } from 'theme-ui'
 import { Fragment, useState } from 'react'
 import Comment from './Comment'
 import CommentForm from './CommentForm'
+import { commentStyles } from '../../styles/comments'
+
 const CommentsList = ({ post }) => {
   const { comments } = post
   const [activeComment, setActiveComment] = useState(0)
@@ -15,9 +17,9 @@ const CommentsList = ({ post }) => {
   return (
     <Fragment>
       {comments.nodes.length > 0 ? (
-        <section sx={{ variant: 'comments.section' }}>
-          <h2 sx={{ variant: 'comments.title' }}>Comments</h2>
-          <ul sx={{ variant: 'comments.list' }}>
+        <section sx={{ ...commentStyles.section }}>
+          <h2 sx={{ ...commentStyles.title }}>Comments</h2>
+          <ul sx={{ ...commentStyles.list }}>
             {comments.nodes.map(comment => (
               <Fragment key={comment.id}>
                 <Comment
@@ -60,7 +62,7 @@ const CommentsList = ({ post }) => {
           </ul>
         </section>
       ) : (
-        <p sx={{ variant: 'comments.noComments' }}>No comments yet</p>
+        <p sx={{ ...commentStyles.noComments }}>No comments yet</p>
       )}
       {activeComment === 0 && <CommentForm postId={post.postId} />}
     </Fragment>

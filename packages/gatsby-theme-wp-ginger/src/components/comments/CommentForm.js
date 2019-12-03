@@ -5,6 +5,7 @@ import { Fragment, useState } from 'react'
 import gql from 'graphql-tag'
 import { useMutation } from '@apollo/react-hooks'
 import useForm from 'react-hook-form'
+import { commentStyles } from '../../styles/comments'
 
 const commentSubmitQuery = gql`
   mutation(
@@ -137,13 +138,13 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
     <Fragment>
       {!!commentStatus && <CommentStatusFeedback />}
       {!commentStatus && (
-        <div sx={{ variant: 'comments.formWrapper' }}>
+        <div sx={{ ...commentStyles.formWrapper }}>
           {!commentId && (
-            <h2 sx={{ variant: 'comments.title' }}>Leave a comment</h2>
+            <h2 sx={{ ...commentStyles.title }}>Leave a comment</h2>
           )}
           {!!commentId && (
             <button
-              sx={{ variant: 'comments.replyButton' }}
+              sx={{ ...commentStyles.replyButton }}
               type="button"
               className="comment-button-cancel"
               onClick={cancelReply}
@@ -154,7 +155,7 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
           <form
             onSubmit={handleSubmit(onSubmit)}
             noValidate
-            sx={{ variant: 'comments.form' }}
+            sx={{ ...commentStyles.form }}
           >
             <CommentNotes />
             {inputFields.map(el => {
