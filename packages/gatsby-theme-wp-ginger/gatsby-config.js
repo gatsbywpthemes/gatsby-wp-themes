@@ -9,6 +9,7 @@ module.exports = options => {
     )
   }
   options.useAlgoliSearch = options.useAlgoliSearch || false
+
   const plugins = [
     {
       resolve: `gatsby-theme-blog-data`,
