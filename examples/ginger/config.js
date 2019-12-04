@@ -2,7 +2,7 @@ const config = {
   wordPressUrl: `https://wp-pehaa.com/demo-pehaa1`,
   // uploadsPath: `wp-content/uploads`,
   // postsPrefix: ``,
-  // postsPath: ``,
+  // postsPath: `blog`,
   // paginationPrefix: `page`,
   // postsPerPage: 10,
   // addComments: true,
