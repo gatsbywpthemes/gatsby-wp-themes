@@ -10,6 +10,14 @@ module.exports = options => {
   }
   options.useAlgoliSearch = options.useAlgoliSearch || false
 
+  if (options.gingerWidgets) {
+    options.widgetAreas = {
+      slideMenu: {
+        widgets: options.gingerWidgets,
+      },
+    }
+  }
+
   const plugins = [
     {
       resolve: `gatsby-theme-blog-data`,

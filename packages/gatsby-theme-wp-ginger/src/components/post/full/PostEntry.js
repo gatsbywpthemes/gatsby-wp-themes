@@ -8,6 +8,7 @@ import CommentsList from '../../comments/CommentsList'
 import { FiChevronsDown } from 'react-icons/fi'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { article } from '../../../styles/article'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 
 const PostEntry = ({ ctx, post }) => {
   const bgStyles = !!post.featuredImage
@@ -15,6 +16,7 @@ const PostEntry = ({ ctx, post }) => {
         backgroundImage: `url(${post.featuredImage.imageFile.childImageSharp.fluid.src})`,
       }
     : {}
+  const { addComments } = useThemeOptions()
   return (
     <article>
       <Flex
@@ -55,7 +57,7 @@ const PostEntry = ({ ctx, post }) => {
         <Tags post={post} location="single" />
         <PrevNextPostNavigation ctx={ctx} />
       </div>
-      {post.commentStatus === 'open' && (
+      {!!addComments && post.commentStatus === 'open' && (
         <section
           data-sal="fade"
           data-sal-duration="1000"
