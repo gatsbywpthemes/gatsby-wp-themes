@@ -20,6 +20,7 @@ const SlideSidebar = () => {
       slideMenu: { widgets },
     },
     useAlgoliaSearch,
+    menuName,
   } = useThemeOptions()
   const [isMenuOpen, setOpenMenu] = useState(false)
   const [openClass, setOpenClass] = useState(false)
@@ -73,7 +74,7 @@ const SlideSidebar = () => {
               </div>
             )}
 
-            <Menu />
+            <Menu menuName={menuName} />
             {!!widgets &&
               widgets.map(widget => (
                 <Widgets key={widget} widget={widget} location="SlideMenu" />

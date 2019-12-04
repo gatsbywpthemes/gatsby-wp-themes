@@ -9,6 +9,7 @@ const DEFAULT_OPTIONS = {
   postsPath: ``,
   paginationPrefix: `page`,
   postsPerPage: 10,
+  menuName: `primary`,
   disqus: ``,
   addComments: 1,
   gaTrackingId: 0,
