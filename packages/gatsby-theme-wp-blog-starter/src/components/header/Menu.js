@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import { createLocalLink } from '../../utils'
 import { Collapse } from '../ui-components'
-import useMenuQuery from 'gatsby-theme-blog-data/src/hooks/useMenuQuery'
+import useMenusQuery from 'gatsby-theme-blog-data/src/hooks/useMenusQuery'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
@@ -88,8 +88,10 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
   )
 }
 
-const Menu = () => {
-  const menuItems = useMenuQuery()
+const Menu = ({ menuName }) => {
+  const menuEdges = useMenusQuery()
+  const menuEdge = menuEdges.find(n => menuName === n.node.name)
+  const menuItems = menuEdge ? menuEdge.node.menuItems : null
 
   const { postsPath, wordPressUrl } = useThemeOptions()
 

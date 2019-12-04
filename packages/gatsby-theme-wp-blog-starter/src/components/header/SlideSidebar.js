@@ -16,6 +16,7 @@ const SlideSidebar = () => {
     widgetAreas: {
       slideMenu: { widgets },
     },
+    menuName,
   } = useThemeOptions()
 
   const openMenu = () => {
@@ -63,7 +64,7 @@ const SlideSidebar = () => {
             onClick={closeMenu}
           />
 
-          <Menu />
+          <Menu menuName={menuName} />
 
           {widgets &&
             widgets.length > 0 &&

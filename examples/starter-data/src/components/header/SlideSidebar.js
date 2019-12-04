@@ -16,6 +16,7 @@ const SlideSidebar = ({ wordPressUrl }) => {
     widgetAreas: {
       slideMenu: { widgets },
     },
+    menuName,
   } = useThemeOptions()
 
   const openMenu = () => {
@@ -63,7 +64,7 @@ const SlideSidebar = ({ wordPressUrl }) => {
             onClick={closeMenu}
           />
 
-          <Menu wordPressUrl={wordPressUrl} />
+          <Menu menuName={menuName} wordPressUrl={wordPressUrl} />
 
           {widgets &&
             widgets.length > 0 &&

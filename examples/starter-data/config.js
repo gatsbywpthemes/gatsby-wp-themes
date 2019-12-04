@@ -7,6 +7,7 @@ const config = {
   // postsPath: `blog`,
   // // paginationPrefix: `page`,
   postsPerPage: 5,
+  menuName: 'main menu',
   // disqus: `webstantly`,
 
   // addComments: false,
