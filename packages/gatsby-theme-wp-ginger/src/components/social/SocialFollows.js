@@ -1,17 +1,30 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Flex } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import { follow } from '../../styles/social'
 import {
   FaBehance,
   FaCodepen,
+  FaDev,
+  FaDribbble,
   FaFacebook,
   FaGithub,
   FaGitlab,
   FaInstagram,
   FaLinkedin,
+  FaMastodon,
+  FaMedium,
+  FaPinterest,
+  FaReddit,
+  FaSlideshare,
+  FaSnapchat,
+  FaStackOverflow,
+  FaTelegram,
+  FaTumblr,
   FaTwitter,
+  FaVimeo,
   FaYoutube,
 } from 'react-icons/fa'
 
@@ -19,30 +32,54 @@ const SocialFollows = () => {
   const supportedIcons = [
     'behance',
     'codepen',
+    'dev',
+    'dribbble',
     'facebook',
     'github',
     'gitlab',
     'instagram',
     'linkedin',
+    'mastodon',
+    'medium',
+    'pinterest',
+    'reddit',
+    'slideshare',
+    'snapchat',
+    'stackoverflow',
+    'telegram',
+    'tumblr',
     'twitter',
+    'vimeo',
     'youtube',
   ]
   const components = [
     FaBehance,
     FaCodepen,
+    FaDev,
+    FaDribbble,
     FaFacebook,
     FaGithub,
     FaGitlab,
     FaInstagram,
     FaLinkedin,
+    FaMastodon,
+    FaMedium,
+    FaPinterest,
+    FaReddit,
+    FaSlideshare,
+    FaSnapchat,
+    FaStackOverflow,
+    FaTelegram,
+    FaTumblr,
     FaTwitter,
+    FaVimeo,
     FaYoutube,
   ]
 
   const { social } = useSiteMetadata()
 
   return (
-    <>
+    <Flex sx={follow}>
       {social &&
         social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())
@@ -63,7 +100,7 @@ const SocialFollows = () => {
             return null
           }
         })}
-    </>
+    </Flex>
   )
 }
 
