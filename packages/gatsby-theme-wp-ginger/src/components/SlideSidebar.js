@@ -7,6 +7,7 @@ import Menu from './Menu'
 import Widgets from './widgets/Widgets'
 import Search from 'gatsby-theme-algolia/src/components/Search'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import openMenuButton from '../styles/menuButton'
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
@@ -40,9 +41,7 @@ const SlideSidebar = () => {
           aria-label="Open navigation menu"
           onClick={openMenu}
           className={openClass ? 'btn-menu-opened' : 'btn-menu-closing'}
-          sx={{
-            variant: 'buttons.openMenu',
-          }}
+          sx={openMenuButton}
         >
           <FiMenu />
         </button>

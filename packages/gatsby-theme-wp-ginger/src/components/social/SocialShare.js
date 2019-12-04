@@ -7,22 +7,16 @@ import Facebook from './icons/Facebook'
 import Linkedin from './icons/Linkedin'
 import Pinterest from './icons/Pinterest'
 import { FiShare2 } from 'react-icons/fi'
+import { share } from '../../styles/social'
 
 const SocialShare = ({ url, title, media }) => {
   return (
     <>
-      <span
-        sx={{ variant: 'share.titleicon' }}
-        aria-label="Share on social networks"
-      >
+      <span sx={share.titleicon} aria-label="Share on social networks">
         <FiShare2 />
       </span>
 
-      <ul
-        sx={{
-          variant: 'share.list',
-        }}
-      >
+      <ul sx={share.list}>
         <li>
           <Twitter url={url} title={title}>
             Twitter

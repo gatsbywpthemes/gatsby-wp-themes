@@ -18,7 +18,6 @@ export const layer = {
     overflowY: 'scroll',
     boxShadow: ['none', '-10px 0 40px rgba(0,0,0,0.3)'],
     animationDuration: '1s',
-    //animation: `${pehaafadein} 1s cubic-bezier(0.165, 0.84, 0.44, 1)`,
     p: 7,
     '&.menu-closing': {
       animation: `${pehaafadein} 1 .6s 0s cubic-bezier(0.165, 0.84, 0.44, 1)`,
@@ -38,7 +37,6 @@ export const layer = {
       ul: {
         m: 0,
         p: 0,
-
         listStyle: 'none',
         a: {
           display: 'block',

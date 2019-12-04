@@ -9,18 +9,19 @@ import Author from './Author'
 import PrevNextPostNavigation from './PrevNextPostNavigation'
 import SocialShare from '../social/SocialShare'
 import normalize from 'normalize-path'
+import { card } from '../../styles/card'
 
 const PostEntryIntro = ({
   ctx,
   post,
   postsPrefix = '',
   location = 'archive',
-  variant = { variant: 'card.blog' },
+  variant = 'blog',
 }) => {
   console.log(post)
   return (
     <div
-      sx={variant}
+      sx={card[variant]}
       data-sal={location === 'single' ? 'fade' : 'none'}
       data-sal-duration={location === 'single' ? '1000' : '0'}
       data-sal-easing="ease"

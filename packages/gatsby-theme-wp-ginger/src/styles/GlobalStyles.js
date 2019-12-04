@@ -97,5 +97,8 @@ export const globalStyles = theme => {
     html {
       overflow-y: initial;
     }
+    pre {
+      overflow-x: auto;
+    }
   `
 }

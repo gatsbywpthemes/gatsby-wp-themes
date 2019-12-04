@@ -33,7 +33,7 @@ const PostEntry = ({ ctx, post }) => {
           post={post}
           ctx={ctx}
           location="single"
-          variant={{ variant: 'card.full' }}
+          variant={'full'}
         />
 
         <button

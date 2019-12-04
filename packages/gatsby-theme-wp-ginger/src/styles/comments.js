@@ -29,8 +29,11 @@ export const commentStyles = {
     '&, ul': {
       listStyle: 'none',
     },
-
+    ul: {
+      mb: 0,
+    },
     mb: 7,
+    ml: 0,
   },
   comment: {
     position: 'relative',
@@ -68,6 +71,6 @@ export const commentStyles = {
   title: {
     variant: 'special.title',
     textAlign: 'center',
-    mb: 5,
+    mb: 6,
   },
 }
