@@ -3,6 +3,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { domToReact } from "html-react-parser"
 import URIParser from "urijs"
+import normalize from "normalize-path"
 
 const checkUrl = (elementUrl, wordPressUrl, uploadsUrl) => {
   let urlParsed = new URIParser(elementUrl)
@@ -25,7 +26,7 @@ const checkUrl = (elementUrl, wordPressUrl, uploadsUrl) => {
     const wordPressUrlParsed = new URIParser(wordPressUrl)
     // fix if WordPress is installed in subdirectory
     url = url.replace(wordPressUrlParsed.path(), "/")
-    return url
+    return normalize(`/${url}`)
   }
   return false
 }
