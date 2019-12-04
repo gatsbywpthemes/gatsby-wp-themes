@@ -82,15 +82,11 @@ module.exports = options => {
       title: `Blog Title Placeholder`,
       author: `Name Placeholder`,
       description: `Description placeholder`,
-      url: `http://exemple.com`,
+      siteUrl: `http://example.com`,
       social: [
         {
           name: `twitter`,
           url: `https://twitter.com/gatsbyjs`,
-        },
-        {
-          name: `GitHub`,
-          url: `https://github.com/gatsbyjs`,
         },
       ],
     },
