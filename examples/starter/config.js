@@ -9,7 +9,7 @@ const config = {
   // // paginationPrefix: `page`,
   postsPerPage: 5,
   // disqus: `webstantly`,
-
+  menuName: "main menu",
   // addComments: false,
   search: "basic",
   widgetAreas: {
