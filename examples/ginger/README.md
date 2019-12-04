@@ -16,6 +16,7 @@ You need to install and activate the [wpgraphql plugin.](https:www.wpgraphql.com
 
 This step is important for your internal links to be properly mapped from your WordPress site to your Gatsby one.
 You can configure your WordPress permalinks structure in `Settings > Permalinks`. Make sure to check the **Post name** option.
+Another solution is to install the [Headless Node](https://wordpress.org/plugins/headless-mode/) WordPress plugin. Headless Node sets up a redirect for all users trying to access the site
 
 #### SEO Settings
 
@@ -38,6 +39,7 @@ const config = {
   paginationPrefix: `page`,
   postsPerPage: 10,
   addComments: true,
+  menuName: "main",
   gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
   title: `Blog Title Placeholder`,
@@ -107,7 +109,29 @@ The number of posts per archive page.
 Whether comments funcionnality should be activated. This is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments" on the WordPress side.
 Please note, that we only support two levels of comments nesting.
 
+**menuName** (optional)
+`(type String, default "main")`
+
+Ginger theme comes with one menu location, in the slide-in sidebar. You can use any of the menus that you had created on your WordPress site. Just paste the name that you had given to your WordPress menu here.
+
+example: `menuName: "Main Menu"`
+
 **gaTrackingId** (optional)
 `(default 0)`
 
 Your google analytics UA code. Set to 0 to disable Google Analytics.
+
+**googleTagManagerId** (optional)
+`(default 0)`
+
+Your google Tag Mangager Id. Set to 0 to disable this funcionnality.
+
+**addSitemap** (optional)
+`(Type boolean, default false)`
+
+Whether you want to create a site map. If set to `true`, please make sure that you provide your production gatsby website url in the SiteUrl option.
+
+**siteMapOptions** (optional)
+`(Type Object, default {})`
+
+These options are passed to the [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) options so please refer to [gatsby-plugin-sitemap options](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/#options) for the details.
