@@ -58,12 +58,12 @@ export const commentStyles = {
     },
     '.entry-date': {
       display: 'block',
-      fontSize: 0,
+      fontSize: 'xxs',
       mb: 2,
       fontStyle: 'italic',
     },
     '.comment-nesting-info': {
-      fontSize: 0,
+      fontSize: 'xxs',
       textAlign: 'right',
       opacity: '.6',
     },

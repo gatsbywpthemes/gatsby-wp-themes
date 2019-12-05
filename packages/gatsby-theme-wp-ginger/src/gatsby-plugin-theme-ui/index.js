@@ -9,7 +9,7 @@ import {
   fontWeights,
   lineHeights,
   special,
-  title,
+  baseTypo,
 } from './components'
 import buttons from './components/buttons'
 import Header from './components/header'
@@ -50,13 +50,15 @@ const theme = {
     Container,
     Header,
     Footer,
+    root: {
+      ...baseTypo,
+    },
   },
   layer,
-  global: {
+  /* global: {
     fontFamily: 'body',
-  },
+  }, */
   special,
-  title,
   pagination,
   paginationLink,
   form,

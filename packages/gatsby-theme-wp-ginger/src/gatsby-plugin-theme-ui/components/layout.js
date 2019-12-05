@@ -3,6 +3,9 @@ export default {
   display: 'block',
   color: 'text',
   '.entry-content a': {
-    ...a,
+    transition: 'color .5s',
+    '&:hover': {
+      color: 'primary',
+    },
   },
 }

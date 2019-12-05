@@ -29,7 +29,7 @@ const sharedFormStyles = {
   },
   'label, .form-field-radio, .form-field-checkbox': {
     variant: 'special',
-    fontSize: 1,
+    fontSize: 'xs',
     fontWeight: 'bold',
   },
   '.form-field-radio label': {
@@ -83,7 +83,7 @@ const sharedFormStyles = {
     margin: 'auto 0 auto auto',
   },
   '.error': {
-    fontSize: 0,
+    fontSize: 'xxs',
     fontStyle: 'italic',
     display: 'block',
     mt: '-1rem',

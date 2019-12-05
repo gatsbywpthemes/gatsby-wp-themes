@@ -13,7 +13,7 @@ export const search = {
       mt: 6,
     },
     a: { color: 'inherit' },
-    fontSize: 1,
+    fontSize: 'xs',
     ul: {
       variant: 'list.raw',
     },

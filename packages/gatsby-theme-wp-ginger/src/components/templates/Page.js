@@ -18,10 +18,12 @@ const Page = ({ page }) => {
         ogUrl={ogType === 'website' ? '' : page.uri}
       />
       <article sx={{ pt: '4rem' }}>
-        <h1
-          sx={{ variant: 'title.page' }}
-          dangerouslySetInnerHTML={{ __html: page.title }}
-        />
+        <h1 sx={{ variant: 'special.Title' }}>
+          <span
+            className="page-title-value"
+            dangerouslySetInnerHTML={{ __html: page.title }}
+          />
+        </h1>
         <div className="entry-content" sx={pageStyles}>
           <ParsedContent content={content} />
         </div>

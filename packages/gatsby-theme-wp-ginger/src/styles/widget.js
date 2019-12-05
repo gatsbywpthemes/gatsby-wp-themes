@@ -14,7 +14,7 @@ const sharedStyles = {
   },
   mb: 7,
   '.widget-title': {
-    fontSize: 4,
+    fontSize: 'l',
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'row',
@@ -98,7 +98,7 @@ const widget = {
     '.widget-post-title': {
       fontFamily: 'heading',
       fontWeight: 'heading',
-      fontSize: 2,
+      fontSize: 's',
     },
     '.widget-post-date': {
       variant: 'special',

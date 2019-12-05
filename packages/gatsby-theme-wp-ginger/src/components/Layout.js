@@ -6,8 +6,8 @@ import {
   Container,
   jsx,
   useThemeUI,
+  Styled,
 } from 'theme-ui'
-import { Fragment } from 'react'
 import { Link } from 'gatsby'
 import useSiteSettings from 'gatsby-theme-blog-data/src/hooks/useSiteSettings'
 import { Global } from '@emotion/core'
@@ -26,7 +26,7 @@ const Layout = ({ useContainer = true, children }) => {
   const siteSettings = useSiteSettings()
   const { theme } = useThemeUI()
   return (
-    <Fragment>
+    <Styled.root>
       <Global styles={globalStyles(theme)} />
       <ThemeLayout>
         <Header>
@@ -42,7 +42,7 @@ const Layout = ({ useContainer = true, children }) => {
         </Main>
         <Footer />
       </ThemeLayout>
-    </Fragment>
+    </Styled.root>
   )
 }
 

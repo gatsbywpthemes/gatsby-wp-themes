@@ -7,7 +7,7 @@ const sharedCardStyles = {
 
   width: ['calc(100% - 2rem)', '75%'],
   p: {
-    fontSize: 1,
+    fontSize: 'xs',
     letterSpacing: '.6px',
   },
 }

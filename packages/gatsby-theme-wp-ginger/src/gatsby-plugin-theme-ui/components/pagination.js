@@ -3,7 +3,7 @@ export const pagination = {
   display: `flex`,
   justifyContent: `space-between`,
   alignItems: `center`,
-  fontSize: 1,
+  fontSize: 'xs',
   mb: 4,
   '&> :first-child, &> :last-child': {
     flex: 1,

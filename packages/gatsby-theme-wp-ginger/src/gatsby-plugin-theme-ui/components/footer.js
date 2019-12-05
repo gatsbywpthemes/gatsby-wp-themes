@@ -4,7 +4,7 @@ export default {
   zIndex: 11,
   bottom: 0,
   height: theme => ['auto', 'auto', theme.sizes.header[2]],
-  fontSize: [1, 1, 0],
+  fontSize: ['xs', 'xs', 'xxs'],
   transformOrigin: '0 0',
   transform: theme => [
     '',

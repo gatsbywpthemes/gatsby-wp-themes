@@ -6,9 +6,6 @@ export const fonts = {
 
 export const lineHeights = {
   body: 1.5,
-  heading: 1.1,
-  loose: 2,
-  none: 1,
 }
 
 export const fontWeights = {
@@ -17,46 +14,50 @@ export const fontWeights = {
   bold: 700,
 }
 
-export const fontSizes = [
-  '.75rem',
-  '.875rem',
-  '1rem',
-  '1.125rem',
-  '1.25rem',
-  '1.5rem',
-  '2rem',
-  '3rem',
-  '4rem',
-  '4.5rem',
-]
+export const fontSizes = {
+  xxs: '.75rem',
+  xs: '.875rem',
+  s: '1rem',
+  m: '1.125rem',
+  l: '1.5rem',
+  xl: '2rem',
+  xxl: '3rem',
+  Big: '4rem',
+  Bigger: '4.5rem',
+}
 
 export const a = {
-  transition: 'color .5s',
+  //transition: 'color .5s',
   color: 'inherit',
   '&:hover': {
     textDecoration: 'none',
-    color: 'primary',
+    //color: 'primary',
   },
 }
 
 const specialSharedStyles = {
   textTransform: 'uppercase',
   letterSpacing: '2px',
-  fontSize: 0,
+
   a: {
     color: 'inherit',
     textDecoration: 'none',
     position: 'relative',
+    '&:hover': {
+      color: 'inherit',
+    },
   },
 }
 export const special = {
   ...specialSharedStyles,
+  fontSize: 'xxs',
   a: {
     ...specialSharedStyles.a,
     fontWeight: 'bold',
   },
   link: {
     ...specialSharedStyles,
+    fontSize: 'xxs',
     ...specialSharedStyles.a,
     '&:after': {
       content: '""',
@@ -84,25 +85,8 @@ export const special = {
       color: 'primary',
     },
   },
-  archiveTitle: {
+  Title: {
     textAlign: 'center',
-    mb: 6,
-    '.page-title-taxonomy-type': {
-      fontFamily: 'body',
-      fontWeight: 'body',
-      display: 'block',
-      fontSize: 2,
-    },
-    '.page-title-taxonomy-value': {
-      fontSize: 7,
-    },
-  },
-}
-
-export const title = {
-  page: {
-    textAlign: 'center',
-    fontSize: [6, 8],
     mb: 8,
     '&:after': {
       content: '""',
@@ -112,5 +96,37 @@ export const title = {
       mx: 'auto',
       mt: 4,
     },
+    '.page-title-pre': {
+      fontFamily: 'body',
+      fontWeight: 'body',
+      display: 'block',
+      fontSize: 'xs',
+      ...specialSharedStyles,
+    },
+    '.page-title-value': {
+      fontSize: ['xl', 'Big', 'Big'],
+    },
+  },
+}
+
+export const baseTypo = {
+  a,
+  h1: {
+    fontSize: ['xl', 'xl', 'xxl'],
+  },
+  h2: {
+    fontSize: ['l', 'l', 'xl'],
+  },
+  h3: {
+    fontSize: ['m', 'm', 'l'],
+  },
+  h4: {
+    fontSize: ['s', 's', 'm'],
+  },
+  h5: {
+    fontSize: ['xs', 'xs', 's'],
+  },
+  h6: {
+    fontSize: ['xxs', 'xxs', 'xs'],
   },
 }

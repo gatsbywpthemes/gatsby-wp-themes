@@ -16,7 +16,7 @@ export default {
     textDecoration: 'none',
     fontFamily: 'heading',
     fontWeight: 'heading',
-    fontSize: 5,
+    fontSize: 'l',
     position: 'absolute',
     transformOrigin: '0 0',
     transform: [

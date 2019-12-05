@@ -5,7 +5,7 @@ export const globalStyles = theme => {
   const typography = new Typography({
     baseFontSize: '16px',
     baseLineHeight: theme.lineHeights.body,
-    scaleRatio: 4,
+    scaleRatio: 3,
     blockMarginBottom: 0.75,
     headerFontFamily: theme.fonts.heading.split(',').map(el => {
       return el.trim()
@@ -18,6 +18,7 @@ export const globalStyles = theme => {
     bodyWeight: theme.fontWeights.body,
     boldWeight: theme.fontWeights.bold,
   })
+  console.log(typography.toString())
   return css`
     body {
       margin: 0;

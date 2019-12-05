@@ -51,7 +51,7 @@ const PostEntryIntro = ({
       {location === 'single' && (
         <PrevNextPostNavigation
           ctx={ctx}
-          style={{ margin: '2rem 0 0', fontSize: 0 }}
+          style={{ margin: '2rem 0 0', fontSize: 'xxs' }}
         />
       )}
     </div>
