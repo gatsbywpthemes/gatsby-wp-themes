@@ -69,6 +69,8 @@ const config = {
 
 Provide a url to your WordPress website.
 
+---
+
 **uploadsPath** (optional)
 
 `(default: wp-content/uploads)`
@@ -218,7 +220,7 @@ Other pages will use a common twitterSummaryCardImage. Please make sure to place
 
 `(type: Array, default: ["abril fatface", "fira sans"])`
 
-Here you decide what fonts should be installed.
+Here you decide which fonts should be installed.  
 The Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sans** for the body text. Both of them are Google fonts.
 If you want to use other typefaces, you will have to modify the `fonts` setting in the config.js. You will also have to edit the `src/gatsby-plugin-theme-ui/index.js` file to assign your fonts as `heading` or `body`.
 
