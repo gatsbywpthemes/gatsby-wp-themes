@@ -4,31 +4,31 @@ Introduction comes here...
 
 ## 🚀All that you need to get it running.
 
-### Setting up your WordPress Website.
+## Setting up your WordPress Website.
 
 You will need a running WordPress installation. Gatsby will fetch the data from your WordPress website. There are some configuration options that you need to follow:
 
-#### Mandatory Plugins
+### Mandatory Plugins
 
 You need to install and activate the [wpgraphql plugin.](https:www.wpgraphql.com/) You can download the latest release [here.](https:github.com/wp-graphql/wp-graphql/releases) Install it on your WordPress site from the .zip file.
 
-#### Permalinks structure
+### Permalinks structure
 
 This step is essentialfor your internal links to be mapped adequately from your WordPress site to your Gatsby one.
 You can configure your WordPress permalinks structure in `Settings > Permalinks`.
 Make sure to check the **Post name** option.
 
-#### SEO Settings
+### SEO Settings
 
 Make sure to discourage search engines from indexing your WordPress website. You do not want to be penalized for the duplicated content. This can be done via `Settings > Reading`.
 
 Another solution is to install the [Headless Node](https://wordpress.org/plugins/headless-mode/) WordPress plugin. Headless Node sets up a redirect for all users trying to access the site.
 
-#### Optional - Forms
+### Optional - Forms
 
 Our themes are compatible with Contact Form 7 WordPress plugin. If you want to have a form on your website, you need to install Contact Form 7 and set up your form.
 
-### Configure your Gatsby site - config.js
+## Configure your Gatsby site - config.js
 
 The default options are as follows:
 
@@ -63,7 +63,7 @@ const config = {
 }
 ```
 
-#### Options
+### Options
 
 **wordPressUrl** (required)  
 Provide a url to your WordPress website.
@@ -90,7 +90,7 @@ The prefix for the posts. If you change it, make sure to set the permalinks stru
 This is an important setting. It should be left empty if your WordPress homepage displays your latest posts. This corresponds to the default in Settings > Reading > Your homepage displays.
 If you choose a static page and set a Posts page, you should use the Posts page slug as your postsPath.
 
-Example
+example:
 
 ```javascript
 postsPath: "blog"
@@ -184,7 +184,7 @@ You can list your social profiles here. They will be displayed in the SocialFoll
 
 The supported profiles are: Behance, Codepen, Dev, Discord, Dribbble, Facebook, Github, Gitlab, Instagram, Linkedin, Mastodon, Medium, Pinterest, Reddit, Slack, Slideshare, Snapchat, Soundcloud, StackOverflow, Telegram, Tumblr, Twitter, Vimeo, Youtube.
 
-Example:
+example:
 
 ```javascript
 social: [
@@ -227,7 +227,7 @@ The Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sa
 If you want to use other typefaces, you will have to modify the `fonts` setting in the config.js.  
 You will also have to edit the `src/gatsby-plugin-theme-ui/index.js` file to assign your fonts as `heading` or `body`.
 
-Examples:
+examples:
 
 If you want to use system fonts :
 
