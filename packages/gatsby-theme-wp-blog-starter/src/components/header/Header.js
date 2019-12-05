@@ -9,6 +9,7 @@ import SiteBranding from './SiteBranding'
 import Headroom from 'react-headroom'
 import Search from 'gatsby-theme-algolia/src/components/Search'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import SearchForm from '../search/SearchForm'
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
@@ -39,7 +40,7 @@ const Header = () => {
       <Headroom>
         <StyledHeader className="header">
           <Container className="container">
-            {search === 'algolia' && (
+            {search && (
               <Box
                 sx={{
                   width: [`100%`, `100%`, `33%`],
@@ -47,7 +48,11 @@ const Header = () => {
                   justifyContent: [`center`, `center`, `flex-start`],
                 }}
               >
-                <Search indices={searchIndices} />
+                {search === 'algolia' ? (
+                  <Search indices={searchIndices} />
+                ) : (
+                  <SearchForm />
+                )}
               </Box>
             )}
             <Box
