@@ -65,30 +65,26 @@ const config = {
 
 #### Options
 
-**wordPressUrl** (required)
-
+**wordPressUrl** (required)  
 Provide a url to your WordPress website.
 
 ---
 
-**uploadsPath** (optional)
-
+**uploadsPath** (optional)  
 `(default: wp-content/uploads)`
 
 A relative path to your uploads directory. `wp-content/uploads` is default for any WordPress installation. So unless you redefined the `UPLOADS` constant on your WordPress site, you don't have to change it.
 
 ---
 
-**postsPrefix** (optional)
-
+**postsPrefix** (optional)  
 `(default: "")`
 
 The prefix for the posts. If you change it, make sure to set the permalinks structure on your WordPress site accordingly.
 
 ---
 
-**postsPath** (optional)
-
+**postsPath** (optional)  
 `(default: "")`
 
 This is an important setting. It should be left empty if your WordPress homepage displays your latest posts. This corresponds to the default in Settings > Reading > Your homepage displays.
@@ -102,8 +98,7 @@ postsPath: "blog"
 
 ---
 
-**paginationPrefix** (optional)
-
+**paginationPrefix** (optional)  
 `(default: 'page')`
 
 Prefix for paginated content.
@@ -111,24 +106,22 @@ You should not modify it unless you changed this on your WordPress site.
 
 ---
 
-**postsPerPage** (optional)
-
+**postsPerPage** (optional)  
 `(type: Integer, default: 10)`
 
 The number of posts per archive page.
 
 ---
 
-**addComments** (optional)
-
+**addComments** (optional)  
 `(type: Boolean, default: true)`
 
-Whether comments funcionality should be activated, this is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".
+Whether comments funcionality should be activated, this is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".  
 Please note that we only support two levels of comments nesting.
 
 ---
 
-**menuName** (optional)
+**menuName** (optional)  
 `(type: String, default: "main")`
 
 The Ginger theme comes with one menu location, in the slide-in sidebar. You can use any of the menus that you had created on your WordPress site. Just paste the name that you had given to your WordPress menu here.
@@ -141,39 +134,50 @@ menuName: "Main Menu"
 
 ---
 
-**_siteUrl_** (obligatory for a production website)
+**gingerWidgets** (optional)  
+`(type: Array, default: ['SocialFollow', 'RecentPosts', 'Categories', 'Tags'])`
+
+The Ginger theme comes with one widget area in dthe slide-in sidebar below the navigation menu.
+There are 4 widgets available: **SocialFollow**, **RecentPosts**, **Categories** and **Tags.**.  
+The **SocialFollow** widget display links to your social profiles (see [`social setting`](#social))
+
+example:
+
+```javascript
+menuName: "Main Menu"
+```
+
+---
+
+**_siteUrl_** (obligatory for a production website)  
 `(type: Url, default: "https://example.com")`
 
 You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production you should provide the url of your destination site
 
 ---
 
-**title** (obligatory for a production website)
-
+**title** (obligatory for a production website)  
 `(type: Url, default: "Blog Title Placeholder")`
 
 The title of your website. Please note that Ginger theme uses the data fetched from WordPress (Settings > General > Site Title).
 
 ---
 
-**author** (optional)
-
+**author** (optional)  
 `(type: Url, default: "Name Placeholder")`
 
-The author of the website
+The author of the website.
 
 ---
 
-**description** (obligatory for a production website)
-
+**description** (obligatory for a production website)  
 `(type: Url, default: "Description Placeholder")`
 
 The description of your website. Please note that Ginger theme uses the data fetched from WordPress (Settings > General > Tagline).
 
 ---
 
-**social** (optional)
-
+**social** (optional) <a name="social"></a>  
 `(type: Array, default: social: [{name:`twitter`, url:`https:twitter.com/gatsbyjs`}])`
 
 You can list your social profiles here. They will be displayed in the SocialFollows widget.
@@ -207,8 +211,7 @@ social: []
 
 ---
 
-**twitterSummaryCardImage**
-
+**twitterSummaryCardImage**  
 `(default: Gatsby_Monogram.png)`
 
 When sharing your content on Twitter, articles will use their featured image for the Twitter card.
@@ -216,13 +219,13 @@ Other pages will use a common twitterSummaryCardImage. Please make sure to place
 
 ---
 
-**fonts**
-
-`(type: Array, default: ["abril fatface", "fira sans"])`
+**fonts**  
+`(type: Array, default: ["Abril Fatface", "Fira Sans"])`
 
 Here you decide which fonts should be installed.  
-The Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sans** for the body text. Both of them are Google fonts.
-If you want to use other typefaces, you will have to modify the `fonts` setting in the config.js. You will also have to edit the `src/gatsby-plugin-theme-ui/index.js` file to assign your fonts as `heading` or `body`.
+The Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sans** for the body text. Both of them are Google fonts.  
+If you want to use other typefaces, you will have to modify the `fonts` setting in the config.js.  
+You will also have to edit the `src/gatsby-plugin-theme-ui/index.js` file to assign your fonts as `heading` or `body`.
 
 Examples:
 
@@ -264,11 +267,12 @@ fontWeights: {
 },
 ```
 
-Please note that the font family names are case sensitive. You can choose font variants that you want to install.
+Please note that the font family names are case sensitive.  
+You can choose font variants that you want to install.
 
 ---
 
-**gaTrackingId** (optional)
+**gaTrackingId** (optional)  
 `(default: 0)`
 
 ---
@@ -277,32 +281,28 @@ Your google analytics UA code. Set to 0 to disable Google Analytics.
 
 ---
 
-**googleTagManagerId** (optional)
-
+**googleTagManagerId** (optional)  
 `(default: 0)`
 
 Your google Tag Mangager Id. Set to 0 to disable this funcionality.
 
 ---
 
-**addSitemap** (optional)
-
+**addSitemap** (optional)  
 `(type: boolean, default: false)`
 
 Whether you want to create a site map. If set to `true`, please make sure that you provide your production gatsby website url in the SiteUrl option.
 
 ---
 
-**siteMapOptions** (optional)
-
+**siteMapOptions** (optional)  
 `(type: Object, default: {})`
 
 These options are passed to the [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) options so please refer to [gatsby-plugin-sitemap options](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/#options) for the details.
 
 ---
 
-**useAlgoliaSearch** (optional, experimental)
-
+**useAlgoliaSearch** (optional, experimental)  
 `(default: false)`
 
 If you want to use Algolia with your project, make sure to include `.env` file in the project root:
