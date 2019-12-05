@@ -2,7 +2,6 @@
 import { jsx, Box, Styled, Flex } from 'theme-ui'
 import { Link } from 'gatsby'
 import normalize from 'normalize-path'
-import moment from 'moment/moment'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 
 const Stats = ({ postType, query }) => (
@@ -22,7 +21,7 @@ const SearchResults = ({ query, pages, posts }) => {
       className="search-results"
       sx={{
         ...showResults,
-        variant: `search.results`,
+        variant: `search.resultsBasic`,
       }}
     >
       <header>

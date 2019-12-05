@@ -1,5 +1,59 @@
 import { lighten } from '@theme-ui/color'
 import { a } from './typo.js'
+
+const resultStyles = {
+  bg: lighten(`background`, 0.05),
+  overflow: `scroll`,
+  position: `absolute`,
+  left: 0,
+  top: [65, 65, 88],
+  width: [`100%`, `100%`, `600px`],
+  zIndex: 2,
+  color: `text`,
+  bg: lighten(`background`, 0.05),
+
+  '.results': {
+    fontWeight: `body`,
+    py: `xxs`,
+    px: `l`,
+    fontSize: `s`,
+    ul: {
+      px: 0,
+    },
+
+    a: {
+      ...a,
+      color: `text`,
+      '&:hover': {
+        color: `primary`,
+      },
+    },
+  },
+
+  boxShadow: `default`,
+  borderRadius: `0 0 0 5px`,
+  header: {
+    px: `l`,
+    py: `xs`,
+    bg: `searchResultsHeaderBg`,
+    color: `white`,
+    fontWeight: 300,
+    fontSize: `s`,
+    '.stats': {
+      fontStyle: `italic`,
+    },
+    h3: {
+      mt: 0,
+      mb: `xxs`,
+      color: `text`,
+    },
+  },
+  mark: {
+    bg: `highlightColor`,
+    color: `text`,
+    p: `2px`,
+  },
+}
 export const search = {
   width: `100%`,
   mb: [`-15px`, 0],
@@ -58,69 +112,42 @@ export const search = {
   },
   //searchResults
   results: {
-    maxHeight: [`100vh`, `100vh`, `60vh`],
-    bg: lighten(`background`, 0.05),
-    overflow: `scroll`,
-    position: `absolute`,
-    left: 0,
+    ...resultStyles,
     top: [65, 65, 88],
-    width: [`100%`, `100%`, `600px`],
-    zIndex: 2,
-    color: `text`,
+    maxHeight: [`100vh`, `100vh`, `60vh`],
+
     '.headroom--pinned &': {
       top: 68,
     },
-    '.results': {
-      fontWeight: `body`,
-      py: `xxs`,
-      px: `l`,
-      fontSize: `s`,
-      ul: {
-        px: 0,
-      },
-      li: {
-        listStyleType: `none`,
-        borderBottom: t => `1px solid ${t.colors.grey}`,
-        pt: `s`,
-        pb: `m`,
-        '&:last-child': {
-          border: `none`,
-        },
-      },
-      a: {
-        ...a,
-        color: `text`,
-        '&:hover': {
-          color: `primary`,
-        },
-      },
-      h4: {
-        mb: `xxs`,
+    li: {
+      listStyleType: `none`,
+      borderBottom: t => `1px solid ${t.colors.grey}`,
+      pt: `s`,
+      pb: `m`,
+      '&:last-child': {
+        border: `none`,
       },
     },
+    h4: {
+      mb: `xxs`,
+    },
+  },
+  resultsBasic: {
+    ...resultStyles,
+    top: [117, 117, 72],
+    maxHeight: [`100vh`, `100vh`, `60vh`],
 
-    boxShadow: `default`,
-    borderRadius: `0 0 0 5px`,
-    header: {
-      px: `l`,
-      py: `xs`,
-      bg: `searchResultsHeaderBg`,
-      color: `white`,
-      fontWeight: 300,
-      fontSize: `s`,
-      '.stats': {
-        fontStyle: `italic`,
-      },
-      h3: {
-        mt: 0,
-        mb: `xxs`,
-        color: `text`,
-      },
+    '.headroom--pinned &': {
+      top: 63,
     },
-    mark: {
-      bg: `highlightColor`,
-      color: `text`,
-      p: `2px`,
+    h4: {
+      borderBottom: t => `1px solid ${t.colors.grey}`,
+      mb: 0,
+      pt: `s`,
+      pb: `m`,
+    },
+    '.results div:last-child h4': {
+      border: `none`,
     },
   },
 }
