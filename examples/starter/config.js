@@ -1,17 +1,18 @@
 const config = {
   wordPressUrl: `https://gatsby-test-2.alexaspalato.website/`,
-  // postsPrefix: `posts`,
-  /* use false or slug, for example 'home' */
-  // staticHomePagePath: `home`,
-  /* make sure to leave it as empty string if staticHomePage is false.
-        Otherwise make sur to set a path, for example: 'blog' */
-  // postsPath: `blog`,
-  // // paginationPrefix: `page`,
+  // uploadsPath: `wp-content/uploads`,
+  // postsPrefix: ``,
+  // postsPath: ``,
+  // paginationPrefix: `page`,
   postsPerPage: 5,
   // disqus: `webstantly`,
   menuName: "main menu",
-  // addComments: false,
-  search: "basic",
+  // addComments: 1,
+  // gaTrackingId: 0,
+  // googleTagManagerId: 0,
+  // addSiteMap: false,
+  // siteMapOptions: {},
+  // search: "basic",
   widgetAreas: {
     slideMenu: {
       widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],
@@ -20,12 +21,30 @@ const config = {
       widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],
       position: "right",
       location: {
-        archive: true,
+        archive: false,
         single: false,
         pages: ["typography"],
       },
     },
   },
+
+  // siteUrl: "https://example.com",
+  // title: `Blog Title Placeholder`,
+  // author: `Name Placeholder`,
+  // description: `Description placeholder`,
+  /* social: [
+    {
+      name: `twitter`,
+      url: `https://twitter.com/gatsbyjs`,
+    },
+  ], */
+  // twitterSummaryCardImage: `Gatsby_Monogram.png`,
+  // fonts: ["abril fatface", "fira sans"],
+  // gaTrackingId: 0,
+  // googleTagManagerId: 0,
+  // addSiteMap: false,
+  // siteMapOptions: {},
+  // useAlgoliaSearch: false,
 }
 
 module.exports = config
