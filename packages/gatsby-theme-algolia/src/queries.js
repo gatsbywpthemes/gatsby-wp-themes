@@ -1,6 +1,6 @@
 const postQuery = `{
   wp {
-    posts {
+    posts(first: 1000) {
       nodes {
         title
         content
@@ -28,7 +28,7 @@ const postQuery = `{
 
 const pageQuery = `{
 wp {
-    pages {
+    pages(first: 1000) {
       nodes {
         content
         title

@@ -1,4 +1,7 @@
 const config = {
+  // wordPressUrl: `http://alexandraspalato.com/gatsby`,
+  // wordPressUrl: `http://gatsbydemo.wst/`,
+  // wordPressUrl: `https://gatsby-theme-demo.alexaspalato.website/`,
   wordPressUrl: `https://gatsby-test-2.alexaspalato.website/`,
   // uploadsPath: `wp-content/uploads`,
   // postsPrefix: ``,
@@ -12,7 +15,7 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
-  // search: "basic",
+  // search: "algolia",
   widgetAreas: {
     slideMenu: {
       widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],

@@ -9,14 +9,14 @@ import SearchResults from './SearchResults'
 const POSTS_AND_PAGES_QUERY = graphql`
   query PostsAndPages {
     wp {
-      posts {
+      posts(first: 1000) {
         nodes {
           title
           content
           slug
         }
       }
-      pages {
+      pages(first: 1000) {
         nodes {
           title
           content
@@ -47,13 +47,13 @@ const SearchForm = () => {
 
     const postsResults = posts.filter(
       post =>
-        post.title.toLowerCase().includes(query) ||
-        post.content.toLowerCase().includes(query)
+        (post.title && post.title.toLowerCase().includes(query)) ||
+        (post.content && post.content.toLowerCase().includes(query))
     )
     const pagesResults = pages.filter(
       page =>
-        page.title.toLowerCase().includes(query) ||
-        page.content.toLowerCase().includes(query)
+        (page.title && page.title.toLowerCase().includes(query)) ||
+        (page.content && page.content.toLowerCase().includes(query))
     )
 
     return setPostsResults(postsResults), setPagesResults(pagesResults)
@@ -79,6 +79,7 @@ const SearchForm = () => {
             value={value}
             onChange={handleChange}
             placeholder="search here..."
+            sx={{ mb: [0, 0, `15px`] }}
           />
         </Box>
         {value.length > 0 && (
@@ -88,7 +89,11 @@ const SearchForm = () => {
             color="white"
             sx={{
               p: 0,
-              svg: { stroke: `searchColor`, ml: `-12px`, mb: [`xxs`, 0, 0] },
+              svg: {
+                stroke: `searchColor`,
+                ml: `-12px`,
+                mb: [`xxs`, `xs`, `xs`],
+              },
             }}
             onClick={() => setValue('')}
           />

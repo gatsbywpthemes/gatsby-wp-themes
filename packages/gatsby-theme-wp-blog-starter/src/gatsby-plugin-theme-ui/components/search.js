@@ -134,11 +134,11 @@ export const search = {
   },
   resultsBasic: {
     ...resultStyles,
-    top: [117, 117, 72],
+    top: [123, 123, 80],
     maxHeight: [`100vh`, `100vh`, `60vh`],
 
     '.headroom--pinned &': {
-      top: 63,
+      top: 71,
     },
     h4: {
       borderBottom: t => `1px solid ${t.colors.grey}`,
