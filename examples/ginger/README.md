@@ -28,7 +28,7 @@ Our themes are compatible with Contact Form 7 WordPress plugin. If you want to h
 
 ### Configure your Gatsby site - config.js
 
-The default configuration of your gatsby site is as follows
+The default: configuration of your gatsby site is as follows
 
 ```javascript
 const config = {
@@ -69,69 +69,188 @@ required, provide a url to your WordPress website
 
 **uploadsPath** (optional)
 
-`(default wp-content/uploads)`
+`(default: wp-content/uploads)`
 
-A relative path to your uploads directory. This is a default value for any WordPress installation. So unless you redefined the `UPLOADS` constant on your WordPress site, you don't have to change it.
+A relative path to your uploads directory. This is a default: value for any WordPress installation. So unless you redefined the `UPLOADS` constant on your WordPress site, you don't have to change it.
+
+---
 
 **postsPrefix** (optional)
 
-`(default "")`
+`(default: "")`
 
 The prefix for the posts. If you change it, make sure to set the permalinks structure on your WordPress site accordingly.
 
+---
+
 **postsPath** (optional)
 
-`(default "")`
+`(default: "")`
 
-This is an important settings. It should be left empty if your WordPress homepage displays your latest posts. This corresponds to the default setting in Settings > Reading > Your homepage displays.
+This is an important settings. It should be left empty if your WordPress homepage displays your latest posts. This corresponds to the default: setting in Settings > Reading > Your homepage displays.
 If you choose a static page and set a Posts page, you should use the Posts page slug as your postsPath.
 
-Example postsPath: 'blog'
+Example
+
+```javascript
+postsPath: "blog"
+```
+
+---
 
 **paginationPrefix** (optional)
 
-`(default 'page')`
+`(default: 'page')`
 
 The page number prefix for paginated content.
 You should not modify it unless you changed this on your WordPress site.
 
+---
+
 **postsPerPage** (optional)
 
-`(type Integer, default 10)`
+`(type: Integer, default: 10)`
 
 This setting will disappear - we will retrieve this value from your WordPress settings.
 The number of posts per archive page.
 
+---
+
 **addComments** (optional)
 
-`(type Boolean, default true)`
+`(type: Boolean, default: true)`
 
 Whether comments funcionnality should be activated. This is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments" on the WordPress side.
 Please note, that we only support two levels of comments nesting.
 
+---
+
 **menuName** (optional)
-`(type String, default "main")`
+`(type: String, default: "main")`
 
 Ginger theme comes with one menu location, in the slide-in sidebar. You can use any of the menus that you had created on your WordPress site. Just paste the name that you had given to your WordPress menu here.
 
 example: `menuName: "Main Menu"`
 
+---
+
+**_siteUrl_** (obligatory for a production website)
+`(type: Url, default: "https://example.com")`
+
+You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production you should provide the url of your destination site
+
+---
+
+**title** (obligatory for a production website)
+
+`(type: Url, default: "Blog Title Placeholder")`
+
+The title of your website. Please note that Ginger theme uses the data fetched from WordPress (Settings > General > Site Title)
+
+---
+
+**author** (optional)
+
+`(type: Url, default: "Name Placeholder")`
+
+The author of the website
+
+---
+
+**description** (obligatory for a production website)
+
+`(type: Url, default: "Description Placeholder")`
+
+The description of your website. Please note that Ginger theme uses the data fetched from WordPress (Settings > General > Tagline)
+
+---
+
+**social** (optional)
+
+`(type: Array, default: social: [{name:`twitter`, url:`https:twitter.com/gatsbyjs`}])`
+
+You can list your social profiles here. They will be displayed in the SocialFollows widget.
+
+The supported profiles are: Behance, Codepen, Dev, Discord, Dribbble, Facebook, Github, Gitlab, Instagram, Linkedin, Mastodon, Medium, Pinterest, Reddit, Slack, Slideshare, Snapchat,Soundcloud, StackOverflow, Telegram, Tumblr, Twitter, Vimeo, Youtube.
+
+Example:
+
+```javascript
+social: [
+  {
+    name: `twitter`,
+    url: `https://twitter.com/gatsbyjs`,
+  },
+  {
+    name: `GitHub`,
+    url: `https://github.com/gatsbyjs`,
+  },
+  {
+    name: `Discord`,
+    url: `https://gatsby.dev/discord`
+  }
+],
+```
+
+And if you have no social profiles:
+
+```javascript
+social: []
+```
+
+---
+
+**twitterSummaryCardImage**
+`Gatsby_Monogram.png`,
+
+---
+
+**fonts**
+fonts: ["abril fatface", "fira sans"],
+
+---
+
 **gaTrackingId** (optional)
-`(default 0)`
+`(default: 0)`
+
+---
 
 Your google analytics UA code. Set to 0 to disable Google Analytics.
 
+---
+
 **googleTagManagerId** (optional)
-`(default 0)`
+
+`(default: 0)`
 
 Your google Tag Mangager Id. Set to 0 to disable this funcionnality.
 
+---
+
 **addSitemap** (optional)
-`(Type boolean, default false)`
+
+`(type: boolean, default: false)`
 
 Whether you want to create a site map. If set to `true`, please make sure that you provide your production gatsby website url in the SiteUrl option.
 
+---
+
 **siteMapOptions** (optional)
-`(Type Object, default {})`
+
+`(type: Object, default: {})`
 
 These options are passed to the [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) options so please refer to [gatsby-plugin-sitemap options](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/#options) for the details.
+
+---
+
+**useAlgoliaSearch** (optional, experimental)
+
+`(default: false)`
+
+If you want to use Algolia with your project, make sure to include `.env` file in the project root:
+
+```
+GATSBY_ALGOLIA_APP_ID=your-app-id
+GATSBY_ALGOLIA_SEARCH_KEY=your-alogolia-search-key
+ALGOLIA_ADMIN_KEY=your-algolia-admin-key
+```
