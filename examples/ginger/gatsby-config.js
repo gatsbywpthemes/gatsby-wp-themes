@@ -9,11 +9,12 @@ const {
   description,
   siteUrl,
   social,
+  pathPrefix,
   ...options
 } = require("./config")
 
 module.exports = {
-  pathPrefix: options.pathPrefix,
+  pathPrefix: pathPrefix,
   siteMetadata: {
     title,
     description,
@@ -27,6 +28,7 @@ module.exports = {
       resolve: `gatsby-theme-wp-ginger`,
       options: {
         ...options,
+        pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,
         /* the file should be placed in static folder, set the file name,
         this image wil be used in a summary format - it should be square and minimum 144px x 144px */
 
