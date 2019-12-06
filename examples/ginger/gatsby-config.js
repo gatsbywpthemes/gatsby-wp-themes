@@ -13,6 +13,7 @@ const {
 } = require("./config")
 
 module.exports = {
+  pathPrefix: options.pathPrefix,
   siteMetadata: {
     title,
     description,

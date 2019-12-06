@@ -1,25 +1,34 @@
 const config = {
   wordPressUrl: `https://wp-pehaa.com/demo-pehaa1`,
   // uploadsPath: `wp-content/uploads`,
+  pathPrefix: "/demo",
   // postsPrefix: ``,
   // postsPath: `blog`,
   // paginationPrefix: `page`,
   // postsPerPage: 10,
   // addComments: true,
-  menuName: "my test menu",
+  menuName: "main",
   // gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   // siteUrl: "https://example.com",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
   // description: `Description placeholder`,
-  /* social: [
+  social: [
     {
       name: `twitter`,
       url: `https://twitter.com/gatsbyjs`,
     },
-  ], */
+    {
+      name: `GitHub`,
+      url: `https://github.com/gatsbyjs`,
+    },
+    {
+      name: `Discord`,
+      url: `https://gatsby.dev/discord`,
+    },
+  ],
   // twitterSummaryCardImage: `Gatsby_Monogram.png`,
-  // fonts: ["abril fatface", "fira sans"],
+  fonts: ["Abril Fatface", "Fira Sans"],
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,

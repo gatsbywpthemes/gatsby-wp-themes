@@ -9,7 +9,7 @@ export default merge(
     },
     layer: {
       slideMenu: {
-        bg: "#076666",
+        //bg: "red",
       },
     },
     sizes: {
@@ -17,11 +17,12 @@ export default merge(
     },
 
     fonts: {
-      /*  heading: "Anton, sans-serif",
-      body: "Arya, sans-serif", */
+      /* heading: "Alfa Slab One, serif",
+      body: "ABeeZee, sans-serif", */
     },
     fontWeights: {
-      /*  body: "400", */
+      /*    heading: 400,
+      body: 4300, */
     },
   },
   { arrayMerge: overwriteMerge }

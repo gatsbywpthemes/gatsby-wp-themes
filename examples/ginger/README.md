@@ -116,8 +116,9 @@ The number of posts per archive page.
 **addComments** (optional)  
 `(type: Boolean, default: true)`
 
-Whether comments funcionality should be activated, this is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".  
-Please note that we only support two levels of comments nesting.
+Whether comments funcionality should be activated, this is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".
+
+> Please note that we only support two levels of comments nesting.
 
 ---
 
@@ -267,8 +268,8 @@ fontWeights: {
 },
 ```
 
-Please note that the font family names are case sensitive.  
-You can choose font variants that you want to install.
+> Please note that the font family names are case sensitive.  
+> You can also choose font variants that you want to install.
 
 ---
 

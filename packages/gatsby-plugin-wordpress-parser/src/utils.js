@@ -1,8 +1,8 @@
-const { createRemoteFileNode } = require('gatsby-source-filesystem')
+const { createRemoteFileNode } = require("gatsby-source-filesystem")
 const { fluid } = require(`gatsby-plugin-sharp`)
 const path = require(`path`)
 const fs = require(`fs-extra`)
-const URIParser = require('urijs')
+const URIParser = require("urijs")
 
 const downloadMediaFile = async ({
   url,
@@ -10,7 +10,7 @@ const downloadMediaFile = async ({
   store,
   createNode,
   createNodeId,
-  httpHeaders = {},
+  httpHeaders = {}
 }) => {
   let fileNode = false
   try {
@@ -20,10 +20,10 @@ const downloadMediaFile = async ({
       cache,
       createNode,
       createNodeId,
-      httpHeaders,
+      httpHeaders
     })
   } catch (e) {
-    console.log('FAILED to download ' + url)
+    console.log("FAILED to download " + url)
   }
 
   return fileNode
@@ -34,21 +34,21 @@ const convertFileNodeToFluid = async ({
   fileNode,
   imageOptions,
   reporter,
-  cache,
+  cache
 }) => {
   let fluidResult = await fluid({
     file: fileNode,
     args: imageOptions,
     reporter,
-    cache,
+    cache
   })
 
   if (generateWebp) {
     const fluidWebp = await fluid({
       file: fileNode,
-      args: { ...imageOptions, toFormat: 'webp' },
+      args: { ...imageOptions, toFormat: "webp" },
       reporter,
-      cache,
+      cache
     })
 
     fluidResult.srcSetWebp = fluidWebp.srcSet
@@ -90,13 +90,13 @@ const checkUrl = ({ url, wordPressUrl, uploadsUrl }) => {
   if (!url) {
     return false
   }
-  let urlNoProtocol = url.replace(/^https?:/i, '')
-  let uploadsUrlNoProtocol = uploadsUrl.replace(/^https?:/i, '')
+  let urlNoProtocol = url.replace(/^https?:/i, "")
+  let uploadsUrlNoProtocol = uploadsUrl.replace(/^https?:/i, "")
   // gets relative uploads url
   let uploadsUrlRelative = new URIParser(uploadsUrl).path()
   // handling relative url
   const urlParsed = new URIParser(url)
-  const isUrlRelative = urlParsed.is('relative')
+  const isUrlRelative = urlParsed.is("relative")
 
   // if not relative root url or not matches uploads dir
   if (
