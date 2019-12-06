@@ -37,7 +37,6 @@ const replaceA = (domNode, { wordPressUrl, uploadsUrl, parserOptions }) => {
     return false
   }
   // check if it's an internal link, links to uploads dir are excluded
-  console.log(domNode)
   const url = checkUrl(elementUrl, wordPressUrl, uploadsUrl)
   return (
     !!url && (
