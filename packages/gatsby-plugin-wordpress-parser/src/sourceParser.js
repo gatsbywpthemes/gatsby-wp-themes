@@ -96,6 +96,7 @@ module.exports = async function sourceParser(
             const fluidResult = await convertFileNodeToFluid({
               generateWebp,
               fileNode,
+              imageOptions,
               reporter,
               cache
             })
@@ -133,7 +134,7 @@ module.exports = async function sourceParser(
     })
     const details = getNodeAndSavePathDependency(fileNode.id, context.path)
     const staticFile = copyToStatic({ file: fileNode, details, pathPrefix })
-    console.log(`downloaded file ${url}`)
+    console.log(`downloaded file ${url} to ${staticFile}`)
     return `background-image:url(${staticFile})`
   }
 

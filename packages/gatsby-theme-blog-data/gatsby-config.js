@@ -13,6 +13,7 @@ module.exports = options => {
     googleTagManagerId,
     addSiteMap,
     siteMapOptions,
+    pathPrefix,
   } = mergedOptions
   const url = slashes(wordPressUrl)
 
@@ -44,6 +45,7 @@ module.exports = options => {
         uploadsUrl: `${url}/${uploadsPath}`,
         processPostTypes: ['Page', 'Post'],
         graphqlTypeName: 'WP',
+        pathPrefix,
       },
     },
   ]
