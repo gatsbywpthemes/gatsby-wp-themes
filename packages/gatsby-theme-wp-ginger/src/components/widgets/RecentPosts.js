@@ -36,7 +36,6 @@ const RECENT_POSTS_QUERY = graphql`
 
 const RecentPosts = () => {
   const { postsPrefix } = React.useContext(themeOptions)
-  console.log(postsPrefix)
   const data = useStaticQuery(RECENT_POSTS_QUERY)
   const { posts } = data.wp
   return (

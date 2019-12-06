@@ -4,7 +4,6 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import { Link } from 'gatsby'
 const Author = ({ post }) => {
-  console.log('post', post)
   return (
     <>
       {post.author && (

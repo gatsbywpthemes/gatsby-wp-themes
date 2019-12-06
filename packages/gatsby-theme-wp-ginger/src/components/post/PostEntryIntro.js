@@ -18,7 +18,6 @@ const PostEntryIntro = ({
   location = 'archive',
   variant = 'blog',
 }) => {
-  console.log(post)
   return (
     <div
       sx={card[variant]}

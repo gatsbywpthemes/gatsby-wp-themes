@@ -18,7 +18,6 @@ export const globalStyles = theme => {
     bodyWeight: theme.fontWeights.body,
     boldWeight: theme.fontWeights.bold,
   })
-  console.log(typography.toString())
   return css`
     body {
       margin: 0;

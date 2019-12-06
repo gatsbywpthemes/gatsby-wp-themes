@@ -8,7 +8,6 @@ const Category = ({ category, ctx }) => {
   const { name, posts, slug } = category
   const { pageNumber } = ctx
   const url = `category/${slug}/`
-  console.log(posts)
   return (
     <Layout>
       <SEO

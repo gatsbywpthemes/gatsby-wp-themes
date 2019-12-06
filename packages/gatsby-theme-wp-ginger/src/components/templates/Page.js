@@ -8,7 +8,6 @@ import pageStyles from '../../styles/page'
 const Page = ({ page }) => {
   const { content } = page
   const ogType = page.isFrontPage ? 'website' : 'article'
-  console.log(pageStyles)
   return (
     <Layout useContainer={false}>
       <SEO

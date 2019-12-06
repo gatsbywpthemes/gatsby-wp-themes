@@ -9,7 +9,6 @@ const Posts = ({ posts, ctx }) => {
   const { pageNumber } = ctx
   const { postsPath } = useThemeOptions()
   const ogType = slashes(postsPath) === '' ? 'website' : 'object'
-  console.log(posts)
   return (
     <Layout>
       <SEO
