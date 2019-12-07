@@ -48,13 +48,4 @@ export const article = {
       margin: 'auto',
     },
   },
-  media: {
-    overflow: 'hidden',
-    '& img': {
-      transition: 'transform 1.6s 0.2s!important',
-    },
-    '&:hover img': {
-      transform: 'scale(1.1)',
-    },
-  },
 }

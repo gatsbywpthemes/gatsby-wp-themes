@@ -5,6 +5,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Image from '../images/Image'
 import normalize from 'normalize-path'
+import { media } from '../../styles/card'
 
 const WithLink = ({ uri, children, postsPrefix, location }) =>
   location === 'single' ? (
@@ -13,9 +14,7 @@ const WithLink = ({ uri, children, postsPrefix, location }) =>
     <Link
       to={normalize(`/${postsPrefix}/${uri}`)}
       aria-label="View the entire post"
-      sx={{
-        variant: 'article.media',
-      }}
+      sx={media}
     >
       {children}
     </Link>

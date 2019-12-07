@@ -53,4 +53,8 @@ export default {
   '.has-background': {
     p: '1.5rem',
   },
+  '.wp-block-media-text .wp-block-media-text__content': {
+    pt: ['1.5rem', 0, 0],
+    px: [0, '8%'],
+  },
 }

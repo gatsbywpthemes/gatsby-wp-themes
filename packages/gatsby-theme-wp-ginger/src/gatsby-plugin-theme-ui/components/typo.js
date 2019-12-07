@@ -112,21 +112,21 @@ export const special = {
 export const baseTypo = {
   a,
   h1: {
-    fontSize: ['xl', 'xl', 'xxl'],
+    fontSize: ['xl', 'xsl', 'Big'],
   },
   h2: {
-    fontSize: ['l', 'l', 'xl'],
+    fontSize: ['l', 'xl', 'xxl'],
   },
   h3: {
-    fontSize: ['m', 'm', 'l'],
+    fontSize: ['m', 'x', 'xl'],
   },
   h4: {
-    fontSize: ['s', 's', 'm'],
+    fontSize: ['s', 'm', 'l'],
   },
   h5: {
-    fontSize: ['xs', 'xs', 's'],
+    fontSize: ['xs', 's', 'm'],
   },
   h6: {
-    fontSize: ['xxs', 'xxs', 'xs'],
+    fontSize: ['xxs', 'xs', 's'],
   },
 }

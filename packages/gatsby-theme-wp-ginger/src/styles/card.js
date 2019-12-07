@@ -15,6 +15,9 @@ const sharedCardStyles = {
 export const card = {
   blog: {
     ...sharedCardStyles,
+    h2: {
+      fontSize: ['l', 'xl', 'xl'],
+    },
     m: [`0 auto 3rem`, `0 auto 6rem`],
     '* + &': {
       mb: 0,
@@ -28,6 +31,9 @@ export const card = {
     bg: 'transparent',
     boxShadow: '0 40px 60px rgba(0,0,0,0.4)',
     position: 'relative',
+    h1: {
+      fontSize: ['l', 'xl', 'xxl'],
+    },
     '&:before, &:after': {
       content: '""',
       position: 'absolute',
@@ -48,5 +54,15 @@ export const card = {
       opacity: 0.75,
       zIndex: -1,
     },
+  },
+}
+
+export const media = {
+  overflow: 'hidden',
+  '& img': {
+    transition: 'transform 1.6s 0.2s!important',
+  },
+  '&:hover img': {
+    transform: 'scale(1.1)',
   },
 }

@@ -1,9 +1,9 @@
 const config = {
   wordPressUrl: `https://wp-pehaa.com/demo-pehaa1`,
   // uploadsPath: `wp-content/uploads`,
-  pathPrefix: "/demo",
+  //pathPrefix: "/demo",
   // postsPrefix: ``,
-  // postsPath: `blog`,
+  postsPath: `blog`,
   // paginationPrefix: `page`,
   // postsPerPage: 10,
   // addComments: true,

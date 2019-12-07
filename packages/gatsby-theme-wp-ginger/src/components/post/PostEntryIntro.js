@@ -21,9 +21,9 @@ const PostEntryIntro = ({
   return (
     <div
       sx={card[variant]}
-      data-sal={location === 'single' ? 'fade' : 'none'}
+      /*       data-sal={location === 'single' ? 'fade' : 'none'}
       data-sal-duration={location === 'single' ? '1000' : '0'}
-      data-sal-easing="ease"
+      data-sal-easing="ease" */
     >
       {location === 'single' && (
         <SocialShare
