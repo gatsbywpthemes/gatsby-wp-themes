@@ -1,4 +1,3 @@
-export * from './pagination'
 export * from './form'
 export * from './search'
 export * from './layer'

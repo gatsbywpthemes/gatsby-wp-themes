@@ -8,6 +8,7 @@ import Widgets from './widgets/Widgets'
 import Search from 'gatsby-theme-algolia/src/components/Search'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import openMenuButton from '../styles/menuButton'
+import { slideMenu } from '../styles/slideSidebar'
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
@@ -54,7 +55,7 @@ const SlideSidebar = () => {
             responsive={false}
             onClickOutside={closeMenu}
             onEsc={closeMenu}
-            sx={{ variant: [`layer.slideMenu`], color: 'white' }}
+            sx={slideMenu}
           >
             <button
               aria-label="Close navigation menu"

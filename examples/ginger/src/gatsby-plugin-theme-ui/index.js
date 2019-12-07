@@ -5,7 +5,7 @@ export default merge(
   theme,
   {
     colors: {
-      primary: "teal",
+      //primary: "teal",
     },
     layer: {
       slideMenu: {

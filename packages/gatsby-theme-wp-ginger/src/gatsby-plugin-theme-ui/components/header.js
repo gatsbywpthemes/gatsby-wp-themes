@@ -18,6 +18,7 @@ export default {
     fontWeight: 'heading',
     fontSize: 'l',
     position: 'absolute',
+    top: 0,
     transformOrigin: '0 0',
     transform: [
       '',

@@ -1,6 +1,4 @@
 import {
-  pagination,
-  paginationLink,
   form,
   search,
   layer,
@@ -59,8 +57,6 @@ const theme = {
     fontFamily: 'body',
   }, */
   special,
-  pagination,
-  paginationLink,
   form,
   search,
   buttons,

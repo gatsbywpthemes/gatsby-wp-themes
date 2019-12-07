@@ -104,7 +104,7 @@ export const special = {
       ...specialSharedStyles,
     },
     '.page-title-value': {
-      fontSize: ['xl', 'Big', 'Big'],
+      fontSize: ['xl', 'Big'],
     },
   },
 }

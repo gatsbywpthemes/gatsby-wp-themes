@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import normalize from 'normalize-path'
+import { pagination, paginationLink } from '../styles/pagination'
 
 const renderPreviousLink = props => {
   const { pageNumber } = props.ctx
@@ -20,7 +21,7 @@ const renderPreviousLink = props => {
   return (
     <Link
       className="left"
-      sx={{ variant: `paginationLink`, fontSize: 'xs' }}
+      sx={{ ...paginationLink, fontSize: 'xs' }}
       to={previousLink}
     >
       <span>Previous</span>
@@ -39,7 +40,7 @@ const renderNextLink = props => {
     return (
       <Link
         className="right"
-        sx={{ variant: `paginationLink`, fontSize: 'xs' }}
+        sx={{ ...paginationLink, fontSize: 'xs' }}
         to={nextLink}
       >
         <span>Next</span>
@@ -58,7 +59,7 @@ const Pagination = ({ ctx, prefix = '' }) => {
     return ''
   }
   return (
-    <nav sx={{ variant: `pagination` }}>
+    <nav sx={pagination}>
       {renderPreviousLink({ ctx, prefix, paginationPrefix })}
       <span aria-current="page" className="page-numbers current">
         {pageNumber}

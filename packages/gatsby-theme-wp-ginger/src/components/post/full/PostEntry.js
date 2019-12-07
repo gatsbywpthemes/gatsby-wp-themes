@@ -9,6 +9,7 @@ import { FiChevronsDown } from 'react-icons/fi'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { article } from '../../../styles/article'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import Image from '../../images/Image'
 
 const PostEntry = ({ ctx, post }) => {
   const bgStyles = !!post.featuredImage
@@ -17,6 +18,7 @@ const PostEntry = ({ ctx, post }) => {
       }
     : {}
   const { addComments } = useThemeOptions()
+  console.log(post)
   return (
     <article>
       <Flex
@@ -29,13 +31,26 @@ const PostEntry = ({ ctx, post }) => {
         data-sal-duration="1000"
         data-sal-easing="ease"
       >
+        <div
+          className="featured-wrapper"
+          sx={{
+            display: 'none',
+            position: 'absolute',
+            zIndex: '-3',
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+          }}
+        >
+          <Image img={post.featuredImage} />
+        </div>
         <PostEntryIntro
           post={post}
           ctx={ctx}
           location="single"
           variant={'full'}
         />
-
         <button
           type="button"
           sx={{

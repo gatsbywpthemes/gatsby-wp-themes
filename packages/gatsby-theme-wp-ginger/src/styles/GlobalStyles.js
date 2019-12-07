@@ -100,5 +100,13 @@ export const globalStyles = theme => {
     pre {
       overflow-x: auto;
     }
+    @supports (object-fit: cover) {
+      .splash {
+        background-image: none !important;
+      }
+      .featured-wrapper {
+        display: block !important;
+      }
+    }
   `
 }
