@@ -104,11 +104,7 @@ const Menu = ({ menuName }) => {
           variant: [`menus.slideMenu`],
         }}
       >
-        <ul
-          sx={{ variant: 'special', color: 'white' }}
-          role="menu"
-          className="menuItemGroup"
-        >
+        <ul sx={{ variant: 'special' }} role="menu" className="menuItemGroup">
           {menuItems.nodes.map(menuItem => {
             if (menuItem.childItems.nodes.length) {
               return renderSubMenu(menuItem, wordPressUrl, postsPath)

@@ -6,6 +6,7 @@ import {
   fontSizes,
   fontWeights,
   lineHeights,
+  letterSpacings,
   special,
   baseTypo,
 } from './components'
@@ -15,6 +16,7 @@ import Footer from './components/footer'
 import Container from './components/container'
 import Layout from './components/layout'
 import Main from './components/main'
+import { colors } from './components/colors'
 
 const theme = {
   breakpoints: ['40em', '64em', '80em'],
@@ -22,20 +24,8 @@ const theme = {
   fontSizes,
   fontWeights,
   lineHeights,
-  colors: {
-    white: '#ffffff',
-    text: '#303030',
-    background: {
-      body: '#ffffff',
-      header: '#f5f5f5',
-      sidebar: '#076666',
-      footer: '#f5f5f5',
-      card: '#ffffff',
-      splash: '#076666',
-    },
-    primary: '#076666',
-    secondary: 'magenta',
-  },
+  letterSpacings,
+  colors,
   space: [0, 4, 8, 12, 16, 24, 32, 48, 64, 128, 256, 512],
   sizes: {
     header: ['72px', '96px', '96px'],
@@ -53,9 +43,11 @@ const theme = {
     },
   },
   layer,
-  /* global: {
-    fontFamily: 'body',
-  }, */
+  global: {
+    anchor: {
+      ...baseTypo.a,
+    },
+  },
   special,
   form,
   search,

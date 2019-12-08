@@ -7,8 +7,8 @@ export const share = {
     mx: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
-    bg: 'text',
-    color: 'white',
+    bg: 'cardColor',
+    color: 'backgrounds.card',
     borderRadius: '50%',
     svg: {
       width: '.75rem',
@@ -29,7 +29,10 @@ export const share = {
         px: 1,
       },
       '&>*': {
-        variant: 'special.link',
+        ':hover': {
+          color: 'primary',
+        },
+        variant: 'special.underlineOnHover',
         mx: 1,
         cursor: 'pointer',
       },
@@ -45,11 +48,12 @@ export const follow = {
     color: 'inherit',
     p: 2,
     mx: 1,
-    transition: '.6s',
+    transition: 'opacity .6s',
     '&:hover': { opacity: 0.6 },
   },
   svg: {
     width: '18px',
     height: '18px',
+    verticalAlign: 'middle',
   },
 }

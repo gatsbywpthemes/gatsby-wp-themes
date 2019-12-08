@@ -36,6 +36,7 @@ The default options are as follows:
 const config = {
   wordPressUrl: ``,
   uploadsPath: `wp-content/uploads`,
+  pathPrefix: "",
   postsPrefix: ``,
   postsPath: ``,
   paginationPrefix: `page`,
@@ -59,7 +60,8 @@ const config = {
   googleTagManagerId: 0,
   addSiteMap: false,
   siteMapOptions: {},
-  useAlgoliaSearch: false,
+  addAlgoliaSearch: false,
+  addColorModes: true,
 }
 ```
 
@@ -74,6 +76,27 @@ Provide a url to your WordPress website.
 `(default: wp-content/uploads)`
 
 A relative path to your uploads directory. `wp-content/uploads` is default for any WordPress installation. So unless you redefined the `UPLOADS` constant on your WordPress site, you don't have to change it.
+
+---
+
+**pathPrefix** (optional)  
+`(default: "")`
+
+You will use this setting if your gatsby website is hosted at something other than the root (/) of their domain.
+Adding the path prefix requires two steps:
+
+1. setting the pathPrefix (make sure to preceed it with a slash)
+   example:
+
+```javascript
+pathPrefix: "/demo"
+```
+
+2. You have to add `--prefix-paths` flag when building your website:
+
+```bash
+gatsby build --prefix-paths
+```
 
 ---
 
@@ -303,7 +326,7 @@ These options are passed to the [gatsby-plugin-sitemap](https://www.gatsbyjs.org
 
 ---
 
-**useAlgoliaSearch** (optional, experimental)  
+**addAlgoliaSearch** (optional, experimental)  
 `(default: false)`
 
 If you want to use Algolia with your project, make sure to include `.env` file in the project root:
@@ -313,3 +336,20 @@ GATSBY_ALGOLIA_APP_ID=your-app-id
 GATSBY_ALGOLIA_SEARCH_KEY=your-algolia-search-key
 ALGOLIA_ADMIN_KEY=your-algolia-admin-key
 ```
+
+---
+
+**addColorModes** (optional, experimental)  
+`(default: true)`
+
+If you want to add dark mode switcher.
+
+> Please note that the dark mode may not be properly applied on some Gutenberg blocks with custom color settings.
+
+## Overriding Theme Styles
+
+### Overriding Typography Styles
+
+### Overriding Colors
+
+### Further Changes

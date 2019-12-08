@@ -17,15 +17,16 @@ const Tags = ({ post, location }) => {
           data-sal-duration="1000"
           data-sal-easing="ease"
         >
-          <h2 sx={{ variant: 'special.title', fontSize: 'xl', mb: 1 }}>
-            Tags:
-          </h2>
+          <h2>Tags:</h2>
           <ul sx={{ listStyle: 'none', display: 'flex', p: 0, ml: -1, mb: 1 }}>
             {tags
               .map(tag => (
                 <li sx={{ px: 1, m: 0 }} key={tag.slug}>
                   <Link
-                    sx={{ variant: 'special.link', fontSize: 'xxs' }}
+                    sx={{
+                      variant: 'special.underlineOnHover',
+                      fontSize: 'xxs',
+                    }}
                     to={`/tag/${tag.slug}`}
                     rel="tag"
                   >

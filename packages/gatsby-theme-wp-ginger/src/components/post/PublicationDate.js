@@ -9,7 +9,11 @@ const PublicationDate = ({ post, postsPrefix, location }) => {
     <Fragment>
       {post.date && (
         <Link
-          sx={{ variant: 'special.link', display: 'inline-block', mb: 3 }}
+          sx={{
+            variant: 'special.underlineOnHover',
+            display: 'inline-block',
+            mb: 3,
+          }}
           className="meta-data"
           to={postsPrefix ? `/${postsPrefix}/${post.uri}` : `/${post.uri}`}
         >

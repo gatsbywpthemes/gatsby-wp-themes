@@ -1,17 +1,4 @@
 const sharedStyles = {
-  a: {
-    color: 'inherit',
-    textDecoration: 'none',
-    variant: 'special',
-    fontWeight: 'bold',
-    transition: '0.6s',
-    ':hover': {
-      opacity: 0.6,
-    },
-  },
-  ul: {
-    variant: 'list.raw',
-  },
   mb: 7,
   '.widget-title': {
     fontSize: 'l',
@@ -33,14 +20,22 @@ const sharedStyles = {
       mr: 3,
     },
   },
-  '.widget-recent-posts': {},
+}
+
+const sharedStylesA = {
+  a: {
+    variant: 'special',
+    fontWeight: 'bold',
+    transition: 'opacity 0.6s',
+    ':hover': {
+      opacity: 0.6,
+    },
+  },
 }
 const widget = {
   categories: {
     ...sharedStyles,
-    a: {
-      ...sharedStyles.a,
-    },
+    ...sharedStylesA,
     '[aria-current]': {
       fontStyle: 'italic',
       fontWeight: 'body',
@@ -48,8 +43,8 @@ const widget = {
   },
   tags: {
     ...sharedStyles,
+    ...sharedStylesA,
     ul: {
-      ...sharedStyles.ul,
       display: 'flex',
       flexWrap: 'wrap',
     },
@@ -58,9 +53,6 @@ const widget = {
       '&:first-of-type': {
         pl: 0,
       },
-    },
-    a: {
-      ...sharedStyles.a,
     },
     '[aria-current]': {
       fontStyle: 'italic',
@@ -75,9 +67,8 @@ const widget = {
     a: {
       color: 'inherit',
       textDecoration: 'none',
-      transition: '.6s',
       ':hover': {
-        ...sharedStyles.a[':hover'],
+        ...sharedStylesA[':hover'],
       },
     },
 
@@ -90,10 +81,12 @@ const widget = {
       display: 'block!important',
     },
     '.textual': {
-      ml: 4,
       a: {
         display: 'block',
       },
+    },
+    'a:not(:empty) + .textual': {
+      ml: 4,
     },
     '.widget-post-title': {
       fontFamily: 'heading',

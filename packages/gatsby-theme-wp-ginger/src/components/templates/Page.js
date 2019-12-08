@@ -4,6 +4,7 @@ import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import SEO from '../seo/Seo'
 import pageStyles from '../../styles/page'
+import pageTitle from '../../styles/pageTitle'
 
 const Page = ({ page }) => {
   const { content } = page
@@ -17,7 +18,7 @@ const Page = ({ page }) => {
         ogUrl={ogType === 'website' ? '' : page.uri}
       />
       <article sx={{ pt: '4rem' }}>
-        <h1 sx={{ variant: 'special.Title' }}>
+        <h1 sx={pageTitle}>
           <span
             className="page-title-value"
             dangerouslySetInnerHTML={{ __html: page.title }}

@@ -8,7 +8,6 @@ module.exports = options => {
         el.toLowerCase().indexOf(`abril fatface`) === -1
     )
   }
-  options.useAlgoliSearch = options.useAlgoliSearch || false
 
   if (options.gingerWidgets) {
     options.widgetAreas = {
@@ -22,6 +21,8 @@ module.exports = options => {
     {
       resolve: `gatsby-theme-blog-data`,
       options: {
+        addAlgoliaSearch: false,
+        addColorModes: true,
         ...options,
         overrideBlogTemplate: `gatsby-theme-wp-ginger/src/templates/posts-query.js`,
         overridePostTemplate: `gatsby-theme-wp-ginger/src/templates/post-query.js`,
@@ -60,7 +61,7 @@ module.exports = options => {
    * Conditionally add google fonts plugin
    * to avoid errors on build
    */
-  if (options.useAlgoliaSearch) {
+  if (options.addAlgoliaSearch) {
     plugins.push(`gatsby-theme-algolia`)
   }
 

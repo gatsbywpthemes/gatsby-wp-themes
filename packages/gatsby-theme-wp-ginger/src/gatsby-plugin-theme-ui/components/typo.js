@@ -8,6 +8,10 @@ export const lineHeights = {
   body: 1.5,
 }
 
+export const letterSpacings = {
+  loose: '2px',
+}
+
 export const fontWeights = {
   body: 300,
   heading: 400,
@@ -26,47 +30,28 @@ export const fontSizes = {
   Bigger: '4.5rem',
 }
 
-export const a = {
-  //transition: 'color .5s',
-  color: 'inherit',
-  '&:hover': {
-    textDecoration: 'none',
-    //color: 'primary',
-  },
-}
-
-const specialSharedStyles = {
-  textTransform: 'uppercase',
-  letterSpacing: '2px',
-
-  a: {
-    color: 'inherit',
-    textDecoration: 'none',
-    position: 'relative',
-    '&:hover': {
-      color: 'inherit',
-    },
-  },
-}
 export const special = {
-  ...specialSharedStyles,
+  letterSpacing: 'loose',
+  textTransform: 'uppercase',
+
   fontSize: 'xxs',
   a: {
-    ...specialSharedStyles.a,
     fontWeight: 'bold',
   },
-  link: {
-    ...specialSharedStyles,
+  underlineOnHover: {
+    letterSpacing: 'loose',
+    textTransform: 'uppercase',
+    position: 'relative',
     fontSize: 'xxs',
-    ...specialSharedStyles.a,
+    transition: 'color .6s',
     '&:after': {
       content: '""',
       position: 'absolute',
       left: 0,
       right: 0,
-      bottom: 0,
+      bottom: '-1px',
       height: '1px',
-      background: 'currentColor',
+      bg: 'linkHover',
       transition: '.6s',
       opacity: 0,
       transform: 'scaleX(0)',
@@ -76,46 +61,14 @@ export const special = {
       transform: 'scaleX(1)',
     },
   },
-  title: {
-    a: {
-      ...specialSharedStyles.a,
-      transition: '0.6s',
-    },
-    'a:hover': {
-      color: 'primary',
-    },
-  },
-  Title: {
-    textAlign: 'center',
-    mb: 8,
-    '&:after': {
-      content: '""',
-      width: '4rem',
-      display: 'block',
-      borderBottom: '1px solid',
-      mx: 'auto',
-      mt: 4,
-    },
-    '.page-title-pre': {
-      fontFamily: 'body',
-      fontWeight: 'body',
-      display: 'block',
-      fontSize: 'xs',
-      ...specialSharedStyles,
-    },
-    '.page-title-value': {
-      fontSize: ['xl', 'Big'],
-    },
-  },
 }
 
 export const baseTypo = {
-  a,
   h1: {
-    fontSize: ['xl', 'xsl', 'Big'],
+    fontSize: ['xxl', 'xxl', 'Big'],
   },
   h2: {
-    fontSize: ['l', 'xl', 'xxl'],
+    fontSize: ['xl', 'xxl', 'xxl'],
   },
   h3: {
     fontSize: ['m', 'x', 'xl'],
@@ -128,5 +81,13 @@ export const baseTypo = {
   },
   h6: {
     fontSize: ['xxs', 'xs', 's'],
+  },
+  a: {
+    color: 'inherit',
+    textDecoration: 'none',
+    transition: 'color 0.6s, transform 0.6s',
+  },
+  'a:hover': {
+    color: 'linkHover',
   },
 }

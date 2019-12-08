@@ -15,7 +15,8 @@ export default {
   alignItems: 'center',
   textAlign: ['center', 'center', 'left'],
   p: [4, 4, 0],
-  bg: ['background.footer', 'background.footer', 'transparent'],
+  bg: ['backgrounds.footer', 'backgrounds.footer', 'transparent'],
+  color: ['footerColor', 'footerColor', 'headerColor'],
   a: {
     color: 'inherit',
     fontWeight: 'bold',

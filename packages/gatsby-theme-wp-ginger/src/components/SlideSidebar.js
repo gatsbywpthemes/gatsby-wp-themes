@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { ThemeProvider, useThemeUI, jsx } from 'theme-ui'
-import { useState } from 'react'
+import { jsx } from 'theme-ui'
+import React, { useState } from 'react'
 import { Layer } from 'grommet'
 import { FiMenu, FiX } from 'react-icons/fi'
 import Menu from './Menu'
@@ -16,7 +16,6 @@ const searchIndices = [
 ]
 
 const SlideSidebar = () => {
-  const theme = useThemeUI()
   const {
     widgetAreas: {
       slideMenu: { widgets },
@@ -35,54 +34,52 @@ const SlideSidebar = () => {
     setTimeout(() => setOpenMenu(false), 200)
   }
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <button
-          type="button"
-          aria-label="Open navigation menu"
-          onClick={openMenu}
-          className={openClass ? 'btn-menu-opened' : 'btn-menu-closing'}
-          sx={openMenuButton}
+    <>
+      <button
+        type="button"
+        aria-label="Open navigation menu"
+        onClick={openMenu}
+        className={openClass ? 'btn-menu-opened' : 'btn-menu-closing'}
+        sx={openMenuButton}
+      >
+        <FiMenu />
+      </button>
+      {isMenuOpen && (
+        <Layer
+          className={openClass ? 'menu-opened' : 'menu-closing'}
+          position="right"
+          full="vertical"
+          modal
+          responsive={false}
+          onClickOutside={closeMenu}
+          onEsc={closeMenu}
+          sx={slideMenu}
         >
-          <FiMenu />
-        </button>
-        {isMenuOpen && (
-          <Layer
-            className={openClass ? 'menu-opened' : 'menu-closing'}
-            position="right"
-            full="vertical"
-            modal
-            responsive={false}
-            onClickOutside={closeMenu}
-            onEsc={closeMenu}
-            sx={slideMenu}
+          <button
+            aria-label="Close navigation menu"
+            sx={{
+              variant: 'buttons.raw',
+              color: 'white',
+            }}
+            className="close"
+            onClick={closeMenu}
           >
-            <button
-              aria-label="Close navigation menu"
-              sx={{
-                variant: 'buttons.raw',
-                color: 'white',
-              }}
-              className="close"
-              onClick={closeMenu}
-            >
-              <FiX />
-            </button>
-            {useAlgoliaSearch && (
-              <div className="search-wrapper">
-                <Search indices={searchIndices} />
-              </div>
-            )}
+            <FiX />
+          </button>
+          {useAlgoliaSearch && (
+            <div className="search-wrapper">
+              <Search indices={searchIndices} />
+            </div>
+          )}
 
-            <Menu menuName={menuName} />
-            {!!widgets &&
-              widgets.map(widget => (
-                <Widgets key={widget} widget={widget} location="SlideMenu" />
-              ))}
-          </Layer>
-        )}
-      </div>
-    </ThemeProvider>
+          <Menu menuName={menuName} />
+          {!!widgets &&
+            widgets.map(widget => (
+              <Widgets key={widget} widget={widget} location="SlideMenu" />
+            ))}
+        </Layer>
+      )}
+    </>
   )
 }
 

@@ -5,20 +5,6 @@ export const article = {
     content: {
       ...gutenberg,
       py: ['2rem', '2rem', '4rem'],
-      dark: {
-        p: theme => [
-          `2rem`,
-          '4rem',
-          `4rem calc(50% - ${parseInt(theme.sizes.content) / 2}px)`,
-        ],
-        minWidth: theme => [
-          '100%',
-          '100%',
-          `calc(100% - ${theme.sizes.header[2]})`,
-        ],
-        bg: `text`,
-        color: 'white',
-      },
     },
     splash: {
       position: 'relative',
@@ -29,7 +15,7 @@ export const article = {
         `calc(100vh - ${theme.sizes.header[1]})`,
         '100vh',
       ],
-      backgroundColor: 'background.splash',
+      backgroundColor: 'backgrounds.splash',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
       flexDirection: 'column',

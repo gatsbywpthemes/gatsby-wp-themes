@@ -10,7 +10,7 @@ const Categories = ({ post }) => {
       {post.categories.nodes
         .map(category => (
           <Link
-            sx={{ variant: 'special.link' }}
+            sx={{ variant: 'special.underlineOnHover' }}
             key={category.name}
             to={`/category/${category.slug}`}
             rel="category"

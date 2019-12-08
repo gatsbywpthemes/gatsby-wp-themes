@@ -5,7 +5,7 @@ import { Fragment, useState } from 'react'
 import gql from 'graphql-tag'
 import { useMutation } from '@apollo/react-hooks'
 import useForm from 'react-hook-form'
-import { commentStyles } from '../../styles/comments'
+import { commentStyles, replyButton } from '../../styles/comments'
 
 const commentSubmitQuery = gql`
   mutation(
@@ -144,12 +144,12 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
           )}
           {!!commentId && (
             <button
-              sx={{ ...commentStyles.replyButton }}
+              sx={{ ...replyButton }}
               type="button"
               className="comment-button-cancel"
               onClick={cancelReply}
             >
-              Cancel
+              <span>Cancel</span>
             </button>
           )}
           <form

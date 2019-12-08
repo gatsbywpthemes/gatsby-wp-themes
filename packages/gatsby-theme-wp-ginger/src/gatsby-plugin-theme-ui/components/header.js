@@ -5,7 +5,8 @@ export default {
   height: theme => [theme.sizes.header[0], theme.sizes.header[1], '100vh'],
   alignItems: ['center', 'center', 'initial'],
   px: [3, 3, 0],
-  bg: 'background.header',
+  bg: 'backgrounds.header',
+  color: 'headerColor',
   width: theme => ['auto', 'auto', theme.sizes.header[2]],
   '& > a': {
     height: theme => ['auto', 'auto', theme.sizes.header[2]],
@@ -18,7 +19,7 @@ export default {
     fontWeight: 'heading',
     fontSize: 'l',
     position: 'absolute',
-    top: 0,
+    top: ['auto', 'auto', 0],
     transformOrigin: '0 0',
     transform: [
       '',

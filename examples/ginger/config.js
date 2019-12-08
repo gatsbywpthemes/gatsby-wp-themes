@@ -1,7 +1,7 @@
 const config = {
   wordPressUrl: `https://wp-pehaa.com/demo-pehaa1`,
   // uploadsPath: `wp-content/uploads`,
-  //pathPrefix: "/demo",
+  // pathPrefix: "",
   // postsPrefix: ``,
   postsPath: `blog`,
   // paginationPrefix: `page`,
@@ -33,7 +33,8 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
-  // useAlgoliaSearch: false,
+  // addAlgoliaSearch: false,
+  // addColorModes: false,
 }
 // https://gatsby-test-2.alexaspalato.website
 //https://gatsby-theme-demo.alexaspalato.website

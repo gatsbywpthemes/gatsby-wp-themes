@@ -7,7 +7,7 @@ const sharedIconStyles = {
   padding: 0,
   border: 0,
   boxShadow: 'inset 0 0 0 0 transparent',
-  transition: ' .6s',
+  transition: 'box-shadow .6s, background .6s',
   cursor: 'pointer',
   svg: {
     verticalAlign: 'middle',
@@ -33,16 +33,16 @@ export default {
   icon: {
     ...sharedIconStyles,
     color: 'text',
-    background: 'white',
+    bg: 'inverseText',
     ':hover svg': {
-      color: 'white',
+      color: 'inverseText',
     },
     inverse: {
       ...sharedIconStyles,
       color: 'white',
-      bg: 'text',
+      bg: 'dark3',
       ':hover svg': {
-        color: 'text',
+        color: 'dark3',
       },
     },
   },

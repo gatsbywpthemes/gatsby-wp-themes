@@ -108,5 +108,10 @@ export const globalStyles = theme => {
         display: block !important;
       }
     }
+    *:focus {
+      outline-style: auto;
+      outline-width: 3px;
+      outline-color: ${theme.colors.focusOutline}!important;
+    }
   `
 }

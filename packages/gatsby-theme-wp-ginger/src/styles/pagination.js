@@ -35,7 +35,7 @@ export const paginationLink = {
     width: '1.5rem',
     height: '1px',
     mx: '0.25rem',
-    bg: 'currentColor',
+    bg: 'primary',
     display: 'inline-block',
     verticalAlign: 'middle',
     transition: '0.6s',

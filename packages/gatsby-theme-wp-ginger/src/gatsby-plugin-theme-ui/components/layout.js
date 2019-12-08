@@ -1,11 +1,13 @@
 import { a } from './typo'
 export default {
-  display: 'block',
+  bg: 'transparent',
   color: 'text',
   '.entry-content a': {
+    textDecoration: 'underline',
     transition: 'color .5s',
     '&:hover': {
-      color: 'primary',
+      color: 'linkHover',
+      textDecoration: 'none',
     },
   },
 }

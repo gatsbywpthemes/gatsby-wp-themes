@@ -17,7 +17,7 @@ const CommentsList = ({ post }) => {
   return (
     <Fragment>
       {comments.nodes.length > 0 ? (
-        <section sx={{ ...commentStyles.section }}>
+        <section>
           <h2 sx={{ ...commentStyles.title }}>Comments</h2>
           <ul sx={{ ...commentStyles.list }}>
             {comments.nodes.map(comment => (

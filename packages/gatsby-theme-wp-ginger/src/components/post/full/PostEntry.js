@@ -10,6 +10,7 @@ import scrollTo from 'gatsby-plugin-smoothscroll'
 import { article } from '../../../styles/article'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Image from '../../images/Image'
+import { commentsSection } from '../../../styles/comments'
 
 const PostEntry = ({ ctx, post }) => {
   const bgStyles = !!post.featuredImage
@@ -18,50 +19,48 @@ const PostEntry = ({ ctx, post }) => {
       }
     : {}
   const { addComments } = useThemeOptions()
-  console.log(post)
   return (
     <article>
-      <Flex
-        sx={{
-          ...article.full.splash,
-          ...bgStyles,
-        }}
-        className="splash"
-        data-sal="fade"
-        data-sal-duration="1000"
-        data-sal-easing="ease"
-      >
-        <div
-          className="featured-wrapper"
+      <div data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
+        <Flex
           sx={{
-            display: 'none',
-            position: 'absolute',
-            zIndex: '-3',
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
+            ...article.full.splash,
+            ...bgStyles,
           }}
+          className="splash"
         >
-          <Image img={post.featuredImage} />
-        </div>
-        <PostEntryIntro
-          post={post}
-          ctx={ctx}
-          location="single"
-          variant={'full'}
-        />
-        <button
-          type="button"
-          sx={{
-            ...article.button.scrolldown,
-          }}
-          aria-label="Scroll to content"
-          onClick={() => scrollTo('#content')}
-        >
-          <FiChevronsDown />
-        </button>
-      </Flex>
+          <div
+            className="featured-wrapper"
+            sx={{
+              display: 'none',
+              position: 'absolute',
+              zIndex: '-3',
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+            }}
+          >
+            <Image img={post.featuredImage} />
+          </div>
+          <PostEntryIntro
+            post={post}
+            ctx={ctx}
+            location="single"
+            variant={'full'}
+          />
+          <button
+            type="button"
+            sx={{
+              ...article.button.scrolldown,
+            }}
+            aria-label="Scroll to content"
+            onClick={() => scrollTo('#content')}
+          >
+            <FiChevronsDown />
+          </button>
+        </Flex>
+      </div>
       <div
         id="content"
         sx={{
@@ -73,16 +72,11 @@ const PostEntry = ({ ctx, post }) => {
         <PrevNextPostNavigation ctx={ctx} />
       </div>
       {!!addComments && post.commentStatus === 'open' && (
-        <section
-          data-sal="fade"
-          data-sal-duration="1000"
-          data-sal-easing="ease"
-          sx={{
-            ...article.full.content.dark,
-          }}
-        >
-          <CommentsList post={post} />
-        </section>
+        <div data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
+          <section sx={commentsSection}>
+            <CommentsList post={post} />
+          </section>
+        </div>
       )}
     </article>
   )

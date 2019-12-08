@@ -90,3 +90,13 @@ figure,
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
+
+.dark-color-mode .has-background:not(.has-text-color) {
+  /* background-color: transparent !important; */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+  background-blend-mode: multiply;
+}
+
+.dark-color-mode hr {
+  background: rgba(255, 255, 255, 0.15);
+}
