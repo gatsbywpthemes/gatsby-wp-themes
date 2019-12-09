@@ -17,7 +17,7 @@ const ArchiveContent = ({
 
   return (
     <Fragment>
-      <section sx={{ pt: '2rem' }}>
+      <section>
         {name && <ArchiveTitle text={text} name={name} />}
         {posts.nodes &&
           posts.nodes.map(post => (

@@ -12,13 +12,21 @@ const Tags = ({ post, location }) => {
       {tags.length > 0 && (
         <section
           className="entry-taxonomy entry-tags"
-          sx={{ mb: 7 }}
+          sx={{ mb: '3rem' }}
           data-sal="slide-up"
           data-sal-duration="1000"
           data-sal-easing="ease"
         >
           <h2>Tags:</h2>
-          <ul sx={{ listStyle: 'none', display: 'flex', p: 0, ml: -1, mb: 1 }}>
+          <ul
+            sx={{
+              listStyle: 'none',
+              display: 'flex',
+              p: 0,
+              ml: '-0.25rem',
+              mb: '0.25rem',
+            }}
+          >
             {tags
               .map(tag => (
                 <li sx={{ px: 1, m: 0 }} key={tag.slug}>

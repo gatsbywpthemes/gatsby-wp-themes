@@ -1,13 +1,13 @@
 export const commentStyles = {
   form: {
     variant: 'form',
-    mb: 6,
-    py: 7,
-    px: 6,
+    mb: '2rem',
+    py: '3rem',
+    px: '2rem',
     boxShadow: '0 20px 40px rgba(0,0,0,.15)',
     '.comment &': {
       boxShadow: 'none',
-      p: 5,
+      p: '1.5rem',
     },
     '.comment-notes': {
       variant: 'special',
@@ -22,19 +22,19 @@ export const commentStyles = {
     ul: {
       mb: 0,
     },
-    mb: 7,
+    mb: '3rem',
     ml: 0,
   },
   title: {
     textAlign: 'center',
-    mb: 6,
+    mb: '2rem',
   },
 }
 
 export const comment = {
   position: 'relative',
-  py: [2, 4],
-  px: [3, 5],
+  py: ['0.5rem', '1rem'],
+  px: ['0.75rem', '1.5rem'],
   zIndex: 0,
   '&:before': {
     content: '""',
@@ -55,7 +55,7 @@ export const comment = {
   '.entry-date': {
     display: 'block',
     fontSize: 'xxs',
-    mb: 2,
+    mb: '0.5rem',
     fontStyle: 'italic',
   },
   '.comment-nesting-info': {
@@ -63,17 +63,20 @@ export const comment = {
     textAlign: 'right',
     opacity: '.6',
   },
+  '.comment-content a': {
+    textDecoration: 'underline',
+  },
 }
 
 export const replyButton = {
   display: 'flex',
-  mt: 3,
+  mt: '0.75rem',
   ml: 'auto',
-  variant: 'buttons.raw',
   color: 'inherit',
   cursor: 'pointer',
   p: 0,
   fontWeight: 'bold',
+  variant: 'buttons.raw',
   span: {
     variant: 'special.underlineOnHover',
     '&:after': theme => {
@@ -89,9 +92,9 @@ export const commentsSection = {
   p: theme => [
     `2rem`,
     '4rem',
-    `4rem calc(50% - ${parseInt(theme.sizes.content) / 2}px)`,
+    `4rem calc(50% - ${parseInt(theme.sizes.content) / 2}rem)`,
   ],
   minWidth: theme => ['100%', '100%', `calc(100% - ${theme.sizes.header[2]})`],
-  bg: 'backgrounds.comments',
+  bg: 'commentsBg',
   color: 'commentsColor',
 }

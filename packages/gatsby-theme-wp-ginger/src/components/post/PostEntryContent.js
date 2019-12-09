@@ -13,7 +13,7 @@ const PostEntryContent = ({ content, location = 'archive' }) => {
           data-sal-duration="1000"
           data-sal-easing="ease" */
           className="entry-content"
-          sx={{ mb: 6 }}
+          sx={{ mb: '2rem' }}
         >
           <ParsedContent content={content} />
         </div>

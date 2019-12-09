@@ -37,11 +37,13 @@ export const special = {
   fontSize: 'xxs',
   a: {
     fontWeight: 'bold',
+    textDecoration: 'none',
   },
   underlineOnHover: {
     letterSpacing: 'loose',
     textTransform: 'uppercase',
     position: 'relative',
+    textDecoration: 'none',
     fontSize: 'xxs',
     transition: 'color .6s',
     '&:after': {
@@ -85,7 +87,7 @@ export const baseTypo = {
   a: {
     color: 'inherit',
     textDecoration: 'none',
-    transition: 'color 0.6s, transform 0.6s',
+    transition: 'color 0.6s, transform 0.6s, opacity .6s',
   },
   'a:hover': {
     color: 'linkHover',

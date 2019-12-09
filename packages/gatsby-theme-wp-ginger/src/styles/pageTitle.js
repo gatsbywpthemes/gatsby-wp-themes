@@ -1,13 +1,13 @@
 export default {
   textAlign: 'center',
-  mb: 8,
+  mb: '4rem',
   '&:after': {
     content: '""',
     width: '4rem',
     display: 'block',
     borderBottom: '1px solid',
     mx: 'auto',
-    mt: 4,
+    mt: '1rem',
   },
   '.page-title-pre': {
     variant: 'special',

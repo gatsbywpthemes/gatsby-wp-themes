@@ -4,8 +4,8 @@ export default {
   top: 0,
   height: theme => [theme.sizes.header[0], theme.sizes.header[1], '100vh'],
   alignItems: ['center', 'center', 'initial'],
-  px: [3, 3, 0],
-  bg: 'backgrounds.header',
+  px: ['.75rem', '.75rem', 0],
+  bg: 'headerBg',
   color: 'headerColor',
   width: theme => ['auto', 'auto', theme.sizes.header[2]],
   '& > a': {
@@ -26,5 +26,9 @@ export default {
       '',
       'translate3d(0, 1rem, 0) rotate(-90deg) translate3d(-100%,0,0)',
     ],
+    transition: 'none',
+    ':hover': {
+      color: 'inherit',
+    },
   },
 }

@@ -1,11 +1,10 @@
 const sharedCardStyles = {
-  bg: 'backgrounds.card',
+  bg: 'cardBg',
   color: 'cardColor',
   textAlign: 'center',
   boxShadow: `0 20px 40px -10px rgba(0,0,0,0.1)`,
-  px: [4, 5],
-  py: [4, 5],
-
+  px: ['1rem', '2rem'],
+  py: ['1rem', '2rem'],
   width: ['calc(100% - 2rem)', '75%'],
   p: {
     fontSize: 'xs',
@@ -50,7 +49,7 @@ export const card = {
       bottom: 0,
     },
     '&:before': {
-      bg: 'backgrounds.card',
+      bg: 'cardBg',
       opacity: 0.85,
       zIndex: -2,
     },

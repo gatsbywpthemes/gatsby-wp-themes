@@ -8,14 +8,14 @@ const pehaafadein = keyframes`
 export const slideMenu = {
   fontFamily: 'body',
   borderRadius: 0,
-  bg: 'backgrounds.sidebar',
+  bg: 'sidebarBg',
   color: 'sidebarColor',
-  width: ['100%', '468px'],
+  width: theme => ['100%', theme.sizes.sidebar],
   display: `flex`,
   overflowY: 'scroll',
   boxShadow: ['none', '-10px 0 40px rgba(0,0,0,0.3)'],
   animationDuration: '1s',
-  p: 7,
+  p: '3rem',
   a: theme => theme.styles.root.a,
   ul: {
     variant: 'list.raw',
@@ -27,11 +27,11 @@ export const slideMenu = {
   '.close': {
     cursor: `pointer`,
     position: 'fixed',
-    top: 3,
-    right: 3,
+    top: '0.75rem',
+    right: '0.75rem',
   },
   '.menu': {
-    mb: 7,
+    mb: '3rem',
     li: {
       mb: 0,
     },
@@ -41,8 +41,12 @@ export const slideMenu = {
       listStyle: 'none',
       a: {
         display: 'block',
-        py: 3,
+        py: '0.75rem',
         position: 'relative',
+        transition: 'opacity .6s',
+      },
+      'a:hover': {
+        opacity: 0.6,
       },
       'a:after': {
         content: '""',
@@ -54,10 +58,10 @@ export const slideMenu = {
         bottom: 0,
       },
       'ul a': {
-        pl: 5,
+        pl: '1.5rem',
       },
       'ul ul a': {
-        pl: 7,
+        pl: '3rem',
       },
     },
     'a[aria-current]': {

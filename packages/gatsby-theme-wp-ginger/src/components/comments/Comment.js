@@ -51,7 +51,10 @@ const Comment = props => {
     <li className="comment" sx={{ ...commentStyles }}>
       <Author name={comment.author.name} url={comment.author.url} />
       <Date date={comment.date} />
-      <div dangerouslySetInnerHTML={{ __html: comment.content }} />
+      <div
+        className="comment-content"
+        dangerouslySetInnerHTML={{ __html: comment.content }}
+      />
       {withReply ? (
         activeComment === comment.commentId ? (
           <CommentForm

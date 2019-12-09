@@ -1,5 +1,5 @@
 const sharedStyles = {
-  mb: 7,
+  mb: '3rem',
   '.widget-title': {
     fontSize: 'l',
     textAlign: 'center',
@@ -14,10 +14,10 @@ const sharedStyles = {
       flex: '1 0',
     },
     ':after': {
-      ml: 3,
+      ml: '0.75rem',
     },
     ':before': {
-      mr: 3,
+      mr: '0.75rem',
     },
   },
 }
@@ -49,7 +49,7 @@ const widget = {
       flexWrap: 'wrap',
     },
     li: {
-      px: 2,
+      px: '0.5rem',
       '&:first-of-type': {
         pl: 0,
       },
@@ -68,14 +68,13 @@ const widget = {
       color: 'inherit',
       textDecoration: 'none',
       ':hover': {
-        ...sharedStylesA[':hover'],
+        opacity: 0.6,
       },
     },
-
     li: {
       display: 'flex',
       alignItems: 'center',
-      mb: 4,
+      mb: '1rem',
     },
     '.gatsby-image-wrapper': {
       display: 'block!important',
@@ -86,7 +85,7 @@ const widget = {
       },
     },
     'a:not(:empty) + .textual': {
-      ml: 4,
+      ml: '1rem',
     },
     '.widget-post-title': {
       fontFamily: 'heading',

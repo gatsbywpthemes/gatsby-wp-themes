@@ -15,7 +15,7 @@ export const article = {
         `calc(100vh - ${theme.sizes.header[1]})`,
         '100vh',
       ],
-      backgroundColor: 'backgrounds.splash',
+      backgroundColor: 'splashBg',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
       flexDirection: 'column',
@@ -32,6 +32,11 @@ export const article = {
       right: 0,
       left: 0,
       margin: 'auto',
+      color: 'scrollDownColor',
+      bg: 'scrollDownBg',
+      ':hover svg': {
+        color: 'scrollDownBg',
+      },
     },
   },
 }

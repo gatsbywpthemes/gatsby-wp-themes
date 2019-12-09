@@ -1,6 +1,6 @@
 export const share = {
   titleicon: {
-    mb: 2,
+    mb: '0.75',
     display: 'flex',
     width: '1.5rem',
     height: '1.5rem',
@@ -8,7 +8,7 @@ export const share = {
     alignItems: 'center',
     justifyContent: 'center',
     bg: 'cardColor',
-    color: 'backgrounds.card',
+    color: 'cardBg',
     borderRadius: '50%',
     svg: {
       width: '.75rem',
@@ -19,21 +19,21 @@ export const share = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    mb: 6,
+    mb: '2rem',
     li: {
       variant: 'special',
       fontWeight: 'bold',
       display: 'flex',
       '&:not(:last-of-type):after': {
         content: '"/"',
-        px: 1,
+        px: '0.25rem',
       },
       '&>*': {
         ':hover': {
-          color: 'primary',
+          color: 'LinkHover',
         },
         variant: 'special.underlineOnHover',
-        mx: 1,
+        mx: '0.25rem',
         cursor: 'pointer',
       },
     },
@@ -43,17 +43,17 @@ export const share = {
 export const follow = {
   justifyContent: 'center',
   color: 'inherit',
-  mb: 7,
+  mb: '3rem',
   a: {
     color: 'inherit',
-    p: 2,
-    mx: 1,
+    p: '0.5rem',
+    mx: '0.25rem',
     transition: 'opacity .6s',
     '&:hover': { opacity: 0.6 },
   },
   svg: {
-    width: '18px',
-    height: '18px',
+    width: '1.125rem',
+    height: '1.125rem',
     verticalAlign: 'middle',
   },
 }

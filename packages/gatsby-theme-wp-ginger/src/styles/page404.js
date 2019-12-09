@@ -1,8 +1,8 @@
 export const page404 = {
   minHeight: theme => [
-    `calc(100vh - ${parseInt(theme.sizes.header[0]) + 74 + 48}px)`,
-    `calc(100vh - ${parseInt(theme.sizes.header[1]) + 74 + 64}px)`,
-    'calc(100vh - 64px)',
+    `calc(100vh - ${parseInt(theme.sizes.header[0]) + 4.625 + 3}rem)`,
+    `calc(100vh - ${parseInt(theme.sizes.header[1]) + 4.625 + 4}rem)`,
+    'calc(100vh - 4rem)',
   ],
   display: 'flex',
   flexDirection: 'column',

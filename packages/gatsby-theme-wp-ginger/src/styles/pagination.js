@@ -4,7 +4,7 @@ export const pagination = {
   justifyContent: `space-between`,
   alignItems: `center`,
   fontSize: 'xs',
-  mb: 4,
+  mb: '1rem',
   '&> :first-child, &> :last-child': {
     flex: 1,
   },
@@ -20,7 +20,6 @@ export const pagination = {
 }
 
 export const paginationLink = {
-  transition: '.6s',
   '&.right': {
     transform: 'translate3d(1.75rem, 0, 0)',
   },
@@ -35,7 +34,7 @@ export const paginationLink = {
     width: '1.5rem',
     height: '1px',
     mx: '0.25rem',
-    bg: 'primary',
+    bg: 'linkHover',
     display: 'inline-block',
     verticalAlign: 'middle',
     transition: '0.6s',

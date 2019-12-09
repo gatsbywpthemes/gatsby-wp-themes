@@ -10,16 +10,20 @@ export default {
     '',
     '',
     `translate3d(0, ${parseInt(theme.sizes.header[2]) -
-      16}px, 0) rotate(-90deg)`,
+      1}rem, 0) rotate(-90deg)`,
   ],
   alignItems: 'center',
   textAlign: ['center', 'center', 'left'],
-  p: [4, 4, 0],
-  bg: ['backgrounds.footer', 'backgrounds.footer', 'transparent'],
+  p: ['1rem', '1rem', 0],
+  bg: ['footerBg', 'footerBg', 'transparent'],
   color: ['footerColor', 'footerColor', 'headerColor'],
   a: {
     color: 'inherit',
     fontWeight: 'bold',
     textDecoration: 'none',
+  },
+  'a:hover': {
+    opacity: 0.6,
+    color: 'inherit',
   },
 }

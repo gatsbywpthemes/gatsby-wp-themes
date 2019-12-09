@@ -13,58 +13,59 @@ const accentDark = '#6d00ff'
 const accentLight = '#c98afa'
 
 export const colors = {
-  dark,
-  dark0,
-  dark2,
-  dark3,
-  dark4,
-  light,
-  white,
-  primary,
-  primaryForDark,
+  /* basic colors */
   text: dark,
-  inverseText: white,
   background: white,
-  headerBg: light,
-  cardBorder: white,
-  focusOutline: accentDark,
   linkHover: primary,
+  focusOutline: accentDark,
+  /* header */
   headerColor: dark,
+  headerBg: light,
+  /* footer */
   footerColor: dark,
+  footerBg: light,
+  /* sidebar */
   sidebarColor: white,
-  commentsColor: white,
+  sidebarBg: primary,
+  menuButtonColor: white,
+  menuButtonBg: dark,
+  /* post */
+  splashBg: primary,
+  scrollDownColor: dark,
+  scrollDownBg: white,
   cardColor: dark,
-  backgrounds: {
-    header: light,
-    sidebar: primary,
-    footer: light,
-    card: white,
-    splash: primary,
-    comments: dark,
-  },
+  cardBg: white,
+  cardBorder: white,
+  commentsColor: white,
+  commentsBg: dark,
+
   modes: {
     dark: {
-      primary: primaryForDark,
+      /* basic colors */
       text: light,
-      inverseText: dark,
-      cardBorder: dark0,
-      focusOutline: accentLight,
       background: dark,
-      headerBg: dark2,
       linkHover: primaryForDark,
+      focusOutline: accentLight,
+      /* header */
       headerColor: light,
+      headerBg: dark2,
+      /* footer */
       footerColor: light,
+      footerBg: dark4,
+      /* sidebar */
       sidebarColor: light,
-      commentsColor: light,
+      sidebarBg: dark4,
+      menuButtonColor: dark,
+      menuButtonBg: light,
+      /* post */
+      splashBg: dark3,
+      scrollDownColor: white,
+      scrollDownBg: dark,
       cardColor: light,
-      backgrounds: {
-        header: dark2,
-        sidebar: dark4,
-        footer: dark4,
-        card: dark,
-        splash: dark3,
-        comments: dark3,
-      },
+      cardBg: dark,
+      cardBorder: dark0,
+      commentsColor: light,
+      commentsBg: dark3,
     },
   },
 }

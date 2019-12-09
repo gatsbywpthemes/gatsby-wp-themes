@@ -2,7 +2,7 @@ export const search = {
   results: {
     header: {
       display: 'flex',
-      mb: 4,
+      mb: '1rem',
       justifyContent: 'space-between',
       alignItems: 'center',
       '& > *': {
@@ -10,7 +10,7 @@ export const search = {
       },
     },
     '.results + header': {
-      mt: 6,
+      mt: '2rem',
     },
     a: { color: 'inherit' },
     fontSize: 'xs',
@@ -18,14 +18,14 @@ export const search = {
       variant: 'list.raw',
     },
     li: {
-      mb: 3,
+      mb: '0.75rem',
     },
     '&:after, li:after': {
       content: '""',
       display: 'block',
       height: 0,
       width: '100%',
-      mt: 6,
+      mt: '2rem',
     },
     'li:after': {
       borderBottom: '1px solid',
@@ -33,7 +33,7 @@ export const search = {
     },
     '&:after': {
       borderBottom: '3px solid',
-      mb: 6,
+      mb: '2rem',
     },
   },
   box: {
@@ -63,7 +63,7 @@ export const search = {
       position: 'relative',
     },
     container: {
-      mb: 6,
+      mb: '2rem',
       alignItems: 'center',
     },
   },

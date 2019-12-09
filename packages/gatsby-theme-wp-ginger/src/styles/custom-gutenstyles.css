@@ -79,21 +79,24 @@ figure,
 .entry-content h4,
 .entry-content h5,
 .entry-content h6,
-.entry-content .animate-on-scroll {
+.entry-content .animate-on-scroll,
+.entry-content .wp-block-gallery figure {
   opacity: 0;
   transform: translate3d(0, 2.5rem, 0);
   transition-property: opacity, transform, -webkit-transform;
   transition-duration: 1s;
 }
 .entry-content .sal-disabled,
-.entry-content .sal-animate {
+.entry-content .sal-animate:nth-child(n) {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
 
-.dark-color-mode .has-background:not(.has-text-color) {
+.dark-color-mode .has-background:not(.has-text-color),
+.dark-color-mode .wp-block-media-text[style*='background'],
+.dark-color-mode .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
   /* background-color: transparent !important; */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   background-blend-mode: multiply;
 }
 

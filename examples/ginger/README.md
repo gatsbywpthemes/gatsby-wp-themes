@@ -243,7 +243,7 @@ Other pages will use a common twitterSummaryCardImage. Please make sure to place
 
 ---
 
-**fonts**  
+**fonts**<a name="config-fonts"></a>
 `(type: Array, default: ["Abril Fatface", "Fira Sans"])`
 
 Here you decide which fonts should be installed.  
@@ -348,8 +348,53 @@ If you want to add dark mode switcher.
 
 ## Overriding Theme Styles
 
-### Overriding Typography Styles
+### Overriding Typography Settings
 
-### Overriding Colors
+You can override the typography settings in `ginger/configTypography.js`  
+Uncomment each line that you wish to modify and set your values.
+
+You can change the fonts settings to any system fonts or any of the Google fonts.
+When choosing Google fonts please make sure that you add them also in `config.js` ([see here](#config-fonts))
+
+> You can modify the baseFontSize, that is the root level font size which will affect the entire site. Please note that we use mostly rem variables. Changing the baseFontSize will scale the majority of elements.
+
+### Overriding Color Settings
+
+You can override any of the colors used by the theme in `configColors.js.` You can modify colors both in the default and dark mode.
+
+### Overriding Sizes Settings
+
+You can modify the breakpoints values as well as the `header`, `content` and `sidebar` sizes in `configSizes.js`
+The breakpoints works in combination with the css properties represented as an array.
+That means that the header size is 4.5rem for screen not larger than 40em, and 6rem for screen not larger than 64em.
+If you add a third value in the header array, it will be applied for screens larger than 64em.
+
+```javascript
+/* configSizes.js */
+const sizesSettings = {
+  //breakpoints: ["40em", "64em"],
+  sizes: {
+    //header: ['4.5rem', '6rem'],
+    //content: '52.5rem',
+    //sidebar: '29.25rem',
+  },
+}
+```
+
+example:
+
+```javascript
+/* configSizes.js */
+const sizesSettings = {
+  //breakpoints: ["40em", "64em"],
+  sizes: {
+    header: ["4.5rem", "6rem", "4.5rem"],
+    //content: '52.5rem',
+    //sidebar: '29.25rem',
+  },
+}
+```
 
 ### Further Changes
+
+You can also style your website with css. This can be useful if you have to target some specific element or add some more complex styling. You should put your css in `styles/style.scss.` If you are not familiar with sass, you can write plain css in this file.

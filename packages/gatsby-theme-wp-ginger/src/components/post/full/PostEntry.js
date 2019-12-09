@@ -72,11 +72,9 @@ const PostEntry = ({ ctx, post }) => {
         <PrevNextPostNavigation ctx={ctx} />
       </div>
       {!!addComments && post.commentStatus === 'open' && (
-        <div data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
-          <section sx={commentsSection}>
-            <CommentsList post={post} />
-          </section>
-        </div>
+        <section sx={commentsSection}>
+          <CommentsList post={post} />
+        </section>
       )}
     </article>
   )

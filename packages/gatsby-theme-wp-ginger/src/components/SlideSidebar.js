@@ -59,7 +59,7 @@ const SlideSidebar = () => {
             aria-label="Close navigation menu"
             sx={{
               variant: 'buttons.raw',
-              color: 'white',
+              color: 'sidebarColor',
             }}
             className="close"
             onClick={closeMenu}

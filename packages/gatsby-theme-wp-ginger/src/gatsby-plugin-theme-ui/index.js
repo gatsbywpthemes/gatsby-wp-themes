@@ -19,18 +19,18 @@ import Main from './components/main'
 import { colors } from './components/colors'
 
 const theme = {
-  breakpoints: ['40em', '64em', '80em'],
+  baseFontSize: '16px',
+  breakpoints: ['40em', '64em'],
   fonts,
   fontSizes,
   fontWeights,
   lineHeights,
   letterSpacings,
   colors,
-  space: [0, 4, 8, 12, 16, 24, 32, 48, 64, 128, 256, 512],
   sizes: {
-    header: ['72px', '96px', '96px'],
-    content: '840px',
-    menuIcon: '48px',
+    header: ['4.5rem', '6rem', '6rem'],
+    content: '52.5rem',
+    sidebar: '29.25rem',
   },
   styles: {
     Layout,
@@ -43,11 +43,6 @@ const theme = {
     },
   },
   layer,
-  global: {
-    anchor: {
-      ...baseTypo.a,
-    },
-  },
   special,
   form,
   search,

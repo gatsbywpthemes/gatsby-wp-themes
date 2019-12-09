@@ -6,14 +6,14 @@ const sharedFormStyles = {
     fontWeight: 'body',
   },
   'input[type="file"]': {
-    mb: 4,
-    py: 3,
+    mb: '1rem',
+    py: '0.75rem',
   },
   'textarea, input[type="search"],  input[type="text"], input[type="email"], input[type="url"], input[type="tel"], input[type="date"], input[type="number"]': {
     color: 'inherit',
     border: 'none',
     borderBottom: '1px solid',
-    padding: 2,
+    padding: '0.5rem',
     boxShadow: 'inset 0 0 0 currentColor',
     bg: 'transparent',
     transition: '.3s',
@@ -21,7 +21,7 @@ const sharedFormStyles = {
     width: '100%',
     minWidth: '100%',
     borderRadius: 0,
-    mb: 4,
+    mb: '1rem',
     '&:focus': {
       boxShadow: 'inset 0 -3px 0 currentColor',
       outline: 'none',
@@ -29,21 +29,21 @@ const sharedFormStyles = {
   },
   'label, .form-field-radio, .form-field-checkbox': {
     variant: 'special',
-    fontSize: 'xs',
+    fontSize: '0.75rem',
     fontWeight: 'bold',
   },
   '.form-field-radio label': {
     fontWeight: 'body',
-    py: 2,
+    py: '.25rem',
     display: 'inline-block',
-    mr: 3,
+    mr: '0.75rem',
   },
   'input[type="radio"]': {
-    ml: 1,
+    ml: '0.25rem',
   },
   'input[type="checkbox"]': {
-    mr: 1,
-    my: 3,
+    mr: '0.25rem',
+    my: '0.75rem',
   },
   'input[type="number"]': {
     width: 'auto',
@@ -51,7 +51,7 @@ const sharedFormStyles = {
   },
   'input[type="submit"], button[type=submit]': {
     variant: 'special',
-    padding: 3,
+    padding: '0.75rem',
     bg: 'transparent',
     border: '1px solid',
     color: 'inherit',
@@ -93,7 +93,7 @@ const sharedFormStyles = {
   },
   select: {
     display: 'block',
-    p: 3,
+    p: '0.75rem',
     width: '100%',
     maxWidth: '100%',
     m: 0,
@@ -124,7 +124,7 @@ const sharedFormStyles = {
 
 export const form = {
   ...sharedFormStyles,
-  mb: 6,
-  py: 7,
-  px: 6,
+  mb: '2rem',
+  py: '3rem',
+  px: '2rem',
 }

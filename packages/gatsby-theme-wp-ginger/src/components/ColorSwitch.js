@@ -18,19 +18,19 @@ const ColorSwitch = () => {
         zIndex: 13,
         right: '5rem',
         top: theme => [
-          `${0.5 * (parseInt(theme.sizes.header[0]) - 24)}px`,
-          `${0.5 * (parseInt(theme.sizes.header[1]) - 24)}px`,
+          `${0.5 * (parseInt(theme.sizes.header[0]) - 1.5)}rem`,
+          `${0.5 * (parseInt(theme.sizes.header[1]) - 1.5)}rem`,
           '1.75rem',
         ],
       }}
     >
       {colorMode === 'dark' ? (
-        <FiSun sx={{ width: `24px`, height: `24px` }} />
+        <FiSun sx={{ width: `1.5rem`, height: `1.5rem` }} />
       ) : (
         <FiMoon
           sx={{
-            width: `24px`,
-            height: `24px`,
+            width: `1.5rem`,
+            height: `1.5rem`,
           }}
         />
       )}
