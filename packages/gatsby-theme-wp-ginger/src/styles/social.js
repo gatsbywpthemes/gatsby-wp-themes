@@ -1,6 +1,6 @@
 export const share = {
   titleicon: {
-    mb: '0.75',
+    mb: '0.75rem',
     display: 'flex',
     width: '1.5rem',
     height: '1.5rem',

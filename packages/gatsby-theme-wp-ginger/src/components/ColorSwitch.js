@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from 'theme-ui'
-import React from 'react'
 import { FiSun, FiMoon } from 'react-icons/fi'
 
 const ColorSwitch = () => {

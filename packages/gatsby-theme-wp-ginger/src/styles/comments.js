@@ -4,7 +4,6 @@ export const commentStyles = {
     mb: '2rem',
     py: '3rem',
     px: '2rem',
-    boxShadow: '0 20px 40px rgba(0,0,0,.15)',
     '.comment &': {
       boxShadow: 'none',
       p: '1.5rem',
