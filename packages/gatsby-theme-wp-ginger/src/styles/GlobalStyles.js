@@ -94,6 +94,11 @@ export const globalStyles = theme => {
       width: 100%;
     }
     ${typography.toString()}
+    @media screen and (max-width: ${theme.breakpoints[0]}) {
+      html {
+        font-size: 16px;
+      }
+    }
     html {
       overflow-y: initial;
     }

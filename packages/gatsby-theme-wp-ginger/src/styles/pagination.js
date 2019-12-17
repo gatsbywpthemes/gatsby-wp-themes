@@ -4,6 +4,7 @@ export const pagination = {
   justifyContent: `space-between`,
   alignItems: `center`,
   fontSize: 'xs',
+  overflow: 'hidden',
   mb: '1rem',
   '&> :first-child, &> :last-child': {
     flex: 1,

@@ -30,7 +30,7 @@ export const card = {
   full: {
     ...sharedCardStyles,
     width: '40rem',
-    maxWidth: 'calc(100% - 4rem)',
+    maxWidth: ['calc(100% - 2rem)', 'calc(100% - 4rem)'],
     bg: 'transparent',
     boxShadow: '0 40px 60px rgba(0,0,0,0.4)',
     position: 'relative',
@@ -59,7 +59,7 @@ export const card = {
     '&:after': {
       borderStyle: 'solid',
       borderColor: 'cardBorder',
-      borderWidth: `0.75rem`,
+      borderWidth: ['0.5rem', `0.75rem`],
       opacity: 0.75,
       zIndex: -1,
     },

@@ -89,7 +89,7 @@ export const replyButton = {
 
 export const commentsSection = {
   p: theme => [
-    `2rem`,
+    `1.5rem`,
     '4rem',
     `4rem calc(50% - ${parseInt(theme.sizes.content) / 2}rem)`,
   ],
