@@ -112,11 +112,18 @@ The prefix for the posts. If you change it, make sure to set the permalinks stru
 
 This is an important setting. It should be left empty if your WordPress homepage displays your latest posts. This corresponds to the default in Settings > Reading > Your homepage displays.
 If you choose a static page and set a Posts page, you should use the Posts page slug as your postsPath.
+If your WordPress website doesn't display blog page (neither on homepage or a custom page), you should set postsPath to `false`.
 
 example:
 
 ```javascript
 postsPath: "blog"
+```
+
+or
+
+```javascript
+postsPath: false
 ```
 
 ---
