@@ -31,7 +31,6 @@ const Layout = ({ useContainer = true, children }) => {
   const siteSettings = useSiteSettings()
   const { theme } = useThemeUI()
   const { addColorModes } = useThemeOptions()
-  console.log(globalStyles(theme).styles)
   return (
     <Styled.root>
       <Global styles={globalStyles(theme)} />

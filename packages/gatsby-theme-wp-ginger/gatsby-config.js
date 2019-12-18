@@ -38,7 +38,7 @@ module.exports = options => {
       options: {
         threshold: 0.1,
         once: true,
-        selector: `[data-sal], .wp-block-gallery figure, .entry-content p, .entry-content blockquote, .entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6, .entry-content .animate-on-scroll`,
+        selector: `[data-sal],  .entry-content p, .entry-content blockquote, .entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6, .entry-content .animate-on-scroll`,
       },
     },
     `gatsby-plugin-sass`,
