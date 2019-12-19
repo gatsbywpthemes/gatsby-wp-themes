@@ -1,11 +1,11 @@
 const typographySettings = {
   baseFontSize: "18px",
   fonts: {
-    body: "Inria Serif, serif",
-    heading: "Montserrat",
+    //body: "Trebuchet MS, sans-serif",
+    //heading: "Abril Fatface, serif",
   },
   fontWeights: {
-    heading: 700,
+    //heading: 400,
     //body: 300,
     //bold: 700,
   },
