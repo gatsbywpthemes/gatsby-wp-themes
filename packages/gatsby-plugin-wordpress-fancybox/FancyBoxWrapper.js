@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import jQuery from 'jquery'
 import '@fancyapps/fancybox'
-
+import '@fancyapps/fancybox/dist/jquery.fancybox.css'
 const FancyBoxWrapper = props => {
   useEffect(() => {
     jQuery(function() {

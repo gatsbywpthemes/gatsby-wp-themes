@@ -19,7 +19,6 @@ import Footer from './footer/Footer'
 import SlideSidebar from './SlideSidebar'
 import '../styles/blocks.css'
 import '../styles/custom-gutenstyles.css'
-import '../../../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css'
 import ColorSwitch from './ColorSwitch'
 
 const MaybeWithContainer = ({ useContainer, children }) => {

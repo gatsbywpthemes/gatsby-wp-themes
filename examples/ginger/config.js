@@ -35,6 +35,7 @@ const config = {
   // siteMapOptions: {},
   // addAlgoliaSearch: false,
   // addColorModes: false,
+  // addFancyBox: true,
 }
 // https://gatsby-test-2.alexaspalato.website
 //https://gatsby-theme-demo.alexaspalato.website
