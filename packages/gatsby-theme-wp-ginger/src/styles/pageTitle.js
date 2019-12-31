@@ -1,6 +1,7 @@
 export default {
   textAlign: 'center',
   mb: '4rem',
+  mt: '4rem',
   '&:after': {
     content: '""',
     width: '4rem',

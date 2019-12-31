@@ -1,4 +1,5 @@
 const sharedCardStyles = {
+  position: 'relative',
   bg: 'cardBg',
   color: 'cardColor',
   textAlign: 'center',
@@ -15,6 +16,19 @@ const sharedCardStyles = {
 export const card = {
   blog: {
     ...sharedCardStyles,
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      borderStyle: 'solid',
+      borderColor: 'cardBorder',
+      borderWidth: ['0.5rem', `0.75rem`],
+      opacity: 0.75,
+      zIndex: -1,
+    },
     '.dark-color-mode &': {
       boxShadow: `0 20px 40px -10px rgba(0,0,0,0.3)`,
     },
@@ -30,10 +44,9 @@ export const card = {
   full: {
     ...sharedCardStyles,
     width: '40rem',
-    maxWidth: ['calc(100% - 2rem)', 'calc(100% - 4rem)'],
+    maxWidth: ['calc(100% - 2rem)', 'calc(100% - 4rem)', '100%'],
     bg: 'transparent',
     boxShadow: '0 40px 60px rgba(0,0,0,0.4)',
-    position: 'relative',
     '.dark-color-mode &': {
       boxShadow: '0 40px 60px rgba(0,0,0,0.8)',
     },
