@@ -10,7 +10,7 @@ export const query = graphql`
     imageFile {
       childImageSharp {
         fluid(maxWidth: 1200, maxHeight: 400, quality: 80) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -20,8 +20,8 @@ export const query = graphql`
     sourceUrl
     imageFile {
       childImageSharp {
-        fluid(maxWidth: 1200, quality: 80) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1200, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
