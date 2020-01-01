@@ -21,6 +21,7 @@ module.exports = options => {
     addAlgoliaSearch: false,
     addColorModes: true,
     addFancyBox: true,
+    skipTitle: [],
     ...options,
     overrideBlogTemplate: `gatsby-theme-wp-ginger/src/templates/posts-query.js`,
     overridePostTemplate: `gatsby-theme-wp-ginger/src/templates/post-query.js`,

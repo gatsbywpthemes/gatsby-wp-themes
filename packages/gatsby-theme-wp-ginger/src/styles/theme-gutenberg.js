@@ -27,6 +27,9 @@ export default {
     position: 'relative',
     width: '100%',
   },
+  '.alignfull:first-child': {
+    mt: 0,
+  },
 
   '[class*="__inner-container"] > .alignfull': {
     maxWidth: '100%',
