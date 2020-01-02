@@ -16,7 +16,9 @@ export default {
     my: ['2rem', '4rem'],
     mx: 'auto',
   },
-
+  '.aligncenter > .gatsby-image-wrapper': {
+    mx: 'auto',
+  },
   '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)': {
     mx: 'auto',
   },
