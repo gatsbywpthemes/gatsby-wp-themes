@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, useColorMode } from 'theme-ui'
-import React from 'react'
+import { jsx, useColorMode } from 'theme-ui'
 import { Button } from 'grommet'
 import { WiDaySunny, WiMoonAltWaningCrescent4 } from 'react-icons/wi'
 
