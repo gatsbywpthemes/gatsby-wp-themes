@@ -3,7 +3,7 @@ import Typography from 'typography'
 
 export const globalStyles = theme => {
   const typography = new Typography({
-    baseFontSize: theme.baseFontSize,
+    baseFontSize: theme.baseFontSize || '16px',
     baseLineHeight: theme.lineHeights.body,
     scaleRatio: 3,
     blockMarginBottom: 0.75,
@@ -94,6 +94,11 @@ export const globalStyles = theme => {
       width: 100%;
     }
     ${typography.toString()}
+    @media screen and (max-width: ${theme.breakpoints[0]}) {
+      html {
+        font-size: 16px;
+      }
+    }
     html {
       overflow-y: initial;
     }

@@ -28,6 +28,7 @@
     "gatsby-plugin-typography": "^2.3.17",
     "gatsby-theme-algolia": "*",
     "gatsby-theme-blog-data": "*",
+    "gatsby-plugin-wordpress-fancybox": "*",
     "grommet": "^2.8.1",
     "grommet-icons": "^4.4.0",
     "intersection-observer": "^0.7.0",

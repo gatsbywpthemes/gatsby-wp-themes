@@ -17,19 +17,22 @@ module.exports = options => {
     }
   }
 
+  const mergedOptions = {
+    addAlgoliaSearch: false,
+    addColorModes: true,
+    addFancyBox: true,
+    skipTitle: [],
+    ...options,
+    overrideBlogTemplate: `gatsby-theme-wp-ginger/src/templates/posts-query.js`,
+    overridePostTemplate: `gatsby-theme-wp-ginger/src/templates/post-query.js`,
+    overrideCategoryTemplate: `gatsby-theme-wp-ginger/src/templates/category-query.js`,
+    overrideTagTemplate: `gatsby-theme-wp-ginger/src/templates/tag-query.js`,
+    overrideUserTemplate: `gatsby-theme-wp-ginger/src/templates/user-query.js`,
+  }
   const plugins = [
     {
       resolve: `gatsby-theme-blog-data`,
-      options: {
-        addAlgoliaSearch: false,
-        addColorModes: true,
-        ...options,
-        overrideBlogTemplate: `gatsby-theme-wp-ginger/src/templates/posts-query.js`,
-        overridePostTemplate: `gatsby-theme-wp-ginger/src/templates/post-query.js`,
-        overrideCategoryTemplate: `gatsby-theme-wp-ginger/src/templates/category-query.js`,
-        overrideTagTemplate: `gatsby-theme-wp-ginger/src/templates/tag-query.js`,
-        overrideUserTemplate: `gatsby-theme-wp-ginger/src/templates/user-query.js`,
-      },
+      options: mergedOptions,
     },
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
@@ -38,7 +41,7 @@ module.exports = options => {
       options: {
         threshold: 0.1,
         once: true,
-        selector: `[data-sal], .wp-block-gallery figure, .entry-content p, .entry-content blockquote, .entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6, .entry-content .animate-on-scroll`,
+        selector: `[data-sal],  .entry-content p, .entry-content blockquote, .entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6, .entry-content .animate-on-scroll`,
       },
     },
     `gatsby-plugin-sass`,
@@ -47,11 +50,11 @@ module.exports = options => {
    * Conditionally add google fonts plugin
    * to avoid errors on build
    */
-  if (options.customFonts.length) {
+  if (mergedOptions.customFonts.length) {
     plugins.push({
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: options.customFonts,
+        fonts: mergedOptions.customFonts,
         display: 'swap',
       },
     })
@@ -63,6 +66,14 @@ module.exports = options => {
    */
   if (options.addAlgoliaSearch) {
     plugins.push(`gatsby-theme-algolia`)
+  }
+
+  /**
+   * Conditionally add google fonts plugin
+   * to avoid errors on build
+   */
+  if (mergedOptions.addFancyBox) {
+    plugins.push(`gatsby-plugin-wordpress-fancybox`)
   }
 
   return {

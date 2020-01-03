@@ -79,8 +79,7 @@ figure,
 .entry-content h4,
 .entry-content h5,
 .entry-content h6,
-.entry-content .animate-on-scroll,
-.entry-content .wp-block-gallery figure {
+.entry-content .animate-on-scroll {
   opacity: 0;
   transform: translate3d(0, 2.5rem, 0);
   transition-property: opacity, transform, -webkit-transform;
@@ -102,4 +101,14 @@ figure,
 
 .dark-color-mode hr {
   background: rgba(255, 255, 255, 0.15);
+}
+
+.blocks-gallery-item {
+  overflow: hidden;
+}
+.entry-content .wp-block-gallery .blocks-gallery-item a {
+  transition: 1s;
+}
+.blocks-gallery-item a:hover {
+  transform: scale(1.1);
 }
