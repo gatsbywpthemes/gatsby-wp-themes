@@ -38,7 +38,7 @@ const Page = ({ page }) => {
     : ''
 
   return (
-    <Layout>
+    <Layout page={page} type="page">
       <SEO
         title={title}
         description={excerpt}
