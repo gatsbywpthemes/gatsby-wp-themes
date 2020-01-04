@@ -114,33 +114,34 @@ module.exports = async ({ actions, graphql }, options) => {
      * @type {string}
      */
 
-    const blogPagePath = !variables.after
-      ? `${postsPath}/`
-      : `${postsPath}/${paginationPrefix}/${pageNumber + 1}`
-
     /**
      * The IDs of the posts which were got from GraphQL.
      */
     const nodeIds = nodes.map(node => node.postId)
 
-    /**
-     * Add config for the postsPath to the postsPath array
-     * for creating later
-     *
-     * @type {{path: string, component: string, context: {nodes: *, pageNumber: number, hasNextPage: *}}}
-     */
-    blogPages.push({
-      path: blogPagePath,
-      component: blogTemplate,
-      context: {
-        ids: nodeIds,
-        allPosts,
-        pageNumber: pageNumber + 1,
-        hasNextPage,
-        postsPerPage,
-      },
-    })
+    if (postsPath !== false) {
+      const blogPagePath = !variables.after
+        ? `${postsPath}/`
+        : `${postsPath}/${paginationPrefix}/${pageNumber + 1}`
 
+      /**
+       * Add config for the postsPath to the postsPath array
+       * for creating later
+       *
+       * @type {{path: string, component: string, context: {nodes: *, pageNumber: number, hasNextPage: *}}}
+       */
+      blogPages.push({
+        path: blogPagePath,
+        component: blogTemplate,
+        context: {
+          ids: nodeIds,
+          allPosts,
+          pageNumber: pageNumber + 1,
+          hasNextPage,
+          postsPerPage,
+        },
+      })
+    }
     /**
      * Map over the posts for later creation
      */

@@ -32,6 +32,7 @@ const DEFAULT_OPTIONS = {
       },
     },
   },
+  addFancyBox: false,
 }
 
 module.exports = DEFAULT_OPTIONS

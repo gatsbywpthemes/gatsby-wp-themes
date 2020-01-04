@@ -3,5 +3,5 @@ export default {
   width: 'content',
   maxWidth: '100%',
   px: '1rem',
-  py: ['1.5rem', '2rem', '4.5rem'],
+  pb: ['1.5rem', '2rem', '4.5rem'],
 }

@@ -4,7 +4,7 @@ export default {
   },
   '& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
     maxWidth: theme => theme.sizes.content,
-    width: `calc(100% - 4rem)`,
+    width: [`calc(100% - 3rem)`, `calc(100% - 4rem)`],
   },
 
   '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
@@ -13,7 +13,7 @@ export default {
   },
 
   '.alignnone,.aligncenter,.alignleft,.alignright,.alignwide': {
-    my: '4rem',
+    my: ['2rem', '4rem'],
     mx: 'auto',
   },
 
@@ -23,9 +23,12 @@ export default {
   /* Full */
   '.alignfull': {
     mx: 'auto',
-    my: '5rem',
+    my: ['3rem', '5rem'],
     position: 'relative',
     width: '100%',
+  },
+  '.alignfull:first-child': {
+    mt: 0,
   },
 
   '[class*="__inner-container"] > .alignfull': {

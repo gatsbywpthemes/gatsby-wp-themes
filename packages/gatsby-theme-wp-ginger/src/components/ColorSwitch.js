@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from 'theme-ui'
-import React from 'react'
 import { FiSun, FiMoon } from 'react-icons/fi'
 
 const ColorSwitch = () => {
@@ -16,12 +15,16 @@ const ColorSwitch = () => {
         color: 'text',
         position: 'fixed',
         zIndex: 13,
-        right: '5rem',
-        top: theme => [
-          `${0.5 * (parseInt(theme.sizes.header[0]) - 1.5)}rem`,
-          `${0.5 * (parseInt(theme.sizes.header[1]) - 1.5)}rem`,
-          '1.75rem',
-        ],
+        right: '4.5rem',
+        top: theme => {
+          const header0 = theme.sizes.header[0].split('rem')
+          const header1 = theme.sizes.header[1].split('rem')
+          return [
+            `${0.5 * (Number(header0[0]) - 1.5)}rem`,
+            `${0.5 * (Number(header1[0]) - 1.5)}rem`,
+            '1.75rem',
+          ]
+        },
       }}
     >
       {colorMode === 'dark' ? (

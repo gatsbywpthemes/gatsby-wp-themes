@@ -48,7 +48,6 @@ const SEO = ({
   return (
     <Helmet htmlAttributes={{ lang: siteSettings.language }} title={pageTitle}>
       <meta name="description" content={pageDescription} />
-
       {/* titter */}
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={pageDescription} />

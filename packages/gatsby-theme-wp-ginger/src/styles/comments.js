@@ -4,7 +4,6 @@ export const commentStyles = {
     mb: '2rem',
     py: '3rem',
     px: '2rem',
-    boxShadow: '0 20px 40px rgba(0,0,0,.15)',
     '.comment &': {
       boxShadow: 'none',
       p: '1.5rem',
@@ -90,7 +89,7 @@ export const replyButton = {
 
 export const commentsSection = {
   p: theme => [
-    `2rem`,
+    `1.5rem`,
     '4rem',
     `4rem calc(50% - ${parseInt(theme.sizes.content) / 2}rem)`,
   ],

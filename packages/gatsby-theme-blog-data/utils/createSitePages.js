@@ -119,7 +119,8 @@ module.exports = async ({ actions, graphql }, options) => {
       }
 
       const path =
-        page.isFrontPage && options.postsPath && options.postsPath !== `/`
+        (page.isFrontPage && options.postsPath && options.postsPath !== `/`) ||
+        (page.isFrontPage && options.postsPath === false)
           ? `/`
           : `/${page.uri}`
       console.log(`create page: ${path}`)

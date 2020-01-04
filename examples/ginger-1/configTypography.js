@@ -1,13 +1,13 @@
 const typographySettings = {
-  baseFontSize: "18px",
+  baseFontSize: "16px",
   fonts: {
-    //body: "Trebuchet MS, sans-serif",
-    //heading: "Abril Fatface, serif",
+    body: "Poppins, sans-serif",
+    heading: "Bebas Neue, sans-serif",
   },
   fontWeights: {
-    //heading: 400,
-    //body: 300,
-    //bold: 700,
+    heading: 400,
+    body: 300,
+    bold: 700,
   },
   lineHeights: {
     //body: 1.5,
