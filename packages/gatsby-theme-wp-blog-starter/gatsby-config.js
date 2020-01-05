@@ -19,6 +19,14 @@ module.exports = options => {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.1,
+        once: true,
+        selector: `[data-sal],  .entry-content p, .entry-content blockquote, .entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6, .entry-content, .entry-info, .animate-on-scroll`,
+      },
+    },
   ]
 
   /**

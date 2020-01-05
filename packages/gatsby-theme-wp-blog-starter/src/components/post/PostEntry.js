@@ -17,7 +17,7 @@ const PostEntry = ({ post, location, postsPrefix }) => {
     ? post.featuredImage.imageFile.childImageSharp.fluid.src
     : null
   return (
-    <article className="entry" sx={articleStyles}>
+    <article className="entry-content" sx={articleStyles}>
       <PostEntryMedia
         location={location}
         post={post}

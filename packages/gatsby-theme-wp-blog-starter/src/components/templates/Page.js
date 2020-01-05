@@ -60,7 +60,10 @@ const Page = ({ page }) => {
             }}
             className="entry"
           >
-            <div className="content page-content" sx={{ borderRadius: `s` }}>
+            <div
+              className="entry-content page-content"
+              sx={{ borderRadius: `s` }}
+            >
               <Styled.h1
                 className="page-title"
                 dangerouslySetInnerHTML={{ __html: title }}
