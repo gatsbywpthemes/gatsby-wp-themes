@@ -20,7 +20,7 @@ const DEFAULT_OPTIONS = {
   search: 'basic',
   widgetAreas: {
     slideMenu: {
-      widgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
+      widgets: [],
     },
     sidebar: {
       widgets: [],

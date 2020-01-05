@@ -1,8 +1,8 @@
 const config = {
   // wordPressUrl: `http://alexandraspalato.com/gatsby`,
   // wordPressUrl: `http://gatsbydemo.wst/`,
-  wordPressUrl: `https://gatsby-theme-demo.alexaspalato.website/`,
-  // wordPressUrl: `https://gatsby-test-2.alexaspalato.website/`,
+  // wordPressUrl: `https://gatsby-theme-demo.alexaspalato.website/`,
+  wordPressUrl: `https://gatsby-test-2.alexaspalato.website/`,
   // wordPressUrl: `http://gatsbydemowp.wst/`,
   // uploadsPath: `wp-content/uploads`,
   // postsPrefix: ``,
