@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `http://g-kitchen.test`,
+  wordPressUrl: `https://wp-pehaa.com/ginger-kitchen`,
   // uploadsPath: `wp-content/uploads`,
   // pathPrefix: "",
   // postsPrefix: ``,
@@ -8,7 +8,7 @@ const config = {
   postsPerPage: 5,
   // addComments: true,
   menuName: "main",
-  gingerWidgets: [`SocialFollow`, `RecentPosts`, `Tags`],
+  //gingerWidgets: [`SocialFollow`, `RecentPosts`, `Tags`],
   // siteUrl: "https://example.com",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,

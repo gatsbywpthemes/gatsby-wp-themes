@@ -62,6 +62,8 @@ const config = {
   siteMapOptions: {},
   addAlgoliaSearch: false,
   addColorModes: true,
+  addFancyBox: true,
+  skipTitle: [],
 }
 ```
 

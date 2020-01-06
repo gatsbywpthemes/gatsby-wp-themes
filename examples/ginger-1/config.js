@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `http://g-mini.test`,
+  wordPressUrl: `https://wp-pehaa.co/ginger-mini`,
   // uploadsPath: `wp-content/uploads`,
   // pathPrefix: "",
   // postsPrefix: ``,
@@ -28,7 +28,7 @@ const config = {
     },
   ],
   // twitterSummaryCardImage: `Gatsby_Monogram.png`,
-  fonts: ["Bebas+Neue", "Poppins:300,300i,700,700i,900"],
+  fonts: ["Special+Elite", "Open+Sans:400,400i,700,700i"],
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,

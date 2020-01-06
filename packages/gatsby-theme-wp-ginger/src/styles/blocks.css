@@ -926,7 +926,7 @@ section.wp-block-cover-image > h2 {
 .wp-block-image .alignleft,
 .wp-block-image .alignright,
 .wp-block-image.is-resized {
-  display: table;
+  display: inline-block;
   margin-left: 0;
   margin-right: 0;
 }

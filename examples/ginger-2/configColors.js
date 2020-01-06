@@ -5,7 +5,7 @@ const colorSettings = {
 
   text: "#483262",
   //background: "#ffffff",
-  linkHover: "#eabc2d",
+  linkHover: "#b05b42",
   //focusOutline: "#c98afa",
 
   /* header */
@@ -13,12 +13,12 @@ const colorSettings = {
   headerBg: "#1a0c2a",
 
   /* footer */
-  //footerColor: "#303030",
-  //footerBg: "#f5f5f5",
+  footerColor: "white",
+  footerBg: "#b05b42",
 
   /* sidebar */
-  sidebarColor: "color",
-  sidebarBg: "#eabc2d",
+  sidebarColor: "white",
+  sidebarBg: "#a06351",
   //menuButtonColor: "#ffffff",
   menuButtonBg: color,
 
@@ -26,33 +26,34 @@ const colorSettings = {
   //splashBg: "#076666",
   scrollDownColor: color,
   //scrollDownBg: "#ffffff",
-  //cardColor: "#303030",
-  cardBg: "#e0ebe4",
+  cardColor: "#483262",
+  cardBg: "#f0e7e4",
   cardBorder: "#fff",
   commentsColor: color,
-  commentsBg: "#e0ebe4",
+  commentsBg: "#e7f0eb",
   modes: {
     dark: {
       //text: "#f5f5f5",
-      //background: "#303030",
-      //linkHover: "#076666",
+      background: "#271d33",
+      linkHover: "#b05b42",
       //focusOutline: "#c98afa",
       //headerColor: "#f5f5f5",
-      //headerBg: "#262626",
+      headerBg: "#1a0c2a",
       //footerColor: "#f5f5f5",
-      //footerBg: "#161616",
+      footerBg: "#1a0c2a",
       //sidebarColor: "#f5f5f5",
-      //sidebarBg: "#161616",
-      //menuButtonColor: "#303030",
+      sidebarBg: "#1a0c2a",
+      menuButtonColor: "#1a0c2a",
       //menuButtonBg: "#f5f5f5",
       //splashBg: "#1f1f1f",
       //scrollDownColor: "#ffffff",
-      //scrollDownBg: "#303030",
+      scrollDownBg: "#1a0c2a",
       //cardColor: "#f5f5f5",
-      //cardBg: "#303030",
-      //cardBorder: "#3a3a3a",
+      cardBg: "#271d33",
+      cardBorder: "#271d33",
       //commentsColor: "#f5f5f5",
-      //commentsBg: "#1f1f1f",
+      commentsBg: "#22172d",
+      overlay: "#271d33e8",
     },
   },
 }

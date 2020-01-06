@@ -1,4 +1,4 @@
-import { darken, lighten } from 'polished'
+import { darken, lighten, opacify } from 'polished'
 
 const dark = `#303030`
 const dark0 = lighten(0.04, '#303030')
@@ -38,6 +38,7 @@ export const colors = {
   cardBorder: white,
   commentsColor: white,
   commentsBg: dark,
+  overlay: 'transparent',
 
   modes: {
     dark: {
@@ -66,6 +67,7 @@ export const colors = {
       cardBorder: dark0,
       commentsColor: light,
       commentsBg: dark3,
+      overlay: 'rgba(0,0,0,.6)',
     },
   },
 }

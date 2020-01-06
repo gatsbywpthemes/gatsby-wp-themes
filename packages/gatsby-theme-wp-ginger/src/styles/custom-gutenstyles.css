@@ -71,7 +71,6 @@ figure,
   margin-bottom: 0;
 }
 
-.entry-content p,
 .entry-content blockquote,
 .entry-content h1,
 .entry-content h2,
@@ -89,14 +88,6 @@ figure,
 .entry-content .sal-animate:nth-child(n) {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-}
-
-.dark-color-mode .has-background:not(.has-text-color),
-.dark-color-mode .wp-block-media-text[style*='background'],
-.dark-color-mode .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-  /* background-color: transparent !important; */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-  background-blend-mode: multiply;
 }
 
 .dark-color-mode hr {

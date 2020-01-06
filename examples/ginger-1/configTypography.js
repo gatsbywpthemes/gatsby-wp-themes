@@ -1,12 +1,12 @@
 const typographySettings = {
   baseFontSize: "16px",
   fonts: {
-    body: "Poppins, sans-serif",
-    heading: "Bebas Neue, sans-serif",
+    body: "Open Sans, sans-serif",
+    heading: "Special Elite, serif",
   },
   fontWeights: {
     heading: 400,
-    body: 300,
+    body: 400,
     bold: 700,
   },
   lineHeights: {
