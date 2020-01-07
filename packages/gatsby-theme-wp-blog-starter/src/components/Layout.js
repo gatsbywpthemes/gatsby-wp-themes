@@ -10,22 +10,25 @@ import { Grommet } from 'grommet'
 import grommetTheme from '../styles/grommet'
 import '../styles/scss/styles.scss'
 
-const Layout = ({ children }) => (
-  <Grommet theme={grommetTheme}>
-    <Global styles={globalStyles} />
-    <StyledLayout>
-      <Header />
-      <Main>
-        <Fragment>
-          <Flex sx={{ justifyContent: `flex-end`, mb: `s`, mr: `xxs` }}>
-            <ColorSwitch />
-          </Flex>
-          {children}
-        </Fragment>
-      </Main>
-      <Footer />
-    </StyledLayout>
-  </Grommet>
-)
+const Layout = ({ children, page, type = 'page' }) => {
+  const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
+  return (
+    <Grommet theme={grommetTheme}>
+      <Global styles={globalStyles} />
+      <StyledLayout className={`${layoutClass}-${type}`}>
+        <Header />
+        <Main>
+          <Fragment>
+            <Flex sx={{ justifyContent: `flex-end`, mb: `s`, mr: `xxs` }}>
+              <ColorSwitch />
+            </Flex>
+            {children}
+          </Fragment>
+        </Main>
+        <Footer />
+      </StyledLayout>
+    </Grommet>
+  )
+}
 
 export default Layout

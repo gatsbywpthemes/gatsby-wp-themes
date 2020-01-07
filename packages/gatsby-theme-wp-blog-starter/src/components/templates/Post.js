@@ -48,7 +48,7 @@ const Post = ({ post }) => {
     config: { identifier: slug, title },
   }
   return (
-    <Layout>
+    <Layout page={post} type="post">
       <SEO
         title={title}
         description={excerpt}

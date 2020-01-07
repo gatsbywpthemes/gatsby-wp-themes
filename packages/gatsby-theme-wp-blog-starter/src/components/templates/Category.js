@@ -9,7 +9,7 @@ const Category = ({ category, ctx }) => {
   const url = `category/${slug}/`
 
   return (
-    <Layout>
+    <Layout page={category} type="category">
       <SEO
         title={`${name} Archives`}
         pageNumber={pageNumber}

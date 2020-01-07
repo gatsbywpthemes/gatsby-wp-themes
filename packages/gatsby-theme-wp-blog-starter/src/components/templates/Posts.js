@@ -11,7 +11,7 @@ const Posts = ({ posts, ctx }) => {
   const { pageNumber } = ctx
   const ogType = slashes(postsPath) === '' ? 'website' : 'object'
   return (
-    <Layout>
+    <Layout page="blog">
       <SEO
         titleTemplate={'withDescription'}
         pageNumber={pageNumber}
