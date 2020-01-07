@@ -10,6 +10,7 @@ const heading = {
   },
 }
 const typographySettings = {
+  baseFontSize: "18px",
   fonts: {
     body: "IBM Plex Mono",
     heading: "Roboto Slab",

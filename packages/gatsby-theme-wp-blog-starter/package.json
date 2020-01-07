@@ -48,6 +48,7 @@
     "theme-ui": "^0.2.49",
     "typeface-ibm-plex-mono": "^0.0.61",
     "typeface-roboto-slab": "^0.0.72",
-    "typography": "^0.16.19"
+    "typography": "^0.16.19",
+    "gatsby-plugin-wordpress-fancybox": "*"
   }
 }

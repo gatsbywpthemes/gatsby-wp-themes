@@ -1,18 +1,26 @@
 module.exports = options => {
-  options.fonts = options.fonts || ['abril fatface', 'fira sans']
+  options.fonts = options.fonts || ['IBM Plex Mono', 'Roboto Slab']
   options.customFonts = []
   if (options.fonts) {
     options.customFonts = options.fonts.filter(
       el =>
-        el.toLowerCase().indexOf(`fira sans`) === -1 &&
-        el.toLowerCase().indexOf(`abril fatface`) === -1
+        el.toLowerCase().indexOf(`IBM Plex Mono`) === -1 &&
+        el.toLowerCase().indexOf(`Roboto Slab`) === -1
     )
+  }
+
+  const mergedOptions = {
+    addAlgoliaSearch: false,
+    addColorModes: true,
+    addFancyBox: true,
+    skipTitle: [],
+    ...options,
   }
   const plugins = [
     `gatsby-theme-algolia`,
     {
       resolve: `gatsby-theme-blog-data`,
-      options,
+      options: mergedOptions,
     },
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
@@ -33,14 +41,30 @@ module.exports = options => {
    * Conditionally add google fonts plugin
    * to avoid errors on build
    */
-  if (options.customFonts.length) {
+  if (mergedOptions.customFonts.length) {
     plugins.push({
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: options.customFonts,
+        fonts: mergedOptions.customFonts,
         display: 'swap',
       },
     })
+  }
+
+  /**
+   * Conditionally add algolia plugin
+   * to avoid errors on build
+   */
+  if (options.addAlgoliaSearch) {
+    plugins.push(`gatsby-theme-algolia`)
+  }
+
+  /**
+   * Conditionally add fancy box plugin
+   * to avoid errors on build
+   */
+  if (mergedOptions.addFancyBox) {
+    plugins.push(`gatsby-plugin-wordpress-fancybox`)
   }
   return {
     siteMetadata: {
