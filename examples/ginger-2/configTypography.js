@@ -1,12 +1,12 @@
 const typographySettings = {
-  baseFontSize: "16px",
+  baseFontSize: "18px",
   fonts: {
-    body: "Open Sans, sans-serif",
-    heading: "Special Elite, serif",
+    body: "Lora, serif",
+    heading: "Abril Fatface, serif",
   },
   fontWeights: {
     heading: 400,
-    body: 400,
+    body: 300,
     bold: 700,
   },
   lineHeights: {

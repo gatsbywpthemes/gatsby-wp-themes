@@ -9,7 +9,9 @@ import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import normalize from 'normalize-path'
 
-const subdirectoryCorrection = (path, wordPressUrl) => {
+const subdirectoryCorrection = (path, wordPressUrl, hash = '') => {
+  console.log('path', path)
+  path += `/${hash}`
   const wordPressUrlParsed = new URIParser(slashes(wordPressUrl))
   // detect if WordPress is installed in subdirectory
   const subdir = wordPressUrlParsed.path()
@@ -20,6 +22,8 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
 
   if (menuItem.connectedObject.__typename === 'WP_MenuItem') {
     const parsedUrl = new URIParser(url)
+    console.log(parsedUrl)
+    console.log(parsedUrl.hash())
     if (menuItem.url === `#`) {
       return menuItem.label
     }
@@ -29,11 +33,14 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
     }
     const wordPressUrlParsed = new URIParser(wordPressUrl)
     const path = parsedUrl.path()
+    const hash = parsedUrl.hash()
     if (
       parsedUrl.hostname() === wordPressUrlParsed.hostname() &&
       path.indexOf(slashes(wordPressUrlParsed.path())) === 0
     ) {
-      url = subdirectoryCorrection(path, wordPressUrl)
+      console.log(url, path)
+      url = subdirectoryCorrection(path, wordPressUrl, hash)
+      console.log(url)
       return <Link to={url}> {menuItem.label}</Link>
     }
     return (

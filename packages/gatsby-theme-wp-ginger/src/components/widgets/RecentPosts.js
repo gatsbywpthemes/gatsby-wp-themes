@@ -66,9 +66,11 @@ const RecentPosts = () => {
                         {moment(post.date).format(`MMMM DD, YYYY`)}
                       </time>
                     </Link>
-                    <Link className="widget-post-title" to={uri}>
-                      {post.title}
-                    </Link>
+                    <Link
+                      className="widget-post-title"
+                      to={uri}
+                      dangerouslySetInnerHTML={{ __html: post.title }}
+                    />
                   </div>
                 </li>
               )

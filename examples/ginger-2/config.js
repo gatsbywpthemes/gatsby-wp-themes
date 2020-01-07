@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `https://wp-pehaa.co/ginger-mini`,
+  wordPressUrl: `https://wp-pehaa.com/ginger-kitchen`,
   // uploadsPath: `wp-content/uploads`,
   // pathPrefix: "",
   // postsPrefix: ``,
@@ -8,7 +8,7 @@ const config = {
   postsPerPage: 5,
   // addComments: true,
   menuName: "main",
-  gingerWidgets: [`SocialFollow`, `RecentPosts`, `Tags`],
+  //gingerWidgets: [`SocialFollow`, `RecentPosts`, `Tags`],
   // siteUrl: "https://example.com",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
@@ -28,7 +28,7 @@ const config = {
     },
   ],
   // twitterSummaryCardImage: `Gatsby_Monogram.png`,
-  fonts: ["Special+Elite", "Open+Sans:400,400i,700,700i"],
+  fonts: ["Abril Fatface", "Lora:400,400i,700,700i"],
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,
@@ -36,7 +36,7 @@ const config = {
   // addAlgoliaSearch: false,
   // addColorModes: false,
   // addFancyBox: true,
-  skipTitle: ["home-vcard"],
+  skipTitle: ["home"],
 }
 // https://gatsby-test-2.alexaspalato.website
 //https://gatsby-theme-demo.alexaspalato.website
