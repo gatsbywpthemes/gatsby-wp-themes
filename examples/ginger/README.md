@@ -353,6 +353,26 @@ ALGOLIA_ADMIN_KEY=your-algolia-admin-key
 
 If you want to add dark mode switcher.
 
+---
+
+**addFancyBox** (optional)
+`(default: true)`
+
+Adds fancybox functionnality to the galeries. It will work for any gallery built with the Gutenberg gallery block that has "Link To" set to "Media File"
+
+---
+
+**skipTitle** (optional, experimental)  
+`(default: [])`
+
+List slugs of the pages when you don't want to display the page title. Useful when you want to start your page with a Gutenberg cover blog and an h1 heading.
+
+example:
+
+```javascript
+skipTitle: ["home", "about-us"],
+```
+
 > Please note that the dark mode may not be properly applied on some Gutenberg blocks with custom color settings.
 
 ## Overriding Theme Styles
