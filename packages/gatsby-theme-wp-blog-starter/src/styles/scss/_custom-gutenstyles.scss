@@ -72,15 +72,15 @@ figure,
 }
 
 .entry-content p,
-.entry-content blockquote,
-.entry-content h1,
-.entry-content h2,
-.entry-content h3,
-.entry-content h4,
-.entry-content h5,
-.entry-content h6,
+.entry blockquote,
+.entry h1,
+.entry h2,
+.entry h3,
+.entry h4,
+.entry h5,
+.entry h6,
 .entry-info,
-.entry-content .animate-on-scroll {
+.entry .animate-on-scroll {
   opacity: 0;
   transform: translate3d(0, 2.5rem, 0);
   transition-property: opacity, transform, -webkit-transform;

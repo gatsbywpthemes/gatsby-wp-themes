@@ -32,7 +32,7 @@ module.exports = options => {
       options: {
         threshold: 0.1,
         once: true,
-        selector: `[data-sal],  .entry-content p, .entry-content blockquote, .entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6, .entry-content, .entry-info, .animate-on-scroll`,
+        selector: `[data-sal],  .entry-content  p, .entry  blockquote, .entry  h1,.entry  h2,.entry  h3,.entry  h4,.entry  h5,.entry  h6 ,.entry-info, .animate-on-scroll`,
       },
     },
   ]
