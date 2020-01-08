@@ -17,7 +17,6 @@ export default {
   },
 
   '.alignnone,.aligncenter,.alignleft,.alignright,.alignwide': {
-    my: ['2rem', '4rem'],
     mx: 'auto',
   },
   '.aligncenter > .gatsby-image-wrapper': {
