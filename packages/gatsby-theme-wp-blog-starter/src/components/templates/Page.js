@@ -14,8 +14,11 @@ const Page = ({ page }) => {
   } = useThemeOptions()
   const ogType = page.isFrontPage ? 'website' : 'article'
   const { widgets } = sidebar
+  console.log('sidebar', sidebar)
+  const sidebarPageValue = sidebar.location.pages
   const sidebarPage =
-    sidebar.location.pages === 'all' || sidebar.location.pages.includes(slug)
+    sidebarPageValue &&
+    (sidebarPageValue === 'all' || sidebarPageValue.includes(slug))
   const sidebarPosition = sidebar.position
 
   const containerStyles =
@@ -60,10 +63,7 @@ const Page = ({ page }) => {
             }}
             className="entry"
           >
-            <div
-              className="entry-content page-content"
-              sx={{ borderRadius: `s` }}
-            >
+            <div className="content page-content" sx={{ borderRadius: `s` }}>
               <Styled.h1
                 className="page-title"
                 dangerouslySetInnerHTML={{ __html: title }}

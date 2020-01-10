@@ -27,6 +27,9 @@ export default {
     right: 3,
   },
   '.menu': {
+    a: {
+      textDecoration: 'none',
+    },
     mb: `xxl`,
     li: {
       mb: 0,

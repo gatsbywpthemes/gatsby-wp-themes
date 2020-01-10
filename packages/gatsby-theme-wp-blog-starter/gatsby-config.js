@@ -17,7 +17,6 @@ module.exports = options => {
     ...options,
   }
   const plugins = [
-    `gatsby-theme-algolia`,
     {
       resolve: `gatsby-theme-blog-data`,
       options: mergedOptions,

@@ -11,6 +11,7 @@ export default merge(
   {
     breakpoints: sizesSettings.breakpoints || theme.breakpoints,
     sizes: sizesSettings.sizes,
+    baseFontSize: typographySettings.baseFontSize,
     fonts: typographySettings.fonts,
     fontWeights: typographySettings.fontWeights,
     lineHeights: typographySettings.lineHeights,
