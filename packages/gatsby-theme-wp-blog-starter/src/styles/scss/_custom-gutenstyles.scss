@@ -71,7 +71,7 @@ figure,
   margin-bottom: 0;
 }
 
-.entry-content p,
+.entry p,
 .entry blockquote,
 .entry h1,
 .entry h2,
@@ -86,8 +86,8 @@ figure,
   transition-property: opacity, transform, -webkit-transform;
   transition-duration: 2s;
 }
-.entry-content .sal-disabled,
-.entry-content .sal-animate:nth-child(n) {
+.entry .sal-disabled,
+.entry .sal-animate:nth-child(n) {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }

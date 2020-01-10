@@ -3,6 +3,9 @@
 .wp-block-image figure {
   width: 100%;
 }
+.wp-block-image figure.aligncenter {
+  text-align: center;
+}
 figure,
 .gatsby-image-wrapper {
   max-width: 100%;

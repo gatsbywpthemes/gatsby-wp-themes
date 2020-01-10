@@ -73,7 +73,7 @@ const sharedFormStyles = {
   '.comment-notes, .comment-form-comment, .comment-form-url, .form-field-textarea': {
     width: '100%',
   },
-  '.form-field-text:last-of-type:nth-child(2n+1)': {
+  '.form-field-text:last-of-type:nth-child(2n+1), .form-field:empty': {
     width: '100%',
   },
   '.comment-form-author,.comment-form-email': {
