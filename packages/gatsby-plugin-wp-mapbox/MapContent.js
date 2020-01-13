@@ -7,6 +7,7 @@ import MapGL, {
   Popup
 } from "react-map-gl"
 import Pins from "./Pins"
+import "mapbox-gl/dist/mapbox-gl.css"
 
 const MapContent = ({ attrs }) => {
   const mapData = JSON.parse(attrs["data-mapdata"])
@@ -56,6 +57,7 @@ const MapContent = ({ attrs }) => {
               p {
                 font-size: 0.75rem;
                 margin: 0;
+                color: black;
               }
             `}
             dangerouslySetInnerHTML={{ __html: popupInfo.description }}

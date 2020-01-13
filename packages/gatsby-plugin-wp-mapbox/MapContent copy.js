@@ -9,7 +9,7 @@ import ReactMapboxGl, {
 
 const MapContent = ({ attrs }) => {
   const mapData = JSON.parse(attrs["data-mapdata"])
-  console.log(mapData)
+
   const Map = ReactMapboxGl({
     accessToken: attrs["data-token"],
     scrollZoom: false
