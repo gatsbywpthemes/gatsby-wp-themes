@@ -15,9 +15,10 @@ const ColorSwitch = () => {
       ) : (
         <WiMoonAltWaningCrescent4
           sx={{
-            width: `30px`,
-            height: `30px`,
+            width: `25px`,
+            height: `25px`,
             svg: { stroke: `accent`, fill: `accent` },
+            mt: 3,
           }}
         />
       )}

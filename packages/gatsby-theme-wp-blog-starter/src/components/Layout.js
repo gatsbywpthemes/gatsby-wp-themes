@@ -29,12 +29,7 @@ const Layout = ({ children, page, type = 'page' }) => {
       <StyledLayout className={`${layoutClass}-${type} ${fullWidthClass}`}>
         <Header />
         <Main>
-          <Fragment>
-            <Flex sx={{ justifyContent: `flex-end`, mb: `s`, mr: `xxs` }}>
-              <ColorSwitch />
-            </Flex>
-            {children}
-          </Fragment>
+          <Fragment>{children}</Fragment>
         </Main>
         <Footer />
       </StyledLayout>

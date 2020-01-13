@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Header as StyledHeader, Box } from 'theme-ui'
+import { jsx, Container, Header as StyledHeader, Box, Flex } from 'theme-ui'
 import { Fragment } from 'react'
 
 import { useStaticQuery, graphql } from 'gatsby'
@@ -10,6 +10,7 @@ import Headroom from 'react-headroom'
 import Search from 'gatsby-theme-algolia/src/components/Search'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import SearchForm from '../search/SearchForm'
+import ColorSwitch from '../ColorSwitch'
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
@@ -74,6 +75,15 @@ const Header = () => {
               <SlideSidebar />
             </Box>
           </Container>
+          <Flex
+            sx={{
+              position: `absolute`,
+              right: [`6%`, `6%`, `2%`],
+              top: [15, 15, 25],
+            }}
+          >
+            <ColorSwitch />
+          </Flex>
         </StyledHeader>
       </Headroom>
     </Fragment>
