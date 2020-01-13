@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import { Layer } from 'grommet'
@@ -24,6 +24,8 @@ const SlideSidebar = () => {
     useAlgoliaSearch,
     menuName,
   } = useThemeOptions()
+  const { theme } = useThemeUI()
+
   const [isMenuOpen, setOpenMenu] = useState(false)
   const [openClass, setOpenClass] = useState(false)
   const openMenu = () => {
@@ -33,6 +35,13 @@ const SlideSidebar = () => {
   const closeMenu = () => {
     setOpenClass(false)
     setTimeout(() => setOpenMenu(false), 200)
+  }
+  const maybeCloseMenu = () => {
+    const threshold = Number(theme.breakpoints[0].split('em')) || 40
+    if (typeof window !== 'undefined' && window.innerWidth < threshold * 16) {
+      setOpenClass(false)
+      setTimeout(() => setOpenMenu(false), 200)
+    }
   }
   return (
     <>
@@ -73,7 +82,7 @@ const SlideSidebar = () => {
             </div>
           )}
 
-          <Menu menuName={menuName} />
+          <Menu menuName={menuName} hashClickAction={maybeCloseMenu} />
           {!!widgets &&
             widgets.map(widget => (
               <Widgets key={widget} widget={widget} location="SlideMenu" />

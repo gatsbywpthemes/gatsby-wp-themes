@@ -101,8 +101,20 @@ figure,
   overflow: hidden;
 }
 .entry-content .wp-block-gallery .blocks-gallery-item a {
+  position: relative;
   transition: 1s;
 }
-.blocks-gallery-item a:hover {
-  transform: scale(1.1);
+.blocks-gallery-item a:hover,
+.blocks-gallery-item a:focus {
+  transform: scale(1.2);
+}
+
+.blocks-gallery-item a:focus:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
 }
