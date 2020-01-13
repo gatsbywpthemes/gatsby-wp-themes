@@ -1,3 +1,4 @@
+import gutenberg from './theme-gutenberg'
 export default {
   mb: `l`,
   width: `100%`,
@@ -8,7 +9,11 @@ export default {
   },
 
   '.content': {
+    '.fullWidth &': {
+      variant: `card.remove`,
+    },
     variant: `card.default`,
+
     borderRadius: `0 0 5px 5px`,
     '&.page-content, &.no-img': {
       borderRadius: `s`,

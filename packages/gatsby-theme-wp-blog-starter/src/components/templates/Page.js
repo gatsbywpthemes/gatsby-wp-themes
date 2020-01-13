@@ -1,20 +1,22 @@
 /** @jsx jsx */
-import { jsx, Styled, Container, Flex } from 'theme-ui'
+import { jsx, Styled, Container, Flex, Box } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import SEO from '../seo/Seo'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Sidebar from '../Sidebar'
 import articleStyles from '../../styles/articleStyles'
+import gutenberg from '../../styles/theme-gutenberg'
 
 const Page = ({ page }) => {
-  const { title, excerpt, content, slug, uri } = page
+  const { title, excerpt, content, slug, uri, isFrontPage } = page
   const {
     widgetAreas: { sidebar },
+    skipTitle,
+    layoutWidth,
   } = useThemeOptions()
   const ogType = page.isFrontPage ? 'website' : 'article'
   const { widgets } = sidebar
-  console.log('sidebar', sidebar)
   const sidebarPageValue = sidebar.location.pages
   const sidebarPage =
     sidebarPageValue &&
@@ -29,15 +31,15 @@ const Page = ({ page }) => {
           },
           '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
         }
-      : { maxWidth: `l` }
+      : { maxWidth: layoutWidth.page }
 
   const sidebarSide = sidebarPage
     ? sidebarPosition === `left`
       ? {
           flexDirection: `row-reverse`,
-          '.entry': { pl: [0, 0, 0, `l`] },
+          '.entry': { pl: [0, 0, 0, layoutWidth.page] },
         }
-      : { '.entry': { pr: [0, 0, 0, `l`] } }
+      : { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
     : ''
 
   return (
@@ -48,7 +50,7 @@ const Page = ({ page }) => {
         ogType={ogType}
         ogUrl={ogType === 'website' ? '' : uri}
       />
-      <Container sx={{ ...containerStyles }}>
+      <Container sx={{ ...containerStyles }} className="container">
         <Flex
           sx={{
             ...sidebarSide,
@@ -64,12 +66,16 @@ const Page = ({ page }) => {
             className="entry"
           >
             <div className="content page-content" sx={{ borderRadius: `s` }}>
-              <Styled.h1
-                className="page-title"
-                dangerouslySetInnerHTML={{ __html: title }}
-              />
+              {!skipTitle.includes(slug) && skipTitle !== 'all' && (
+                <Styled.h1
+                  className="page-title"
+                  dangerouslySetInnerHTML={{ __html: title }}
+                />
+              )}
               <Styled.root>
-                <ParsedContent content={content} />
+                <Box className="entry-content" sx={{ ...gutenberg }}>
+                  <ParsedContent content={content} />
+                </Box>
               </Styled.root>
             </div>
           </article>

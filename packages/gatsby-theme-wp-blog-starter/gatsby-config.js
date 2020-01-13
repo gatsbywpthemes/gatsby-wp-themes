@@ -14,6 +14,12 @@ module.exports = options => {
     addColorModes: true,
     addFancyBox: true,
     skipTitle: [],
+    fullWidth: [],
+    layoutWidth: {
+      page: `l`,
+      post: `l`,
+      archive: `l`,
+    },
     ...options,
   }
   const plugins = [

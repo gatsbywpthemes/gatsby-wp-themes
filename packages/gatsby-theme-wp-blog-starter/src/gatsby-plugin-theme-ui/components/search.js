@@ -10,8 +10,6 @@ const resultStyles = {
   width: [`100%`, `100%`, `600px`],
   zIndex: 2,
   color: `text`,
-  bg: lighten(`background`, 0.05),
-
   '.results': {
     fontWeight: `body`,
     py: `xxs`,

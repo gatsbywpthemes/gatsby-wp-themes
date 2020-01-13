@@ -3,11 +3,11 @@ const config = {
   // wordPressUrl: `http://gatsbydemo.wst/`,
   // wordPressUrl: `https://gatsby-theme-demo.alexaspalato.website/`,
   // wordPressUrl: `https://gatsby-test-2.alexaspalato.website/`,
-  wordPressUrl: `https://wp-pehaa.com/ginger-kitchen/`,
+  wordPressUrl: `https://starter.alexaspalato.website/`,
   // wordPressUrl: `http://gatsbydemowp.wst/`,
   // uploadsPath: `wp-content/uploads`,
   // postsPrefix: ``,
-  postsPath: `blog`,
+  postsPath: ``,
   // paginationPrefix: `page`,
   postsPerPage: 3,
   // disqus: `webstantly`,
@@ -18,6 +18,13 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   // search: "algolia",
+  skipTitle: ["home-vcard"],
+  layoutWidth: {
+    page: `container`,
+    post: `l`,
+    archive: `l`,
+  },
+  // fullWidth: ["home"],
   // widgetAreas: {
   //   slideMenu: {
   //     widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],

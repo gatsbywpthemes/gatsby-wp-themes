@@ -4,6 +4,10 @@ const sharedStyles = {
 }
 
 export const card = {
+  remove: {
+    p: 0,
+    bg: `transparent`,
+  },
   default: {
     ...sharedStyles,
     bg: `cardBg`,

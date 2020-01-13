@@ -10,6 +10,7 @@ import { Button } from '@theme-ui/components'
 import normalize from 'normalize-path'
 import SocialShare from '../social/SocialShare'
 import articleStyles from '../../styles/articleStyles'
+import gutenberg from '../../styles/theme-gutenberg'
 
 const PostEntry = ({ post, location, postsPrefix }) => {
   const noImgClass = !post.featuredImage && 'no-img'
@@ -33,11 +34,13 @@ const PostEntry = ({ post, location, postsPrefix }) => {
           className="entry-title"
         />
         <PostEntryInfo className="entry-info" post={post} />
-        <PostEntryContent
-          location={location}
-          post={post}
-          className="entry-content"
-        />
+        <div id="content" sx={{ ...gutenberg }}>
+          <PostEntryContent
+            location={location}
+            post={post}
+            className="entry-content"
+          />
+        </div>
         <div className="entry-footer">
           <PostEntryMeta className="entry-meta" post={post} />
           {location !== 'single' && (

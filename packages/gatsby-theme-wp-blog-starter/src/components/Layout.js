@@ -15,15 +15,18 @@ import { Global } from '@emotion/core'
 import { globalStyles } from '../styles/GlobalStyles'
 import { Grommet } from 'grommet'
 import grommetTheme from '../styles/grommet'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import '../styles/scss/styles.scss'
 
 const Layout = ({ children, page, type = 'page' }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
   const { theme } = useThemeUI()
+  const { fullWidth } = useThemeOptions()
+  const fullWidthClass = fullWidth.includes(page.slug) ? 'fullWidth' : ''
   return (
     <Grommet theme={grommetTheme}>
       <Global styles={globalStyles(theme)} />
-      <StyledLayout className={`${layoutClass}-${type}`}>
+      <StyledLayout className={`${layoutClass}-${type} ${fullWidthClass}`}>
         <Header />
         <Main>
           <Fragment>
