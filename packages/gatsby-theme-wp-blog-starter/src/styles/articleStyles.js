@@ -1,23 +1,25 @@
-import gutenberg from './theme-gutenberg'
 export default {
-  mb: `l`,
-  width: `100%`,
+  mb: 'l',
+  '.fullWidth &': {
+    mb: -33,
+  },
+  width: '100%',
   '.gatsby-image-wrapper': {
     maxHeight: 400,
-    boxShadow: `small`,
-    borderRadius: `5px 5px 0 0`,
+    boxShadow: 'small',
+    borderRadius: '5px 5px 0 0',
   },
 
   '.content': {
     '.fullWidth &': {
-      variant: `card.remove`,
-      boxShadow: `none`,
+      variant: 'card.remove',
+      boxShadow: 'none',
     },
-    variant: `card.default`,
+    variant: 'card.default',
 
-    borderRadius: `0 0 5px 5px`,
+    borderRadius: ['0 0 0 0', '0 0 0 0', '0 0 5px 5px'],
     '&.page-content, &.no-img': {
-      borderRadius: `s`,
+      borderRadius: [0, 0, 's'],
     },
 
     overflowWrap: 'break-word',
@@ -25,19 +27,19 @@ export default {
     hyphens: 'auto',
     '.entry-title': {
       a: {
-        color: `text`,
+        color: 'text',
         '&:hover': {
-          color: `accent`,
+          color: 'accent',
         },
       },
     },
   },
   '.entry-content': {
-    my: `l`,
+    my: 'l',
   },
   '.entry-title': {
-    textTransform: `uppercase`,
-    fontSize: [`m`, `l`],
+    textTransform: 'uppercase',
+    fontSize: ['m', 'l'],
 
     a: {},
   },

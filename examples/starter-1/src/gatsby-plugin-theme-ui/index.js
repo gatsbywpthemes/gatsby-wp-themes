@@ -28,19 +28,21 @@ export default merge(
       },
     },
     colors: colorsSettings,
+    //Text
     text: {
       branding: {
         // textTransform: "capitalize",
-        fontSize: [`l`, `l`],
+        fontSize: ["l", "l"],
       },
       special: {
         archiveTitle: {
           fontFamily: "body",
           fontWeight: "bold",
-          boxShadow: `default`,
+          boxShadow: "default",
         },
       },
     },
+    //Buttons
     buttons: {
       primary: {
         fontWeight: "bold",

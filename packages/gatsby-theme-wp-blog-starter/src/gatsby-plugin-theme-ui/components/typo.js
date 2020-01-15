@@ -7,20 +7,20 @@ export const fonts = {
 
 export const fontWeights = {
   body: 400,
-  heading: `bold`,
+  heading: 'bold',
   bold: 700,
 }
 
 export const fontSizes = {
-  xxs: rem(`12px`),
-  xs: rem(`14px`),
-  s: rem(`16px`),
-  m: rem(`20px`),
-  l: rem(`24px`),
-  xl: rem(`32px`),
-  xxl: rem(`48px`),
-  Big: rem(`64px`),
-  Bigger: rem(`96px`),
+  xxs: rem('12px'),
+  xs: rem('14px'),
+  s: rem('16px'),
+  m: rem('20px'),
+  l: rem('24px'),
+  xl: rem('32px'),
+  xxl: rem('48px'),
+  Big: rem('64px'),
+  Bigger: rem('96px'),
 }
 
 export const lineHeights = {
@@ -41,9 +41,9 @@ const heading = {
 }
 
 export const a = {
-  variant: `transitions.m`,
+  variant: 'transitions.m',
   color: 'accent',
-  fontWeight: `bold`,
+  fontWeight: 'bold',
   textDecoration: 'none',
   '&:hover': {
     color: 'primary',
@@ -51,45 +51,55 @@ export const a = {
 }
 
 export const p = {
-  fontSize: [`s`],
-  lineHeight: `body`,
+  fontSize: ['s'],
+  lineHeight: 'body',
 }
 
 export const h1 = {
   ...heading,
-  fontSize: [`xl`, `xxl`],
-  mt: `xxs`,
+  fontSize: ['xl', 'xxl'],
+  mt: 'xxs',
 }
 export const h2 = {
   ...heading,
-  fontSize: [`l`, `xl`],
-  mt: `xxs`,
+  fontSize: ['l', 'xl'],
+  mt: 'xxs',
 }
 
 export const h3 = {
   ...heading,
-  fontSize: [`m`, `l`],
-  mt: `xs`,
+  fontSize: ['m', 'l'],
+  mt: 'xs',
 }
 export const h4 = {
   ...heading,
-  fontSize: [`s`, `m`],
+  fontSize: ['s', 'm'],
 }
 
 export const h5 = {
   ...heading,
-  fontSize: `xs`,
+  fontSize: 'xs',
 }
 export const h6 = {
   ...heading,
-  fontSize: `xs`,
+  fontSize: 'xs',
   color: 'muted',
-  mb: `xxs`,
+  mb: 'xxs',
+}
+export const blockquote = {
+  fontStyle: 'italic',
+  bg: 'background',
+  px: [20, 50],
+  py: 40,
+  borderLeft: '5px solid',
+  borderColor: 'primary',
+  maxWidth: '800px !important',
+  mx: 'auto',
 }
 
 export const base = {
-  fontSize: `s`,
-  color: `text`,
+  fontSize: 's',
+  color: 'text',
   a,
   p,
   h1,
@@ -98,4 +108,5 @@ export const base = {
   h4,
   h5,
   h6,
+  blockquote,
 }
