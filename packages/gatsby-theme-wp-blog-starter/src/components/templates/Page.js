@@ -15,6 +15,7 @@ const Page = ({ page }) => {
     skipTitle,
     layoutWidth,
   } = useThemeOptions()
+  console.log('title', skipTitle)
   const ogType = page.isFrontPage ? 'website' : 'article'
   const { widgets } = sidebar
   const sidebarPageValue = sidebar.location.pages
@@ -62,6 +63,7 @@ const Page = ({ page }) => {
             sx={{
               ...articleStyles,
               width: `100%`,
+              borderBottom: `none`,
             }}
             className="entry"
           >

@@ -11,6 +11,7 @@ export default {
   '.content': {
     '.fullWidth &': {
       variant: `card.remove`,
+      boxShadow: `none`,
     },
     variant: `card.default`,
 
@@ -32,9 +33,7 @@ export default {
     },
   },
   '.entry-content': {
-    pb: `m`,
     my: `l`,
-    borderBottom: t => `1px solid ${t.colors.border}`,
   },
   '.entry-title': {
     textTransform: `uppercase`,

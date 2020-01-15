@@ -18,28 +18,29 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   // search: "algolia",
-  // skipTitle: "all",
+  skipTitle: "All",
   layoutWidth: {
     page: `container`,
     post: `l`,
     archive: `l`,
   },
-  // fullWidth: [],
+  fullWidth: ["home", "home-vcard", "contact", "gut"],
   widgetAreas: {
     slideMenu: {
-      // widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],
+      widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],
     },
     sidebar: {
-      widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],
+      // widgets: [`SocialFollow`, `Categories`, `RecentPosts`, `Tags`],
       position: "right",
       location: {
-        archive: true,
-        // single: false,
+        archive: false,
+        single: false,
         pages: [],
       },
     },
   },
 
+  fonts: ["Playfair+Display:400,700", "Raleway:400,400i,700,700i"],
   // siteUrl: "https://example.com",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,

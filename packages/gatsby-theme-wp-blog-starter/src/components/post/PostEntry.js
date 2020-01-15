@@ -13,12 +13,21 @@ import articleStyles from '../../styles/articleStyles'
 import gutenberg from '../../styles/theme-gutenberg'
 
 const PostEntry = ({ post, location, postsPrefix }) => {
-  const noImgClass = !post.featuredImage && 'no-img'
+  const noImgClass = !post.featuredImage ? 'no-img' : ''
   const media = post.featuredImage
     ? post.featuredImage.imageFile.childImageSharp.fluid.src
     : null
   return (
-    <article className="entry" sx={articleStyles}>
+    <article
+      className="entry"
+      sx={{
+        ...articleStyles,
+        '.entry-content': {
+          pb: `m`,
+          borderBottom: t => `1px solid ${t.colors.border}`,
+        },
+      }}
+    >
       <PostEntryMedia
         location={location}
         post={post}
@@ -41,7 +50,7 @@ const PostEntry = ({ post, location, postsPrefix }) => {
             className="entry-content"
           />
         </div>
-        <div className="entry-footer">
+        <div className="entry-footer" sx={{ mt: `xl` }}>
           <PostEntryMeta className="entry-meta" post={post} />
           {location !== 'single' && (
             <Flex sx={{ justifyContent: [`center`, `flex-end`] }}>

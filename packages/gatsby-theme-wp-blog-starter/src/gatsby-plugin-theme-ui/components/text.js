@@ -48,6 +48,7 @@ export const text = {
     width: `auto`,
     fontStyle: `italic`,
     borderRadius: `xs`,
+    mb: `l`,
   },
   special: {
     ...specialSharedStyles,

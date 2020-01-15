@@ -80,6 +80,9 @@ const Header = () => {
               position: `absolute`,
               right: [`6%`, `6%`, `2%`],
               top: [15, 15, 25],
+              '.headroom--pinned &': {
+                top: [10, 10, 15],
+              },
             }}
           >
             <ColorSwitch />

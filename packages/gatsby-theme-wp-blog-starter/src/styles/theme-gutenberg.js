@@ -2,8 +2,8 @@ export default {
   '& > *': {
     mx: 'auto',
   },
-  '& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
-    maxWidth: theme => theme.sizes.content,
+  '& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.entry-content)': {
+    maxWidth: theme => `l`,
     width: [`calc(100% - 3rem)`, `calc(100% - 4rem)`],
   },
 
@@ -12,7 +12,7 @@ export default {
   },
 
   '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
-    maxWidth: theme => theme.sizes.content,
+    maxWidth: theme => `l`,
     width: '100%',
   },
 
@@ -70,5 +70,15 @@ export default {
       return `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
     },
     backgroundBlendMode: 'multiply',
+  },
+  '[class^="wp-block"]': {
+    '.gatsby-image-wrapper': {
+      maxHeight: 400,
+      boxShadow: `none`,
+      borderRadius: 0,
+    },
+  },
+  '&.entry-content': {
+    borderBottom: `1px solid transparent`,
   },
 }

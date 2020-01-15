@@ -22,6 +22,7 @@ const Layout = ({ children, page, type = 'page' }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
   const { theme } = useThemeUI()
   const { fullWidth } = useThemeOptions()
+
   const fullWidthClass = fullWidth.includes(page.slug) ? 'fullWidth' : ''
   return (
     <Grommet theme={grommetTheme}>

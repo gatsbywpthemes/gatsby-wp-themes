@@ -12,13 +12,13 @@ const heading = {
 const typographySettings = {
   baseFontSize: "16px",
   fonts: {
-    body: "IBM Plex Mono",
-    heading: "Roboto Slab",
+    body: "Raleway",
+    heading: "Playfair Display",
   },
   fontWeights: {
-    //   body: 400,
-    // heading: `bold`,
-    // bold: 700,
+    body: 400,
+    heading: 700,
+    bold: 700,
   },
   lineHeights: {
     // body: 1.8,

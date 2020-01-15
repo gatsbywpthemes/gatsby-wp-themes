@@ -91,6 +91,10 @@ export default {
       // maxWidth: 'container',
       // width: '90vw',
       py: `xxl`,
+      '.fullWidth &': {
+        py: 0,
+        mt: -32,
+      },
     },
     Container: {
       maxWidth: `container`,
