@@ -1,16 +1,17 @@
-import { darken } from "polished"
+import { darken, lighten } from "polished"
 /* Palette */
 
-const dark = `#260D27`
-const dark2 = darken(0.04, "#260D27")
-const dark3 = darken(0.1, "#260D27")
-const light = `#eceff1`
-const primary = `#F01469`
-const secondary = `#260D27`
+const dark = `#2B2336`
+const dark2 = darken(0.08, "#2B2336")
+const dark3 = darken(0.15, "#2B2336")
+const light = `#F4F2EF`
+const light2 = lighten(0.05, "#F4F2EF")
+const primary = `#8799AE`
+const secondary = `#9A7458`
 const lightGrey = `#cfd8dc`
-const grey = `#90a4ae`
-const accentDark = `#F01469`
-const accentLight = `#F01469`
+const grey = `#8799AE`
+const accentDark = `#994A41`
+const accentLight = `#994A41`
 
 const colorSettings = {
   /* basic colors */
@@ -25,39 +26,37 @@ const colorSettings = {
   bgInverse: dark,
   text: dark,
   textInverse: light,
-  white: `white`,
+  white: lighten(0.1, light),
   black: `black`,
   brand: primary,
   mutted: lightGrey,
   grey: grey,
   border: lightGrey,
   /* header */
-  headerBg: `black`,
+  headerBg: dark,
   headerColor: light,
   headerColorHover: accentDark,
   /* footer */
-  footerBg: `black`,
+  footerBg: dark,
   footerColor: light,
   /* post */
   infoBg: light,
   cardBg: `white`,
-  archiveTitleBg: grey,
+  archiveTitleBg: secondary,
   /* search */
-  searchResultsHeaderBg: grey,
-  searchResultsHeaderColor: `white`,
+  searchResultsHeaderBg: secondary,
+  searchResultsHeaderColor: light,
   highlightColor: accentDark,
   searchColor: grey,
   modes: {
     dark: {
-      text: `#F5E7F4`,
-      secondary: `#F01469`,
+      text: light,
       background: dark,
       cardBg: dark2,
       headerBg: dark3,
       footerBg: dark3,
       infoBg: dark3,
       archiveTitleBg: secondary,
-      searchColor: `#fff`,
       accent: accentDark,
     },
   },

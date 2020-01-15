@@ -37,7 +37,6 @@ export default merge(
         archiveTitle: {
           fontFamily: "body",
           fontWeight: "bold",
-          bg: `primary`,
           boxShadow: `default`,
         },
       },
