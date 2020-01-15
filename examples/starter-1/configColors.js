@@ -7,11 +7,11 @@ const dark3 = darken(0.15, "#2B2336")
 const light = `#F4F2EF`
 const light2 = lighten(0.05, "#F4F2EF")
 const primary = `#8799AE`
-const secondary = `#9A7458`
+const secondary = `#8799AE`
 const lightGrey = `#cfd8dc`
 const grey = `#8799AE`
-const accentDark = `#994A41`
-const accentLight = `#994A41`
+const accentDark = `#9A7458`
+const accentLight = `#9A7458`
 
 const colorSettings = {
   /* basic colors */
@@ -48,6 +48,7 @@ const colorSettings = {
   searchResultsHeaderColor: light,
   highlightColor: accentDark,
   searchColor: grey,
+  slideSidebarBg: dark,
   modes: {
     dark: {
       text: light,
@@ -56,8 +57,11 @@ const colorSettings = {
       headerBg: dark3,
       footerBg: dark3,
       infoBg: dark3,
-      archiveTitleBg: secondary,
+      archiveTitleBg: accentDark,
       accent: accentDark,
+      primary: accentDark,
+      secondary: accentDark,
+      slideSidebarBg: accentDark,
     },
   },
 }

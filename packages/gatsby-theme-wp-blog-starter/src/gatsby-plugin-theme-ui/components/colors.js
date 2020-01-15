@@ -41,6 +41,7 @@ export const colors = {
   searchResultsHeaderColor: `white`,
   highlightColor: accentDark,
   searchColor: grey,
+  slideSidebarBg: dark,
   modes: {
     dark: {
       text: light,

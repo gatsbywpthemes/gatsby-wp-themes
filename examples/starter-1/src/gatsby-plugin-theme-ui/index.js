@@ -30,8 +30,8 @@ export default merge(
     colors: colorsSettings,
     text: {
       branding: {
-        textTransform: "capitalize",
-        fontSize: [`l`, `xl`],
+        // textTransform: "capitalize",
+        fontSize: [`l`, `l`],
       },
       special: {
         archiveTitle: {

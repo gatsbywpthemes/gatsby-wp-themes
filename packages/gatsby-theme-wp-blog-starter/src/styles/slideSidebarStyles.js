@@ -8,7 +8,7 @@ const pehaafadein = keyframes`
 export default {
   fontFamily: 'body',
   borderRadius: 0,
-  bg: 'dark',
+  bg: 'slideSidebarBg',
   width: ['100%', '468px'],
   display: `flex`,
   overflowY: 'scroll',

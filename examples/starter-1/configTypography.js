@@ -10,15 +10,15 @@ const heading = {
   },
 }
 const typographySettings = {
-  baseFontSize: "16px",
+  baseFontSize: "20px",
   fonts: {
-    body: "Raleway",
-    heading: "Playfair Display",
+    body: "Khand",
+    heading: "Baumans",
   },
   fontWeights: {
     body: 400,
     heading: 700,
-    bold: 700,
+    bold: 600,
   },
   lineHeights: {
     // body: 1.8,

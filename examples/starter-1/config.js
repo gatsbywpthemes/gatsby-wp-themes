@@ -40,7 +40,7 @@ const config = {
     },
   },
 
-  fonts: ["Playfair+Display:400,700", "Raleway:400,400i,700,700i"],
+  fonts: ["Baumans", "Khand:400,600"],
   // siteUrl: "https://example.com",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
