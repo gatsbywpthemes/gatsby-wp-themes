@@ -14,7 +14,7 @@ const Post = ({ post }) => {
   const media = featuredImage
     ? featuredImage.imageFile.childImageSharp.fluid.src
     : null
-  const { postsPrefix } = useThemeOptions()
+  const { postsPrefix, layoutWidth } = useThemeOptions()
   const {
     disqus,
     addComments,
@@ -32,16 +32,16 @@ const Post = ({ post }) => {
           },
           '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
         }
-      : { maxWidth: `l` }
+      : { maxWidth: layoutWidth.post }
 
   const sidebarSide =
     widgets && sidebarSingle
       ? sidebarPosition === `left`
         ? {
             flexDirection: `row-reverse`,
-            '.entry': { pl: [0, 0, 0, `l`] },
+            '.entry': { pl: [0, 0, 0, layoutWidth.post] },
           }
-        : { '.entry': { pr: [0, 0, 0, `l`] } }
+        : { '.entry': { pr: [0, 0, 0, layoutWidth.post] } }
       : ''
   const disqusConfig = {
     shortname: disqus,
@@ -68,7 +68,7 @@ const Post = ({ post }) => {
           {sidebarSingle && <Sidebar />}
         </Flex>
         {addComments && post.commentStatus === 'open' && (
-          <Container sx={{ maxWidth: `l` }}>
+          <Container sx={{ maxWidth: layoutWidth.post }}>
             <CommentsList post={post} />
           </Container>
         )}

@@ -78,15 +78,23 @@ export default {
       fontFamily: 'body',
       fontSize: `s`,
       lineHeight: 'text',
+      '&.fullWidth': {
+        '.container': {
+          maxWidth: `100%`,
+        },
+      },
     },
     Header,
     Footer,
     Main: {
-      margin: '0 auto',
-      maxWidth: 'container',
-      width: '90vw',
-      pt: `m`,
-      pb: `xxl`,
+      // margin: '0 auto',
+      // maxWidth: 'container',
+      // width: '90vw',
+      py: `xxl`,
+      '.fullWidth &': {
+        py: 0,
+        mt: -32,
+      },
     },
     Container: {
       maxWidth: `container`,

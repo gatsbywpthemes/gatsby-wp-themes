@@ -8,26 +8,29 @@ const pehaafadein = keyframes`
 export default {
   fontFamily: 'body',
   borderRadius: 0,
-  bg: 'dark',
+  bg: 'slideSidebarBg',
   width: ['100%', '468px'],
-  display: `flex`,
+  display: 'flex',
   overflowY: 'scroll',
   boxShadow: ['none', '-10px 0 40px rgba(0,0,0,0.3)'],
   animationDuration: '1s',
 
-  p: `xl`,
+  p: 'xl',
   '&.menu-closing': {
     animation: `${pehaafadein} 1 .6s 0s cubic-bezier(0.165, 0.84, 0.44, 1)`,
     boxShadow: ['none', '-10px 0 0 rgba(0,0,0,0)'],
   },
   '.close': {
-    cursor: `pointer`,
+    cursor: 'pointer',
     position: 'fixed',
     top: 3,
     right: 3,
   },
   '.menu': {
-    mb: `xxl`,
+    a: {
+      textDecoration: 'none',
+    },
+    mb: 'xxl',
     li: {
       mb: 0,
     },
@@ -38,27 +41,30 @@ export default {
       listStyle: 'none',
       '.menu-item': {
         display: 'block',
-        py: `xs`,
+        py: 'xs',
         borderBottom: '1px solid rgba(255,255,255,.15)',
-        color: `light`,
+        color: 'light',
         a: {
-          color: `light`,
+          color: 'light',
         },
         '&:last-of-type': {
-          border: `none`,
+          border: 'none',
         },
       },
       'ul a': {
-        pl: `m`,
+        pl: 'm',
       },
       'ul ul a': {
-        pl: `xl`,
+        pl: 'xl',
       },
     },
-    'nav > ul': { mt: `xl` },
+    'nav > ul': { mt: 'xl' },
     '[aria-current]': {
       fontStyle: 'italic',
       fontWeight: 'body',
+    },
+    button: {
+      top: -4,
     },
   },
 }

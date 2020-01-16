@@ -10,7 +10,7 @@ const sharedStyles = {
     },
     textDecoration: 'none',
     variant: 'text.special',
-    fontFamily: `body`,
+    fontFamily: 'body',
     fontWeight: 'bold',
     transition: '0.6s',
     ':hover': {
@@ -22,18 +22,18 @@ const sharedStyles = {
   },
 
   '.widget-title': {
-    fontSize: `s`,
+    fontSize: 's',
     textAlign: 'center',
-    color: `text`,
+    color: 'text',
     '.inverse &': {
       color: 'textInverse',
     },
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    textTransform: `uppercase`,
+    textTransform: 'uppercase',
     alignItems: 'center',
-    letterSpacing: `2px`,
+    letterSpacing: '2px',
     ':after, :before': {
       content: '""',
       height: '1px',
@@ -41,10 +41,10 @@ const sharedStyles = {
       flex: '1 0',
     },
     ':after': {
-      ml: `xs`,
+      ml: 'xs',
     },
     ':before': {
-      mr: `xs`,
+      mr: 'xs',
     },
   },
   '.widget-recent-posts': {},
@@ -71,11 +71,11 @@ export const widget = {
       ...sharedStyles.ul,
       display: 'flex',
       flexWrap: 'wrap',
-      justifyContent: `center`,
+      justifyContent: 'center',
     },
     li: {
-      px: `xxs`,
-      mb: `xxs`,
+      px: 'xxs',
+      mb: 'xxs',
 
       '&:first-of-type': {
         pl: 0,
@@ -100,8 +100,8 @@ export const widget = {
         color: 'textInverse',
       },
       textDecoration: 'none',
-      fontFamily: `body`,
-      fontSize: `xxs`,
+      fontFamily: 'body',
+      fontSize: 'xxs',
       transition: '.6s',
       ':hover': {
         ...sharedStyles.a[':hover'],
@@ -111,13 +111,13 @@ export const widget = {
     li: {
       display: 'flex',
       alignItems: 'center',
-      mb: `m`,
+      mb: 'm',
     },
     '.gatsby-image-wrapper': {
       display: 'block!important',
     },
     '.textual': {
-      ml: `s`,
+      ml: 's',
       a: {
         display: 'block',
       },
@@ -125,7 +125,7 @@ export const widget = {
     '.widget-post-title': {
       fontFamily: 'heading',
       fontWeight: 'heading',
-      fontSize: `s`,
+      fontSize: 's',
     },
     '.widget-post-date': {
       variant: 'text.special',

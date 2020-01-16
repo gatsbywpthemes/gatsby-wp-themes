@@ -115,7 +115,7 @@ export const globalStyles = theme => {
     }
     *:focus {
       outline-style: auto;
-      outline-width: 3px;
+      outline-width: 1px;
       outline-color: ${theme.colors.focusOutline}!important;
     }
   `

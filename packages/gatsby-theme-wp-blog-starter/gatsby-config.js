@@ -14,10 +14,15 @@ module.exports = options => {
     addColorModes: true,
     addFancyBox: true,
     skipTitle: [],
+    fullWidth: [],
+    layoutWidth: {
+      page: `l`,
+      post: `l`,
+      archive: `l`,
+    },
     ...options,
   }
   const plugins = [
-    `gatsby-theme-algolia`,
     {
       resolve: `gatsby-theme-blog-data`,
       options: mergedOptions,
@@ -27,14 +32,14 @@ module.exports = options => {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-scroll-reveal`,
-      options: {
-        threshold: 0.1,
-        once: true,
-        selector: `[data-sal],  .entry-content  p, .entry  blockquote, .entry  h1,.entry  h2,.entry  h3,.entry  h4,.entry  h5,.entry  h6 ,.entry-info, .animate-on-scroll`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-scroll-reveal`,
+    //   options: {
+    //     threshold: 0.1,
+    //     once: true,
+    //     selector: `[data-sal],  .entry p, .entry  blockquote, .entry  h1,.entry  h2,.entry  h3,.entry  h4,.entry  h5,.entry  h6 ,.entry-info, .animate-on-scroll`,
+    //   },
+    // },
   ]
 
   /**

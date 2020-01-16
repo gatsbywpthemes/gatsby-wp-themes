@@ -28,6 +28,29 @@ export default merge(
       },
     },
     colors: colorsSettings,
+    //Text
+    text: {
+      branding: {
+        // textTransform: "capitalize",
+        fontSize: ["l", "l"],
+      },
+      special: {
+        archiveTitle: {
+          fontFamily: "body",
+          fontWeight: "bold",
+          boxShadow: "default",
+        },
+      },
+    },
+    //Buttons
+    buttons: {
+      primary: {
+        fontWeight: "bold",
+      },
+      secondary: {
+        fontWeight: "bold",
+      },
+    },
   },
   { arrayMerge: overwriteMerge }
 )

@@ -1,8 +1,9 @@
 const config = {
   wordPressUrl: "https://starter.alexaspalato.website/",
+
   // uploadsPath: 'wp-content/uploads',
   // postsPrefix: '',
-  postsPath: "",
+  postsPath: "/blog",
   // paginationPrefix: 'page',
   postsPerPage: 3,
   // disqus: 'webstantly',
@@ -22,25 +23,25 @@ const config = {
   fullWidth: ["home", "contact"],
   widgetAreas: {
     slideMenu: {
-      widgets: [ 'Categories', 'RecentPosts', 'Tags', 'SocialFollow',],
+      widgets: ["Categories", "RecentPosts", "Tags", "SocialFollow"],
     },
     sidebar: {
-      widgets: [ "Categories", "RecentPosts", "Tags",
-      "SocialFollow",],
+      // widgets: ['SocialFollow', 'Categories', 'RecentPosts', 'Tags'],
       position: "right",
       location: {
-        archive: true,
-        // single: false,
+        archive: false,
+        single: false,
         pages: [],
       },
     },
   },
 
+  fonts: ["Baumans", "Khand:400,600"],
   // siteUrl: "https://example.com",
   // title: 'Blog Title Placeholder',
   // author: 'Name Placeholder',
   // description: 'Description placeholder',
-  social: [
+   social: [
     {
       name: 'twitter',
       url: 'https://twitter.com/gatsbyjs',
@@ -59,7 +60,6 @@ const config = {
     },
   ],
   // twitterSummaryCardImage: 'Gatsby_Monogram.png',
-  // fonts: ["abril fatface", "fira sans"],
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,

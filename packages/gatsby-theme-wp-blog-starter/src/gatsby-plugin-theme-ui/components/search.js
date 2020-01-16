@@ -2,72 +2,70 @@ import { lighten } from '@theme-ui/color'
 import { a } from './typo.js'
 
 const resultStyles = {
-  bg: lighten(`background`, 0.05),
-  overflow: `scroll`,
-  position: `absolute`,
+  bg: lighten('background', 0.05),
+  overflow: 'scroll',
+  position: 'absolute',
   left: 0,
   top: [65, 65, 88],
-  width: [`100%`, `100%`, `600px`],
+  width: ['100%', '100%', '600px'],
   zIndex: 2,
-  color: `text`,
-  bg: lighten(`background`, 0.05),
-
+  color: 'text',
   '.results': {
-    fontWeight: `body`,
-    py: `xxs`,
-    px: `l`,
-    fontSize: `s`,
+    fontWeight: 'body',
+    py: 'xxs',
+    px: 'l',
+    fontSize: 's',
     ul: {
       px: 0,
     },
 
     a: {
       ...a,
-      color: `text`,
+      color: 'text',
       '&:hover': {
-        color: `primary`,
+        color: 'primary',
       },
     },
   },
 
-  boxShadow: `default`,
-  borderRadius: `0 0 0 5px`,
+  boxShadow: 'default',
+  borderRadius: '0 0 0 5px',
   header: {
-    px: `l`,
-    py: `xs`,
-    bg: `searchResultsHeaderBg`,
-    color: `white`,
+    px: 'l',
+    py: 'xs',
+    bg: 'searchResultsHeaderBg',
+    color: 'white',
     fontWeight: 300,
-    fontSize: `s`,
+    fontSize: 's',
     '.stats': {
-      fontStyle: `italic`,
+      fontStyle: 'italic',
     },
     h3: {
       mt: 0,
-      mb: `xxs`,
-      color: `text`,
+      mb: 'xxs',
+      color: 'text',
     },
   },
   mark: {
-    bg: `highlightColor`,
-    color: `text`,
-    p: `2px`,
+    bg: 'highlightColor',
+    color: 'text',
+    p: '2px',
   },
 }
 export const search = {
-  width: `100%`,
-  mb: [`-15px`, 0],
+  width: '100%',
+  mb: ['-15px', 0],
   //searchIcon
   icon: {
     p: 0,
-    pr: `xs`,
-    mt: `-7px`,
+    pr: 'xs',
+    mt: '-7px',
     svg: {
-      stroke: `searchColor`,
-      width: `20px`,
-      height: `20px`,
-      pr: `xs`,
-      boxSizing: `content-box`,
+      stroke: 'searchColor',
+      width: '20px',
+      height: '20px',
+      pr: 'xs',
+      boxSizing: 'content-box',
       borderRight: t => `1px solid ${t.colors.accentDark}`,
     },
   },
@@ -76,11 +74,11 @@ export const search = {
     position: 'relative',
 
     'button[type=submit]': {
-      display: `none`,
+      display: 'none',
     },
     'button[type=reset]': {
       bg: 'transparent',
-      border: `none`,
+      border: 'none',
       color: 'light',
       position: 'absolute',
       right: 0,
@@ -91,14 +89,14 @@ export const search = {
       border: 'none',
       borderBottom: t => `1px solid ${t.colors.searchColor}`,
       boxShadow: t => `${t.colors.searchColor} 0 0 0 inset`,
-      color: `light`,
-      fontSize: `xs`,
+      color: 'light',
+      fontSize: 'xs',
       display: 'block',
       fontWeight: '300',
       minWidth: '100%',
       outlineOffset: '-2px',
       overflow: 'visible',
-      p: `xxs`,
+      p: 'xxs',
       transitionDelay: '0s',
       transitionDuration: '.3s',
       transitionProperty: 'all',
@@ -114,28 +112,28 @@ export const search = {
   results: {
     ...resultStyles,
     top: [65, 65, 88],
-    maxHeight: [`100vh`, `100vh`, `60vh`],
+    maxHeight: ['100vh', '100vh', '60vh'],
 
     '.headroom--pinned &': {
       top: 68,
     },
     li: {
-      listStyleType: `none`,
+      listStyleType: 'none',
       borderBottom: t => `1px solid ${t.colors.grey}`,
-      pt: `s`,
-      pb: `m`,
+      pt: 's',
+      pb: 'm',
       '&:last-child': {
-        border: `none`,
+        border: 'none',
       },
     },
     h4: {
-      mb: `xxs`,
+      mb: 'xxs',
     },
   },
   resultsBasic: {
     ...resultStyles,
     top: [123, 123, 80],
-    maxHeight: [`100vh`, `100vh`, `60vh`],
+    maxHeight: ['100vh', '100vh', '60vh'],
 
     '.headroom--pinned &': {
       top: 71,
@@ -143,11 +141,11 @@ export const search = {
     h4: {
       borderBottom: t => `1px solid ${t.colors.grey}`,
       mb: 0,
-      pt: `s`,
-      pb: `m`,
+      pt: 's',
+      pb: 'm',
     },
     '.results div:last-child h4': {
-      border: `none`,
+      border: 'none',
     },
   },
 }

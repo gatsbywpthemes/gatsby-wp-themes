@@ -1,17 +1,25 @@
 export default {
-  mb: `l`,
-  width: `100%`,
+  mb: 'l',
+  '.fullWidth &': {
+    mb: -33,
+  },
+  width: '100%',
   '.gatsby-image-wrapper': {
     maxHeight: 400,
-    boxShadow: `small`,
-    borderRadius: `5px 5px 0 0`,
+    boxShadow: 'small',
+    borderRadius: '5px 5px 0 0',
   },
 
   '.content': {
-    variant: `card.default`,
-    borderRadius: `0 0 5px 5px`,
+    '.fullWidth &': {
+      variant: 'card.remove',
+      boxShadow: 'none',
+    },
+    variant: 'card.default',
+
+    borderRadius: ['0 0 0 0', '0 0 0 0', '0 0 5px 5px'],
     '&.page-content, &.no-img': {
-      borderRadius: `s`,
+      borderRadius: [0, 0, 's'],
     },
 
     overflowWrap: 'break-word',
@@ -19,21 +27,19 @@ export default {
     hyphens: 'auto',
     '.entry-title': {
       a: {
-        color: `text`,
+        color: 'text',
         '&:hover': {
-          color: `accent`,
+          color: 'accent',
         },
       },
     },
   },
   '.entry-content': {
-    pb: `m`,
-    my: `l`,
-    borderBottom: t => `1px solid ${t.colors.border}`,
+    my: 'l',
   },
   '.entry-title': {
-    textTransform: `uppercase`,
-    fontSize: [`m`, `l`],
+    textTransform: 'uppercase',
+    fontSize: ['m', 'l'],
 
     a: {},
   },
