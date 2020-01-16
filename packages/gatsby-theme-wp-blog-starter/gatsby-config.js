@@ -15,6 +15,7 @@ module.exports = options => {
     addFancyBox: true,
     skipTitle: [],
     fullWidth: [],
+
     layoutWidth: {
       page: `l`,
       post: `l`,
