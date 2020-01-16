@@ -36,7 +36,7 @@ const config = {
   // addAlgoliaSearch: false,
   // addColorModes: false,
   // addFancyBox: true,
-  skipTitle: ["home"],
+  skipTitle: ["home", "contact"],
 }
 // https://gatsby-test-2.alexaspalato.website
 //https://gatsby-theme-demo.alexaspalato.website

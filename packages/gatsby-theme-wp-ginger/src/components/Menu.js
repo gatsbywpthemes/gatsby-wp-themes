@@ -10,20 +10,17 @@ import slashes from 'remove-trailing-slash'
 import normalize from 'normalize-path'
 
 const subdirectoryCorrection = (path, wordPressUrl, hash = '') => {
-  console.log('path', path)
   path += `/${hash}`
   const wordPressUrlParsed = new URIParser(slashes(wordPressUrl))
   // detect if WordPress is installed in subdirectory
   const subdir = wordPressUrlParsed.path()
   return normalize(path.replace(subdir, '/')) || '/'
 }
-const renderLink = (menuItem, wordPressUrl, postsPath) => {
+const renderLink = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
   let url = menuItem.url
 
   if (menuItem.connectedObject.__typename === 'WP_MenuItem') {
     const parsedUrl = new URIParser(url)
-    console.log(parsedUrl)
-    console.log(parsedUrl.hash())
     if (menuItem.url === `#`) {
       return menuItem.label
     }
@@ -38,10 +35,13 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
       parsedUrl.hostname() === wordPressUrlParsed.hostname() &&
       path.indexOf(slashes(wordPressUrlParsed.path())) === 0
     ) {
-      console.log(url, path)
       url = subdirectoryCorrection(path, wordPressUrl, hash)
-      console.log(url)
-      return <Link to={url}> {menuItem.label}</Link>
+      return (
+        <Link onClick={hashClickAction} to={url}>
+          {' '}
+          {menuItem.label}
+        </Link>
+      )
     }
     return (
       <a href={menuItem.url} target="_blank" rel="noopener noreferrer">
@@ -65,19 +65,19 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
   }
 }
 
-const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
+const renderMenuItem = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
   if (menuItem.childItems && menuItem.childItems.nodes.length) {
     return renderSubMenu(menuItem, wordPressUrl)
   } else {
     return (
       <li className="menu-item" key={menuItem.id}>
-        {renderLink(menuItem, wordPressUrl, postsPath)}
+        {renderLink(menuItem, wordPressUrl, postsPath, hashClickAction)}
       </li>
     )
   }
 }
 
-const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
+const renderSubMenu = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
   return (
     <li
       className="has-subMenu menu-item"
@@ -88,7 +88,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
       <Collapse>
         <ul className="menuItemGroup sub-menu">
           {menuItem.childItems.nodes.map(item =>
-            renderMenuItem(item, wordPressUrl, postsPath)
+            renderMenuItem(item, wordPressUrl, postsPath, hashClickAction)
           )}
         </ul>
       </Collapse>
@@ -96,7 +96,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
   )
 }
 
-const Menu = ({ menuName }) => {
+const Menu = ({ menuName, hashClickAction }) => {
   const { wordPressUrl, postsPath } = useThemeOptions()
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find(n => menuName === n.node.name)
@@ -114,9 +114,19 @@ const Menu = ({ menuName }) => {
         <ul sx={{ variant: 'special' }} role="menu" className="menuItemGroup">
           {menuItems.nodes.map(menuItem => {
             if (menuItem.childItems.nodes.length) {
-              return renderSubMenu(menuItem, wordPressUrl, postsPath)
+              return renderSubMenu(
+                menuItem,
+                wordPressUrl,
+                postsPath,
+                hashClickAction
+              )
             } else {
-              return renderMenuItem(menuItem, wordPressUrl, postsPath)
+              return renderMenuItem(
+                menuItem,
+                wordPressUrl,
+                postsPath,
+                hashClickAction
+              )
             }
           })}
         </ul>

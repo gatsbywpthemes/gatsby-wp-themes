@@ -84,7 +84,7 @@ export const media = {
   '& img': {
     transition: 'transform 1.6s 0.2s!important',
   },
-  '&:hover img': {
+  'article:hover & img': {
     transform: 'scale(1.1)',
   },
 }

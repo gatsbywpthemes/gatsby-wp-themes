@@ -63,5 +63,8 @@ export default {
       fontStyle: 'italic',
       fontWeight: 'body',
     },
+    button: {
+      top: -4,
+    },
   },
 }

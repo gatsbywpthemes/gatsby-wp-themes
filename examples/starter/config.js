@@ -13,19 +13,20 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   // search: "algolia",
-  // skipTitle: "all",
+  skipTitle: "all",
   layoutWidth: {
-    page: "container",
+    page: "l",
     post: "l",
     archive: "l",
   },
-  // fullWidth: [],
+  fullWidth: ["home", "contact"],
   widgetAreas: {
     slideMenu: {
-      // widgets: ['SocialFollow', 'Categories', 'RecentPosts', 'Tags'],
+      widgets: [ 'Categories', 'RecentPosts', 'Tags', 'SocialFollow',],
     },
     sidebar: {
-      widgets: ["SocialFollow", "Categories", "RecentPosts", "Tags"],
+      widgets: [ "Categories", "RecentPosts", "Tags",
+      "SocialFollow",],
       position: "right",
       location: {
         archive: true,
@@ -39,12 +40,24 @@ const config = {
   // title: 'Blog Title Placeholder',
   // author: 'Name Placeholder',
   // description: 'Description placeholder',
-  /* social: [
+  social: [
     {
       name: 'twitter',
       url: 'https://twitter.com/gatsbyjs',
     },
-  ], */
+    {
+      name: 'facebook',
+      url: '#',
+    },
+    {
+      name: 'linkedin',
+      url: '#',
+    },
+    {
+      name: 'instagram',
+      url: '#',
+    },
+  ],
   // twitterSummaryCardImage: 'Gatsby_Monogram.png',
   // fonts: ["abril fatface", "fira sans"],
   // gaTrackingId: 0,

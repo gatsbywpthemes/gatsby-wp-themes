@@ -11,10 +11,11 @@ export const article = {
       zIndex: 1,
       height: ['auto', 'auto', '100vh'],
       minHeight: theme => [
-        `calc(100vh - ${theme.sizes.header[0]})`,
+        `none`,
         `calc(100vh - ${theme.sizes.header[1]})`,
         '100vh',
       ],
+      py: ['6rem', 0],
       backgroundColor: 'splashBg',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
@@ -26,6 +27,7 @@ export const article = {
   },
   button: {
     scrolldown: {
+      display: ['none', 'block'],
       variant: 'buttons.icon',
       position: 'absolute',
       bottom: '1.5rem',
@@ -38,5 +40,22 @@ export const article = {
         color: 'scrollDownBg',
       },
     },
+  },
+}
+
+export const tags = {
+  mb: '3rem',
+  ul: {
+    listStyle: 'none',
+    display: 'flex',
+    flexWrap: 'wrap',
+    p: 0,
+    ml: '-0.25rem',
+    mb: '0.25rem',
+  },
+  li: { px: 1, m: 0 },
+  a: {
+    variant: 'special.underlineOnHover',
+    fontSize: 'xxs',
   },
 }

@@ -21,7 +21,7 @@ const PostEntry = ({ ctx, post }) => {
   const { addComments } = useThemeOptions()
   return (
     <article>
-      <div data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
+      <header data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
         <Flex
           sx={{
             ...article.full.splash,
@@ -60,7 +60,7 @@ const PostEntry = ({ ctx, post }) => {
             <FiChevronsDown />
           </button>
         </Flex>
-      </div>
+      </header>
       <div
         id="content"
         sx={{
@@ -68,7 +68,7 @@ const PostEntry = ({ ctx, post }) => {
         }}
       >
         <PostEntryContent ctx={ctx} content={post.content} location="single" />
-        <Tags post={post} location="single" />
+        {post.tags.nodes.length > 0 && <Tags tags={post.tags.nodes} />}
         <PrevNextPostNavigation ctx={ctx} />
       </div>
       {!!addComments && post.commentStatus === 'open' && (
