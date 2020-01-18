@@ -77,7 +77,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
       sx={{ position: `relative` }}
     >
       {renderLink(menuItem, wordPressUrl, postsPath)}
-      <Collapse>
+      <Collapse menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
           {menuItem.childItems.nodes.map(item =>
             renderMenuItem(item, wordPressUrl, postsPath)

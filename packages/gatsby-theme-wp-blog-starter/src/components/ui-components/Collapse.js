@@ -4,8 +4,16 @@ import { useState, Fragment } from 'react'
 import { Button, Collapsible } from 'grommet'
 import { FormNext, FormDown } from 'grommet-icons'
 
-export const Collapse = props => {
+export const Collapse = ({ menuItem, children }) => {
   const [openMenu, setOpenMenu] = useState(false)
+  const openStyle =
+    menuItem.url === '#'
+      ? {
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'flex-end',
+        }
+      : ''
   return (
     <Fragment>
       <Button
@@ -19,9 +27,7 @@ export const Collapse = props => {
           position: 'absolute',
           top: '4px',
           right: 0,
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'flex-end',
+          ...openStyle,
           svg: {
             width: '1.5rem',
             height: '1.5rem',
@@ -29,7 +35,7 @@ export const Collapse = props => {
           },
         }}
       />
-      <Collapsible open={openMenu}>{props.children}</Collapsible>
+      <Collapsible open={openMenu}>{children}</Collapsible>
     </Fragment>
   )
 }
