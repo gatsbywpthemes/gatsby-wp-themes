@@ -19,6 +19,9 @@ export const Collapse = props => {
           position: 'absolute',
           top: '4px',
           right: 0,
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'flex-end',
           svg: {
             width: '1.5rem',
             height: '1.5rem',
