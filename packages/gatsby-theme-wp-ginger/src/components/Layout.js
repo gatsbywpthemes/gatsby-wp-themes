@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { useEffect } from 'react'
 import {
   Layout as ThemeLayout,
   Main,
@@ -9,7 +10,7 @@ import {
   Styled,
   useColorMode,
 } from 'theme-ui'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import useSiteSettings from 'gatsby-theme-blog-data/src/hooks/useSiteSettings'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import { Global } from '@emotion/core'
@@ -25,11 +26,23 @@ const MaybeWithContainer = ({ useContainer, children }) => {
   return !useContainer ? children : <Container>{children}</Container>
 }
 
-const Layout = ({ useContainer = true, children }) => {
+const Layout = ({ useContainer = true, children, isFrontPage }) => {
   const [colorMode] = useColorMode()
   const siteSettings = useSiteSettings()
   const { theme } = useThemeUI()
   const { addColorModes } = useThemeOptions()
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : ''
+  const urlLastChar = url => url[url.length - 1]
+  const relativeUrl = currentUrl
+    .split('/')
+    .slice(3)
+    .join('/')
+
+  useEffect(() => {
+    if (!isFrontPage && urlLastChar(currentUrl) === '/') {
+      navigate(`${relativeUrl.slice(0, -1)}`)
+    }
+  })
   return (
     <Styled.root>
       <Global styles={globalStyles(theme)} />
