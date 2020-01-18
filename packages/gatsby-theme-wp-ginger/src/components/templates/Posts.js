@@ -10,7 +10,7 @@ const Posts = ({ posts, ctx }) => {
   const { postsPath } = useThemeOptions()
   const ogType = slashes(postsPath) === '' ? 'website' : 'object'
   return (
-    <Layout>
+    <Layout relativeUrl={postsPath}>
       <SEO
         titleTemplate={'withDescription'}
         pageNumber={pageNumber}

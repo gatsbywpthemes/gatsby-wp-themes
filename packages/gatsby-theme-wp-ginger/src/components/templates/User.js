@@ -10,7 +10,7 @@ const User = ({ user, ctx }) => {
   const url = `author/${slug}/`
 
   return (
-    <Layout>
+    <Layout relativeUrl={url}>
       <SEO
         title={`Author Archives: ${name}`}
         pageNumber={pageNumber}
