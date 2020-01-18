@@ -9,19 +9,21 @@ module.exports = options => {
     )
   }
 
-  if (options.gingerWidgets) {
-    options.widgetAreas = {
-      slideMenu: {
-        widgets: options.gingerWidgets,
-      },
-    }
-  }
+  const widgets =
+    typeof options.gingerWidgets === 'undefined'
+      ? [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`]
+      : options.gingerWidgets
 
   const mergedOptions = {
     addAlgoliaSearch: false,
     addColorModes: true,
     addFancyBox: true,
     skipTitle: [],
+    widgetAreas: {
+      slideMenu: {
+        widgets,
+      },
+    },
     ...options,
     overrideBlogTemplate: `gatsby-theme-wp-ginger/src/templates/posts-query.js`,
     overridePostTemplate: `gatsby-theme-wp-ginger/src/templates/post-query.js`,

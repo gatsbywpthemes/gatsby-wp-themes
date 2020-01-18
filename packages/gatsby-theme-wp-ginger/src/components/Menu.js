@@ -38,7 +38,6 @@ const renderLink = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
       url = subdirectoryCorrection(path, wordPressUrl, hash)
       return (
         <Link onClick={hashClickAction} to={url}>
-          {' '}
           {menuItem.label}
         </Link>
       )
@@ -85,7 +84,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
       sx={{ position: 'relative' }}
     >
       {renderLink(menuItem, wordPressUrl, postsPath)}
-      <Collapse>
+      <Collapse menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
           {menuItem.childItems.nodes.map(item =>
             renderMenuItem(item, wordPressUrl, postsPath, hashClickAction)

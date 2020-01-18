@@ -29,15 +29,6 @@ module.exports = {
       options: {
         ...options,
         pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,
-        /* the file should be placed in static folder, set the file name,
-        this image wil be used in a summary format - it should be square and minimum 144px x 144px */
-
-        /* available widgets: SocialFollow, RecentPosts, Categories, Tags */
-        /*fonts: [
-           "Anton",
-          "Arya:400,700",
-          // you can also specify font weights and styles
-        ],*/
       },
     },
     {

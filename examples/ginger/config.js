@@ -9,7 +9,7 @@ const config = {
   postsPerPage: 5,
   // addComments: true,
   menuName: "main",
-  // gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
+  //gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   // siteUrl: "https://example.com",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
