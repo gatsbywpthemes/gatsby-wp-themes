@@ -44,6 +44,7 @@
     "react-hook-form": "^3.28.4",
     "react-icons": "^3.8.0",
     "react-share": "^3.0.1",
+    "remove-trailing-slash": "^0.1.0",
     "sass": "^1.23.7",
     "styled-components": "^4.4.1",
     "styled-icons": "^9.0.1",

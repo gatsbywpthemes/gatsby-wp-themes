@@ -44,7 +44,11 @@ const Page = ({ page }) => {
     : ''
 
   return (
-    <Layout page={page} type="page">
+    <Layout
+      page={page}
+      type="page"
+      relativeUrl={page.isFrontPage ? '' : page.uri}
+    >
       <SEO
         title={title}
         description={excerpt}
