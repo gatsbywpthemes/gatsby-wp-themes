@@ -10,6 +10,7 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
   const {
     postsPrefix,
     widgetAreas: { sidebar },
+    layoutWidth,
   } = useThemeOptions()
 
   const { widgets } = sidebar
@@ -23,16 +24,16 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
           },
           '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
         }
-      : { maxWidth: `l` }
+      : { maxWidth: layoutWidth.archive }
 
   const sidebarSide =
     widgets && sidebarArchive
       ? sidebarPosition === `left`
         ? {
             flexDirection: `row-reverse`,
-            '.posts-list': { pl: [0, 0, 0, `l`] },
+            '.posts-list': { pl: [0, 0, 0, layoutWidth.archive] },
           }
-        : { '.posts-list': { pr: [0, 0, 0, `l`] } }
+        : { '.posts-list': { pr: [0, 0, 0, layoutWidth.archive] } }
       : ''
   return (
     <Container sx={{ ...containerStyles }}>

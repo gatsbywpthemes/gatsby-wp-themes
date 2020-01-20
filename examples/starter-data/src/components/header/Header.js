@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Header as StyledHeader, Box } from 'theme-ui'
+import { jsx, Container, Header as StyledHeader, Box, Flex } from 'theme-ui'
 import { Fragment } from 'react'
 
 import { useStaticQuery, graphql } from 'gatsby'
@@ -8,6 +8,9 @@ import SiteBranding from './SiteBranding'
 
 import Headroom from 'react-headroom'
 import Search from 'gatsby-theme-algolia/src/components/Search'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import SearchForm from '../search/SearchForm'
+import ColorSwitch from '../ColorSwitch'
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
@@ -15,6 +18,11 @@ const searchIndices = [
 ]
 
 const Header = () => {
+  const { search } = useThemeOptions()
+  const styles = search
+    ? { justifyContent: [`flex-start`, `flex-start`, `center`] }
+    : { justifyContent: `flex-start` }
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       wp {
@@ -26,27 +34,33 @@ const Header = () => {
     }
   `)
 
-  const { title, url } = data.wp.generalSettings
+  const { title } = data.wp.generalSettings
 
   return (
     <Fragment>
       <Headroom>
         <StyledHeader className="header">
           <Container className="container">
-            <Box
-              sx={{
-                width: [`100%`, `100%`, `33%`],
-                display: `flex`,
-                justifyContent: [`center`, `center`, `flex-start`],
-              }}
-            >
-              <Search indices={searchIndices} />
-            </Box>
+            {search && (
+              <Box
+                sx={{
+                  width: [`100%`, `100%`, `33%`],
+                  display: `flex`,
+                  justifyContent: [`center`, `center`, `flex-start`],
+                }}
+              >
+                {search === 'algolia' ? (
+                  <Search indices={searchIndices} />
+                ) : (
+                  <SearchForm />
+                )}
+              </Box>
+            )}
             <Box
               sx={{
                 width: [`50%`, `50%`, `33%`],
                 display: `flex`,
-                justifyContent: [`flex-start`, `flex-start`, `center`],
+                ...styles,
               }}
             >
               <SiteBranding title={title} />
@@ -58,9 +72,21 @@ const Header = () => {
                 justifyContent: `flex-end`,
               }}
             >
-              <SlideSidebar wordPressUrl={url} />
+              <SlideSidebar />
             </Box>
           </Container>
+          <Flex
+            sx={{
+              position: `absolute`,
+              right: [`6%`, `6%`, `2%`],
+              top: [15, 15, 25],
+              '.headroom--pinned &': {
+                top: [10, 10, 15],
+              },
+            }}
+          >
+            <ColorSwitch />
+          </Flex>
         </StyledHeader>
       </Headroom>
     </Fragment>

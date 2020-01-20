@@ -12,7 +12,7 @@ export default {
         color: 'textInverse',
       },
 
-      p: `xxs`,
+      p: 'xxs',
       mx: 4,
       transition: '.6s',
       '&:hover': { opacity: 0.6 },
@@ -25,7 +25,7 @@ export default {
   share: {
     icon: {
       border: '1px solid',
-      borderColor: `text`,
+      borderColor: 'text',
       display: 'flex',
       width: '1.5rem',
       height: '1.5rem',
@@ -36,7 +36,7 @@ export default {
 
       borderRadius: '50%',
       svg: {
-        color: `text`,
+        color: 'text',
       },
     },
     name: {

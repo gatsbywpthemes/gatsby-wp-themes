@@ -1,3 +1,4 @@
+import { darken, lighten } from 'polished'
 const sharedStyles = {
   color: 'text',
   '.inverse &': {
@@ -10,7 +11,7 @@ const sharedStyles = {
     },
     textDecoration: 'none',
     variant: 'text.special',
-    fontFamily: `body`,
+    fontFamily: 'body',
     fontWeight: 'bold',
     transition: '0.6s',
     ':hover': {
@@ -22,18 +23,18 @@ const sharedStyles = {
   },
 
   '.widget-title': {
-    fontSize: `s`,
+    fontSize: 's',
     textAlign: 'center',
-    color: `text`,
+    color: 'text',
     '.inverse &': {
       color: 'textInverse',
     },
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    textTransform: `uppercase`,
+    textTransform: 'uppercase',
     alignItems: 'center',
-    letterSpacing: `2px`,
+    letterSpacing: '2px',
     ':after, :before': {
       content: '""',
       height: '1px',
@@ -41,10 +42,10 @@ const sharedStyles = {
       flex: '1 0',
     },
     ':after': {
-      ml: `xs`,
+      ml: 'xs',
     },
     ':before': {
-      mr: `xs`,
+      mr: 'xs',
     },
   },
   '.widget-recent-posts': {},
@@ -72,11 +73,11 @@ export default {
       ...sharedStyles.ul,
       display: 'flex',
       flexWrap: 'wrap',
-      justifyContent: `center`,
+      justifyContent: 'center',
     },
     li: {
-      px: `xxs`,
-      mb: `xxs`,
+      px: 'xxs',
+      mb: 'xxs',
 
       '&:first-of-type': {
         pl: 0,
@@ -101,8 +102,8 @@ export default {
         color: 'textInverse',
       },
       textDecoration: 'none',
-      fontFamily: `body`,
-      fontSize: `xxs`,
+      fontFamily: 'body',
+      fontSize: 'xxs',
       transition: '.6s',
       ':hover': {
         ...sharedStyles.a[':hover'],
@@ -112,13 +113,13 @@ export default {
     li: {
       display: 'flex',
       alignItems: 'center',
-      mb: `m`,
+      mb: 'm',
     },
     '.gatsby-image-wrapper': {
       display: 'block!important',
     },
     '.textual': {
-      ml: `s`,
+      ml: 's',
       a: {
         display: 'block',
       },
@@ -126,10 +127,36 @@ export default {
     '.widget-post-title': {
       fontFamily: 'heading',
       fontWeight: 'heading',
-      fontSize: `s`,
+      fontSize: 's',
     },
     '.widget-post-date': {
       variant: 'text.special',
+    },
+  },
+  newsletter: {
+    ...sharedStyles,
+    input: {
+      px: 20,
+      py: 10,
+      border: 'none',
+      bg: 'nlInputBg',
+      color: 'nlInputColor',
+    },
+    button: {
+      border: 'none',
+      px: 20,
+      borderRadius: '0 5px 5px 0',
+      textTransform: 'uppercase',
+      fontSize: 'xxs',
+      bg: 'nlButtonBg',
+      color: 'nlButtonColor',
+      fontWeight: 'bold',
+      letterSpacing: 1.2,
+      cursor: 'pointer',
+      variant: 'transitions.m',
+      '&:hover': {
+        bg: 'nlButtonBgHover',
+      },
     },
   },
 }
