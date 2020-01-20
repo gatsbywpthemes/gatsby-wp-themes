@@ -1,27 +1,27 @@
 export const Header = {
-  bg: `headerBg`,
-  color: `headerColor`,
+  bg: 'headerBg',
+  color: 'headerColor',
   fontWeight: 'bold',
-  margin: `none`,
-  boxShadow: `small`,
+  margin: 'none',
+  boxShadow: 'small',
   '.container': {
-    display: [`flex`],
-    justifyContent: `space-between`,
-    flexWrap: `wrap`,
-    alignItems: `center`,
-    fontSize: `m`,
+    display: ['flex'],
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    fontSize: 'm',
     margin: '0 auto',
     maxWidth: 'container',
-    py: `xs`,
+    py: 'xs',
     width: '90vw',
   },
 
   '.headroom--pinned &': {
     '>div': {
-      py: `xxs`,
+      py: 'xxs',
     },
   },
   '.search-box': {
-    width: [`80%`, `90%`, `auto`],
+    width: ['80%', '90%', 'auto'],
   },
 }
