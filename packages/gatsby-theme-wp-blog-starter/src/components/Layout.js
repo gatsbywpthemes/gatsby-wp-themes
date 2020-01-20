@@ -1,17 +1,9 @@
 /** @jsx jsx */
-import {
-  jsx,
-  Layout as StyledLayout,
-  Main,
-  Flex,
-  useThemeUI,
-  Styled,
-} from 'theme-ui'
+import { jsx, Layout as StyledLayout, Main, useThemeUI } from 'theme-ui'
 import { Fragment, useEffect } from 'react'
 import { navigate } from 'gatsby'
 import Header from './header/Header'
 import Footer from './footer/Footer'
-import ColorSwitch from './ColorSwitch'
 import { Global } from '@emotion/core'
 import { globalStyles } from '../styles/GlobalStyles'
 import { Grommet } from 'grommet'
@@ -33,7 +25,7 @@ const Layout = ({ children, page, type = 'page', relativeUrl = '' }) => {
     if (relativeUrl && endsWithSlash) {
       navigate(slashes(relativeUrl))
     }
-  }, relativeUrl)
+  })
 
   return (
     <Grommet theme={grommetTheme}>

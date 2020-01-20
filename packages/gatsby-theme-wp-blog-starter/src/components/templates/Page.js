@@ -9,13 +9,13 @@ import articleStyles from '../../styles/articleStyles'
 import gutenberg from '../../styles/theme-gutenberg'
 
 const Page = ({ page }) => {
-  const { title, excerpt, content, slug, uri, isFrontPage } = page
+  const { title, excerpt, content, slug, uri } = page
   const {
     widgetAreas: { sidebar },
     skipTitle,
     layoutWidth,
   } = useThemeOptions()
-  console.log('title', skipTitle)
+
   const ogType = page.isFrontPage ? 'website' : 'article'
   const { widgets } = sidebar
   const sidebarPageValue = sidebar.location.pages

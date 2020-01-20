@@ -39,7 +39,7 @@ const Layout = ({ useContainer = true, children, relativeUrl = '' }) => {
     if (relativeUrl && endsWithSlash) {
       navigate(slashes(relativeUrl))
     }
-  }, relativeUrl)
+  })
   return (
     <Styled.root>
       <Global styles={globalStyles(theme)} />
