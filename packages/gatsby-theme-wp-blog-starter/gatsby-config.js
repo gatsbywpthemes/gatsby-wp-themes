@@ -21,6 +21,7 @@ module.exports = options => {
       post: `l`,
       archive: `l`,
     },
+    mailchimpEndpoint: false,
     ...options,
   }
   const plugins = [
@@ -61,7 +62,7 @@ module.exports = options => {
    * Conditionally add algolia plugin
    * to avoid errors on build
    */
-  if (options.addAlgoliaSearch) {
+  if (mergedOptions.addAlgoliaSearch) {
     plugins.push(`gatsby-theme-algolia`)
   }
 
@@ -71,6 +72,15 @@ module.exports = options => {
    */
   if (mergedOptions.addFancyBox) {
     plugins.push(`gatsby-plugin-wordpress-fancybox`)
+  }
+
+  if (mergedOptions.mailchimpEndpoint) {
+    plugins.push({
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: mergedOptions.mailchimpEndpoint,
+      },
+    })
   }
   return {
     siteMetadata: {

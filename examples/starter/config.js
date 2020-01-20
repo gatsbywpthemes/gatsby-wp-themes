@@ -22,11 +22,22 @@ const config = {
   fullWidth: ["home", "contact"],
   widgetAreas: {
     slideMenu: {
-      widgets: [ 'Categories', 'RecentPosts', 'Tags', 'SocialFollow',],
+      widgets: [
+        "Categories",
+        "RecentPosts",
+        "Tags",
+        "SocialFollow",
+        "Newsletter",
+      ],
     },
     sidebar: {
-      widgets: [ "Categories", "RecentPosts", "Tags",
-      "SocialFollow",],
+      widgets: [
+        "Categories",
+        "RecentPosts",
+        "Tags",
+        "SocialFollow",
+        "Newsletter",
+      ],
       position: "right",
       location: {
         archive: true,
@@ -42,20 +53,20 @@ const config = {
   // description: 'Description placeholder',
   social: [
     {
-      name: 'twitter',
-      url: 'https://twitter.com/gatsbyjs',
+      name: "twitter",
+      url: "https://twitter.com/gatsbyjs",
     },
     {
-      name: 'facebook',
-      url: '#',
+      name: "facebook",
+      url: "#",
     },
     {
-      name: 'linkedin',
-      url: '#',
+      name: "linkedin",
+      url: "#",
     },
     {
-      name: 'instagram',
-      url: '#',
+      name: "instagram",
+      url: "#",
     },
   ],
   // twitterSummaryCardImage: 'Gatsby_Monogram.png',
@@ -65,6 +76,8 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   // useAlgoliaSearch: false,
+  mailchimpEndpoint:
+    "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
 }
 
 module.exports = config

@@ -1,3 +1,4 @@
+import { darken, lighten } from 'polished'
 const sharedStyles = {
   color: 'text',
   '.inverse &': {
@@ -130,6 +131,32 @@ export default {
     },
     '.widget-post-date': {
       variant: 'text.special',
+    },
+  },
+  newsletter: {
+    ...sharedStyles,
+    input: {
+      px: 20,
+      py: 10,
+      border: 'none',
+      bg: 'nlInputBg',
+      color: 'nlInputColor',
+    },
+    button: {
+      border: 'none',
+      px: 20,
+      borderRadius: '0 5px 5px 0',
+      textTransform: 'uppercase',
+      fontSize: 'xxs',
+      bg: 'nlButtonBg',
+      color: 'nlButtonColor',
+      fontWeight: 'bold',
+      letterSpacing: 1.2,
+      cursor: 'pointer',
+      variant: 'transitions.m',
+      '&:hover': {
+        bg: 'nlButtonBgHover',
+      },
     },
   },
 }
