@@ -49,6 +49,10 @@ const colorSettings = {
   highlightColor: accentDark,
   searchColor: grey,
   slideSidebarBg: dark,
+  /*Newsletter*/
+  nlButtonBg: accentLight,
+  nlButtonBgHover: darken(0.1, accentLight),
+
   modes: {
     dark: {
       text: light,
@@ -62,6 +66,10 @@ const colorSettings = {
       primary: accentDark,
       secondary: accentDark,
       slideSidebarBg: accentDark,
+      nlInputBg: light,
+      nlInputColor: dark,
+      nlButtonBg: primary,
+      nlButtonBgHover: darken(0.05, primary),
     },
   },
 }

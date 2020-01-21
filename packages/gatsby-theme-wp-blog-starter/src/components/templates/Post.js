@@ -48,7 +48,11 @@ const Post = ({ post }) => {
     config: { identifier: slug, title },
   }
   return (
-    <Layout page={post} type="post">
+    <Layout
+      page={post}
+      type="post"
+      relativeUrl={normalize(`/${postsPrefix}/${uri}`)}
+    >
       <SEO
         title={title}
         description={excerpt}

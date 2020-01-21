@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, useColorMode } from 'theme-ui'
-import React from 'react'
+import { jsx, useColorMode } from 'theme-ui'
 import { Button } from 'grommet'
 import { WiDaySunny, WiMoonAltWaningCrescent4 } from 'react-icons/wi'
 
@@ -16,9 +15,10 @@ const ColorSwitch = () => {
       ) : (
         <WiMoonAltWaningCrescent4
           sx={{
-            width: `30px`,
-            height: `30px`,
+            width: `25px`,
+            height: `25px`,
             svg: { stroke: `accent`, fill: `accent` },
+            mt: 3,
           }}
         />
       )}

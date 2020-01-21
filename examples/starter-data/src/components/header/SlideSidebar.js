@@ -3,13 +3,13 @@ import { jsx, Box } from 'theme-ui'
 import { Fragment } from 'react'
 import { useState } from 'react'
 import { Menu as MenuIcon, Close } from 'grommet-icons'
-import { Layer, Button, Grommet } from 'grommet'
+import { Layer, Button } from 'grommet'
 import Menu from './Menu.js'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Widgets from '../widgets/Widgets'
 import slideSidebarStyles from '../../styles/slideSidebarStyles'
 
-const SlideSidebar = ({ wordPressUrl }) => {
+const SlideSidebar = () => {
   const [isMenuOpen, setOpenMenu] = useState(false)
   const [openClass, setOpenClass] = useState(false)
   const {
@@ -64,7 +64,7 @@ const SlideSidebar = ({ wordPressUrl }) => {
             onClick={closeMenu}
           />
 
-          <Menu menuName={menuName} wordPressUrl={wordPressUrl} />
+          <Menu menuName={menuName} />
 
           {widgets &&
             widgets.length > 0 &&

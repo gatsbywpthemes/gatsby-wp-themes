@@ -1,23 +1,35 @@
 const config = {
-  wordPressUrl: `https://gatsby-test-2.alexaspalato.website/`,
-  // postsPrefix: `posts`,
+  wordPressUrl: 'https://starter.alexaspalato.website/',
+  // postsPrefix: "posts",
   /* use false or slug, for example 'home' */
   /* make sure to leave it as empty string if staticHomePage is false.
         Otherwise make sur to set a path, for example: 'blog' */
-  // postsPath: `blog`,
-  // // paginationPrefix: `page`,
-  postsPerPage: 5,
-  menuName: 'main menu',
-  // disqus: `webstantly`,
+  // postsPath: "blog",
+  // // paginationPrefix: "page",
+  postsPerPage: 3,
+  menuName: 'main',
+  // disqus: "webstantly",
 
   // addComments: false,
 
   widgetAreas: {
     slideMenu: {
-      widgets: [`Categories`, `RecentPosts`, `SocialFollow`, `Tags`],
+      widgets: [
+        'Categories',
+        'RecentPosts',
+        'SocialFollow',
+        'Tags',
+        'Newsletter',
+      ],
     },
     sidebar: {
-      widgets: [`Categories`, `SocialFollow`, `RecentPosts`, `Tags`],
+      widgets: [
+        'Categories',
+        'SocialFollow',
+        'RecentPosts',
+        'Tags',
+        'Newsletter',
+      ],
       position: 'right',
       location: {
         archive: true,
@@ -26,6 +38,13 @@ const config = {
       },
     },
   },
+  skipTitle: 'all',
+  layoutWidth: {
+    page: 'l',
+    post: 'l',
+    archive: 'l',
+  },
+  fullWidth: ['home', 'contact'],
 }
 
 module.exports = config

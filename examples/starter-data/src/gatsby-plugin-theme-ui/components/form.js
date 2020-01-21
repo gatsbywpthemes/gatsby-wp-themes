@@ -7,7 +7,7 @@ const sharedFormStyles = {
     bg: 'transparent',
     border: 'none',
     borderBottom: '1px solid',
-    padding: `xxs`,
+    padding: 'xxs',
     boxShadow: 'inset 0 0 0 currentColor',
     transition: '.3s',
     '&:focus': {
@@ -18,11 +18,11 @@ const sharedFormStyles = {
   'input[type = "text"], input[type = "email"], input[type = "url"], textarea': {
     width: '100%',
     minWidth: '100%',
-    mb: `s`,
+    mb: 's',
   },
   label: {
     variant: 'text.special',
-    fontSize: `xs`,
+    fontSize: 'xs',
     fontWeight: 'bold',
   },
   'input[type="submit"], button[type=submit]': {
@@ -39,7 +39,7 @@ const sharedFormStyles = {
     margin: 'auto 0 auto auto',
   },
   '.error': {
-    fontSize: `xxs`,
+    fontSize: 'xxs',
     fontStyle: 'italic',
     display: 'block',
     mt: '-1rem',
@@ -48,9 +48,11 @@ const sharedFormStyles = {
 
 export const form = {
   ...sharedFormStyles,
-  mb: `l`,
-  py: `xl`,
-  px: `l`,
+  mb: 'l',
+  py: 'xl',
+  px: 'l',
+  boxShadow: 'default',
+  borderRadius: 5,
 
   raw: {
     ...sharedFormStyles,

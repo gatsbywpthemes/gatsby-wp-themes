@@ -1,18 +1,18 @@
 import { lighten } from '@theme-ui/color'
 export default {
   section: {
-    maxWidth: `l`,
-    m: `0 auto`,
+    maxWidth: 'l',
+    m: '0 auto',
   },
 
   form: {
-    bg: lighten(`background`, 0.03),
+    bg: lighten('background', 0.03),
     variant: 'form',
     boxShadow: 'large',
-    borderRadius: `s`,
+    borderRadius: 's',
     '.comment &': {
       boxShadow: 'none',
-      p: `m`,
+      p: 'm',
     },
     '.comment-notes': {
       variant: 'text.special',
@@ -21,7 +21,7 @@ export default {
   },
   replyButton: {
     display: 'flex',
-    mt: `xs`,
+    mt: 'xs',
     ml: 'auto',
     variant: 'text.special.link',
     bg: 'transparent',
@@ -35,15 +35,15 @@ export default {
       listStyle: 'none',
     },
 
-    mb: `xl`,
+    mb: 'xl',
   },
   comment: {
     position: 'relative',
-    py: [`xxs`, `s`],
-    px: [`xs`, `m`],
+    py: ['xxs', 's'],
+    px: ['xs', 'm'],
     zIndex: 0,
-    mb: `s`,
-    boxShadow: `small`,
+    mb: 's',
+    boxShadow: 'small',
 
     '&:before': {
       content: '""',
@@ -52,7 +52,7 @@ export default {
       bottom: 0,
       left: 0,
       right: 0,
-      bg: lighten(`background`, 0.03),
+      bg: lighten('background', 0.03),
 
       zIndex: -1,
     },
@@ -64,12 +64,12 @@ export default {
     },
     '.entry-date': {
       display: 'block',
-      fontSize: `xxs`,
-      mb: `xxs`,
+      fontSize: 'xxs',
+      mb: 'xxs',
       fontStyle: 'italic',
     },
     '.comment-nesting-info': {
-      fontSize: `xxs`,
+      fontSize: 'xxs',
       textAlign: 'right',
       opacity: '.6',
     },
@@ -77,6 +77,6 @@ export default {
   title: {
     variant: 'text.special.title',
     textAlign: 'center',
-    mb: `m`,
+    mb: 'm',
   },
 }

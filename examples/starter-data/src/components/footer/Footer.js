@@ -8,17 +8,17 @@ const Footer = () => (
   <StyledFooter>
     <Container sx={{ py: 0 }}>
       <FooterContent />
-      <Flex
-        sx={{
-          ...socialStyles.follow,
-          mt: `xs`,
-          mb: 0,
-        }}
-      >
-        <Box className="inverse">
+      <Box className="inverse">
+        <Flex
+          sx={{
+            ...socialStyles.follow,
+            mt: `xs`,
+            mb: 0,
+          }}
+        >
           <SocialFollow />
-        </Box>
-      </Flex>
+        </Flex>
+      </Box>
     </Container>
   </StyledFooter>
 )
