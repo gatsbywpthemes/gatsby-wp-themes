@@ -1,8 +1,8 @@
 const config = {
-  wordPressUrl: "https://starter.alexaspalato.website/",
+  wordPressUrl: "https://starter.alexaspalato.website",
   // uploadsPath: 'wp-content/uploads',
   // postsPrefix: '',
-  postsPath: "",
+  postsPath: "/",
   // paginationPrefix: 'page',
   postsPerPage: 3,
   // disqus: 'webstantly',

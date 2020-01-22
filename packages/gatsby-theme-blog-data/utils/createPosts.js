@@ -175,7 +175,7 @@ module.exports = async ({ actions, graphql }, options) => {
     allPosts.map((post, index) => {
       //console.log(`create post: ${post.uri}`)
       createPage({
-        path: postsPrefix ? `/${postsPrefix}/${post.uri}/` : `/${post.uri}/`,
+        path: postsPrefix ? `/${postsPrefix}/${post.uri}` : `/${post.uri}`,
         component: postTemplate,
         context: {
           ...post,

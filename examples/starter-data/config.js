@@ -1,5 +1,6 @@
 const config = {
-  wordPressUrl: 'https://starter.alexaspalato.website/',
+  wordPressUrl: 'https://starter.alexaspalato.website',
+
   // postsPrefix: "posts",
   /* use false or slug, for example 'home' */
   /* make sure to leave it as empty string if staticHomePage is false.

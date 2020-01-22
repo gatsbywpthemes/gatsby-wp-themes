@@ -9,7 +9,6 @@ export const pageQuery = graphql`
       page(id: $id) {
         title
         content
-        excerpt
         uri
         slug
         isFrontPage
