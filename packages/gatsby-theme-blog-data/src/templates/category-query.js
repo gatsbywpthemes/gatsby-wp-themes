@@ -9,6 +9,7 @@ export const pageQuery = graphql`
       category(id: $id) {
         name
         slug
+        uri
         posts(first: $postsPerPage, where: { in: $ids }) {
           nodes {
             ...PostTemplateFragment
