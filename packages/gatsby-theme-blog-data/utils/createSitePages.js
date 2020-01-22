@@ -16,7 +16,7 @@ const GET_PAGES = `
         }
       }
     }
-  } 
+  }
   `
 const GET_CHILDREN_PAGES = `
   # Define our query variables
@@ -35,7 +35,7 @@ const GET_CHILDREN_PAGES = `
             endCursor
           }
         }
-      }      
+      }
     }
   }
   `
@@ -119,7 +119,7 @@ module.exports = async ({ actions, graphql }, options) => {
       }
 
       const path =
-        (page.isFrontPage && options.postsPath && options.postsPath !== `/`) ||
+        (page.isFrontPage && options.postsPath !== `/`) ||
         (page.isFrontPage && options.postsPath === false)
           ? `/`
           : `/${page.uri}`
