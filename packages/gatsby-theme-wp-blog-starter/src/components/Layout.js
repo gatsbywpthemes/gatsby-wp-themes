@@ -25,7 +25,7 @@ const Layout = ({ children, page, type = 'page', relativeUrl = '' }) => {
     if (relativeUrl && endsWithSlash) {
       navigate(slashes(relativeUrl))
     }
-  })
+  }, [])
 
   return (
     <Grommet theme={grommetTheme}>
