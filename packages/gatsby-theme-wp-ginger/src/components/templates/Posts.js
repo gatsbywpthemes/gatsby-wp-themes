@@ -6,6 +6,7 @@ import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import slashes from 'remove-trailing-slash'
 
 const Posts = ({ posts, ctx }) => {
+  console.log(posts)
   const { pageNumber } = ctx
   const { postsPath } = useThemeOptions()
   const ogType = slashes(postsPath) === '' ? 'website' : 'object'

@@ -21,12 +21,6 @@ const Layout = ({ children, page, type = 'page', relativeUrl = '' }) => {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : ''
   const endsWithSlash = currentUrl[currentUrl.length - 1] === '/'
 
-  useEffect(() => {
-    if (relativeUrl && endsWithSlash) {
-      navigate(slashes(relativeUrl))
-    }
-  }, [])
-
   return (
     <Grommet theme={grommetTheme}>
       <Global styles={globalStyles(theme)} />
