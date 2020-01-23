@@ -12,7 +12,7 @@ const Categories = ({ post }) => {
           <Link
             sx={{ variant: 'special.underlineOnHover' }}
             key={category.name}
-            to={`/category/${category.slug}`}
+            to={`/${category.uri}`}
             rel="category"
           >
             {category.name}

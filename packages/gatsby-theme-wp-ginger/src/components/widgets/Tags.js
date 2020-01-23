@@ -11,6 +11,7 @@ const ALL_TAGS_QUERY = graphql`
           name
           slug
           count
+          uri
         }
       }
     }
@@ -28,7 +29,7 @@ const TagsWidget = () => {
           {tags.nodes
             .map(tag => (
               <li key={tag.slug}>
-                <Link to={`/tag/${tag.slug}`}>
+                <Link to={`/${tag.uri}`}>
                   {tag.name} ({tag.count})
                 </Link>
               </li>

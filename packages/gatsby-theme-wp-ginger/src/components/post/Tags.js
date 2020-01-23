@@ -17,7 +17,7 @@ const Tags = ({ tags }) => {
         {tags
           .map(tag => (
             <li key={tag.slug}>
-              <Link to={`/tag/${tag.slug}`} rel="tag">
+              <Link to={`/${tag.uri}`} rel="tag">
                 {tag.name}
               </Link>
             </li>

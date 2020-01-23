@@ -11,7 +11,7 @@ const Author = ({ post }) => {
           <span>by </span>
           <Link
             sx={{ variant: 'special.underlineOnHover' }}
-            to={`/author/${post.author.slug}`}
+            to={`/${post.author.uri}`}
           >
             {post.author.name}
           </Link>

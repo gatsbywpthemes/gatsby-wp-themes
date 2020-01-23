@@ -35,11 +35,11 @@ const Layout = ({ useContainer = true, children, relativeUrl = '' }) => {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : ''
   const endsWithSlash = currentUrl[currentUrl.length - 1] === '/'
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (relativeUrl && endsWithSlash) {
       navigate(slashes(relativeUrl))
     }
-  })
+  }) */
   return (
     <Styled.root>
       <Global styles={globalStyles(theme)} />
