@@ -1,6 +1,6 @@
 const config = {
-  // wordPressUrl: "https://starter.alexaspalato.website",
-  wordPressUrl: "https://wp-pehaa.com/ginger-mini/",
+  wordPressUrl: "https://starter.alexaspalato.website",
+  // wordPressUrl: "https://wp-pehaa.com/ginger-mini/",
 
   // uploadsPath: 'wp-content/uploads',
   // postsPrefix: '',
