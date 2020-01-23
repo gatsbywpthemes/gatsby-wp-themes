@@ -31,6 +31,7 @@ const renderLink = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
     const wordPressUrlParsed = new URIParser(wordPressUrl)
     const path = parsedUrl.path()
     const hash = parsedUrl.hash()
+
     if (
       parsedUrl.hostname() === wordPressUrlParsed.hostname() &&
       path.indexOf(slashes(wordPressUrlParsed.path())) === 0
@@ -48,12 +49,20 @@ const renderLink = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
       </a>
     )
   } else {
+    console.log(
+      menuItem.url,
+      createLocalLink(menuItem.url, slashes(wordPressUrl)),
+      normalize(createLocalLink(menuItem.url, slashes(wordPressUrl))),
+      normalize(`${createLocalLink(menuItem.url, slashes(wordPressUrl))}/`)
+    )
     return menuItem.url !== '#' ? (
       menuItem.url === wordPressUrl ? (
         <Link to="/"> {menuItem.label}</Link>
       ) : (
         <Link
-          to={normalize(createLocalLink(menuItem.url, slashes(wordPressUrl)))}
+          to={`${normalize(
+            createLocalLink(menuItem.url, slashes(wordPressUrl))
+          )}/`}
         >
           {menuItem.label}
         </Link>
@@ -102,6 +111,7 @@ const Menu = ({ menuName, hashClickAction }) => {
   const menuItems = menuEdge ? menuEdge.node.menuItems : null
 
   if (menuItems) {
+    console.log(menuItems)
     return (
       <nav
         className="menu"
