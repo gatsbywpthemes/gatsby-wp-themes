@@ -49,12 +49,6 @@ const renderLink = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
       </a>
     )
   } else {
-    console.log(
-      menuItem.url,
-      createLocalLink(menuItem.url, slashes(wordPressUrl)),
-      normalize(createLocalLink(menuItem.url, slashes(wordPressUrl))),
-      normalize(`${createLocalLink(menuItem.url, slashes(wordPressUrl))}/`)
-    )
     return menuItem.url !== '#' ? (
       menuItem.url === wordPressUrl ? (
         <Link to="/"> {menuItem.label}</Link>
