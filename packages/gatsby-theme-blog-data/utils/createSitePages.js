@@ -1,3 +1,5 @@
+const slashes = require('remove-trailing-slash')
+const normalize = require('normalize-path')
 const pageTemplate = require.resolve(`../src/templates/page-query.js`)
 const GET_PAGES = `
   # Define our query variables
@@ -114,7 +116,10 @@ module.exports = async ({ actions, graphql }, options) => {
         return
       }
       /* dont create page for postsPath */
-      if (page.uri === options.postsPath) {
+      if (
+        slashes(normalize(`/${page.uri}`)) ===
+        slashes(normalize(`/${options.postsPath}`))
+      ) {
         return
       }
 
