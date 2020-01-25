@@ -9,15 +9,13 @@ import ArchiveTitle from './ArchiveTitle'
 const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
   const {
     postsPrefix,
-    widgetAreas: { sidebar },
     layoutWidth,
+    archiveSidebar,
+    sidebarWidgets,
   } = useThemeOptions()
 
-  const { widgets } = sidebar
-  const sidebarArchive = sidebar.location.archive
-  const sidebarPosition = sidebar.position
   const containerStyles =
-    widgets && sidebarArchive
+    sidebarWidgets && archiveSidebar
       ? {
           '.posts-list': {
             width: [`100%`, `100%`, `100%`, `70%`],
@@ -27,8 +25,8 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
       : { maxWidth: layoutWidth.archive }
 
   const sidebarSide =
-    widgets && sidebarArchive
-      ? sidebarPosition === `left`
+    sidebarWidgets && archiveSidebar
+      ? archiveSidebar === `left`
         ? {
             flexDirection: `row-reverse`,
             '.posts-list': { pl: [0, 0, 0, layoutWidth.archive] },
@@ -55,7 +53,7 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
             />
           ))}
         </Box>
-        {sidebarArchive && <Sidebar />}
+        {archiveSidebar && <Sidebar widgets={sidebarWidgets} />}
       </Flex>
       <Pagination prefix={paginationPrefix} ctx={ctx} />
     </Container>

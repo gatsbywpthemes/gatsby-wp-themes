@@ -5,9 +5,7 @@ import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Widgets from './widgets/Widgets'
 import sidebarStyles from '../styles/sidebarStyles'
 
-const Sidebar = () => {
-  const { widgets } = useThemeOptions().widgetAreas.sidebar
-
+const Sidebar = ({ widgets }) => {
   return (
     <Fragment>
       {widgets && widgets.length > 0 && (

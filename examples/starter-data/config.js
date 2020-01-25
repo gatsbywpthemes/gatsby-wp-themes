@@ -1,51 +1,67 @@
 const config = {
   wordPressUrl: 'https://starter.alexaspalato.website',
+  // wordPressUrl: "http://gatsbystarter.wst/",
 
-  // postsPrefix: "posts",
-  /* use false or slug, for example 'home' */
-  /* make sure to leave it as empty string if staticHomePage is false.
-        Otherwise make sur to set a path, for example: 'blog' */
-  // postsPath: "blog",
-  // // paginationPrefix: "page",
+  // uploadsPath: 'wp-content/uploads',
+  // postsPrefix: '',
+  postsPath: '/blog',
+  // paginationPrefix: 'page',
   postsPerPage: 3,
+  // disqus: 'webstantly',
   menuName: 'main',
-  // disqus: "webstantly",
-
-  // addComments: false,
-
-  widgetAreas: {
-    slideMenu: {
-      widgets: [
-        'Categories',
-        'RecentPosts',
-        'SocialFollow',
-        'Tags',
-        'Newsletter',
-      ],
-    },
-    sidebar: {
-      widgets: [
-        'Categories',
-        'SocialFollow',
-        'RecentPosts',
-        'Tags',
-        'Newsletter',
-      ],
-      position: 'right',
-      location: {
-        archive: true,
-        single: false,
-        pages: ['typography'],
-      },
-    },
-  },
+  // addComments: 1,
+  // gaTrackingId: 0,
+  // googleTagManagerId: 0,
+  // addSiteMap: false,
+  // siteMapOptions: {},
+  // search: "algolia",
   skipTitle: 'all',
   layoutWidth: {
     page: 'l',
     post: 'l',
     archive: 'l',
   },
-  fullWidth: ['home', 'contact'],
+  sidebarWidgets: [
+    'Categories',
+    'RecentPosts',
+    'Tags',
+    'SocialFollow',
+    'Newsletter',
+  ],
+  slideMenuWidgets: ['Categories', 'RecentPosts', 'SocialFollow', 'Newsletter'],
+  // archiveSidebar: "left",
+
+  fonts: ['Baumans', 'Khand:400,600'],
+  // siteUrl: "https://example.com",
+  // title: 'Blog Title Placeholder',
+  // author: 'Name Placeholder',
+  // description: 'Description placeholder',
+  social: [
+    {
+      name: 'twitter',
+      url: 'https://twitter.com/gatsbyjs',
+    },
+    {
+      name: 'facebook',
+      url: '#',
+    },
+    {
+      name: 'linkedin',
+      url: '#',
+    },
+    {
+      name: 'instagram',
+      url: '#',
+    },
+  ],
+  // twitterSummaryCardImage: 'Gatsby_Monogram.png',
+  // gaTrackingId: 0,
+  // googleTagManagerId: 0,
+  // addSiteMap: false,
+  // siteMapOptions: {},
+  // useAlgoliaSearch: false,
+  mailchimpEndpoint:
+    'https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19',
 }
 
 module.exports = config

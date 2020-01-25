@@ -4,22 +4,22 @@ import SEO from '../seo/Seo'
 import ArchiveContent from '../archive/ArchiveContent'
 
 const Tag = ({ tag, ctx }) => {
-  const { name, posts, slug } = tag
+  const { name, posts, uri } = tag
   const { pageNumber } = ctx
-  const url = `tag/${slug}`
+
   return (
-    <Layout page={tag} type="tag" relativeUrl={url}>
+    <Layout page={tag} type="tag">
       <SEO
         title={`${name} Archives`}
         pageNumber={pageNumber}
         ogType="object"
-        ogUrl={url}
+        ogUrl={uri}
       />
 
       <ArchiveContent
         posts={posts.nodes}
         ctx={ctx}
-        paginationPrefix={`tag/${slug}`}
+        paginationPrefix={uri}
         name={name}
       />
     </Layout>
