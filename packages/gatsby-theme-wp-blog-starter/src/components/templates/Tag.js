@@ -8,7 +8,7 @@ const Tag = ({ tag, ctx }) => {
   const { pageNumber } = ctx
 
   return (
-    <Layout page={tag} type="tag" relativeUrl={uri}>
+    <Layout page={tag} type="tag">
       <SEO
         title={`${name} Archives`}
         pageNumber={pageNumber}

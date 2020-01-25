@@ -1,6 +1,6 @@
 const config = {
-  wordPressUrl: "https://starter.alexaspalato.website",
-  // wordPressUrl: "https://wp-pehaa.com/ginger-mini/",
+  // wordPressUrl: "https://starter.alexaspalato.website",
+  wordPressUrl: "http://gatsbystarter.wst/",
 
   // uploadsPath: 'wp-content/uploads',
   // postsPrefix: '',
@@ -21,27 +21,16 @@ const config = {
     post: "l",
     archive: "l",
   },
-  fullWidth: ["home", "contact"],
-  widgetAreas: {
-    slideMenu: {
-      widgets: [
-        "Categories",
-        "RecentPosts",
-        "Tags",
-        "SocialFollow",
-        "Newsletter",
-      ],
-    },
-    sidebar: {
-      // widgets: ['SocialFollow', 'Categories', 'RecentPosts', 'Tags'],
-      position: "right",
-      location: {
-        archive: false,
-        single: false,
-        pages: [],
-      },
-    },
-  },
+  sidebarWidgets: [
+    "Categories",
+    "RecentPosts",
+    "Tags",
+    "SocialFollow",
+    "Newsletter",
+  ],
+  slideMenuWidgets: ["Categories", "RecentPosts", "SocialFollow", "Newsletter"],
+  archiveSidebar: "left",
+  // fullWidth: ["home", "contact"],
 
   fonts: ["Baumans", "Khand:400,600"],
   // siteUrl: "https://example.com",

@@ -23,6 +23,20 @@ export const query = graphql`
     excerpt
     date
     postId
+    template {
+      ... on WP_DefaultTemplate {
+        templateName
+      }
+      ... on WP_FullWidthTemplate {
+        templateName
+      }
+      ... on WP_LeftSidebarTemplate {
+        templateName
+      }
+      ... on WP_RightSidebarTemplate {
+        templateName
+      }
+    }
     featuredImage {
       ...ImageFluidFragment
     }

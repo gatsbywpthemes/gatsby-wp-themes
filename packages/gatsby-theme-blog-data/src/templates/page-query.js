@@ -12,6 +12,20 @@ export const pageQuery = graphql`
         uri
         slug
         isFrontPage
+        template {
+          ... on WP_DefaultTemplate {
+            templateName
+          }
+          ... on WP_FullWidthTemplate {
+            templateName
+          }
+          ... on WP_LeftSidebarTemplate {
+            templateName
+          }
+          ... on WP_RightSidebarTemplate {
+            templateName
+          }
+        }
       }
     }
   }
