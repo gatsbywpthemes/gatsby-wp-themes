@@ -16,15 +16,7 @@ export const pageQuery = graphql`
           ... on WP_DefaultTemplate {
             templateName
           }
-          ... on WP_FullWidthTemplate {
-            templateName
-          }
-          ... on WP_LeftSidebarTemplate {
-            templateName
-          }
-          ... on WP_RightSidebarTemplate {
-            templateName
-          }
+          ...PageTemplates
         }
       }
     }

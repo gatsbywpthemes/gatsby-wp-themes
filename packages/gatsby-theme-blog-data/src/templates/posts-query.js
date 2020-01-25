@@ -23,19 +23,16 @@ export const query = graphql`
     excerpt
     date
     postId
+    postFormats {
+      nodes {
+        name
+      }
+    }
     template {
       ... on WP_DefaultTemplate {
         templateName
       }
-      ... on WP_FullWidthTemplate {
-        templateName
-      }
-      ... on WP_LeftSidebarTemplate {
-        templateName
-      }
-      ... on WP_RightSidebarTemplate {
-        templateName
-      }
+      ...PageTemplates
     }
     featuredImage {
       ...ImageFluidFragment
@@ -62,6 +59,17 @@ export const query = graphql`
         slug
         uri
       }
+    }
+  }
+  fragment PageTemplates on WP_ContentTemplateUnion {
+    ... on WP_FullWidthTemplate {
+      templateName
+    }
+    ... on WP_LeftSidebarTemplate {
+      templateName
+    }
+    ... on WP_RightSidebarTemplate {
+      templateName
     }
   }
 `

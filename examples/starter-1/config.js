@@ -1,6 +1,6 @@
 const config = {
-  // wordPressUrl: "https://starter.alexaspalato.website",
-  wordPressUrl: "http://gatsbystarter.wst/",
+  wordPressUrl: "https://starter.alexaspalato.website",
+  // wordPressUrl: "http://gatsbystarter.wst/",
 
   // uploadsPath: 'wp-content/uploads',
   // postsPrefix: '',
@@ -29,8 +29,7 @@ const config = {
     "Newsletter",
   ],
   slideMenuWidgets: ["Categories", "RecentPosts", "SocialFollow", "Newsletter"],
-  archiveSidebar: "left",
-  // fullWidth: ["home", "contact"],
+  // archiveSidebar: "left",
 
   fonts: ["Baumans", "Khand:400,600"],
   // siteUrl: "https://example.com",
