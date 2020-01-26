@@ -4,7 +4,7 @@ import Tag from '../components/Tag'
 export default Tag
 
 export const pageQuery = graphql`
-  query GET_TAGSTARTER($id: ID!, $ids: [ID], $postsPerPage: Int!) {
+  query GET_TAG_STARTER($id: ID!, $ids: [ID], $postsPerPage: Int!) {
     wp {
       tag(id: $id) {
         name
