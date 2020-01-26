@@ -7,7 +7,7 @@ const DEFAULT_OPTIONS = {
   uploadsPath: `wp-content/uploads`,
   pathPrefix: ``,
   postsPrefix: ``,
-  postsPath: `/`,
+  postsPath: ``,
   paginationPrefix: `page`,
   postsPerPage: 10,
   menuName: `primary`,
