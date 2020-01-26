@@ -4,7 +4,7 @@ import Blog from '../components/Posts'
 export default Blog
 
 export const query = graphql`
-  fragment ImageFluidFragment on WP_MediaItem {
+  fragment ImageFluidFragment_starter on WP_MediaItem {
     altText
     sourceUrl
     imageFile {
@@ -15,7 +15,7 @@ export const query = graphql`
       }
     }
   }
-  fragment PostTemplateFragment on WP_Post {
+  fragment PostTemplateFragment_starter on WP_Post {
     id
     uri
     slug
@@ -29,10 +29,10 @@ export const query = graphql`
       }
     }
     template {
-      ...PageTemplates
+      ...PageTemplates_starter
     }
     featuredImage {
-      ...ImageFluidFragment
+      ...ImageFluidFragment_starter
     }
     categories {
       nodes {
@@ -58,19 +58,28 @@ export const query = graphql`
       }
     }
   }
-  fragment PageTemplates on WP_ContentTemplateUnion {
+  fragment PageTemplates_starter on WP_ContentTemplateUnion {
     ... on WP_DefaultTemplate {
+      templateName
+    }
+    ... on WP_FullWidthTemplate {
+      templateName
+    }
+    ... on WP_LeftSidebarTemplate {
+      templateName
+    }
+    ... on WP_RightSidebarTemplate {
       templateName
     }
   }
 `
 
 export const pageQuery = graphql`
-  query GET_POSTS($ids: [ID], $postsPerPage: Int!) {
+  query GET_POSTS_STARTER($ids: [ID], $postsPerPage: Int!) {
     wp {
       posts(first: $postsPerPage, where: { in: $ids }) {
         nodes {
-          ...PostTemplateFragment
+          ...PostTemplateFragment_starter
         }
       }
     }

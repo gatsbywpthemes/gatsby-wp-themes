@@ -4,7 +4,7 @@ import Page from '../components/Page'
 export default Page
 
 export const pageQuery = graphql`
-  query GET_PAGE($id: ID!) {
+  query GET_PAGE_STARTER($id: ID!) {
     wp {
       page(id: $id) {
         title
@@ -13,7 +13,7 @@ export const pageQuery = graphql`
         slug
         isFrontPage
         template {
-          ...PageTemplates
+          ...PageTemplates_starter
         }
       }
     }
