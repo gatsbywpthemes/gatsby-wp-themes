@@ -4,7 +4,7 @@ import Blog from '../components/Posts'
 export default Blog
 
 export const query = graphql`
-  fragment ImageFluidFragment_starter on WP_MediaItem {
+  fragment ImageFluidFragment on WP_MediaItem {
     altText
     sourceUrl
     imageFile {
@@ -32,7 +32,7 @@ export const query = graphql`
       ...PageTemplates_starter
     }
     featuredImage {
-      ...ImageFluidFragment_starter
+      ...ImageFluidFragment
     }
     categories {
       nodes {
