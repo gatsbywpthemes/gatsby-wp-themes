@@ -6,8 +6,8 @@ import {
   text,
   card,
   gradients,
-  Header,
-  Footer,
+  header,
+  footer,
   list,
 } from './components'
 import {
@@ -31,6 +31,8 @@ export default {
   search,
   form,
   list,
+  header,
+  footer,
   sizes: {
     container: 1200,
     s: 300,
@@ -84,8 +86,7 @@ export default {
         },
       },
     },
-    Header,
-    Footer,
+
     Main: {
       // margin: '0 auto',
       // maxWidth: 'container',

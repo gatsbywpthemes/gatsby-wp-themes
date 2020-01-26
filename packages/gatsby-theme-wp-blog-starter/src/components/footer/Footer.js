@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { Container, Footer as StyledFooter, jsx, Flex, Box } from 'theme-ui'
+import { Container, jsx, Flex, Box } from 'theme-ui'
 import FooterContent from './FooterContent'
 import SocialFollow from '../social/SocialFollows'
 import socialStyles from '../../styles/socialStyles'
 
 const Footer = () => (
-  <StyledFooter>
+  <footer sx={{ variant: 'footer' }}>
     <Container sx={{ py: 0 }}>
       <FooterContent />
       <Box className="inverse">
@@ -20,7 +20,7 @@ const Footer = () => (
         </Flex>
       </Box>
     </Container>
-  </StyledFooter>
+  </footer>
 )
 
 export default Footer
