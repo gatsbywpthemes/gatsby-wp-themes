@@ -12,6 +12,9 @@ export const pageQuery = graphql`
         uri
         slug
         isFrontPage
+        template {
+          ...PageTemplates
+        }
       }
     }
   }

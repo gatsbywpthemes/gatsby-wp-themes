@@ -2,7 +2,7 @@ const config = {
   wordPressUrl: "https://starter.alexaspalato.website",
   // uploadsPath: 'wp-content/uploads',
   // postsPrefix: '',
-  postsPath: "/",
+  postsPath: "",
   // paginationPrefix: 'page',
   postsPerPage: 3,
   // disqus: 'webstantly',
@@ -19,33 +19,15 @@ const config = {
     post: "l",
     archive: "l",
   },
-  fullWidth: ["home", "contact"],
-  widgetAreas: {
-    slideMenu: {
-      widgets: [
-        "Categories",
-        "RecentPosts",
-        "Tags",
-        "SocialFollow",
-        "Newsletter",
-      ],
-    },
-    sidebar: {
-      widgets: [
-        "Categories",
-        "RecentPosts",
-        "Tags",
-        "SocialFollow",
-        "Newsletter",
-      ],
-      position: "right",
-      location: {
-        archive: true,
-        // single: false,
-        pages: [],
-      },
-    },
-  },
+  sidebarWidgets: [
+    "Categories",
+    "RecentPosts",
+    "Tags",
+    "SocialFollow",
+    "Newsletter",
+  ],
+  slideMenuWidgets: ["Categories", "RecentPosts", "SocialFollow", "Newsletter"],
+  archiveSidebar: "right",
 
   // siteUrl: "https://example.com",
   // title: 'Blog Title Placeholder',

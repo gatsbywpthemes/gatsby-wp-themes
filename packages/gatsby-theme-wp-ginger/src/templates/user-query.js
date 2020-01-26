@@ -10,6 +10,7 @@ export const pageQuery = graphql`
         slug
         id
         description
+        uri
         avatar {
           url
         }

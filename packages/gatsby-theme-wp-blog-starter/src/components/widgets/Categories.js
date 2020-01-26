@@ -10,6 +10,7 @@ const ALL_CATEGORIES_QUERY = graphql`
         nodes {
           name
           slug
+          uri
         }
       }
     }
@@ -29,7 +30,7 @@ const CategoriesWidget = () => {
         {categories.nodes.length
           ? categories.nodes.map(category => (
               <li key={category.slug}>
-                <Link to={`/category/${category.slug}`}>{category.name}</Link>
+                <Link to={`/${category.uri}`}>{category.name}</Link>
               </li>
             ))
           : null}

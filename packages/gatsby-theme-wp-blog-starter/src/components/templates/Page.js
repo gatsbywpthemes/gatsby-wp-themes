@@ -9,23 +9,22 @@ import articleStyles from '../../styles/articleStyles'
 import gutenberg from '../../styles/theme-gutenberg'
 
 const Page = ({ page }) => {
-  const { title, excerpt, content, slug, uri } = page
   const {
-    widgetAreas: { sidebar },
-    skipTitle,
-    layoutWidth,
-  } = useThemeOptions()
+    title,
+    excerpt,
+    content,
+    slug,
+    uri,
+    template: { templateName },
+  } = page
+  const pageTemplate = templateName.toLowerCase()
+  const { skipTitle, layoutWidth, sidebarWidgets } = useThemeOptions()
 
   const ogType = page.isFrontPage ? 'website' : 'article'
-  const { widgets } = sidebar
-  const sidebarPageValue = sidebar.location.pages
-  const sidebarPage =
-    sidebarPageValue &&
-    (sidebarPageValue === 'all' || sidebarPageValue.includes(slug))
-  const sidebarPosition = sidebar.position
+  const sidebarPage = pageTemplate.includes('sidebar')
 
   const containerStyles =
-    widgets && sidebarPage
+    sidebarWidgets && sidebarPage
       ? {
           '.entry': {
             width: [`100%`, `100%`, `100%`, `70%`],
@@ -35,20 +34,18 @@ const Page = ({ page }) => {
       : { maxWidth: layoutWidth.page }
 
   const sidebarSide = sidebarPage
-    ? sidebarPosition === `left`
+    ? pageTemplate === `left sidebar`
       ? {
           flexDirection: `row-reverse`,
           '.entry': { pl: [0, 0, 0, layoutWidth.page] },
         }
-      : { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
+      : pageTemplate === `right sidebar`
+      ? { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
+      : ''
     : ''
 
   return (
-    <Layout
-      page={page}
-      type="page"
-      relativeUrl={page.isFrontPage ? '' : page.uri}
-    >
+    <Layout page={page} type="page">
       <SEO
         title={title}
         description={excerpt}
@@ -85,7 +82,7 @@ const Page = ({ page }) => {
               </Styled.root>
             </div>
           </article>
-          {sidebarPage && <Sidebar />}
+          {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
       </Container>
     </Layout>

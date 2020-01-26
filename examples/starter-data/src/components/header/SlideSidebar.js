@@ -12,12 +12,7 @@ import slideSidebarStyles from '../../styles/slideSidebarStyles'
 const SlideSidebar = () => {
   const [isMenuOpen, setOpenMenu] = useState(false)
   const [openClass, setOpenClass] = useState(false)
-  const {
-    widgetAreas: {
-      slideMenu: { widgets },
-    },
-    menuName,
-  } = useThemeOptions()
+  const { slideMenuWidgets, menuName } = useThemeOptions()
 
   const openMenu = () => {
     setOpenClass(true)
@@ -66,9 +61,9 @@ const SlideSidebar = () => {
 
           <Menu menuName={menuName} />
 
-          {widgets &&
-            widgets.length > 0 &&
-            widgets.map((widget, i) => (
+          {slideMenuWidgets &&
+            slideMenuWidgets.length > 0 &&
+            slideMenuWidgets.map((widget, i) => (
               <Box className="inverse" sx={{ mb: `l` }} key={i}>
                 <Widgets widget={widget} location="SlideMenu" />
               </Box>

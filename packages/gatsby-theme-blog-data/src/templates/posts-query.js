@@ -23,6 +23,14 @@ export const query = graphql`
     excerpt
     date
     postId
+    postFormats {
+      nodes {
+        name
+      }
+    }
+    template {
+      ...PageTemplates
+    }
     featuredImage {
       ...ImageFluidFragment
     }
@@ -31,11 +39,13 @@ export const query = graphql`
         id
         slug
         name
+        uri
       }
     }
     author {
       name
       slug
+      uri
       avatar {
         url
       }
@@ -44,7 +54,13 @@ export const query = graphql`
       nodes {
         name
         slug
+        uri
       }
+    }
+  }
+  fragment PageTemplates on WP_ContentTemplateUnion {
+    ... on WP_DefaultTemplate {
+      templateName
     }
   }
 `

@@ -18,20 +18,10 @@ const DEFAULT_OPTIONS = {
   addSiteMap: false,
   siteMapOptions: {},
   search: 'basic',
-  widgetAreas: {
-    slideMenu: {
-      widgets: [],
-    },
-    sidebar: {
-      widgets: [],
-      position: 'right',
-      location: {
-        archive: false,
-        single: false,
-        pages: false, //options: all for all pages or array of page slugs
-      },
-    },
-  },
+  sidebarWidgets: [],
+  slideMenuWidgets: [],
+  archiveSidebar: false,
+
   addFancyBox: false,
 }
 

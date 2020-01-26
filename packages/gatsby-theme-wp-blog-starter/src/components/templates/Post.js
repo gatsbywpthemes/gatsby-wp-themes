@@ -10,22 +10,26 @@ import normalize from 'normalize-path'
 import Sidebar from '../Sidebar'
 
 const Post = ({ post }) => {
-  const { title, excerpt, slug, featuredImage, uri } = post
+  const {
+    title,
+    excerpt,
+    slug,
+    featuredImage,
+    uri,
+    template: { templateName },
+  } = post
   const media = featuredImage
     ? featuredImage.imageFile.childImageSharp.fluid.src
     : null
   const { postsPrefix, layoutWidth } = useThemeOptions()
-  const {
-    disqus,
-    addComments,
-    widgetAreas: { sidebar },
-  } = useThemeOptions()
+  const { disqus, addComments, sidebarWidgets } = useThemeOptions()
 
-  const { widgets } = sidebar
-  const sidebarSingle = sidebar.location.single
-  const sidebarPosition = sidebar.position
+  const pageTemplate = templateName.toLowerCase()
+  const sidebarPage = pageTemplate.includes('sidebar')
+  console.log('post', post)
+
   const containerStyles =
-    widgets && sidebarSingle
+    sidebarWidgets && sidebarPage
       ? {
           '.entry': {
             width: [`100%`, `100%`, `100%`, `70%`],
@@ -34,25 +38,22 @@ const Post = ({ post }) => {
         }
       : { maxWidth: layoutWidth.post }
 
-  const sidebarSide =
-    widgets && sidebarSingle
-      ? sidebarPosition === `left`
-        ? {
-            flexDirection: `row-reverse`,
-            '.entry': { pl: [0, 0, 0, layoutWidth.post] },
-          }
-        : { '.entry': { pr: [0, 0, 0, layoutWidth.post] } }
+  const sidebarSide = sidebarPage
+    ? pageTemplate === `left sidebar`
+      ? {
+          flexDirection: `row-reverse`,
+          '.entry': { pl: [0, 0, 0, layoutWidth.page] },
+        }
+      : pageTemplate === `right sidebar`
+      ? { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
       : ''
+    : ''
   const disqusConfig = {
     shortname: disqus,
     config: { identifier: slug, title },
   }
   return (
-    <Layout
-      page={post}
-      type="post"
-      relativeUrl={normalize(`/${postsPrefix}/${uri}`)}
-    >
+    <Layout page={post} type="post">
       <SEO
         title={title}
         description={excerpt}
@@ -69,7 +70,7 @@ const Post = ({ post }) => {
           }}
         >
           <PostEntry post={post} location="single" />
-          {sidebarSingle && <Sidebar />}
+          {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
         {addComments && post.commentStatus === 'open' && (
           <Container sx={{ maxWidth: layoutWidth.post }}>

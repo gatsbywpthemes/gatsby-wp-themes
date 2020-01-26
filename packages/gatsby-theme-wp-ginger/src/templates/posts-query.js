@@ -41,11 +41,13 @@ export const query = graphql`
         id
         slug
         name
+        uri
       }
     }
     author {
       name
       slug
+      uri
     }
   }
 
@@ -64,12 +66,14 @@ export const query = graphql`
         id
         slug
         name
+        uri
       }
     }
     author {
       name
       slug
       description
+      uri
       avatar {
         url
       }
@@ -78,6 +82,7 @@ export const query = graphql`
       nodes {
         name
         slug
+        uri
       }
     }
   }
