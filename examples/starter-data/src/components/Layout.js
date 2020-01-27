@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Layout as StyledLayout, Main, useThemeUI } from 'theme-ui'
+import { jsx, Box, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
 import Header from './header/Header'
 import Footer from './footer/Footer'
@@ -23,13 +23,30 @@ const Layout = ({ children, page, type = 'page' }) => {
   return (
     <Grommet theme={grommetTheme}>
       <Global styles={globalStyles(theme)} />
-      <StyledLayout className={`${layoutClass}-${type} ${fullWidthClass}`}>
+      <Box
+        sx={{
+          '&.fullWidth': {
+            '.container': {
+              maxWidth: `100%`,
+            },
+          },
+        }}
+        className={`${layoutClass}-${type} ${fullWidthClass}`}
+      >
         <Header />
-        <Main>
+        <main
+          sx={{
+            py: `xxl`,
+            '.fullWidth &': {
+              py: 0,
+              mt: -32,
+            },
+          }}
+        >
           <Fragment>{children}</Fragment>
-        </Main>
+        </main>
         <Footer />
-      </StyledLayout>
+      </Box>
     </Grommet>
   )
 }
