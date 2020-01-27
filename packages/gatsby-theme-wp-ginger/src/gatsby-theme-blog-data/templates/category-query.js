@@ -1,15 +1,14 @@
 import { graphql } from 'gatsby'
-import Tag from '../gatsby-theme-blog-data/components/Tag'
+import Category from '../components/Category'
 
-export default Tag
+export default Category
 
 export const pageQuery = graphql`
-  query GET_TAG1($id: ID!, $ids: [ID], $postsPerPage: Int!) {
+  query GET_CATEGORY1($id: ID!, $ids: [ID], $postsPerPage: Int!) {
     wp {
-      tag(id: $id) {
+      category(id: $id) {
         name
         slug
-        id
         uri
         posts(first: $postsPerPage, where: { in: $ids }) {
           nodes {

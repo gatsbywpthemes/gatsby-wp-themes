@@ -25,11 +25,6 @@ module.exports = options => {
       },
     },
     ...options,
-    overrideBlogTemplate: `gatsby-theme-wp-ginger/src/templates/posts-query.js`,
-    overridePostTemplate: `gatsby-theme-wp-ginger/src/templates/post-query.js`,
-    overrideCategoryTemplate: `gatsby-theme-wp-ginger/src/templates/category-query.js`,
-    overrideTagTemplate: `gatsby-theme-wp-ginger/src/templates/tag-query.js`,
-    overrideUserTemplate: `gatsby-theme-wp-ginger/src/templates/user-query.js`,
   }
   const plugins = [
     {
