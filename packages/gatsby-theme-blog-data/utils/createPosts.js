@@ -73,14 +73,10 @@ let go = true
  * @returns {Promise<void>}
  */
 module.exports = async ({ actions, graphql }, options) => {
-  const blogTemplatePath = options.overrideBlogTemplate
-    ? `../../${options.overrideBlogTemplate}`
-    : `../src/templates/posts-query.js`
+  const blogTemplatePath = `../src/templates/posts-query.js`
 
   const blogTemplate = require.resolve(blogTemplatePath)
-  const postTemplatePath = options.overridePostTemplate
-    ? `../../${options.overridePostTemplate}`
-    : `../src/templates/post-query.js`
+  const postTemplatePath = `../src/templates/post-query.js`
   const postTemplate = require.resolve(postTemplatePath)
   const { postsPath, paginationPrefix, postsPrefix, postsPerPage } = options
   /**

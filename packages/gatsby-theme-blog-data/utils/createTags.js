@@ -43,9 +43,7 @@ const PAGINATIONQUERY = `
   }
 `
 module.exports = async ({ actions, graphql }, options) => {
-  const tagTemplatePath = options.overrideTagTemplate
-    ? `../../${options.overrideTagTemplate}`
-    : `../src/templates/tag-query.js`
+  const tagTemplatePath = `../src/templates/tag-query.js`
 
   const tagTemplate = require.resolve(tagTemplatePath)
   await addPagination({
