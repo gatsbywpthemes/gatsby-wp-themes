@@ -5,9 +5,9 @@ import { Link } from 'gatsby'
 const Author = ({ post }) => {
   const { name, slug } = post.author
   return (
-    <a as={Link} aria-label={`visit ${name} page`} to={`/author/${slug}`}>
+    <Link aria-label={`visit ${name} page`} to={`/author/${slug}`}>
       {name}
-    </a>
+    </Link>
   )
 }
 

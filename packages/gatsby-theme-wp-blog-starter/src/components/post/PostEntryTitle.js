@@ -14,13 +14,12 @@ const PostEntryTitle = ({ post, location, postsPrefix }) => {
           dangerouslySetInnerHTML={{ __html: title }}
         />
       ) : (
-        <h1 as="h2" className="entry-title">
-          <a
-            as={Link}
+        <Styled.h1 as="h2" className="entry-title">
+          <Link
             to={`${postsPrefix}/${uri}`}
             dangerouslySetInnerHTML={{ __html: title }}
           />
-        </h1>
+        </Styled.h1>
       )}
     </Fragment>
   )
