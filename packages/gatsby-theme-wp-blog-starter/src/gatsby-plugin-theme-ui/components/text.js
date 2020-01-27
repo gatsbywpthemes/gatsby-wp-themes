@@ -4,6 +4,7 @@ const specialSharedStyles = {
   textTransform: 'uppercase',
   letterSpacing: '2px',
   fontSize: 'xxs',
+  color: 'text',
   a: {
     color: 'inherit',
     textDecoration: 'none',

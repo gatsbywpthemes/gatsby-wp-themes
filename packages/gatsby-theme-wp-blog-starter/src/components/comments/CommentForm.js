@@ -129,16 +129,22 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
     switch (commentStatus) {
       case 'success':
         return (
-          <p>
+          <p sx={{ color: 'text' }}>
             Your comment has been successfully submitted. It is awaiting
             moderation.
           </p>
         )
       case 'loading':
-        return <p>Please wait. Your comment is being submitted.</p>
+        return (
+          <p sx={{ color: 'text' }}>
+            Please wait. Your comment is being submitted.
+          </p>
+        )
       case 'error':
         return (
-          <p>There was an error in your submission. Please try again later.</p>
+          <p sx={{ color: 'text' }}>
+            There was an error in your submission. Please try again later.
+          </p>
         )
       default:
         return ''
