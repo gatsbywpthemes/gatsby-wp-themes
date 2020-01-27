@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { Fragment } from 'react'
 import { Link } from 'gatsby'
 
@@ -9,18 +9,18 @@ const PostEntryTitle = ({ post, location, postsPrefix }) => {
   return (
     <Fragment>
       {location === 'single' ? (
-        <Styled.h1
+        <h1
           className="entry-title"
           dangerouslySetInnerHTML={{ __html: title }}
         />
       ) : (
-        <Styled.h1 as="h2" className="entry-title">
-          <Styled.a
+        <h1 as="h2" className="entry-title">
+          <a
             as={Link}
             to={`${postsPrefix}/${uri}`}
             dangerouslySetInnerHTML={{ __html: title }}
           />
-        </Styled.h1>
+        </h1>
       )}
     </Fragment>
   )
