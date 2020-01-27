@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Styled } from 'theme-ui'
+import { jsx, Box } from 'theme-ui'
 import { Link } from 'gatsby'
 import normalize from 'normalize-path'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
@@ -25,31 +25,31 @@ const SearchResults = ({ query, pages, posts }) => {
       }}
     >
       <header>
-        <Styled.h3>Pages</Styled.h3>
+        <h3>Pages</h3>
         <Stats postType={pages} query={query} />
       </header>
       <Box className="results">
         {pages.map(page => (
           <Box key={page.slug}>
-            <Styled.h4>
+            <h4>
               <Link to={`/${page.slug}`}>{page.title}</Link>
-            </Styled.h4>
+            </h4>
           </Box>
         ))}
       </Box>
       <header>
-        <Styled.h3>Posts</Styled.h3>
+        <h3>Posts</h3>
         <Stats postType={posts} query={query} />
       </header>
       <Box className="results">
         {posts.map(post => {
           return (
             <Box key={post.slug}>
-              <Styled.h4>
+              <h4>
                 <Link to={normalize(`/${postsPrefix}/${post.slug}`)}>
                   {post.title}
                 </Link>
-              </Styled.h4>
+              </h4>
             </Box>
           )
         })}

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Container, Flex, Box } from 'theme-ui'
+import { jsx, Container, Flex, Box } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import SEO from '../seo/Seo'
@@ -70,16 +70,15 @@ const Page = ({ page }) => {
           >
             <div className="content page-content" sx={{ borderRadius: `s` }}>
               {!skipTitle.includes(slug) && skipTitle !== 'all' && (
-                <Styled.h1
+                <h1
                   className="page-title"
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               )}
-              <Styled.root>
-                <Box className="entry-content" sx={{ ...gutenberg }}>
-                  <ParsedContent content={content} />
-                </Box>
-              </Styled.root>
+
+              <Box className="entry-content" sx={{ ...gutenberg }}>
+                <ParsedContent content={content} />
+              </Box>
             </div>
           </article>
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
