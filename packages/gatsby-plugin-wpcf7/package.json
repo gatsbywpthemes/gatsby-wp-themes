@@ -18,17 +18,17 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
-    "@mdx-js/react": "^1.5.1",
-    "theme-ui": "^0.2.49",
-    "@theme-ui/presets": "^0.2.44",
-    "emotion": "^10.0.23",
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "@mdx-js/react": "^1.5.5",
+    "theme-ui": "^0.3.1",
+    "@theme-ui/presets": "^0.3.0",
+    "emotion": "^10.0.27",
     "html-react-parser": "^0.10.0",
-    "react-hook-form": "^3.28.4"
+    "react-hook-form": "@3.28.4"
   },
   "peerDependencies": {
-    "gatsby": "^2.18.3",
+    "gatsby": "^2.19.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
