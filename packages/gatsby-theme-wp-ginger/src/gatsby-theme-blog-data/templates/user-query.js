@@ -1,15 +1,19 @@
 import { graphql } from 'gatsby'
-import Category from '../gatsby-theme-blog-data/components/Category'
-
-export default Category
+import User from '../components/User'
+export default User
 
 export const pageQuery = graphql`
-  query GET_CATEGORY1($id: ID!, $ids: [ID], $postsPerPage: Int!) {
+  query GET_USER1($id: ID!, $ids: [ID], $postsPerPage: Int!) {
     wp {
-      category(id: $id) {
+      user(id: $id) {
         name
         slug
+        id
+        description
         uri
+        avatar {
+          url
+        }
         posts(first: $postsPerPage, where: { in: $ids }) {
           nodes {
             ...PostTemplateFragment1

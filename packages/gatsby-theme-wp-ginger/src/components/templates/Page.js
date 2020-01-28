@@ -14,7 +14,7 @@ const Page = ({ page }) => {
   const ogType = page.isFrontPage ? 'website' : 'article'
   console.log(page)
   return (
-    <Layout useContainer={false} relativeUrl={page.isFrontPage ? '' : page.uri}>
+    <Layout useContainer={false}>
       <SEO
         title={page.title}
         description={page.excerpt}

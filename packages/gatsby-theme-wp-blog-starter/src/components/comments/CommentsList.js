@@ -62,7 +62,7 @@ const CommentsList = ({ post }) => {
           </ul>
         </section>
       ) : (
-        <p sx={commentStyles.noComments}>No comments yet</p>
+        <p sx={{ color: 'text' }}>No comments yet</p>
       )}
       {activeComment === 0 && <CommentForm postId={post.postId} />}
     </Fragment>

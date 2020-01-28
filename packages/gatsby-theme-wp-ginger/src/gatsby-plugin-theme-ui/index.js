@@ -11,11 +11,11 @@ import {
   baseTypo,
 } from './components'
 import buttons from './components/buttons'
-import Header from './components/header'
-import Footer from './components/footer'
-import Container from './components/container'
-import Layout from './components/layout'
-import Main from './components/main'
+import header from './components/header'
+import footer from './components/footer'
+import container from './components/container'
+import layout from './components/layout'
+import main from './components/main'
 import { colors } from './components/colors'
 
 const theme = {
@@ -32,12 +32,12 @@ const theme = {
     content: '52.5rem',
     sidebar: '29.25rem',
   },
+  layout,
+  main,
+  container,
+  footer,
+  header,
   styles: {
-    Layout,
-    Main,
-    Container,
-    Header,
-    Footer,
     root: {
       ...baseTypo,
     },

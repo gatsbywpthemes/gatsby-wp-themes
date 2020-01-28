@@ -1,4 +1,4 @@
-export const Footer = {
+export const footer = {
   bg: 'footerBg',
   textAlign: 'center',
   py: 'm',

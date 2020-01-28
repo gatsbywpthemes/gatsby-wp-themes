@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import { jsx, Flex } from 'theme-ui'
+import { jsx, Flex, Button } from 'theme-ui'
 import { Link } from 'gatsby'
 import PostEntryTitle from './PostEntryTitle'
 import PostEntryMedia from './PostEntryMedia'
 import PostEntryContent from './PostEntryContent'
 import PostEntryMeta from './PostEntryMeta'
 import PostEntryInfo from './PostEntryInfo'
-import { Button } from '@theme-ui/components'
 import normalize from 'normalize-path'
 import SocialShare from '../social/SocialShare'
 import articleStyles from '../../styles/articleStyles'
@@ -57,7 +56,8 @@ const PostEntry = ({ post, location, postsPrefix }) => {
               <Button
                 className="read-more"
                 a11YTitle="Read More from this post"
-                sx={{ variant: `buttons.secondary`, mt: `20px` }}
+                variant="secondary"
+                sx={{ mt: `20px` }}
               >
                 <Link
                   to={`${postsPrefix}/${post.uri}`}

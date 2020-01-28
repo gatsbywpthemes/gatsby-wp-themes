@@ -10,6 +10,7 @@ export default {
     variant: 'form',
     boxShadow: 'large',
     borderRadius: 's',
+    color: 'text',
     '.comment &': {
       boxShadow: 'none',
       p: 'm',
@@ -44,6 +45,7 @@ export default {
     zIndex: 0,
     mb: 's',
     boxShadow: 'small',
+    color: 'text',
 
     '&:before': {
       content: '""',
@@ -78,5 +80,6 @@ export default {
     variant: 'text.special.title',
     textAlign: 'center',
     mb: 'm',
+    color: 'text',
   },
 }

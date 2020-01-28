@@ -49,9 +49,7 @@ const GET_POSTS_BY_USER = `
   }
 `
 module.exports = async ({ actions, graphql }, options) => {
-  const userTemplatePath = options.overrideUserTemplate
-    ? `../../${options.overrideUserTemplate}`
-    : `../src/templates/user-query.js`
+  const userTemplatePath = `../src/templates/user-query.js`
 
   const userTemplate = require.resolve(userTemplatePath)
   await addPagination({

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Header as StyledHeader, Box, Flex } from 'theme-ui'
+import { jsx, Container, Box, Flex } from 'theme-ui'
 import { Fragment } from 'react'
 
 import { useStaticQuery, graphql } from 'gatsby'
@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <Fragment>
       <Headroom>
-        <StyledHeader className="header">
+        <header className="header" sx={{ variant: `header` }}>
           <Container className="container">
             {search && (
               <Box
@@ -87,7 +87,7 @@ const Header = () => {
           >
             <ColorSwitch />
           </Flex>
-        </StyledHeader>
+        </header>
       </Headroom>
     </Fragment>
   )

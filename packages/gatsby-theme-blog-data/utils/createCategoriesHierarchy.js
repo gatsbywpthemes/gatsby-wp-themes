@@ -79,9 +79,7 @@ const PAGINATIONQUERY = `
 module.exports = async ({ actions, graphql }, options) => {
   const { createPage } = actions
   let allCategories = []
-  const categoryTemplatePath = options.overrideCategoryTemplate
-    ? `../../${options.overrideCategoryTemplate}`
-    : `../src/templates/category-query.js`
+  const categoryTemplatePath = `../src/templates/category-query.js`
 
   const categoryTemplate = require.resolve(categoryTemplatePath)
 

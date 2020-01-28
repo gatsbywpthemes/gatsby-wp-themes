@@ -6,8 +6,8 @@ import {
   text,
   card,
   gradients,
-  Header,
-  Footer,
+  header,
+  footer,
   list,
 } from './components'
 import {
@@ -31,6 +31,8 @@ export default {
   search,
   form,
   list,
+  header,
+  footer,
   sizes: {
     container: 1200,
     s: 300,
@@ -72,37 +74,11 @@ export default {
     xl: { transition: `all 1s ease-in-out` },
   },
   styles: {
-    Layout: {
-      backgroundColor: 'background',
-      color: 'text',
-      fontFamily: 'body',
-      fontSize: `s`,
-      lineHeight: 'text',
-      '&.fullWidth': {
-        '.container': {
-          maxWidth: `100%`,
-        },
-      },
-    },
-    Header,
-    Footer,
-    Main: {
-      // margin: '0 auto',
-      // maxWidth: 'container',
-      // width: '90vw',
-      py: `xxl`,
-      '.fullWidth &': {
-        py: 0,
-        mt: -32,
-      },
-    },
     Container: {
       maxWidth: `container`,
       m: `0 auto`,
       p: 0,
     },
-
-    ...base,
 
     root: base,
   },
