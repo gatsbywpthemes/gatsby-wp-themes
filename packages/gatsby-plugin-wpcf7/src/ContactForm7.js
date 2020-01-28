@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react"
-import useForm from "react-hook-form"
+import { useForm } from "react-hook-form"
 import axios from "axios"
 import { domToReact } from "html-react-parser"
 import useWordPressSettings from "./hooks/useWordPressSettings"
