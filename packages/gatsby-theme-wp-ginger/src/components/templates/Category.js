@@ -8,7 +8,7 @@ const Category = ({ category, ctx }) => {
   const { name, posts, uri } = category
   const { pageNumber } = ctx
   return (
-    <Layout relativeUrl={uri}>
+    <Layout>
       <SEO
         title={`${name} Archives`}
         pageNumber={pageNumber}

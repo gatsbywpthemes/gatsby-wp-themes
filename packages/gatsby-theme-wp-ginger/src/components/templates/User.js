@@ -9,7 +9,7 @@ const User = ({ user, ctx }) => {
   const { pageNumber } = ctx
 
   return (
-    <Layout relativeUrl={uri}>
+    <Layout>
       <SEO
         title={`Author Archives: ${name}`}
         pageNumber={pageNumber}

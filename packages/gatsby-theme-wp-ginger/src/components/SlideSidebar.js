@@ -2,7 +2,7 @@
 import { jsx, useThemeUI } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
-import { Layer } from 'grommet'
+import { Grommet, Layer } from 'grommet'
 import { FiMenu, FiX } from 'react-icons/fi'
 import Menu from './Menu'
 import Widgets from './widgets/Widgets'
@@ -43,8 +43,9 @@ const SlideSidebar = () => {
       setTimeout(() => setOpenMenu(false), 200)
     }
   }
+  console.log(theme.layer)
   return (
-    <>
+    <Grommet theme={{ layer: theme.layer }}>
       <button
         type="button"
         aria-label="Open navigation menu"
@@ -89,7 +90,7 @@ const SlideSidebar = () => {
             ))}
         </Layer>
       )}
-    </>
+    </Grommet>
   )
 }
 

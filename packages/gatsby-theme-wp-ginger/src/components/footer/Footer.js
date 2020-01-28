@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { Footer as StyledFooter, jsx } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import FooterContent from './FooterContent'
 
 const Footer = () => (
-  <StyledFooter>
+  <footer sx={{ variant: 'footer' }}>
     <FooterContent />
-  </StyledFooter>
+  </footer>
 )
 
 export default Footer

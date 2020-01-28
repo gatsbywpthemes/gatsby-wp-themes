@@ -6,15 +6,18 @@ const pehaafadein = keyframes`
   }
 `
 export const slideMenu = {
-  fontFamily: 'body',
-  borderRadius: 0,
-  bg: 'sidebarBg',
-  color: 'sidebarColor',
-  width: theme => ['100%', theme.sizes.sidebar],
-  display: `flex`,
-  overflowY: 'scroll',
-  boxShadow: ['none', '-10px 0 40px rgba(0,0,0,0.3)'],
-  animationDuration: '1s',
+  '&:nth-child(n)': {
+    borderRadius: 0,
+    bg: 'sidebarBg',
+    color: 'sidebarColor',
+    fontFamily: 'body',
+    width: theme => ['100%', theme.sizes.sidebar],
+    display: `flex`,
+    overflowY: 'scroll',
+    boxShadow: ['none', '-10px 0 40px rgba(0,0,0,0.3)'],
+    animationDuration: '1s',
+  },
+
   p: '3rem',
   a: theme => theme.styles.root.a,
   ul: {

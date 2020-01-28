@@ -19,10 +19,7 @@ const Post = props => {
 
   return (
     <>
-      <Layout
-        useContainer={false}
-        relativeUrl={normalize(`/${postsPrefix}/${uri}`)}
-      >
+      <Layout useContainer={false}>
         <SEO
           title={title}
           description={excerpt}

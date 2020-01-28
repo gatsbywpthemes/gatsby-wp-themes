@@ -9,7 +9,7 @@ const Tag = ({ tag, ctx }) => {
   const { pageNumber } = ctx
 
   return (
-    <Layout relativeUrl={uri}>
+    <Layout>
       <SEO
         title={`${name} Archives`}
         pageNumber={pageNumber}
