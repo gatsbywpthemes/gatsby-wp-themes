@@ -42,6 +42,11 @@ export const globalStyles = theme => {
       margin: 0; /* 2 */
     }
 
+    input {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+
     /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -118,5 +123,6 @@ export const globalStyles = theme => {
       outline-width: 1px;
       outline-color: ${theme.colors.focusOutline}!important;
     }
+
   `
 }
