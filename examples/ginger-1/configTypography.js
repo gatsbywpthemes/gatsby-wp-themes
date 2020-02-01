@@ -1,5 +1,5 @@
 const typographySettings = {
-  baseFontSize: "16px",
+  baseFontSize: "18px",
   fonts: {
     body: "Open Sans, sans-serif",
     heading: "Special Elite, serif",

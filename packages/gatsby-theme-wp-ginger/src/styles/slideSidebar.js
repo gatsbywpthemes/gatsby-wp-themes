@@ -16,10 +16,11 @@ export const slideMenu = {
     overflowY: 'scroll',
     boxShadow: ['none', '-10px 0 40px rgba(0,0,0,0.3)'],
     animationDuration: '1s',
+    a: theme => theme.styles.root.a,
   },
 
   p: '3rem',
-  a: theme => theme.styles.root.a,
+
   ul: {
     variant: 'list.raw',
   },

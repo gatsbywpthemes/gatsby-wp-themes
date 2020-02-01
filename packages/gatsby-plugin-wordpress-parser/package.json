@@ -18,18 +18,18 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "@babel/runtime": "^7.8.3",
+    "@babel/runtime": "^7.8.4",
     "cheerio": "^1.0.0-rc.3",
     "gatsby-image": "^2.2.39",
-    "gatsby-plugin-sharp": "^2.4.0",
-    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-plugin-sharp": "^2.4.4",
+    "gatsby-source-filesystem": "^2.1.47",
     "gatsby-transformer-sharp": "^2.3.13",
     "html-react-parser": "^0.10.0",
     "normalize-path": "^3.0.0",
     "urijs": "^1.19.2"
   },
   "peerDependencies": {
-    "gatsby": "^2.19.5",
+    "gatsby": "^2.19.10",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
