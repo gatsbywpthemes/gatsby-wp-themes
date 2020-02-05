@@ -14,6 +14,7 @@ const POSTS_AND_PAGES_QUERY = graphql`
           title
           content
           slug
+          uri
         }
       }
       pages(first: 1000) {
@@ -21,6 +22,7 @@ const POSTS_AND_PAGES_QUERY = graphql`
           title
           content
           slug
+          uri
         }
       }
     }
