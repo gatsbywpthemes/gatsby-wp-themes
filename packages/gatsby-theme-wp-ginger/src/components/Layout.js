@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { Box, Container, jsx, useThemeUI, Styled, useColorMode } from 'theme-ui'
+import { Box, jsx, useThemeUI, useColorMode } from 'theme-ui'
 import { Link, navigate } from 'gatsby'
 import useSiteSettings from 'gatsby-theme-blog-data/src/hooks/useSiteSettings'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
@@ -13,7 +13,11 @@ import '../styles/custom-gutenstyles.css'
 import ColorSwitch from './ColorSwitch'
 
 const MaybeWithContainer = ({ useContainer, children }) => {
-  return !useContainer ? children : <Container>{children}</Container>
+  return !useContainer ? (
+    children
+  ) : (
+    <div sx={{ variant: 'container' }}>{children}</div>
+  )
 }
 
 const Layout = ({ useContainer = true, children }) => {

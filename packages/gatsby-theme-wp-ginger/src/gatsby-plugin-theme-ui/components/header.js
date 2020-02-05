@@ -1,4 +1,5 @@
 export default {
+  display: 'flex',
   position: ['sticky', 'sticky', 'fixed'],
   zIndex: 10,
   top: 0,

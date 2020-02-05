@@ -30,9 +30,9 @@ const SearchResults = ({ query, pages, posts }) => {
       </header>
       <Box className="results">
         {pages.map(page => (
-          <Box key={page.slug}>
+          <Box key={page.uri}>
             <h4>
-              <Link to={`/${page.slug}`}>{page.title}</Link>
+              <Link to={`/${page.uri}`}>{page.title}</Link>
             </h4>
           </Box>
         ))}
