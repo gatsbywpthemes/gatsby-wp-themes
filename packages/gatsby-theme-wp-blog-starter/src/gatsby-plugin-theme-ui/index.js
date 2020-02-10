@@ -73,13 +73,12 @@ export default {
     l: { transition: `all .8s ease-in-out` },
     xl: { transition: `all 1s ease-in-out` },
   },
-  styles: {
-    Container: {
-      maxWidth: `container`,
-      m: `0 auto`,
-      p: 0,
+  layout: {
+    container: {
+      px: [20, 30, 0],
     },
-
+  },
+  styles: {
     root: base,
   },
 }

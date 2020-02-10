@@ -19,8 +19,9 @@ export const globalStyles = theme => {
     boldWeight: theme.fontWeights.bold,
   })
   return css`
-    body {
+    body, html {
       margin: 0;
+      max-width: 100%;
       overflow-x: hidden;
     }
     body[style*='overflow'] {
