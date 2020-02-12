@@ -13,6 +13,7 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   // search: "algolia",
+  // dynamicComments: false,
   skipTitle: "all",
   layoutWidth: {
     page: "l",

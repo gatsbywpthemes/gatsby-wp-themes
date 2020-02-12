@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import gql from 'graphql-tag'
 import { useMutation } from '@apollo/react-hooks'
 import { useForm } from 'react-hook-form'
@@ -68,6 +69,7 @@ const inputFields = [
 const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
   const { register, handleSubmit, errors } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
+  const { dynamicComments } = useThemeOptions()
 
   const [addComment, { data }] = useMutation(commentSubmitQuery, {
     onCompleted() {
@@ -126,12 +128,16 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
   }
 
   const CommentStatusFeedback = () => {
+    console.log('successNote', dynamicComments)
+    const successNote = dynamicComments
+      ? 'reload the page to see it'
+      : "It's awaiting moderation."
+
     switch (commentStatus) {
       case 'success':
         return (
           <p sx={{ color: 'text' }}>
-            Your comment has been successfully submitted. It is awaiting
-            moderation.
+            {`Your comment has been successfully submitted. ${successNote} `}
           </p>
         )
       case 'loading':
