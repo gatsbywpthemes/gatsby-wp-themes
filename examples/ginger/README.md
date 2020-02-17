@@ -40,7 +40,6 @@ const config = {
   postsPrefix: ``,
   postsPath: ``,
   paginationPrefix: `page`,
-  postsPerPage: 10,
   addComments: true,
   menuName: "main",
   gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
@@ -135,13 +134,6 @@ postsPath: false
 
 Prefix for paginated content.
 You should not modify it unless you changed this on your WordPress site.
-
----
-
-**postsPerPage** (optional)  
-`(type: Integer, default: 10)`
-
-The number of posts per archive page.
 
 ---
 

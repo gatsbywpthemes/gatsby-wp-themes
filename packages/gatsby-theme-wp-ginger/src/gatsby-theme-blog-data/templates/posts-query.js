@@ -89,9 +89,9 @@ export const query = graphql`
 `
 
 export const pageQuery = graphql`
-  query GET_POSTS1($ids: [ID], $postsPerPage: Int!) {
+  query GET_POSTS1($ids: [ID]) {
     wp {
-      posts(first: $postsPerPage, where: { in: $ids }) {
+      posts(where: { in: $ids }) {
         nodes {
           ...PostTemplateFragment1
         }

@@ -3,7 +3,7 @@ import User from '../components/User'
 export default User
 
 export const pageQuery = graphql`
-  query GET_USER($id: ID!, $ids: [ID], $postsPerPage: Int!) {
+  query GET_USER($id: ID!, $ids: [ID]) {
     wp {
       user(id: $id) {
         name
@@ -14,7 +14,7 @@ export const pageQuery = graphql`
         avatar {
           url
         }
-        posts(first: $postsPerPage, where: { in: $ids }) {
+        posts(where: { in: $ids }) {
           nodes {
             ...PostTemplateFragment
           }

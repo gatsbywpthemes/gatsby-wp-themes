@@ -10,9 +10,21 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   /**
    * Merged default theme settings and user settings.
    */
+
+  const { data } = await graphql(`
+    query {
+      wp {
+        allSettings {
+          readingSettingsPostsPerPage
+        }
+      }
+    }
+  `)
+  const postsPerPage = data.wp.allSettings.readingSettingsPostsPerPage
   const mergedOptions = {
     ...defaultOptions,
     ...options,
+    postsPerPage,
   }
 
   reporter.warn('make sure to load data from somewhere!')

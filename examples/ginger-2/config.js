@@ -5,7 +5,6 @@ const config = {
   // postsPrefix: ``,
   postsPath: `blog`,
   // paginationPrefix: `page`,
-  postsPerPage: 5,
   // addComments: true,
   menuName: "main",
   //gingerWidgets: [`SocialFollow`, `RecentPosts`, `Tags`],
