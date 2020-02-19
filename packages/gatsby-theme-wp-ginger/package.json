@@ -27,6 +27,7 @@
     "gatsby-plugin-wordpress-fancybox": "*",
     "gatsby-theme-algolia": "*",
     "gatsby-theme-blog-data": "*",
+    "graphql-tag": "^2.10.3",
     "grommet": "^2.10.0",
     "grommet-icons": "^4.4.0",
     "intersection-observer": "^0.7.0",

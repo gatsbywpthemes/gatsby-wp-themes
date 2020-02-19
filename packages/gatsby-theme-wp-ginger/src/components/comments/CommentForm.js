@@ -66,18 +66,22 @@ const inputFields = [
   },
 ]
 
-const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
+const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
   const { register, handleSubmit, errors } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
-
   const [addComment] = useMutation(commentSubmitQuery, {
     onCompleted() {
       setCommentStatus('success')
+      setTimeout(function() {
+        doOnCompleted()
+        setCommentStatus('')
+      }, 5000)
     },
     onError() {
       setCommentStatus('error')
     },
   })
+
   const CommentNotes = () => {
     return (
       <p className="comment-notes">
@@ -119,8 +123,8 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
       case 'success':
         return (
           <p>
-            Your comment has been successfully submitted. It is awaiting
-            moderation.
+            Your comment has been successfully submitted. If it does not appear
+            in a few seconds, it means that it is awaiting moderation.
           </p>
         )
       case 'loading':

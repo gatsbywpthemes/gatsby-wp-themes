@@ -1,12 +1,54 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Fragment, useState } from 'react'
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Comment from './Comment'
 import CommentForm from './CommentForm'
 import { commentStyles } from '../../styles/comments'
 
-const CommentsList = ({ post }) => {
-  const { comments } = post
+const GET_COMMENTS = gql`
+  query($postId: ID!) {
+    comments(where: { contentId: $postId, order: ASC }) {
+      nodes {
+        ...CommentFields
+        children(where: { order: ASC }) {
+          nodes {
+            ...CommentFields
+            children(where: { order: ASC }) {
+              nodes {
+                ...CommentFields
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  fragment CommentFields on Comment {
+    id
+    date
+    approved
+    content
+    commentId
+    author {
+      ...AuthorFields
+    }
+  }
+  fragment AuthorFields on CommentAuthor {
+    name
+    url
+    email
+  }
+`
+
+const CommentsList = ({ post, reloading }) => {
+  const { postId } = post
+  const { data, loading, error, refetch } = useQuery(GET_COMMENTS, {
+    variables: { postId },
+  })
   const [activeComment, setActiveComment] = useState(0)
   const cancelReply = () => {
     setActiveComment(0)
@@ -14,6 +56,13 @@ const CommentsList = ({ post }) => {
   const addReply = id => {
     setActiveComment(id)
   }
+  const doOnCompleted = () => {
+    refetch()
+    setActiveComment(0)
+  }
+  if (loading) return <p>Loading comments&hellip;</p>
+  if (error) return <p>Some errors occur.</p>
+  const comments = data.comments
   return (
     <Fragment>
       {comments.nodes.length > 0 ? (
@@ -29,6 +78,7 @@ const CommentsList = ({ post }) => {
                   comment={comment}
                   addReply={addReply}
                   cancelReply={cancelReply}
+                  doOnCompleted={doOnCompleted}
                 ></Comment>
                 {comment.children.nodes.length > 0 && (
                   <ul>
@@ -41,6 +91,7 @@ const CommentsList = ({ post }) => {
                           comment={reply}
                           addReply={addReply}
                           cancelReply={cancelReply}
+                          doOnCompleted={doOnCompleted}
                         ></Comment>
                         {reply.children.nodes.length > 0 && (
                           <ul>
@@ -49,6 +100,7 @@ const CommentsList = ({ post }) => {
                                 withReply={false}
                                 key={replyRe.id}
                                 comment={replyRe}
+                                doOnCompleted={doOnCompleted}
                               />
                             ))}
                           </ul>
@@ -64,7 +116,9 @@ const CommentsList = ({ post }) => {
       ) : (
         <p sx={{ ...commentStyles.noComments }}>No comments yet</p>
       )}
-      {activeComment === 0 && <CommentForm postId={post.postId} />}
+      {activeComment === 0 && (
+        <CommentForm postId={post.postId} doOnCompleted={doOnCompleted} />
+      )}
     </Fragment>
   )
 }
