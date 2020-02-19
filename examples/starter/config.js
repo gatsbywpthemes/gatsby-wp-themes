@@ -4,7 +4,6 @@ const config = {
   // postsPrefix: '',
   postsPath: "",
   // paginationPrefix: 'page',
-  postsPerPage: 3,
   // disqus: 'webstantly',
   menuName: "main",
   // addComments: 1,
