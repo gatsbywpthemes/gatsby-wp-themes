@@ -12,13 +12,13 @@ import Loader from 'react-spinners/BeatLoader'
 
 const GET_COMMENTS = gql`
   query($postId: ID!) {
-    comments(where: { contentId: $postId }) {
+    comments(where: { contentId: $postId, order: ASC }) {
       nodes {
         ...CommentFields
-        children {
+        children(where: { order: ASC }) {
           nodes {
             ...CommentFields
-            children {
+            children(where: { order: ASC }) {
               nodes {
                 ...CommentFields
               }
@@ -34,6 +34,7 @@ const GET_COMMENTS = gql`
     date
     approved
     content
+    commentId
     author {
       ...AuthorFields
     }
