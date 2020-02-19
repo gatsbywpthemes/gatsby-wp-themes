@@ -44,6 +44,7 @@ const Comment = props => {
     withReply,
     addReply,
     cancelReply,
+    doOnCompleted,
   } = props
   return (
     <li className="comment" sx={commentStyles.comment}>
@@ -56,6 +57,7 @@ const Comment = props => {
             commentId={comment.commentId}
             postId={postId}
             cancelReply={cancelReply}
+            doOnCompleted={doOnCompleted}
           />
         ) : (
           <Reply commentId={comment.commentId} actionOnClick={addReply} />

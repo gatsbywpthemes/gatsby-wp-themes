@@ -12,7 +12,6 @@ const DEFAULT_OPTIONS = {
   menuName: `primary`,
   disqus: ``,
   addComments: true,
-  dynamicComments: true,
   gaTrackingId: 0,
   googleTagManagerId: 0,
   addSiteMap: false,

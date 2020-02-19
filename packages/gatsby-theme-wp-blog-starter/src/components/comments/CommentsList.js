@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import React from 'react'
 import { Fragment, useState } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Comment from './Comment'
 import CommentForm from './CommentForm'
 import commentStyles from '../../styles/commentStyles'
@@ -54,23 +52,25 @@ const CommentsList = ({ post }) => {
   const addReply = id => {
     setActiveComment(id)
   }
-  const { data, loading, error } = useQuery(GET_COMMENTS, {
+  const { data, loading, error, refetch } = useQuery(GET_COMMENTS, {
     variables: { postId },
   })
-  const { dynamicComments } = useThemeOptions()
 
-  const comments = dynamicComments
-    ? data && data.comments.nodes
-    : post.comments.nodes
+  const doOnCompleted = () => {
+    refetch()
+    setActiveComment(0)
+  }
 
   if (loading)
     return (
-      <>
+      <Fragment>
         <span sx={{ color: 'text' }}>Comments are loading...</span>
         <Loader size={8} margin={5} />
-      </>
+      </Fragment>
     )
   if (error) return `Error loading comments...`
+
+  const comments = data.comments.nodes
   return (
     <section>
       {comments.length > 0 ? (
@@ -86,6 +86,7 @@ const CommentsList = ({ post }) => {
                   comment={comment}
                   addReply={addReply}
                   cancelReply={cancelReply}
+                  doOnCompleted={doOnCompleted}
                 ></Comment>
                 {comment.children.nodes.length > 0 && (
                   <ul>
@@ -98,6 +99,7 @@ const CommentsList = ({ post }) => {
                           comment={reply}
                           addReply={addReply}
                           cancelReply={cancelReply}
+                          doOnCompleted={doOnCompleted}
                         ></Comment>
                         {reply.children.nodes.length > 0 && (
                           <ul>
@@ -106,6 +108,7 @@ const CommentsList = ({ post }) => {
                                 withReply={false}
                                 key={replyRe.id}
                                 comment={replyRe}
+                                doOnCompleted={doOnCompleted}
                               />
                             ))}
                           </ul>
@@ -121,7 +124,9 @@ const CommentsList = ({ post }) => {
       ) : (
         <p sx={{ color: 'text' }}>No comments yet</p>
       )}
-      {activeComment === 0 && <CommentForm postId={post.postId} />}
+      {activeComment === 0 && (
+        <CommentForm postId={post.postId} doOnCompleted={doOnCompleted} />
+      )}
     </section>
   )
 }

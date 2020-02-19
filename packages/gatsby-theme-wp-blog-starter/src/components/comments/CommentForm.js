@@ -66,14 +66,17 @@ const inputFields = [
   },
 ]
 
-const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
+const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
   const { register, handleSubmit, errors } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
-  const { dynamicComments } = useThemeOptions()
 
   const [addComment, { data }] = useMutation(commentSubmitQuery, {
     onCompleted() {
       setCommentStatus('success')
+      setTimeout(function() {
+        doOnCompleted()
+        setCommentStatus('')
+      }, 5000)
     },
     onError() {
       setCommentStatus('error')
@@ -128,10 +131,8 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
   }
 
   const CommentStatusFeedback = () => {
-    console.log('successNote', dynamicComments)
-    const successNote = dynamicComments
-      ? 'reload the page to see it'
-      : "It's awaiting moderation."
+    const successNote =
+      'If it does not appear in a few seconds, it means that it is awaiting moderation.'
 
     switch (commentStatus) {
       case 'success':

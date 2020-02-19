@@ -10,41 +10,6 @@ export const pageQuery = graphql`
         content
         ...PostTemplateFragment
         commentStatus
-        comments(where: { order: ASC }) {
-          nodes {
-            ...CommentFields
-            children(where: { order: ASC }) {
-              nodes {
-                ...CommentFields
-                children(where: { order: ASC }) {
-                  nodes {
-                    ...CommentFields
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  fragment CommentFields on WP_Comment {
-    id
-    date
-    approved
-    content
-    commentId
-    author {
-      ... on WP_User {
-        email
-        name
-        url
-      }
-      ... on WP_CommentAuthor {
-        email
-        name
-        url
       }
     }
   }
