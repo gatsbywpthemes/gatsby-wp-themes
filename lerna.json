@@ -1,5 +1,10 @@
 {
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "independent"
+  "version": "independent",
+  "command": {
+    "publish": {
+      "registry": "https://npm.cloudsmith.io/gatsbywpthemes/gatsby-wp-themes/"
+    }
+  }
 }
