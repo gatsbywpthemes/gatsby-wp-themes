@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
@@ -14,12 +14,12 @@
   },
   "dependencies": {
     "gatsby": "^2.19.5",
+    "gatsby-plugin-wpcf7": "^0.0.2",
     "gatsby-theme-style-guide": "^0.3.1",
-    "gatsby-theme-wp-blog-starter": "*",
+    "gatsby-theme-wp-blog-starter": "^1.0.1",
     "lodash.merge": "^4.6.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "gatsby-plugin-wpcf7": "*"
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
