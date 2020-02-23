@@ -9,23 +9,21 @@ import gql from 'graphql-tag'
 import SearchResults from './SearchResults'
 
 const GET_POSTS = gql`
-  fragment PostFields on WP_Post {
+  fragment PostFields on Post {
     title
     content
     slug
     uri
   }
   ##the after variable is the endCursor, we set it up as "", as default value, then it will change if there is next page in the result query, the search in the query value (value in the state)
-  query($after: String! = "", $search: String!) {
-    wp {
+  query($after: String = "", $search: String!) {
+    posts(first: 2, after: $after, where: { search: $search }) {
       pageInfo {
         postsNextPage: hasNextPage
         postsEndCursor: endCursor
       }
-      posts(first: 2, after: $after, where: { search: $search }) {
-        nodes {
-          ...PostFields
-        }
+      nodes {
+        ...PostFields
       }
     }
   }
@@ -51,7 +49,7 @@ const SearchForm = () => {
   const handleChange = e => {
     setValue(e.target.value)
     const query = normaLizeQuery(e.target.value)
-
+    console.log(query, e.target.value)
     // const postsResults = posts.filter(
     //   post =>
     //     (post.title && post.title.toLowerCase().includes(query)) ||
@@ -66,13 +64,13 @@ const SearchForm = () => {
     // return setPostsResults(postsResults), setPagesResults(pagesResults)
   }
 
-  const { data, loading, error, refetch } = useQuery(GET_POSTS, {
-    variables: { value },
+  const all = useQuery(GET_POSTS, {
+    variables: { search: value },
   })
-
+  const { data, loading, error, refetch } = all
   console.log('postsData', data, value)
-  console.log('error', error)
-  console.log(useQuery(GET_POSTS, { variables: { value } }))
+  console.log('all', all)
+  //console.log(useQuery(GET_POSTS, { variables: { after: '', search: value } }))
   //le data est undefined et il y a une erreur. alors qu'il devrais retourner des posts quand on fait une query, et ensuite il faudrait chercher les autres pages avec conditionnel hasNextPage, et endCursor dans after
 
   return (
