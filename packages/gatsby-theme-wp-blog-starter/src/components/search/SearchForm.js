@@ -8,21 +8,6 @@ import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import SearchResults from './SearchResults'
 
-const GET_POSTS_INFO = graphql`
-  query postsInfo {
-    wp {
-      posts(first: 2) {
-        pageInfo {
-          postsNextPage: hasNextPage
-          postsEndCursor: endCursor
-        }
-      }
-    }
-  }
-`
-//j;ai change les noms car ensuite il faudra faire la meme chose pour pages
-//J'ai comment la plupart des trucs pour que ca breake pas
-
 const GET_POSTS = gql`
   fragment PostFields on WP_Post {
     title
@@ -30,9 +15,14 @@ const GET_POSTS = gql`
     slug
     uri
   }
-  query($after: String) {
+  ##the after variable is the endCursor, we set it up as "", as default value, then it will change if there is next page in the result query, the search in the query value (value in the state)
+  query($after: String! = "", $search: String!) {
     wp {
-      posts(first: 2, after: $after) {
+      pageInfo {
+        postsNextPage: hasNextPage
+        postsEndCursor: endCursor
+      }
+      posts(first: 2, after: $after, where: { search: $search }) {
         nodes {
           ...PostFields
         }
@@ -51,27 +41,6 @@ const SearchForm = () => {
   // const posts = data.wp.posts.nodes
   // const pages = data.wp.pages.nodes
   // const postsData = data.wp.posts
-
-  const postsInfo = useStaticQuery(GET_POSTS_INFO)
-  const {
-    wp: {
-      posts: {
-        pageInfo: { postsNextPage, postsEndCursor },
-      },
-    },
-  } = postsInfo
-  //Ici j'ai voulu recup le endCursor, mais je me rends compte qu'il faut aussi le mette dans des variables donc pas bon, sinon c;est tjs le premier
-
-  console.log('info', postsEndCursor)
-
-  const { data, loading, error, refetch } = useQuery(GET_POSTS, {
-    variables: { postsEndCursor },
-  })
-
-  //la il me renvvoie data indefined
-  console.log('postsData', data)
-  //La je me dis qu'il faut faire une fonction recursive mais je sais pas trop comment...
-  const getPosts = () => {}
 
   const normaLizeQuery = query =>
     query
@@ -96,6 +65,15 @@ const SearchForm = () => {
 
     // return setPostsResults(postsResults), setPagesResults(pagesResults)
   }
+
+  const { data, loading, error, refetch } = useQuery(GET_POSTS, {
+    variables: { value },
+  })
+
+  console.log('postsData', data, value)
+  console.log('error', error)
+  console.log(useQuery(GET_POSTS, { variables: { value } }))
+  //le data est undefined et il y a une erreur. alors qu'il devrais retourner des posts quand on fait une query, et ensuite il faudrait chercher les autres pages avec conditionnel hasNextPage, et endCursor dans after
 
   return (
     <Fragment>
