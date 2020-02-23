@@ -4,25 +4,37 @@ import { useState, Fragment } from 'react'
 import { useStaticQuery } from 'gatsby'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
 import SearchResults from './SearchResults'
 
-const POSTS_AND_PAGES_QUERY = graphql`
-  query PostsAndPages {
+const GET_POSTS_INFO = graphql`
+  query postsInfo {
     wp {
-      posts(first: 1000) {
-        nodes {
-          title
-          content
-          slug
-          uri
+      posts(first: 2) {
+        pageInfo {
+          postsNextPage: hasNextPage
+          postsEndCursor: endCursor
         }
       }
-      pages(first: 1000) {
+    }
+  }
+`
+//j;ai change les noms car ensuite il faudra faire la meme chose pour pages
+//J'ai comment la plupart des trucs pour que ca breake pas
+
+const GET_POSTS = gql`
+  fragment PostFields on WP_Post {
+    title
+    content
+    slug
+    uri
+  }
+  query($after: String) {
+    wp {
+      posts(first: 2, after: $after) {
         nodes {
-          title
-          content
-          slug
-          uri
+          ...PostFields
         }
       }
     }
@@ -34,9 +46,33 @@ const SearchForm = () => {
   const [postsResults, setPostsResults] = useState([])
   const [pagesResults, setPagesResults] = useState([])
 
-  const data = useStaticQuery(POSTS_AND_PAGES_QUERY)
-  const posts = data.wp.posts.nodes
-  const pages = data.wp.pages.nodes
+  // const data = useStaticQuery(POSTS_AND_PAGES_QUERY)
+  // console.log('allPostsSearch', data.wp.posts)
+  // const posts = data.wp.posts.nodes
+  // const pages = data.wp.pages.nodes
+  // const postsData = data.wp.posts
+
+  const postsInfo = useStaticQuery(GET_POSTS_INFO)
+  const {
+    wp: {
+      posts: {
+        pageInfo: { postsNextPage, postsEndCursor },
+      },
+    },
+  } = postsInfo
+  //Ici j'ai voulu recup le endCursor, mais je me rends compte qu'il faut aussi le mette dans des variables donc pas bon, sinon c;est tjs le premier
+
+  console.log('info', postsEndCursor)
+
+  const { data, loading, error, refetch } = useQuery(GET_POSTS, {
+    variables: { postsEndCursor },
+  })
+
+  //la il me renvvoie data indefined
+  console.log('postsData', data)
+  //La je me dis qu'il faut faire une fonction recursive mais je sais pas trop comment...
+  const getPosts = () => {}
+
   const normaLizeQuery = query =>
     query
       .toLowerCase()
@@ -47,18 +83,18 @@ const SearchForm = () => {
     setValue(e.target.value)
     const query = normaLizeQuery(e.target.value)
 
-    const postsResults = posts.filter(
-      post =>
-        (post.title && post.title.toLowerCase().includes(query)) ||
-        (post.content && post.content.toLowerCase().includes(query))
-    )
-    const pagesResults = pages.filter(
-      page =>
-        (page.title && page.title.toLowerCase().includes(query)) ||
-        (page.content && page.content.toLowerCase().includes(query))
-    )
+    // const postsResults = posts.filter(
+    //   post =>
+    //     (post.title && post.title.toLowerCase().includes(query)) ||
+    //     (post.content && post.content.toLowerCase().includes(query))
+    // )
+    // const pagesResults = pages.filter(
+    //   page =>
+    //     (page.title && page.title.toLowerCase().includes(query)) ||
+    //     (page.content && page.content.toLowerCase().includes(query))
+    // )
 
-    return setPostsResults(postsResults), setPagesResults(pagesResults)
+    // return setPostsResults(postsResults), setPagesResults(pagesResults)
   }
 
   return (
