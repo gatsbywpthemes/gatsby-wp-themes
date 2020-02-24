@@ -4,26 +4,26 @@ import { useState, Fragment } from 'react'
 import { useStaticQuery } from 'gatsby'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
 import SearchResults from './SearchResults'
 
-const POSTS_AND_PAGES_QUERY = graphql`
-  query PostsAndPages {
-    wp {
-      posts(first: 1000) {
-        nodes {
-          title
-          content
-          slug
-          uri
-        }
+const GET_POSTS = gql`
+  fragment PostFields on Post {
+    title
+    content
+    slug
+    uri
+  }
+  ##the after variable is the endCursor, we set it up as "", as default value, then it will change if there is next page in the result query, the search in the query value (value in the state)
+  query($after: String = "", $search: String!) {
+    posts(first: 2, after: $after, where: { search: $search }) {
+      pageInfo {
+        postsNextPage: hasNextPage
+        postsEndCursor: endCursor
       }
-      pages(first: 1000) {
-        nodes {
-          title
-          content
-          slug
-          uri
-        }
+      nodes {
+        ...PostFields
       }
     }
   }
@@ -34,9 +34,12 @@ const SearchForm = () => {
   const [postsResults, setPostsResults] = useState([])
   const [pagesResults, setPagesResults] = useState([])
 
-  const data = useStaticQuery(POSTS_AND_PAGES_QUERY)
-  const posts = data.wp.posts.nodes
-  const pages = data.wp.pages.nodes
+  // const data = useStaticQuery(POSTS_AND_PAGES_QUERY)
+  // console.log('allPostsSearch', data.wp.posts)
+  // const posts = data.wp.posts.nodes
+  // const pages = data.wp.pages.nodes
+  // const postsData = data.wp.posts
+
   const normaLizeQuery = query =>
     query
       .toLowerCase()
@@ -46,20 +49,29 @@ const SearchForm = () => {
   const handleChange = e => {
     setValue(e.target.value)
     const query = normaLizeQuery(e.target.value)
+    console.log(query, e.target.value)
+    // const postsResults = posts.filter(
+    //   post =>
+    //     (post.title && post.title.toLowerCase().includes(query)) ||
+    //     (post.content && post.content.toLowerCase().includes(query))
+    // )
+    // const pagesResults = pages.filter(
+    //   page =>
+    //     (page.title && page.title.toLowerCase().includes(query)) ||
+    //     (page.content && page.content.toLowerCase().includes(query))
+    // )
 
-    const postsResults = posts.filter(
-      post =>
-        (post.title && post.title.toLowerCase().includes(query)) ||
-        (post.content && post.content.toLowerCase().includes(query))
-    )
-    const pagesResults = pages.filter(
-      page =>
-        (page.title && page.title.toLowerCase().includes(query)) ||
-        (page.content && page.content.toLowerCase().includes(query))
-    )
-
-    return setPostsResults(postsResults), setPagesResults(pagesResults)
+    // return setPostsResults(postsResults), setPagesResults(pagesResults)
   }
+
+  const all = useQuery(GET_POSTS, {
+    variables: { search: value },
+  })
+  const { data, loading, error, refetch } = all
+  console.log('postsData', data, value)
+  console.log('all', all)
+  //console.log(useQuery(GET_POSTS, { variables: { after: '', search: value } }))
+  //le data est undefined et il y a une erreur. alors qu'il devrais retourner des posts quand on fait une query, et ensuite il faudrait chercher les autres pages avec conditionnel hasNextPage, et endCursor dans after
 
   return (
     <Fragment>
