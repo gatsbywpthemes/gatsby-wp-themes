@@ -72,6 +72,17 @@ module.exports = options => {
   if (mergedOptions.addFancyBox) {
     plugins.push(`gatsby-plugin-wordpress-fancybox`)
   }
+  /**
+   * Conditionally add mailchimp subscription plugin
+   */
+  if (mergedOptions.mailchimpEndpoint) {
+    plugins.push({
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: mergedOptions.mailchimpEndpoint,
+      },
+    })
+  }
 
   return {
     siteMetadata: {
