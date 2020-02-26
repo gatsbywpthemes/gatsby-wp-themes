@@ -10,21 +10,6 @@ export const pageQuery = graphql`
         content
         ...PostTemplateFragment2
         commentStatus
-        comments(where: { order: ASC }) {
-          nodes {
-            ...CommentFields
-            children(where: { order: ASC }) {
-              nodes {
-                ...CommentFields
-                children(where: { order: ASC }) {
-                  nodes {
-                    ...CommentFields
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     }
   }
