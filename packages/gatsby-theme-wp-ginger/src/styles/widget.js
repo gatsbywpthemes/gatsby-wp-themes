@@ -59,6 +59,32 @@ const widget = {
       fontWeight: 'body',
     },
   },
+  newsletter: {
+    p: {
+      fontSize: 'xs',
+    },
+    ...sharedStyles,
+    'a:nth-child(n)': {
+      textDecoration: 'underline',
+      '&:hover': {
+        textDecoration: 'none',
+      },
+    },
+    form: {
+      variant: 'form',
+      flexWrap: 'nowrap',
+      padding: 0,
+      boxShadow: 0,
+      'input[type="email"]': {
+        minWidth: 'auto',
+      },
+      'button[type="submit"]': {
+        m: 0,
+        mb: '1rem',
+        ml: '.5rem',
+      },
+    },
+  },
   recentPosts: {
     ...sharedStyles,
     img: {
@@ -101,3 +127,4 @@ const widget = {
 export const widgetCategories = widget.categories
 export const widgetTags = widget.tags
 export const widgetRecentPosts = widget.recentPosts
+export const widgetNewsletter = widget.newsletter

@@ -4,6 +4,7 @@ import SocialFollows from '../social/SocialFollows'
 import CategoriesWidget from '../widgets/Categories'
 import TagsWidget from '../widgets/Tags'
 import RecentPosts from '../widgets/RecentPosts'
+import Newsletter from '../widgets/Newsletter'
 
 const Widgets = ({ widget }) => {
   switch (widget) {
@@ -15,6 +16,8 @@ const Widgets = ({ widget }) => {
       return <CategoriesWidget />
     case 'Tags':
       return <TagsWidget />
+    case 'Newsletter':
+      return <Newsletter />
     default:
       return ''
   }

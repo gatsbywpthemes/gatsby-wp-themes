@@ -7,7 +7,13 @@ const config = {
   // paginationPrefix: `page`,
   // addComments: true,
   menuName: "main",
-  //gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
+  gingerWidgets: [
+    `SocialFollow`,
+    `RecentPosts`,
+    `Categories`,
+    `Tags`,
+    "Newsletter",
+  ],
   // siteUrl: "https://example.com",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
@@ -36,6 +42,8 @@ const config = {
   // addColorModes: false,
   // addFancyBox: true,
   skipTitle: ["home"],
+  mailchimpEndpoint:
+    "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
 }
 // https://gatsby-test-2.alexaspalato.website
 //https://gatsby-theme-demo.alexaspalato.website
