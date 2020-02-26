@@ -5,32 +5,11 @@ import { useStaticQuery } from 'gatsby'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
 import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
-import SearchResults from './SearchResults'
-
-const GET_POSTS = gql`
-  fragment PostFields on Post {
-    title
-    content
-    slug
-    uri
-  }
-  ##the after variable is the endCursor, we set it up as "", as default value, then it will change if there is next page in the result query, the search in the query value (value in the state)
-  query($after: String = "", $search: String!) {
-    posts(first: 2, after: $after, where: { search: $search }) {
-      pageInfo {
-        postsNextPage: hasNextPage
-        postsEndCursor: endCursor
-      }
-      nodes {
-        ...PostFields
-      }
-    }
-  }
-`
+import SearchQuery from './SearchQuery'
 
 const SearchForm = () => {
   const [value, setValue] = useState('')
+  const [search, setSearch] = useState('')
   const [postsResults, setPostsResults] = useState([])
   const [pagesResults, setPagesResults] = useState([])
 
@@ -40,38 +19,20 @@ const SearchForm = () => {
   // const pages = data.wp.pages.nodes
   // const postsData = data.wp.posts
 
-  const normaLizeQuery = query =>
-    query
-      .toLowerCase()
-      .replace(/[^\w ]/g, '')
-      .replace(/\s+/g, ' ')
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') {
+      setSearch(e.target.value)
+    }
+  }
+
+  const handleSubmit = e => {
+    setSearch(e.target.value)
+  }
 
   const handleChange = e => {
     setValue(e.target.value)
-    const query = normaLizeQuery(e.target.value)
-    console.log(query, e.target.value)
-    // const postsResults = posts.filter(
-    //   post =>
-    //     (post.title && post.title.toLowerCase().includes(query)) ||
-    //     (post.content && post.content.toLowerCase().includes(query))
-    // )
-    // const pagesResults = pages.filter(
-    //   page =>
-    //     (page.title && page.title.toLowerCase().includes(query)) ||
-    //     (page.content && page.content.toLowerCase().includes(query))
-    // )
-
-    // return setPostsResults(postsResults), setPagesResults(pagesResults)
+    setSearch(e.target.value)
   }
-
-  const all = useQuery(GET_POSTS, {
-    variables: { search: value },
-  })
-  const { data, loading, error, refetch } = all
-  console.log('postsData', data, value)
-  console.log('all', all)
-  //console.log(useQuery(GET_POSTS, { variables: { after: '', search: value } }))
-  //le data est undefined et il y a une erreur. alors qu'il devrais retourner des posts quand on fait une query, et ensuite il faudrait chercher les autres pages avec conditionnel hasNextPage, et endCursor dans after
 
   return (
     <Fragment>
@@ -91,7 +52,10 @@ const SearchForm = () => {
         >
           <input
             value={value}
+            type="search"
             onChange={handleChange}
+            onSubmit={handleSubmit}
+            onKeyDown={handleKeyDown}
             placeholder="search here..."
             sx={{ mb: [0, 0, `15px`] }}
           />
@@ -109,17 +73,14 @@ const SearchForm = () => {
                 mb: [`xxs`, `xs`, `xs`],
               },
             }}
-            onClick={() => setValue('')}
+            onClick={() => {
+              setValue('')
+              setSearch('')
+            }}
           />
         )}
       </Flex>
-      {value !== '' && (
-        <SearchResults
-          query={value}
-          pages={pagesResults}
-          posts={postsResults}
-        />
-      )}
+      {search && <SearchQuery search={search} />}
     </Fragment>
   )
 }
