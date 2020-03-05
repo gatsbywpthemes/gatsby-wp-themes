@@ -11,7 +11,7 @@ export const slideMenu = {
     bg: 'sidebarBg',
     color: 'sidebarColor',
     fontFamily: 'body',
-    width: theme => ['100%', theme.sizes.sidebar],
+    width: theme => ['70%', theme.sizes.sidebar],
     display: `flex`,
     overflowY: 'scroll',
     boxShadow: ['none', '-10px 0 40px rgba(0,0,0,0.3)'],
