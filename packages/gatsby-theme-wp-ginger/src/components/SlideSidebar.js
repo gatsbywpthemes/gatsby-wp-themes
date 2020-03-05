@@ -7,6 +7,7 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import Menu from './Menu'
 import Widgets from './widgets/Widgets'
 import Search from 'gatsby-theme-algolia/src/components/Search'
+import SearchForm from './search/SearchForm'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import openMenuButton from '../styles/menuButton'
 import { slideMenu } from '../styles/slideSidebar'
@@ -21,6 +22,7 @@ const SlideSidebar = () => {
     widgetAreas: {
       slideMenu: { widgets },
     },
+    useWordPressSearch = true,
     useAlgoliaSearch,
     menuName,
   } = useThemeOptions()
@@ -43,7 +45,7 @@ const SlideSidebar = () => {
       setTimeout(() => setOpenMenu(false), 200)
     }
   }
-  console.log(theme.layer)
+
   return (
     <Grommet theme={{ layer: theme.layer }}>
       <button
@@ -82,7 +84,11 @@ const SlideSidebar = () => {
               <Search indices={searchIndices} />
             </div>
           )}
-
+          {useWordPressSearch && (
+            <div className="search-wrapper">
+              <SearchForm />
+            </div>
+          )}
           <Menu menuName={menuName} hashClickAction={maybeCloseMenu} />
           {!!widgets &&
             widgets.map(widget => (

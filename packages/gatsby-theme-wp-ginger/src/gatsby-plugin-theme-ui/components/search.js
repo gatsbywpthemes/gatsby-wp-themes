@@ -1,5 +1,8 @@
 export const search = {
   results: {
+    h3: {
+      fontSize: 'm',
+    },
     header: {
       display: 'flex',
       mb: '1rem',
@@ -7,6 +10,9 @@ export const search = {
       alignItems: 'center',
       '& > *': {
         mb: 0,
+      },
+      '.stats': {
+        textAlign: 'right',
       },
     },
     '.results + header': {
@@ -41,8 +47,19 @@ export const search = {
     flex: 2,
     p: 0,
     display: 'block',
-    '&, form, input[type="search"]': {
+    boxShadow: 'none',
+    mb: '2rem',
+    'form, input[type="search"]': {
       m: 0,
+    },
+    'form > svg': {
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      m: 'auto',
+    },
+    'form > svg + input[type="search"]': {
+      px: theme => theme.fontSizes['l'],
     },
     '[type="submit"]': {
       display: 'none',

@@ -40,7 +40,7 @@ const Layout = ({ useContainer = true, children }) => {
           {!!addColorModes && <ColorSwitch />}
         </header>
         <main sx={{ variant: 'main' }}>
-          <SlideSidebar />
+          {/* <SlideSidebar /> */}
           <MaybeWithContainer useContainer={useContainer}>
             {children}
           </MaybeWithContainer>
