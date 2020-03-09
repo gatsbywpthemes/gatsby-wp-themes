@@ -19,25 +19,23 @@ export const search = {
       mt: '2rem',
     },
     a: { color: 'inherit' },
+    'a:hover': { opacity: '0.6' },
+    'a[aria-current]': {
+      fontStyle: 'italic',
+    },
     fontSize: 'xs',
     ul: {
       variant: 'list.raw',
     },
     li: {
       mb: '0.75rem',
+      letterSpacing: '0.5px',
     },
-    '&:after, li:after': {
+    'ul:after': {
       content: '""',
       display: 'block',
       height: 0,
       width: '100%',
-      mt: '2rem',
-    },
-    'li:after': {
-      borderBottom: '1px solid',
-      opacity: 0.15,
-    },
-    '&:after': {
       borderBottom: '3px solid',
       mb: '2rem',
     },

@@ -26,10 +26,10 @@ const SearchResults = ({ type, posts, search, children }) => {
         <h3>{type}</h3>
         <Stats postType={posts} search={search} />
       </header>
-      <Box className="results">
+      <ul className="results">
         {posts.map(post => {
           return (
-            <Box key={post.slug}>
+            <li key={post.slug}>
               <Link
                 to={
                   type === 'Posts'
@@ -39,10 +39,10 @@ const SearchResults = ({ type, posts, search, children }) => {
               >
                 {post.title}
               </Link>
-            </Box>
+            </li>
           )
         })}
-      </Box>
+      </ul>
       {children}
     </Box>
   )

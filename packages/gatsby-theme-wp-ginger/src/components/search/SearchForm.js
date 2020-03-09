@@ -3,8 +3,10 @@ import { jsx, Flex, Box } from 'theme-ui'
 import { useState, Fragment } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
 import SearchQuery from './SearchQuery'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 
 const SearchForm = () => {
+  const { instantWPSearch } = useThemeOptions()
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
 
@@ -22,6 +24,9 @@ const SearchForm = () => {
 
   const handleChange = e => {
     setValue(e.target.value)
+    if (instantWPSearch) {
+      setSearch(e.target.value)
+    }
   }
 
   return (

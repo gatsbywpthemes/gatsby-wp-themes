@@ -1,32 +1,50 @@
-import { keyframes } from '@emotion/core'
-const pehaafadein = keyframes`
-  to {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0)
-  }
-`
+export const overlay = {
+  position: 'fixed',
+  top: 0,
+  bottom: 0,
+  right: 0,
+  left: 0,
+  zIndex: 99,
+  background: 'rgba(0,0,0,.2)',
+  '.menu-closing + &': {
+    display: 'none',
+  },
+}
 export const slideMenu = {
+  position: 'fixed',
+  top: 0,
+  bottom: 0,
+  right: 0,
+  display: 'flex',
+  flexDirection: 'column',
+  zIndex: 100,
+  transform: 'translate3d(100%, 0, 0)',
+  transition: 'transform 1s, visibility 0s 1s',
   '&:nth-child(n)': {
     borderRadius: 0,
     bg: 'sidebarBg',
     color: 'sidebarColor',
     fontFamily: 'body',
-    width: theme => ['70%', theme.sizes.sidebar],
+    width: theme => ['100%', theme.sizes.sidebar],
     display: `flex`,
     overflowY: 'scroll',
     boxShadow: ['none', '-10px 0 40px rgba(0,0,0,0.3)'],
-    animationDuration: '1s',
     a: theme => theme.styles.root.a,
   },
 
-  p: '3rem',
+  p: ['2rem', '3rem'],
 
   ul: {
     variant: 'list.raw',
   },
   '&.menu-closing': {
-    animation: `${pehaafadein} 1 .6s 0s cubic-bezier(0.165, 0.84, 0.44, 1)`,
-    boxShadow: ['none', '-10px 0 0 rgba(0,0,0,0)'],
+    transform: 'translate3d(100%, 0, 0)',
+    visibility: 'hidden',
+  },
+  '&.menu-opened': {
+    //opacity: 0,
+    transition: 'transform 1s, visibility 0s 0s',
+    transform: 'translate3d(0, 0, 0)',
   },
   '.close': {
     cursor: `pointer`,
