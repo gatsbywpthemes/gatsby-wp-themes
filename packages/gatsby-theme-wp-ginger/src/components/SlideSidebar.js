@@ -21,8 +21,8 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
     widgetAreas: {
       slideMenu: { widgets },
     },
-    useWordPressSearch = true,
-    useAlgoliaSearch,
+    addWordPressSearch,
+    addAlgoliaSearch,
     menuName,
   } = useThemeOptions()
 
@@ -49,7 +49,7 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
     setOpenClass(false)
   }
   const closeOnEsc = e => {
-    if (e.keyCode === 27) {
+    if (!(e.target.type === 'search' && e.target.value) && e.keyCode === 27) {
       setOpenClass(false)
       menuBtn.current.focus()
     }
@@ -84,16 +84,10 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
             >
               <FiX />
             </button>
-            {useAlgoliaSearch && (
-              <div className="search-wrapper">
-                <Search indices={searchIndices} />
-              </div>
-            )}
-            {useWordPressSearch && (
-              <div className="search-wrapper">
-                <SearchForm />
-              </div>
-            )}
+            {addAlgoliaSearch && <Search indices={searchIndices} />}
+
+            {addWordPressSearch && <SearchForm />}
+
             <Menu menuName={menuName} />
             {!!widgets &&
               widgets.map(widget => (

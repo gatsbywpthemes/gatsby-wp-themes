@@ -7,7 +7,7 @@ const SidebarWrapper = props => {
   const [open, updateOpen] = useState(false)
   const [openClass, setOpenClass] = useState(false)
 
-  let { openMenuThreshold } = useThemeOptions()
+  const { openMenuThreshold } = useThemeOptions()
 
   useEffect(() => {
     if (

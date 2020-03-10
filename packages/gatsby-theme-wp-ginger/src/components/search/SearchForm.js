@@ -32,39 +32,44 @@ const SearchForm = () => {
   return (
     <Fragment>
       <Box
-        className="search-box"
         sx={{
-          variant: `search.box`,
+          variant: `search.box.container`,
         }}
       >
-        <form>
-          <FiSearch sx={{ mr: 3 }} />
-          <input
-            value={value}
-            type="search"
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-            onKeyDown={handleKeyDown}
-            placeholder="search here..."
-            sx={{ mb: [0, 0, `15px`] }}
-          />
+        <FiSearch />
+        <Box
+          className="search-box"
+          sx={{
+            variant: `search.box`,
+          }}
+        >
+          <form>
+            <input
+              value={value}
+              type="search"
+              onChange={handleChange}
+              onSubmit={handleSubmit}
+              onKeyDown={handleKeyDown}
+              placeholder="search here..."
+              sx={{ mb: [0, 0, `15px`] }}
+            />
 
-          {value.length > 0 && (
-            <button
-              className="reset-button"
-              type="reset"
-              aria-label="Reset Search"
-              onClick={() => {
-                setValue('')
-                setSearch('')
-              }}
-            >
-              <FiX />
-            </button>
-          )}
-        </form>
+            {value.length > 0 && (
+              <button
+                className="reset-button"
+                type="reset"
+                aria-label="Reset Search"
+                onClick={() => {
+                  setValue('')
+                  setSearch('')
+                }}
+              >
+                <FiX />
+              </button>
+            )}
+          </form>
+        </Box>
       </Box>
-
       {search && <SearchQuery search={search} />}
     </Fragment>
   )
