@@ -16,7 +16,8 @@
     "algoliasearch": "^3.35.1",
     "gatsby-plugin-algolia": "^0.5.0",
     "normalize-path": "^3.0.0",
-    "react-instantsearch-dom": "^6.2.0"
+    "react-instantsearch-dom": "^6.2.0",
+    "striptags": "^3.1.1"
   },
   "keywords": [
     "gatsby",

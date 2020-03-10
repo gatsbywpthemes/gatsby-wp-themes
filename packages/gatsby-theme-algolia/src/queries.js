@@ -1,6 +1,8 @@
+const striptags = require("striptags")
+
 const postQuery = `{
   wp {
-    posts(first: 1000) {
+    posts(first: 2) {
       nodes {
         title
         content
@@ -28,7 +30,7 @@ const postQuery = `{
 
 const pageQuery = `{
 wp {
-    pages(first: 1000) {
+    pages(first: 2) {
       nodes {
         content
         title
@@ -37,17 +39,37 @@ wp {
     }
   }
 }`
-const settings = { minWordSizefor1Typo: 6, attributesToSnippet: [`content:20`] }
+const settings = {
+  minWordSizefor1Typo: 6,
+  attributesToSnippet: [`content:20`]
+}
+
 const queries = [
   {
     query: postQuery,
-    transformer: ({ data }) => data.wp.posts.nodes,
+    transformer: ({ data }) => {
+      data.wp.posts.nodes.forEach(el => {
+        el.content = el.content
+          ? (el.content = el.content
+              ? striptags(el.content.replace(/&nbsp;/g, " "))
+              : el.content)
+          : el.content
+      })
+      return data.wp.posts.nodes
+    },
     indexName: `Posts`,
     settings
   },
   {
     query: pageQuery,
-    transformer: ({ data }) => data.wp.pages.nodes,
+    transformer: ({ data }) => {
+      data.wp.pages.nodes.forEach(el => {
+        el.content = el.content
+          ? striptags(el.content.replace(/&nbsp;/g, " "))
+          : el.content
+      })
+      return data.wp.pages.nodes
+    },
     indexName: `Pages`,
     settings
   }
