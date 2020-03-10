@@ -2,7 +2,7 @@ const striptags = require("striptags")
 
 const postQuery = `{
   wp {
-    posts(first: 2) {
+    posts(first: 100) {
       nodes {
         title
         content
@@ -30,7 +30,7 @@ const postQuery = `{
 
 const pageQuery = `{
 wp {
-    pages(first: 2) {
+    pages(first: 100) {
       nodes {
         content
         title
@@ -70,7 +70,7 @@ const queries = [
       })
       return data.wp.pages.nodes
     },
-    indexName: `Pages`,
+    indexName: `Posts`,
     settings
   }
 ]
