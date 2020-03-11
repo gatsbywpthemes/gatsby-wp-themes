@@ -70,7 +70,7 @@ const queries = [
       })
       return data.wp.pages.nodes
     },
-    indexName: `Posts`,
+    indexName: `Pages`,
     settings
   }
 ]
