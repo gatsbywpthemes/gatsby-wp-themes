@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-algolia",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "gatsby theme for algolia search with instant search",
   "main": "index.js",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
@@ -25,5 +25,5 @@
     "algolia",
     "search"
   ],
-  "gitHead": "ce9744550c7d78616236c28813f547f1f6b46836"
+  "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4"
 }
