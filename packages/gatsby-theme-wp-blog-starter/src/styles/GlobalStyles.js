@@ -46,6 +46,7 @@ export const globalStyles = theme => {
     input {
       -moz-appearance: none;
       -webkit-appearance: none;
+      border-radius: 0;
     }
 
     /**
