@@ -2,7 +2,7 @@
   "name": "gatsby-theme-wp-ginger",
   "description": "WordPress basic theme for Gastby using WPGraphQL",
   "author": "Paulina Hetman <info@pehaa.com>",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
@@ -27,7 +27,7 @@
     "gatsby-plugin-typography": "^2.3.21",
     "gatsby-plugin-wordpress-fancybox": "^1.0.0",
     "gatsby-theme-algolia": "^1.0.4",
-    "gatsby-theme-blog-data": "^1.0.4",
+    "gatsby-theme-blog-data": "^1.0.5",
     "graphql-tag": "^2.10.3",
     "grommet": "^2.10.0",
     "grommet-icons": "^4.4.0",
