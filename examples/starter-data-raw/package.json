@@ -1,6 +1,6 @@
 {
   "name": "starter-data-raw",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -32,9 +32,9 @@
     "gatsby-plugin-scroll-reveal": "^0.0.5",
     "gatsby-plugin-styled-components": "^3.1.18",
     "gatsby-plugin-theme-ui": "^0.3.0",
-    "gatsby-plugin-wordpress-fancybox": "^1.0.1",
-    "gatsby-theme-algolia": "^1.0.6",
-    "gatsby-theme-blog-data": "^1.0.7",
+    "gatsby-plugin-wordpress-fancybox": "^1.0.2",
+    "gatsby-theme-algolia": "^1.0.7",
+    "gatsby-theme-blog-data": "^1.0.8",
     "grommet": "^2.10.0",
     "grommet-icons": "^4.4.0",
     "moment": "^2.24.0",

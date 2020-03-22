@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ginger-2",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "license": "MIT",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "gatsby": "^2.19.8",
-    "gatsby-plugin-wpcf7": "^1.0.1",
-    "gatsby-theme-wp-ginger": "^1.0.7",
+    "gatsby-plugin-wpcf7": "^1.0.2",
+    "gatsby-theme-wp-ginger": "^1.0.8",
     "lodash.merge": "^4.6.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

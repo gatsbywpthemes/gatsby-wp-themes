@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-wordpress-fancybox",
   "description": "A Gatsby plugin that adds Fancybox to galleries.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "author": "Paulina Hetman <info@pehaa.com>",
   "keywords": [
@@ -32,5 +32,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  },
+  "gitHead": "ce9744550c7d78616236c28813f547f1f6b46836"
 }
