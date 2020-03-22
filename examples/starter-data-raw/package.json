@@ -1,6 +1,6 @@
 {
   "name": "starter-data-raw",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -33,8 +33,8 @@
     "gatsby-plugin-styled-components": "^3.1.18",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-wordpress-fancybox": "^1.0.0",
-    "gatsby-theme-algolia": "^1.0.4",
-    "gatsby-theme-blog-data": "^1.0.5",
+    "gatsby-theme-algolia": "^1.0.5",
+    "gatsby-theme-blog-data": "^1.0.6",
     "grommet": "^2.10.0",
     "grommet-icons": "^4.4.0",
     "moment": "^2.24.0",
