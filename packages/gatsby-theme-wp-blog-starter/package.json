@@ -2,7 +2,7 @@
   "name": "gatsby-theme-wp-blog-starter",
   "description": "WordPress basic theme for Gastby using WPGraphQL",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
@@ -30,7 +30,7 @@
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-wordpress-fancybox": "^1.0.2",
     "gatsby-theme-algolia": "^1.0.7",
-    "gatsby-theme-blog-data": "^1.0.8",
+    "gatsby-theme-blog-data": "^1.0.9",
     "gatsby-theme-style-guide": "^0.3.1",
     "grommet": "^2.10.0",
     "grommet-icons": "^4.4.0",
