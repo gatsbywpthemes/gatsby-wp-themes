@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-algolia",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "gatsby theme for algolia search with instant search",
   "main": "index.js",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",

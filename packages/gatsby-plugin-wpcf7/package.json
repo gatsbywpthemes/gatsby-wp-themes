@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-wpcf7",
   "description": "A Gatsby plugin that parser contact forms built with Contact Form 7.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "index.js",
   "author": "Paulina Hetman <info@pehaa.com>",
   "keywords": [

@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-wordpress-parser",
   "description": "A Gatsby plugin to turn remote inline assets into local static files, replace internal links by Gatsby links and facilitate parsing posts content.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "index.js",
   "author": "Paulina Hetman <info@pehaa.com>",
   "keywords": [
