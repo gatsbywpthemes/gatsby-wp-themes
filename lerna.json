@@ -4,7 +4,7 @@
   "version": "independent",
   "command": {
     "publish": {
-      "registry": "https://npm.cloudsmith.io/gatsbywpthemes/test/"
+      "registry": "https://npm.cloudsmith.io/gatsbywpthemes/gatsby-wp-themes/"
     }
   }
 }
