@@ -91,4 +91,4 @@ for the sidebar widget area you can also define the the position: `right` or `le
 - 3 levels menu
 - pagination on all archives
 - categories, tags and users
-- Works with twenty nineteen theme to have the right menu location.
+- Works with twenty nineteen theme to have the right menu location
