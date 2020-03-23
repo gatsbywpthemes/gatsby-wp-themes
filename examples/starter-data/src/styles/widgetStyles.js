@@ -1,4 +1,3 @@
-import { darken, lighten } from 'polished'
 const sharedStyles = {
   color: 'text',
   '.inverse &': {

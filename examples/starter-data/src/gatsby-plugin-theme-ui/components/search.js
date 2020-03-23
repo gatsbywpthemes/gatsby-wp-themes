@@ -87,6 +87,9 @@ export const search = {
     input: {
       bg: 'transparent',
       border: 'none',
+      borderRadius: 0,
+      WebkitAppearance: 'none',
+
       borderBottom: t => `1px solid ${t.colors.searchColor}`,
       boxShadow: t => `${t.colors.searchColor} 0 0 0 inset`,
       color: 'light',

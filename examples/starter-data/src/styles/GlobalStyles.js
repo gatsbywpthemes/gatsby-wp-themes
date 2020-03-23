@@ -19,8 +19,9 @@ export const globalStyles = theme => {
     boldWeight: theme.fontWeights.bold,
   })
   return css`
-    body {
+    body, html {
       margin: 0;
+      max-width: 100%;
       overflow-x: hidden;
     }
     body[style*='overflow'] {
@@ -40,6 +41,12 @@ export const globalStyles = theme => {
       font-size: 100%; /* 1 */
       line-height: 1.15; /* 1 */
       margin: 0; /* 2 */
+    }
+
+    input {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      border-radius: 0;
     }
 
     /**
@@ -118,5 +125,6 @@ export const globalStyles = theme => {
       outline-width: 1px;
       outline-color: ${theme.colors.focusOutline}!important;
     }
+
   `
 }

@@ -69,12 +69,14 @@ const Page = ({ page }) => {
             className="entry"
           >
             <div className="content page-content" sx={{ borderRadius: `s` }}>
-              {!skipTitle.includes(slug) && skipTitle !== 'all' && (
-                <h1
-                  className="page-title"
-                  dangerouslySetInnerHTML={{ __html: title }}
-                />
-              )}
+              {skupTitle &&
+                !skipTitle.includes(slug) &&
+                skipTitle !== 'all' && (
+                  <h1
+                    className="page-title"
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
+                )}
 
               <Box className="entry-content" sx={{ ...gutenberg }}>
                 <ParsedContent content={content} />
