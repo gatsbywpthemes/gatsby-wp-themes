@@ -19,6 +19,8 @@ const sharedFormStyles = {
     width: '100%',
     minWidth: '100%',
     mb: 's',
+    borderRadius: 0,
+    WebkitAppearance: 'none',
   },
   label: {
     variant: 'text.special',

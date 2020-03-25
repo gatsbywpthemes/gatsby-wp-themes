@@ -2,13 +2,13 @@
   "name": "gatsby-theme-wp-ginger",
   "description": "WordPress basic theme for Gastby using WPGraphQL",
   "author": "Paulina Hetman <info@pehaa.com>",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.19.10",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "dependencies": {
     "@emotion/styled": "^10.0.27",
@@ -25,9 +25,9 @@
     "gatsby-plugin-smoothscroll": "^1.0.4",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-typography": "^2.3.21",
-    "gatsby-plugin-wordpress-fancybox": "^0.0.2",
-    "gatsby-theme-algolia": "^1.0.1",
-    "gatsby-theme-blog-data": "^1.0.1",
+    "gatsby-plugin-wordpress-fancybox": "^1.0.4",
+    "gatsby-theme-algolia": "^1.0.9",
+    "gatsby-theme-blog-data": "^1.0.11",
     "graphql-tag": "^2.10.3",
     "grommet": "^2.10.0",
     "grommet-icons": "^4.4.0",
@@ -47,5 +47,6 @@
     "typeface-abril-fatface": "^0.0.72",
     "typeface-fira-sans": "^0.0.75",
     "typography": "^0.16.19"
-  }
+  },
+  "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4"
 }
