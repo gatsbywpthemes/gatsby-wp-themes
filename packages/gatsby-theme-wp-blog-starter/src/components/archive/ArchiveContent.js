@@ -34,7 +34,7 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
         : { '.posts-list': { pr: [0, 0, 0, layoutWidth.archive] } }
       : ''
   return (
-    <Container sx={{ ...containerStyles }}>
+    <Container sx={{ ...containerStyles }} className="mainContainer">
       {name && <ArchiveTitle text="Posts from: " name={name} />}
       <Flex
         sx={{
