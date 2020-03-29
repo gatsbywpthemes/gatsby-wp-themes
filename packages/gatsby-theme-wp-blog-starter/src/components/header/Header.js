@@ -7,15 +7,10 @@ import SlideSidebar from './SlideSidebar'
 import SiteBranding from './SiteBranding'
 
 import Headroom from 'react-headroom'
-import Search from 'gatsby-theme-algolia/src/components/Search'
+
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import SearchForm from '../search/SearchForm'
 import ColorSwitch from '../ColorSwitch'
-
-const searchIndices = [
-  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
-  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
-]
 
 const Header = () => {
   const { search } = useThemeOptions()
@@ -49,11 +44,7 @@ const Header = () => {
                   justifyContent: [`center`, `center`, `flex-start`],
                 }}
               >
-                {search === 'algolia' ? (
-                  <Search indices={searchIndices} />
-                ) : (
-                  <SearchForm />
-                )}
+                <SearchForm />
               </Box>
             )}
             <Box

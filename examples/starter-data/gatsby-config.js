@@ -32,7 +32,6 @@ module.exports = {
     ],
   },
   plugins: [
-    // "gatsby-theme-algolia",
     {
       resolve: 'gatsby-theme-blog-data',
       options: {

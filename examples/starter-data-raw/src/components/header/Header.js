@@ -7,7 +7,7 @@ import SlideSidebar from './SlideSidebar'
 import SiteBranding from './SiteBranding'
 
 import Headroom from 'react-headroom'
-import Search from 'gatsby-theme-algolia/src/components/Search'
+
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import SearchForm from '../search/SearchForm'
 import ColorSwitch from '../ColorSwitch'
@@ -43,11 +43,7 @@ const Header = () => {
           <Container className="container">
             {search && (
               <Box>
-                {search === 'algolia' ? (
-                  <Search indices={searchIndices} />
-                ) : (
-                  <SearchForm />
-                )}
+                <SearchForm />
               </Box>
             )}
             <Box>

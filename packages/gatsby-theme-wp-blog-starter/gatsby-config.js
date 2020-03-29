@@ -10,7 +10,6 @@ module.exports = options => {
   }
 
   const mergedOptions = {
-    addAlgoliaSearch: false,
     addColorModes: true,
     addFancyBox: true,
     skipTitle: [],
@@ -55,14 +54,6 @@ module.exports = options => {
         display: 'swap',
       },
     })
-  }
-
-  /**
-   * Conditionally add algolia plugin
-   * to avoid errors on build
-   */
-  if (mergedOptions.addAlgoliaSearch) {
-    plugins.push(`gatsby-theme-algolia`)
   }
 
   /**
