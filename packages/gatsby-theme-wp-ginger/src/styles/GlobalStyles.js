@@ -23,8 +23,9 @@ export const globalStyles = theme => {
       margin: 0;
       overflow-x: hidden;
     }
-    body[style*='overflow'] {
+    body.opened {
       height: 100vh;
+      overflow: hidden;
     }
     /**
  * 1. Change the font styles in all browsers.

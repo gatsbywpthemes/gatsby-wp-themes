@@ -1,52 +1,64 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
-import { Grommet, Layer } from 'grommet'
+import React, { useEffect, useRef } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import Menu from './Menu'
 import Widgets from './widgets/Widgets'
 import Search from 'gatsby-theme-algolia/src/components/Search'
+import SearchForm from './search/SearchForm'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import openMenuButton from '../styles/menuButton'
-import { slideMenu } from '../styles/slideSidebar'
+import { slideMenu, overlay } from '../styles/slideSidebar'
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
   { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
 ]
 
-const SlideSidebar = () => {
+const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
   const {
     widgetAreas: {
       slideMenu: { widgets },
     },
-    useAlgoliaSearch,
+    addWordPressSearch,
+    addAlgoliaSearch,
     menuName,
   } = useThemeOptions()
-  const { theme } = useThemeUI()
 
-  const [isMenuOpen, setOpenMenu] = useState(false)
-  const [openClass, setOpenClass] = useState(false)
+  const menuBtn = useRef()
+
+  useEffect(() => {
+    if (openClass) {
+      document.body.classList.add('opened')
+      document.addEventListener('keydown', closeOnEsc)
+    } else {
+      document.body.classList.remove('opened')
+      document.removeEventListener('keydown', closeOnEsc)
+    }
+    return () => {
+      document.removeEventListener('keydown', closeOnEsc)
+    }
+  }, [openClass])
+
   const openMenu = () => {
-    setOpenClass(true)
-    setOpenMenu(true)
+    updateOpen(true)
+    setTimeout(() => setOpenClass(true), 10)
   }
   const closeMenu = () => {
     setOpenClass(false)
-    setTimeout(() => setOpenMenu(false), 200)
   }
-  const maybeCloseMenu = () => {
-    const threshold = Number(theme.breakpoints[0].split('em')) || 40
-    if (typeof window !== 'undefined' && window.innerWidth < threshold * 16) {
+  const closeOnEsc = e => {
+    if (!(e.target.type === 'search' && e.target.value) && e.keyCode === 27) {
       setOpenClass(false)
-      setTimeout(() => setOpenMenu(false), 200)
+      menuBtn.current.focus()
     }
   }
-  console.log(theme.layer)
+
   return (
-    <Grommet theme={{ layer: theme.layer }}>
+    <>
       <button
+        ref={menuBtn}
         type="button"
         aria-label="Open navigation menu"
         onClick={openMenu}
@@ -55,42 +67,37 @@ const SlideSidebar = () => {
       >
         <FiMenu />
       </button>
-      {isMenuOpen && (
-        <Layer
-          className={openClass ? 'menu-opened' : 'menu-closing'}
-          position="right"
-          full="vertical"
-          modal
-          responsive={false}
-          onClickOutside={closeMenu}
-          onEsc={closeMenu}
-          sx={slideMenu}
-        >
-          <button
-            aria-label="Close navigation menu"
-            sx={{
-              variant: 'buttons.raw',
-              color: 'sidebarColor',
-            }}
-            className="close"
-            onClick={closeMenu}
+      {open && (
+        <>
+          <div
+            className={openClass ? 'menu-opened' : 'menu-closing'}
+            sx={slideMenu}
           >
-            <FiX />
-          </button>
-          {useAlgoliaSearch && (
-            <div className="search-wrapper">
-              <Search indices={searchIndices} />
-            </div>
-          )}
+            <button
+              aria-label="Close navigation menu"
+              sx={{
+                variant: 'buttons.raw',
+                color: 'sidebarColor',
+              }}
+              className="close"
+              onClick={closeMenu}
+            >
+              <FiX />
+            </button>
+            {addAlgoliaSearch && <Search indices={searchIndices} />}
 
-          <Menu menuName={menuName} hashClickAction={maybeCloseMenu} />
-          {!!widgets &&
-            widgets.map(widget => (
-              <Widgets key={widget} widget={widget} location="SlideMenu" />
-            ))}
-        </Layer>
+            {addWordPressSearch && <SearchForm />}
+
+            <Menu menuName={menuName} />
+            {!!widgets &&
+              widgets.map(widget => (
+                <Widgets key={widget} widget={widget} location="SlideMenu" />
+              ))}
+          </div>
+          <div className="menu-overlay" sx={overlay} onClick={closeMenu} />
+        </>
       )}
-    </Grommet>
+    </>
   )
 }
 

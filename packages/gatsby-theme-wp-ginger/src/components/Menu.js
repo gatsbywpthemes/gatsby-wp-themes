@@ -16,7 +16,7 @@ const subdirectoryCorrection = (path, wordPressUrl, hash = '') => {
   const subdir = wordPressUrlParsed.path()
   return normalize(path.replace(subdir, '/')) || '/'
 }
-const renderLink = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
+const renderLink = (menuItem, wordPressUrl, postsPath) => {
   let url = menuItem.url
 
   if (menuItem.connectedObject.__typename === 'WP_MenuItem') {
@@ -37,11 +37,7 @@ const renderLink = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
       path.indexOf(slashes(wordPressUrlParsed.path())) === 0
     ) {
       url = subdirectoryCorrection(path, wordPressUrl, hash)
-      return (
-        <Link onClick={hashClickAction} to={url}>
-          {menuItem.label}
-        </Link>
-      )
+      return <Link to={url}>{menuItem.label}</Link>
     }
     return (
       <a href={menuItem.url} target="_blank" rel="noopener noreferrer">
@@ -67,19 +63,19 @@ const renderLink = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
   }
 }
 
-const renderMenuItem = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
+const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
   if (menuItem.childItems && menuItem.childItems.nodes.length) {
     return renderSubMenu(menuItem, wordPressUrl)
   } else {
     return (
       <li className="menu-item" key={menuItem.id}>
-        {renderLink(menuItem, wordPressUrl, postsPath, hashClickAction)}
+        {renderLink(menuItem, wordPressUrl, postsPath)}
       </li>
     )
   }
 }
 
-const renderSubMenu = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
+const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
   return (
     <li
       className="has-subMenu menu-item"
@@ -90,7 +86,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
       <Collapse menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
           {menuItem.childItems.nodes.map(item =>
-            renderMenuItem(item, wordPressUrl, postsPath, hashClickAction)
+            renderMenuItem(item, wordPressUrl, postsPath)
           )}
         </ul>
       </Collapse>
@@ -98,7 +94,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath, hashClickAction) => {
   )
 }
 
-const Menu = ({ menuName, hashClickAction }) => {
+const Menu = ({ menuName }) => {
   const { wordPressUrl, postsPath } = useThemeOptions()
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find(n => menuName === n.node.name)
@@ -117,19 +113,9 @@ const Menu = ({ menuName, hashClickAction }) => {
         <ul sx={{ variant: 'special' }} role="menu" className="menuItemGroup">
           {menuItems.nodes.map(menuItem => {
             if (menuItem.childItems.nodes.length) {
-              return renderSubMenu(
-                menuItem,
-                wordPressUrl,
-                postsPath,
-                hashClickAction
-              )
+              return renderSubMenu(menuItem, wordPressUrl, postsPath)
             } else {
-              return renderMenuItem(
-                menuItem,
-                wordPressUrl,
-                postsPath,
-                hashClickAction
-              )
+              return renderMenuItem(menuItem, wordPressUrl, postsPath)
             }
           })}
         </ul>

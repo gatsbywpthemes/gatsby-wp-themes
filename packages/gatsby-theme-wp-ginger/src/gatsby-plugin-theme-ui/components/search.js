@@ -1,5 +1,17 @@
 export const search = {
   results: {
+    h3: {
+      fontSize: 'm',
+    },
+    h4: {
+      fontSize: 's',
+      mb: '0.25rem',
+    },
+    mb: '2rem',
+    '.post-metadata': {
+      variant: 'special',
+      fontSize: 'xxs',
+    },
     header: {
       display: 'flex',
       mb: '1rem',
@@ -8,41 +20,52 @@ export const search = {
       '& > *': {
         mb: 0,
       },
+      '.stats': {
+        textAlign: 'right',
+      },
     },
     '.results + header': {
       mt: '2rem',
     },
     a: { color: 'inherit' },
+    'a:hover': { opacity: '0.6' },
+    'a[aria-current]': {
+      fontStyle: 'italic',
+    },
     fontSize: 'xs',
     ul: {
       variant: 'list.raw',
     },
     li: {
       mb: '0.75rem',
+      letterSpacing: '0.5px',
     },
-    '&:after, li:after': {
+    'ul:after': {
       content: '""',
       display: 'block',
       height: 0,
       width: '100%',
-      mt: '2rem',
-    },
-    'li:after': {
-      borderBottom: '1px solid',
-      opacity: 0.15,
-    },
-    '&:after': {
       borderBottom: '3px solid',
-      mb: '2rem',
     },
   },
   box: {
     variant: 'form',
+    mb: 0,
     flex: 2,
     p: 0,
     display: 'block',
-    '&, form, input[type="search"]': {
+    boxShadow: 'none',
+    'form, input[type="search"]': {
       m: 0,
+    },
+    'form > svg': {
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      m: 'auto',
+    },
+    'form > svg + input[type="search"]': {
+      px: theme => theme.fontSizes['l'],
     },
     '[type="submit"]': {
       display: 'none',
@@ -63,8 +86,18 @@ export const search = {
       position: 'relative',
     },
     container: {
-      mb: '2rem',
       alignItems: 'center',
+      position: 'relative',
+      mb: '2rem',
+      svg: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        m: 'auto',
+      },
+      'form input[type="search"]': {
+        pl: '1.5rem',
+      },
     },
   },
 }
