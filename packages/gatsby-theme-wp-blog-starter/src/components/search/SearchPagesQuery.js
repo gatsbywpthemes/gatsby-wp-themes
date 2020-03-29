@@ -5,6 +5,7 @@ import { Button } from 'grommet'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import SearchResults from './SearchResults'
+import Loader from 'react-spinners/BeatLoader'
 
 const GET_PAGES = gql`
   fragment PostFields on Page {
@@ -58,7 +59,12 @@ const SearchQuery = ({ search }) => {
     }
   }
 
-  if (loading) return <p>Searching pages...</p>
+  if (loading)
+    return (
+      <Flex sx={{ justifyContent: 'center', alignItems: 'center', py: 20 }}>
+        <Loader color="#798EA3" />
+      </Flex>
+    )
   if (error) return <p>Error - {error.message}</p>
   //loadMore()
   return (

@@ -31,7 +31,6 @@ const SearchForm = () => {
 
   const handleChange = e => {
     setValue(e.target.value)
-    setSearch(e.target.value)
   }
 
   return (
