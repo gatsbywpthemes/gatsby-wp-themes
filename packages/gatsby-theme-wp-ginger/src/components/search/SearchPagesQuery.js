@@ -68,6 +68,7 @@ const SearchQuery = ({ search }) => {
           Load More
         </Button>
       )}
+      {!clickable && data.pages.pageInfo.hasNextPage && <p>Loading...</p>}
     </SearchResults>
   )
 }

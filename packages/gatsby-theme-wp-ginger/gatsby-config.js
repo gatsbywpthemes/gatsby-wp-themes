@@ -15,7 +15,6 @@ module.exports = options => {
       : options.gingerWidgets
 
   const mergedOptions = {
-    addAlgoliaSearch: false,
     addColorModes: true,
     addFancyBox: true,
     skipTitle: [],
@@ -55,14 +54,6 @@ module.exports = options => {
         display: 'swap',
       },
     })
-  }
-
-  /**
-   * Conditionally add google fonts plugin
-   * to avoid errors on build
-   */
-  if (options.addAlgoliaSearch) {
-    plugins.push(`gatsby-theme-algolia`)
   }
 
   /**

@@ -1,6 +1,5 @@
 import {
   form,
-  search,
   layer,
   fonts,
   fontSizes,
@@ -9,6 +8,7 @@ import {
   letterSpacings,
   special,
   baseTypo,
+  //search
 } from './components'
 import buttons from './components/buttons'
 import header from './components/header'
@@ -45,8 +45,8 @@ const theme = {
   layer,
   special,
   form,
-  search,
   buttons,
+  //search
   list: {
     raw: {
       listStyle: 'none',

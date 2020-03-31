@@ -32,7 +32,8 @@ export const slideMenu = {
     a: theme => theme.styles.root.a,
   },
 
-  p: ['2rem', '3rem'],
+  px: ['2rem', '3rem'],
+  py: '3rem',
 
   ul: {
     variant: 'list.raw',

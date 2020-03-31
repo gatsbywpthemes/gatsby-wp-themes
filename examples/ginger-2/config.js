@@ -32,7 +32,7 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
-  // addAlgoliaSearch: false,
+  addWordPressSearch: true,
   // addColorModes: false,
   // addFancyBox: true,
   skipTitle: ["home", "contact-us"],

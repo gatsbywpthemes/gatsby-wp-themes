@@ -4,6 +4,7 @@ import { jsx, Box, Styled } from 'theme-ui'
 import { Link } from 'gatsby'
 import normalize from 'normalize-path'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import { results as searchstyles } from '../../styles/search'
 
 const Stats = ({ postType, search }) => (
   <Box className="stats">
@@ -16,12 +17,7 @@ const Stats = ({ postType, search }) => (
 const SearchResults = ({ type, posts, search, children }) => {
   const { postsPrefix } = useThemeOptions()
   return (
-    <Box
-      className="search-results"
-      sx={{
-        variant: `search.results`,
-      }}
-    >
+    <Box className="search-results" sx={searchstyles}>
       <header>
         <h3>{type}</h3>
         <Stats postType={posts} search={search} />
@@ -34,11 +30,10 @@ const SearchResults = ({ type, posts, search, children }) => {
                 to={
                   type === 'Posts'
                     ? normalize(`/${postsPrefix}/${post.uri}`)
-                    : `/${post.uri}`
+                    : normalize(`/${post.uri}`)
                 }
-              >
-                {post.title}
-              </Link>
+                dangerouslySetInnerHTML={{ __html: post.title }}
+              />
             </li>
           )
         })}
