@@ -78,7 +78,7 @@ module.exports = async ({ actions, graphql }, options) => {
   const blogTemplate = require.resolve(blogTemplatePath)
   const postTemplatePath = `../src/templates/post-query.js`
   const postTemplate = require.resolve(postTemplatePath)
-  const { postsPath, paginationPrefix, postsPrefix, postsPerPage } = options
+  const { postsPath, paginationPrefix, postsPerPage } = options
   /**
    * This is the method from Gatsby that we're going
    * to use to create pages in our static site.
@@ -169,15 +169,13 @@ module.exports = async ({ actions, graphql }, options) => {
    */
   allPosts &&
     allPosts.map((post, index) => {
-      //console.log(`create post: ${post.uri}`)
       createPage({
-        path: postsPrefix ? `/${postsPrefix}/${post.uri}` : `/${post.uri}`,
+        path: `/${post.uri}`,
         component: postTemplate,
         context: {
           ...post,
           prev: allPosts[index + 1],
           next: allPosts[index - 1],
-          postsPrefix: options.postsPrefix,
           postsPath: options.postsPath,
           wordPressUrl: options.wordPressUrl,
           uploadsUrl: options.uploadsUrl,

@@ -3,7 +3,6 @@ import { Fragment } from 'react'
 import { jsx, Box, Styled } from 'theme-ui'
 import { Link } from 'gatsby'
 import normalize from 'normalize-path'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import { results as searchstyles } from '../../styles/search'
 
 const Stats = ({ postType, search }) => (
@@ -15,7 +14,6 @@ const Stats = ({ postType, search }) => (
 )
 
 const SearchResults = ({ type, posts, search, children }) => {
-  const { postsPrefix } = useThemeOptions()
   return (
     <Box className="search-results" sx={searchstyles}>
       <header>
@@ -27,11 +25,7 @@ const SearchResults = ({ type, posts, search, children }) => {
           return (
             <li key={post.slug}>
               <Link
-                to={
-                  type === 'Posts'
-                    ? normalize(`/${postsPrefix}/${post.uri}`)
-                    : normalize(`/${post.uri}`)
-                }
+                to={normalize(`/${post.uri}`)}
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />
             </li>

@@ -14,7 +14,7 @@ You need to install and activate the [wpgraphql plugin.](https:www.wpgraphql.com
 
 ### Permalinks structure
 
-This step is essentialfor your internal links to be mapped adequately from your WordPress site to your Gatsby one.
+This step is essential for your internal links to be mapped adequately from your WordPress site to your Gatsby one.
 You can configure your WordPress permalinks structure in `Settings > Permalinks`.
 Make sure to check the **Post name** option.
 
@@ -37,7 +37,6 @@ const config = {
   wordPressUrl: ``,
   uploadsPath: `wp-content/uploads`,
   pathPrefix: "",
-  postsPrefix: ``,
   postsPath: ``,
   paginationPrefix: `page`,
   addComments: true,
@@ -98,13 +97,6 @@ pathPrefix: "/demo"
 ```bash
 gatsby build --prefix-paths
 ```
-
----
-
-**postsPrefix** (optional)  
-`(default: "")`
-
-The prefix for the posts. If you change it, make sure to set the permalinks structure on your WordPress site accordingly.
 
 ---
 

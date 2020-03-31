@@ -2,7 +2,6 @@ const config = {
   wordPressUrl: `https://wp-pehaa.com/ginger-mini`,
   // uploadsPath: `wp-content/uploads`,
   // pathPrefix: "",
-  // postsPrefix: ``,
   postsPath: `blog`,
   // paginationPrefix: `page`,
   // addComments: true,

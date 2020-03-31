@@ -3,12 +3,12 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import { pagination, paginationLink } from '../../styles/pagination'
 
-const renderPreviousLink = ({ prev, postsPrefix }) => {
+const renderPreviousLink = ({ prev }) => {
   let previousLink = null
   if (!prev) {
     return <span />
   } else {
-    previousLink = postsPrefix ? `/${postsPrefix}/${prev.uri}` : `/${prev.uri}`
+    previousLink = `/${prev.uri}`
   }
 
   return (
@@ -18,14 +18,10 @@ const renderPreviousLink = ({ prev, postsPrefix }) => {
   )
 }
 
-const renderNextLink = ({ next, postsPrefix }) => {
+const renderNextLink = ({ next }) => {
   if (next) {
     return (
-      <Link
-        className="right"
-        sx={paginationLink}
-        to={postsPrefix ? `/${postsPrefix}/${next.uri}` : `/${next.uri}`}
-      >
+      <Link className="right" sx={paginationLink} to={`/${next.uri}`}>
         <span>Up Next</span>
       </Link>
     )

@@ -3,7 +3,6 @@ const config = {
   // wordPressUrl: "http://gatsbystarter.wst/",
 
   // uploadsPath: 'wp-content/uploads',
-  // postsPrefix: '',
   postsPath: "/blog",
   // paginationPrefix: 'page',
 

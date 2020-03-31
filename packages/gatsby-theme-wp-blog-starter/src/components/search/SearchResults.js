@@ -3,7 +3,6 @@ import { Fragment } from 'react'
 import { jsx, Box } from 'theme-ui'
 import { Link } from 'gatsby'
 import normalize from 'normalize-path'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 
 const Stats = ({ postType, search }) => (
   <Box className="stats">
@@ -14,7 +13,6 @@ const Stats = ({ postType, search }) => (
 )
 
 const SearchResults = ({ type, posts, search, children }) => {
-  const { postsPrefix } = useThemeOptions()
   return (
     <Fragment>
       <header>
@@ -26,15 +24,7 @@ const SearchResults = ({ type, posts, search, children }) => {
           return (
             <Box key={post.slug}>
               <h4>
-                <Link
-                  to={
-                    type === 'Posts'
-                      ? normalize(`/${postsPrefix}/${post.uri}`)
-                      : `/${post.uri}`
-                  }
-                >
-                  {post.title}
-                </Link>
+                <Link to={normalize(`/${post.uri}`)}>{post.title}</Link>
               </h4>
             </Box>
           )

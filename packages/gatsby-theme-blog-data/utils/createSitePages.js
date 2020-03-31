@@ -134,7 +134,6 @@ module.exports = async ({ actions, graphql }, options) => {
         component: pageTemplate,
         context: {
           ...page,
-          postsPrefix: options.postsPrefix,
           postsPath: options.postsPath,
           wordPressUrl: options.wordPressUrl,
           uploadsUrl: options.uploadsUrl,

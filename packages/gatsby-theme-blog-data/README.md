@@ -34,7 +34,7 @@ To use this theme in your Gatsby sites, follow these instructions:
           options: {
             wordPressUrl: ``,
             uploadsPath: `wp-content/uploads`,
-            postsPrefix: `, postsPath:`,
+            postsPath:`,
             paginationPrefix: `page`,
             postsPerPage: 10,
             disqus: ``,
@@ -73,8 +73,6 @@ To use this theme in your Gatsby sites, follow these instructions:
 `postsPath` - the path for your posts, let it empty if you want them as home page
 
 `paginationPrefix` - the prefix of the pages
-
-`postsPrefix`
 
 `postsPerPage`
 

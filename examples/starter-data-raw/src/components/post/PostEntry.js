@@ -12,25 +12,19 @@ import SocialShare from '../social/SocialShare'
 
 import gutenberg from '../../styles/theme-gutenberg'
 
-const PostEntry = ({ post, location, postsPrefix }) => {
+const PostEntry = ({ post, location }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''
   const media = post.featuredImage
     ? post.featuredImage.imageFile.childImageSharp.fluid.src
     : null
   return (
     <article className="entry">
-      <PostEntryMedia
-        location={location}
-        post={post}
-        postsPrefix={postsPrefix}
-        className="entry-media"
-      />
+      <PostEntryMedia location={location} post={post} className="entry-media" />
 
       <div className={`content ${noImgClass}`}>
         <PostEntryTitle
           location={location}
           post={post}
-          postsPrefix={postsPrefix}
           className="entry-title"
         />
         <PostEntryInfo className="entry-info" post={post} />
@@ -49,10 +43,7 @@ const PostEntry = ({ post, location, postsPrefix }) => {
                 className="read-more"
                 a11YTitle="Read More from this post"
               >
-                <Link
-                  to={`${postsPrefix}/${post.uri}`}
-                  aria-label="Read More from this post"
-                >
+                <Link to={`/${post.uri}`} aria-label="Read More from this post">
                   Read More
                 </Link>
               </Button>
@@ -61,7 +52,7 @@ const PostEntry = ({ post, location, postsPrefix }) => {
         </div>
         {location === 'single' && (
           <SocialShare
-            url={normalize(`/${postsPrefix}/${post.uri}`)}
+            url={normalize(`/${post.uri}`)}
             title={post.title}
             media={media}
           />

@@ -14,7 +14,6 @@ import { card } from '../../styles/card'
 const PostEntryIntro = ({
   ctx,
   post,
-  postsPrefix = '',
   location = 'archive',
   variant = 'blog',
 }) => {
@@ -27,7 +26,7 @@ const PostEntryIntro = ({
     >
       {location === 'single' && (
         <SocialShare
-          url={normalize(`/${postsPrefix}/${post.uri}`)}
+          url={normalize(`/${post.uri}`)}
           title={post.title}
           media={
             post.featuredImage
@@ -36,8 +35,8 @@ const PostEntryIntro = ({
           }
         />
       )}
-      <PublicationDate {...{ post, postsPrefix, location }} />
-      <PostEntryTitle {...{ post, postsPrefix, location }} />
+      <PublicationDate {...{ post, location }} />
+      <PostEntryTitle {...{ post, location }} />
       <PostEntryExcerpt {...{ post, location }} />
       <footer sx={{ variant: 'special' }} className="entry-meta">
         <Author {...{ post }} />{' '}

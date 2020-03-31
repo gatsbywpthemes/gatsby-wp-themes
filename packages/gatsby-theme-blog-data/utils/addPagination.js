@@ -49,8 +49,8 @@ module.exports = async ({
         } = data.wp[paginationType].posts
 
         const pagePath = !variables.after
-          ? `/${pathPrefix}/${item.slug}`
-          : `/${pathPrefix}/${item.slug}/${paginationPrefix}/${pageNumber + 1}`
+          ? `/${item.uri}`
+          : `/${item.uri}/${paginationPrefix}/${pageNumber + 1}`
 
         /**
          * The IDs of the posts which were got from GraphQL.

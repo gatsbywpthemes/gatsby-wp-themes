@@ -7,12 +7,7 @@ import Sidebar from '../Sidebar.js'
 import ArchiveTitle from './ArchiveTitle'
 
 const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
-  const {
-    postsPrefix,
-    layoutWidth,
-    archiveSidebar,
-    sidebarWidgets,
-  } = useThemeOptions()
+  const { layoutWidth, archiveSidebar, sidebarWidgets } = useThemeOptions()
 
   const containerStyles =
     sidebarWidgets && archiveSidebar
@@ -45,12 +40,7 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
       >
         <Box className="posts-list">
           {posts.map(post => (
-            <PostEntry
-              key={post.id}
-              location="archive"
-              post={post}
-              postsPrefix={postsPrefix}
-            />
+            <PostEntry key={post.id} location="archive" post={post} />
           ))}
         </Box>
         {archiveSidebar && <Sidebar widgets={sidebarWidgets} />}

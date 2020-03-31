@@ -21,7 +21,7 @@ const Post = ({ post }) => {
   const media = featuredImage
     ? featuredImage.imageFile.childImageSharp.fluid.src
     : null
-  const { postsPrefix, layoutWidth } = useThemeOptions()
+  const { layoutWidth } = useThemeOptions()
   const { disqus, addComments, sidebarWidgets } = useThemeOptions()
 
   const pageTemplate = templateName.toLowerCase()
@@ -59,7 +59,7 @@ const Post = ({ post }) => {
         description={excerpt}
         media={media}
         ogType="article"
-        ogUrl={normalize(`/${postsPrefix}/${uri}`)}
+        ogUrl={normalize(`/${uri}`)}
       />
       <Container sx={{ ...containerStyles }}>
         <Flex

@@ -37,7 +37,6 @@ const config = {
   wordPressUrl: ``,
   uploadsPath: `wp-content/uploads`,
   pathPrefix: "",
-  postsPrefix: ``,
   postsPath: ``,
   paginationPrefix: `page`,
   postsPerPage: 10,
@@ -97,13 +96,6 @@ pathPrefix: "/demo"
 ```bash
 gatsby build --prefix-paths
 ```
-
----
-
-**postsPrefix** (optional)  
-`(default: "")`
-
-The prefix for the posts. If you change it, make sure to set the permalinks structure on your WordPress site accordingly.
 
 ---
 

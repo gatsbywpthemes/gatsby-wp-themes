@@ -52,7 +52,7 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
         <Link
           to={`${normalize(
             createLocalLink(menuItem.url, slashes(wordPressUrl))
-          )}/`}
+          )}`}
         >
           {menuItem.label}
         </Link>
