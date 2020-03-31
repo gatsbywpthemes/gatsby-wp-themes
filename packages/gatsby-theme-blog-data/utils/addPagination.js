@@ -1,3 +1,5 @@
+const normalize = require('normalize-path')
+
 module.exports = async ({
   actions,
   graphql,
@@ -50,7 +52,7 @@ module.exports = async ({
 
         const pagePath = !variables.after
           ? `/${item.uri}`
-          : `/${item.uri}/${paginationPrefix}/${pageNumber + 1}`
+          : normalize(`/${item.uri}/${paginationPrefix}/${pageNumber + 1}`)
 
         /**
          * The IDs of the posts which were got from GraphQL.
