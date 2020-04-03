@@ -18,7 +18,7 @@ const PostEntry = ({ ctx, post }) => {
         backgroundImage: `url(${post.featuredImage.imageFile.childImageSharp.fluid.src})`,
       }
     : {}
-  const { addWPComments } = useThemeOptions()
+  const { addWordPressComments } = useThemeOptions()
   return (
     <article>
       <header data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
@@ -71,7 +71,7 @@ const PostEntry = ({ ctx, post }) => {
         {post.tags.nodes.length > 0 && <Tags tags={post.tags.nodes} />}
         <PrevNextPostNavigation ctx={ctx} />
       </div>
-      {!!addWPComments && post.commentStatus === 'open' && (
+      {!!addWordPressComments && post.commentStatus === 'open' && (
         <section sx={commentsSection}>
           <CommentsList post={post} />
         </section>

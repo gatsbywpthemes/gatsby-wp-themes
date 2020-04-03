@@ -9,7 +9,7 @@ const config = {
   postsPerPage: 3,
   // disqus: 'webstantly',
   menuName: 'main',
-  // addWPComments: 1,
+  // addWordPressComments: 1,
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,

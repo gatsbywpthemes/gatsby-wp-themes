@@ -40,7 +40,7 @@ const config = {
   postsPath: ``,
   paginationPrefix: `page`,
   postsPerPage: 10,
-  addWPComments: true,
+  addWordPressComments: true,
   menuName: "main",
   gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
@@ -135,7 +135,7 @@ The number of posts per archive page.
 
 ---
 
-**addWPComments** (optional)  
+**addWordPressComments** (optional)  
 `(type: Boolean, default: true)`
 
 Whether comments funcionality should be activated, this is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".

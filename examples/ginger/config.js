@@ -4,7 +4,7 @@ const config = {
   // pathPrefix: "",
   postsPath: `blog`,
   // paginationPrefix: `page`,
-  // addWPComments: true,
+  // addWordPressComments: true,
   menuName: "main",
   gingerWidgets: [
     `SocialFollow`,
