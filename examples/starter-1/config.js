@@ -8,7 +8,7 @@ const config = {
 
   // disqus: 'webstantly',
   menuName: "main",
-  // addComments: 1,
+  // addWPComments: 1,
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,

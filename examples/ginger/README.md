@@ -53,7 +53,7 @@ const config = {
   pathPrefix: "",
   postsPath: ``,
   paginationPrefix: `page`,
-  addComments: true,
+  addWPComments: true,
   menuName: "main",
   gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
@@ -154,7 +154,7 @@ You should skip this setting, unless your changed the pagination url format on y
 
 ---
 
-**addComments** (optional)  
+**addWPComments** (optional)  
 `(type: Boolean, default: true)`
 
 Whether WordPress comments funcionality should be activated.

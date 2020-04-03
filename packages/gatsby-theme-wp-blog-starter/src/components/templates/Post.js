@@ -22,7 +22,7 @@ const Post = ({ post }) => {
     ? featuredImage.imageFile.childImageSharp.fluid.src
     : null
   const { layoutWidth } = useThemeOptions()
-  const { disqus, addComments, sidebarWidgets } = useThemeOptions()
+  const { disqus, addWPComments, sidebarWidgets } = useThemeOptions()
 
   const pageTemplate = templateName.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
@@ -72,7 +72,7 @@ const Post = ({ post }) => {
           <PostEntry post={post} location="single" />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
-        {addComments && post.commentStatus === 'open' && (
+        {addWPComments && post.commentStatus === 'open' && (
           <Container sx={{ maxWidth: layoutWidth.post }}>
             <CommentsList post={post} />
           </Container>

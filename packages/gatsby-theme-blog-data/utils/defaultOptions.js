@@ -10,7 +10,7 @@ const DEFAULT_OPTIONS = {
   paginationPrefix: `page`,
   menuName: `primary`,
   disqus: ``,
-  addComments: true,
+  addWPComments: true,
   gaTrackingId: 0,
   googleTagManagerId: 0,
   addSiteMap: false,
