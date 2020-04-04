@@ -5,6 +5,7 @@ const config = {
   postsPath: `blog`,
   // paginationPrefix: `page`,
   // addWordPressComments: true,
+  // disqus: "",
   menuName: "main",
   gingerWidgets: [
     `SocialFollow`,
