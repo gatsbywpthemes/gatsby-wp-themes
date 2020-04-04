@@ -218,28 +218,7 @@ menuName: ["Newsletter", "Social Follow", "Tags"]
 
 You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production, you should provide the url of your destination site.
 
-This is an essential setting for social share buttons (in Posts), twitter card image ([see **twitterSummaryCard**](#twittercard)) and building a sitemap.
-
----
-
-**title** (obligatory for a production website)  
-`(type: Url, default: "Blog Title Placeholder")`
-
-The title of your website. Please note that Ginger theme uses the data fetched from WordPress (Settings > General > Site Title).
-
----
-
-**author** (optional)  
-`(type: Url, default: "Name Placeholder")`
-
-The author of the website.
-
----
-
-**description** (obligatory for a production website)  
-`(type: Url, default: "Description Placeholder")`
-
-The description of your website. Please note that Ginger theme uses the data fetched from WordPress (Settings > General > Tagline).
+This is an essential setting for social share buttons (in Posts), SEO open graph data, and twitter card image ([see **twitterSummaryCard**](#twittercard)). It's also necessary if you opt for an xml sitemap.
 
 ---
 
