@@ -13,8 +13,8 @@ const Telegram = ({
   iconBgStyle = {},
   logoFillColor = 'white',
 }) => {
-  const metadata = useSiteMetaData()
-  const shareUrl = `${slashes(metadata.url)}${url}`
+  const { siteUrl } = useSiteMetaData()
+  const shareUrl = `${slashes(siteUrl)}${url}`
   return (
     <TelegramShareButton url={shareUrl} title={title}>
       {children}

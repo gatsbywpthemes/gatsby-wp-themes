@@ -13,8 +13,8 @@ const Twitter = ({
   iconBgStyle = {},
   logoFillColor = 'white',
 }) => {
-  const metadata = useSiteMetaData()
-  const shareUrl = `${slashes(metadata.url)}${url}`
+  const { siteUrl } = useSiteMetaData()
+  const shareUrl = `${slashes(siteUrl)}${url}`
   return (
     <TwitterShareButton url={shareUrl} title={title}>
       {children}

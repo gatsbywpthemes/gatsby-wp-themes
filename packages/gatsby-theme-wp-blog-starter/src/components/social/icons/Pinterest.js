@@ -14,9 +14,9 @@ const Pinterest = ({
   iconBgStyle = {},
   logoFillColor = 'white',
 }) => {
-  const metadata = useSiteMetaData()
-  const shareUrl = `${slashes(metadata.url)}${url}`
-  const shareMedia = `${slashes(metadata.url)}${media}`
+  const { siteUrl } = useSiteMetaData()
+  const shareUrl = `${slashes(siteUrl)}${url}`
+  const shareMedia = `${slashes(siteUrl)}${media}`
 
   return (
     <PinterestShareButton url={shareUrl} media={shareMedia} description={title}>
