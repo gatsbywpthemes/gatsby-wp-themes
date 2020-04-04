@@ -1,9 +1,9 @@
-module.exports = options => {
+module.exports = (options) => {
   options.fonts = options.fonts || ['abril fatface', 'fira sans']
   options.customFonts = []
   if (options.fonts) {
     options.customFonts = options.fonts.filter(
-      el =>
+      (el) =>
         el.toLowerCase().indexOf(`fira sans`) === -1 &&
         el.toLowerCase().indexOf(`abril fatface`) === -1
     )
@@ -77,8 +77,6 @@ module.exports = options => {
 
   return {
     siteMetadata: {
-      title: `Gatsby theme WordPress Starter Demo`,
-      description: `Gatsby starter site for Gatsby Theme Wordpress Theme.`,
       author: `@pehaa`,
     },
     plugins,
