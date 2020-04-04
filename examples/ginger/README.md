@@ -178,7 +178,10 @@ Typing your Disqus shortname (the unique identifier fo your website on Disqus) w
 **menuName** (optional)  
 `(type: String, default: "main")`
 
-The Ginger theme comes with one menu location, in the slide-in sidebar. You can use any of the menus that you had created on your WordPress site. Just paste the name that you had given to your WordPress menu here.
+Ginger theme comes with one menu location. The navigation menu is displayed in the slide-in sidebar.  
+You can choose any of the menus that you had created on your WordPress site by passing its name to the **menuName** option.
+
+![Menu name set to Main Menu on WordPress](https://wptemplates.pehaa.com/docs/gatsby-themes/assets/menuname.png)
 
 example:
 
@@ -191,22 +194,31 @@ menuName: "Main Menu"
 **gingerWidgets** (optional)  
 `(type: Array, default: ['SocialFollow', 'RecentPosts', 'Categories', 'Tags'])`
 
-The Ginger theme comes with one widget area in dthe slide-in sidebar below the navigation menu.
-There are 4 widgets available: **SocialFollow**, **RecentPosts**, **Categories** and **Tags.**.  
-The **SocialFollow** widget display links to your social profiles (see [`social setting`](#social))
+Ginger theme comes with one widget area in the slide-in sidebar. Widgets are displayed below the navigation menu.
+There are 4 widgets available: **SocialFollow**, **RecentPosts**, **Categories**, **Tags** and **Newsletter**.
+
+- The **SocialFollow** widget displays links to your social profiles (see [`social setting`](#social))
+- The **RecentPosts** widget lists links to 5 most recent posts (thumbnail, title and are displayed).
+- The **Categories** widget lists links to first-level post categories.
+- The **Tags** widget lists links to post tags. They are ordered alphabetically and include the number of posts per tag.
+- The **Newsletter** widget adds a subscription form to your MailChimp profile, (see [`MailChimp Profile`](#mailchimp))
+
+You can easily reorder the widgets. They will be displayed as specified in the **gingerWidgets** order.
 
 example:
 
 ```javascript
-menuName: "Main Menu"
+menuName: ["Newsletter", "Social Follow", "Tags"]
 ```
 
 ---
 
-**_siteUrl_** (obligatory for a production website)  
+**siteUrl** (obligatory for a production website)  
 `(type: Url, default: "https://example.com")`
 
-You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production you should provide the url of your destination site
+You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production, you should provide the url of your destination site.
+
+This is an essential setting for social share buttons (in Posts), twitter card image ([see **twitterSummaryCard**](#twittercard)) and building a sitemap.
 
 ---
 
@@ -265,11 +277,11 @@ social: []
 
 ---
 
-**twitterSummaryCardImage**  
+**twitterSummaryCardImage**<a name="twittercard"></a>  
 `(default: Gatsby_Monogram.png)`
 
 When sharing your content on Twitter, articles will use their featured image for the Twitter card.
-Other pages will use a common twitterSummaryCardImage. Please make sure to place it in the `/static` folder. Your image should be square and at least 144px x 144px.
+Other pages will use a common twitterSummaryCardImage. Make sure to place it in the `/static` folder. Your image should be square and at least 144px x 144px.
 
 ---
 
