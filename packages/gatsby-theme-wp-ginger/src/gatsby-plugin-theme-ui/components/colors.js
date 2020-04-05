@@ -1,4 +1,4 @@
-import { darken, lighten, opacify } from 'polished'
+import { darken, lighten } from 'polished'
 
 const dark = `#303030`
 const dark0 = lighten(0.04, '#303030')

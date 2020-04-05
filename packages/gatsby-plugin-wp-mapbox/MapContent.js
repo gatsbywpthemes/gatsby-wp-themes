@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import React, { useState } from "react"
+import { useState } from "react"
 import MapGL, {
   NavigationControl,
   FullscreenControl,
-  Popup
+  Popup,
 } from "react-map-gl"
 import Pins from "./Pins"
 import "mapbox-gl/dist/mapbox-gl.css"
@@ -18,14 +18,14 @@ const MapContent = ({ attrs }) => {
     longitude: Number(center[0]),
     zoom: Number(attrs["data-zoom"]),
     bearing: 0,
-    pitch: 0
+    pitch: 0,
   })
 
   const settings = { scrollZoom: false }
 
   const [popupInfo, setPopupInfo] = useState(null)
 
-  const openPopup = el => setPopupInfo(el)
+  const openPopup = (el) => setPopupInfo(el)
 
   return (
     <MapGL

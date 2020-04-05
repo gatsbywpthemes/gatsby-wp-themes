@@ -22,9 +22,13 @@ const PostEntry = ({ ctx, post }) => {
   const { addWordPressComments, disqus } = useThemeOptions()
   const disqusConfig = {
     shortname: disqus,
-    config: { identifier: post.slug, title: post.title },
+    config: {
+      identifier: post.slug,
+      title: post.title,
+    },
   }
   // in order to reload disqus and apply correct text color when color mode changes
+  // eslint-disable-next-line no-unused-vars
   const [colorMode] = useColorMode()
   return (
     <article>
@@ -85,7 +89,10 @@ const PostEntry = ({ ctx, post }) => {
       )}
       {!!disqus && (
         <div
-          sx={{ margin: '2rem auto', width: (theme) => theme.sizes.content }}
+          sx={{
+            margin: '2rem auto',
+            width: (theme) => theme.sizes.content,
+          }}
         >
           <DiscussionEmbed {...disqusConfig} />
         </div>

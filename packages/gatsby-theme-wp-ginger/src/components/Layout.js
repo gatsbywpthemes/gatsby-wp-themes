@@ -1,13 +1,13 @@
 /** @jsx jsx */
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Box, jsx, useThemeUI, useColorMode } from 'theme-ui'
-import { Link, navigate } from 'gatsby'
+import { Link } from 'gatsby'
 import useSiteSettings from 'gatsby-theme-blog-data/src/hooks/useSiteSettings'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import { Global } from '@emotion/core'
 import { globalStyles } from '../styles/GlobalStyles'
 import Footer from './footer/Footer'
-import SlideSidebar from './SlideSidebar'
 import '../styles/blocks.css'
 import '../styles/custom-gutenstyles.css'
 import ColorSwitch from './ColorSwitch'

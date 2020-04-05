@@ -10,11 +10,6 @@ import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import openMenuButton from '../styles/menuButton'
 import { slideMenu, overlay } from '../styles/slideSidebar'
 
-const searchIndices = [
-  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
-  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
-]
-
 const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
   const {
     widgetAreas: {
@@ -26,7 +21,22 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
 
   const menuBtn = useRef()
 
+  const openMenu = () => {
+    updateOpen(true)
+    setTimeout(() => setOpenClass(true), 10)
+  }
+  const closeMenu = () => {
+    setOpenClass(false)
+  }
+
   useEffect(() => {
+    const closeOnEsc = (e) => {
+      console.log(e)
+      if (!(e.target.type === 'search' && e.target.value) && e.keyCode === 27) {
+        setOpenClass(false)
+        menuBtn.current.focus()
+      }
+    }
     if (openClass) {
       document.body.classList.add('opened')
       document.addEventListener('keydown', closeOnEsc)
@@ -37,21 +47,7 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
     return () => {
       document.removeEventListener('keydown', closeOnEsc)
     }
-  }, [openClass])
-
-  const openMenu = () => {
-    updateOpen(true)
-    setTimeout(() => setOpenClass(true), 10)
-  }
-  const closeMenu = () => {
-    setOpenClass(false)
-  }
-  const closeOnEsc = e => {
-    if (!(e.target.type === 'search' && e.target.value) && e.keyCode === 27) {
-      setOpenClass(false)
-      menuBtn.current.focus()
-    }
-  }
+  }, [openClass, setOpenClass])
 
   return (
     <>
@@ -87,11 +83,16 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
 
             <Menu menuName={menuName} />
             {!!widgets &&
-              widgets.map(widget => (
+              widgets.map((widget) => (
                 <Widgets key={widget} widget={widget} location="SlideMenu" />
               ))}
           </div>
-          <div className="menu-overlay" sx={overlay} onClick={closeMenu} />
+          <button
+            type="button"
+            className="menu-overlay"
+            sx={overlay}
+            onClick={closeMenu}
+          />
         </>
       )}
     </>

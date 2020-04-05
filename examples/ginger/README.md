@@ -227,7 +227,7 @@ This is an essential setting for social share buttons (in Posts), SEO open graph
 
 You can list your social profiles here. They will be displayed in the SocialFollows widget.
 
-The supported profiles are: Behance, Codepen, Dev, Discord, Dribbble, Facebook, Github, Gitlab, Instagram, Linkedin, Mastodon, Medium, Pinterest, Reddit, Slack, Slideshare, Snapchat, Soundcloud, StackOverflow, Telegram, Tumblr, Twitter, Vimeo, Youtube.
+The supported profiles are: Behance, Codepen, Dev, Discord, Dribbble, Facebook, Github, GitLab, Instagram, Linkedin, Mastodon, Medium, Pinterest, Reddit, Slack, Slideshare, Snapchat, Soundcloud, StackOverflow, Telegram, Tumblr, Twitter, Vimeo, Youtube.
 
 example:
 
@@ -268,7 +268,7 @@ Other pages will use a common twitterSummaryCardImage. Make sure to place it in 
 `(type: Array, default: ["Abril Fatface", "Fira Sans"])`
 
 Here you decide which fonts should be installed.  
-The Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sans** for the body text. Both of them are Google fonts.  
+Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sans** for the body text. Both of them are Google fonts.  
 If you want to use other typefaces, you will have to modify the `fonts` setting in the config.js.  
 You will also have to edit the `src/gatsby-plugin-theme-ui/index.js` file to assign your fonts as `heading` or `body`.
 
@@ -336,7 +336,7 @@ Your google Tag Mangager Id. Set to 0 to disable this funcionality.
 **addSitemap** (optional)  
 `(type: boolean, default: false)`
 
-Whether you want to create a site map. If set to `true`, please make sure that you provide your production gatsby website url in the SiteUrl option.
+Whether you want to create a site map. If set to `true`, make sure that you provide your production gatsby website url in the SiteUrl option.
 
 ---
 

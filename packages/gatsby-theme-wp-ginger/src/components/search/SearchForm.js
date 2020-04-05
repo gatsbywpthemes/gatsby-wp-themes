@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Box } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
 import SearchQuery from './SearchQuery'
@@ -11,12 +11,12 @@ const SearchForm = () => {
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setSearch(value)
   }
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setValue(e.target.value)
     if (instantWPSearch) {
       setSearch(e.target.value)
@@ -25,9 +25,9 @@ const SearchForm = () => {
 
   return (
     <Fragment>
-      <Box sx={searchstyles.box.container}>
+      <div sx={searchstyles.box.container}>
         <FiSearch />
-        <Box className="search-box" sx={searchstyles.box}>
+        <div className="search-box" sx={searchstyles.box}>
           <form onSubmit={handleSubmit}>
             <div className="input-wrapper">
               <input
@@ -53,8 +53,8 @@ const SearchForm = () => {
             </div>
             {!instantWPSearch && <button type="submit">Search</button>}
           </form>
-        </Box>
-      </Box>
+        </div>
+      </div>
       {/* value && search so that results are reset on Escape */}
       {value && search && <SearchQuery search={search} />}
     </Fragment>

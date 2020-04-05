@@ -114,6 +114,7 @@ const Menu = ({ menuName }) => {
           variant: [`menus.slideMenu`],
         }}
       >
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <ul sx={{ variant: 'special' }} role="menu" className="menuItemGroup">
           {menuItems.nodes.map((menuItem) => {
             if (menuItem.childItems.nodes.length) {
