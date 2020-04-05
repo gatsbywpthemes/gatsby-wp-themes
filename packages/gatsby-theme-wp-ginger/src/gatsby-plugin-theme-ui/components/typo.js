@@ -1,24 +1,24 @@
-export const fonts = {
+const fonts = {
   body: 'Fira Sans, sans-serif',
   heading: 'Abril Fatface, serif',
   monospace: 'monospace',
 }
 
-export const lineHeights = {
+const lineHeights = {
   body: 1.5,
 }
 
-export const letterSpacings = {
+const letterSpacings = {
   loose: '2px',
 }
 
-export const fontWeights = {
+const fontWeights = {
   body: 300,
   heading: 400,
   bold: 700,
 }
 
-export const fontSizes = {
+const fontSizes = {
   xxs: '.75rem',
   xs: '.875rem',
   s: '1rem',
@@ -30,7 +30,7 @@ export const fontSizes = {
   Bigger: '4.5rem',
 }
 
-export const special = {
+const special = {
   letterSpacing: 'loose',
   textTransform: 'uppercase',
 
@@ -65,7 +65,7 @@ export const special = {
   },
 }
 
-export const baseTypo = {
+const baseTypo = {
   h1: {
     fontSize: ['xxl', 'xxl', 'Big'],
   },
@@ -92,4 +92,14 @@ export const baseTypo = {
   'a:hover': {
     color: 'linkHover',
   },
+}
+
+export default {
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
+  special,
+  baseTypo,
 }

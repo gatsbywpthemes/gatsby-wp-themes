@@ -123,7 +123,7 @@ const sharedFormStyles = {
   },
 }
 
-export const form = {
+export default {
   ...sharedFormStyles,
   boxShadow: '0 10px 40px rgba(0,0,0,.15)',
   '.dark-color-mode &': {
