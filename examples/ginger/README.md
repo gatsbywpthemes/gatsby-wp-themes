@@ -6,11 +6,11 @@ Introduction comes here...
 
 ## Setting up your WordPress Website.
 
-You will need a running WordPress installation. Gatsby will fetch the data from your WordPress website. There are some configuration options that you need to follow:
+You will need a running WordPress installation. Gatsby fetches the data from your WordPress website. There are some configuration options that you need to follow:
 
 ## Requirements<a name="wp-requirements"></a>
 
-### Mandatory Plugins
+### Mandatory plugins: WPGraphQL
 
 You need to install and activate the [wpgraphql plugin.](https:www.wpgraphql.com/) You can download the latest release [here.](https:github.com/wp-graphql/wp-graphql/releases) Install it on your WordPress site from the .zip file.
 
