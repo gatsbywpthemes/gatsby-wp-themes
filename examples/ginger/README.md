@@ -77,6 +77,7 @@ const config = {
   addColorModes: true,
   addFancyBox: true,
   skipTitle: [],
+  mailchimpEndpoint: "",
 }
 ```
 
@@ -177,6 +178,8 @@ Typing your Disqus shortname (the unique identifier fo your website on Disqus) w
 
 **menuName** (optional)  
 `(type: String, default: "main")`
+
+The WordPress name of the navigation menu that will be used.
 
 Ginger theme comes with one menu location. The navigation menu is displayed in the slide-in sidebar.  
 You can choose any of the menus that you had created on your WordPress site by passing its name to the **menuName** option.
@@ -347,19 +350,6 @@ These options are passed to the [gatsby-plugin-sitemap](https://www.gatsbyjs.org
 
 ---
 
-**addAlgoliaSearch** (optional, experimental)  
-`(default: false)`
-
-If you want to use Algolia with your project, make sure to include `.env` file in the project root:
-
-```
-GATSBY_ALGOLIA_APP_ID=your-app-id
-GATSBY_ALGOLIA_SEARCH_KEY=your-algolia-search-key
-ALGOLIA_ADMIN_KEY=your-algolia-admin-key
-```
-
----
-
 **addColorModes** (optional, experimental)  
 `(default: true)`
 
@@ -367,23 +357,40 @@ If you want to add dark mode switcher.
 
 ---
 
-**addFancyBox** (optional)
+**addFancyBox** (optional)  
 `(default: true)`
 
-Adds fancybox functionnality to the galeries. It will work for any gallery built with the Gutenberg gallery block that has "Link To" set to "Media File"
+Adds fancybox functionnality to the galeries.
+
+It will work for any gallery built with the Gutenberg gallery block that has "Link To" set to "Media File".
 
 ---
 
-**skipTitle** (optional, experimental)  
+**skipTitle** (optional)  
 `(default: [])`
 
-List slugs of the pages when you don't want to display the page title. Useful when you want to start your page with a Gutenberg cover blog and an h1 heading.
+List slugs of the pages when you don't want to display the page title. Useful when you want to start your page with a Gutenberg cover blog and an `h1` heading.
 
 example:
 
 ```javascript
 skipTitle: ["home", "about-us"],
 ```
+
+**mailchimpEndpoint** <a name="mailchimp"></a>
+
+The mailchimEndpoint used in the Newsletter widget.
+
+Ginger theme uses [`gatsby-mailchimp-plugin`](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp) for the MailChimp subscriptions.
+Check [the plugin documentation](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/#mailchimp-endpoint) for more information on how to locate your Mailchimp endpoint.
+
+example:
+
+```javascript
+mailchimpEndpoint: "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
+```
+
+---
 
 > Please note that the dark mode may not be properly applied on some Gutenberg blocks with custom color settings.
 
