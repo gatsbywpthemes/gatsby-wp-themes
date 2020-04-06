@@ -33,7 +33,7 @@ const SearchQuery = ({ search }) => {
   })
   const loadMore = () => {
     setClickable(false)
-    if (data.posts.pageInfo.hasNextPage) {
+    if (data.posts.pageInfo && data.posts.pageInfo.hasNextPage) {
       const after = data.posts.pageInfo.endCursor
       fetchMore({
         variables: { after: after },
@@ -63,7 +63,7 @@ const SearchQuery = ({ search }) => {
   //loadMore()
   return (
     <SearchResults type="Posts" query={search} posts={data.posts.nodes}>
-      {clickable && data.posts.pageInfo.hasNextPage && (
+      {clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
         <Button onClick={loadMore} type="button">
           Load More
         </Button>
