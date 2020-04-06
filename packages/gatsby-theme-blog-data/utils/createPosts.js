@@ -97,10 +97,7 @@ module.exports = async ({ actions, graphql }, options) => {
      */
     const {
       wp: {
-        posts: {
-          nodes,
-          pageInfo: { hasNextPage, endCursor },
-        },
+        posts: { nodes, pageInfo },
       },
     } = data.data
 
@@ -113,7 +110,7 @@ module.exports = async ({ actions, graphql }, options) => {
     /**
      * The IDs of the posts which were got from GraphQL.
      */
-    const nodeIds = nodes.map(node => node.postId)
+    const nodeIds = nodes.map((node) => node.postId)
 
     if (postsPath !== false) {
       const blogPagePath = !variables.after
@@ -133,7 +130,7 @@ module.exports = async ({ actions, graphql }, options) => {
           ids: nodeIds,
           allPosts,
           pageNumber: pageNumber + 1,
-          hasNextPage,
+          hasNextPage: pageInfo ? pageInfo.hasNextPage : false,
           postsPerPage,
         },
       })
@@ -142,7 +139,7 @@ module.exports = async ({ actions, graphql }, options) => {
      * Map over the posts for later creation
      */
     nodes &&
-      nodes.map(post => {
+      nodes.map((post) => {
         allPosts.push(post)
       })
 
@@ -150,9 +147,9 @@ module.exports = async ({ actions, graphql }, options) => {
      * If there's another page, fetch more
      * so we can have all the data we need.
      */
-    if (hasNextPage) {
+    if (pageInfo && pageInfo.hasNextPage) {
       pageNumber++
-      variables.after = endCursor
+      variables.after = pageInfo.endCursor
     } else {
       go = false
     }
@@ -188,7 +185,7 @@ module.exports = async ({ actions, graphql }, options) => {
    * paginated blogroll pages
    */
   blogPages &&
-    blogPages.map(archivePage => {
+    blogPages.map((archivePage) => {
       //console.log(`createpostsPath ${archivePage.context.pageNumber}`)
       createPage(archivePage)
     })
