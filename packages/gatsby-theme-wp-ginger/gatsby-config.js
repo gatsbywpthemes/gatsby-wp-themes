@@ -41,6 +41,13 @@ module.exports = (options) => {
       },
     },
     `gatsby-plugin-sass`,
+
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        analyzerMode: 'static',
+      },
+    },
   ]
   /**
    * Conditionally add google fonts plugin
