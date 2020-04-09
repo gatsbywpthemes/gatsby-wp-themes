@@ -38,7 +38,7 @@ Select the gallery blog. In the gallery settings make sure to choose Link to: Me
 
 ### Mapbox
 
-Our Gatsby themes provide support for Mapbox cards.
+Our Gatsby themes provide support for Mapbox, more precisely Mapbox maps added either via Jetpack Gutenberg block (Mapbox) or with the WP Mapbox GL JS Maps WordPress plugin. You will need to activate Mapbox on your Gatsby website (it's disabled by default) - [see Mpbox support](#activate-mapbox)
 
 ## Configure your Gatsby site - config.js
 

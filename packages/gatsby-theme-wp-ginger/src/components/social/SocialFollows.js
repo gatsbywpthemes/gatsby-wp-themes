@@ -1,35 +1,34 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
 import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
 import { follow } from '../../styles/social'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  FaBehance,
-  FaCodepen,
-  FaDev,
-  FaDiscord,
-  FaDribbble,
-  FaFacebook,
-  FaGithub,
-  FaGitlab,
-  FaInstagram,
-  FaLinkedin,
-  FaMastodon,
-  FaMedium,
-  FaPinterest,
-  FaReddit,
-  FaSlack,
-  FaSlideshare,
-  FaSnapchat,
-  FaSoundcloud,
-  FaStackOverflow,
-  FaTelegram,
-  FaTumblr,
-  FaTwitter,
-  FaVimeo,
-  FaYoutube,
-} from 'react-icons/fa'
+  faBehance,
+  faCodepen,
+  faDev,
+  faDiscord,
+  faDribbble,
+  faFacebook,
+  faGithub,
+  faGitlab,
+  faInstagram,
+  faLinkedin,
+  faMastodon,
+  faMedium,
+  faPinterest,
+  faReddit,
+  faSlack,
+  faSlideshare,
+  faSnapchat,
+  faSoundcloud,
+  faStackOverflow,
+  faTelegram,
+  faTumblr,
+  faTwitter,
+  faVimeo,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons'
 
 const SocialFollows = () => {
   const supportedIcons = [
@@ -59,30 +58,30 @@ const SocialFollows = () => {
     'youtube',
   ]
   const components = [
-    FaBehance,
-    FaCodepen,
-    FaDev,
-    FaDiscord,
-    FaDribbble,
-    FaFacebook,
-    FaGithub,
-    FaGitlab,
-    FaInstagram,
-    FaLinkedin,
-    FaMastodon,
-    FaMedium,
-    FaPinterest,
-    FaReddit,
-    FaSlack,
-    FaSlideshare,
-    FaSnapchat,
-    FaSoundcloud,
-    FaStackOverflow,
-    FaTelegram,
-    FaTumblr,
-    FaTwitter,
-    FaVimeo,
-    FaYoutube,
+    faBehance,
+    faCodepen,
+    faDev,
+    faDiscord,
+    faDribbble,
+    faFacebook,
+    faGithub,
+    faGitlab,
+    faInstagram,
+    faLinkedin,
+    faMastodon,
+    faMedium,
+    faPinterest,
+    faReddit,
+    faSlack,
+    faSlideshare,
+    faSnapchat,
+    faSoundcloud,
+    faStackOverflow,
+    faTelegram,
+    faTumblr,
+    faTwitter,
+    faVimeo,
+    faYoutube,
   ]
 
   const { social } = useSiteMetadata()
@@ -93,7 +92,6 @@ const SocialFollows = () => {
         social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())
           if (index > -1) {
-            const Component = components[index]
             return (
               <a
                 key={name}
@@ -102,7 +100,7 @@ const SocialFollows = () => {
                 rel="noopener noreferrer"
                 aria-label={`Follow on ${name}`}
               >
-                {<Component />}
+                {<FontAwesomeIcon icon={components[index]} />}
               </a>
             )
           } else {
