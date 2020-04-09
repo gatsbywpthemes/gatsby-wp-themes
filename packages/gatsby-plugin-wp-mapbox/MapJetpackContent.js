@@ -10,33 +10,34 @@ import Pins from "./Pins"
 import "mapbox-gl/dist/mapbox-gl.css"
 
 const MapContent = ({ attrs }) => {
-  console.log(attrs)
-  const mapData = JSON.parse(attrs["data-mapdata"])
-  console.log(mapData, Number(attrs["data-zoom"]))
-  const center = attrs["data-center"].split(",")
+  console.log(attrs, JSON.parse(attrs["data-points"]))
+  const mapData = JSON.parse(attrs["data-points"])
+  const center = JSON.parse(attrs["data-map-center"])
   const [viewport, setViewport] = useState({
-    latitude: Number(center[1]),
-    longitude: Number(center[0]),
-    zoom: Number(attrs["data-zoom"]),
+    latitude: center.lat,
+    longitude: center.lng,
+    zoom: 16,
     bearing: 0,
     pitch: 0
   })
-
+  console.log(viewport)
   const settings = { scrollZoom: false }
 
   const [popupInfo, setPopupInfo] = useState(null)
 
   const openPopup = el => setPopupInfo(el)
-
+  const height = attrs["data-map-height"]
+    ? `${attrs["data-map-height"]}px`
+    : "400px"
   return (
     <MapGL
       {...viewport}
       {...settings}
       width="100vw"
-      height="400px"
-      mapStyle={attrs["data-style"]}
+      height={height}
+      mapStyle="mapbox://styles/pehaa/ck4wjw6792izd1dl7kx1m3myy"
       onViewportChange={setViewport}
-      mapboxApiAccessToken={attrs["data-token"]}
+      mapboxApiAccessToken={attrs["data-api-key"]}
     >
       <div style={{ position: "absolute", right: "10px", top: "10px" }}>
         <NavigationControl />
@@ -59,10 +60,15 @@ const MapContent = ({ attrs }) => {
                 font-size: 0.75rem;
                 margin: 0;
                 color: black;
+                text-align: center;
               }
             `}
-            dangerouslySetInnerHTML={{ __html: popupInfo.description }}
-          />
+          >
+            <p>
+              <strong dangerouslySetInnerHTML={{ __html: popupInfo.title }} />
+            </p>
+            <p dangerouslySetInnerHTML={{ __html: popupInfo.description }} />
+          </div>
         </Popup>
       )}
     </MapGL>

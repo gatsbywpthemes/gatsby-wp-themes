@@ -4,7 +4,6 @@ import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
 import { follow } from '../../styles/social'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  fab,
   faBehance,
   faCodepen,
   faDev,

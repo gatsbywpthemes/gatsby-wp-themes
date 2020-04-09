@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import Map from "./MapContent"
-
+import MapJetpack from "./MapJetpackContent"
 export const mapboxParserFunction = node => {
   if (
     node.name === "div" &&
@@ -17,6 +17,14 @@ export const mapboxParserFunction = node => {
     node.attribs.id.indexOf("wp_mapbox_gl") === 0
   ) {
     return <Fragment />
+  }
+  if (
+    node.name === "div" &&
+    node.attribs &&
+    node.attribs.class &&
+    node.attribs.class.indexOf("wp-block-jetpack-map") > -1
+  ) {
+    return <MapJetpack attrs={node.attribs} />
   }
 }
 

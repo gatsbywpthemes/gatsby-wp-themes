@@ -8,34 +8,42 @@ const SIZE = 24
 
 const Pins = ({ data, onClick }) => {
   console.log(data)
-  return data.map((el, index) => (
-    <Marker
-      key={`marker-${index}`}
-      longitude={el.geometry.coordinates[0]}
-      latitude={el.geometry.coordinates[1]}
-    >
-      <svg
-        height={SIZE}
-        viewBox="0 0 24 24"
-        style={{
-          cursor: "pointer",
-          fill: "white",
-          stroke: "black",
-          transform: `translate(${-SIZE / 2}px,${-SIZE}px)`
-        }}
-        onClick={() =>
-          onClick({
-            longitude: el.geometry.coordinates[0],
-            latitude: el.geometry.coordinates[1],
-            description: el.properties.description
-          })
-        }
-      >
-        <path d={ICON1} />
-        <path fill="black" d={ICON2} />
-      </svg>
-    </Marker>
-  ))
+  return data.map((el, index) => {
+    const longitude = el.geometry
+      ? el.geometry.coordinates[0]
+      : el.coordinates["longitude"]
+    const latitude = el.geometry
+      ? el.geometry.coordinates[1]
+      : el.coordinates["latitude"]
+
+    return (
+      <Marker key={`marker-${index}`} longitude={longitude} latitude={latitude}>
+        <svg
+          height={SIZE}
+          viewBox="0 0 24 24"
+          style={{
+            cursor: "pointer",
+            fill: "white",
+            stroke: "black",
+            transform: `translate(${-SIZE / 2}px,${-SIZE}px)`
+          }}
+          onClick={() =>
+            onClick({
+              longitude,
+              latitude,
+              title: el.title,
+              description: el.properties
+                ? el.properties.description
+                : el.caption
+            })
+          }
+        >
+          <path d={ICON1} />
+          <path fill="black" d={ICON2} />
+        </svg>
+      </Marker>
+    )
+  })
 }
 
 export default Pins
