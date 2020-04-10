@@ -69,7 +69,7 @@ const Page = ({ page }) => {
             className="entry"
           >
             <div className="content page-content" sx={{ borderRadius: `s` }}>
-              {skupTitle &&
+              {skipTitle &&
                 !skipTitle.includes(slug) &&
                 skipTitle !== 'all' && (
                   <h1
