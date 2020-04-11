@@ -2,7 +2,6 @@
 import { jsx } from 'theme-ui'
 import widgetStyles from '../../styles/widgetStyles'
 
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'
 import Img from 'gatsby-image'
@@ -35,7 +34,6 @@ const RECENT_POSTS_QUERY = graphql`
 `
 
 const RecentPosts = () => {
-  const { postsPrefix } = useThemeOptions()
   const data = useStaticQuery(RECENT_POSTS_QUERY)
 
   const { posts } = data.wp
@@ -48,7 +46,7 @@ const RecentPosts = () => {
       <ul>
         {posts.nodes.length
           ? posts.nodes.map(post => {
-              const uri = normalize(`/${postsPrefix}/${post.uri}`)
+              const uri = normalize(`/${post.uri}`)
               return (
                 <li key={post.id}>
                   <Link to={uri}>

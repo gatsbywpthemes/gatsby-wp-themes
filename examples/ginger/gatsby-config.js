@@ -3,21 +3,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-const {
-  title,
-  author,
-  description,
-  siteUrl,
-  social,
-  pathPrefix,
-  ...options
-} = require("./config")
+const { author, siteUrl, social, pathPrefix, ...options } = require("./config")
 
 module.exports = {
   pathPrefix: pathPrefix,
   siteMetadata: {
-    title,
-    description,
     author,
     wordPressUrl: options.wordpressUrl,
     siteUrl,

@@ -11,6 +11,7 @@ const BASEQUERY = `
           nodes {
             id
             slug
+            uri
           }
         }
       }
@@ -21,6 +22,7 @@ const PAGINATIONQUERY = `
   query GET_POSTS_BY_CATEGORY($id: ID! $first:Int $after:String) {
     wp {
       category(id: $id) {
+        uri
         name
         slug
         posts(first: $first after: $after) {

@@ -11,6 +11,7 @@ const GET_USERS = `
           nodes {
             id
             slug
+            uri
           }
         }
       }
@@ -21,6 +22,7 @@ const GET_POSTS_BY_USER = `
   query GET_POSTS_BY_USER($id: ID! $first:Int $after:String) {
     wp {
       user(id: $id) {
+        uri
         name
         slug
         id

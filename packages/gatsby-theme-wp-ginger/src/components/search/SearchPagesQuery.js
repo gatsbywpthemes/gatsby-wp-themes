@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Box } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { useState } from 'react'
 import { Button } from 'grommet'
 import { useQuery } from '@apollo/react-hooks'
@@ -33,7 +33,7 @@ const SearchQuery = ({ search }) => {
   })
   const loadMore = () => {
     setClickable(false)
-    if (data.pages.pageInfo.hasNextPage) {
+    if (data.pages.pageInfo && data.pages.pageInfo.hasNextPage) {
       const after = data.pages.pageInfo.endCursor
       fetchMore({
         variables: { after: after },
@@ -63,10 +63,13 @@ const SearchQuery = ({ search }) => {
   //loadMore()
   return (
     <SearchResults type="Pages" search={search} posts={data.pages.nodes}>
-      {clickable && data.pages.pageInfo.hasNextPage && (
+      {clickable && data.pages.pageInfo && data.pages.pageInfo.hasNextPage && (
         <Button onClick={loadMore} type="button">
           Load More
         </Button>
+      )}
+      {!clickable && data.posts.pageInfo && data.pages.pageInfo.hasNextPage && (
+        <p>Loading...</p>
       )}
     </SearchResults>
   )

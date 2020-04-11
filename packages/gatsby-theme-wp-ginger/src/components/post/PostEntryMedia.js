@@ -7,12 +7,12 @@ import Image from '../images/Image'
 import normalize from 'normalize-path'
 import { media } from '../../styles/card'
 
-const WithLink = ({ uri, children, postsPrefix, location }) =>
+const WithLink = ({ uri, children, location }) =>
   location === 'single' ? (
     children
   ) : (
     <Link
-      to={normalize(`/${postsPrefix}/${uri}`)}
+      to={normalize(`/${uri}`)}
       aria-label="View the entire post"
       sx={media}
     >
@@ -22,13 +22,13 @@ const WithLink = ({ uri, children, postsPrefix, location }) =>
 
 const PostEntryMedia = ({
   post: { featuredImage, uri },
-  postsPrefix,
+
   location = 'archive',
 }) => {
   return (
     <>
       {!!featuredImage && (
-        <WithLink location={location} uri={uri} postsPrefix={postsPrefix}>
+        <WithLink location={location} uri={uri}>
           <Image img={featuredImage} />
         </WithLink>
       )}

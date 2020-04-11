@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import normalize from 'normalize-path'
 
-const PostEntryTitle = ({ post, postsPrefix, location }) => {
+const PostEntryTitle = ({ post, location }) => {
   const attributes = {
     sx: { variant: 'special.title' },
     className: 'entry-title',
@@ -11,7 +11,7 @@ const PostEntryTitle = ({ post, postsPrefix, location }) => {
   return location === 'archive' ? (
     <h2 {...attributes}>
       <Link
-        to={normalize(`/${postsPrefix}/${post.uri}`)}
+        to={normalize(`/${post.uri}`)}
         dangerouslySetInnerHTML={{ __html: post.title }}
       />
     </h2>

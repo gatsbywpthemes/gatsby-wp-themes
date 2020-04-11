@@ -1,9 +1,9 @@
-module.exports = options => {
+module.exports = (options) => {
   options.fonts = options.fonts || ['abril fatface', 'fira sans']
   options.customFonts = []
   if (options.fonts) {
     options.customFonts = options.fonts.filter(
-      el =>
+      (el) =>
         el.toLowerCase().indexOf(`fira sans`) === -1 &&
         el.toLowerCase().indexOf(`abril fatface`) === -1
     )
@@ -15,7 +15,6 @@ module.exports = options => {
       : options.gingerWidgets
 
   const mergedOptions = {
-    addAlgoliaSearch: false,
     addColorModes: true,
     addFancyBox: true,
     skipTitle: [],
@@ -61,14 +60,6 @@ module.exports = options => {
    * Conditionally add google fonts plugin
    * to avoid errors on build
    */
-  if (options.addAlgoliaSearch) {
-    plugins.push(`gatsby-theme-algolia`)
-  }
-
-  /**
-   * Conditionally add google fonts plugin
-   * to avoid errors on build
-   */
   if (mergedOptions.addFancyBox) {
     plugins.push(`gatsby-plugin-wordpress-fancybox`)
   }
@@ -86,8 +77,6 @@ module.exports = options => {
 
   return {
     siteMetadata: {
-      title: `Gatsby theme WordPress Starter Demo`,
-      description: `Gatsby starter site for Gatsby Theme Wordpress Theme.`,
       author: `@pehaa`,
     },
     plugins,

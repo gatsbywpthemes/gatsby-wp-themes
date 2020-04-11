@@ -10,6 +10,7 @@ const GET_TAGS = `
           nodes {
             id
             slug
+            uri
           }
         }
       }
@@ -21,6 +22,7 @@ const PAGINATIONQUERY = `
   query GET_POSTS_BY_TAG($id: ID! $first:Int $after:String) {
     wp {
       tag(id: $id) {
+        uri
         name
         slug
         posts(first: $first after: $after) {

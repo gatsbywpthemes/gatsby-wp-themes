@@ -5,14 +5,12 @@ import React from 'react'
 import Layout from '../Layout.js'
 import PostEntry from '../post/full/PostEntry'
 import SEO from '../seo/Seo'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import normalize from 'normalize-path'
 
 const Post = props => {
   const {
     post: { title, excerpt, featuredImage, uri },
   } = props
-  const { postsPrefix } = useThemeOptions()
   const media = featuredImage
     ? featuredImage.imageFile.childImageSharp.fluid.src
     : null
@@ -25,7 +23,7 @@ const Post = props => {
           description={excerpt}
           media={media}
           ogType="article"
-          ogUrl={normalize(`/${postsPrefix}/${uri}`)}
+          ogUrl={normalize(`/${uri}`)}
         />
         <PostEntry {...props} />
       </Layout>

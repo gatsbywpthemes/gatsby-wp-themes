@@ -1,3 +1,5 @@
+const normalize = require('normalize-path')
+
 module.exports = async ({
   actions,
   graphql,
@@ -18,23 +20,20 @@ module.exports = async ({
   if (baseQuery) {
     while (go) {
       const { data } = await graphql(baseQuery, variables)
-      const {
-        nodes,
-        pageInfo: { hasNextPage, endCursor },
-      } = data.wp[baseType]
+      const { nodes, pageInfo } = data.wp[baseType]
 
-      nodes.map(item => {
+      nodes.map((item) => {
         allItems.push(item)
       })
-      if (hasNextPage) {
-        variables.after = endCursor
+      if (pageInfo && pageInfo.hasNextPage) {
+        variables.after = pageInfo.endCursor
       } else {
         go = false
       }
     }
   }
 
-  const pageCreation = async all => {
+  const pageCreation = async (all) => {
     const allPages = []
     for (let i = 0; i < all.length; i++) {
       const item = all[i]
@@ -43,19 +42,16 @@ module.exports = async ({
       let variables = { id: item.id, first: postsPerPage, after: null }
       while (go) {
         const { data } = await graphql(paginationQuery, variables)
-        const {
-          nodes,
-          pageInfo: { hasNextPage, endCursor },
-        } = data.wp[paginationType].posts
+        const { nodes, pageInfo } = data.wp[paginationType].posts
 
         const pagePath = !variables.after
-          ? `/${pathPrefix}/${item.slug}`
-          : `/${pathPrefix}/${item.slug}/${paginationPrefix}/${pageNumber + 1}`
+          ? `/${item.uri}`
+          : normalize(`/${item.uri}/${paginationPrefix}/${pageNumber + 1}`)
 
         /**
          * The IDs of the posts which were got from GraphQL.
          */
-        const nodeIds = nodes.map(node => node.postId)
+        const nodeIds = nodes.map((node) => node.postId)
 
         allPages.push({
           path: pagePath,
@@ -64,13 +60,13 @@ module.exports = async ({
             id: item.id,
             ids: nodeIds,
             pageNumber: pageNumber + 1,
-            hasNextPage,
+            hasNextPage: pageInfo ? pageInfo.hasNextPage : false,
             postsPerPage,
           },
         })
-        if (hasNextPage) {
+        if (pageInfo && pageInfo.hasNextPage) {
           pageNumber++
-          variables.after = endCursor
+          variables.after = pageInfo.endCursor
         } else {
           go = false
         }
@@ -80,7 +76,7 @@ module.exports = async ({
   }
   const blogPagesByType = await pageCreation(allItems)
   blogPagesByType &&
-    blogPagesByType.map(archivePage => {
+    blogPagesByType.map((archivePage) => {
       createPage(archivePage)
     })
 }

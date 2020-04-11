@@ -5,16 +5,10 @@ import React, { useEffect, useRef } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import Menu from './Menu'
 import Widgets from './widgets/Widgets'
-import Search from 'gatsby-theme-algolia/src/components/Search'
 import SearchForm from './search/SearchForm'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import openMenuButton from '../styles/menuButton'
 import { slideMenu, overlay } from '../styles/slideSidebar'
-
-const searchIndices = [
-  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
-  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
-]
 
 const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
   const {
@@ -22,13 +16,27 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
       slideMenu: { widgets },
     },
     addWordPressSearch,
-    addAlgoliaSearch,
     menuName,
   } = useThemeOptions()
 
   const menuBtn = useRef()
 
+  const openMenu = () => {
+    updateOpen(true)
+    setTimeout(() => setOpenClass(true), 10)
+  }
+  const closeMenu = () => {
+    setOpenClass(false)
+  }
+
   useEffect(() => {
+    const closeOnEsc = (e) => {
+      console.log(e)
+      if (!(e.target.type === 'search' && e.target.value) && e.keyCode === 27) {
+        setOpenClass(false)
+        menuBtn.current.focus()
+      }
+    }
     if (openClass) {
       document.body.classList.add('opened')
       document.addEventListener('keydown', closeOnEsc)
@@ -39,21 +47,7 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
     return () => {
       document.removeEventListener('keydown', closeOnEsc)
     }
-  }, [openClass])
-
-  const openMenu = () => {
-    updateOpen(true)
-    setTimeout(() => setOpenClass(true), 10)
-  }
-  const closeMenu = () => {
-    setOpenClass(false)
-  }
-  const closeOnEsc = e => {
-    if (!(e.target.type === 'search' && e.target.value) && e.keyCode === 27) {
-      setOpenClass(false)
-      menuBtn.current.focus()
-    }
-  }
+  }, [openClass, setOpenClass])
 
   return (
     <>
@@ -84,17 +78,21 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
             >
               <FiX />
             </button>
-            {addAlgoliaSearch && <Search indices={searchIndices} />}
 
             {addWordPressSearch && <SearchForm />}
 
             <Menu menuName={menuName} />
             {!!widgets &&
-              widgets.map(widget => (
+              widgets.map((widget) => (
                 <Widgets key={widget} widget={widget} location="SlideMenu" />
               ))}
           </div>
-          <div className="menu-overlay" sx={overlay} onClick={closeMenu} />
+          <button
+            type="button"
+            className="menu-overlay"
+            sx={overlay}
+            onClick={closeMenu}
+          />
         </>
       )}
     </>

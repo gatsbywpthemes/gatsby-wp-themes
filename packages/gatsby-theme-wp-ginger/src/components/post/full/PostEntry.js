@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Flex, jsx } from 'theme-ui'
+import { Flex, jsx, useColorMode } from 'theme-ui'
 import PostEntryIntro from '../PostEntryIntro'
 import PostEntryContent from '../PostEntryContent'
 import PrevNextPostNavigation from '../PrevNextPostNavigation'
@@ -11,6 +11,7 @@ import { article } from '../../../styles/article'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Image from '../../images/Image'
 import { commentsSection } from '../../../styles/comments'
+import { DiscussionEmbed } from 'disqus-react'
 
 const PostEntry = ({ ctx, post }) => {
   const bgStyles = !!post.featuredImage
@@ -18,7 +19,17 @@ const PostEntry = ({ ctx, post }) => {
         backgroundImage: `url(${post.featuredImage.imageFile.childImageSharp.fluid.src})`,
       }
     : {}
-  const { addComments } = useThemeOptions()
+  const { addWordPressComments, disqus } = useThemeOptions()
+  const disqusConfig = {
+    shortname: disqus,
+    config: {
+      identifier: post.slug,
+      title: post.title,
+    },
+  }
+  // in order to reload disqus and apply correct text color when color mode changes
+  // eslint-disable-next-line no-unused-vars
+  const [colorMode] = useColorMode()
   return (
     <article>
       <header data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
@@ -71,10 +82,20 @@ const PostEntry = ({ ctx, post }) => {
         {post.tags.nodes.length > 0 && <Tags tags={post.tags.nodes} />}
         <PrevNextPostNavigation ctx={ctx} />
       </div>
-      {!!addComments && post.commentStatus === 'open' && (
+      {!!addWordPressComments && post.commentStatus === 'open' && (
         <section sx={commentsSection}>
           <CommentsList post={post} />
         </section>
+      )}
+      {!!disqus && (
+        <div
+          sx={{
+            margin: '2rem auto',
+            width: (theme) => theme.sizes.content,
+          }}
+        >
+          <DiscussionEmbed {...disqusConfig} />
+        </div>
       )}
     </article>
   )

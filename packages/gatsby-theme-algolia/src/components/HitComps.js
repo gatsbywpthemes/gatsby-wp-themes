@@ -20,11 +20,10 @@ export const PageHit = ({ hit }) => (
 )
 
 export const PostHit = ({ hit }) => {
-  const { postsPrefix } = useThemeOptions()
   return (
     <>
       <Styled.h4>
-        <Link to={normalize(`/${postsPrefix}/${hit.slug}`)}>
+        <Link to={normalize(`/${hit.uri}`)}>
           <Highlight attribute="title" hit={hit} tagName="mark" />
         </Link>
       </Styled.h4>

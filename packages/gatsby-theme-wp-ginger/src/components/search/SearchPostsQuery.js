@@ -14,7 +14,7 @@ const GET_POSTS = gql`
   }
   ##the after variable is the endCursor, we set it up as "", as default value, then it will change if there is next page in the result query, the search in the query value (value in the state)
   query($after: String = "", $search: String!) {
-    posts(first: 100, after: $after, where: { search: $search }) {
+    posts(first: 2, after: $after, where: { search: $search }) {
       pageInfo {
         hasNextPage
         endCursor
@@ -33,11 +33,14 @@ const SearchQuery = ({ search }) => {
   })
   const loadMore = () => {
     setClickable(false)
-    if (data.posts.pageInfo.hasNextPage) {
+    console.log(data)
+    if (data.posts.pageInfo && data.posts.pageInfo.hasNextPage) {
       const after = data.posts.pageInfo.endCursor
+      console.log(after)
       fetchMore({
         variables: { after: after },
         updateQuery: (previousResult, { fetchMoreResult }) => {
+          console.log('pf', previousResult, fetchMoreResult)
           setClickable(true)
           return {
             posts: {
@@ -63,10 +66,13 @@ const SearchQuery = ({ search }) => {
   //loadMore()
   return (
     <SearchResults type="Posts" search={search} posts={data.posts.nodes}>
-      {clickable && data.posts.pageInfo.hasNextPage && (
+      {clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
         <Button onClick={loadMore} type="button">
           Load More
         </Button>
+      )}
+      {!clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
+        <p>Loading...</p>
       )}
     </SearchResults>
   )

@@ -1,7 +1,7 @@
 const defaultOptions = require(`./utils/defaultOptions`)
 const slashes = require('remove-trailing-slash')
 
-module.exports = options => {
+module.exports = (options) => {
   const mergedOptions = {
     ...defaultOptions,
     ...options,
@@ -81,9 +81,7 @@ module.exports = options => {
 
   return {
     siteMetadata: {
-      title: `Blog Title Placeholder`,
       author: `Name Placeholder`,
-      description: `Description placeholder`,
       siteUrl: `http://example.com`,
       social: [
         {

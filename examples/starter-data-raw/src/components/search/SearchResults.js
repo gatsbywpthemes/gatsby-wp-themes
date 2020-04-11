@@ -2,7 +2,6 @@
 import { jsx, Box, Styled } from 'theme-ui'
 import { Link } from 'gatsby'
 import normalize from 'normalize-path'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 
 const Stats = ({ postType, query }) => (
   <Box className="stats">
@@ -13,7 +12,6 @@ const Stats = ({ postType, query }) => (
 )
 
 const SearchResults = ({ query, pages, posts }) => {
-  const { postsPrefix } = useThemeOptions()
   const showResults =
     query && query.length > 0 ? { display: `block` } : { display: `none` }
   return (
@@ -29,9 +27,9 @@ const SearchResults = ({ query, pages, posts }) => {
       </header>
       <Box className="results">
         {pages.map(page => (
-          <Box key={page.slug}>
+          <Box key={page.uri}>
             <Styled.h4>
-              <Link to={`/${page.slug}`}>{page.title}</Link>
+              <Link to={`/${page.uri}`}>{page.title}</Link>
             </Styled.h4>
           </Box>
         ))}
@@ -45,9 +43,7 @@ const SearchResults = ({ query, pages, posts }) => {
           return (
             <Box key={post.slug}>
               <Styled.h4>
-                <Link to={normalize(`/${postsPrefix}/${post.slug}`)}>
-                  {post.title}
-                </Link>
+                <Link to={normalize(`/${post.uri}`)}>{post.title}</Link>
               </Styled.h4>
             </Box>
           )

@@ -34,11 +34,11 @@ To use this theme in your Gatsby sites, follow these instructions:
           options: {
             wordPressUrl: ``,
             uploadsPath: `wp-content/uploads`,
-            postsPrefix: `, postsPath:`,
+            postsPath:`,
             paginationPrefix: `page`,
             postsPerPage: 10,
             disqus: ``,
-            addComments: 1,
+            addWordPressComments: 1,
             gaTrackingId: 0,
             googleTagManagerId: 0,
             addSiteMap: false,
@@ -74,11 +74,9 @@ To use this theme in your Gatsby sites, follow these instructions:
 
 `paginationPrefix` - the prefix of the pages
 
-`postsPrefix`
-
 `postsPerPage`
 
-`addComments` : write false or 0 if you don't want comments
+`addWordPressComments` : write false or 0 if you don't want comments
 
 `widgetAreas`: 2 areas slideMenu and sidebar, they will be active only if you have widgets inside
 the available widgets are `socialFollow`,`recentPosts`, `Categories`,`Tags` , just write them in the order you want them to appear

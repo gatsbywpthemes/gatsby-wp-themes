@@ -35,8 +35,12 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
       url = subdirectoryCorrection(path, wordPressUrl)
       return <Link to={url}> {menuItem.label}</Link>
     }
+    const targetRelAttrs =
+      menuItem.target === '_blank'
+        ? { target: '_blank', rel: 'noopener noreferrer' }
+        : {}
     return (
-      <a href={menuItem.url} target="_blank" rel="noopener noreferrer">
+      <a href={menuItem.url} {...targetRelAttrs}>
         {menuItem.label}
       </a>
     )
@@ -81,7 +85,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
       {renderLink(menuItem, wordPressUrl, postsPath)}
       <Collapse menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
-          {menuItem.childItems.nodes.map(item =>
+          {menuItem.childItems.nodes.map((item) =>
             renderMenuItem(item, wordPressUrl, postsPath)
           )}
         </ul>
@@ -92,7 +96,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
 
 const Menu = ({ menuName }) => {
   const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find(n => menuName === n.node.name)
+  const menuEdge = menuEdges.find((n) => menuName === n.node.name)
   const menuItems = menuEdge ? menuEdge.node.menuItems : null
 
   const { postsPath, wordPressUrl } = useThemeOptions()
@@ -101,7 +105,7 @@ const Menu = ({ menuName }) => {
     return (
       <nav className="menu" aria-label="main">
         <ul role="menu" className="menuItemGroup">
-          {menuItems.nodes.map(menuItem => {
+          {menuItems.nodes.map((menuItem) => {
             if (menuItem.childItems.nodes.length) {
               return renderSubMenu(menuItem, wordPressUrl, postsPath)
             } else {

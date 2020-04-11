@@ -37,11 +37,10 @@ const config = {
   wordPressUrl: ``,
   uploadsPath: `wp-content/uploads`,
   pathPrefix: "",
-  postsPrefix: ``,
   postsPath: ``,
   paginationPrefix: `page`,
   postsPerPage: 10,
-  addComments: true,
+  addWordPressComments: true,
   menuName: "main",
   gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
@@ -100,13 +99,6 @@ gatsby build --prefix-paths
 
 ---
 
-**postsPrefix** (optional)  
-`(default: "")`
-
-The prefix for the posts. If you change it, make sure to set the permalinks structure on your WordPress site accordingly.
-
----
-
 **postsPath** (optional)  
 `(default: "")`
 
@@ -143,7 +135,7 @@ The number of posts per archive page.
 
 ---
 
-**addComments** (optional)  
+**addWordPressComments** (optional)  
 `(type: Boolean, default: true)`
 
 Whether comments funcionality should be activated, this is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".

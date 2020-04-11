@@ -1,15 +1,5 @@
-import {
-  form,
-  search,
-  layer,
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  letterSpacings,
-  special,
-  baseTypo,
-} from './components'
+import typo from './components/typo'
+import form from './components/form'
 import buttons from './components/buttons'
 import header from './components/header'
 import footer from './components/footer'
@@ -17,6 +7,16 @@ import container from './components/container'
 import layout from './components/layout'
 import main from './components/main'
 import { colors } from './components/colors'
+
+const {
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
+  special,
+  baseTypo,
+} = typo
 
 const theme = {
   baseFontSize: '16px',
@@ -42,11 +42,10 @@ const theme = {
       ...baseTypo,
     },
   },
-  layer,
   special,
   form,
-  search,
   buttons,
+  //search
   list: {
     raw: {
       listStyle: 'none',

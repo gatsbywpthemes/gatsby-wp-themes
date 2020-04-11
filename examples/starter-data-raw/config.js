@@ -3,13 +3,13 @@ const config = {
   // wordPressUrl: "http://gatsbystarter.wst/",
 
   // uploadsPath: 'wp-content/uploads',
-  // postsPrefix: '',
+
   postsPath: '/blog',
   // paginationPrefix: 'page',
   postsPerPage: 3,
   // disqus: 'webstantly',
   menuName: 'main',
-  // addComments: 1,
+  // addWordPressComments: 1,
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,

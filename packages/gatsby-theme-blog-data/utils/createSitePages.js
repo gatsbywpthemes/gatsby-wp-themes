@@ -58,7 +58,7 @@ let allPages = []
 module.exports = async ({ actions, graphql }, options) => {
   const { createPage } = actions
 
-  const fetchChildrenPages = async variables =>
+  const fetchChildrenPages = async (variables) =>
     await graphql(GET_CHILDREN_PAGES, variables).then(({ data }) => {
       const {
         wp: {
@@ -67,19 +67,19 @@ module.exports = async ({ actions, graphql }, options) => {
           },
         },
       } = data
-      nodes.forEach(child => {
+      nodes.forEach((child) => {
         allPages.push(child)
       })
       return getChildren({ nodes, variables, pageInfo })
     })
-  const fetchPages = async variables =>
+  const fetchPages = async (variables) =>
     await graphql(GET_PAGES, variables).then(({ data }) => {
       const {
         wp: {
           pages: { nodes, pageInfo },
         },
       } = data
-      nodes.forEach(node => {
+      nodes.forEach((node) => {
         allPages.push(node)
       })
       return getChildren({ nodes, variables, pageInfo })
@@ -93,7 +93,7 @@ module.exports = async ({ actions, graphql }, options) => {
         after: null,
       })
     }
-    if (pageInfo.hasNextPage) {
+    if (pageInfo && pageInfo.hasNextPage) {
       if (variables.id) {
         return fetchChildrenPages({
           id: variables.id,
@@ -109,8 +109,8 @@ module.exports = async ({ actions, graphql }, options) => {
     return allPages
   }
 
-  await fetchPages({ first: 100, after: null }).then(allPages => {
-    allPages.map(page => {
+  await fetchPages({ first: 100, after: null }).then((allPages) => {
+    allPages.map((page) => {
       /* dont create page if is restricted */
       if (page.isRestricted) {
         return
@@ -134,7 +134,6 @@ module.exports = async ({ actions, graphql }, options) => {
         component: pageTemplate,
         context: {
           ...page,
-          postsPrefix: options.postsPrefix,
           postsPath: options.postsPath,
           wordPressUrl: options.wordPressUrl,
           uploadsUrl: options.uploadsUrl,

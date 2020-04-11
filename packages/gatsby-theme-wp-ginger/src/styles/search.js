@@ -63,53 +63,54 @@ export const search = {
       },
     },
   },
-  results: {
-    h3: {
-      fontSize: 'm',
+}
+
+export const results = {
+  h3: {
+    fontSize: 'm',
+  },
+  h4: {
+    fontSize: 's',
+    mb: '0.25rem',
+  },
+  mb: '2rem',
+  '.post-metadata': {
+    variant: 'special',
+    fontSize: 'xxs',
+  },
+  header: {
+    display: 'flex',
+    mb: '1rem',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    '& > *': {
+      mb: 0,
     },
-    h4: {
-      fontSize: 's',
-      mb: '0.25rem',
+    '.stats': {
+      textAlign: 'right',
     },
-    mb: '2rem',
-    '.post-metadata': {
-      variant: 'special',
-      fontSize: 'xxs',
-    },
-    header: {
-      display: 'flex',
-      mb: '1rem',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      '& > *': {
-        mb: 0,
-      },
-      '.stats': {
-        textAlign: 'right',
-      },
-    },
-    '.results + header': {
-      mt: '2rem',
-    },
-    a: { color: 'inherit' },
-    'a:hover': { opacity: '0.6' },
-    'a[aria-current]': {
-      fontStyle: 'italic',
-    },
-    fontSize: 'xs',
-    ul: {
-      variant: 'list.raw',
-    },
-    li: {
-      mb: '0.75rem',
-      letterSpacing: '0.5px',
-    },
-    'ul:after': {
-      content: '""',
-      display: 'block',
-      height: 0,
-      width: '100%',
-      borderBottom: '3px solid',
-    },
+  },
+  '.results + header': {
+    mt: '2rem',
+  },
+  a: { color: 'inherit' },
+  'a:hover': { opacity: '0.6' },
+  'a[aria-current]': {
+    fontStyle: 'italic',
+  },
+  fontSize: 'xs',
+  ul: {
+    variant: 'list.raw',
+  },
+  li: {
+    mb: '0.75rem',
+    letterSpacing: '0.5px',
+  },
+  'ul:after': {
+    content: '""',
+    display: 'block',
+    height: 0,
+    width: '100%',
+    borderBottom: '3px solid',
   },
 }

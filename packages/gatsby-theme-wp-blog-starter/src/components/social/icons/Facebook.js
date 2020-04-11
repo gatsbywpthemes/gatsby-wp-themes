@@ -13,8 +13,8 @@ const Facebook = ({
   iconBgStyle = {},
   logoFillColor = 'white',
 }) => {
-  const metadata = useSiteMetaData()
-  const shareUrl = `${slashes(metadata.url)}${url}`
+  const { siteUrl } = useSiteMetaData()
+  const shareUrl = `${slashes(siteUrl)}${url}`
   return (
     <FacebookShareButton url={shareUrl} quote={title}>
       {children}

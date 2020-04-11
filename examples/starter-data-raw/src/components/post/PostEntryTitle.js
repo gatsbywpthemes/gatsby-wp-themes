@@ -3,7 +3,7 @@ import { jsx, Styled } from 'theme-ui'
 import { Fragment } from 'react'
 import { Link } from 'gatsby'
 
-const PostEntryTitle = ({ post, location, postsPrefix }) => {
+const PostEntryTitle = ({ post, location }) => {
   const { title, uri } = post
 
   return (
@@ -17,7 +17,7 @@ const PostEntryTitle = ({ post, location, postsPrefix }) => {
         <Styled.h1 as="h2" className="entry-title">
           <Styled.a
             as={Link}
-            to={`${postsPrefix}/${uri}`}
+            to={`/${uri}`}
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </Styled.h1>

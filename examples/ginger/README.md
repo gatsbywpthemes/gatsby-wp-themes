@@ -6,41 +6,55 @@ Introduction comes here...
 
 ## Setting up your WordPress Website.
 
-You will need a running WordPress installation. Gatsby will fetch the data from your WordPress website. There are some configuration options that you need to follow:
+You will need a running WordPress installation. Gatsby fetches the data from your WordPress website. There are some configuration options that you need to follow:
 
-### Mandatory Plugins
+## Requirements<a name="wp-requirements"></a>
+
+### Mandatory plugins: WPGraphQL
 
 You need to install and activate the [wpgraphql plugin.](https:www.wpgraphql.com/) You can download the latest release [here.](https:github.com/wp-graphql/wp-graphql/releases) Install it on your WordPress site from the .zip file.
 
 ### Permalinks structure
 
-This step is essentialfor your internal links to be mapped adequately from your WordPress site to your Gatsby one.
-You can configure your WordPress permalinks structure in `Settings > Permalinks`.
-Make sure to check the **Post name** option.
+In order that the plugin works correctly, your WordPress installation must have pretty permalinks enabled (commonly oprovided by the majority of hosting servives). Also, The permalink structure **must not** be the default (plain, `http://example.com/?p=123.`) WordPress permalink structure. This can be done via your WordPress admin area in Settings > Permalinks.
 
-### SEO Settings
+### Redirecting your WordPress website
 
-Make sure to discourage search engines from indexing your WordPress website. You do not want to be penalized for the duplicated content. This can be done via `Settings > Reading`.
+If you want to redirect all non logged-in users accessing your WordPress site URL to your gatsby website, we recommend installing the [Headless Node](https://wordpress.org/plugins/headless-mode/) WordPress plugin.
 
-Another solution is to install the [Headless Node](https://wordpress.org/plugins/headless-mode/) WordPress plugin. Headless Node sets up a redirect for all users trying to access the site.
+### Forms
 
-### Optional - Forms
+Ginger theme is compatible with Contact Form 7 WordPress plugin. If you want to have a form on your website, make sure to install Contact Form 7. Next proceed as you would normally do, create your form(s) and add them within your pages(s).
 
-Our themes are compatible with Contact Form 7 WordPress plugin. If you want to have a form on your website, you need to install Contact Form 7 and set up your form.
+### Fancybox Galleries
+
+Ginger theme comes with fancybox galleries (clicking a photo opens a fullscreen-mode slideshow). This feature is optional, enabled by default (you can turn it off here).
+There is also a particular configuration required for the gallery itself, that needs to be set up on your WordPress website.
+
+Edit your WordPress page.  
+Select the gallery blog. In the gallery settings make sure to choose Link to: Media File.
+
+![Gallery Box setting - choose Link to Media File](https://wptemplates.pehaa.com/docs/gatsby-themes/assets/gallery-settings.png)
+
+### Mapbox
+
+Our Gatsby themes provide support for Mapbox cards.
 
 ## Configure your Gatsby site - config.js
 
-The default options are as follows:
+In order to setup your Gatsby website, you will need to edit its configuration file, `config.js` located in the root of your project.
+
+The default options for the Ginger theme are listed below. We discuss each one in details in the Options section.
 
 ```javascript
 const config = {
   wordPressUrl: ``,
   uploadsPath: `wp-content/uploads`,
   pathPrefix: "",
-  postsPrefix: ``,
   postsPath: ``,
   paginationPrefix: `page`,
-  addComments: true,
+  addWordPressComments: true,
+  disqus: "",
   menuName: "main",
   gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
@@ -63,27 +77,31 @@ const config = {
   addColorModes: true,
   addFancyBox: true,
   skipTitle: [],
+  mailchimpEndpoint: "",
 }
 ```
 
 ### Options
 
 **wordPressUrl** (required)  
-Provide a url to your WordPress website.
+Provide a url to your WordPress source website. Make sure that your WordPress setup meets [our requirements](#wp-requirements).
 
 ---
 
 **uploadsPath** (optional)  
 `(default: wp-content/uploads)`
 
-A relative path to your uploads directory. `wp-content/uploads` is default for any WordPress installation. So unless you redefined the `UPLOADS` constant on your WordPress site, you don't have to change it.
+A relative path to your uploads directory. `wp-content/uploads` is default for any WordPress installation.  
+Unless you redefined your uploads destination, skip this setting.
 
 ---
 
 **pathPrefix** (optional)  
 `(default: "")`
 
-You will use this setting if your gatsby website is hosted at something other than the root (/) of their domain.
+Typically, your Gatsby website will be hosted at the root of its domain. In that case, the pathPrefix is an empty string and you can skip this setting.  
+You will need to set the pathPrefix though, if your gatsby website is hosted at something other than the root (/), for example `https://example.com/demo`
+
 Adding the path prefix requires two steps:
 
 1. setting the pathPrefix (make sure to preceed it with a slash)
@@ -101,19 +119,18 @@ gatsby build --prefix-paths
 
 ---
 
-**postsPrefix** (optional)  
-`(default: "")`
-
-The prefix for the posts. If you change it, make sure to set the permalinks structure on your WordPress site accordingly.
-
----
-
 **postsPath** (optional)  
 `(default: "")`
 
-This is an important setting. It should be left empty if your WordPress homepage displays your latest posts. This corresponds to the default in Settings > Reading > Your homepage displays.
-If you choose a static page and set a Posts page, you should use the Posts page slug as your postsPath.
-If your WordPress website doesn't display blog page (neither on homepage or a custom page), you should set postsPath to `false`.
+This is an important setting. It should reflect your WordPress _Reading > Your homepage_ displays settings, otherwise your Gatsby website may not work properly.
+
+That is:
+
+- `postsPath` should be left empty if your WordPress homepage displays your latest posts. This corresponds to the default in Settings > Reading > Your homepage displays.
+
+- If you chose a static page and set a Posts page, you should use the Posts page slug as your `postsPath`.
+
+- If your WordPress website doesn't display blog page (homepage displays a static page and Posts page is not defined), you should set `postsPath` to `false`.
 
 example:
 
@@ -133,23 +150,41 @@ postsPath: false
 `(default: 'page')`
 
 Prefix for paginated content.
-You should not modify it unless you changed this on your WordPress site.
+
+What is the url structure of any paginated content on your WordPress website? By default, WordPress uses `page` as the prefix, that means it preceeds page numbers by the `page` keyword (`page/2`, `page/3`, ...).  
+You should skip this setting, unless your changed the pagination url format on your WordPress site.
 
 ---
 
-**addComments** (optional)  
+**addWordPressComments** (optional)  
 `(type: Boolean, default: true)`
 
-Whether comments funcionality should be activated, this is a global setting that will affect all posts. If `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".
+Whether WordPress comments should be activated.
 
-> Please note that we only support two levels of comments nesting.
+If left `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".
+Commenting on your Gatsby site work similarily to commenting on your WordPress site. The main difference is that **we only support two levels of comments nesting.** Under the hood, comments are fetched from WordPress and updated on WordPress (and refetched if necessary) with Apollo Client. Consequently, some of your WordPress Discussion settings applies to your Gatsby comments, in particular: email notifications, moderation and blocking rules.
+
+---
+
+**disqus** (optional)  
+`(type: String, default: "")`
+
+Whether Discqus comments should be activated.
+
+Alternatively to comments powered natively by WordPress, Ginger theme supports [Disqus comments.](https://disqus.com/)
+Typing your Disqus shortname (the unique identifier fo your website on Disqus) will activate Disqus comments for all posts.
 
 ---
 
 **menuName** (optional)  
 `(type: String, default: "main")`
 
-The Ginger theme comes with one menu location, in the slide-in sidebar. You can use any of the menus that you had created on your WordPress site. Just paste the name that you had given to your WordPress menu here.
+The WordPress name of the navigation menu that will be used.
+
+Ginger theme comes with one menu location. The navigation menu is displayed in the slide-in sidebar.  
+You can choose any of the menus that you had created on your WordPress site by passing its name to the **menuName** option.
+
+![Menu name set to Main Menu on WordPress](https://wptemplates.pehaa.com/docs/gatsby-themes/assets/menuname.png)
 
 example:
 
@@ -162,43 +197,31 @@ menuName: "Main Menu"
 **gingerWidgets** (optional)  
 `(type: Array, default: ['SocialFollow', 'RecentPosts', 'Categories', 'Tags'])`
 
-The Ginger theme comes with one widget area in dthe slide-in sidebar below the navigation menu.
-There are 4 widgets available: **SocialFollow**, **RecentPosts**, **Categories** and **Tags.**.  
-The **SocialFollow** widget display links to your social profiles (see [`social setting`](#social))
+Ginger theme comes with one widget area in the slide-in sidebar. Widgets are displayed below the navigation menu.
+There are 4 widgets available: **SocialFollow**, **RecentPosts**, **Categories**, **Tags** and **Newsletter**.
+
+- The **SocialFollow** widget displays links to your social profiles (see [`social setting`](#social))
+- The **RecentPosts** widget lists links to 5 most recent posts (thumbnail, title and are displayed).
+- The **Categories** widget lists links to first-level post categories.
+- The **Tags** widget lists links to post tags. They are ordered alphabetically and include the number of posts per tag.
+- The **Newsletter** widget adds a subscription form to your MailChimp profile, (see [`MailChimp Profile`](#mailchimp))
+
+You can easily reorder the widgets. They will be displayed as specified in the **gingerWidgets** order.
 
 example:
 
 ```javascript
-menuName: "Main Menu"
+menuName: ["Newsletter", "Social Follow", "Tags"]
 ```
 
 ---
 
-**_siteUrl_** (obligatory for a production website)  
+**siteUrl** (obligatory for a production website)  
 `(type: Url, default: "https://example.com")`
 
-You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production you should provide the url of your destination site
+You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production, you should provide the url of your destination site.
 
----
-
-**title** (obligatory for a production website)  
-`(type: Url, default: "Blog Title Placeholder")`
-
-The title of your website. Please note that Ginger theme uses the data fetched from WordPress (Settings > General > Site Title).
-
----
-
-**author** (optional)  
-`(type: Url, default: "Name Placeholder")`
-
-The author of the website.
-
----
-
-**description** (obligatory for a production website)  
-`(type: Url, default: "Description Placeholder")`
-
-The description of your website. Please note that Ginger theme uses the data fetched from WordPress (Settings > General > Tagline).
+This is an essential setting for social share buttons (in Posts), SEO open graph data, and twitter card image ([see **twitterSummaryCard**](#twittercard)). It's also necessary if you opt for an xml sitemap.
 
 ---
 
@@ -207,7 +230,7 @@ The description of your website. Please note that Ginger theme uses the data fet
 
 You can list your social profiles here. They will be displayed in the SocialFollows widget.
 
-The supported profiles are: Behance, Codepen, Dev, Discord, Dribbble, Facebook, Github, Gitlab, Instagram, Linkedin, Mastodon, Medium, Pinterest, Reddit, Slack, Slideshare, Snapchat, Soundcloud, StackOverflow, Telegram, Tumblr, Twitter, Vimeo, Youtube.
+The supported profiles are: Behance, Codepen, Dev, Discord, Dribbble, Facebook, Github, GitLab, Instagram, Linkedin, Mastodon, Medium, Pinterest, Reddit, Slack, Slideshare, Snapchat, Soundcloud, StackOverflow, Telegram, Tumblr, Twitter, Vimeo, Youtube.
 
 example:
 
@@ -236,11 +259,11 @@ social: []
 
 ---
 
-**twitterSummaryCardImage**  
+**twitterSummaryCardImage**<a name="twittercard"></a>  
 `(default: Gatsby_Monogram.png)`
 
 When sharing your content on Twitter, articles will use their featured image for the Twitter card.
-Other pages will use a common twitterSummaryCardImage. Please make sure to place it in the `/static` folder. Your image should be square and at least 144px x 144px.
+Other pages will use a common twitterSummaryCardImage. Make sure to place it in the `/static` folder. Your image should be square and at least 144px x 144px.
 
 ---
 
@@ -248,7 +271,7 @@ Other pages will use a common twitterSummaryCardImage. Please make sure to place
 `(type: Array, default: ["Abril Fatface", "Fira Sans"])`
 
 Here you decide which fonts should be installed.  
-The Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sans** for the body text. Both of them are Google fonts.  
+Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sans** for the body text. Both of them are Google fonts.  
 If you want to use other typefaces, you will have to modify the `fonts` setting in the config.js.  
 You will also have to edit the `src/gatsby-plugin-theme-ui/index.js` file to assign your fonts as `heading` or `body`.
 
@@ -316,7 +339,7 @@ Your google Tag Mangager Id. Set to 0 to disable this funcionality.
 **addSitemap** (optional)  
 `(type: boolean, default: false)`
 
-Whether you want to create a site map. If set to `true`, please make sure that you provide your production gatsby website url in the SiteUrl option.
+Whether you want to create a site map. If set to `true`, make sure that you provide your production gatsby website url in the SiteUrl option.
 
 ---
 
@@ -327,19 +350,6 @@ These options are passed to the [gatsby-plugin-sitemap](https://www.gatsbyjs.org
 
 ---
 
-**addAlgoliaSearch** (optional, experimental)  
-`(default: false)`
-
-If you want to use Algolia with your project, make sure to include `.env` file in the project root:
-
-```
-GATSBY_ALGOLIA_APP_ID=your-app-id
-GATSBY_ALGOLIA_SEARCH_KEY=your-algolia-search-key
-ALGOLIA_ADMIN_KEY=your-algolia-admin-key
-```
-
----
-
 **addColorModes** (optional, experimental)  
 `(default: true)`
 
@@ -347,23 +357,40 @@ If you want to add dark mode switcher.
 
 ---
 
-**addFancyBox** (optional)
+**addFancyBox** (optional)  
 `(default: true)`
 
-Adds fancybox functionnality to the galeries. It will work for any gallery built with the Gutenberg gallery block that has "Link To" set to "Media File"
+Adds fancybox functionnality to the galeries.
+
+It will work for any gallery built with the Gutenberg gallery block that has "Link To" set to "Media File".
 
 ---
 
-**skipTitle** (optional, experimental)  
+**skipTitle** (optional)  
 `(default: [])`
 
-List slugs of the pages when you don't want to display the page title. Useful when you want to start your page with a Gutenberg cover blog and an h1 heading.
+List slugs of the pages when you don't want to display the page title. Useful when you want to start your page with a Gutenberg cover blog and an `h1` heading.
 
 example:
 
 ```javascript
 skipTitle: ["home", "about-us"],
 ```
+
+**mailchimpEndpoint** <a name="mailchimp"></a>
+
+The mailchimEndpoint used in the Newsletter widget.
+
+Ginger theme uses [`gatsby-mailchimp-plugin`](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp) for the MailChimp subscriptions.
+Check [the plugin documentation](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/#mailchimp-endpoint) for more information on how to locate your Mailchimp endpoint.
+
+example:
+
+```javascript
+mailchimpEndpoint: "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
+```
+
+---
 
 > Please note that the dark mode may not be properly applied on some Gutenberg blocks with custom color settings.
 

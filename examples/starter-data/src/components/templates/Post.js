@@ -21,8 +21,8 @@ const Post = ({ post }) => {
   const media = featuredImage
     ? featuredImage.imageFile.childImageSharp.fluid.src
     : null
-  const { postsPrefix, layoutWidth } = useThemeOptions()
-  const { disqus, addComments, sidebarWidgets } = useThemeOptions()
+  const { layoutWidth } = useThemeOptions()
+  const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
 
   const pageTemplate = templateName.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
@@ -59,7 +59,7 @@ const Post = ({ post }) => {
         description={excerpt}
         media={media}
         ogType="article"
-        ogUrl={normalize(`/${postsPrefix}/${uri}`)}
+        ogUrl={normalize(`/${uri}`)}
       />
       <Container sx={{ ...containerStyles }}>
         <Flex
@@ -72,7 +72,7 @@ const Post = ({ post }) => {
           <PostEntry post={post} location="single" />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
-        {addComments && post.commentStatus === 'open' && (
+        {addWordPressComments && post.commentStatus === 'open' && (
           <Container sx={{ maxWidth: layoutWidth.post }}>
             <CommentsList post={post} />
           </Container>

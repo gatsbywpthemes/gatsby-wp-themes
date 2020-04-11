@@ -8,6 +8,7 @@ const postQuery = `{
         content
         excerpt
         date
+        uri
         slug
         author {
           name
@@ -35,6 +36,7 @@ wp {
         content
         title
         slug
+        uri
       }
     }
   }
