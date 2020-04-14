@@ -52,7 +52,7 @@ const Page = ({ page }) => {
         ogType={ogType}
         ogUrl={ogType === 'website' ? '' : uri}
       />
-      <Container sx={{ ...containerStyles }} className="container">
+      <Container sx={{ ...containerStyles }} className="mainContainer">
         <Flex
           sx={{
             ...sidebarSide,
@@ -69,12 +69,14 @@ const Page = ({ page }) => {
             className="entry"
           >
             <div className="content page-content" sx={{ borderRadius: `s` }}>
-              {!skipTitle.includes(slug) && skipTitle !== 'all' && (
-                <h1
-                  className="page-title"
-                  dangerouslySetInnerHTML={{ __html: title }}
-                />
-              )}
+              {skipTitle &&
+                !skipTitle.includes(slug) &&
+                skipTitle !== 'all' && (
+                  <h1
+                    className="page-title"
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
+                )}
 
               <Box className="entry-content" sx={{ ...gutenberg }}>
                 <ParsedContent content={content} />

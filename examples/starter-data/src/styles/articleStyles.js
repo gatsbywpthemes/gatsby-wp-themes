@@ -17,9 +17,9 @@ export default {
     },
     variant: 'card.default',
 
-    borderRadius: ['0 0 0 0', '0 0 0 0', '0 0 5px 5px'],
+    borderRadius: ['0 0 5px 5px'],
     '&.page-content, &.no-img': {
-      borderRadius: [0, 0, 's'],
+      borderRadius: ['s'],
     },
 
     overflowWrap: 'break-word',

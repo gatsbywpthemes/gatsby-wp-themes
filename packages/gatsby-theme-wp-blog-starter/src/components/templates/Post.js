@@ -61,7 +61,7 @@ const Post = ({ post }) => {
         ogType="article"
         ogUrl={normalize(`/${uri}`)}
       />
-      <Container sx={{ ...containerStyles }}>
+      <Container sx={{ ...containerStyles }} className="mainContainer">
         <Flex
           sx={{
             ...sidebarSide,

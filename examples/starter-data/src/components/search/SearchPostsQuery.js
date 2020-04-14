@@ -1,21 +1,20 @@
 /** @jsx jsx */
-import { jsx, Flex, Box } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { useState } from 'react'
 import { Button } from 'grommet'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import SearchResults from './SearchResults'
-import Loader from 'react-spinners/BeatLoader'
 
-const GET_PAGES = gql`
-  fragment PostFields on Page {
+const GET_POSTS = gql`
+  fragment PostFields on Post {
     title
     slug
     uri
   }
   ##the after variable is the endCursor, we set it up as "", as default value, then it will change if there is next page in the result query, the search in the query value (value in the state)
   query($after: String = "", $search: String!) {
-    pages(first: 100, after: $after, where: { search: $search }) {
+    posts(first: 100, after: $after, where: { search: $search }) {
       pageInfo {
         hasNextPage
         endCursor
@@ -29,29 +28,29 @@ const GET_PAGES = gql`
 
 const SearchQuery = ({ search }) => {
   const [clickable, setClickable] = useState(true)
-  const { data, loading, error, fetchMore } = useQuery(GET_PAGES, {
+  const { data, loading, error, fetchMore } = useQuery(GET_POSTS, {
     variables: { search },
   })
   const loadMore = () => {
     setClickable(false)
-    if (data.pages.pageInfo && data.pages.pageInfo.hasNextPage) {
-      const after = data.pages.pageInfo.endCursor
+    if (data.posts.pageInfo.hasNextPage) {
+      const after = data.posts.pageInfo.endCursor
       fetchMore({
         variables: { after: after },
         updateQuery: (previousResult, { fetchMoreResult }) => {
           setClickable(true)
           return {
-            pages: {
+            posts: {
               pageInfo: {
-                hasNextPage: fetchMoreResult.pages.pageInfo.hasNextPage,
-                endCursor: fetchMoreResult.pages.pageInfo.endCursor,
-                __typename: previousResult.pages.pageInfo.__typename,
+                hasNextPage: fetchMoreResult.posts.pageInfo.hasNextPage,
+                endCursor: fetchMoreResult.posts.pageInfo.endCursor,
+                __typename: previousResult.posts.pageInfo.__typename,
               },
               nodes: [
-                ...previousResult.pages.nodes,
-                ...fetchMoreResult.pages.nodes,
+                ...previousResult.posts.nodes,
+                ...fetchMoreResult.posts.nodes,
               ],
-              __typename: previousResult.pages.__typename,
+              __typename: previousResult.posts.__typename,
             },
           }
         },
@@ -59,17 +58,12 @@ const SearchQuery = ({ search }) => {
     }
   }
 
-  if (loading)
-    return (
-      <Flex sx={{ justifyContent: 'center', alignItems: 'center', py: 20 }}>
-        <Loader color="#798EA3" />
-      </Flex>
-    )
+  if (loading) return <p>Searching posts...</p>
   if (error) return <p>Error - {error.message}</p>
   //loadMore()
   return (
-    <SearchResults type="Pages" query={search} posts={data.pages.nodes}>
-      {clickable && data.pages.pageInfo && data.pages.pageInfo.hasNextPage && (
+    <SearchResults type="Posts" query={search} posts={data.posts.nodes}>
+      {clickable && data.posts.pageInfo.hasNextPage && (
         <Button onClick={loadMore} type="button">
           Load More
         </Button>

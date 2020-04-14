@@ -13,7 +13,7 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
-  // search: "algolia",
+
   skipTitle: "all",
   layoutWidth: {
     page: "l",
@@ -58,7 +58,7 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
-  // useAlgoliaSearch: false,
+
   mailchimpEndpoint:
     "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
 }

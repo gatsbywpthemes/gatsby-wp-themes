@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Flex } from 'theme-ui'
 import { useState } from 'react'
 import { Button } from 'grommet'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import SearchResults from './SearchResults'
+import Loader from 'react-spinners/BeatLoader'
 
 const GET_POSTS = gql`
   fragment PostFields on Post {
@@ -58,7 +59,12 @@ const SearchQuery = ({ search }) => {
     }
   }
 
-  if (loading) return <p>Searching posts...</p>
+  if (loading)
+    return (
+      <Flex sx={{ justifyContent: 'center', alignItems: 'center' }}>
+        <Loader color="primary" />
+      </Flex>
+    )
   if (error) return <p>Error - {error.message}</p>
   //loadMore()
   return (

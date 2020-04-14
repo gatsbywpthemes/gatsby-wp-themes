@@ -26,8 +26,9 @@ const Layout = ({ children, page, type = 'page' }) => {
       <Box
         sx={{
           '&.fullWidth': {
-            '.container': {
+            '.mainContainer': {
               maxWidth: `100%`,
+              px: 0,
             },
           },
         }}

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui'
 import { Fragment } from 'react'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Widgets from './widgets/Widgets'
 import sidebarStyles from '../styles/sidebarStyles'
 
