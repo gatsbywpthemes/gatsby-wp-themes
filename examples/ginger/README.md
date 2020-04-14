@@ -38,7 +38,7 @@ Select the gallery blog. In the gallery settings make sure to choose Link to: Me
 
 ### Mapbox
 
-Our Gatsby themes provide support for Mapbox, more precisely Mapbox maps added either via Jetpack Gutenberg block (Mapbox) or with the WP Mapbox GL JS Maps WordPress plugin. You will need to activate Mapbox on your Gatsby website (it's disabled by default) - [see Mpbox support](#activate-mapbox)
+Our Gatsby themes provide support for [Mapbox](https://www.mapbox.com/), more precisely Mapbox maps added either via [Jetpack Gutenberg block (Mapbox)](https://jetpack.com/support/jetpack-blocks/map-block/) or with the WP Mapbox GL JS Maps WordPress plugin (unfortunately the latter seems to be no longer maintained). You will need to activate Mapbox on your Gatsby website (it's disabled by default) - [see Mapbox support](#activate-mapbox)
 
 ## Configure your Gatsby site - config.js
 
@@ -446,3 +446,44 @@ const sizesSettings = {
 ### Further Changes
 
 You can also style your website with css. This can be useful if you have to target some specific element or add some more complex styling. You should put your css in `styles/style.scss.` If you are not familiar with sass, you can write plain css in this file.
+
+## Components Shadowing
+
+### Activating Mapbox support
+
+In order to activate Mapbox you will have to override one of the theme's component.  
+Go to your project folder. It contains a `gatsby-theme-wp-ginger` directory, create a `utils` folder in it and paste the `ParsedContent.js` file from the theme `packages/gatsby-theme-wp-ginger/src/utils/ParsedContent.js`
+
+Make sure to uncomment the lines:
+
+`import mapboxParserFunction from "gatsby-plugin-wp-mapbox"`  
+and  
+`parserFunctions.push(mapboxParserFunction)`
+
+It should he something like that:
+
+```javascript
+/* utils/ParsedContent.js */
+import React from "react"
+import ContentParser from "gatsby-plugin-wordpress-parser"
+import { cf7ParserFunction } from "gatsby-plugin-wpcf7"
+import fancyBoxParserFunction from "gatsby-plugin-wordpress-fancybox"
+// uncomment the next line to activate Mapbox
+import mapboxParserFunction from "gatsby-plugin-wp-mapbox"
+import useThemeOptions from "gatsby-theme-blog-data/src/hooks/useThemeOptions"
+
+const ParsedContent = ({ content }) => {
+  const options = useThemeOptions()
+  const parserFunctions = [cf7ParserFunction]
+  if (options.addFancyBox) {
+    parserFunctions.push(fancyBoxParserFunction)
+  }
+  // uncomment the next line to activate Mapbox
+  parserFunctions.push(mapboxParserFunction)
+  return <ContentParser content={content} customFn={parserFunctions} />
+}
+
+export default ParsedContent
+```
+
+It's already set 
