@@ -40,7 +40,17 @@ Select the gallery blog. In the gallery settings make sure to choose Link to: Me
 
 Our Gatsby themes provide support for [Mapbox](https://www.mapbox.com/), more precisely Mapbox maps added either via [Jetpack Gutenberg block (Mapbox)](https://jetpack.com/support/jetpack-blocks/map-block/) or with the WP Mapbox GL JS Maps WordPress plugin (unfortunately the latter seems to be no longer maintained). You will need to activate Mapbox on your Gatsby website (it's disabled by default) - [see Mapbox support](#activate-mapbox)
 
-## Configure your Gatsby site - config.js
+## Installing your Gatsby starter
+
+You will receive a link to download your starter .zip file by email after purchase. You will also receive your secret authentication token tht you will need to run the installation.
+
+1. Unzip your starter.
+2. Open the `.nprmc` file and replace `YOU_SECRET_API_KEY` string by your token.
+3. Run `yarn` command from your starter directory
+4. [Configure your Gatsby site.](#gatsby-config) Most importantly, provide the url of your WordPress source website.
+5. Run `gatsby develop` to [start the developement server](https://www.gatsbyjs.org/docs/gatsby-cli/#develop)
+
+## Configure your Gatsby site - config.js <a name="gatsby-config"></a>
 
 In order to setup your Gatsby website, you will need to edit its configuration file, `config.js` located in the root of your project.
 
