@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
-import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import useSiteMetadata from 'gatsby-theme-blog-data-v4/src/hooks/useSiteMetadata'
 import { follow } from '../../styles/social'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {

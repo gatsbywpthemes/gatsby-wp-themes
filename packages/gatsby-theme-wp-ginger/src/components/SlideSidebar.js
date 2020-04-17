@@ -6,7 +6,7 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import Menu from './Menu'
 import Widgets from './widgets/Widgets'
 import SearchForm from './search/SearchForm'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
 import openMenuButton from '../styles/menuButton'
 import { slideMenu, overlay } from '../styles/slideSidebar'
 

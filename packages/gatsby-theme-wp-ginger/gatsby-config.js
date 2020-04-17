@@ -1,9 +1,9 @@
-module.exports = (options) => {
+module.exports = options => {
   options.fonts = options.fonts || ['abril fatface', 'fira sans']
   options.customFonts = []
   if (options.fonts) {
     options.customFonts = options.fonts.filter(
-      (el) =>
+      el =>
         el.toLowerCase().indexOf(`fira sans`) === -1 &&
         el.toLowerCase().indexOf(`abril fatface`) === -1
     )
@@ -27,7 +27,7 @@ module.exports = (options) => {
   }
   const plugins = [
     {
-      resolve: `gatsby-theme-blog-data`,
+      resolve: `gatsby-theme-blog-data-v4`,
       options: mergedOptions,
     },
     `gatsby-plugin-theme-ui`,

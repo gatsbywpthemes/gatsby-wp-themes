@@ -5,14 +5,12 @@ import { widgetTags } from '../../styles/widget'
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {
-    wp {
-      tags(first: 100) {
-        nodes {
-          name
-          slug
-          count
-          uri
-        }
+    allWpTag(limit: 100) {
+      nodes {
+        name
+        slug
+        count
+        uri
       }
     }
   }
@@ -20,13 +18,13 @@ const ALL_TAGS_QUERY = graphql`
 
 const TagsWidget = () => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
-  const { tags } = data.wp
+  const { nodes } = data.allWpTag
   return (
-    tags.nodes.length && (
+    nodes.length && (
       <section sx={{ ...widgetTags }} className="widget widget-tags">
         <h2 className="widget-title">Tags</h2>
         <ul>
-          {tags.nodes
+          {nodes
             .map(tag => (
               <li key={tag.slug}>
                 <Link to={`/${tag.uri}`}>

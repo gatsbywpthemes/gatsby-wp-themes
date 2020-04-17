@@ -3,8 +3,8 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import Collapse from './Collapse'
 import { createLocalLink } from '../utils'
-import useMenusQuery from 'gatsby-theme-blog-data/src/hooks/useMenusQuery'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import useMenusQuery from 'gatsby-theme-blog-data-v4/src/hooks/useMenusQuery'
+import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import normalize from 'normalize-path'
@@ -19,7 +19,7 @@ const subdirectoryCorrection = (path, wordPressUrl, hash = '') => {
 const renderLink = (menuItem, wordPressUrl, postsPath) => {
   let url = menuItem.url
 
-  if (menuItem.connectedObject.__typename === 'WP_MenuItem') {
+  if (menuItem.connectedObject.__typename === 'WpMenuItem') {
     const parsedUrl = new URIParser(url)
     if (menuItem.url === `#`) {
       return menuItem.label
@@ -89,7 +89,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
       {renderLink(menuItem, wordPressUrl, postsPath)}
       <Collapse menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
-          {menuItem.childItems.nodes.map((item) =>
+          {menuItem.childItems.nodes.map(item =>
             renderMenuItem(item, wordPressUrl, postsPath)
           )}
         </ul>
@@ -101,7 +101,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
 const Menu = ({ menuName }) => {
   const { wordPressUrl, postsPath } = useThemeOptions()
   const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find((n) => menuName === n.node.name)
+  const menuEdge = menuEdges.find(n => menuName === n.node.name)
   const menuItems = menuEdge ? menuEdge.node.menuItems : null
 
   if (menuItems) {
@@ -116,7 +116,7 @@ const Menu = ({ menuName }) => {
       >
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <ul sx={{ variant: 'special' }} role="menu" className="menuItemGroup">
-          {menuItems.nodes.map((menuItem) => {
+          {menuItems.nodes.map(menuItem => {
             if (menuItem.childItems.nodes.length) {
               return renderSubMenu(menuItem, wordPressUrl, postsPath)
             } else {

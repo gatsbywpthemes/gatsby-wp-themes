@@ -8,21 +8,20 @@ import { widgetRecentPosts } from '../../styles/widget'
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {
-    wp {
-      posts(first: 5) {
-        nodes {
-          id
-          title
-          uri
-          date
-          featuredImage {
-            altText
-            sourceUrl
-            imageFile {
-              childImageSharp {
-                fixed(width: 72, height: 48, quality: 80) {
-                  ...GatsbyImageSharpFixed
-                }
+    allWpPost(limit: 5) {
+      nodes {
+        id
+        title
+        uri
+        date
+
+        featuredImage {
+          altText
+          sourceUrl
+          remoteFile {
+            childImageSharp {
+              fixed(width: 72, height: 48, quality: 80) {
+                ...GatsbyImageSharpFixed
               }
             }
           }
@@ -34,7 +33,7 @@ const RECENT_POSTS_QUERY = graphql`
 
 const RecentPosts = () => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
-  const { posts } = data.wp
+  const { nodes } = data.allWpPost
   return (
     <section
       sx={{ ...widgetRecentPosts }}
@@ -42,8 +41,8 @@ const RecentPosts = () => {
     >
       <h2 className="widget-title">Recent Posts</h2>
       <ul>
-        {posts.nodes.length
-          ? posts.nodes.map((post) => {
+        {nodes.length
+          ? nodes.map(post => {
               const uri = normalize(`/${post.uri}`)
               return (
                 <li key={post.id}>

@@ -4,8 +4,8 @@ import Layout from './../Layout'
 import ArchiveContent from '../archive/ArchiveContent'
 import SEO from '../seo/Seo'
 
-const Tag = ({ tag, ctx }) => {
-  const { name, posts, uri } = tag
+const Tag = ({ tag, posts, ctx }) => {
+  const { name, uri } = tag
   const { pageNumber } = ctx
 
   return (

@@ -5,13 +5,11 @@ import { widgetCategories } from '../../styles/widget'
 
 const ALL_CATEGORIES_QUERY = graphql`
   query GetCategories {
-    wp {
-      categories(first: 100) {
-        nodes {
-          name
-          slug
-          uri
-        }
+    allWpCategory(limit: 100) {
+      nodes {
+        name
+        slug
+        uri
       }
     }
   }
@@ -19,13 +17,13 @@ const ALL_CATEGORIES_QUERY = graphql`
 
 const CategoriesWidget = () => {
   const data = useStaticQuery(ALL_CATEGORIES_QUERY)
-  const { categories } = data.wp
+  const { nodes } = data.allWpCategory
   return (
     <section sx={{ ...widgetCategories }} className="widget widget-categories">
       <h2 className="widget-title">Categories</h2>
       <ul>
-        {categories.nodes.length
-          ? categories.nodes.map(category => (
+        {nodes.length
+          ? nodes.map(category => (
               <li key={category.slug}>
                 <Link to={`/${category.uri}`}>{category.name}</Link>
               </li>

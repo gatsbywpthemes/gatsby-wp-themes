@@ -5,7 +5,7 @@ import ParsedContent from '../../utils/ParsedContent'
 import SEO from '../seo/Seo'
 import pageStyles from '../../styles/page'
 import pageTitle from '../../styles/pageTitle'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
 
 const Page = ({ page }) => {
   const { skipTitle } = useThemeOptions()
