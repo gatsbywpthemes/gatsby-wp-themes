@@ -34,38 +34,3 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   await createTags({ actions, graphql }, mergedOptions)
   await createUsers({ actions, graphql }, mergedOptions)
 }
-
-const { createRemoteFileNode } = require('gatsby-source-filesystem')
-
-/**
- * Download WordPress images, add them to GraphQL schema.
- * @link https://www.gatsbyjs.org/docs/node-apis/#createResolvers
- * @link https://www.gatsbyjs.org/packages/gatsby-source-filesystem/?=#createremotefilenode
- */
-exports.createResolvers = ({
-  actions,
-  cache,
-  createNodeId,
-  createResolvers,
-  store,
-  reporter,
-}) => {
-  const { createNode } = actions
-  createResolvers({
-    WP_MediaItem: {
-      imageFile: {
-        type: `File`,
-        resolve(source) {
-          return createRemoteFileNode({
-            url: source.sourceUrl,
-            store,
-            cache,
-            createNode,
-            createNodeId,
-            reporter,
-          })
-        },
-      },
-    },
-  })
-}
