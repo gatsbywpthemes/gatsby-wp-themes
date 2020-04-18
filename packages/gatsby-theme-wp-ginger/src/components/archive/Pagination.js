@@ -1,47 +1,31 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
-import normalize from 'normalize-path'
 import { pagination, paginationLink } from '../../styles/pagination'
 
-const renderPreviousLink = props => {
-  const { pageNumber } = props.ctx
-  const { prefix, paginationPrefix } = props
-  let previousLink = null
-
-  if (!pageNumber || pageNumber === 1) {
+const renderPreviousLink = previousPagePath => {
+  if (previousPagePath) {
+    return (
+      <Link
+        className="left"
+        sx={{ ...paginationLink, fontSize: 'xs' }}
+        to={previousPagePath}
+      >
+        <span>Previous</span>
+      </Link>
+    )
+  } else {
     return <span />
-  } else if (2 === pageNumber) {
-    previousLink = normalize(`/${prefix}`)
-  } else if (2 < pageNumber) {
-    previousLink = normalize(`/${prefix}/${paginationPrefix}/${pageNumber - 1}`)
   }
-
-  return (
-    <Link
-      className="left"
-      sx={{ ...paginationLink, fontSize: 'xs' }}
-      to={previousLink}
-    >
-      <span>Previous</span>
-    </Link>
-  )
 }
 
-const renderNextLink = props => {
-  const { hasNextPage, pageNumber } = props.ctx
-  const { prefix, paginationPrefix } = props
-
-  if (hasNextPage) {
-    const nextLink = normalize(
-      `/${prefix}/${paginationPrefix}/${pageNumber + 1}`
-    )
+const renderNextLink = nextPagePath => {
+  if (nextPagePath) {
     return (
       <Link
         className="right"
         sx={{ ...paginationLink, fontSize: 'xs' }}
-        to={nextLink}
+        to={nextPagePath}
       >
         <span>Next</span>
       </Link>
@@ -51,20 +35,19 @@ const renderNextLink = props => {
   }
 }
 
-const Pagination = ({ ctx, prefix = '' }) => {
-  const { paginationPrefix } = useThemeOptions()
-  const { pageNumber } = ctx
+const Pagination = ({ ctx }) => {
+  const { humanPageNumber, nextPagePath, previousPagePath } = ctx
   // return empty string if there is only one page
-  if (pageNumber === 1 && !ctx.hasNextPage) {
+  if (humanPageNumber === 1 && !nextPagePath) {
     return ''
   }
   return (
     <nav sx={pagination}>
-      {renderPreviousLink({ ctx, prefix, paginationPrefix })}
+      {renderPreviousLink(previousPagePath)}
       <span aria-current="page" className="page-numbers current">
-        {pageNumber}
+        {humanPageNumber}
       </span>
-      {renderNextLink({ ctx, prefix, paginationPrefix })}
+      {renderNextLink(nextPagePath)}
     </nav>
   )
 }
