@@ -8,6 +8,7 @@ export const pageQuery = graphql`
     wpPost(uri: { eq: $uri }) {
       content
       commentStatus
+      databaseId
       ...PostTemplateFragment
     }
   }
