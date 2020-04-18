@@ -14,7 +14,7 @@ const GET_POSTS = gql`
   }
   ##the after variable is the endCursor, we set it up as "", as default value, then it will change if there is next page in the result query, the search in the query value (value in the state)
   query($after: String = "", $search: String!) {
-    posts(first: 2, after: $after, where: { search: $search }) {
+    posts(first: 10, after: $after, where: { search: $search }) {
       pageInfo {
         hasNextPage
         endCursor
