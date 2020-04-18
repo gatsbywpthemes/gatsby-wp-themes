@@ -30,8 +30,7 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
   }
 
   useEffect(() => {
-    const closeOnEsc = (e) => {
-      console.log(e)
+    const closeOnEsc = e => {
       if (!(e.target.type === 'search' && e.target.value) && e.keyCode === 27) {
         setOpenClass(false)
         menuBtn.current.focus()
@@ -83,7 +82,7 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
 
             <Menu menuName={menuName} />
             {!!widgets &&
-              widgets.map((widget) => (
+              widgets.map(widget => (
                 <Widgets key={widget} widget={widget} location="SlideMenu" />
               ))}
           </div>

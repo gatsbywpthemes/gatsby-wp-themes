@@ -9,10 +9,8 @@ import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions
 
 const Page = ({ page }) => {
   const { skipTitle } = useThemeOptions()
-  console.log(skipTitle)
   const { content } = page
   const ogType = page.isFrontPage ? 'website' : 'article'
-  console.log(page)
   return (
     <Layout useContainer={false}>
       <SEO

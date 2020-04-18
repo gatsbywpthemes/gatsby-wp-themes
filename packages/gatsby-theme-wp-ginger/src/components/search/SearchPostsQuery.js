@@ -33,14 +33,11 @@ const SearchQuery = ({ search }) => {
   })
   const loadMore = () => {
     setClickable(false)
-    console.log(data)
     if (data.posts.pageInfo && data.posts.pageInfo.hasNextPage) {
       const after = data.posts.pageInfo.endCursor
-      console.log(after)
       fetchMore({
         variables: { after: after },
         updateQuery: (previousResult, { fetchMoreResult }) => {
-          console.log('pf', previousResult, fetchMoreResult)
           setClickable(true)
           return {
             posts: {

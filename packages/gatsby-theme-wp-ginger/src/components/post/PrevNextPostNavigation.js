@@ -31,7 +31,6 @@ const renderNextLink = ({ next }) => {
 }
 
 const PrevNextPostNavigation = ({ ctx, style }) => {
-  console.log(ctx)
   return (
     <nav sx={{ ...pagination, ...style }}>
       {renderPreviousLink(ctx)}

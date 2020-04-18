@@ -10,7 +10,6 @@ import Pins from "./Pins"
 import "mapbox-gl/dist/mapbox-gl.css"
 
 const MapContent = ({ attrs }) => {
-  console.log(attrs, JSON.parse(attrs["data-points"]))
   const mapData = JSON.parse(attrs["data-points"])
   const center = JSON.parse(attrs["data-map-center"])
   const [viewport, setViewport] = useState({
