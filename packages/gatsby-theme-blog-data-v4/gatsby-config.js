@@ -89,8 +89,7 @@ module.exports = options => {
       options: {
         wordPressUrl: url,
         uploadsUrl: `${url}/${uploadsPath}`,
-        processPostTypes: ['Page', 'Post'],
-        graphqlTypeName: 'WP',
+        processPostTypes: ['WpPage', 'WpPost'],
         pathPrefix,
       },
     },

@@ -16,8 +16,7 @@ module.exports = async function createResolvers(params, pluginOptions) {
     actions: { createNode }
   } = params
   const {
-    graphqlTypeName = `WPGraphQL`,
-    processPostTypes = ["Page", "Post"],
+    processPostTypes = ["WpPage", "WpPost"],
     debugOutput = false
   } = pluginOptions
 
@@ -81,12 +80,12 @@ module.exports = async function createResolvers(params, pluginOptions) {
 
   processPostTypes.forEach(element => {
     let params = {}
-    params[`${graphqlTypeName}_${element}`] = {
+    params[element] = {
       content: {
         resolve: contentResolver
       }
     }
-    logger("Registering ", `${graphqlTypeName}_${element}`)
+    logger("Registering ", element)
     createResolvers(params)
   })
 }

@@ -20,7 +20,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     }
   `)
   const postsPerPage = data.wp.allSettings.readingSettingsPostsPerPage
-  console.log(postsPerPage)
+
   const mergedOptions = {
     ...defaultOptions,
     ...options,
