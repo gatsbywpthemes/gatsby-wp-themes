@@ -46,6 +46,7 @@ module.exports = options => {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         analyzerMode: 'static',
+        disable: !process.env.ANALYZE_BUNDLE_SIZE,
       },
     },
   ]
