@@ -4,6 +4,53 @@ import Blog from '../components/Posts'
 export default Blog
 
 export const pageQuery = graphql`
+  fragment PostTemplateFragment on WpPost {
+    id
+    uri
+    slug
+    title
+    excerpt
+    date
+    postFormats {
+      taxonomyInfo {
+        name
+      }
+    }
+    featuredImage {
+      ...GatsbyImageQuery
+    }
+    categories {
+      nodes {
+        id
+        slug
+        name
+        uri
+      }
+    }
+    template {
+      ...PageTemplate
+    }
+    author {
+      name
+      slug
+      uri
+      avatar {
+        url
+      }
+    }
+    tags {
+      nodes {
+        name
+        slug
+        uri
+      }
+    }
+  }
+  fragment PageTemplate on WpContentTemplateUnion {
+    ... on WpDefaultTemplate {
+      templateName
+    }
+  }
   fragment GatsbyImageQuery on WpMediaItem {
     altText
     sourceUrl
@@ -18,14 +65,7 @@ export const pageQuery = graphql`
   query GET_POSTS($skip: Int!, $limit: Int!) {
     allWpPost(limit: $limit, skip: $skip) {
       nodes {
-        id
-        uri
-        title
-        excerpt
-        date
-        featuredImage {
-          ...GatsbyImageQuery
-        }
+        ...PostTemplateFragment
       }
     }
   }

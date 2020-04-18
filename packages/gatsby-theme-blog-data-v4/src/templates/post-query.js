@@ -6,11 +6,9 @@ export default SinglePost
 export const pageQuery = graphql`
   query GET_POST($uri: String!) {
     wpPost(uri: { eq: $uri }) {
-      title
       content
-      featuredImage {
-        ...GatsbyImageQuery
-      }
+      commentStatus
+      ...PostTemplateFragment
     }
   }
 `

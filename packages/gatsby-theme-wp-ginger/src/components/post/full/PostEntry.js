@@ -16,7 +16,7 @@ import { DiscussionEmbed } from 'disqus-react'
 const PostEntry = ({ ctx, post }) => {
   const bgStyles = !!post.featuredImage
     ? {
-        backgroundImage: `url(${post.featuredImage.imageFile.childImageSharp.fluid.src})`,
+        backgroundImage: `url(${post.featuredImage.remoteFile.childImageSharp.fluid.src})`,
       }
     : {}
   const { addWordPressComments, disqus } = useThemeOptions()
@@ -91,7 +91,7 @@ const PostEntry = ({ ctx, post }) => {
         <div
           sx={{
             margin: '2rem auto',
-            width: (theme) => theme.sizes.content,
+            width: theme => theme.sizes.content,
           }}
         >
           <DiscussionEmbed {...disqusConfig} />

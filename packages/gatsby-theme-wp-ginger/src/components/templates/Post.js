@@ -12,7 +12,7 @@ const Post = props => {
     post: { title, excerpt, featuredImage, uri },
   } = props
   const media = featuredImage
-    ? featuredImage.imageFile.childImageSharp.fluid.src
+    ? featuredImage.remoteFile.childImageSharp.fluid.src
     : null
 
   return (

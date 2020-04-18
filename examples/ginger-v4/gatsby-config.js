@@ -15,7 +15,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-theme-blog-data-v4`,
+      resolve: `gatsby-theme-wp-ginger`,
       options: {
         ...options,
         pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,

@@ -26,17 +26,96 @@ export const pageQuery = graphql`
       }
     }
   }
+  fragment PostTemplateFragmentArchive on WpPost {
+    id
+    uri
+    slug
+    title
+    excerpt
+    date
+    postFormats {
+      taxonomyInfo {
+        name
+      }
+    }
+    featuredImage {
+      ...GatsbyImageQueryArchive
+    }
+    categories {
+      nodes {
+        id
+        slug
+        name
+        uri
+      }
+    }
+    template {
+      ...PageTemplate
+    }
+    author {
+      name
+      slug
+      uri
+      avatar {
+        url
+      }
+    }
+    tags {
+      nodes {
+        name
+        slug
+        uri
+      }
+    }
+  }
+
+  fragment PostTemplateFragmentFull on WpPost {
+    id
+    uri
+    slug
+    title
+    excerpt
+    date
+    postFormats {
+      taxonomyInfo {
+        name
+      }
+    }
+    featuredImage {
+      ...GatsbyImageQueryFull
+    }
+    categories {
+      nodes {
+        id
+        slug
+        name
+        uri
+      }
+    }
+    template {
+      ...PageTemplate
+    }
+    author {
+      name
+      slug
+      uri
+      avatar {
+        url
+      }
+    }
+    tags {
+      nodes {
+        name
+        slug
+        uri
+      }
+    }
+  }
+
   query($skip: Int!, $limit: Int!) {
     allWpPost(limit: $limit, skip: $skip) {
       nodes {
-        id
-        uri
-        title
-        excerpt
-        date
-        featuredImage {
-          ...GatsbyImageQueryArchive
-        }
+        ...PostTemplateFragmentArchive
       }
     }
   }

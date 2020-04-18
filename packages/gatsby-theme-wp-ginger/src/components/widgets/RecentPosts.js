@@ -51,7 +51,7 @@ const RecentPosts = () => {
                       <Img
                         alt={post.featuredImage.altText}
                         fixed={
-                          post.featuredImage.imageFile.childImageSharp.fixed
+                          post.featuredImage.remoteFile.childImageSharp.fixed
                         }
                       />
                     )}

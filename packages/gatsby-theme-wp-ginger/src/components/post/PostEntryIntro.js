@@ -30,7 +30,7 @@ const PostEntryIntro = ({
           title={post.title}
           media={
             post.featuredImage
-              ? post.featuredImage.imageFile.childImageSharp.fluid.src
+              ? post.featuredImage.remoteFile.childImageSharp.fluid.src
               : null
           }
         />

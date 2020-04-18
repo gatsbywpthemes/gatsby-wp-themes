@@ -11,14 +11,7 @@ export const pageQuery = graphql`
       skip: $skip
     ) {
       nodes {
-        id
-        uri
-        title
-        excerpt
-        date
-        featuredImage {
-          ...GatsbyImageQueryArchive
-        }
+        ...PostTemplateFragmentArchive
       }
     }
     wpTag(slug: { eq: $slug }) {
