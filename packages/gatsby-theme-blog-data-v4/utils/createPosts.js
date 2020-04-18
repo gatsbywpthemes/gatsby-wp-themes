@@ -1,12 +1,20 @@
 const path = require(`path`)
 const { paginate } = require(`gatsby-awesome-pagination`)
+const normalize = require('normalize-path')
 
 const GET_POSTS = `
   query GET_POSTS($limit:Int ){
     allWpPost(limit: $limit) {
-      nodes {
-        title
-        uri
+      edges {
+        previous {
+          uri
+        }
+        node {
+          uri
+        }
+        next {
+          uri
+        }
       }
     }
   }
@@ -29,19 +37,23 @@ module.exports = async ({ actions, graphql }, options) => {
   const { createPage } = actions
 
   const postsQuery = await graphql(GET_POSTS)
-  const posts = postsQuery.data.allWpPost.nodes
+  const posts = postsQuery.data.allWpPost.edges
 
   posts.map(post => {
     createPage({
-      path: `/${post.uri}`,
+      path: `/${post.node.uri}`,
       component: postTemplate,
       context: {
-        uri: post.uri,
+        uri: post.node.uri,
+        prev: post.previous ? post.previous.uri : null,
+        next: post.next ? post.next.uri : null,
       },
     })
   })
   const pathPrefix = ({ pageNumber, numberOfPages }) =>
-    pageNumber === 0 ? `/${postsPath}` : `/${postsPath}/page`
+    pageNumber === 0
+      ? normalize(`/${postsPath}`)
+      : normalize(`/${postsPath}/${paginationPrefix}`)
   paginate({
     createPage,
     pathPrefix,

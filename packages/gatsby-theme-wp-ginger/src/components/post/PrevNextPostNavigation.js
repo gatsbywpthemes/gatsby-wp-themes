@@ -8,7 +8,7 @@ const renderPreviousLink = ({ prev }) => {
   if (!prev) {
     return <span />
   } else {
-    previousLink = `/${prev.uri}`
+    previousLink = `/${prev}`
   }
 
   return (
@@ -21,7 +21,7 @@ const renderPreviousLink = ({ prev }) => {
 const renderNextLink = ({ next }) => {
   if (next) {
     return (
-      <Link className="right" sx={paginationLink} to={`/${next.uri}`}>
+      <Link className="right" sx={paginationLink} to={`/${next}`}>
         <span>Up Next</span>
       </Link>
     )
@@ -31,6 +31,7 @@ const renderNextLink = ({ next }) => {
 }
 
 const PrevNextPostNavigation = ({ ctx, style }) => {
+  console.log(ctx)
   return (
     <nav sx={{ ...pagination, ...style }}>
       {renderPreviousLink(ctx)}
