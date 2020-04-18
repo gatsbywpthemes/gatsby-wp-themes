@@ -101,12 +101,10 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
 const Menu = ({ menuName }) => {
   const { wordPressUrl, postsPath } = useThemeOptions()
   const menuEdges = useMenusQuery()
-  console.log(menuEdges)
   const menuEdge = menuEdges.find(n => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
 
   if (menuItems) {
-    console.log(menuItems)
     return (
       <nav
         className="menu"
