@@ -53,11 +53,7 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
       menuItem.url === wordPressUrl ? (
         <Link to="/"> {menuItem.label}</Link>
       ) : (
-        <Link
-          to={`${normalize(
-            createLocalLink(menuItem.url, slashes(wordPressUrl))
-          )}`}
-        >
+        <Link to={createLocalLink(menuItem.url, slashes(wordPressUrl))}>
           {menuItem.label}
         </Link>
       )
