@@ -18,7 +18,7 @@ const Posts = ({ posts, ctx }) => {
         ogType={ogType}
         ogUrl={postsPath}
       />
-      <ArchiveContent posts={posts} ctx={ctx} paginationPrefix={postsPath} />
+      <ArchiveContent posts={posts.nodes} ctx={ctx} />
     </Layout>
   )
 }

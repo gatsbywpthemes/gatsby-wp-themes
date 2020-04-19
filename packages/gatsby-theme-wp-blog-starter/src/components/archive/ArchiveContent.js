@@ -45,7 +45,7 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
         </Box>
         {archiveSidebar && <Sidebar widgets={sidebarWidgets} />}
       </Flex>
-      <Pagination prefix={paginationPrefix} ctx={ctx} />
+      <Pagination ctx={ctx} />
     </Container>
   )
 }
