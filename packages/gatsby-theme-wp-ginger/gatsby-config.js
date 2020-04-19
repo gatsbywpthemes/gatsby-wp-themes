@@ -83,6 +83,14 @@ module.exports = options => {
     })
   }
 
+  /**
+   * Conditionally add google fonts plugin
+   * to avoid errors on build
+   */
+  if (options.addAlgoliaSearch) {
+    plugins.push(`gatsby-theme-algolia`)
+  }
+
   return {
     siteMetadata: {
       author: `@pehaa`,
