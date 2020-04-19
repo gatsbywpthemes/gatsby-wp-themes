@@ -38,7 +38,7 @@ import {
   EmailIcon,
 } from 'react-share'
 import slashes from 'remove-trailing-slash'
-import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import useSiteMetaData from 'gatsby-theme-blog-data-v4/src/hooks/useSiteMetadata'
 
 const ShareIcon = ({
   url,
@@ -52,9 +52,9 @@ const ShareIcon = ({
   logoFillColor = 'white',
   socialMediaName,
 }) => {
-  const metadata = useSiteMetaData()
-  const shareUrl = `${slashes(metadata.url)}${url}`
-  const shareMedia = `${slashes(metadata.url)}${media}`
+  const { siteUrl } = useSiteMetaData()
+  const shareUrl = `${slashes(siteUrl)}${url}`
+  const shareMedia = `${slashes(siteUrl)}${media}`
 
   const [button, setButton] = useState(`${socialMediaName}ShareButton`)
   const [icon, setIcon] = useState(`${socialMediaName}ShareIcon`)

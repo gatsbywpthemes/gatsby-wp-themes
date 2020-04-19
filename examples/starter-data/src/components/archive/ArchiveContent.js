@@ -2,7 +2,7 @@
 import { jsx, Container, Flex, Box } from 'theme-ui'
 import PostEntry from '../post/PostEntry'
 import Pagination from './Pagination'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
 import Sidebar from '../Sidebar.js'
 import ArchiveTitle from './ArchiveTitle'
 
@@ -29,7 +29,7 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
         : { '.posts-list': { pr: [0, 0, 0, layoutWidth.archive] } }
       : ''
   return (
-    <Container sx={{ ...containerStyles }}>
+    <Container sx={{ ...containerStyles }} className="mainContainer">
       {name && <ArchiveTitle text="Posts from: " name={name} />}
       <Flex
         sx={{
@@ -45,7 +45,7 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
         </Box>
         {archiveSidebar && <Sidebar widgets={sidebarWidgets} />}
       </Flex>
-      <Pagination prefix={paginationPrefix} ctx={ctx} />
+      <Pagination ctx={ctx} />
     </Container>
   )
 }

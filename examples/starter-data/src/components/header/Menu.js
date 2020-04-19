@@ -3,8 +3,8 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import { createLocalLink } from '../../utils'
 import { Collapse } from '../ui-components'
-import useMenusQuery from 'gatsby-theme-blog-data/src/hooks/useMenusQuery'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import useMenusQuery from 'gatsby-theme-blog-data-v4/src/hooks/useMenusQuery'
+import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import normalize from 'normalize-path'
@@ -17,7 +17,7 @@ const subdirectoryCorrection = (path, wordPressUrl) => {
 }
 const renderLink = (menuItem, wordPressUrl, postsPath) => {
   let url = menuItem.url
-  if (menuItem.connectedObject.__typename === 'WP_MenuItem') {
+  if (menuItem.connectedObject.__typename === 'WpMenuItem') {
     const parsedUrl = new URIParser(url)
     if (menuItem.url === `#`) {
       return menuItem.label
@@ -35,8 +35,12 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
       url = subdirectoryCorrection(path, wordPressUrl)
       return <Link to={url}> {menuItem.label}</Link>
     }
+    const targetRelAttrs =
+      menuItem.target === '_blank'
+        ? { target: '_blank', rel: 'noopener noreferrer' }
+        : {}
     return (
-      <a href={menuItem.url} target="_blank" rel="noopener noreferrer">
+      <a href={menuItem.url} {...targetRelAttrs}>
         {menuItem.label}
       </a>
     )
@@ -92,8 +96,8 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
 
 const Menu = ({ menuName }) => {
   const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find(n => menuName === n.node.name)
-  const menuItems = menuEdge ? menuEdge.node.menuItems : null
+  const menuEdge = menuEdges.find(n => menuName === n.name)
+  const menuItems = menuEdge ? menuEdge.menuItems : null
 
   const { postsPath, wordPressUrl } = useThemeOptions()
 

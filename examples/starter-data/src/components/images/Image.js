@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 const Image = ({ img, style }) =>
   img && (
     <Img
-      fluid={img.imageFile.childImageSharp.fluid}
+      fluid={img.remoteFile.childImageSharp.fluid}
       alt={img.altText}
       sx={style}
     />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { LinkedinShareButton, LinkedinIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
-import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import useSiteMetaData from 'gatsby-theme-blog-data-v4/src/hooks/useSiteMetadata'
 
 const Linkedin = ({
   url,
@@ -13,8 +13,8 @@ const Linkedin = ({
   iconBgStyle = {},
   logoFillColor = 'white',
 }) => {
-  const metadata = useSiteMetaData()
-  const shareUrl = `${slashes(metadata.url)}${url}`
+  const { siteUrl } = useSiteMetaData()
+  const shareUrl = `${slashes(siteUrl)}${url}`
   return (
     <LinkedinShareButton url={shareUrl}>
       {children}

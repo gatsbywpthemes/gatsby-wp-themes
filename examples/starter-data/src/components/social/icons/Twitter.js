@@ -1,7 +1,7 @@
 import React from 'react'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
-import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import useSiteMetaData from 'gatsby-theme-blog-data-v4/src/hooks/useSiteMetadata'
 
 const Twitter = ({
   url,
@@ -13,8 +13,8 @@ const Twitter = ({
   iconBgStyle = {},
   logoFillColor = 'white',
 }) => {
-  const metadata = useSiteMetaData()
-  const shareUrl = `${slashes(metadata.url)}${url}`
+  const { siteUrl } = useSiteMetaData()
+  const shareUrl = `${slashes(siteUrl)}${url}`
   return (
     <TwitterShareButton url={shareUrl} title={title}>
       {children}

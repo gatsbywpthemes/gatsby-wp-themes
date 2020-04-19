@@ -4,10 +4,10 @@ import Blog from '../components/Posts'
 export default Blog
 
 export const query = graphql`
-  fragment ImageFluidFragment on WP_MediaItem {
+  fragment ImageFluidFragment on WpMediaItem {
     altText
     sourceUrl
-    imageFile {
+    remoteFile {
       childImageSharp {
         fluid(maxWidth: 1200, quality: 80) {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -15,16 +15,16 @@ export const query = graphql`
       }
     }
   }
-  fragment PostTemplateFragment_starter on WP_Post {
+  fragment PostTemplateFragment_starter on WpPost {
     id
     uri
     slug
     title
     excerpt
     date
-    postId
+    databaseId
     postFormats {
-      nodes {
+      taxonomyInfo {
         name
       }
     }
@@ -58,29 +58,27 @@ export const query = graphql`
       }
     }
   }
-  fragment PageTemplates_starter on WP_ContentTemplateUnion {
-    ... on WP_DefaultTemplate {
+  fragment PageTemplates_starter on WpContentTemplateUnion {
+    ... on WpDefaultTemplate {
       templateName
     }
-    ... on WP_FullWidthTemplate {
+    ... on WpFullWidthTemplate {
       templateName
     }
-    ... on WP_LeftSidebarTemplate {
+    ... on WpLeftSidebarTemplate {
       templateName
     }
-    ... on WP_RightSidebarTemplate {
+    ... on WpRightSidebarTemplate {
       templateName
     }
   }
 `
 
 export const pageQuery = graphql`
-  query GET_POSTS_STARTER($ids: [ID], $postsPerPage: Int!) {
-    wp {
-      posts(first: $postsPerPage, where: { in: $ids }) {
-        nodes {
-          ...PostTemplateFragment_starter
-        }
+  query GET_POSTS_STARTER($skip: Int!, $limit: Int!) {
+    allWpPost(limit: $limit, skip: $skip) {
+      nodes {
+        ...PostTemplateFragment_starter
       }
     }
   }

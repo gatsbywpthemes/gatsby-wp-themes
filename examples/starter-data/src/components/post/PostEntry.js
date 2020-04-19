@@ -14,7 +14,7 @@ import gutenberg from '../../styles/theme-gutenberg'
 const PostEntry = ({ post, location }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''
   const media = post.featuredImage
-    ? post.featuredImage.imageFile.childImageSharp.fluid.src
+    ? post.featuredImage.remoteFile.childImageSharp.fluid.src
     : null
   return (
     <article

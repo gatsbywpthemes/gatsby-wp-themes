@@ -3,7 +3,7 @@ import { jsx, Container, Flex, Box } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import SEO from '../seo/Seo'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
 import Sidebar from '../Sidebar'
 import articleStyles from '../../styles/articleStyles'
 import gutenberg from '../../styles/theme-gutenberg'
@@ -52,7 +52,7 @@ const Page = ({ page }) => {
         ogType={ogType}
         ogUrl={ogType === 'website' ? '' : uri}
       />
-      <Container sx={{ ...containerStyles }} className="container">
+      <Container sx={{ ...containerStyles }} className="mainContainer">
         <Flex
           sx={{
             ...sidebarSide,

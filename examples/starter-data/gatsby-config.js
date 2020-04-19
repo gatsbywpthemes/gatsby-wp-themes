@@ -1,11 +1,10 @@
-const autoprefixer = require('autoprefixer')
 const config = require('./config')
 
 module.exports = {
   siteMetadata: {
     title: 'Gatsby theme WordPress Starter Demo',
     description: 'Gatsby starter site for Gatsby Theme Wordpress Theme.',
-    author: '@pehaa',
+    author: '@alexadark',
     wordPressUrl: config.wordpressUrl,
     siteUrl: 'http://vcard.pehaa.com',
     social: [
@@ -33,7 +32,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-theme-blog-data',
+      resolve: 'gatsby-theme-blog-data-v4',
       options: {
         ...config,
       },

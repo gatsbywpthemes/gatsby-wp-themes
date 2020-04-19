@@ -44,7 +44,7 @@ const GET_COMMENTS = gql`
 `
 
 const CommentsList = ({ post }) => {
-  const { postId } = post
+  const postId = post.databaseId
   const [activeComment, setActiveComment] = useState(0)
   const cancelReply = () => {
     setActiveComment(0)
@@ -81,7 +81,7 @@ const CommentsList = ({ post }) => {
               <Fragment key={comment.id}>
                 <Comment
                   withReply={true}
-                  postId={post.postId}
+                  postId={postId}
                   activeComment={activeComment}
                   comment={comment}
                   addReply={addReply}
@@ -94,7 +94,7 @@ const CommentsList = ({ post }) => {
                       <Fragment key={reply.id}>
                         <Comment
                           withReply={true}
-                          postId={post.postId}
+                          postId={postId}
                           activeComment={activeComment}
                           comment={reply}
                           addReply={addReply}
@@ -125,7 +125,7 @@ const CommentsList = ({ post }) => {
         <p sx={{ color: 'text' }}>No comments yet</p>
       )}
       {activeComment === 0 && (
-        <CommentForm postId={post.postId} doOnCompleted={doOnCompleted} />
+        <CommentForm postId={postId} doOnCompleted={doOnCompleted} />
       )}
     </section>
   )
