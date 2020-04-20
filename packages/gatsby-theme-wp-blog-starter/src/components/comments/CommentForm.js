@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
-import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import gql from 'graphql-tag'
 import { useMutation } from '@apollo/react-hooks'
 import { useForm } from 'react-hook-form'

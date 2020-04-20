@@ -24,7 +24,7 @@ module.exports = options => {
   }
   const plugins = [
     {
-      resolve: `gatsby-theme-blog-data-v4`,
+      resolve: `gatsby-theme-blog-data`,
       options: mergedOptions,
     },
     `gatsby-plugin-theme-ui`,

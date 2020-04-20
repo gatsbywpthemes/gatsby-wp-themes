@@ -5,7 +5,7 @@ import SEO from '../seo/Seo'
 import PostEntry from '../../components/post/PostEntry'
 import CommentsList from '../../components/comments/CommentsList'
 import { DiscussionEmbed } from 'disqus-react'
-import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import normalize from 'normalize-path'
 import Sidebar from '../Sidebar'
 

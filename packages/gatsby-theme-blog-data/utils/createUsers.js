@@ -1,68 +1,49 @@
-const addPagination = require('./addPagination.js')
+const { paginate } = require(`gatsby-awesome-pagination`)
 
 const GET_USERS = `
-    query GET_USERS($first: Int $after:String) {
-      wp {
-        users(first: $first after: $after) {
-          pageInfo {
-            hasNextPage
-            endCursor
-          }
-          nodes {
-            id
-            slug
-            uri
-          }
-        }
+  query GET_USERS {
+    allWpUser {
+      nodes {
+        slug
+        uri
       }
     }
+  }
   `
-const GET_POSTS_BY_USER = `
-  # Define our query variables
-  query GET_POSTS_BY_USER($id: ID! $first:Int $after:String) {
-    wp {
-      user(id: $id) {
-        uri
-        name
-        slug
-        id
-        description
-        avatar {
-          url
-        }
-        posts(first: $first after: $after) {
-          pageInfo {
-              # If true, we need to ask for more data.
-              hasNextPage
 
-              # This cursor will be used for the value for $after
-              # if we need to ask for more data
-              endCursor
-          }
-          nodes {
-            id
-            uri
-            postId
-            title
-          }
+const GET_POSTS_BY_USER = `
+  query GET_POSTS_BY_USER($slug: String!) {
+    wpUser(slug: { eq: $slug }) {
+      posts {
+        nodes {
+          id
         }
       }
     }
   }
-`
+  `
 module.exports = async ({ actions, graphql }, options) => {
-  const userTemplatePath = `../src/templates/user-query.js`
-
-  const userTemplate = require.resolve(userTemplatePath)
-  await addPagination({
-    actions,
-    graphql,
-    options,
-    baseQuery: GET_USERS,
-    paginationQuery: GET_POSTS_BY_USER,
-    template: userTemplate,
-    baseType: 'users',
-    paginationType: 'user',
-    pathPrefix: 'author',
-  })
+  const templatePath = `../src/templates/user-query.js`
+  const template = require.resolve(templatePath)
+  const { createPage } = actions
+  const usersQuery = await graphql(GET_USERS)
+  const users = usersQuery.data.allWpUser.nodes
+  for (const user of users) {
+    const postsByQuery = await graphql(GET_POSTS_BY_USER, {
+      slug: user.slug,
+    })
+    const items = postsByQuery.data.wpUser.posts.nodes
+    const pathPrefix = ({ pageNumber }) =>
+      pageNumber === 0 ? `/${user.uri}` : `/${user.uri}page`
+    paginate({
+      createPage,
+      pathPrefix,
+      component: template,
+      items,
+      itemsPerPage: options.postsPerPage,
+      context: {
+        slug: user.slug,
+      },
+    })
+  }
 }

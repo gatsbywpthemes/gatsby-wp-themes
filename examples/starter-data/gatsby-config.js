@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-theme-blog-data-v4',
+      resolve: 'gatsby-theme-blog-data',
       options: {
         ...config,
       },

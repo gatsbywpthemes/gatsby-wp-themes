@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../Layout.js'
 import ArchiveContent from '../archive/ArchiveContent'
 import SEO from '../seo/Seo'
-import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import slashes from 'remove-trailing-slash'
 
 const Posts = ({ posts, ctx }) => {

@@ -8,7 +8,7 @@ import SiteBranding from './SiteBranding'
 
 import Headroom from 'react-headroom'
 
-import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import SearchForm from '../search/SearchForm'
 import ColorSwitch from '../ColorSwitch'
 

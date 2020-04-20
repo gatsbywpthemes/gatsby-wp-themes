@@ -1,63 +1,49 @@
-const addPagination = require('./addPagination.js')
+const { paginate } = require(`gatsby-awesome-pagination`)
 
-const BASEQUERY = `
-    query GET_CATEGORIES($first: Int $after:String) {
-      wp {
-        categories(first: $first after: $after) {
-          pageInfo {
-            hasNextPage
-            endCursor
-          }
-          nodes {
-            id
-            slug
-            uri
-          }
-        }
+const GET_CATEGORIES = `
+  query GET_CATEGORIES {
+    allWpCategory {
+      nodes {
+        slug
+        uri
       }
     }
+  }
   `
-const PAGINATIONQUERY = `
-  # Define our query variables
-  query GET_POSTS_BY_CATEGORY($id: ID! $first:Int $after:String) {
-    wp {
-      category(id: $id) {
-        uri
-        name
-        slug
-        posts(first: $first after: $after) {
-          pageInfo {
-              # If true, we need to ask for more data.
-              hasNextPage
 
-              # This cursor will be used for the value for $after
-              # if we need to ask for more data
-              endCursor
-          }
-          nodes {
-            id
-            slug
-            postId
-          }
+const GET_POSTS_BY_CATEGORY = `
+  query GET_POSTS_BY_CATEGORY($slug: String!) {
+    wpCategory(slug: { eq: $slug }) {
+      posts {
+        nodes {
+          id
         }
       }
     }
   }
-`
-
+  `
 module.exports = async ({ actions, graphql }, options) => {
-  const categoryTemplatePath = `../src/templates/category-query.js`
-
-  const categoryTemplate = require.resolve(categoryTemplatePath)
-  await addPagination({
-    actions,
-    graphql,
-    options,
-    baseQuery: BASEQUERY,
-    paginationQuery: PAGINATIONQUERY,
-    template: categoryTemplate,
-    baseType: 'categories',
-    paginationType: 'category',
-    pathPrefix: 'category',
-  })
+  const templatePath = `../src/templates/category-query.js`
+  const template = require.resolve(templatePath)
+  const { createPage } = actions
+  const categoriesQuery = await graphql(GET_CATEGORIES)
+  const categories = categoriesQuery.data.allWpCategory.nodes
+  for (const category of categories) {
+    const postsByQuery = await graphql(GET_POSTS_BY_CATEGORY, {
+      slug: category.slug,
+    })
+    const items = postsByQuery.data.wpCategory.posts.nodes
+    const pathPrefix = ({ pageNumber }) =>
+      pageNumber === 0 ? `/${category.uri}` : `/${category.uri}page`
+    paginate({
+      createPage,
+      pathPrefix,
+      component: template,
+      items,
+      itemsPerPage: options.postsPerPage,
+      context: {
+        slug: category.slug,
+      },
+    })
+  }
 }

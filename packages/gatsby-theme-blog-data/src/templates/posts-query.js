@@ -3,36 +3,21 @@ import Blog from '../components/Posts'
 
 export default Blog
 
-export const query = graphql`
-  fragment ImageFluidFragment on WP_MediaItem {
-    altText
-    sourceUrl
-    imageFile {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 80) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-  }
-  fragment PostTemplateFragment on WP_Post {
+export const pageQuery = graphql`
+  fragment PostTemplateFragment on WpPost {
     id
     uri
     slug
     title
     excerpt
     date
-    postId
     postFormats {
-      nodes {
+      taxonomyInfo {
         name
       }
     }
-    template {
-      ...PageTemplates
-    }
     featuredImage {
-      ...ImageFluidFragment
+      ...GatsbyImageQuery
     }
     categories {
       nodes {
@@ -41,6 +26,9 @@ export const query = graphql`
         name
         uri
       }
+    }
+    template {
+      ...PageTemplate
     }
     author {
       name
@@ -58,20 +46,26 @@ export const query = graphql`
       }
     }
   }
-  fragment PageTemplates on WP_ContentTemplateUnion {
-    ... on WP_DefaultTemplate {
+  fragment PageTemplate on WpContentTemplateUnion {
+    ... on WpDefaultTemplate {
       templateName
     }
   }
-`
-
-export const pageQuery = graphql`
-  query GET_POSTS($ids: [ID]) {
-    wp {
-      posts(where: { in: $ids }) {
-        nodes {
-          ...PostTemplateFragment
+  fragment GatsbyImageQuery on WpMediaItem {
+    altText
+    sourceUrl
+    remoteFile {
+      childImageSharp {
+        fluid(maxWidth: 1200, quality: 80) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
+      }
+    }
+  }
+  query GET_POSTS($skip: Int!, $limit: Int!) {
+    allWpPost(limit: $limit, skip: $skip) {
+      nodes {
+        ...PostTemplateFragment
       }
     }
   }

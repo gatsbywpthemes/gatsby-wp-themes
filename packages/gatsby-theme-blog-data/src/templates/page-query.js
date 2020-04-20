@@ -4,17 +4,15 @@ import Page from '../components/Page'
 export default Page
 
 export const pageQuery = graphql`
-  query GET_PAGE($id: ID!) {
-    wp {
-      page(id: $id) {
-        title
-        content
-        uri
-        slug
-        isFrontPage
-        template {
-          ...PageTemplates
-        }
+  query GET_PAGE($uri: String!) {
+    wpPage(uri: { eq: $uri }) {
+      title
+      content
+      uri
+      slug
+      isFrontPage
+      template {
+        ...PageTemplate
       }
     }
   }

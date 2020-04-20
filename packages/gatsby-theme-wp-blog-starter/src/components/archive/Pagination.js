@@ -1,16 +1,20 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
+import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import normalize from 'normalize-path'
 import paginationStyles from '../../styles/paginationStyles'
 
 const renderPreviousLink = previousPagePath => {
-  return (
-    <Link className="newer" to={previousPagePath} sx={paginationStyles.links}>
-      <span>Previous</span>
-    </Link>
-  )
+  if (previousPagePath) {
+    return (
+      <Link className="newer" to={previousPagePath} sx={paginationStyles.links}>
+        <span>Previous</span>
+      </Link>
+    )
+  } else {
+    return <span />
+  }
 }
 
 const renderNextLink = nextPagePath => {
