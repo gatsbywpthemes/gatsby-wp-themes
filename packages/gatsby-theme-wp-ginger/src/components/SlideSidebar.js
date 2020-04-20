@@ -10,6 +10,7 @@ import SearchFormAlgolia from 'gatsby-theme-algolia/src/components/Search'
 import useThemeOptions from 'gatsby-theme-blog-data-v4/src/hooks/useThemeOptions'
 import openMenuButton from '../styles/menuButton'
 import { slideMenu, overlay } from '../styles/slideSidebar'
+import { resultsAlgolia } from '../styles/search'
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
@@ -84,7 +85,12 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
             >
               <FiX />
             </button>
-            {addAlgoliaSearch && <SearchFormAlgolia indices={searchIndices} />}
+            {addAlgoliaSearch && (
+              <div sx={resultsAlgolia}>
+                {' '}
+                <SearchFormAlgolia indices={searchIndices} />
+              </div>
+            )}
             {addWordPressSearch && <SearchForm />}
 
             <Menu menuName={menuName} />

@@ -1,27 +1,25 @@
 const striptags = require("striptags")
 
 const postQuery = `{
-  wp {
-    posts(first: 100) {
-      nodes {
-        title
-        content
-        excerpt
-        date
-        uri
-        slug
-        author {
+  allWpPost(limit: 1000) {
+    nodes {
+      title
+      content
+      excerpt
+      date
+      uri
+      slug
+      author {
+        name
+      }
+      categories {
+        nodes {
           name
         }
-        categories {
-          nodes {
-            name
-          }
-        }
-        tags {
-          nodes {
-            name
-          }
+      }
+      tags {
+        nodes {
+          name
         }
       }
     }
@@ -30,14 +28,12 @@ const postQuery = `{
 `
 
 const pageQuery = `{
-wp {
-    pages(first: 100) {
-      nodes {
-        content
-        title
-        slug
-        uri
-      }
+  allWpPage(limit: 1000) {
+    nodes {
+      content
+      title
+      slug
+      uri
     }
   }
 }`
@@ -50,14 +46,14 @@ const queries = [
   {
     query: postQuery,
     transformer: ({ data }) => {
-      data.wp.posts.nodes.forEach(el => {
+      data.allWpPost.nodes.forEach(el => {
         el.content = el.content
           ? (el.content = el.content
               ? striptags(el.content.replace(/&nbsp;/g, " "))
               : el.content)
           : el.content
       })
-      return data.wp.posts.nodes
+      return data.allWpPost.nodes
     },
     indexName: `Posts`,
     settings
@@ -65,12 +61,12 @@ const queries = [
   {
     query: pageQuery,
     transformer: ({ data }) => {
-      data.wp.pages.nodes.forEach(el => {
+      data.allWpPage.nodes.forEach(el => {
         el.content = el.content
           ? striptags(el.content.replace(/&nbsp;/g, " "))
           : el.content
       })
-      return data.wp.pages.nodes
+      return data.allWpPage.nodes
     },
     indexName: `Pages`,
     settings
