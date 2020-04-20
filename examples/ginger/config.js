@@ -38,7 +38,7 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
-  addWordPressSearch: true,
+  addWordPressSearch: false,
   addAlgoliaSearch: true,
   // instantWPSearch: false,
   // addColorModes: false,
