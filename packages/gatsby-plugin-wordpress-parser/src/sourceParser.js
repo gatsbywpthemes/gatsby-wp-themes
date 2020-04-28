@@ -138,12 +138,56 @@ module.exports = async function sourceParser(
     return `background-image:url(${staticFile})`
   }
 
+  const replaceBgIfDownloadedFluid = async (match, addTo, url, end) => {
+    url = checkUrl({ url, wordPressUrl, uploadsUrl })
+
+    if (!url) {
+      return match
+    }
+
+    const fileNode = await downloadMediaFile({
+      url,
+      cache,
+      store,
+      imageOptions,
+      createNode,
+      createNodeId,
+      httpHeaders
+    })
+    const details = getNodeAndSavePathDependency(fileNode.id, context.path)
+    const staticFile = copyToStatic({ file: fileNode, details, pathPrefix })
+    console.log(`downloaded file ${url} to ${staticFile}`)
+    let dd = ""
+    if (supportedExtensions.indexOf(fileNode.extension) > -1) {
+      try {
+        const fluidResult = await convertFileNodeToFluid({
+          generateWebp,
+          fileNode,
+          imageOptions,
+          reporter,
+          cache
+        })
+        dd = JSON.stringify(fluidResult).replace(/"/g, "&quot;")
+      } catch (e) {
+        console.log("Exception fluid", e)
+      }
+    }
+    console.log(
+      `<div data-gts-encfluid="${dd}" data-img="${dd}" ${addTo}background-image:${staticFile}${end}`
+    )
+    return `<div data-gts-encfluid="${dd}" ${addTo}background-image:url(${staticFile})${end}`
+  }
+
   const srcRegex = /<(img|video|audio).+?(src)=[\"'](.+?)[\"'].+?>/gm
   content = await replaceAsync(content, srcRegex, replaceAttrIfDownloaded)
   const hrefRegex = /<(a).+?(href)=[\"'](.+?)[\"'].+?>/gm
   content = await replaceAsync(content, hrefRegex, replaceAttrIfDownloaded)
-  const bgImageRegex = /background-image:\s*url\(['"]?([^'"\)]*)['"]?\)/gm
-  content = await replaceAsync(content, bgImageRegex, replaceBgIfDownloaded)
+  const bgImageRegex = /<div (.*?)background-image:\s*url\(['"]?([^'"\)]*)['"]?\)(.*?>)/gm
+  content = await replaceAsync(
+    content,
+    bgImageRegex,
+    replaceBgIfDownloadedFluid
+  )
 
   return content
 }
