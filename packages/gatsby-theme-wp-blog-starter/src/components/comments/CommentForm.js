@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
