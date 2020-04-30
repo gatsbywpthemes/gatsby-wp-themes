@@ -2,8 +2,8 @@
 import { jsx, Button } from 'theme-ui'
 import { Link } from 'gatsby'
 
-const TaxonomyItem = ({ taxName, item }) => (
-  <Button variant="primary.small" sx={{ mr: `xxs`, mb: `xs` }}>
+const TaxonomyItem = ({ taxName, item, key }) => (
+  <Button variant="primary.small" sx={{ mr: `xxs`, mb: `xs` }} key={key}>
     <Link
       to={`/${item.uri}`}
       key={item.id}
