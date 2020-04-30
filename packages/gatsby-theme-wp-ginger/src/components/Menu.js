@@ -78,7 +78,7 @@ const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
 const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
   return (
     <li
-      className={`has-subMenu menu-item ${menuItem.cssClasses}`}
+      className="has-subMenu menu-item"
       key={menuItem.id}
       sx={{ position: 'relative' }}
     >
