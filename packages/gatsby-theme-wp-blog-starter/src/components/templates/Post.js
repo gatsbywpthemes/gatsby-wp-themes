@@ -26,7 +26,6 @@ const Post = ({ post }) => {
 
   const pageTemplate = templateName.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
-  console.log('post', post)
 
   const containerStyles =
     sidebarWidgets && sidebarPage
@@ -74,7 +73,11 @@ const Post = ({ post }) => {
         </Flex>
         {addWordPressComments && post.commentStatus === 'open' && (
           <Container sx={{ maxWidth: layoutWidth.post }}>
-            <CommentsList post={post} />
+            {disqus ? (
+              <DiscussionEmbed {...disqusConfig} />
+            ) : (
+              <CommentsList post={post} />
+            )}
           </Container>
         )}
       </Container>

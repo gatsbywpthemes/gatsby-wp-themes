@@ -7,6 +7,7 @@ const useMenusQuery = () => {
       label
       url
       target
+      cssClasses
       connectedObject {
         __typename
       }

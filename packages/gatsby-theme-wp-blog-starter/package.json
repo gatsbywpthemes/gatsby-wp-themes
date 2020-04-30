@@ -37,6 +37,7 @@
     "moment": "^2.24.0",
     "polished": "^3.4.3",
     "react": "^16.13.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.13.0",
     "react-headroom": "^3.0.0",
     "react-helmet": "^5.2.1",

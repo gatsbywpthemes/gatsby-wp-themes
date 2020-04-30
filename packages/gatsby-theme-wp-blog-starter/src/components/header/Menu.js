@@ -8,6 +8,7 @@ import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import normalize from 'normalize-path'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const subdirectoryCorrection = (path, wordPressUrl) => {
   const wordPressUrlParsed = new URIParser(slashes(wordPressUrl))
@@ -19,8 +20,12 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
   let url = menuItem.url
   if (menuItem.connectedObject.__typename === 'WpMenuItem') {
     const parsedUrl = new URIParser(url)
-    if (menuItem.url === `#`) {
-      return menuItem.label
+    if (menuItem.url.startsWith(`#`)) {
+      return (
+        <AnchorLink offset={25} href={menuItem.url}>
+          {menuItem.label}
+        </AnchorLink>
+      )
     }
     if (parsedUrl.is('relative')) {
       url = subdirectoryCorrection(url, wordPressUrl)
@@ -68,7 +73,7 @@ const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
     return renderSubMenu(menuItem, wordPressUrl)
   } else {
     return (
-      <li className="menu-item" key={menuItem.id}>
+      <li className={`menu-item ${menuItem.cssClasses}`} key={menuItem.id}>
         {renderLink(menuItem, wordPressUrl, postsPath)}
       </li>
     )

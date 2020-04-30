@@ -10,6 +10,7 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
+  disqus: process.env.GATSBY_DISQUS_NAME,
 
   skipTitle: "all",
   layoutWidth: {
