@@ -1,5 +1,3 @@
-import { rem } from 'polished'
-
 const sharedButtonStyles = {
   boxSizing: 'border-box !important',
   border: 'none',

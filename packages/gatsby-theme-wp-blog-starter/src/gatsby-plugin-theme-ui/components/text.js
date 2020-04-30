@@ -1,5 +1,3 @@
-import { rem } from 'polished'
-
 const specialSharedStyles = {
   textTransform: 'uppercase',
   letterSpacing: '2px',

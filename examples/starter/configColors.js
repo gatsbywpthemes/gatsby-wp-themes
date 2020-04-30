@@ -1,4 +1,5 @@
-import { darken } from "polished"
+/* uncomment darken import if needed */
+// import { darken } from "polished"
 /* Palette */
 
 // const dark = `#263238`
