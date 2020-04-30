@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { rem } from "polished"
 
+// eslint-disable-next-line no-unused-vars
 const heading = {
   fontFamily: "heading",
   lineHeight: "heading",
