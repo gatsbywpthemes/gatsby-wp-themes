@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Styled, Flex } from "theme-ui"
+import { jsx, Flex } from "theme-ui"
 import algoliaLogo from "../images/algolia-logo.svg"
 
 const SearchFooter = () => {
