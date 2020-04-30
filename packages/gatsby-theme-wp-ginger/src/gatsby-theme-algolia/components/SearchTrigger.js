@@ -8,7 +8,6 @@ const SearchTrigger = () => (
   <Flex sx={searchstyles.container}>
     <FiSearch sx={{ mr: 3 }} />
     <SearchBox
-      autoFocus
       className="search-box search-box-algolia"
       sx={searchstyles.box}
     />
