@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Styled, Flex } from "theme-ui"
+import { jsx, Box, Styled } from "theme-ui"
 import { Hits, Index, connectStateResults } from "react-instantsearch-dom"
 import SearchFooter from "./SearchFooter"
 import * as hitComps from "./HitComps"

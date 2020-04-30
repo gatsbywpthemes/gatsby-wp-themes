@@ -1,10 +1,10 @@
 /** @jsx jsx */
+// eslint-disable-next-line no-unused-vars
 import React from "react"
 import { jsx, Box, Styled } from "theme-ui"
 import { Highlight, Snippet } from "react-instantsearch-dom"
 import { Link } from "gatsby"
 import normalize from "normalize-path"
-import useThemeOptions from "gatsby-theme-blog-data/src/hooks/useThemeOptions"
 import moment from "moment/moment"
 
 export const PageHit = ({ hit }) => (
