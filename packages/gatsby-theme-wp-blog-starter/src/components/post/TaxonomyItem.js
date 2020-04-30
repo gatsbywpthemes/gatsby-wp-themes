@@ -4,11 +4,7 @@ import { Link } from 'gatsby'
 
 const TaxonomyItem = ({ taxName, item }) => (
   <Button variant="primary.small" sx={{ mr: `xxs`, mb: `xs` }}>
-    <Link
-      to={`/${item.uri}`}
-      key={item.id}
-      aria-label={`visit ${taxName} ${item.name} page`}
-    >
+    <Link to={`/${item.uri}`} aria-label={`visit ${taxName} ${item.name} page`}>
       {item.name}
     </Link>
   </Button>

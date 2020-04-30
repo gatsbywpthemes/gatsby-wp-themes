@@ -12,7 +12,7 @@ const Tags = ({ post }) => {
         </div>
       )}
       {tags.map(tag => (
-        <TaxonomyItem taxName="tag" item={tag} key={tag.id} />
+        <TaxonomyItem taxName="tag" item={tag} key={tag.slug} />
       ))}
     </div>
   )

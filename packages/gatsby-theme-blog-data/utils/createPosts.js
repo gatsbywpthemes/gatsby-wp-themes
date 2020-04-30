@@ -1,4 +1,3 @@
-const path = require(`path`)
 const { paginate } = require(`gatsby-awesome-pagination`)
 const normalize = require('normalize-path')
 
@@ -50,7 +49,7 @@ module.exports = async ({ actions, graphql }, options) => {
       },
     })
   })
-  const pathPrefix = ({ pageNumber, numberOfPages }) =>
+  const pathPrefix = ({ pageNumber }) =>
     pageNumber === 0
       ? normalize(`/${postsPath}`)
       : normalize(`/${postsPath}/${paginationPrefix}`)
