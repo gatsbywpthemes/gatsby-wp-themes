@@ -68,7 +68,7 @@ const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
     return renderSubMenu(menuItem, wordPressUrl)
   } else {
     return (
-      <li className="menu-item" key={menuItem.id}>
+      <li className={`menu-item ${menuItem.cssClasses}`} key={menuItem.id}>
         {renderLink(menuItem, wordPressUrl, postsPath)}
       </li>
     )
@@ -78,7 +78,7 @@ const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
 const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
   return (
     <li
-      className="has-subMenu menu-item"
+      className={`has-subMenu menu-item ${menuItem.cssClasses}`}
       key={menuItem.id}
       sx={{ position: 'relative' }}
     >
