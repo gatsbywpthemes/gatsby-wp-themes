@@ -102,6 +102,8 @@ const SocialFollows = () => {
                 {<Component />}
               </a>
             )
+          } else {
+            return null
           }
         })}
     </Box>
