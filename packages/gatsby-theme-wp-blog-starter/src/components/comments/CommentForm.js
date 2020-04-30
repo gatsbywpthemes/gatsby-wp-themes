@@ -2,7 +2,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import gql from 'graphql-tag'
 import { useMutation } from '@apollo/react-hooks'
 import { useForm } from 'react-hook-form'
@@ -71,7 +70,7 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
   const { register, handleSubmit, errors } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
 
-  const [addComment, { data }] = useMutation(commentSubmitQuery, {
+  const [addComment] = useMutation(commentSubmitQuery, {
     onCompleted() {
       setCommentStatus('success')
       setTimeout(function() {
@@ -94,18 +93,6 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
   }
 
   const CommentSubmitButton = () => {
-    return (
-      <button
-        className="submit-button"
-        type="submit"
-        disabled={commentStatus === 'loading'}
-      >
-        Post Comment
-      </button>
-    )
-  }
-
-  const CommentTag = el => {
     return (
       <button
         className="submit-button"
@@ -183,7 +170,6 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
             <CommentNotes />
             {inputFields.map(el => {
               const Tag = el.tag
-              const { type, name } = el
               const textarea = Tag === 'textarea' ? { rows: 6, cols: 48 } : {}
               return (
                 <p key={el.name} className={`comment-form-${el.name}`}>
