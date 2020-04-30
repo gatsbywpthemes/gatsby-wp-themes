@@ -104,6 +104,7 @@ const Menu = ({ menuName }) => {
   if (menuItems) {
     return (
       <nav className="menu" aria-label="main">
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <ul role="menu" className="menuItemGroup">
           {menuItems.nodes.map(menuItem => {
             if (menuItem.childItems.nodes.length) {
