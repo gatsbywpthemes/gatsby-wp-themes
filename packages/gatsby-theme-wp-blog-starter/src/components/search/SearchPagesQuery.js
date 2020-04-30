@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Box } from 'theme-ui'
+import { jsx, Flex } from 'theme-ui'
 import { useState } from 'react'
 import { Button } from 'grommet'
 import { useQuery } from '@apollo/react-hooks'
