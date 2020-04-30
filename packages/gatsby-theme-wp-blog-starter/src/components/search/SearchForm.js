@@ -1,23 +1,13 @@
 /** @jsx jsx */
 import { jsx, Flex, Box } from 'theme-ui'
 import { useState, Fragment } from 'react'
-import { useStaticQuery } from 'gatsby'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
-import { useQuery } from '@apollo/react-hooks'
 import SearchQuery from './SearchQuery'
 
 const SearchForm = () => {
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
-  const [postsResults, setPostsResults] = useState([])
-  const [pagesResults, setPagesResults] = useState([])
-
-  // const data = useStaticQuery(POSTS_AND_PAGES_QUERY)
-  // console.log('allPostsSearch', data.wp.posts)
-  // const posts = data.wp.posts.nodes
-  // const pages = data.wp.pages.nodes
-  // const postsData = data.wp.posts
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
