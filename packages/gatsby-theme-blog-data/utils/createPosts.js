@@ -2,8 +2,8 @@ const { paginate } = require(`gatsby-awesome-pagination`)
 const normalize = require('normalize-path')
 
 const GET_POSTS = `
-  query GET_POSTS($limit:Int ){
-    allWpPost(limit: $limit) {
+  query GET_POSTS($limit:Int){
+    allWpPost(limit: $limit, sort: {order: DESC, fields: date}) {
       edges {
         previous {
           uri

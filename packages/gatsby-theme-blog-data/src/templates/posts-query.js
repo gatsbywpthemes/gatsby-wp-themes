@@ -63,7 +63,7 @@ export const pageQuery = graphql`
     }
   }
   query GET_POSTS($skip: Int!, $limit: Int!) {
-    allWpPost(limit: $limit, skip: $skip) {
+    allWpPost(limit: $limit, skip: $skip, sort: { order: DESC, fields: date }) {
       nodes {
         ...PostTemplateFragment
       }
