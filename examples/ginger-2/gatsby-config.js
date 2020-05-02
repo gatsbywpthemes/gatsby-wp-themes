@@ -3,21 +3,20 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+require("dotenv").config()
 const {
-  title,
   author,
-  description,
   siteUrl,
   social,
   pathPrefix,
+  addDisqusComments,
+  addAlgoliaSearch,
   ...options
 } = require("./config")
 
 module.exports = {
   pathPrefix: pathPrefix,
   siteMetadata: {
-    title,
-    description,
     author,
     wordPressUrl: options.wordpressUrl,
     siteUrl,
@@ -27,17 +26,18 @@ module.exports = {
     {
       resolve: `gatsby-theme-wp-ginger`,
       options: {
+        disqus:
+          addDisqusComments && process.env.GATSBY_DISQUS_NAME
+            ? process.env.GATSBY_DISQUS_NAME
+            : "",
+        addAlgoliaSearch: !!(
+          addAlgoliaSearch &&
+          process.env.GATSBY_ALGOLIA_APP_ID &&
+          process.env.ALGOLIA_ADMIN_KEY &&
+          process.env.GATSBY_ALGOLIA_SEARCH_KEY
+        ),
         ...options,
         pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,
-        /* the file should be placed in static folder, set the file name,
-        this image wil be used in a summary format - it should be square and minimum 144px x 144px */
-
-        /* available widgets: SocialFollow, RecentPosts, Categories, Tags */
-        /*fonts: [
-           "Anton",
-          "Arya:400,700",
-          // you can also specify font weights and styles
-        ],*/
       },
     },
     {

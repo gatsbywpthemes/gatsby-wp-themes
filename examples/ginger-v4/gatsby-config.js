@@ -3,7 +3,15 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-const { author, siteUrl, social, pathPrefix, ...options } = require("./config")
+require("dotenv").config()
+const {
+  author,
+  siteUrl,
+  social,
+  pathPrefix,
+  addAlgoliaSearch,
+  ...options
+} = require("./config")
 
 module.exports = {
   pathPrefix: pathPrefix,
@@ -17,6 +25,12 @@ module.exports = {
     {
       resolve: `gatsby-theme-wp-ginger`,
       options: {
+        disqus: process.env.GATSBY_DISQUS_NAME,
+        addAlgoliaSearch:
+          addAlgoliaSearch &&
+          process.env.GATSBY_ALGOLIA_APP_ID &&
+          process.env.ALGOLIA_ADMIN_KEY &&
+          process.env.GATSBY_ALGOLIA_APP_ID,
         ...options,
         pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,
       },
