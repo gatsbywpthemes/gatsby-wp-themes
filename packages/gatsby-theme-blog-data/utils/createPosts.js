@@ -40,7 +40,7 @@ module.exports = async ({ actions, graphql }, options) => {
 
   posts.map(post => {
     createPage({
-      path: `/${post.node.uri}`,
+      path: post.node.uri,
       component: postTemplate,
       context: {
         uri: post.node.uri,
@@ -49,10 +49,15 @@ module.exports = async ({ actions, graphql }, options) => {
       },
     })
   })
+
+  if (postsPath === false) {
+    return
+  }
   const pathPrefix = ({ pageNumber }) =>
+    /* will be replaced by postsPage from settings once availble */
     pageNumber === 0
-      ? normalize(`/${postsPath}`)
-      : normalize(`/${postsPath}/${paginationPrefix}`)
+      ? `${normalize(postsPath)}/`
+      : `${normalize(postsPath)}/${paginationPrefix}`
   paginate({
     createPage,
     pathPrefix,

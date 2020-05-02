@@ -34,7 +34,7 @@ module.exports = async ({ actions, graphql }, options) => {
     })
     const items = postsByQuery.data.wpCategory.posts.nodes
     const pathPrefix = ({ pageNumber }) =>
-      pageNumber === 0 ? `/${category.uri}` : `/${category.uri}page`
+      pageNumber === 0 ? category.uri : `${category.uri}page`
     paginate({
       createPage,
       pathPrefix,

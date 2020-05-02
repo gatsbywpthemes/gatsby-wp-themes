@@ -1,4 +1,3 @@
-const slashes = require('remove-trailing-slash')
 const normalize = require('normalize-path')
 const pageTemplate = require.resolve(`../src/templates/page-query.js`)
 
@@ -7,7 +6,6 @@ module.exports = async ({ actions, graphql }, options) => {
   query GET_PAGES {
     allWpPage {
       nodes {
-        title
         uri
         isFrontPage
       }
@@ -20,29 +18,17 @@ module.exports = async ({ actions, graphql }, options) => {
   const pagesQuery = await graphql(GET_PAGES)
   const pages = pagesQuery.data.allWpPage.nodes
 
-  pages.map(page => {
+  pages.map(({ uri, isFrontPage }) => {
     /* dont create page for postsPath */
-    if (
-      slashes(normalize(`/${page.uri}`)) ===
-      slashes(normalize(`/${options.postsPath}`))
-    ) {
+    if (normalize(`/${uri}`) === normalize(`/${options.postsPath}/`)) {
       return
     }
-
-    const path =
-      (page.isFrontPage && options.postsPath !== `/`) ||
-      (page.isFrontPage && options.postsPath === false)
-        ? `/`
-        : `/${page.uri}`
-    console.log(`create page: ${path}`)
+    console.log(`create page: ${uri}`)
     createPage({
-      path,
+      path: uri,
       component: pageTemplate,
       context: {
-        uri: page.uri,
-        postsPath: options.postsPath,
-        wordPressUrl: options.wordPressUrl,
-        uploadsUrl: options.uploadsUrl,
+        uri,
       },
     })
   })

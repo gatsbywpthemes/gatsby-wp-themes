@@ -154,6 +154,8 @@ or
 postsPath: false
 ```
 
+In the future, this setting will be removed. The WordPress Reading Settings > Your homepage displays will be used automatically.
+
 ---
 
 **paginationPrefix** (optional)  

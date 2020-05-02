@@ -32,7 +32,7 @@ module.exports = async ({ actions, graphql }, options) => {
     const postsByQuery = await graphql(GET_POSTS_BY_TAG, { slug: tag.slug })
     const items = postsByQuery.data.wpTag.posts.nodes
     const pathPrefix = ({ pageNumber }) =>
-      pageNumber === 0 ? `/${tag.uri}` : `/${tag.uri}page`
+      pageNumber === 0 ? tag.uri : `${tag.uri}page`
     paginate({
       createPage,
       pathPrefix,
