@@ -99,7 +99,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
   )
 }
 
-const Menu = ({ menuName }) => {
+const Menu = ({ menuName, ...props }) => {
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find(n => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
@@ -108,7 +108,7 @@ const Menu = ({ menuName }) => {
 
   if (menuItems) {
     return (
-      <nav className="menu" aria-label="main">
+      <nav className="menu" aria-label="main" {...props}>
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <ul role="menu" className="menuItemGroup">
           {menuItems.nodes.map(menuItem => {

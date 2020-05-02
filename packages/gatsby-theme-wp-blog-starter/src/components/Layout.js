@@ -7,6 +7,7 @@ import { Global } from '@emotion/core'
 import { globalStyles } from '../styles/GlobalStyles'
 import { Grommet } from 'grommet'
 import grommetTheme from '../styles/grommet'
+import Headroom from 'react-headroom'
 
 import '../styles/scss/styles.scss'
 
@@ -34,7 +35,9 @@ const Layout = ({ children, page, type = 'page' }) => {
         }}
         className={`${layoutClass}-${type} ${fullWidthClass}`}
       >
-        <Header />
+        <Headroom>
+          <Header />
+        </Headroom>
         <main
           sx={{
             py: `xxl`,
