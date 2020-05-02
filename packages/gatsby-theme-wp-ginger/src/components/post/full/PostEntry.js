@@ -89,9 +89,14 @@ const PostEntry = ({ ctx, post }) => {
       )}
       {!!disqus && (
         <div
+          data-kuku
           sx={{
             margin: '2rem auto',
-            width: theme => theme.sizes.content,
+            p: theme => [
+              `1.5rem`,
+              '4rem',
+              `4rem calc(50% - ${parseInt(theme.sizes.content) / 2}rem)`,
+            ],
           }}
         >
           <DiscussionEmbed {...disqusConfig} />
