@@ -19,11 +19,11 @@ module.exports = async ({ actions, graphql }, options) => {
   const pages = pagesQuery.data.allWpPage.nodes
 
   pages.map(({ uri, isFrontPage }) => {
-    /* dont create page for postsPath */
+    /* don't create page for postsPath */
     if (normalize(`/${uri}`) === normalize(`/${options.postsPath}/`)) {
       return
     }
-    console.log(`create page: ${uri}`)
+    console.log(`[gatsby-theme-blog-data] create page: ${uri}`)
     createPage({
       path: uri,
       component: pageTemplate,
