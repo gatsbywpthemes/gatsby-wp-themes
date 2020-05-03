@@ -27,7 +27,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     postsPerPage,
   }
 
-  reporter.warn('make sure to load data from somewhere!')
   await createPosts({ actions, graphql }, mergedOptions)
   await createSitePages({ actions, graphql }, mergedOptions)
   await createCategories({ actions, graphql }, mergedOptions)
