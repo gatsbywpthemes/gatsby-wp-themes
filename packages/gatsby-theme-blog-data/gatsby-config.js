@@ -14,6 +14,8 @@ module.exports = options => {
     addSiteMap,
     siteMapOptions,
     pathPrefix,
+    parserDebugOutput,
+    displayDownloadInfo,
   } = mergedOptions
   const url = slashes(wordPressUrl)
 
@@ -91,6 +93,8 @@ module.exports = options => {
         uploadsUrl: `${url}/${uploadsPath}`,
         processPostTypes: ['WpPage', 'WpPost'],
         pathPrefix,
+        debugOutput: parserDebugOutput,
+        displayDownloadInfo,
       },
     },
   ]
