@@ -12,10 +12,11 @@ const heading = {
   },
 }
 const typographySettings = {
-  baseFontSize: "16px",
+  baseFontSize: "18px",
   fonts: {
-    body: "IBM Plex Mono",
-    heading: "Roboto Slab",
+    body: "Coda",
+    heading: "Baumans",
+    neutral: "Roboto",
   },
   fontWeights: {
     //   body: 400,
@@ -41,13 +42,13 @@ const typographySettings = {
     // Bigger: rem(`96px`),
   },
   a: {
-    // variant: `transitions.m`,
-    // color: 'accent',
-    // fontWeight: `bold`,
-    // textDecoration: 'none',
-    // '&:hover': {
-    //   color: 'primary',
-    // },
+    variant: "transitions.m",
+    color: "accent",
+
+    textDecoration: "none",
+    "&:hover": {
+      color: "primary",
+    },
   },
   p: {
     // fontSize: [`s`],

@@ -1,84 +1,36 @@
-import {
-  form,
-  search,
-  colors,
-  buttons,
-  text,
-  card,
-  gradients,
-  header,
-  footer,
-  list,
-} from './components'
-import {
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  base,
-} from './components/typo'
+import merge from "deepmerge"
+import theme from "gatsby-theme-wp-blog-starter/src/gatsby-plugin-theme-ui/index"
+import colorsSettings from "../../configColors"
+import typographySettings from "../../configTypography"
+import sizesSettings from "../../configSizes"
+import { buttons } from "./components/buttons"
 
-export default {
-  colors,
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  text,
-  gradients,
-  buttons,
-  card,
-  search,
-  form,
-  list,
-  header,
-  footer,
-  sizes: {
-    container: 1200,
-    s: 300,
-    m: 600,
-    l: 900,
-  },
-  shadows: {
-    small: `0px 1px 10px rgba(0,0,0,0.05)`,
-    default: `0px 5px 12px rgba(0,0,0,0.15)`,
-    medium: `0px 5px 15px rgba(0,0,0,0.25)`,
-    large: `0 20px 40px rgba(0,0,0,.15)`,
-    hover: `0px 10px 20px rgba(0,0,0,0.45)`,
-  },
+const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray
 
-  space: {
-    xxs: 4 * 2, //8
-    xs: 4 * 3, //12
-    s: 4 * 4, //16
-    m: 4 * 6, //24
-    l: 4 * 8, //32
-    xl: 4 * 12, //48
-    xxl: 4 * 16, //64
-    big: 4 * 32, //128
-    bigger: 4 * 64, //256
-  },
-
-  breakpoints: [`600px`, `900px`, `1100px`],
-  radii: {
-    xs: `3px`,
-    s: `5px`,
-    m: `10px`,
-    l: `20px`,
-    round: `100px`,
-  },
-  transitions: {
-    s: { transition: `all .2s ease-in-out` },
-    m: { transition: `all .4s ease-in-out` },
-    l: { transition: `all .8s ease-in-out` },
-    xl: { transition: `all 1s ease-in-out` },
-  },
-  layout: {
-    container: {
-      px: [20, 30, 30, 0],
+export default merge(
+  theme,
+  // buttons,
+  {
+    buttons,
+    breakpoints: sizesSettings.breakpoints || theme.breakpoints,
+    sizes: sizesSettings.sizes,
+    baseFontSize: typographySettings.baseFontSize,
+    fonts: typographySettings.fonts,
+    fontWeights: typographySettings.fontWeights,
+    lineHeights: typographySettings.lineHeights,
+    letterSpacings: typographySettings.letterSpacings,
+    fontSizes: typographySettings.fontSizes,
+    styles: {
+      root: {
+        h1: typographySettings.h1,
+        h2: typographySettings.h2,
+        h3: typographySettings.h3,
+        h4: typographySettings.h4,
+        h5: typographySettings.h5,
+        h6: typographySettings.h6,
+      },
     },
+    colors: colorsSettings,
   },
-  styles: {
-    root: base,
-  },
-}
+  { arrayMerge: overwriteMerge }
+)
