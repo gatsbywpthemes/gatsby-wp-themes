@@ -29,7 +29,7 @@ module.exports = async function createResolvers(params, pluginOptions) {
   // - passes content to sourceParser
   // - saves (caches) the result to a `ParsedWordPressContent` node
   // - repeat request for the same content (determined by uri) returns cached result
-  const contentResolver = async (source, args, context, info) => {
+  const contentResolver = async (source, args, context) => {
     const { uri } = source
     let parsedContent = ""
     logger("Entered contentResolver @", uri || "URI not defined, skipping")
@@ -74,7 +74,6 @@ module.exports = async function createResolvers(params, pluginOptions) {
     }
 
     await createNode(node)
-
     return parsedContent
   }
 
