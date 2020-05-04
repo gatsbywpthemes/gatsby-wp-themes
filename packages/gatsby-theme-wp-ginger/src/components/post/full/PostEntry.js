@@ -89,9 +89,7 @@ const PostEntry = ({ ctx, post }) => {
       )}
       {!!disqus && (
         <div
-          data-kuku
           sx={{
-            margin: '2rem auto',
             p: theme => [
               `1.5rem`,
               '4rem',

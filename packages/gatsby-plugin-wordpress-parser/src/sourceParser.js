@@ -30,7 +30,9 @@ module.exports = async function sourceParser(
     wordPressUrl,
     pathPrefix = "",
     generateWebp = true,
-    httpHeaders = {}
+    httpHeaders = {},
+    debugOutput = false,
+    displayDownloadInfo = false
   },
   params,
   context
@@ -83,7 +85,11 @@ module.exports = async function sourceParser(
     const el = $($(selector)[0])
     const details = getNodeAndSavePathDependency(fileNode.id, context.path)
     let staticFile = copyToStatic({ file: fileNode, details, pathPrefix })
-    console.log(`downloaded file ${url}`)
+    if (debugOutput || displayDownloadInfo) {
+      console.log(
+        `[gatsby-plugin-wordpress-parser] downloaded file ${url} to ${staticFile}`
+      )
+    }
     if (attr === "src") {
       el.attr("src", staticFile)
       if (el.is("img")) {
@@ -105,7 +111,7 @@ module.exports = async function sourceParser(
               JSON.stringify(fluidResult).replace(/"/g, "&quot;")
             )
           } catch (e) {
-            console.log("Exception fluid", e)
+            console.log("[gatsby-plugin-wordpress-parser]  Exception fluid", e)
           }
         }
       }
@@ -134,7 +140,11 @@ module.exports = async function sourceParser(
     })
     const details = getNodeAndSavePathDependency(fileNode.id, context.path)
     const staticFile = copyToStatic({ file: fileNode, details, pathPrefix })
-    console.log(`downloaded file ${url} to ${staticFile}`)
+    if (debugOutput || displayDownloadInfo) {
+      console.log(
+        `[gatsby-plugin-wordpress-parser] downloaded file ${url} to ${staticFile}`
+      )
+    }
     return `background-image:url(${staticFile})`
   }
 

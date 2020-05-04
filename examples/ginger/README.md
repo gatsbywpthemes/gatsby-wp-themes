@@ -64,7 +64,7 @@ const config = {
   postsPath: ``,
   paginationPrefix: `page`,
   addWordPressComments: true,
-  disqus: "",
+  addDisqusComments: false,
   menuName: "main",
   gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",

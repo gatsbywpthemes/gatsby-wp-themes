@@ -21,6 +21,8 @@ const DEFAULT_OPTIONS = {
   archiveSidebar: false,
 
   addFancyBox: false,
+  parserDebugOutput: false,
+  displayDownloadInfo: false,
 }
 
 module.exports = DEFAULT_OPTIONS
