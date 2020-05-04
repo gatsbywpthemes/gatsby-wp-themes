@@ -7,7 +7,7 @@ const sharedButtonStyles = {
   cursor: "pointer",
   fontFamily: "neutral",
   textTransform: "uppercase",
-  fontSize: "xs",
+  fontSize: "xxs",
   variant: "transitions.m",
   letterSpacing: 1,
   boxShadow: "medium",
