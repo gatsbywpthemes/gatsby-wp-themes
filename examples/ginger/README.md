@@ -404,6 +404,10 @@ mailchimpEndpoint: "https://gmail.us20.list-manage.com/subscribe/post?u=26436795
 
 ---
 
+## Favicon
+
+In order to replace the default Gatsby favicon, you need to create your own favicon.ico file and replace it with the default one in the `/static` folder.
+
 > Please note that the dark mode may not be properly applied on some Gutenberg blocks with custom color settings.
 
 ## Overriding Theme Styles
