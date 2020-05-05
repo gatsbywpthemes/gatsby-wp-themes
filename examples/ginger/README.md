@@ -498,4 +498,4 @@ const ParsedContent = ({ content }) => {
 export default ParsedContent
 ```
 
-It's already set
+It's already set in the `ginger-kitchen` starter.
