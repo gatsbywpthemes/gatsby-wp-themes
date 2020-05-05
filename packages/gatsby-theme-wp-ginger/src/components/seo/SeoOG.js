@@ -2,28 +2,28 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
 import useSiteSettings from 'gatsby-theme-blog-data/src/hooks/useSiteSettings'
-import useSiteOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
-import SEOTwitter from './SeoTwitter'
-import SEOOG from './SeoOG'
-import CustomHeadElements from './CustomHeadElements'
 import setPageDescription from './pageDescription'
 import setPageTitle from './pageTitle'
 import slashes from 'remove-trailing-slash'
+import normalize from 'normalize-path'
 
-const SEO = ({
+const SEOOpenGraph = ({
   title,
   description = '',
   pageNumber = 1,
+  ogType = 'object',
   titleTemplate = 'default',
+  media = null,
   ogUrl = '',
 }) => {
   const { siteUrl } = useSiteMetadata()
   const siteSettings = useSiteSettings()
-  const siteOptions = useSiteOptions()
   const site = {
     title: siteSettings.title,
     description: siteSettings.description,
   }
+  const normalizedOgUrl = normalize(`/${ogUrl}`)
+  const absoluteOgUrl = `${slashes(siteUrl)}${normalizedOgUrl}`
 
   const pageTitle = setPageTitle(
     title,
@@ -34,22 +34,22 @@ const SEO = ({
   )
 
   const pageDescription = setPageDescription(description, site.description)
-    ? `${slashes(siteUrl)}/${siteOptions.twitterSummaryCardImage}`
-    : false
+  const absoluteMedia = media ? `${slashes(siteUrl)}${media}` : null
 
   return (
-    <>
-      <Helmet
-        htmlAttributes={{ lang: siteSettings.language }}
-        title={pageTitle}
-      >
-        <meta name="description" content={pageDescription} />
-      </Helmet>
-      <SEOTwitter />
-      <SEOOG />
-      <CustomHeadElements />
-    </>
+    <Helmet>
+      <meta
+        property="og:locale"
+        content={siteSettings.language.replace('-', '_')}
+      />
+      <meta property="og:site_name" content={site.title} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={absoluteOgUrl} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
+      {!!absoluteMedia && <meta property="og:image" content={absoluteMedia} />}
+    </Helmet>
   )
 }
 
-export default SEO
+export default SEOOpenGraph
