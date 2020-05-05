@@ -30,36 +30,34 @@ const Header = () => {
     <header className="header" sx={{ variant: `header` }}>
       <Container className="container">
         {search && (
-          <Box
+          <SearchForm
             sx={{
               width: [`100%`, `100%`, `33%`],
               display: `flex`,
               justifyContent: [`center`, `center`, `flex-start`],
             }}
-          >
-            <SearchForm />
-          </Box>
+          />
         )}
-        <Box
+
+        <SiteBranding
+          title={title}
           sx={{
             width: [`50%`, `50%`, `33%`],
             display: `flex`,
             ...styles,
           }}
-        >
-          <SiteBranding title={title} />
-        </Box>
-        <Box
+        />
+
+        <SlideSidebar
           sx={{
             width: [`50%`, `50%`, `33%`],
             display: `flex`,
             justifyContent: `flex-end`,
           }}
-        >
-          <SlideSidebar />
-        </Box>
+        />
       </Container>
-      <Flex
+
+      <ColorSwitch
         sx={{
           position: `absolute`,
           right: [`6%`, `6%`, `2%`],
@@ -68,9 +66,7 @@ const Header = () => {
             top: [10, 10, 15],
           },
         }}
-      >
-        <ColorSwitch />
-      </Flex>
+      />
     </header>
   )
 }

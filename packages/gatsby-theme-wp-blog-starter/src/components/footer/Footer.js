@@ -9,15 +9,14 @@ const Footer = () => (
     <Container sx={{ py: 0 }}>
       <FooterContent />
       <Box className="inverse">
-        <Flex
+        <SocialFollow
           sx={{
             ...socialStyles.follow,
+            display: 'flex',
             mt: `xs`,
             mb: 0,
           }}
-        >
-          <SocialFollow />
-        </Flex>
+        />
       </Box>
     </Container>
   </footer>

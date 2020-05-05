@@ -2,10 +2,10 @@
 import { jsx } from 'theme-ui'
 import TaxonomyItem from './TaxonomyItem.js'
 
-const Tags = ({ post }) => {
+const Tags = ({ post, ...props }) => {
   const tags = post.tags.nodes
   return (
-    <div>
+    <div {...props}>
       {tags.length > 0 && (
         <div sx={{ variant: `text.info`, mr: `xxs`, mb: `xs` }}>
           {tags.length > 1 ? 'Tags: ' : 'Tag: '}

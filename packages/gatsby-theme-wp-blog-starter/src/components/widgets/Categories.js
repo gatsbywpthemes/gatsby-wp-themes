@@ -15,13 +15,14 @@ const ALL_CATEGORIES_QUERY = graphql`
   }
 `
 
-const CategoriesWidget = () => {
+const CategoriesWidget = props => {
   const data = useStaticQuery(ALL_CATEGORIES_QUERY)
   const { nodes } = data.allWpCategory
   return (
     <section
       sx={{ ...widgetStyles.categories }}
       className="widget widget-categories"
+      {...props}
     >
       <h2 className="widget-title">Categories</h2>
       <ul>

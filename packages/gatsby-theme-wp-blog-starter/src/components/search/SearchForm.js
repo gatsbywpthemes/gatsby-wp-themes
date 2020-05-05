@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx, Flex, Box } from 'theme-ui'
-import { useState, Fragment } from 'react'
+import { useState } from 'react'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
 import SearchQuery from './SearchQuery'
 
-const SearchForm = () => {
+const SearchForm = props => {
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
 
@@ -24,7 +24,7 @@ const SearchForm = () => {
   }
 
   return (
-    <Fragment>
+    <Box {...props}>
       <Flex sx={{ variant: `search` }}>
         <Button
           a11yTitle="Search here"
@@ -70,7 +70,7 @@ const SearchForm = () => {
         )}
       </Flex>
       {search && <SearchQuery search={search} />}
-    </Fragment>
+    </Box>
   )
 }
 

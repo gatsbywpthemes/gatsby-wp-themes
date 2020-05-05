@@ -1,5 +1,3 @@
-import { rem } from "polished"
-
 const sharedButtonStyles = {
   boxSizing: "border-box !important",
   border: "none",
@@ -40,7 +38,7 @@ const sharedButtonStyles = {
 const small = {
   py: 4,
   px: "s",
-  fontSize: "xxs",
+  fontSize: 12,
   fontWeight: "bold",
 }
 const outline = {
@@ -77,7 +75,7 @@ const gradientSecondary = {
   variant: ["gradients.secondary", "transitions.m"],
 }
 
-export const buttons = {
+export default {
   primary: {
     ...primary,
     gradient: {

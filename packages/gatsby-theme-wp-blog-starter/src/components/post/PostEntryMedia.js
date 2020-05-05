@@ -13,14 +13,14 @@ const WithLink = ({ post, location, children }) =>
     </Link>
   )
 
-const PostEntryMedia = ({ post, location }) => {
+const PostEntryMedia = ({ post, location, ...props }) => {
   const img = post.featuredImage
 
   return (
     <Fragment>
       {img && (
         <WithLink location={location} post={post}>
-          <div className="entry-media">
+          <div className="entry-media" {...props}>
             <Image img={img} />
           </div>
         </WithLink>

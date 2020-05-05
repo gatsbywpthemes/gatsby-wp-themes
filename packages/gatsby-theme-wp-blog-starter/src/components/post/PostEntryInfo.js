@@ -3,9 +3,13 @@ import { jsx } from 'theme-ui'
 import Date from './Date'
 import Author from './Author'
 
-const PostEntryInfo = ({ post }) => {
+const PostEntryInfo = ({ post, ...props }) => {
   return (
-    <div className="entry-info animate-on-scroll" sx={{ variant: `text.info` }}>
+    <div
+      className="entry-info animate-on-scroll"
+      sx={{ variant: `text.info` }}
+      {...props}
+    >
       <span>Posted on:</span> <Date post={post} /> by <Author post={post} />
     </div>
   )

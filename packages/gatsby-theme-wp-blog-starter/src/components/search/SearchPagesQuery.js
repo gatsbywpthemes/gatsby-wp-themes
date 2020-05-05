@@ -8,7 +8,7 @@ import SearchResults from './SearchResults'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_PAGES = gql`
-  fragment PostFields on Page {
+  fragment PageFields on Page {
     title
     slug
     uri
@@ -21,7 +21,7 @@ const GET_PAGES = gql`
         endCursor
       }
       nodes {
-        ...PostFields
+        ...PageFields
       }
     }
   }
