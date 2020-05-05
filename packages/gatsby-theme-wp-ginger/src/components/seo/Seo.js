@@ -9,7 +9,6 @@ import CustomHeadElements from './CustomHeadElements'
 import setPageDescription from './pageDescription'
 import setPageTitle from './pageTitle'
 import slashes from 'remove-trailing-slash'
-import normalize from 'normalize-path'
 
 const SEO = ({
   title,
