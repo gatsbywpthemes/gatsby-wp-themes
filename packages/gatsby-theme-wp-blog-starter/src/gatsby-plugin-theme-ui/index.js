@@ -1,15 +1,13 @@
-import {
-  form,
-  search,
-  colors,
-  buttons,
-  text,
-  card,
-  gradients,
-  header,
-  footer,
-  list,
-} from './components'
+import { form } from './components/form'
+import { search } from './components/search'
+import { colors } from './components/colors'
+import { text } from './components/text'
+import { buttons } from './components/buttons'
+import { card } from './components/card'
+import { gradients } from './components/gradients'
+import { header } from './components/header'
+import { footer } from './components/footer'
+import { list } from './components/list'
 import {
   fonts,
   fontSizes,
