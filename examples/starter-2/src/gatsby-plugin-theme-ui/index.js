@@ -3,15 +3,20 @@ import theme from "gatsby-theme-wp-blog-starter/src/gatsby-plugin-theme-ui/index
 import colorsSettings from "../../configColors"
 import typographySettings from "../../configTypography"
 import sizesSettings from "../../configSizes"
-import { buttons } from "./components/buttons"
+import buttons from "./components/buttons"
+import gradients from "./components/gradients"
+import text from "./components/text"
+import form from "./components/form"
 
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray
 
 export default merge(
   theme,
-  // buttons,
   {
     buttons,
+    gradients,
+    text,
+    form,
     breakpoints: sizesSettings.breakpoints || theme.breakpoints,
     sizes: sizesSettings.sizes,
     baseFontSize: typographySettings.baseFontSize,

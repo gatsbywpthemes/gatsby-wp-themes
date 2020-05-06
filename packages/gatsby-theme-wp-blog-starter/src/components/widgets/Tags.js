@@ -15,12 +15,16 @@ const ALL_TAGS_QUERY = graphql`
   }
 `
 
-const TagsWidget = () => {
+const TagsWidget = props => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
   return (
     nodes.length && (
-      <section sx={{ ...widgetStyles.tags }} className="widget widget-tags">
+      <section
+        sx={{ ...widgetStyles.tags }}
+        className="widget widget-tags"
+        {...props}
+      >
         <h2 className="widget-title">Tags</h2>
         <ul>
           {nodes

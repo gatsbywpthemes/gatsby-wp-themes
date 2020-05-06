@@ -2,9 +2,9 @@
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 
-const SiteBranding = ({ title }) => {
+const SiteBranding = ({ title, ...props }) => {
   return (
-    <h1 sx={{ variant: `text.branding` }}>
+    <h1 sx={{ variant: `text.branding` }} {...props}>
       <Link to="/" rel="home">
         {title}
       </Link>

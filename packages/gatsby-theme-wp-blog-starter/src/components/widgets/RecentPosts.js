@@ -31,7 +31,7 @@ const RECENT_POSTS_QUERY = graphql`
   }
 `
 
-const RecentPosts = () => {
+const RecentPosts = props => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
 
   const { nodes } = data.allWpPost
@@ -39,6 +39,7 @@ const RecentPosts = () => {
     <section
       sx={{ ...widgetStyles.recentPosts }}
       className="widget widget-recent-posts"
+      {...props}
     >
       <h2 className="widget-title">Recent Posts</h2>
       <ul>

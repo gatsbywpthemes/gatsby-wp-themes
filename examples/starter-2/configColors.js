@@ -56,8 +56,6 @@ const colorSettings = {
   nlButtonColor: light,
   gradientColor1: dark,
   gradientColor2: darken(0.08, dark),
-  // gradientColor1: lighten(0.1, secondary),
-  // gradientColor2: secondary,
 
   modes: {
     light: {
