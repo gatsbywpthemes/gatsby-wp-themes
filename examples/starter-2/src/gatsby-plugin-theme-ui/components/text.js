@@ -1,5 +1,5 @@
 import merge from "deepmerge"
-import { text } from "gatsby-theme-wp-blog-starter/src/gatsby-plugin-theme-ui/components/index"
+import { text } from "gatsby-theme-wp-blog-starter/src/gatsby-plugin-theme-ui/components/text"
 
 export default merge(text, {
   gradient: {

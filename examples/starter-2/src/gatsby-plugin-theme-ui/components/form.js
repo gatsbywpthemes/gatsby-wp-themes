@@ -1,5 +1,5 @@
 import merge from "deepmerge"
-import { form } from "gatsby-theme-wp-blog-starter/src/gatsby-plugin-theme-ui/components"
+import { form } from "gatsby-theme-wp-blog-starter/src/gatsby-plugin-theme-ui/components/form"
 
 export default merge(form, {
   'input[type="submit"], button[type=submit]': {
