@@ -16,7 +16,7 @@ const DEFAULT_OPTIONS = {
   addSiteMap: false,
   siteMapOptions: {},
   search: 'basic',
-  sidebarWidgets: [],
+  sidebarWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
   slideMenuWidgets: [],
   archiveSidebar: false,
 
