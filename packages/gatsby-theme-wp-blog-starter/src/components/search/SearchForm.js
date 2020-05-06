@@ -39,6 +39,9 @@ const SearchForm = props => {
             mb: [`20px`, 0],
           }}
         >
+          <label for="search" sx={{ display: 'none' }}>
+            search
+          </label>
           <input
             value={value}
             type="search"
@@ -46,6 +49,7 @@ const SearchForm = props => {
             onSubmit={handleSubmit}
             onKeyDown={handleKeyDown}
             placeholder="search here..."
+            name="search"
             sx={{ mb: [0, 0, `15px`] }}
           />
         </Box>
