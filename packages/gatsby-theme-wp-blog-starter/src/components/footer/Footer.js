@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Container, jsx, Flex, Box } from 'theme-ui'
+import { Container, jsx, Box } from 'theme-ui'
 import FooterContent from './FooterContent'
 import SocialFollow from '../social/SocialFollows'
 import socialStyles from '../../styles/socialStyles'

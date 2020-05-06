@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Button } from 'theme-ui'
-import { Link } from 'gatsby'
+import { jsx } from 'theme-ui'
 import PostEntryTitle from './PostEntryTitle'
 import PostEntryMedia from './PostEntryMedia'
 import PostEntryContent from './PostEntryContent'

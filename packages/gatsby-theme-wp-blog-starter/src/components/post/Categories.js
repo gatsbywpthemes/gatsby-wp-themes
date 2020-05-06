@@ -12,7 +12,7 @@ const Categories = ({ post, ...props }) => {
         </Box>
       )}
       {categories.map(cat => (
-        <TaxonomyItem taxName="category" item={cat} key={cat.id} />
+        <TaxonomyItem taxName="category" item={cat} key={cat.slug} />
       ))}
     </div>
   )

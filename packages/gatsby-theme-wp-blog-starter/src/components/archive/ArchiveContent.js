@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Box } from 'theme-ui'
-import PostEntry from '../post/PostEntry'
+import { jsx, Container, Flex } from 'theme-ui'
 import Pagination from './Pagination'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Sidebar from '../Sidebar.js'

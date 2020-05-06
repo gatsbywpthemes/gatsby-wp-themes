@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex, Button } from 'theme-ui'
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Link } from 'gatsby'
 

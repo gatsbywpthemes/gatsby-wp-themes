@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Box, Flex } from 'theme-ui'
+import { jsx, Container } from 'theme-ui'
 import { useStaticQuery, graphql } from 'gatsby'
 import SlideSidebar from './SlideSidebar'
 import SiteBranding from './SiteBranding'

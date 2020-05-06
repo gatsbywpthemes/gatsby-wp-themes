@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui'
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import Widgets from './widgets/Widgets'
 import sidebarStyles from '../styles/sidebarStyles'
