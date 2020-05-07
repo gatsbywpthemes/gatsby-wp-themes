@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 
-const SiteBranding = ({ title, ...props }) => {
+export const SiteBranding = ({ title, ...props }) => {
   return (
     <h1 sx={{ variant: `text.branding` }} {...props}>
       <Link to="/" rel="home">
@@ -11,5 +11,3 @@ const SiteBranding = ({ title, ...props }) => {
     </h1>
   )
 }
-
-export default SiteBranding

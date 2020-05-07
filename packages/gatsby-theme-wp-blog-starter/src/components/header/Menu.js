@@ -110,7 +110,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath, orientation) => {
   )
 }
 
-const Menu = ({ menuName, orientation, ...props }) => {
+export const Menu = ({ menuName, orientation, ...props }) => {
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find(n => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
@@ -146,5 +146,3 @@ const Menu = ({ menuName, orientation, ...props }) => {
     return null
   }
 }
-
-export default Menu

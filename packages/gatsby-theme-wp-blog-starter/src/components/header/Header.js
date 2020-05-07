@@ -1,13 +1,12 @@
 /** @jsx jsx */
 import { jsx, Container } from 'theme-ui'
 import { useStaticQuery, graphql } from 'gatsby'
-import SlideSidebar from './SlideSidebar'
-import SiteBranding from './SiteBranding'
+import { SlideSidebar, SiteBranding } from './index'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import SearchForm from '../search/SearchForm'
 import ColorSwitch from '../ColorSwitch'
 
-const Header = () => {
+export const Header = () => {
   const { search } = useThemeOptions()
   const styles = search
     ? { justifyContent: [`flex-start`, `flex-start`, `center`] }
@@ -70,5 +69,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header
