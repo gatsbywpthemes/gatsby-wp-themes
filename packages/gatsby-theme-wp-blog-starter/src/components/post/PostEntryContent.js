@@ -5,8 +5,9 @@ import gutenberg from '../../styles/theme-gutenberg'
 
 const PostEntryContent = ({ post, location, ...props }) => {
   const content = location === 'single' ? post.content : post.excerpt
+  const attributes = location === 'single' ? { id: 'content' } : {}
   return (
-    <Box id="content" sx={{ ...gutenberg }} {...props}>
+    <Box {...attributes} sx={{ ...gutenberg }} {...props}>
       <Box className="entry-content">
         <ParsedContent content={content} />
       </Box>
