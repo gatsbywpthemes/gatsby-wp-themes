@@ -23,13 +23,15 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
     if (menuItem.url.startsWith(`#`)) {
       return (
         <AnchorLink offset={25} href={menuItem.url}>
-          {menuItem.label}
+          <div dangerouslySetInnerHTML={{ __html: menuItem.label }} />
         </AnchorLink>
       )
     }
     if (parsedUrl.is('relative')) {
       url = subdirectoryCorrection(url, wordPressUrl)
-      return <Link to={url}> {menuItem.label}</Link>
+      return (
+        <Link to={url} dangerouslySetInnerHTML={{ __html: menuItem.label }} />
+      )
     }
     const wordPressUrlParsed = new URIParser(wordPressUrl)
     const path = parsedUrl.path()
@@ -38,29 +40,32 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
       path.indexOf(slashes(wordPressUrlParsed.path())) === 0
     ) {
       url = subdirectoryCorrection(path, wordPressUrl)
-      return <Link to={url}> {menuItem.label}</Link>
+      return (
+        <Link to={url} dangerouslySetInnerHTML={{ __html: menuItem.label }} />
+      )
     }
     const targetRelAttrs =
       menuItem.target === '_blank'
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : {}
     return (
-      <a href={menuItem.url} {...targetRelAttrs}>
-        {menuItem.label}
-      </a>
+      <a
+        href={menuItem.url}
+        dangerouslySetInnerHTML={{ __html: menuItem.label }}
+        {...targetRelAttrs}
+      />
     )
   } else {
     return menuItem.url !== '#' ? (
       menuItem.url === wordPressUrl ? (
-        <Link to="/"> {menuItem.label}</Link>
+        <Link to="/" dangerouslySetInnerHTML={{ __html: menuItem.label }} />
       ) : (
         <Link
           to={`${normalize(
             createLocalLink(menuItem.url, slashes(wordPressUrl))
           )}/`}
-        >
-          {menuItem.label}
-        </Link>
+          dangerouslySetInnerHTML={{ __html: menuItem.label }}
+        />
       )
     ) : (
       menuItem.label
@@ -68,9 +73,9 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
   }
 }
 
-const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
+const renderMenuItem = (menuItem, wordPressUrl, postsPath, orientation) => {
   if (menuItem.childItems && menuItem.childItems.nodes.length) {
-    return renderSubMenu(menuItem, wordPressUrl)
+    return renderSubMenu(menuItem, wordPressUrl, orientation)
   } else {
     return (
       <li className={`menu-item ${menuItem.cssClasses}`} key={menuItem.id}>
@@ -79,8 +84,14 @@ const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
     )
   }
 }
+const WithCollapse = ({ orientation, children, menuItem }) =>
+  orientation === 'vertical' ? (
+    <Collapse menuItem={menuItem}>{children}</Collapse>
+  ) : (
+    children
+  )
 
-const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
+const renderSubMenu = (menuItem, wordPressUrl, postsPath, orientation) => {
   return (
     <li
       className="has-subMenu menu-item"
@@ -88,18 +99,18 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
       sx={{ position: `relative` }}
     >
       {renderLink(menuItem, wordPressUrl, postsPath)}
-      <Collapse menuItem={menuItem}>
+      <WithCollapse orientation={orientation} menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
           {menuItem.childItems.nodes.map(item =>
             renderMenuItem(item, wordPressUrl, postsPath)
           )}
         </ul>
-      </Collapse>
+      </WithCollapse>
     </li>
   )
 }
 
-const Menu = ({ menuName, ...props }) => {
+const Menu = ({ menuName, orientation, ...props }) => {
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find(n => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
@@ -113,9 +124,19 @@ const Menu = ({ menuName, ...props }) => {
         <ul role="menu" className="menuItemGroup">
           {menuItems.nodes.map(menuItem => {
             if (menuItem.childItems.nodes.length) {
-              return renderSubMenu(menuItem, wordPressUrl, postsPath)
+              return renderSubMenu(
+                menuItem,
+                wordPressUrl,
+                postsPath,
+                orientation
+              )
             } else {
-              return renderMenuItem(menuItem, wordPressUrl, postsPath)
+              return renderMenuItem(
+                menuItem,
+                wordPressUrl,
+                postsPath,
+                orientation
+              )
             }
           })}
         </ul>
