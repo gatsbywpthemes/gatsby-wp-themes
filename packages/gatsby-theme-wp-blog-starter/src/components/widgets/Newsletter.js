@@ -38,6 +38,7 @@ const Newsletter = props => {
               value={email}
               onChange={handleChange}
               sx={{ borderRadius: '5px 0 0 5px' }}
+              aria-label="Add your Email address to subsribe"
             />
             <button type="submit">Subscribe</button>
           </Flex>

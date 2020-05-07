@@ -35,6 +35,7 @@ const SearchForm = () => {
                 type="search"
                 onChange={handleChange}
                 placeholder="search here..."
+                aria-label="Search here"
               />
 
               {value.length > 0 && (

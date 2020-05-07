@@ -47,6 +47,7 @@ const SearchForm = props => {
             onKeyDown={handleKeyDown}
             placeholder="search here..."
             sx={{ mb: [0, 0, `15px`] }}
+            aria-label="Search here"
           />
         </Box>
         {value.length > 0 && (

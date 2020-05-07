@@ -48,7 +48,7 @@ const RecentPosts = props => {
               const uri = normalize(`/${post.uri}`)
               return (
                 <li key={post.id}>
-                  <Link to={uri}>
+                  <Link aria-label={`Read more - ${post.title}`} to={uri}>
                     {post.featuredImage && (
                       <Img
                         alt={post.featuredImage.altText}
