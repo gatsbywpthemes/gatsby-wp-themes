@@ -27,17 +27,14 @@ const TagsWidget = props => {
       >
         <h2 className="widget-title">Tags</h2>
         <ul>
-          {nodes
-            .map(tag => (
-              <li key={tag.slug}>
-                <Link to={`/tag/${tag.slug}`}>
-                  {tag.name} ({tag.count})
-                </Link>
-              </li>
-            ))
-            .reduce((accu, elem) => {
-              return accu === null ? [elem] : [...accu, ' · ', elem]
-            }, null)}
+          {nodes.map((tag, index) => (
+            <li key={tag.slug}>
+              <Link to={`/tag/${tag.slug}`}>
+                {tag.name} ({tag.count})
+              </Link>
+              {index < nodes.length - 1 && ' · '}
+            </li>
+          ))}
         </ul>
       </section>
     )
