@@ -51,6 +51,7 @@ const SearchForm = props => {
             placeholder="search here..."
             name="search"
             sx={{ mb: [0, 0, `15px`] }}
+            aria-label="Search here"
           />
         </Box>
         {value.length > 0 && (

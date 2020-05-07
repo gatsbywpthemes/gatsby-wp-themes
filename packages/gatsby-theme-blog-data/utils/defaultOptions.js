@@ -21,6 +21,7 @@ const DEFAULT_OPTIONS = {
   archiveSidebar: false,
 
   addFancyBox: false,
+  pageCreateDebugOutput: false,
   parserDebugOutput: false,
   displayDownloadInfo: false,
 }

@@ -23,7 +23,9 @@ module.exports = async ({ actions, graphql }, options) => {
     if (normalize(`/${uri}`) === normalize(`/${options.postsPath}/`)) {
       return
     }
-    console.log(`[gatsby-theme-blog-data] create page: ${uri}`)
+    if (options.pageCreateDebugOutput) {
+      console.log(`[gatsby-theme-blog-data] create page: ${uri}`)
+    }
     createPage({
       path: uri,
       component: pageTemplate,

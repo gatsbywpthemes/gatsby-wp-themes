@@ -9,15 +9,15 @@ const Newsletter = () => {
   const [email, setEmail] = useState('')
   const [msg, setMsg] = useState()
   const valid = typeof __GATSBY_PLUGIN_MAILCHIMP_ADDRESS__ === 'string'
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     addToMailchimp(email)
-      .then((data) => {
+      .then(data => {
         setMsg(data.msg)
       })
-      .catch((error) => console.log(error))
+      .catch(error => console.log(error))
   }
-  const handleChange = (e) => {
+  const handleChange = e => {
     setEmail(e.target.value)
   }
   return (
@@ -36,6 +36,7 @@ const Newsletter = () => {
                 required
                 value={email}
                 onChange={handleChange}
+                aria-label="Subsribe with your email address"
               />
               <button type="submit">Subscribe</button>
             </form>
