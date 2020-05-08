@@ -15,7 +15,7 @@ const ALL_CATEGORIES_QUERY = graphql`
   }
 `
 
-const CategoriesWidget = props => {
+export const CategoriesWidget = props => {
   const data = useStaticQuery(ALL_CATEGORIES_QUERY)
   const { nodes } = data.allWpCategory
   return (
@@ -37,5 +37,3 @@ const CategoriesWidget = props => {
     </section>
   )
 }
-
-export default CategoriesWidget

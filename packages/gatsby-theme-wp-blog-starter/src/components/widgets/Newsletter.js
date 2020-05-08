@@ -4,7 +4,7 @@ import { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import widgetStyles from '../../styles/widgetStyles'
 
-const Newsletter = props => {
+export const Newsletter = props => {
   const [email, setEmail] = useState('')
   const [msg, setMsg] = useState()
   const handleSubmit = e => {
@@ -50,5 +50,3 @@ const Newsletter = props => {
     </Box>
   )
 }
-
-export default Newsletter

@@ -6,7 +6,7 @@ import { Menu as MenuIcon, Close } from 'grommet-icons'
 import { Layer, Button } from 'grommet'
 import { Menu } from './index'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
-import Widgets from '../widgets/Widgets'
+import { Widgets } from '../widgets'
 import slideSidebarStyles from '../../styles/slideSidebarStyles'
 
 export const SlideSidebar = props => {
