@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from 'theme-ui'
-import Pagination from './Pagination'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import Sidebar from '../Sidebar.js'
-import ArchiveTitle from './ArchiveTitle'
-import PostsList from './PostsList'
+import { ArchiveTitle, PostsList, Pagination } from './index'
 
 export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
   const { layoutWidth, archiveSidebar, sidebarWidgets } = useThemeOptions()

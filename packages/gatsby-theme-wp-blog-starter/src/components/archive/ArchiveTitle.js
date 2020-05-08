@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
 
-const ArchiveTitle = ({ name, text }) => {
+export const ArchiveTitle = ({ name, text }) => {
   return (
     <Flex className="archive-title" sx={{ justifyContent: `flex-start` }}>
       <h1
@@ -15,5 +15,3 @@ const ArchiveTitle = ({ name, text }) => {
     </Flex>
   )
 }
-
-export default ArchiveTitle

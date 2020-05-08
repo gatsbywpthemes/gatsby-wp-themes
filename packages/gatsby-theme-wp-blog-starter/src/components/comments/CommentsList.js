@@ -3,8 +3,7 @@ import { jsx } from 'theme-ui'
 import { Fragment, useState } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
-import Comment from './Comment'
-import CommentForm from './CommentForm'
+import { CommentForm, Comment } from './index'
 import commentStyles from '../../styles/commentStyles'
 import Loader from 'react-spinners/BeatLoader'
 
@@ -43,7 +42,7 @@ const GET_COMMENTS = gql`
   }
 `
 
-const CommentsList = ({ post }) => {
+export const CommentsList = ({ post }) => {
   const postId = post.databaseId
   const [activeComment, setActiveComment] = useState(0)
   const cancelReply = () => {
@@ -130,5 +129,3 @@ const CommentsList = ({ post }) => {
     </section>
   )
 }
-
-export default CommentsList

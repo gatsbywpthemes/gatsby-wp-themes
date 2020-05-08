@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import moment from 'moment'
-import CommentForm from './CommentForm'
+import { CommentForm } from './index'
 import commentStyles from '../../styles/commentStyles'
 
 const Reply = ({ commentId, actionOnClick }) => {
@@ -36,7 +36,7 @@ const Author = ({ name, url }) => {
   )
 }
 
-const Comment = props => {
+export const Comment = props => {
   const {
     comment,
     activeComment,
@@ -70,5 +70,3 @@ const Comment = props => {
     </li>
   )
 }
-
-export default Comment
