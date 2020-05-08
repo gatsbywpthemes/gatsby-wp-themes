@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
 import SearchQuery from './SearchQuery'
+import searchStyles from '../../styles/searchStyles'
 
 const SearchForm = props => {
   const [value, setValue] = useState('')
@@ -25,17 +26,17 @@ const SearchForm = props => {
 
   return (
     <Box {...props}>
-      <Flex sx={{ variant: `search` }}>
+      <Flex sx={{ ...searchStyles }}>
         <Button
           a11yTitle="Search here"
           icon={<SearchIcon />}
-          sx={{ variant: `search.icon` }}
+          sx={{ ...searchStyles.icon }}
         />
 
         <Box
           className="search-box"
           sx={{
-            variant: `search.box`,
+            ...searchStyles.box,
             mb: [`20px`, 0],
           }}
         >

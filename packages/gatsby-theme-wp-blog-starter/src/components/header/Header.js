@@ -5,6 +5,7 @@ import { SlideSidebar, SiteBranding } from './index'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import SearchForm from '../search/SearchForm'
 import { ColorSwitch } from '../index'
+import headerStyles from '../../styles/headerStyles'
 
 export const Header = () => {
   const { search } = useThemeOptions()
@@ -26,7 +27,7 @@ export const Header = () => {
   const { title } = data.wp.generalSettings
 
   return (
-    <header className="header" sx={{ variant: `header` }}>
+    <header className="header" sx={{ ...headerStyles }}>
       <Container className="container">
         {search && (
           <SearchForm

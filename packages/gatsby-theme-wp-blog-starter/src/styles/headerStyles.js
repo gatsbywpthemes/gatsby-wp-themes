@@ -1,4 +1,4 @@
-export const header = {
+export default {
   bg: 'headerBg',
   color: 'headerColor',
   fontWeight: 'bold',

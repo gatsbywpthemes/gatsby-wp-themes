@@ -2,6 +2,7 @@
 import { jsx, Box } from 'theme-ui'
 import SearchPostsQuery from './SearchPostsQuery'
 import SearchPagesQuery from './SearchPagesQuery'
+import searchStyles from '../../styles/searchStyles'
 
 const SearchResults = ({ search, ...props }) => {
   const showResults =
@@ -11,7 +12,7 @@ const SearchResults = ({ search, ...props }) => {
       className="search-results"
       sx={{
         ...showResults,
-        variant: `search.resultsBasic`,
+        ...searchStyles.resultsBasic,
       }}
       {...props}
     >

@@ -1,12 +1,9 @@
 import { form } from './components/form'
-import { search } from './components/search'
 import { colors } from './components/colors'
 import { text } from './components/text'
 import { buttons } from './components/buttons'
 import { card } from './components/card'
 import { gradients } from './components/gradients'
-import { header } from './components/header'
-import { footer } from './components/footer'
 import { list } from './components/list'
 import {
   fonts,
@@ -26,11 +23,8 @@ export default {
   gradients,
   buttons,
   card,
-  search,
   form,
   list,
-  header,
-  footer,
   sizes: {
     container: 1200,
     s: 300,

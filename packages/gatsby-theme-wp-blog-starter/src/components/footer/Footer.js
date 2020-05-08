@@ -3,9 +3,10 @@ import { Container, jsx, Box } from 'theme-ui'
 import { FooterContent } from './index'
 import { SocialFollows } from '../social'
 import socialStyles from '../../styles/socialStyles'
+import footerStyles from '../../styles/footerStyles'
 
 export const Footer = () => (
-  <footer sx={{ variant: 'footer' }}>
+  <footer sx={{ ...footerStyles }}>
     <Container sx={{ py: 0 }}>
       <FooterContent />
       <Box className="inverse">
