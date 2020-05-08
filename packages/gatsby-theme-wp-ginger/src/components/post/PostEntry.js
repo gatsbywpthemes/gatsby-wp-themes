@@ -2,12 +2,14 @@
 import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import PostEntryIntro from './PostEntryIntro'
-import PostEntryMedia from './PostEntryMedia'
-import PrevNextPostNavigation from './PrevNextPostNavigation'
-import Tags from './Tags'
+import {
+  PostEntryIntro,
+  PostEntryMedia,
+  PrevNextPostNavigation,
+  Tags,
+} from './index'
 
-const PostEntry = ({ ctx, post, location = 'archive' }) => {
+export const PostEntry = ({ ctx, post, location = 'archive' }) => {
   return (
     <article
       className="entry"
@@ -26,5 +28,3 @@ const PostEntry = ({ ctx, post, location = 'archive' }) => {
     </article>
   )
 }
-
-export default PostEntry

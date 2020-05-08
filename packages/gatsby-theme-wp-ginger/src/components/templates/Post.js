@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import Layout from '../Layout.js'
-import PostEntry from '../post/full/PostEntry'
+import { PostEntryFull } from '../post'
 import SEO from '../seo/Seo'
 import normalize from 'normalize-path'
 
@@ -25,7 +25,7 @@ const Post = props => {
           ogType="article"
           ogUrl={normalize(`/${uri}`)}
         />
-        <PostEntry {...props} />
+        <PostEntryFull {...props} />
       </Layout>
     </>
   )

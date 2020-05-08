@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment/moment'
-const Date = ({ date }) => {
+export const Date = ({ date }) => {
   return (
     <>
       <time className="entry-date published updated" dateTime={date}>
@@ -9,5 +9,3 @@ const Date = ({ date }) => {
     </>
   )
 }
-
-export default Date

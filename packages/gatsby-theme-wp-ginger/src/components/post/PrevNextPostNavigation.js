@@ -30,7 +30,7 @@ const renderNextLink = ({ next }) => {
   }
 }
 
-const PrevNextPostNavigation = ({ ctx, style }) => {
+export const PrevNextPostNavigation = ({ ctx, style }) => {
   return (
     <nav sx={{ ...pagination, ...style }}>
       {renderPreviousLink(ctx)}
@@ -38,5 +38,3 @@ const PrevNextPostNavigation = ({ ctx, style }) => {
     </nav>
   )
 }
-
-export default PrevNextPostNavigation

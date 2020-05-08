@@ -20,7 +20,7 @@ const WithLink = ({ uri, children, location }) =>
     </Link>
   )
 
-const PostEntryMedia = ({
+export const PostEntryMedia = ({
   post: { featuredImage, uri },
 
   location = 'archive',
@@ -35,5 +35,3 @@ const PostEntryMedia = ({
     </>
   )
 }
-
-export default PostEntryMedia

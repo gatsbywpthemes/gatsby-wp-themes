@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import normalize from 'normalize-path'
 
-const PostEntryTitle = ({ post, location }) => {
+export const PostEntryTitle = ({ post, location }) => {
   const attributes = {
     sx: { variant: 'special.title' },
     className: 'entry-title',
@@ -19,5 +19,3 @@ const PostEntryTitle = ({ post, location }) => {
     <h1 {...attributes} dangerouslySetInnerHTML={{ __html: post.title }} />
   )
 }
-
-export default PostEntryTitle

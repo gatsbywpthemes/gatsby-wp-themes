@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import ParsedContent from '../../utils/ParsedContent'
 
-const PostEntryContent = ({ content, location = 'archive' }) => {
+export const PostEntryContent = ({ content, location = 'archive' }) => {
   return (
     <>
       {location === 'single' && (
@@ -21,5 +21,3 @@ const PostEntryContent = ({ content, location = 'archive' }) => {
     </>
   )
 }
-
-export default PostEntryContent

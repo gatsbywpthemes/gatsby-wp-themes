@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Link } from 'gatsby'
-const Author = ({ post }) => {
+export const Author = ({ post }) => {
   return (
     <>
       {post.author && (
@@ -20,5 +20,3 @@ const Author = ({ post }) => {
     </>
   )
 }
-
-export default Author

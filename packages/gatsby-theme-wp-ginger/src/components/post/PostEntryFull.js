@@ -1,19 +1,22 @@
 /** @jsx jsx */
 import { Flex, jsx, useColorMode } from 'theme-ui'
-import PostEntryIntro from '../PostEntryIntro'
-import PostEntryContent from '../PostEntryContent'
-import PrevNextPostNavigation from '../PrevNextPostNavigation'
-import Tags from '../Tags'
-import { CommentsList } from '../../comments'
+import {
+  PostEntryIntro,
+  PostEntryContent,
+  PrevNextPostNavigation,
+  Tags,
+} from './index'
+
+import { CommentsList } from '../comments'
 import { FiChevronsDown } from 'react-icons/fi'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-import { article } from '../../../styles/article'
+import { article } from '../../styles/article'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { Image } from '../../images'
-import { commentsSection } from '../../../styles/comments'
+import { Image } from '../images'
+import { commentsSection } from '../../styles/comments'
 import { DiscussionEmbed } from 'disqus-react'
 
-const PostEntry = ({ ctx, post }) => {
+export const PostEntryFull = ({ ctx, post }) => {
   const bgStyles = !!post.featuredImage
     ? {
         backgroundImage: `url(${post.featuredImage.remoteFile.childImageSharp.fluid.src})`,
@@ -103,5 +106,3 @@ const PostEntry = ({ ctx, post }) => {
     </article>
   )
 }
-
-export default PostEntry

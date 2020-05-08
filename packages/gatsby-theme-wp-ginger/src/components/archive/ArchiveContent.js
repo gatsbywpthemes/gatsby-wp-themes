@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Fragment } from 'react'
-import PostEntry from '../post/PostEntry'
+import { PostEntry } from '../post'
 import { Pagination, ArchiveTitle } from './index'
 
 export const ArchiveContent = ({

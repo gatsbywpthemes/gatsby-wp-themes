@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Fragment } from 'react'
-import Date from './Date'
+import { Date } from './index'
 import { Link } from 'gatsby'
 import normalize from 'normalize-path'
 
-const PublicationDate = ({ post, location }) => {
+export const PublicationDate = ({ post, location }) => {
   return location === 'archive' ? (
     <Fragment>
       {post.date && (
@@ -35,5 +35,3 @@ const PublicationDate = ({ post, location }) => {
     </Fragment>
   )
 }
-
-export default PublicationDate

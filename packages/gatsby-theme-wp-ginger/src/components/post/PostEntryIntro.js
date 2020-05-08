@@ -1,17 +1,19 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Fragment } from 'react'
-import PublicationDate from './PublicationDate'
-import PostEntryTitle from './PostEntryTitle'
-import PostEntryExcerpt from './PostEntryExcerpt'
-import Categories from './Categories'
-import Author from './Author'
-import PrevNextPostNavigation from './PrevNextPostNavigation'
+import {
+  PublicationDate,
+  PostEntryTitle,
+  PostEntryExcerpt,
+  Categories,
+  Author,
+  PrevNextPostNavigation,
+} from './index'
 import SocialShare from '../social/SocialShare'
 import normalize from 'normalize-path'
 import { card } from '../../styles/card'
 
-const PostEntryIntro = ({
+export const PostEntryIntro = ({
   ctx,
   post,
   location = 'archive',
@@ -55,5 +57,3 @@ const PostEntryIntro = ({
     </div>
   )
 }
-
-export default PostEntryIntro

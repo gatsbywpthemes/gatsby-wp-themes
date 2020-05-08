@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import Date from '../post/Date'
+import { Date } from '../post'
 import { CommentForm } from './index'
 import { comment as commentStyles, replyButton } from '../../styles/comments'
 

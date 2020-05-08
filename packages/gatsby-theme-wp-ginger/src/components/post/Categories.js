@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Link } from 'gatsby'
-const Categories = ({ post }) => {
+export const Categories = ({ post }) => {
   return (
     <>
       <span>in </span>
@@ -24,5 +24,3 @@ const Categories = ({ post }) => {
     </>
   )
 }
-
-export default Categories

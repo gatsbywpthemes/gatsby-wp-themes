@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-const PostEntryExcerpt = ({ post, location }) => {
+export const PostEntryExcerpt = ({ post, location }) => {
   return (
     location === 'archive' &&
     post.excerpt && (
@@ -12,5 +12,3 @@ const PostEntryExcerpt = ({ post, location }) => {
     )
   )
 }
-
-export default PostEntryExcerpt

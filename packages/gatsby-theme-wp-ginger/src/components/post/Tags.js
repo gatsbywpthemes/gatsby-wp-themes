@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import { tags as tagStyles } from '../../styles/article'
 
-const Tags = ({ tags }) => {
+export const Tags = ({ tags }) => {
   return (
     <section
       sx={tagStyles}
@@ -29,5 +29,3 @@ const Tags = ({ tags }) => {
     </section>
   )
 }
-
-export default Tags
