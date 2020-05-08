@@ -2,7 +2,7 @@
 import { jsx, useColorMode } from 'theme-ui'
 import { FiSun, FiMoon } from 'react-icons/fi'
 
-const ColorSwitch = () => {
+export const ColorSwitch = () => {
   const [colorMode, setColorMode] = useColorMode()
   return (
     <button
@@ -40,5 +40,3 @@ const ColorSwitch = () => {
     </button>
   )
 }
-
-export default ColorSwitch

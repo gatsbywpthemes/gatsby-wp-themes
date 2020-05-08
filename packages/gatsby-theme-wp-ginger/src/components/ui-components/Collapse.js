@@ -4,7 +4,7 @@ import React from 'react'
 import { Collapsible } from 'grommet'
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi'
 
-const Collapse = ({ menuItem, children }) => {
+export const Collapse = ({ menuItem, children }) => {
   const [openMenu, setOpenMenu] = React.useState(false)
   const openStyle =
     menuItem.url === '#'
@@ -31,5 +31,3 @@ const Collapse = ({ menuItem, children }) => {
     </>
   )
 }
-
-export default Collapse

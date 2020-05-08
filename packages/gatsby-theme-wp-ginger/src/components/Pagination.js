@@ -51,7 +51,7 @@ const renderNextLink = props => {
   }
 }
 
-const Pagination = ({ ctx, prefix = '' }) => {
+export const Pagination = ({ ctx, prefix = '' }) => {
   const { paginationPrefix } = useThemeOptions()
   const { pageNumber } = ctx
   // return empty string if there is only one page
@@ -68,5 +68,3 @@ const Pagination = ({ ctx, prefix = '' }) => {
     </nav>
   )
 }
-
-export default Pagination

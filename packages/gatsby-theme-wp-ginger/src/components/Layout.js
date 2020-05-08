@@ -12,7 +12,7 @@ import { globalStyles } from '../styles/GlobalStyles'
 import { Footer } from './footer'
 import '../styles/blocks.css'
 import '../styles/custom-gutenstyles.css'
-import ColorSwitch from './ColorSwitch'
+import { ColorSwitch } from './index'
 
 const MaybeWithContainer = ({ useContainer, children }) => {
   return !useContainer ? (

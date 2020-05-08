@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import SlideSidebar from './SlideSidebar'
+import { SlideSidebar } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-const SidebarWrapper = props => {
+export const SidebarWrapper = props => {
   const { children } = props
   const [open, updateOpen] = useState(false)
   const [openClass, setOpenClass] = useState(false)
@@ -25,5 +25,3 @@ const SidebarWrapper = props => {
     </>
   )
 }
-
-export default SidebarWrapper

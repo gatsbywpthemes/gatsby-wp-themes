@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useRef } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
-import Menu from './Menu'
+import { Menu } from './index'
 import { Widgets } from './widgets'
 import SearchForm from './search/SearchForm'
 import SearchFormAlgolia from 'gatsby-theme-algolia/src/components/Search'
@@ -17,7 +17,7 @@ const searchIndices = [
   { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
 ]
 
-const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
+export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
   const {
     widgetAreas: {
       slideMenu: { widgets },
@@ -110,5 +110,3 @@ const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
     </>
   )
 }
-
-export default SlideSidebar
