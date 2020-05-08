@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
-const useMenusQuery = () => {
+export const useMenusQuery = () => {
   const data = useStaticQuery(graphql`
     fragment MenuFields on WpMenuItem {
       id
@@ -41,5 +41,3 @@ const useMenusQuery = () => {
   `)
   return data.allWpMenu.nodes
 }
-
-export default useMenusQuery

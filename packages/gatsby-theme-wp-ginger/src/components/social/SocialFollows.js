@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
-import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 import { follow } from '../../styles/social'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -84,7 +84,7 @@ const SocialFollows = () => {
     faYoutube,
   ]
 
-  const { social } = useSiteMetadata()
+  const { social } = useSiteMetaData()
 
   return (
     <Flex sx={follow}>

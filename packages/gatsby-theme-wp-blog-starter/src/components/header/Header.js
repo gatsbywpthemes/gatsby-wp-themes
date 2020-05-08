@@ -2,7 +2,7 @@
 import { jsx, Container } from 'theme-ui'
 import { useStaticQuery, graphql } from 'gatsby'
 import { SlideSidebar, SiteBranding } from './index'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import SearchForm from '../search/SearchForm'
 import { ColorSwitch } from '../index'
 import headerStyles from '../../styles/headerStyles'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { PinterestShareButton, PinterestIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
-import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 
 const Pinterest = ({
   url,
@@ -15,8 +15,8 @@ const Pinterest = ({
   logoFillColor = 'white',
 }) => {
   const { siteUrl } = useSiteMetaData()
-  const shareUrl = `${slashes(siteUrl)}${url}`
-  const shareMedia = `${slashes(siteUrl)}${media}`
+  const shareUrl = `${siteUrl}${url}`
+  const shareMedia = `${siteUrl}${media}`
 
   return (
     <PinterestShareButton url={shareUrl} media={shareMedia} description={title}>

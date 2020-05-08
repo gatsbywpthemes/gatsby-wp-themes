@@ -1,7 +1,7 @@
 import React from 'react'
 import { TelegramShareButton, TelegramIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
-import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 
 const Telegram = ({
   url,

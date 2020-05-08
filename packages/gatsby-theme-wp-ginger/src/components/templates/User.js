@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Layout from './../Layout'
-import { ArchiveContent } from '../archive'
+import ArchiveContent from '../archive/ArchiveContent'
 import SEO from '../seo/Seo'
 
 const User = ({ user, ctx }) => {

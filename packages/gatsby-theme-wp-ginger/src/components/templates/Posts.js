@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../Layout.js'
-import { ArchiveContent } from '../archive'
+import ArchiveContent from '../archive/ArchiveContent'
 import SEO from '../seo/Seo'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import slashes from 'remove-trailing-slash'
 
 const Posts = ({ posts, ctx }) => {

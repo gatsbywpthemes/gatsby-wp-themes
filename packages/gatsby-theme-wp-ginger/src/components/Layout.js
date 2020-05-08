@@ -3,8 +3,10 @@
 import React from 'react'
 import { Box, jsx, useThemeUI, useColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
-import useSiteSettings from 'gatsby-theme-blog-data/src/hooks/useSiteSettings'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import {
+  useThemeOptions,
+  useSiteSettings,
+} from 'gatsby-theme-blog-data/src/hooks'
 import { Global } from '@emotion/core'
 import { globalStyles } from '../styles/GlobalStyles'
 import Footer from './footer/Footer'

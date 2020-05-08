@@ -3,8 +3,10 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import { createLocalLink } from '../../utils'
 import { Collapse } from '../ui-components'
-import useMenusQuery from 'gatsby-theme-blog-data/src/hooks/useMenusQuery'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import {
+  useMenusQuery,
+  useThemeOptions,
+} from 'gatsby-theme-blog-data/src/hooks'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import normalize from 'normalize-path'

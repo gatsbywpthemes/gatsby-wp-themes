@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Menu as MenuIcon, Close } from 'grommet-icons'
 import { Layer, Button } from 'grommet'
 import { Menu } from './index'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Widgets } from '../widgets'
 import slideSidebarStyles from '../../styles/slideSidebarStyles'
 

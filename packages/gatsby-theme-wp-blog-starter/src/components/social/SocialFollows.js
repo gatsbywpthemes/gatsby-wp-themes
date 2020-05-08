@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui'
-import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 import {
   FaBehance,
   FaCodepen,
@@ -82,7 +82,7 @@ export const SocialFollows = props => {
     FaYoutube,
   ]
 
-  const { social } = useSiteMetadata()
+  const { social } = useSiteMetaData()
 
   return (
     <Box className="widget widget-socialFollow" {...props}>

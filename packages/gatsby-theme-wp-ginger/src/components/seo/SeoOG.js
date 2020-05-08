@@ -1,7 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
-import useSiteSettings from 'gatsby-theme-blog-data/src/hooks/useSiteSettings'
+
+import {
+  useSiteSettings,
+  useSiteMetaData,
+} from 'gatsby-theme-blog-data/src/hooks'
 import setPageDescription from './pageDescription'
 import setPageTitle from './pageTitle'
 import slashes from 'remove-trailing-slash'
@@ -16,7 +19,7 @@ const SEOOpenGraph = ({
   media = null,
   ogUrl = '',
 }) => {
-  const { siteUrl } = useSiteMetadata()
+  const { siteUrl } = useSiteMetaData()
   const siteSettings = useSiteSettings()
   const site = {
     title: siteSettings.title,

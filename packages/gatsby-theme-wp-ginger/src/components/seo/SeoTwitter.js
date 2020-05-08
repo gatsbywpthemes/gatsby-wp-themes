@@ -1,16 +1,18 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
-import useSiteSettings from 'gatsby-theme-blog-data/src/hooks/useSiteSettings'
-import useSiteOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
+import {
+  useThemeOptions,
+  useSiteSettings,
+  useSiteMetaData,
+} from 'gatsby-theme-blog-data/src/hooks'
 import setPageDescription from './pageDescription'
 import twitterUserName from './twitterUserName'
 import slashes from 'remove-trailing-slash'
 
 const SEOTwitter = ({ title, description = '', media = null }) => {
-  const { social, siteUrl } = useSiteMetadata()
+  const { social, siteUrl } = useSiteMetaData()
   const siteSettings = useSiteSettings()
-  const siteOptions = useSiteOptions()
+  const siteOptions = useThemeOptions()
   const site = {
     title: siteSettings.title,
     description: siteSettings.description,

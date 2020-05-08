@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
-const useSiteSettings = () => {
+export const useSiteSettings = () => {
   const data = useStaticQuery(graphql`
     {
       wp {
@@ -22,5 +22,3 @@ const useSiteSettings = () => {
     data.wp.generalSettings.language.replace('_', '-') || 'en-US'
   return data.wp.generalSettings
 }
-
-export default useSiteSettings
