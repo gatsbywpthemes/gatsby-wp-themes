@@ -5,7 +5,7 @@ import React from 'react'
 import { Widgets } from './widgets'
 import sidebarStyles from '../styles/sidebarStyles'
 
-const Sidebar = ({ widgets, ...props }) => {
+export const Sidebar = ({ widgets, ...props }) => {
   return (
     <>
       {widgets && widgets.length > 0 && (

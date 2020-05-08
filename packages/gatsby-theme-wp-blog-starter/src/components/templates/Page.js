@@ -4,7 +4,7 @@ import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import SEO from '../seo/Seo'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
-import Sidebar from '../Sidebar'
+import { Sidebar } from '../index'
 import articleStyles from '../../styles/articleStyles'
 import gutenberg from '../../styles/theme-gutenberg'
 

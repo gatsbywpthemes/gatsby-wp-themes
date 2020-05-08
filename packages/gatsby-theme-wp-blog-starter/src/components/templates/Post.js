@@ -2,12 +2,10 @@
 import { jsx, Container, Flex } from 'theme-ui'
 import Layout from '../Layout'
 import SEO from '../seo/Seo'
-import { PostEntry } from '../../components/post'
-import { CommentsList } from '../../components/comments'
+import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import normalize from 'normalize-path'
-import Sidebar from '../Sidebar'
 
 const Post = ({ post }) => {
   const {
