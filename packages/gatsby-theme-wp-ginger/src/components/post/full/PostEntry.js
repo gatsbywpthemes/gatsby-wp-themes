@@ -9,7 +9,7 @@ import { FiChevronsDown } from 'react-icons/fi'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { article } from '../../../styles/article'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import Image from '../../images/Image'
+import { Image } from '../../images'
 import { commentsSection } from '../../../styles/comments'
 import { DiscussionEmbed } from 'disqus-react'
 

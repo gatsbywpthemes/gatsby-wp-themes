@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Link } from 'gatsby'
-import Image from '../images/Image'
+import { Image } from '../images'
 import normalize from 'normalize-path'
 import { media } from '../../styles/card'
 
