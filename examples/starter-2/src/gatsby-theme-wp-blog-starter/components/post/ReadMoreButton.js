@@ -4,7 +4,7 @@ import { jsx, Flex, Button } from "theme-ui"
 import React from "react"
 import { Link } from "gatsby"
 
-export default ({ location, post, ...props }) => (
+export const ReadMoreButton = ({ location, post, ...props }) => (
   <>
     {location !== "single" && (
       <Flex sx={{ justifyContent: [`center`, `flex-end`] }} {...props}>

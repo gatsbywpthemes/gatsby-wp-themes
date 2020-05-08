@@ -2,7 +2,7 @@
 import { jsx, Button } from "theme-ui"
 import { Link } from "gatsby"
 
-const TaxonomyItem = ({ taxName, item, ...props }) => (
+export const TaxonomyItem = ({ taxName, item, ...props }) => (
   <Button
     variant="primary.gradient.small"
     sx={{ mr: `xxs`, mb: `xs` }}
@@ -13,5 +13,3 @@ const TaxonomyItem = ({ taxName, item, ...props }) => (
     </Link>
   </Button>
 )
-
-export default TaxonomyItem

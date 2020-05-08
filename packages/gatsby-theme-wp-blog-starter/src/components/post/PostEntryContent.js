@@ -3,7 +3,7 @@ import { jsx, Box } from 'theme-ui'
 import ParsedContent from '../../utils/ParsedContent'
 import gutenberg from '../../styles/theme-gutenberg'
 
-const PostEntryContent = ({ post, location, ...props }) => {
+export const PostEntryContent = ({ post, location, ...props }) => {
   const content = location === 'single' ? post.content : post.excerpt
   const attributes = location === 'single' ? { id: 'content' } : {}
   return (
@@ -14,5 +14,3 @@ const PostEntryContent = ({ post, location, ...props }) => {
     </Box>
   )
 }
-
-export default PostEntryContent

@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Date from './Date'
-import Author from './Author'
+import { Date, Author } from './index'
 
-const PostEntryInfo = ({ post, ...props }) => {
+export const PostEntryInfo = ({ post, ...props }) => {
   return (
     <div
       className="entry-info animate-on-scroll"
@@ -14,5 +13,3 @@ const PostEntryInfo = ({ post, ...props }) => {
     </div>
   )
 }
-
-export default PostEntryInfo

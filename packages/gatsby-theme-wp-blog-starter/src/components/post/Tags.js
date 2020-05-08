@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import TaxonomyItem from './TaxonomyItem.js'
+import { TaxonomyItem } from './index'
 
-const Tags = ({ post, ...props }) => {
+export const Tags = ({ post, ...props }) => {
   const tags = post.tags.nodes
   return (
     <div {...props}>
@@ -17,5 +17,3 @@ const Tags = ({ post, ...props }) => {
     </div>
   )
 }
-
-export default Tags

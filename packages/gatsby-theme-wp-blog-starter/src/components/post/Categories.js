@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui'
-import TaxonomyItem from './TaxonomyItem.js'
+import { TaxonomyItem } from './index'
 
-const Categories = ({ post, ...props }) => {
+export const Categories = ({ post, ...props }) => {
   const categories = post.categories.nodes
   return (
     <div sx={{ mb: `xxs` }} {...props}>
@@ -17,5 +17,3 @@ const Categories = ({ post, ...props }) => {
     </div>
   )
 }
-
-export default Categories

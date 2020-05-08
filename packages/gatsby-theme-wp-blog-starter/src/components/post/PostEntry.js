@@ -1,16 +1,18 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import PostEntryTitle from './PostEntryTitle'
-import PostEntryMedia from './PostEntryMedia'
-import PostEntryContent from './PostEntryContent'
-import PostEntryMeta from './PostEntryMeta'
-import PostEntryInfo from './PostEntryInfo'
-import ReadMoreButton from './ReadMoreButton'
+import {
+  PostEntryTitle,
+  PostEntryMedia,
+  PostEntryContent,
+  PostEntryMeta,
+  PostEntryInfo,
+  ReadMoreButton,
+} from './index'
 import normalize from 'normalize-path'
 import SocialShare from '../social/SocialShare'
 import articleStyles from '../../styles/articleStyles'
 
-const PostEntry = ({ post, location, ...props }) => {
+export const PostEntry = ({ post, location, ...props }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''
   const media = post.featuredImage
     ? post.featuredImage.remoteFile.childImageSharp.fluid.src
@@ -54,5 +56,3 @@ const PostEntry = ({ post, location, ...props }) => {
     </article>
   )
 }
-
-export default PostEntry
