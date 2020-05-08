@@ -3,7 +3,7 @@ import { TwitterShareButton, TwitterIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
 import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 
-const Twitter = ({
+export const Twitter = ({
   url,
   title,
   children,
@@ -30,5 +30,3 @@ const Twitter = ({
     </TwitterShareButton>
   )
 }
-
-export default Twitter

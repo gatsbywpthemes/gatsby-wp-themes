@@ -30,7 +30,7 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 
-const SocialFollows = () => {
+export const SocialFollows = () => {
   const supportedIcons = [
     'behance',
     'codepen',
@@ -110,5 +110,3 @@ const SocialFollows = () => {
     </Flex>
   )
 }
-
-export default SocialFollows

@@ -2,14 +2,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { jsx } from 'theme-ui'
-import Twitter from './icons/Twitter'
-import Facebook from './icons/Facebook'
-import Linkedin from './icons/Linkedin'
-import Pinterest from './icons/Pinterest'
+import { Twitter, Facebook, Pinterest, Linkedin } from './icons'
 import { FiShare2 } from 'react-icons/fi'
 import { share } from '../../styles/social'
 
-const SocialShare = ({ url, title, media }) => {
+export const SocialShare = ({ url, title, media }) => {
   return (
     <>
       <span sx={share.titleicon} aria-label="Share on social networks">
@@ -39,5 +36,3 @@ const SocialShare = ({ url, title, media }) => {
     </>
   )
 }
-
-export default SocialShare

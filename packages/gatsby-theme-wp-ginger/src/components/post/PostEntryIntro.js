@@ -9,7 +9,7 @@ import {
   Author,
   PrevNextPostNavigation,
 } from './index'
-import SocialShare from '../social/SocialShare'
+import { SocialShare } from '../social'
 import normalize from 'normalize-path'
 import { card } from '../../styles/card'
 

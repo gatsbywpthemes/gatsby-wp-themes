@@ -37,9 +37,10 @@ import {
   InstapaperIcon,
   EmailIcon,
 } from 'react-share'
+import slashes from 'remove-trailing-slash'
 import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 
-const ShareIcon = ({
+export const ShareIcon = ({
   url,
   title,
   children,
@@ -55,8 +56,8 @@ const ShareIcon = ({
   const shareUrl = `${slashes(siteUrl)}${url}`
   const shareMedia = `${slashes(siteUrl)}${media}`
 
-  const [button] = useState(`${socialMediaName}ShareButton`)
-  const [icon] = useState(`${socialMediaName}ShareIcon`)
+  const [button, setButton] = useState(`${socialMediaName}ShareButton`)
+  const [icon, setIcon] = useState(`${socialMediaName}ShareIcon`)
   const Map = {
     button: button,
     icon: icon,
@@ -81,5 +82,3 @@ const ShareIcon = ({
     </ShareButton>
   )
 }
-
-export default ShareIcon
