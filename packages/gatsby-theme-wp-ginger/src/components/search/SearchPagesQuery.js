@@ -7,7 +7,7 @@ import gql from 'graphql-tag'
 import SearchResults from './SearchResults'
 
 const GET_PAGES = gql`
-  fragment PostFields on Page {
+  fragment PageFields on Page {
     title
     slug
     uri
