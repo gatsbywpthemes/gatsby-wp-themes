@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import FooterContent from './FooterContent'
+import { FooterContent } from './index'
 
-const Footer = () => (
+export const Footer = () => (
   <footer sx={{ variant: 'footer' }}>
     <FooterContent />
   </footer>
 )
-
-export default Footer

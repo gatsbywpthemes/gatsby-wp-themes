@@ -9,7 +9,7 @@ import {
 } from 'gatsby-theme-blog-data/src/hooks'
 import { Global } from '@emotion/core'
 import { globalStyles } from '../styles/GlobalStyles'
-import Footer from './footer/Footer'
+import { Footer } from './footer'
 import '../styles/blocks.css'
 import '../styles/custom-gutenstyles.css'
 import ColorSwitch from './ColorSwitch'

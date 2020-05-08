@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSiteSettings } from 'gatsby-theme-blog-data/src/hooks'
 
-const FooterContent = () => {
+export const FooterContent = () => {
   const siteSettings = useSiteSettings()
   return (
     <div>
@@ -17,5 +17,3 @@ const FooterContent = () => {
     </div>
   )
 }
-
-export default FooterContent
