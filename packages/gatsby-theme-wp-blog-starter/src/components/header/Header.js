@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { SlideSidebar, SiteBranding } from './index'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import SearchForm from '../search/SearchForm'
-import ColorSwitch from '../ColorSwitch'
+import { ColorSwitch } from '../index'
 
 export const Header = () => {
   const { search } = useThemeOptions()

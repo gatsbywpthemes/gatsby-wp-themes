@@ -3,7 +3,7 @@ import { jsx, useColorMode } from "theme-ui"
 import { Button } from "grommet"
 import { WiDaySunny, WiMoonAltWaningCrescent4 } from "react-icons/wi"
 
-const ColorSwitch = ({ ...props }) => {
+export const ColorSwitch = ({ ...props }) => {
   const [colorMode, setColorMode] = useColorMode()
   return (
     <Button
@@ -28,5 +28,3 @@ const ColorSwitch = ({ ...props }) => {
     </Button>
   )
 }
-
-export default ColorSwitch
