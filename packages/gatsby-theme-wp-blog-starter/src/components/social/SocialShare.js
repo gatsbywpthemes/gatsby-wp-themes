@@ -1,16 +1,14 @@
 /** @jsx jsx */
-import { Fragment } from 'react'
 import { jsx } from 'theme-ui'
-import Twitter from './icons/Twitter'
-import Facebook from './icons/Facebook'
-// import Linkedin from './icons/Linkedin'
-import Pinterest from './icons/Pinterest'
+// eslint-disable-next-line no-unused-vars
+import React from 'react'
+import { Twitter, Facebook, Pinterest } from './icons'
 import { FiShare2 } from 'react-icons/fi'
 import socialStyles from '../../styles/socialStyles'
 
-const SocialShare = ({ url, title, media }) => {
+export const SocialShare = ({ url, title, media }) => {
   return (
-    <Fragment>
+    <>
       <span
         sx={{
           ...socialStyles.share.icon,
@@ -39,8 +37,6 @@ const SocialShare = ({ url, title, media }) => {
           Pinterest
         </Pinterest>
       </div>
-    </Fragment>
+    </>
   )
 }
-
-export default SocialShare

@@ -3,7 +3,7 @@ import { PinterestShareButton, PinterestIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
 import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
 
-const Pinterest = ({
+export const Pinterest = ({
   url,
   media,
   title,
@@ -33,5 +33,3 @@ const Pinterest = ({
     </PinterestShareButton>
   )
 }
-
-export default Pinterest

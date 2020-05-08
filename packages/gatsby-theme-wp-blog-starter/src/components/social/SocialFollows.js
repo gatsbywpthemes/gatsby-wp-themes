@@ -28,7 +28,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa'
 
-const SocialFollows = props => {
+export const SocialFollows = props => {
   const supportedIcons = [
     'behance',
     'codepen',
@@ -109,5 +109,3 @@ const SocialFollows = props => {
     </Box>
   )
 }
-
-export default SocialFollows

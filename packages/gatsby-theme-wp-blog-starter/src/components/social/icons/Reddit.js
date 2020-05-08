@@ -3,7 +3,7 @@ import { RedditShareButton, RedditIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
 import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
 
-const Reddit = ({
+export const Reddit = ({
   url,
   title,
   children,
@@ -30,5 +30,3 @@ const Reddit = ({
     </RedditShareButton>
   )
 }
-
-export default Reddit

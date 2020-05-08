@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
-import SocialFollows from '../social/SocialFollows'
+import { SocialFollows } from '../social'
 import CategoriesWidget from '../widgets/Categories'
 import TagsWidget from '../widgets/Tags'
 import RecentPosts from '../widgets/RecentPosts'

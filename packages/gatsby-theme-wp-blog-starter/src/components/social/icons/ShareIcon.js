@@ -40,7 +40,7 @@ import {
 import slashes from 'remove-trailing-slash'
 import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
 
-const ShareIcon = ({
+export const ShareIcon = ({
   url,
   title,
   children,
@@ -82,5 +82,3 @@ const ShareIcon = ({
     </ShareButton>
   )
 }
-
-export default ShareIcon

@@ -9,7 +9,7 @@ import {
   ReadMoreButton,
 } from './index'
 import normalize from 'normalize-path'
-import SocialShare from '../social/SocialShare'
+import { SocialShare } from '../social'
 import articleStyles from '../../styles/articleStyles'
 
 export const PostEntry = ({ post, location, ...props }) => {
