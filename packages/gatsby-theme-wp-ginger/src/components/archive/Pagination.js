@@ -35,7 +35,7 @@ const renderNextLink = nextPagePath => {
   }
 }
 
-const Pagination = ({ ctx }) => {
+export const Pagination = ({ ctx }) => {
   const { humanPageNumber, nextPagePath, previousPagePath } = ctx
   // return empty string if there is only one page
   if (humanPageNumber === 1 && !nextPagePath) {
@@ -51,5 +51,3 @@ const Pagination = ({ ctx }) => {
     </nav>
   )
 }
-
-export default Pagination

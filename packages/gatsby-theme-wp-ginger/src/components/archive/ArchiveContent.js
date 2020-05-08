@@ -2,10 +2,9 @@
 import { jsx } from 'theme-ui'
 import { Fragment } from 'react'
 import PostEntry from '../post/PostEntry'
-import Pagination from './Pagination'
-import ArchiveTitle from './ArchiveTitle'
+import { Pagination, ArchiveTitle } from './index'
 
-const ArchiveContent = ({
+export const ArchiveContent = ({
   posts,
   ctx,
   paginationPrefix,
@@ -23,4 +22,3 @@ const ArchiveContent = ({
     </Fragment>
   )
 }
-export default ArchiveContent
