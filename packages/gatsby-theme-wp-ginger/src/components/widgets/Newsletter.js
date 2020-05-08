@@ -5,7 +5,7 @@ import { jsx } from 'theme-ui'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { widgetNewsletter } from '../../styles/widget'
 
-const Newsletter = () => {
+export const Newsletter = () => {
   const [email, setEmail] = useState('')
   const [msg, setMsg] = useState()
   const valid = typeof __GATSBY_PLUGIN_MAILCHIMP_ADDRESS__ === 'string'
@@ -46,5 +46,3 @@ const Newsletter = () => {
     </>
   )
 }
-
-export default Newsletter

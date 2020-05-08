@@ -16,7 +16,7 @@ const ALL_TAGS_QUERY = graphql`
   }
 `
 
-const TagsWidget = () => {
+export const TagsWidget = () => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
   return (
@@ -37,5 +37,3 @@ const TagsWidget = () => {
     )
   )
 }
-
-export default TagsWidget

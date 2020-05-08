@@ -1,12 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { SocialFollows } from '../social'
-import CategoriesWidget from '../widgets/Categories'
-import TagsWidget from '../widgets/Tags'
-import RecentPosts from '../widgets/RecentPosts'
-import Newsletter from '../widgets/Newsletter'
+import { CategoriesWidget, TagsWidget, RecentPosts, Newsletter } from './index'
 
-const Widgets = ({ widget }) => {
+export const Widgets = ({ widget }) => {
   switch (widget) {
     case 'SocialFollow':
       return <SocialFollows />
@@ -22,5 +19,3 @@ const Widgets = ({ widget }) => {
       return ''
   }
 }
-
-export default Widgets

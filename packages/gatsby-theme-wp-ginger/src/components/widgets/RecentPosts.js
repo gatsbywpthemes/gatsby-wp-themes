@@ -31,7 +31,7 @@ const RECENT_POSTS_QUERY = graphql`
   }
 `
 
-const RecentPosts = () => {
+export const RecentPosts = () => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
   const { nodes } = data.allWpPost
   return (
@@ -76,5 +76,3 @@ const RecentPosts = () => {
     </section>
   )
 }
-
-export default RecentPosts
