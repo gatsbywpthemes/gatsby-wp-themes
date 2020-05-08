@@ -2,7 +2,7 @@
 import { jsx, Box, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
 import { Header } from './header'
-import Footer from './footer/Footer'
+import { Footer } from './footer'
 import { Global } from '@emotion/core'
 import { globalStyles } from '../styles/GlobalStyles'
 import { Grommet } from 'grommet'

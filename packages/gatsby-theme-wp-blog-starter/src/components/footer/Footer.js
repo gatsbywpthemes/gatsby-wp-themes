@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { Container, jsx, Box } from 'theme-ui'
-import FooterContent from './FooterContent'
+import { FooterContent } from './index'
 import SocialFollow from '../social/SocialFollows'
 import socialStyles from '../../styles/socialStyles'
 
-const Footer = () => (
+export const Footer = () => (
   <footer sx={{ variant: 'footer' }}>
     <Container sx={{ py: 0 }}>
       <FooterContent />
@@ -21,5 +21,3 @@ const Footer = () => (
     </Container>
   </footer>
 )
-
-export default Footer
