@@ -8,7 +8,7 @@ import { widgetRecentPosts } from '../../styles/widget'
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {
-    allWpPost(limit: 5) {
+    allWpPost(limit: 5, sort: { order: DESC, fields: date }) {
       nodes {
         id
         title

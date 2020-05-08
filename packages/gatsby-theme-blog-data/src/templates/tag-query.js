@@ -9,6 +9,7 @@ export const pageQuery = graphql`
       filter: { tags: { nodes: { elemMatch: { slug: { eq: $slug } } } } }
       limit: $limit
       skip: $skip
+      sort: { order: DESC, fields: date }
     ) {
       nodes {
         ...PostTemplateFragment

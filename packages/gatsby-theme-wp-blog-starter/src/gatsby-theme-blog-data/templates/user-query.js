@@ -8,6 +8,7 @@ export const pageQuery = graphql`
       filter: { author: { slug: { eq: $slug } } }
       limit: $limit
       skip: $skip
+      sort: { order: DESC, fields: date }
     ) {
       nodes {
         ...PostTemplateFragment_starter

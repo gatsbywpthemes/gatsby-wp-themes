@@ -1,7 +1,7 @@
 const striptags = require("striptags")
 
 const postQuery = `{
-  allWpPost(limit: 1000) {
+  allWpPost(limit: 1000, sort: { order: DESC, fields: date }) {
     nodes {
       title
       content
@@ -28,7 +28,7 @@ const postQuery = `{
 `
 
 const pageQuery = `{
-  allWpPage(limit: 1000) {
+  allWpPage(limit: 1000, sort: { order: DESC, fields: date }) {
     nodes {
       content
       title
