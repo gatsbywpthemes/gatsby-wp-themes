@@ -29,7 +29,7 @@ const renderNextLink = nextPagePath => {
   }
 }
 
-const Pagination = ({ ctx }) => {
+export const Pagination = ({ ctx }) => {
   const { humanPageNumber, nextPagePath, previousPagePath } = ctx
   // return empty string if there is only one page
   if (humanPageNumber === 1 && !nextPagePath) {
@@ -38,12 +38,10 @@ const Pagination = ({ ctx }) => {
   return (
     <nav sx={paginationStyles}>
       {renderPreviousLink(previousPagePath)}
-      <span aria-current="page" className="page-numbers current" sx={{}}>
+      <span aria-current="page" className="page-numbers current">
         {humanPageNumber}
       </span>
       {renderNextLink(nextPagePath)}
     </nav>
   )
 }
-
-export default Pagination

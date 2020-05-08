@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
-import Header from './header/Header'
+import { Header } from './header'
 import Footer from './footer/Footer'
 import { Global } from '@emotion/core'
 import { globalStyles } from '../styles/GlobalStyles'

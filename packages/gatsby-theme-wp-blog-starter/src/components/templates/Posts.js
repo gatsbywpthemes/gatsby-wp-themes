@@ -4,7 +4,7 @@ import Layout from '../Layout'
 import SEO from '../seo/Seo'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import slashes from 'remove-trailing-slash'
-import ArchiveContent from '../archive/ArchiveContent'
+import { ArchiveContent } from '../archive'
 
 const Posts = ({ posts, ctx }) => {
   const { postsPath } = useThemeOptions()

@@ -6,7 +6,7 @@ import Sidebar from '../Sidebar.js'
 import ArchiveTitle from './ArchiveTitle'
 import PostsList from './PostsList'
 
-const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
+export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
   const { layoutWidth, archiveSidebar, sidebarWidgets } = useThemeOptions()
 
   const containerStyles =
@@ -45,5 +45,3 @@ const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
     </Container>
   )
 }
-
-export default ArchiveContent

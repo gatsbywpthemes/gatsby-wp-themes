@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../Layout'
 import SEO from '../seo/Seo'
-import ArchiveContent from '../archive/ArchiveContent'
+import { ArchiveContent } from '../archive'
 
 const Category = ({ category, ctx }) => {
   const { name, posts, uri } = category
