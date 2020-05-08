@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import Date from '../post/Date'
-import CommentForm from './CommentForm'
+import { CommentForm } from './index'
 import { comment as commentStyles, replyButton } from '../../styles/comments'
 
 const Reply = ({ commentId, actionOnClick }) => {
@@ -38,7 +38,7 @@ const Author = ({ name, url }) => {
   )
 }
 
-const Comment = props => {
+export const Comment = props => {
   const {
     comment,
     activeComment,
@@ -75,5 +75,3 @@ const Comment = props => {
     </li>
   )
 }
-
-export default Comment

@@ -3,8 +3,7 @@ import { jsx } from 'theme-ui'
 import { Fragment, useState } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
-import Comment from './Comment'
-import CommentForm from './CommentForm'
+import { CommentForm, Comment } from './index'
 import { commentStyles } from '../../styles/comments'
 
 const GET_COMMENTS = gql`
@@ -43,7 +42,7 @@ const GET_COMMENTS = gql`
   }
 `
 
-const CommentsList = ({ post, reloading }) => {
+export const CommentsList = ({ post, reloading }) => {
   const postId = post.databaseId
   const { data, loading, error, refetch } = useQuery(GET_COMMENTS, {
     variables: { postId },
@@ -121,5 +120,3 @@ const CommentsList = ({ post, reloading }) => {
     </Fragment>
   )
 }
-
-export default CommentsList

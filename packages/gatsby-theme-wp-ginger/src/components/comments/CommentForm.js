@@ -66,7 +66,12 @@ const inputFields = [
   },
 ]
 
-const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
+export const CommentForm = ({
+  commentId = 0,
+  postId,
+  cancelReply,
+  doOnCompleted,
+}) => {
   const { register, handleSubmit, errors } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
   const [addComment] = useMutation(commentSubmitQuery, {
@@ -195,5 +200,3 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
     </Fragment>
   )
 }
-
-export default CommentForm
