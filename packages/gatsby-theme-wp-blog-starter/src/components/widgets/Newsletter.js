@@ -31,9 +31,6 @@ const Newsletter = props => {
         <form onSubmit={handleSubmit}>
           <h2 className="widget-title">Newsletter</h2>
           <Flex>
-            <label for="email" sx={{ display: 'none' }}>
-              email
-            </label>
             <Input
               placeholder="Email address"
               name="email"

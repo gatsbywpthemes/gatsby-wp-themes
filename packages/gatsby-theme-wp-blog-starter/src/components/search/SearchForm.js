@@ -39,9 +39,6 @@ const SearchForm = props => {
             mb: [`20px`, 0],
           }}
         >
-          <label for="search" sx={{ display: 'none' }}>
-            search
-          </label>
           <input
             value={value}
             type="search"

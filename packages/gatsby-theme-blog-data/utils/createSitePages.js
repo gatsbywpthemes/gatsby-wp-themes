@@ -4,7 +4,7 @@ const pageTemplate = require.resolve(`../src/templates/page-query.js`)
 module.exports = async ({ actions, graphql }, options) => {
   const GET_PAGES = `
   query GET_PAGES {
-    allWpPage {
+    allWpPage(sort: { order: DESC, fields: date }) {
       nodes {
         uri
         isFrontPage
