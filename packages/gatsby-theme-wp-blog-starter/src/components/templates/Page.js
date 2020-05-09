@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Box } from 'theme-ui'
-import Layout from '../Layout'
+import { Layout } from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import SEO from '../seo/Seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'

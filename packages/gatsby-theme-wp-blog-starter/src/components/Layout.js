@@ -10,7 +10,7 @@ import Headroom from 'react-headroom'
 
 import '../styles/scss/styles.scss'
 
-const Layout = ({ children, page, type = 'page' }) => {
+export const Layout = ({ children, page, type = 'page' }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
 
   const { theme } = useThemeUI()
@@ -53,5 +53,3 @@ const Layout = ({ children, page, type = 'page' }) => {
     </Grommet>
   )
 }
-
-export default Layout

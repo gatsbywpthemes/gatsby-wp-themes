@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Layout from '../components/Layout'
+import { Layout } from '../components'
 import SEO from '../components/seo/Seo'
 
 const NotFoundPage = ({ location }) => (

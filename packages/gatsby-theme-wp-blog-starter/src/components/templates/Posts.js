@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Layout from '../Layout'
+import { Layout } from '../Layout'
 import SEO from '../seo/Seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import slashes from 'remove-trailing-slash'

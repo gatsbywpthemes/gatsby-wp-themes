@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from 'theme-ui'
-import Layout from '../Layout'
+import { Layout } from '../Layout'
 import SEO from '../seo/Seo'
 import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
