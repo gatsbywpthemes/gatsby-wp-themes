@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui'
-import SearchPostsQuery from './SearchPostsQuery'
-import SearchPagesQuery from './SearchPagesQuery'
+import { SearchPostsQuery, SearchPagesQuery } from './index'
 
-const SearchResults = ({ search }) => {
+export const SearchQueries = ({ search }) => {
   const showResults =
     search && search.length > 0 ? { display: `block` } : { display: `none` }
   return (
@@ -19,5 +18,3 @@ const SearchResults = ({ search }) => {
     </Box>
   )
 }
-
-export default SearchResults

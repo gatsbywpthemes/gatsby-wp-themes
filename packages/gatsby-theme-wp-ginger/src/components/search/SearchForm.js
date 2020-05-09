@@ -2,11 +2,11 @@
 import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
-import SearchQuery from './SearchQuery'
+import { SearchQueries } from './index'
 import { search as searchstyles } from '../../styles/search'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-const SearchForm = () => {
+export const SearchForm = () => {
   const { instantWPSearch } = useThemeOptions()
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
@@ -57,9 +57,7 @@ const SearchForm = () => {
         </div>
       </div>
       {/* value && search so that results are reset on Escape */}
-      {value && search && <SearchQuery search={search} />}
+      {value && search && <SearchQueries search={search} />}
     </Fragment>
   )
 }
-
-export default SearchForm
