@@ -4,13 +4,7 @@ import { Fragment } from 'react'
 import { PostEntry } from '../post'
 import { Pagination, ArchiveTitle } from './index'
 
-export const ArchiveContent = ({
-  posts,
-  ctx,
-  paginationPrefix,
-  name,
-  text = 'Posts from: ',
-}) => {
+export const ArchiveContent = ({ posts, ctx, name, text = 'Posts from: ' }) => {
   return (
     <Fragment>
       <section>
@@ -18,7 +12,7 @@ export const ArchiveContent = ({
         {posts.nodes &&
           posts.nodes.map(post => <PostEntry key={post.id} post={post} />)}
       </section>
-      <Pagination ctx={ctx} prefix={paginationPrefix} />
+      <Pagination ctx={ctx} />
     </Fragment>
   )
 }
