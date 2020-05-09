@@ -1,4 +1,4 @@
-export default {
+export const sidebarStyles = {
   bg: 'cardBg',
   borderRadius: 's',
   height: 'auto',

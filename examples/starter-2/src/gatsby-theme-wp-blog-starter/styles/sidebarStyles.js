@@ -1,6 +1,6 @@
 import merge from "deepmerge"
-import styles from "gatsby-theme-wp-blog-starter/src/styles/sidebarStyles"
+import { sidebarStyles as styles } from "gatsby-theme-wp-blog-starter/src/styles/sidebarStyles"
 
-export default merge(styles, {
+export const sidebarStyles = merge(styles, {
   borderRadius: "m",
 })

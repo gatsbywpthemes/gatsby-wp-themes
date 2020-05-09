@@ -3,7 +3,7 @@ import { jsx, Box } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Widgets } from './widgets'
-import sidebarStyles from '../styles/sidebarStyles'
+import { sidebarStyles } from '../styles/sidebarStyles'
 
 export const Sidebar = ({ widgets, ...props }) => {
   return (
