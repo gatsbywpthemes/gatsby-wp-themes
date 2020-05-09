@@ -7,7 +7,7 @@ import { Layer, Button } from 'grommet'
 import { Menu } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Widgets } from '../widgets'
-import slideSidebarStyles from '../../styles/slideSidebarStyles'
+import { slideSidebarStyles } from '../../styles'
 
 export const SlideSidebar = props => {
   const [isMenuOpen, setOpenMenu] = useState(false)

@@ -1,5 +1,5 @@
 import merge from "deepmerge"
-import styles from "gatsby-theme-wp-blog-starter/src/styles/widgetStyles"
+import { widgetStyles as styles } from "gatsby-theme-wp-blog-starter/src/styles/widgetStyles"
 
 const widgetTitle = {
   ".widget-title": {
@@ -7,7 +7,7 @@ const widgetTitle = {
   },
 }
 
-export default merge(styles, {
+export const widgetStyles = merge(styles, {
   categories: {
     ...widgetTitle,
   },

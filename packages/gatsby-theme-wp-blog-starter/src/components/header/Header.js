@@ -5,7 +5,7 @@ import { SlideSidebar, SiteBranding } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { SearchForm } from '../search'
 import { ColorSwitch } from '../index'
-import headerStyles from '../../styles/headerStyles'
+import { headerStyles } from '../../styles'
 
 export const Header = () => {
   const { search } = useThemeOptions()

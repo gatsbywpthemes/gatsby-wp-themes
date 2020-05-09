@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui'
 import { SearchPostsQuery, SearchPagesQuery } from './index'
-import searchStyles from '../../styles/searchStyles'
+import { searchStyles } from '../../styles'
 
 export const SearchQueries = ({ search, ...props }) => {
   const showResults =

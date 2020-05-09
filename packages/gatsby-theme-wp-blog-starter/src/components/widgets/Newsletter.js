@@ -2,7 +2,7 @@
 import { jsx, Box, Flex, Input } from 'theme-ui'
 import { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import widgetStyles from '../../styles/widgetStyles'
+import { widgetStyles } from '../../styles'
 
 export const Newsletter = props => {
   const [email, setEmail] = useState('')

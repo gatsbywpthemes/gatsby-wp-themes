@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import paginationStyles from '../../styles/paginationStyles'
+import { paginationStyles } from '../../styles'
 
 const renderPreviousLink = previousPagePath => {
   if (previousPagePath) {

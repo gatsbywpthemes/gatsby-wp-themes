@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import widgetStyles from '../../styles/widgetStyles'
+import { widgetStyles } from '../../styles'
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {

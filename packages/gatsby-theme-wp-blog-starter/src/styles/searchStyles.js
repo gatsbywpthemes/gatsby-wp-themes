@@ -52,7 +52,7 @@ const resultStyles = {
     p: '2px',
   },
 }
-export default {
+export const searchStyles = {
   width: '100%',
   mb: ['-15px', 0],
   //searchIcon

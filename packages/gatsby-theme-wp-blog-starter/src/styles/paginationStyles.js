@@ -1,6 +1,6 @@
 import { rem } from 'polished'
 
-export default {
+export const paginationStyles = {
   variant: 'text.special',
   display: 'flex',
   justifyContent: 'space-between',

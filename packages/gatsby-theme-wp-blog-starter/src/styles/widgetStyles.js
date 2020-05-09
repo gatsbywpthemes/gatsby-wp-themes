@@ -50,7 +50,7 @@ const sharedStyles = {
   '.widget-recent-posts': {},
 }
 
-export default {
+export const widgetStyles = {
   categories: {
     ...sharedStyles,
     li: {

@@ -2,8 +2,7 @@
 import { jsx, Flex } from 'theme-ui'
 import { SocialFollows } from '../social'
 import { CategoriesWidget, TagsWidget, RecentPosts, Newsletter } from './index'
-
-import socialStyles from '../../styles/socialStyles'
+import { socialStyles } from '../../styles'
 
 export const Widgets = ({ widget }) => {
   switch (widget) {

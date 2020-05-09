@@ -4,9 +4,8 @@ import { Fragment } from 'react'
 import { Header } from './header'
 import { Footer } from './footer'
 import { Global } from '@emotion/core'
-import { globalStyles } from '../styles/GlobalStyles'
 import { Grommet } from 'grommet'
-import grommetTheme from '../styles/grommet'
+import { grommetStyles, globalStyles } from '../styles'
 import Headroom from 'react-headroom'
 
 import '../styles/scss/styles.scss'
@@ -22,7 +21,7 @@ const Layout = ({ children, page, type = 'page' }) => {
     pageTemplate.toLowerCase() === 'full width' ? 'fullWidth' : ''
 
   return (
-    <Grommet theme={grommetTheme}>
+    <Grommet theme={grommetStyles}>
       <Global styles={globalStyles(theme)} />
       <Box
         sx={{

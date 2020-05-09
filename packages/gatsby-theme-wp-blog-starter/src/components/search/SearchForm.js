@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
 import { SearchQueries } from './index'
-import searchStyles from '../../styles/searchStyles'
+import { searchStyles } from '../../styles'
 
 export const SearchForm = props => {
   const [value, setValue] = useState('')

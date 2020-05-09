@@ -5,7 +5,7 @@ const pehaafadein = keyframes`
     transform: translate3d(100%, 0, 0)
   }
 `
-export default {
+export const slideSidebarStyles = {
   fontFamily: 'body',
   borderRadius: 0,
   bg: 'slideSidebarBg',

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import widgetStyles from '../../styles/widgetStyles'
+import { widgetStyles } from '../../styles'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'

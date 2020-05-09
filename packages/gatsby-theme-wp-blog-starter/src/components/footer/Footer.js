@@ -2,8 +2,8 @@
 import { Container, jsx, Box } from 'theme-ui'
 import { FooterContent } from './index'
 import { SocialFollows } from '../social'
-import socialStyles from '../../styles/socialStyles'
-import footerStyles from '../../styles/footerStyles'
+
+import { footerStyles, socialStyles } from '../../styles'
 
 export const Footer = () => (
   <footer sx={{ ...footerStyles }}>

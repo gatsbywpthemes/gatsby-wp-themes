@@ -1,4 +1,4 @@
-export default {
+export const socialStyles = {
   follow: {
     justifyContent: 'center',
     color: 'text',
