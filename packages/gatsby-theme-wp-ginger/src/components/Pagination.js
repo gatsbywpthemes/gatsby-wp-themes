@@ -17,7 +17,6 @@ const renderPreviousLink = props => {
   } else if (2 < pageNumber) {
     previousLink = normalize(`/${prefix}/${paginationPrefix}/${pageNumber - 1}`)
   }
-
   return (
     <Link
       className="left"
@@ -37,6 +36,7 @@ const renderNextLink = props => {
     const nextLink = normalize(
       `/${prefix}/${paginationPrefix}/${pageNumber + 1}`
     )
+    console.log(nextLink)
     return (
       <Link
         className="right"
