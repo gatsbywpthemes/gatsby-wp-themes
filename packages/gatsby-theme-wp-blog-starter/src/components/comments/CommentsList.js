@@ -4,7 +4,7 @@ import { Fragment, useState } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import { CommentForm, Comment } from './index'
-import commentStyles from '../../styles/commentStyles'
+import { commentStyles } from '../../styles'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_COMMENTS = gql`

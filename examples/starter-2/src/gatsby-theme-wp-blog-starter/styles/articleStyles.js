@@ -1,7 +1,7 @@
 import merge from "deepmerge"
-import styles from "gatsby-theme-wp-blog-starter/src/styles/articleStyles"
+import { articleStyles as styles } from "gatsby-theme-wp-blog-starter/src/styles/articleStyles"
 
-export default merge(styles, {
+export const articleStyles = merge(styles, {
   ".entry-media .gatsby-image-wrapper": {
     borderRadius: "10px 10px 0 0",
   },

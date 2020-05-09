@@ -1,4 +1,4 @@
-export default {
+export const articleStyles = {
   mb: 'l',
   '.fullWidth &': {
     mb: -33,

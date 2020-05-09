@@ -1,5 +1,5 @@
 import { lighten } from '@theme-ui/color'
-export default {
+export const commentStyles = {
   section: {
     maxWidth: 'l',
     m: '0 auto',

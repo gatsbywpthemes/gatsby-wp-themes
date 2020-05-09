@@ -10,7 +10,7 @@ import {
 } from './index'
 import normalize from 'normalize-path'
 import { SocialShare } from '../social'
-import articleStyles from '../../styles/articleStyles'
+import { articleStyles } from '../../styles'
 
 export const PostEntry = ({ post, location, ...props }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''

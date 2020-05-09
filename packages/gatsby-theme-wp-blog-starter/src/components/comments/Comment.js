@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import moment from 'moment'
 import { CommentForm } from './index'
-import commentStyles from '../../styles/commentStyles'
+import { commentStyles } from '../../styles'
 
 const Reply = ({ commentId, actionOnClick }) => {
   return (

@@ -5,7 +5,7 @@ import { useState, Fragment } from 'react'
 import gql from 'graphql-tag'
 import { useMutation } from '@apollo/react-hooks'
 import { useForm } from 'react-hook-form'
-import commentStyles from '../../styles/commentStyles'
+import { commentStyles } from '../../styles'
 
 const commentSubmitQuery = gql`
   mutation(

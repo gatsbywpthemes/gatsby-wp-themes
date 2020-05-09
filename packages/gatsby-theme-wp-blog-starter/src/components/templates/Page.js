@@ -5,8 +5,7 @@ import ParsedContent from '../../utils/ParsedContent'
 import SEO from '../seo/Seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
-import articleStyles from '../../styles/articleStyles'
-import gutenberg from '../../styles/theme-gutenberg'
+import { gutenbergStyles, articleStyles } from '../../styles'
 
 const Page = ({ page }) => {
   const {
@@ -78,7 +77,7 @@ const Page = ({ page }) => {
                   />
                 )}
 
-              <Box className="entry-content" sx={{ ...gutenberg }}>
+              <Box className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ParsedContent content={content} />
               </Box>
             </div>
