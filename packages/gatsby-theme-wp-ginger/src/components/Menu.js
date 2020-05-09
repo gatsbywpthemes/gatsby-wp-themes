@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import Collapse from './Collapse'
+import { Collapse } from './ui-components'
 import { createLocalLink } from '../utils'
 import {
   useMenusQuery,
@@ -39,7 +39,9 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
       path.indexOf(slashes(wordPressUrlParsed.path())) === 0
     ) {
       url = subdirectoryCorrection(path, wordPressUrl, hash)
-      return <Link to={url}>{menuItem.label}</Link>
+      return (
+        <Link to={url} dangerouslySetInnerHTML={{ __html: menuItem.label }} />
+      )
     }
     const targetRelAttrs =
       menuItem.target === '_blank'
@@ -53,11 +55,12 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
   } else {
     return menuItem.url !== '#' ? (
       menuItem.url === wordPressUrl ? (
-        <Link to="/"> {menuItem.label}</Link>
+        <Link to="/" dangerouslySetInnerHTML={{ __html: menuItem.label }} />
       ) : (
-        <Link to={createLocalLink(menuItem.url, slashes(wordPressUrl))}>
-          {menuItem.label}
-        </Link>
+        <Link
+          to={createLocalLink(menuItem.url, slashes(wordPressUrl))}
+          dangerouslySetInnerHTML={{ __html: menuItem.label }}
+        />
       )
     ) : (
       menuItem.label
@@ -96,7 +99,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
   )
 }
 
-const Menu = ({ menuName }) => {
+export const Menu = ({ menuName }) => {
   const { wordPressUrl, postsPath } = useThemeOptions()
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find(n => menuName === n.name)
@@ -127,5 +130,3 @@ const Menu = ({ menuName }) => {
     return null
   }
 }
-
-export default Menu
