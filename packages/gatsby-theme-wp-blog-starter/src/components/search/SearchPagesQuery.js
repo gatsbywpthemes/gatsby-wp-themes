@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from 'grommet'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
-import SearchResults from './SearchResults'
+import { SearchResults } from './index'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_PAGES = gql`
@@ -27,7 +27,7 @@ const GET_PAGES = gql`
   }
 `
 
-const SearchQuery = ({ search }) => {
+export const SearchPagesQuery = ({ search }) => {
   const [clickable, setClickable] = useState(true)
   const { data, loading, error, fetchMore } = useQuery(GET_PAGES, {
     variables: { search },
@@ -77,5 +77,3 @@ const SearchQuery = ({ search }) => {
     </SearchResults>
   )
 }
-
-export default SearchQuery

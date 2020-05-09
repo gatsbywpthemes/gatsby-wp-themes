@@ -12,7 +12,7 @@ const Stats = ({ postType, search }) => (
   </Box>
 )
 
-const SearchResults = ({ type, posts, search, children }) => {
+export const SearchResults = ({ type, posts, search, children }) => {
   return (
     <Fragment>
       <header>
@@ -34,5 +34,3 @@ const SearchResults = ({ type, posts, search, children }) => {
     </Fragment>
   )
 }
-
-export default SearchResults
