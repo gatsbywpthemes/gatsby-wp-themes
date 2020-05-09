@@ -3,7 +3,7 @@ import ContentParser from "gatsby-plugin-wordpress-parser"
 import { cf7ParserFunction } from "gatsby-plugin-wpcf7"
 import fancyBoxParserFunction from "gatsby-plugin-wordpress-fancybox"
 import mapboxParserFunction from "gatsby-plugin-wp-mapbox"
-import useThemeOptions from "gatsby-theme-blog-data/src/hooks/useThemeOptions"
+import { useThemeOptions } from "gatsby-theme-blog-data/src/hooks/useThemeOptions"
 
 const ParsedContent = ({ content }) => {
   const options = useThemeOptions()
