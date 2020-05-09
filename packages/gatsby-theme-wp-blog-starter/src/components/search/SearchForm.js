@@ -3,10 +3,10 @@ import { jsx, Flex, Box } from 'theme-ui'
 import { useState } from 'react'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
-import SearchQuery from './SearchQuery'
+import { SearchQueries } from './index'
 import searchStyles from '../../styles/searchStyles'
 
-const SearchForm = props => {
+export const SearchForm = props => {
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
 
@@ -72,9 +72,7 @@ const SearchForm = props => {
           />
         )}
       </Flex>
-      {search && <SearchQuery search={search} />}
+      {search && <SearchQueries search={search} />}
     </Box>
   )
 }
-
-export default SearchForm

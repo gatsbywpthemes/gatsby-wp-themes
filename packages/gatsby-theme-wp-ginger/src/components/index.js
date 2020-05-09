@@ -1,6 +1,5 @@
 export * from './ColorSwitch'
 export * from './Menu'
-export * from './Pagination'
 export * from './SidebarWrapper'
 export * from './SlideSidebar'
 export * from './archive'

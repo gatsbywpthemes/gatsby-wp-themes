@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState } from 'react'
-import { Button } from 'grommet'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
-import SearchResults from './SearchResults'
+import { SearchResults } from './index'
 
 const GET_POSTS = gql`
   fragment PostFields on Post {
@@ -26,7 +25,7 @@ const GET_POSTS = gql`
   }
 `
 
-const SearchQuery = ({ search }) => {
+export const SearchPostsQuery = ({ search }) => {
   const [clickable, setClickable] = useState(true)
   const { data, loading, error, fetchMore } = useQuery(GET_POSTS, {
     variables: { search },
@@ -64,9 +63,9 @@ const SearchQuery = ({ search }) => {
   return (
     <SearchResults type="Posts" search={search} posts={data.posts.nodes}>
       {clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
-        <Button onClick={loadMore} type="button">
+        <button onClick={loadMore} type="button">
           Load More
-        </Button>
+        </button>
       )}
       {!clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
         <p>Loading...</p>
@@ -74,5 +73,3 @@ const SearchQuery = ({ search }) => {
     </SearchResults>
   )
 }
-
-export default SearchQuery

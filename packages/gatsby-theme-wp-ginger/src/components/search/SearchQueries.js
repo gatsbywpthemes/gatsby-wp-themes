@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui'
-import SearchPostsQuery from './SearchPostsQuery'
-import SearchPagesQuery from './SearchPagesQuery'
-import searchStyles from '../../styles/searchStyles'
+import { SearchPostsQuery, SearchPagesQuery } from './index'
 
-const SearchResults = ({ search, ...props }) => {
+export const SearchQueries = ({ search }) => {
   const showResults =
     search && search.length > 0 ? { display: `block` } : { display: `none` }
   return (
@@ -12,14 +10,11 @@ const SearchResults = ({ search, ...props }) => {
       className="search-results"
       sx={{
         ...showResults,
-        ...searchStyles.resultsBasic,
+        variant: `search.resultsBasic`,
       }}
-      {...props}
     >
       <SearchPostsQuery search={search} />
       <SearchPagesQuery search={search} />
     </Box>
   )
 }
-
-export default SearchResults

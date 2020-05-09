@@ -12,7 +12,7 @@ const Stats = ({ postType, search }) => (
   </div>
 )
 
-const SearchResults = ({ type, posts, search, children }) => {
+export const SearchResults = ({ type, posts, search, children }) => {
   return (
     <div className="search-results" sx={searchstyles}>
       <header>
@@ -20,7 +20,7 @@ const SearchResults = ({ type, posts, search, children }) => {
         <Stats postType={posts} search={search} />
       </header>
       <ul className="results">
-        {posts.map((post) => {
+        {posts.map(post => {
           return (
             <li key={post.slug}>
               <Link
@@ -35,5 +35,3 @@ const SearchResults = ({ type, posts, search, children }) => {
     </div>
   )
 }
-
-export default SearchResults

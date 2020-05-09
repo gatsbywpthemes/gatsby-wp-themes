@@ -9,7 +9,7 @@ const renderPreviousLink = previousPagePath => {
       <Link
         className="left"
         sx={{ ...paginationLink, fontSize: 'xs' }}
-        to={previousPagePath}
+        to={`/${previousPagePath}`}
       >
         <span>Previous</span>
       </Link>
@@ -20,12 +20,13 @@ const renderPreviousLink = previousPagePath => {
 }
 
 const renderNextLink = nextPagePath => {
+  console.log(nextPagePath)
   if (nextPagePath) {
     return (
       <Link
         className="right"
         sx={{ ...paginationLink, fontSize: 'xs' }}
-        to={nextPagePath}
+        to={`/${nextPagePath}`}
       >
         <span>Next</span>
       </Link>
