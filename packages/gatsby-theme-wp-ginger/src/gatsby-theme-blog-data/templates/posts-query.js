@@ -33,11 +33,11 @@ export const pageQuery = graphql`
     title
     excerpt
     date
-    postFormats {
-      taxonomyInfo {
-        name
-      }
-    }
+    # postFormats {
+    #   taxonomyInfo {
+    #     name
+    #   }
+    # }
     featuredImage {
       ...GatsbyImageQueryArchive
     }

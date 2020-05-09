@@ -18,20 +18,20 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "@babel/runtime": "^7.8.4",
+    "@babel/runtime": "^7.9.6",
     "cheerio": "^1.0.0-rc.3",
-    "gatsby-image": "^2.2.39",
-    "gatsby-plugin-sharp": "^2.4.4",
-    "gatsby-source-filesystem": "^2.1.47",
-    "gatsby-transformer-sharp": "^2.3.13",
-    "html-react-parser": "^0.10.0",
+    "gatsby-image": "^2.4.3",
+    "gatsby-plugin-sharp": "^2.6.2",
+    "gatsby-source-filesystem": "^2.3.1",
+    "gatsby-transformer-sharp": "^2.5.2",
+    "html-react-parser": "^0.10.3",
     "normalize-path": "^3.0.0",
     "urijs": "^1.19.2"
   },
   "peerDependencies": {
-    "gatsby": "^2.19.10",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "gatsby": "^2.21.21",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

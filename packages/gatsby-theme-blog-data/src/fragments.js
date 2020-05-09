@@ -8,11 +8,11 @@ export const fragments = graphql`
     title
     excerpt
     date
-    postFormats {
-      taxonomyInfo {
-        name
-      }
-    }
+    # postFormats {
+    #   taxonomyInfo {
+    #     name
+    #   }
+    # }
     featuredImage {
       ...GatsbyImageQuery
     }
