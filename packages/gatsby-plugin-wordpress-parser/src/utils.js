@@ -10,17 +10,17 @@ const downloadMediaFile = async ({
   store,
   createNode,
   createNodeId,
-  httpHeaders = {}
+  httpHeaders = {},
 }) => {
   let fileNode = false
   try {
-    fileNode = await createRemoteFileNode({
+    fileNode = await createlocalFileNode({
       url,
       store,
       cache,
       createNode,
       createNodeId,
-      httpHeaders
+      httpHeaders,
     })
   } catch (e) {
     console.log("FAILED to download " + url)
@@ -34,13 +34,13 @@ const convertFileNodeToFluid = async ({
   fileNode,
   imageOptions,
   reporter,
-  cache
+  cache,
 }) => {
   let fluidResult = await fluid({
     file: fileNode,
     args: imageOptions,
     reporter,
-    cache
+    cache,
   })
 
   if (generateWebp) {
@@ -48,7 +48,7 @@ const convertFileNodeToFluid = async ({
       file: fileNode,
       args: { ...imageOptions, toFormat: "webp" },
       reporter,
-      cache
+      cache,
     })
 
     fluidResult.srcSetWebp = fluidWebp.srcSet
@@ -73,7 +73,7 @@ const copyToStatic = ({ file, details, pathPrefix }) => {
   const publicPath = path.join(process.cwd(), `public`, `static`, fileName)
 
   if (!fs.existsSync(publicPath)) {
-    fs.copy(details.absolutePath, publicPath, err => {
+    fs.copy(details.absolutePath, publicPath, (err) => {
       if (err) {
         console.error(
           `error copying file from ${details.absolutePath} to ${publicPath}`,

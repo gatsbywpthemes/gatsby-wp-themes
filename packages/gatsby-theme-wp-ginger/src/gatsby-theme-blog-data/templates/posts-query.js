@@ -7,7 +7,7 @@ export const pageQuery = graphql`
   fragment GatsbyImageQueryFull on WpMediaItem {
     altText
     sourceUrl
-    remoteFile {
+    localFile {
       childImageSharp {
         fluid(maxWidth: 1200, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
@@ -18,7 +18,7 @@ export const pageQuery = graphql`
   fragment GatsbyImageQueryArchive on WpMediaItem {
     altText
     sourceUrl
-    remoteFile {
+    localFile {
       childImageSharp {
         fluid(maxWidth: 1200, maxHeight: 400, quality: 80) {
           ...GatsbyImageSharpFluid_withWebp

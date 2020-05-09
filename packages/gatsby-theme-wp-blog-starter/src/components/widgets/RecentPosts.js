@@ -18,7 +18,7 @@ const RECENT_POSTS_QUERY = graphql`
         featuredImage {
           altText
           sourceUrl
-          remoteFile {
+          localFile {
             childImageSharp {
               fixed(width: 72, height: 48, quality: 80) {
                 ...GatsbyImageSharpFixed
@@ -53,7 +53,7 @@ export const RecentPosts = props => {
                       <Img
                         alt={post.featuredImage.altText}
                         fixed={
-                          post.featuredImage.remoteFile.childImageSharp.fixed
+                          post.featuredImage.localFile.childImageSharp.fixed
                         }
                       />
                     )}

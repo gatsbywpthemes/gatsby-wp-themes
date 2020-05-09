@@ -4,7 +4,7 @@ export const fragments = graphql`
   fragment ImageFluidFragment on WpMediaItem {
     altText
     sourceUrl
-    remoteFile {
+    localFile {
       childImageSharp {
         fluid(maxWidth: 1200, maxHeight: 600, quality: 80) {
           ...GatsbyImageSharpFluid_tracedSVG

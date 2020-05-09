@@ -19,7 +19,7 @@ const Post = ({ post }) => {
     template: { templateName },
   } = post
   const media = featuredImage
-    ? featuredImage.remoteFile.childImageSharp.fluid.src
+    ? featuredImage.localFile.childImageSharp.fluid.src
     : null
   const { layoutWidth } = useThemeOptions()
   const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()

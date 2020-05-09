@@ -19,7 +19,7 @@ import { DiscussionEmbed } from 'disqus-react'
 export const PostEntryFull = ({ ctx, post }) => {
   const bgStyles = !!post.featuredImage
     ? {
-        backgroundImage: `url(${post.featuredImage.remoteFile.childImageSharp.fluid.src})`,
+        backgroundImage: `url(${post.featuredImage.localFile.childImageSharp.fluid.src})`,
       }
     : {}
   const { addWordPressComments, disqus } = useThemeOptions()
