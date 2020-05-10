@@ -24,6 +24,7 @@ const DEFAULT_OPTIONS = {
   pageCreateDebugOutput: false,
   parserDebugOutput: false,
   displayDownloadInfo: false,
+  logoFileName: false,
 }
 
 module.exports = DEFAULT_OPTIONS
