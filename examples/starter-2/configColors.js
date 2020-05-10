@@ -11,7 +11,7 @@ const secondary = "#4C959B"
 const lightGrey = "#cfd8dc"
 const grey = "#90a4ae"
 const yellow = "#FCB458"
-const purple = "#9725A3"
+const purple = "#c725A3"
 const accentDark = "#FCB458"
 const accentLight = "tomato"
 
