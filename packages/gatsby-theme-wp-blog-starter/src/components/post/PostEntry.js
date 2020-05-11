@@ -1,5 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+// eslint-disable-next-line no-unused-vars
+import React from 'react'
 import {
   PostEntryTitle,
   PostEntryMedia,
@@ -47,13 +49,15 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
           <ReadMoreButton location={location} post={post} />
         </div>
         {location === 'single' && (
-          <SocialShare
-            url={normalize(`/${post.uri}`)}
-            title={post.title}
-            media={media}
-          />
+          <>
+            <SocialShare
+              url={normalize(`/${post.uri}`)}
+              title={post.title}
+              media={media}
+            />
+            <PrevNextPostNavigation ctx={ctx} />
+          </>
         )}
-        <PrevNextPostNavigation ctx={ctx} />
       </div>
     </article>
   )

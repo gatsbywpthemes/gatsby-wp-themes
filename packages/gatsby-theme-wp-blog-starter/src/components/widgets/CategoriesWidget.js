@@ -29,7 +29,7 @@ export const CategoriesWidget = props => {
         {nodes.length
           ? nodes.map(category => (
               <li key={category.slug}>
-                <Link to={`/${category.uri}`}>{category.name}</Link>
+                <Link to={`${category.uri}`}>{category.name}</Link>
               </li>
             ))
           : null}

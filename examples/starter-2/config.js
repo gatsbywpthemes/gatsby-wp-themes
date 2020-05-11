@@ -59,7 +59,6 @@ const config = {
 
   mailchimpEndpoint:
     "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
-  logoFileName: "favicon.ico",
 }
 
 module.exports = config

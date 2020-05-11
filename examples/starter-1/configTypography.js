@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 import { rem } from "polished"
-
+// eslint-disable-next-line no-unused-vars
 const heading = {
   fontFamily: "heading",
   lineHeight: "heading",
@@ -10,7 +11,7 @@ const heading = {
   },
 }
 const typographySettings = {
-  baseFontSize: "20px",
+  baseFontSize: 20,
   fonts: {
     body: "Khand",
     heading: "Baumans",

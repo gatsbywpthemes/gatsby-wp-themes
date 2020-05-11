@@ -5,7 +5,6 @@ const dark = `#2B2336`
 const dark2 = darken(0.08, "#2B2336")
 const dark3 = darken(0.15, "#2B2336")
 const light = `#F4F2EF`
-const light2 = lighten(0.05, "#F4F2EF")
 const primary = `#8799AE`
 const secondary = `#8799AE`
 const lightGrey = `#cfd8dc`

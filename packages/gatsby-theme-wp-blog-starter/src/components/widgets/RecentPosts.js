@@ -45,7 +45,7 @@ export const RecentPosts = props => {
       <ul>
         {nodes.length
           ? nodes.map(post => {
-              const uri = normalize(`/${post.uri}`)
+              const uri = normalize(`${post.uri}`)
               return (
                 <li key={post.id}>
                   <Link aria-label={`Read more - ${post.title}`} to={uri}>

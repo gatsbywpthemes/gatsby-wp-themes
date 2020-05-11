@@ -17,7 +17,7 @@ export const PostEntryTitle = ({ post, location, ...props }) => {
         />
       ) : (
         <Styled.h1 as="h2" className="entry-title" {...props}>
-          <Link to={`/${uri}`} dangerouslySetInnerHTML={{ __html: title }} />
+          <Link to={`${uri}`} dangerouslySetInnerHTML={{ __html: title }} />
         </Styled.h1>
       )}
     </>

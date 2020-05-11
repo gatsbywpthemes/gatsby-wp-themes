@@ -8,7 +8,7 @@ const renderPreviousLink = ({ prev }) => {
   if (!prev) {
     return <span />
   } else {
-    previousLink = `/${prev}`
+    previousLink = `${prev}`
   }
 
   return (
@@ -27,7 +27,7 @@ const renderNextLink = ({ next }) => {
     return (
       <Link
         className="right"
-        to={`/${next}`}
+        to={`${next}`}
         sx={{ ...postNavigationStyles.paginationLink }}
       >
         <span>Up Next</span>
