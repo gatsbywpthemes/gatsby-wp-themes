@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React from 'react'
+import { withPrefix } from 'gatsby'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Link } from 'gatsby'
 
@@ -10,7 +11,11 @@ export const SiteBranding = ({ title, ...props }) => {
     <>
       {logoFileName ? (
         <Link to="/" rel="home">
-          <h3>logo</h3>
+          <img
+            src={`${withPrefix('/')}${logoFileName}`}
+            alt="logo"
+            sx={{ mb: 0 }}
+          />
         </Link>
       ) : (
         <h1 sx={{ variant: `text.branding` }} {...props}>
