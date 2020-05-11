@@ -7,12 +7,13 @@ import {
   PostEntryMeta,
   PostEntryInfo,
   ReadMoreButton,
+  PrevNextPostNavigation,
 } from './index'
 import normalize from 'normalize-path'
 import { SocialShare } from '../social'
 import { articleStyles } from '../../styles'
 
-export const PostEntry = ({ post, location, ...props }) => {
+export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''
   const media = post.featuredImage
     ? post.featuredImage.localFile.childImageSharp.fluid.src
@@ -52,6 +53,7 @@ export const PostEntry = ({ post, location, ...props }) => {
             media={media}
           />
         )}
+        <PrevNextPostNavigation ctx={ctx} />
       </div>
     </article>
   )

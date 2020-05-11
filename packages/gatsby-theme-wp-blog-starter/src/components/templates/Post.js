@@ -7,7 +7,7 @@ import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import normalize from 'normalize-path'
 
-const Post = ({ post }) => {
+const Post = ({ post, ctx }) => {
   const {
     title,
     excerpt,
@@ -66,7 +66,7 @@ const Post = ({ post }) => {
             alignItems: `flex-start`,
           }}
         >
-          <PostEntry post={post} location="single" />
+          <PostEntry post={post} location="single" ctx={ctx} />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
         {addWordPressComments && post.commentStatus === 'open' && (
