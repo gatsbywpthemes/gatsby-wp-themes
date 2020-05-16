@@ -9,7 +9,7 @@ const renderPreviousLink = previousPagePath => {
       <Link
         className="left"
         sx={{ ...paginationLink, fontSize: 'xs' }}
-        to={`/${previousPagePath}`}
+        to={previousPagePath}
       >
         <span>Previous</span>
       </Link>
@@ -26,7 +26,7 @@ const renderNextLink = nextPagePath => {
       <Link
         className="right"
         sx={{ ...paginationLink, fontSize: 'xs' }}
-        to={`/${nextPagePath}`}
+        to={nextPagePath}
       >
         <span>Next</span>
       </Link>
@@ -37,6 +37,7 @@ const renderNextLink = nextPagePath => {
 }
 
 export const Pagination = ({ ctx }) => {
+  console.log(ctx)
   const { humanPageNumber, nextPagePath, previousPagePath } = ctx
   // return empty string if there is only one page
   if (humanPageNumber === 1 && !nextPagePath) {

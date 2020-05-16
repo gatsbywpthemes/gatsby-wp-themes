@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui'
 import { Fragment } from 'react'
 import { Date } from './index'
 import { Link } from 'gatsby'
-import normalize from 'normalize-path'
 
 export const PublicationDate = ({ post, location }) => {
   return location === 'archive' ? (
@@ -16,7 +15,7 @@ export const PublicationDate = ({ post, location }) => {
             mb: 3,
           }}
           className="meta-data"
-          to={normalize(`/${post.uri}`)}
+          to={post.uri}
         >
           <Date date={post.date} />
         </Link>

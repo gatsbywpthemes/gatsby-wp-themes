@@ -1,4 +1,4 @@
-const pageTitle = (
+export const setPageTitle = (
   title,
   siteTitle,
   siteDesription,
@@ -11,5 +11,3 @@ const pageTitle = (
     ? `${pageTitle} | ${siteTitle}`
     : `${pageTitle} | ${siteDesription}`
 }
-
-export default pageTitle

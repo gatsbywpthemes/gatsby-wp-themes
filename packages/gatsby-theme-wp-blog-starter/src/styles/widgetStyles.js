@@ -75,12 +75,8 @@ export const widgetStyles = {
       justifyContent: 'center',
     },
     li: {
-      px: 'xxs',
+      pr: 'xxs',
       mb: 'xxs',
-
-      '&:first-of-type': {
-        pl: 0,
-      },
     },
     a: {
       ...sharedStyles.a,

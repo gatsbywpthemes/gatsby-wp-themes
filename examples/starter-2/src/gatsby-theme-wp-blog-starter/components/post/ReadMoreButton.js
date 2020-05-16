@@ -13,7 +13,7 @@ export const ReadMoreButton = ({ location, post, ...props }) => (
           a11YTitle="Read More from this post"
           variant="secondary.gradient.small"
         >
-          <Link to={`/${post.uri}`} aria-label="Read More from this post">
+          <Link to={post.uri} aria-label="Read More from this post">
             Read More
           </Link>
         </Button>

@@ -11,7 +11,7 @@ export const Author = ({ post }) => {
           <span>by </span>
           <Link
             sx={{ variant: 'special.underlineOnHover' }}
-            to={`/${post.author.uri}`}
+            to={post.author.uri}
           >
             {post.author.name}
           </Link>

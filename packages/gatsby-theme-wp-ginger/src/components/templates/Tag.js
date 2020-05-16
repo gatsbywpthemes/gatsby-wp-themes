@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Layout from './../Layout'
 import { ArchiveContent } from '../archive'
-import SEO from '../seo/Seo'
+import { SEO } from '../seo'
 
 const Tag = ({ tag, ctx }) => {
   const { name, posts, uri } = tag

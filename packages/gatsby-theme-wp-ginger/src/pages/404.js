@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Layout from '../components/Layout'
-import SEO from '../components/seo/Seo'
+import { SEO } from '../components/seo'
 import { page404 } from '../styles/page404'
 import pageTitle from '../styles/pageTitle'
 

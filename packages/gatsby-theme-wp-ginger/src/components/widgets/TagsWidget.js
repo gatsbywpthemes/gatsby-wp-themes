@@ -26,7 +26,7 @@ export const TagsWidget = () => {
         <ul>
           {nodes.map((tag, index) => (
             <li key={tag.slug}>
-              <Link to={`/${tag.uri}`}>
+              <Link to={tag.uri}>
                 {tag.name} ({tag.count})
               </Link>
               {index < nodes.length - 1 && ' · '}

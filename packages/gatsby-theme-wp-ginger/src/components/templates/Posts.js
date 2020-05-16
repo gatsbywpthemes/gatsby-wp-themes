@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../Layout.js'
 import { ArchiveContent } from '../archive'
-import SEO from '../seo/Seo'
+import { SEO } from '../seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import slashes from 'remove-trailing-slash'
 

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import normalize from 'normalize-path'
 import { results as searchstyles } from '../../styles/search'
 
 const Stats = ({ postType, search }) => (
@@ -24,7 +23,7 @@ export const SearchResults = ({ type, posts, search, children }) => {
           return (
             <li key={post.slug}>
               <Link
-                to={normalize(`/${post.uri}`)}
+                to={post.uri}
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />
             </li>

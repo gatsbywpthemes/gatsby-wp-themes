@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from 'theme-ui'
 import { Layout } from '../Layout'
-import SEO from '../seo/Seo'
+import { SEO } from '../seo'
 import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'

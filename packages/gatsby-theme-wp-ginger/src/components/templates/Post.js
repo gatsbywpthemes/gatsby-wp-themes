@@ -4,8 +4,7 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import Layout from '../Layout.js'
 import { PostEntryFull } from '../post'
-import SEO from '../seo/Seo'
-import normalize from 'normalize-path'
+import { SEO } from '../seo'
 
 const Post = props => {
   const {
@@ -23,7 +22,7 @@ const Post = props => {
           description={excerpt}
           media={media}
           ogType="article"
-          ogUrl={normalize(`/${uri}`)}
+          ogUrl={uri}
         />
         <PostEntryFull {...props} />
       </Layout>

@@ -1,43 +1,32 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import {
-  useThemeOptions,
-  useSiteSettings,
-  useSiteMetaData,
-} from 'gatsby-theme-blog-data/src/hooks'
-import SEOTwitter from './SeoTwitter'
-import SEOOG from './SeoOG'
-import CustomHeadElements from './CustomHeadElements'
-import setPageDescription from './pageDescription'
-import setPageTitle from './pageTitle'
-import slashes from 'remove-trailing-slash'
+import { useSiteSettings } from 'gatsby-theme-blog-data/src/hooks'
 
-const SEO = ({
-  title,
-  description = '',
-  pageNumber = 1,
-  titleTemplate = 'default',
-  ogUrl = '',
-}) => {
-  const { siteUrl } = useSiteMetaData()
+import {
+  setPageTitle,
+  setPageDescription,
+  SEOTwitter,
+  SEOOG,
+  CustomHeadElements,
+} from './index'
+
+export const SEO = props => {
+  const { title, description, pageNumber, titleTemplate } = props
+
   const siteSettings = useSiteSettings()
-  const siteOptions = useThemeOptions()
-  const site = {
-    title: siteSettings.title,
-    description: siteSettings.description,
-  }
 
   const pageTitle = setPageTitle(
     title,
-    site.title,
-    site.description,
+    siteSettings.title,
+    siteSettings.description,
     pageNumber,
     titleTemplate
   )
 
-  const pageDescription = setPageDescription(description, site.description)
-    ? `${slashes(siteUrl)}/${siteOptions.twitterSummaryCardImage}`
-    : false
+  const pageDescription = setPageDescription(
+    description,
+    siteSettings.description
+  )
 
   return (
     <>
@@ -47,11 +36,28 @@ const SEO = ({
       >
         <meta name="description" content={pageDescription} />
       </Helmet>
-      <SEOTwitter />
-      <SEOOG />
-      <CustomHeadElements />
+      <SEOTwitter
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
+        {...props}
+      />
+      <SEOOG
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
+        {...props}
+      />
+      <CustomHeadElements
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
+        {...props}
+      />
     </>
   )
 }
 
-export default SEO
+SEO.defaultProps = {
+  media: null,
+  description: '',
+  pageNumber: 1,
+  titleTemplate: 'default',
+}

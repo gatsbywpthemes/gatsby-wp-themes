@@ -4,24 +4,21 @@ import { Link } from 'gatsby'
 import { pagination, paginationLink } from '../../styles/pagination'
 
 const renderPreviousLink = ({ prev }) => {
-  let previousLink = null
-  if (!prev) {
-    return <span />
+  if (prev) {
+    return (
+      <Link className="left" sx={paginationLink} to={prev}>
+        <span>Previous</span>
+      </Link>
+    )
   } else {
-    previousLink = `/${prev}`
+    return <span />
   }
-
-  return (
-    <Link className="left" sx={paginationLink} to={previousLink}>
-      <span>Previous</span>
-    </Link>
-  )
 }
 
 const renderNextLink = ({ next }) => {
   if (next) {
     return (
-      <Link className="right" sx={paginationLink} to={`/${next}`}>
+      <Link className="right" sx={paginationLink} to={next}>
         <span>Up Next</span>
       </Link>
     )

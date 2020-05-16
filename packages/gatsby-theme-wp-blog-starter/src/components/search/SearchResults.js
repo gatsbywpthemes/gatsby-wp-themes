@@ -2,7 +2,6 @@
 import { Fragment } from 'react'
 import { jsx, Box } from 'theme-ui'
 import { Link } from 'gatsby'
-import normalize from 'normalize-path'
 
 const Stats = ({ postType, search }) => (
   <Box className="stats">
@@ -24,7 +23,7 @@ export const SearchResults = ({ type, posts, search, children }) => {
           return (
             <Box key={post.slug}>
               <h4>
-                <Link to={normalize(`/${post.uri}`)}>{post.title}</Link>
+                <Link to={post.uri}>{post.title}</Link>
               </h4>
             </Box>
           )

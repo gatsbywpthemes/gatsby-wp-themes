@@ -8,7 +8,7 @@ export const TaxonomyItem = ({ taxName, item, ...props }) => (
     sx={{ mr: `xxs`, mb: `xs` }}
     {...props}
   >
-    <Link to={`/${item.uri}`} aria-label={`visit ${taxName} ${item.name} page`}>
+    <Link to={item.uri} aria-label={`visit ${taxName} ${item.name} page`}>
       {item.name}
     </Link>
   </Button>

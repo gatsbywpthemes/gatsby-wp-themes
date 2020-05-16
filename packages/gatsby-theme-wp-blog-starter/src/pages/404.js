@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Layout } from '../components'
-import SEO from '../components/seo/Seo'
+import { SEO } from '../components/seo'
 
 const NotFoundPage = ({ location }) => (
   <Layout location={{ location }} page="404">

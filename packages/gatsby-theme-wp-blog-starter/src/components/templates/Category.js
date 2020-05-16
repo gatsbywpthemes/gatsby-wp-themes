@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from '../Layout'
-import SEO from '../seo/Seo'
+import { SEO } from '../seo'
 import { ArchiveContent } from '../archive'
 
 const Category = ({ category, ctx }) => {

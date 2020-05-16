@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import normalize from 'normalize-path'
 
 export const PostEntryTitle = ({ post, location }) => {
   const attributes = {
@@ -10,10 +9,7 @@ export const PostEntryTitle = ({ post, location }) => {
   }
   return location === 'archive' ? (
     <h2 {...attributes}>
-      <Link
-        to={normalize(`/${post.uri}`)}
-        dangerouslySetInnerHTML={{ __html: post.title }}
-      />
+      <Link to={post.uri} dangerouslySetInnerHTML={{ __html: post.title }} />
     </h2>
   ) : (
     <h1 {...attributes} dangerouslySetInnerHTML={{ __html: post.title }} />

@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
-import SEO from '../seo/Seo'
+import { SEO } from '../seo'
 import pageStyles from '../../styles/page'
 import pageTitle from '../../styles/pageTitle'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
@@ -17,7 +17,7 @@ const Page = ({ page }) => {
         title={page.title}
         description={page.excerpt}
         ogType={ogType}
-        ogUrl={ogType === 'website' ? '' : page.uri}
+        ogUrl={ogType === 'website' ? '/' : page.uri}
       />
       <article>
         {skipTitle.indexOf(page.slug) === -1 && (

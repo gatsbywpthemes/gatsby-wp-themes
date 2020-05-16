@@ -1,5 +1,5 @@
 import URIParser from 'urijs'
-const twitterUserName = social => {
+export const twitterUserName = social => {
   const twitter = social.find(el => el.name === 'twitter' && el.url)
   if (!!twitter) {
     const { url } = twitter
@@ -9,4 +9,3 @@ const twitterUserName = social => {
   }
   return null
 }
-export default twitterUserName

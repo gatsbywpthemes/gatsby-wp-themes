@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'
 import Img from 'gatsby-image'
-import normalize from 'normalize-path'
 import { widgetRecentPosts } from '../../styles/widget'
 
 const RECENT_POSTS_QUERY = graphql`
@@ -43,10 +42,9 @@ export const RecentPosts = () => {
       <ul>
         {nodes.length
           ? nodes.map(post => {
-              const uri = normalize(`/${post.uri}`)
               return (
                 <li key={post.id}>
-                  <Link aria-label={`Read more - ${post.title}`} to={uri}>
+                  <Link aria-label={`Read more - ${post.title}`} to={post.uri}>
                     {post.featuredImage && (
                       <Img
                         alt={post.featuredImage.altText}
@@ -57,14 +55,14 @@ export const RecentPosts = () => {
                     )}
                   </Link>
                   <div className="textual">
-                    <Link className="widget-post-date" to={uri}>
+                    <Link className="widget-post-date" to={post.uri}>
                       <time className="entry-date" dateTime={post.date}>
                         {moment(post.date).format(`MMMM DD, YYYY`)}
                       </time>
                     </Link>
                     <Link
                       className="widget-post-title"
-                      to={uri}
+                      to={post.uri}
                       dangerouslySetInnerHTML={{ __html: post.title }}
                     />
                   </div>

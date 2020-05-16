@@ -1,6 +1,6 @@
 import striptags from 'striptags'
 
-const pageDescription = (description, siteDesription) => {
+export const setPageDescription = (description, siteDesription) => {
   let pageDescription = description || siteDesription
   pageDescription = striptags(pageDescription)
   pageDescription =
@@ -9,5 +9,3 @@ const pageDescription = (description, siteDesription) => {
       : pageDescription.slice(0, 159) + '...'
   return pageDescription
 }
-
-export default pageDescription

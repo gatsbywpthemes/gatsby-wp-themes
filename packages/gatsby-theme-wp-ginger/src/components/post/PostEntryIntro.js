@@ -10,7 +10,6 @@ import {
   PrevNextPostNavigation,
 } from './index'
 import { SocialShare } from '../social'
-import normalize from 'normalize-path'
 import { card } from '../../styles/card'
 
 export const PostEntryIntro = ({
@@ -20,15 +19,10 @@ export const PostEntryIntro = ({
   variant = 'blog',
 }) => {
   return (
-    <div
-      sx={card[variant]}
-      /*       data-sal={location === 'single' ? 'fade' : 'none'}
-      data-sal-duration={location === 'single' ? '1000' : '0'}
-      data-sal-easing="ease" */
-    >
+    <div sx={card[variant]}>
       {location === 'single' && (
         <SocialShare
-          url={normalize(`/${post.uri}`)}
+          url={post.uri}
           title={post.title}
           media={
             post.featuredImage

@@ -49,7 +49,7 @@ const widget = {
       flexWrap: 'wrap',
     },
     li: {
-      px: '0.5rem',
+      pr: '0.5rem',
       '&:first-of-type': {
         pl: 0,
       },

@@ -2,7 +2,7 @@
 import { jsx, Container, Flex, Box } from 'theme-ui'
 import { Layout } from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
-import SEO from '../seo/Seo'
+import { SEO } from '../seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
 import { gutenbergStyles, articleStyles } from '../../styles'

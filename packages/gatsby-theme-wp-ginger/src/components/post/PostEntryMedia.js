@@ -4,18 +4,13 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import { Link } from 'gatsby'
 import { Image } from '../images'
-import normalize from 'normalize-path'
 import { media } from '../../styles/card'
 
 const WithLink = ({ uri, children, location }) =>
   location === 'single' ? (
     children
   ) : (
-    <Link
-      to={normalize(`/${uri}`)}
-      aria-label="View the entire post"
-      sx={media}
-    >
+    <Link to={uri} aria-label="View the entire post" sx={media}>
       {children}
     </Link>
   )

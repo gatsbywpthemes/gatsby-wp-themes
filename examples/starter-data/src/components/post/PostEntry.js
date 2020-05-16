@@ -53,7 +53,7 @@ const PostEntry = ({ post, location }) => {
                 variant="secondary"
                 sx={{ mt: `20px` }}
               >
-                <Link to={`/${post.uri}`} aria-label="Read More from this post">
+                <Link to={post.uri} aria-label="Read More from this post">
                   Read More
                 </Link>
               </Button>

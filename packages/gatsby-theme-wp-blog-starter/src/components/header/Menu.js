@@ -63,9 +63,7 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
         <Link to="/" dangerouslySetInnerHTML={{ __html: menuItem.label }} />
       ) : (
         <Link
-          to={`${normalize(
-            createLocalLink(menuItem.url, slashes(wordPressUrl))
-          )}/`}
+          to={createLocalLink(menuItem.url, slashes(wordPressUrl))}
           dangerouslySetInnerHTML={{ __html: menuItem.label }}
         />
       )
