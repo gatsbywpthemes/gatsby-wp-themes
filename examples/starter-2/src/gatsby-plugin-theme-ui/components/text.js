@@ -1,23 +1,34 @@
 import merge from "deepmerge"
 import { text } from "gatsby-theme-wp-blog-starter/src/gatsby-plugin-theme-ui/components/text"
+const { detect } = require("detect-browser")
+const browser = detect()
 
 export default merge(text, {
   gradient: {
-    primary: {
-      WebkitTextFillColor: "transparent",
-      WebkitBackgroundClip: "text",
-      variant: ["gradients.primary"],
-    },
-    secondary: {
-      WebkitTextFillColor: "transparent",
-      WebkitBackgroundClip: "text",
-      variant: ["gradients.secondary"],
-    },
-    blue: {
-      WebkitTextFillColor: "transparent",
-      WebkitBackgroundClip: "text",
-      variant: ["gradients.blue"],
-    },
+    primary:
+      browser.name !== "safari"
+        ? {
+            WebkitTextFillColor: "transparent",
+            WebkitBackgroundClip: "text",
+            variant: ["gradients.primary"],
+          }
+        : { color: "primary" },
+    secondary:
+      browser.name !== "safari"
+        ? {
+            WebkitTextFillColor: "transparent",
+            WebkitBackgroundClip: "text",
+            variant: ["gradients.secondary"],
+          }
+        : { color: "text" },
+    blue:
+      browser.name !== "safari"
+        ? {
+            WebkitTextFillColor: "transparent",
+            WebkitBackgroundClip: "text",
+            variant: ["gradients.blue"],
+          }
+        : { color: "text" },
   },
   branding: {
     fontSize: ["s", "m", "l"],
@@ -27,7 +38,10 @@ export default merge(text, {
     fontWeight: 500,
     letterSpacing: 4,
     lineHeight: 1.5,
-    variant: ["text.gradient.primary", "transitions.m"],
+    variant: browser.name !== "safari" && [
+      "text.gradient.primary",
+      "transitions.m",
+    ],
 
     m: 0,
     a: {
