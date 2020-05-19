@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Button } from 'theme-ui'
+import { jsx, Flex } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Link } from 'gatsby'
@@ -8,15 +8,14 @@ export const ReadMoreButton = ({ location, post, ...props }) => (
   <>
     {location !== 'single' && (
       <Flex sx={{ justifyContent: [`center`, `flex-end`] }} {...props}>
-        <Button
+        <Link
+          to={post.uri}
           className="read-more"
-          a11YTitle="Read More from this post"
-          variant="secondary"
+          sx={{ variant: `buttons.secondary` }}
+          aria-label="Read More from this post"
         >
-          <Link to={post.uri} aria-label="Read More from this post">
-            Read More
-          </Link>
-        </Button>
+          Read More
+        </Link>
       </Flex>
     )}
   </>

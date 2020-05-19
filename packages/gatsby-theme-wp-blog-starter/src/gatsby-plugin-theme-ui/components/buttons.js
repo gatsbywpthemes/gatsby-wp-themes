@@ -1,4 +1,4 @@
-const sharedButtonStyles = {
+export const sharedButtonStyles = {
   boxSizing: 'border-box !important',
   border: 'none',
   color: 'white',
@@ -14,10 +14,12 @@ const sharedButtonStyles = {
   px: 'm',
   borderRadius: 'xs',
   fontWeight: 500,
+  display: 'inline-block',
 
   '&:hover': {
     transform: 'translateY(-5px)',
     boxShadow: 'hover',
+    color: 'white',
     a: {
       color: 'white',
     },

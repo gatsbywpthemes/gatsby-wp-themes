@@ -14,10 +14,12 @@ const sharedButtonStyles = {
   px: "l",
   borderRadius: "50px",
   fontWeight: 500,
+  display: "inline-block",
 
   "&:hover": {
     transform: "translateY(-5px)",
     boxShadow: "hover",
+    color: "white",
     a: {
       color: "white",
     },
