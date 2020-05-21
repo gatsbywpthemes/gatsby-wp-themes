@@ -124,7 +124,7 @@ const widget = {
   },
 }
 
-export const widgetCategories = widget.categories
-export const widgetTags = widget.tags
-export const widgetRecentPosts = widget.recentPosts
-export const widgetNewsletter = widget.newsletter
+export const widgetCategoriesStyles = widget.categories
+export const widgetTagsStyles = widget.tags
+export const widgetRecentPostsStyles = widget.recentPosts
+export const widgetNewsletterStyles = widget.newsletter

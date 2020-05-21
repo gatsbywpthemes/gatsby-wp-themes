@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'
 import Img from 'gatsby-image'
-import { widgetRecentPosts } from '../../styles/widget'
+import { widgetRecentPostsStyles } from '../../styles'
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {
@@ -35,7 +35,7 @@ export const RecentPosts = () => {
   const { nodes } = data.allWpPost
   return (
     <section
-      sx={{ ...widgetRecentPosts }}
+      sx={widgetRecentPostsStyles}
       className="widget widget-recent-posts"
     >
       <h2 className="widget-title">Recent Posts</h2>

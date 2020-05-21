@@ -4,16 +4,16 @@ import React from 'react'
 import { jsx } from 'theme-ui'
 import { Twitter, Facebook, Pinterest, Linkedin } from './icons'
 import { FiShare2 } from 'react-icons/fi'
-import { share } from '../../styles/social'
+import { shareStyles } from '../../styles'
 
 export const SocialShare = ({ url, title, media }) => {
   return (
     <>
-      <span sx={share.titleicon} aria-label="Share on social networks">
+      <span sx={shareStyles.titleicon} aria-label="Share on social networks">
         <FiShare2 />
       </span>
 
-      <ul sx={share.list}>
+      <ul sx={shareStyles.list}>
         <li>
           <Twitter url={url} title={title}>
             Twitter

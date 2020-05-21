@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
 import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
-import { follow } from '../../styles/social'
+import { followStyles } from '../../styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBehance,
@@ -87,7 +87,7 @@ export const SocialFollows = () => {
   const { social } = useSiteMetaData()
 
   return (
-    <Flex sx={follow}>
+    <Flex sx={followStyles}>
       {social &&
         social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())

@@ -10,7 +10,7 @@ import {
   PrevNextPostNavigation,
 } from './index'
 import { SocialShare } from '../social'
-import { card } from '../../styles/card'
+import { cardStyles } from '../../styles/'
 
 export const PostEntryIntro = ({
   ctx,
@@ -19,7 +19,7 @@ export const PostEntryIntro = ({
   variant = 'blog',
 }) => {
   return (
-    <div sx={card[variant]}>
+    <div sx={cardStyles[variant]}>
       {location === 'single' && (
         <SocialShare
           url={post.uri}

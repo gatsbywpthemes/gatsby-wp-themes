@@ -8,7 +8,7 @@ import {
   useSiteSettings,
 } from 'gatsby-theme-blog-data/src/hooks'
 import { Global } from '@emotion/core'
-import { globalStyles } from '../styles/GlobalStyles'
+import { globalStyles } from '../styles'
 import { Footer } from './footer'
 import '../styles/blocks.css'
 import '../styles/custom-gutenstyles.css'

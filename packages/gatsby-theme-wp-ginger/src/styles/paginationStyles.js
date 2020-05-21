@@ -1,4 +1,4 @@
-export const pagination = {
+export const paginationStyles = {
   variant: 'special',
   display: `flex`,
   justifyContent: `space-between`,
@@ -20,7 +20,7 @@ export const pagination = {
   },
 }
 
-export const paginationLink = {
+export const paginationLinkStyles = {
   '&.right': {
     transform: 'translate3d(1.75rem, 0, 0)',
   },

@@ -4,13 +4,13 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import { Link } from 'gatsby'
 import { Image } from '../images'
-import { media } from '../../styles/card'
+import { mediaStyles } from '../../styles/'
 
 const WithLink = ({ uri, children, location }) =>
   location === 'single' ? (
     children
   ) : (
-    <Link to={uri} aria-label="View the entire post" sx={media}>
+    <Link to={uri} aria-label="View the entire post" sx={mediaStyles}>
       {children}
     </Link>
   )

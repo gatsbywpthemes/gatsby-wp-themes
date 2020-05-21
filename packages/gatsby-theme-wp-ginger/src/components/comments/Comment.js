@@ -4,12 +4,12 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import { Date } from '../post'
 import { CommentForm } from './index'
-import { comment as commentStyles, replyButton } from '../../styles/comments'
+import { commentStyles, replyButtonStyles } from '../../styles/'
 
 const Reply = ({ commentId, actionOnClick }) => {
   return (
     <button
-      sx={{ ...replyButton }}
+      sx={{ ...replyButtonStyles }}
       type="button"
       onClick={() => actionOnClick(commentId)}
       className="comment-button-reply"

@@ -1,6 +1,6 @@
 import gutenberg from './theme-gutenberg'
 
-export const article = {
+export const articleStyles = {
   full: {
     content: {
       ...gutenberg,
@@ -43,7 +43,7 @@ export const article = {
   },
 }
 
-export const tags = {
+export const tagStyles = {
   mb: '3rem',
   ul: {
     listStyle: 'none',

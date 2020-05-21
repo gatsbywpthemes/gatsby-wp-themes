@@ -1,4 +1,4 @@
-export const search = {
+export const searchStyles = {
   box: {
     variant: 'form',
     mb: 0,
@@ -65,7 +65,7 @@ export const search = {
   },
 }
 
-export const results = {
+export const resultsStyles = {
   h3: {
     fontSize: 'm',
   },
@@ -115,7 +115,7 @@ export const results = {
   },
 }
 
-export const searchAlgolia = {
+export const searchAlgoliaStyles = {
   box: {
     variant: 'form',
     mb: 0,
@@ -174,8 +174,8 @@ export const searchAlgolia = {
     },
   },
 }
-export const resultsAlgolia = {
+export const resultsAlgoliaStyles = {
   '.search-results': {
-    ...results,
+    ...resultsStyles,
   },
 }

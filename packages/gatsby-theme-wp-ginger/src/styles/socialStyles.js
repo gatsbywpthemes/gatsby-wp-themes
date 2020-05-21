@@ -1,4 +1,4 @@
-export const share = {
+export const shareStyles = {
   titleicon: {
     mb: '0.75rem',
     display: 'flex',
@@ -40,7 +40,7 @@ export const share = {
   },
 }
 
-export const follow = {
+export const followStyles = {
   justifyContent: 'center',
   color: 'inherit',
   mb: '3rem',

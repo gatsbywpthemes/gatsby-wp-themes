@@ -4,7 +4,7 @@ import { Fragment, useState } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import { CommentForm, Comment } from './index'
-import { commentStyles } from '../../styles/comments'
+import { commentsStyles } from '../../styles/'
 
 const GET_COMMENTS = gql`
   query($postId: ID!) {
@@ -65,8 +65,8 @@ export const CommentsList = ({ post, reloading }) => {
     <Fragment>
       {comments.nodes.length > 0 ? (
         <section>
-          <h2 sx={{ ...commentStyles.title }}>Comments</h2>
-          <ul sx={{ ...commentStyles.list }}>
+          <h2 sx={{ ...commentsStyles.title }}>Comments</h2>
+          <ul sx={{ ...commentsStyles.list }}>
             {comments.nodes.map(comment => (
               <Fragment key={comment.id}>
                 <Comment
@@ -112,7 +112,7 @@ export const CommentsList = ({ post, reloading }) => {
           </ul>
         </section>
       ) : (
-        <p sx={{ ...commentStyles.noComments }}>No comments yet</p>
+        <p sx={{ ...commentsStyles.noComments }}>No comments yet</p>
       )}
       {activeComment === 0 && (
         <CommentForm postId={postId} doOnCompleted={doOnCompleted} />

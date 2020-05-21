@@ -10,10 +10,9 @@ import {
 import { CommentsList } from '../comments'
 import { FiChevronsDown } from 'react-icons/fi'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-import { article } from '../../styles/article'
+import { articleStyles, commentsSectionStyles } from '../../styles/'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Image } from '../images'
-import { commentsSection } from '../../styles/comments'
 import { DiscussionEmbed } from 'disqus-react'
 
 export const PostEntryFull = ({ ctx, post }) => {
@@ -38,7 +37,7 @@ export const PostEntryFull = ({ ctx, post }) => {
       <header data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
         <Flex
           sx={{
-            ...article.full.splash,
+            ...articleStyles.full.splash,
             ...bgStyles,
           }}
           className="splash"
@@ -66,7 +65,7 @@ export const PostEntryFull = ({ ctx, post }) => {
           <button
             type="button"
             sx={{
-              ...article.button.scrolldown,
+              ...articleStyles.button.scrolldown,
             }}
             aria-label="Scroll to content"
             onClick={() => scrollTo('#content')}
@@ -78,7 +77,7 @@ export const PostEntryFull = ({ ctx, post }) => {
       <div
         id="content"
         sx={{
-          ...article.full.content,
+          ...articleStyles.full.content,
         }}
       >
         <PostEntryContent ctx={ctx} content={post.content} location="single" />
@@ -86,7 +85,7 @@ export const PostEntryFull = ({ ctx, post }) => {
         <PrevNextPostNavigation ctx={ctx} />
       </div>
       {!!addWordPressComments && post.commentStatus === 'open' && (
-        <section sx={commentsSection}>
+        <section sx={commentsSectionStyles}>
           <CommentsList post={post} />
         </section>
       )}

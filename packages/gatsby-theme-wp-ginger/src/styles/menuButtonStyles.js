@@ -1,4 +1,4 @@
-export default {
+export const menuButtonStyles = {
   variant: 'buttons.icon',
   color: 'menuButtonColor',
   bg: 'menuButtonBg',

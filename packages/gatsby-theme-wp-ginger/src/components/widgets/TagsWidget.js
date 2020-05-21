@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { widgetTags } from '../../styles/widget'
+import { widgetTagsStyles } from '../../styles'
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {
@@ -21,7 +21,7 @@ export const TagsWidget = () => {
   const { nodes } = data.allWpTag
   return (
     nodes.length && (
-      <section sx={{ ...widgetTags }} className="widget widget-tags">
+      <section sx={{ ...widgetTagsStyles }} className="widget widget-tags">
         <h2 className="widget-title">Tags</h2>
         <ul>
           {nodes.map((tag, index) => (

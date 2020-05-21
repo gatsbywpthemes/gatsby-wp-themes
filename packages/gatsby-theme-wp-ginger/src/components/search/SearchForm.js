@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
 import { SearchQueries } from './index'
-import { search as searchstyles } from '../../styles/search'
+import { searchStyles } from '../../styles'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 export const SearchForm = () => {
@@ -25,9 +25,9 @@ export const SearchForm = () => {
 
   return (
     <Fragment>
-      <div sx={searchstyles.box.container}>
+      <div sx={searchStyles.box.container}>
         <FiSearch />
-        <div className="search-box" sx={searchstyles.box}>
+        <div className="search-box" sx={searchStyles.box}>
           <form onSubmit={handleSubmit}>
             <div className="input-wrapper">
               <input

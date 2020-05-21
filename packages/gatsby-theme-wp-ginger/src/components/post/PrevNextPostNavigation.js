@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import { pagination, paginationLink } from '../../styles/pagination'
+import { paginationStyles, paginationLinkStyles } from '../../styles'
 
 const renderPreviousLink = ({ prev }) => {
   if (prev) {
     return (
-      <Link className="left" sx={paginationLink} to={prev}>
+      <Link className="left" sx={paginationLinkStyles} to={prev}>
         <span>Previous</span>
       </Link>
     )
@@ -18,7 +18,7 @@ const renderPreviousLink = ({ prev }) => {
 const renderNextLink = ({ next }) => {
   if (next) {
     return (
-      <Link className="right" sx={paginationLink} to={next}>
+      <Link className="right" sx={paginationLinkStyles} to={next}>
         <span>Up Next</span>
       </Link>
     )
@@ -29,7 +29,7 @@ const renderNextLink = ({ next }) => {
 
 export const PrevNextPostNavigation = ({ ctx, style }) => {
   return (
-    <nav sx={{ ...pagination, ...style }}>
+    <nav sx={{ ...paginationStyles, ...style }}>
       {renderPreviousLink(ctx)}
       {renderNextLink(ctx)}
     </nav>

@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { jsx } from 'theme-ui'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import { widgetNewsletter } from '../../styles/widget'
+import { widgetNewsletterStyles } from '../../styles'
 
 export const Newsletter = () => {
   const [email, setEmail] = useState('')
@@ -23,7 +23,7 @@ export const Newsletter = () => {
   return (
     <>
       {valid && (
-        <div sx={{ ...widgetNewsletter }}>
+        <div sx={widgetNewsletterStyles}>
           <h2 className="widget-title">Newsletter</h2>
           {msg ? (
             <p dangerouslySetInnerHTML={{ __html: msg }} />

@@ -1,4 +1,4 @@
-export const page404 = {
+export const page404Styles = {
   minHeight: theme => [
     `calc(100vh - ${parseInt(theme.sizes.header[0]) + 4.625 + 3}rem)`,
     `calc(100vh - ${parseInt(theme.sizes.header[1]) + 4.625 + 4}rem)`,

@@ -8,9 +8,8 @@ import { Widgets } from './widgets'
 import { SearchForm } from './search'
 import SearchFormAlgolia from 'gatsby-theme-algolia/src/components/Search'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import openMenuButton from '../styles/menuButton'
-import { slideMenu, overlay } from '../styles/slideSidebar'
-import { resultsAlgolia } from '../styles/search'
+import { slideMenuStyles, overlayStyles, menuButtonStyles } from '../styles'
+import { resultsAlgoliaStyles } from '../styles'
 
 const searchIndices = [
   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
@@ -64,7 +63,7 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
         aria-label="Open navigation menu"
         onClick={openMenu}
         className={openClass ? 'btn-menu-opened' : 'btn-menu-closing'}
-        sx={openMenuButton}
+        sx={menuButtonStyles}
       >
         <FiMenu />
       </button>
@@ -72,7 +71,7 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
         <>
           <div
             className={openClass ? 'menu-opened' : 'menu-closing'}
-            sx={slideMenu}
+            sx={slideMenuStyles}
           >
             <button
               aria-label="Close navigation menu"
@@ -86,7 +85,7 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
               <FiX />
             </button>
             {addAlgoliaSearch && (
-              <div sx={resultsAlgolia}>
+              <div sx={resultsAlgoliaStyles}>
                 {' '}
                 <SearchFormAlgolia indices={searchIndices} />
               </div>
@@ -102,7 +101,7 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
           <button
             type="button"
             className="menu-overlay"
-            sx={overlay}
+            sx={overlayStyles}
             onClick={closeMenu}
           />
         </>

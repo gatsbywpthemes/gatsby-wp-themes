@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import { pagination, paginationLink } from '../../styles/pagination'
+import { paginationStyles, paginationLinkStyles } from '../../styles'
 
 const renderPreviousLink = previousPagePath => {
   if (previousPagePath) {
     return (
       <Link
         className="left"
-        sx={{ ...paginationLink, fontSize: 'xs' }}
+        sx={{ ...paginationLinkStyles, fontSize: 'xs' }}
         to={previousPagePath}
       >
         <span>Previous</span>
@@ -24,7 +24,7 @@ const renderNextLink = nextPagePath => {
     return (
       <Link
         className="right"
-        sx={{ ...paginationLink, fontSize: 'xs' }}
+        sx={{ ...paginationLinkStyles, fontSize: 'xs' }}
         to={nextPagePath}
       >
         <span>Next</span>
@@ -42,7 +42,7 @@ export const Pagination = ({ ctx }) => {
     return ''
   }
   return (
-    <nav sx={pagination}>
+    <nav sx={paginationStyles}>
       {renderPreviousLink(previousPagePath)}
       <span aria-current="page" className="page-numbers current">
         {humanPageNumber}

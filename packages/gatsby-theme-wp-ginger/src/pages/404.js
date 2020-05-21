@@ -2,14 +2,14 @@
 import { jsx } from 'theme-ui'
 import Layout from '../components/Layout'
 import { SEO } from '../components/seo'
-import { page404 } from '../styles/page404'
-import pageTitle from '../styles/pageTitle'
+import { page404Styles } from '../styles'
+import { pageTitleStyles } from '../styles/'
 
 const NotFoundPage = ({ location }) => (
   <Layout location={{ location }}>
     <SEO title="404: Not found" />
-    <article sx={page404}>
-      <h1 sx={pageTitle}>
+    <article sx={page404Styles}>
+      <h1 sx={pageTitleStyles}>
         <span className="page-title-value">404</span>
       </h1>
       <div className="entry-content">

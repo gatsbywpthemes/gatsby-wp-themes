@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import { results as searchstyles } from '../../styles/search'
+import { resultsStyles } from '../../styles'
 
 const Stats = ({ postType, search }) => (
   <div className="stats">
@@ -13,7 +13,7 @@ const Stats = ({ postType, search }) => (
 
 export const SearchResults = ({ type, posts, search, children }) => {
   return (
-    <div className="search-results" sx={searchstyles}>
+    <div className="search-results" sx={resultsStyles}>
       <header>
         <h3>{type}</h3>
         <Stats postType={posts} search={search} />

@@ -1,4 +1,4 @@
-export const commentStyles = {
+export const commentsStyles = {
   form: {
     variant: 'form',
     mb: '2rem',
@@ -30,7 +30,7 @@ export const commentStyles = {
   },
 }
 
-export const comment = {
+export const commentStyles = {
   position: 'relative',
   py: ['0.5rem', '1rem'],
   px: ['0.75rem', '1.5rem'],
@@ -67,7 +67,7 @@ export const comment = {
   },
 }
 
-export const replyButton = {
+export const replyButtonStyles = {
   display: 'flex',
   mt: '0.75rem',
   ml: 'auto',
@@ -87,7 +87,7 @@ export const replyButton = {
   },
 }
 
-export const commentsSection = {
+export const commentsSectionStyles = {
   p: theme => [
     `1.5rem`,
     '4rem',

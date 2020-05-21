@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import { tags as tagStyles } from '../../styles/article'
+import { tagStyles } from '../../styles/'
 
 export const Tags = ({ tags }) => {
   return (

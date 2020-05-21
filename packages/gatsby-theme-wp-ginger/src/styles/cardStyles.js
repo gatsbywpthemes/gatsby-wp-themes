@@ -13,7 +13,7 @@ const sharedCardStyles = {
   },
 }
 
-export const card = {
+export const cardStyles = {
   blog: {
     ...sharedCardStyles,
     '&:after': {
@@ -79,7 +79,7 @@ export const card = {
   },
 }
 
-export const media = {
+export const mediaStyles = {
   overflow: 'hidden',
   '& img': {
     transition: 'transform 1.6s 0.2s!important',

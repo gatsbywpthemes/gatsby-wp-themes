@@ -1,4 +1,4 @@
-export default {
+export const pageTitleStyles = {
   textAlign: 'center',
   mb: '4rem',
   mt: '4rem',
