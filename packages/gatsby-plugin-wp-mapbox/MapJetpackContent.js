@@ -19,7 +19,6 @@ const MapContent = ({ attrs }) => {
     bearing: 0,
     pitch: 0
   })
-  console.log(viewport)
   const settings = { scrollZoom: false }
 
   const [popupInfo, setPopupInfo] = useState(null)

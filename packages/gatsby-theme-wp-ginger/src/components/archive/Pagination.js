@@ -20,7 +20,6 @@ const renderPreviousLink = previousPagePath => {
 }
 
 const renderNextLink = nextPagePath => {
-  console.log(nextPagePath)
   if (nextPagePath) {
     return (
       <Link
@@ -37,7 +36,6 @@ const renderNextLink = nextPagePath => {
 }
 
 export const Pagination = ({ ctx }) => {
-  console.log(ctx)
   const { humanPageNumber, nextPagePath, previousPagePath } = ctx
   // return empty string if there is only one page
   if (humanPageNumber === 1 && !nextPagePath) {

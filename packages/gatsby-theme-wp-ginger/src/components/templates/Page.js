@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
+import { ActivatePageScripts } from '../../utils/'
 import { SEO } from '../seo'
 import pageStyles from '../../styles/page'
 import pageTitle from '../../styles/pageTitle'
@@ -29,6 +30,7 @@ const Page = ({ page }) => {
           </h1>
         )}
         <div className="entry-content" sx={pageStyles}>
+          <ActivatePageScripts />
           <ParsedContent content={content} />
         </div>
       </article>

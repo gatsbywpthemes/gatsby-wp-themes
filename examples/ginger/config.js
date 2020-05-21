@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `https://wp-pehaa.com/demo-pehaa1`,
+  wordPressUrl: `https://wp-pehaa.xyz/ginger`,
   // uploadsPath: `wp-content/uploads`,
   // pathPrefix: "",
   postsPath: `/blog/`,
