@@ -7,7 +7,7 @@ const config = {
   // addWordPressComments: true,
   menuName: "main",
   //gingerWidgets: [`SocialFollow`, `RecentPosts`, `Tags`],
-  // siteUrl: "https://example.com",
+  siteUrl: "https://gatsby-wp-ginger-kitchen.netlify.app",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
   // description: `Description placeholder`,
