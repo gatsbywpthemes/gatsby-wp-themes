@@ -5,8 +5,8 @@ import { useSiteSettings } from 'gatsby-theme-blog-data/src/hooks'
 import {
   setPageTitle,
   setPageDescription,
-  SeoOTwitter,
-  SeoOG,
+  SeoTwitter,
+  SeoOg,
   CustomHeadElements,
 } from './index'
 
@@ -41,7 +41,7 @@ export const Seo = props => {
         pageDescription={pageDescription}
         {...props}
       />
-      <SeoOG
+      <SeoOg
         pageTitle={pageTitle}
         pageDescription={pageDescription}
         {...props}
