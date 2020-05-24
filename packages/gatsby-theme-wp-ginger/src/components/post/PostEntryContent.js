@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import ParsedContent from '../../utils/ParsedContent'
-import { ActivateScriptsPost } from '../../utils/'
+import { ActivatePostScripts } from '../../utils/'
 
 export const PostEntryContent = ({ content, location = 'archive' }) => {
   return (
@@ -16,7 +16,7 @@ export const PostEntryContent = ({ content, location = 'archive' }) => {
           className="entry-content"
           sx={{ mb: '2rem' }}
         >
-          <ActivateScriptsPost />
+          <ActivatePostScripts />
           <ParsedContent content={content} />
         </div>
       )}
