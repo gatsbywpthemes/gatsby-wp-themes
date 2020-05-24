@@ -7,7 +7,7 @@ import {
 import slashes from 'remove-trailing-slash'
 import normalize from 'normalize-path'
 
-export const SEOOG = ({ pageTitle, pageDescription, ogType, media, ogUrl }) => {
+export const SeoOg = ({ pageTitle, pageDescription, ogType, media, ogUrl }) => {
   const { siteUrl } = useSiteMetaData()
   const siteSettings = useSiteSettings()
 

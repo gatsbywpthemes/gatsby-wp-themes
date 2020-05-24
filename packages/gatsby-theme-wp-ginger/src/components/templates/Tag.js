@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Layout from './../Layout'
 import { ArchiveContent } from '../archive'
-import { SEO } from '../seo'
+import { Seo } from '../seo'
 
 const Tag = ({ tag, ctx }) => {
   const { name, posts, uri } = tag
@@ -10,7 +10,7 @@ const Tag = ({ tag, ctx }) => {
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={`${name} Archives`}
         pageNumber={pageNumber}
         ogType="object"

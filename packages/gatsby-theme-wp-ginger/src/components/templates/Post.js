@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import React from 'react'
 import Layout from '../Layout.js'
 import { PostEntryFull } from '../post'
-import { SEO } from '../seo'
+import { Seo } from '../seo'
 
 const Post = props => {
   const {
@@ -17,7 +17,7 @@ const Post = props => {
   return (
     <>
       <Layout useContainer={false}>
-        <SEO
+        <Seo
           title={title}
           description={excerpt}
           media={media}

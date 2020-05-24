@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../Layout.js'
 import { ArchiveContent } from '../archive'
-import { SEO } from '../seo'
+import { Seo } from '../seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import slashes from 'remove-trailing-slash'
 
@@ -11,7 +11,7 @@ const Posts = ({ posts, ctx }) => {
   const ogType = slashes(postsPath) === '' ? 'website' : 'object'
   return (
     <Layout>
-      <SEO
+      <Seo
         titleTemplate={'withDescription'}
         pageNumber={pageNumber}
         ogType={ogType}

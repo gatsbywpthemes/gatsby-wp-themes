@@ -7,7 +7,7 @@ import {
 import { twitterUserName } from './index'
 import slashes from 'remove-trailing-slash'
 
-export const SEOTwitter = ({ pageDescription, title, media }) => {
+export const SeoTwitter = ({ pageDescription, title, media }) => {
   const { social, siteUrl } = useSiteMetaData()
   const siteOptions = useThemeOptions()
   const absoluteMedia = media ? `${slashes(siteUrl)}${media}` : null

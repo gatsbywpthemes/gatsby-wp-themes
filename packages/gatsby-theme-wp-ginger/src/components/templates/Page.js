@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
-import { SEO } from '../seo'
+import { Seo } from '../seo'
 import { pageStyles, pageTitleStyles } from '../../styles/'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
@@ -13,7 +13,7 @@ const Page = ({ page }) => {
   const ogType = page.isFrontPage ? 'website' : 'article'
   return (
     <Layout useContainer={false}>
-      <SEO
+      <Seo
         title={page.title}
         description={page.excerpt}
         ogType={ogType}
