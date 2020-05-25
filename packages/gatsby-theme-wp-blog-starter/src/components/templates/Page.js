@@ -2,6 +2,7 @@
 import { jsx, Container, Flex, Box } from 'theme-ui'
 import { Layout } from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
+import { ActivatePageScripts } from '../../utils/'
 import { SEO } from '../seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
@@ -78,6 +79,7 @@ const Page = ({ page }) => {
                 )}
 
               <Box className="entry-content" sx={{ ...gutenbergStyles }}>
+                <ActivatePageScripts />
                 <ParsedContent content={content} />
               </Box>
             </div>
