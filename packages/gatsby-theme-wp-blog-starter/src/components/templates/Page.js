@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Box } from 'theme-ui'
 import { Layout } from '../Layout'
-import ParsedContent from '../../utils/ParsedContent'
+// import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
 import { SEO } from '../seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
@@ -80,7 +80,8 @@ const Page = ({ page }) => {
 
               <Box className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />
-                <ParsedContent content={content} />
+                {/* <ParsedContent content={content} /> */}
+                <Box dangerouslySetInnerHTML={{ __html: content }} />
               </Box>
             </div>
           </article>

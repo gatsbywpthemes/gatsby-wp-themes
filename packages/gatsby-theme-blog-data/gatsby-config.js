@@ -1,7 +1,7 @@
 const defaultOptions = require(`./utils/defaultOptions`)
 const slashes = require('remove-trailing-slash')
 
-module.exports = options => {
+module.exports = (options) => {
   const mergedOptions = {
     ...defaultOptions,
     ...options,
@@ -86,17 +86,17 @@ module.exports = options => {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-plugin-wordpress-parser`,
-      options: {
-        wordPressUrl: url,
-        uploadsUrl: `${url}/${uploadsPath}`,
-        processPostTypes: ['WpPage', 'WpPost'],
-        pathPrefix,
-        debugOutput: parserDebugOutput,
-        displayDownloadInfo,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-wordpress-parser`,
+    //   options: {
+    //     wordPressUrl: url,
+    //     uploadsUrl: `${url}/${uploadsPath}`,
+    //     processPostTypes: ['WpPage', 'WpPost'],
+    //     pathPrefix,
+    //     debugOutput: parserDebugOutput,
+    //     displayDownloadInfo,
+    //   },
+    // },
   ]
 
   /**

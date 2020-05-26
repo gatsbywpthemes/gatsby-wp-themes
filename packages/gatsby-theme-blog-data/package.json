@@ -23,7 +23,7 @@
     "gatsby-plugin-sitemap": "^2.4.3",
     "gatsby-plugin-wordpress-parser": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.8",
-    "gatsby-source-wordpress-experimental": "0.1.11",
+    "gatsby-source-wordpress-experimental": "0.7.1",
     "gatsby-transformer-sharp": "^2.5.3",
     "isomorphic-fetch": "^2.2.1",
     "normalize-path": "^3.0.0",
