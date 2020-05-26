@@ -21,7 +21,6 @@
     "gatsby-plugin-google-tagmanager": "^2.3.3",
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-plugin-sitemap": "^2.4.3",
-    "gatsby-plugin-wordpress-parser": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.8",
     "gatsby-source-wordpress-experimental": "0.7.1",
     "gatsby-transformer-sharp": "^2.5.3",
