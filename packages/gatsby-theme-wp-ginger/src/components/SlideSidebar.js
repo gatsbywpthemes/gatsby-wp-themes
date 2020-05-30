@@ -6,7 +6,6 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import { Menu } from './index'
 import { Widgets } from './widgets'
 import { SearchForm } from './search'
-import SearchFormAlgolia from 'gatsby-theme-algolia/src/components/Search'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { slideMenuStyles, overlayStyles, menuButtonStyles } from '../styles'
 import { resultsAlgoliaStyles } from '../styles'
@@ -22,7 +21,6 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
       slideMenu: { widgets },
     },
     addWordPressSearch,
-    addAlgoliaSearch,
     menuName,
   } = useThemeOptions()
 
@@ -84,12 +82,6 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
             >
               <FiX />
             </button>
-            {addAlgoliaSearch && (
-              <div sx={resultsAlgoliaStyles}>
-                {' '}
-                <SearchFormAlgolia indices={searchIndices} />
-              </div>
-            )}
             {addWordPressSearch && <SearchForm />}
 
             <Menu menuName={menuName} />

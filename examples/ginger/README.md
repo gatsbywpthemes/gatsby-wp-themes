@@ -83,7 +83,6 @@ const config = {
   googleTagManagerId: 0,
   addSiteMap: false,
   siteMapOptions: {},
-  addAlgoliaSearch: false,
   addColorModes: true,
   addFancyBox: true,
   skipTitle: [],

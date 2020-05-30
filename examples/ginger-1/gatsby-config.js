@@ -10,7 +10,6 @@ const {
   social,
   pathPrefix,
   addDisqusComments,
-  addAlgoliaSearch,
   ...options
 } = require("./config")
 
@@ -30,12 +29,6 @@ module.exports = {
           addDisqusComments && process.env.GATSBY_DISQUS_NAME
             ? process.env.GATSBY_DISQUS_NAME
             : "",
-        addAlgoliaSearch: !!(
-          addAlgoliaSearch &&
-          process.env.GATSBY_ALGOLIA_APP_ID &&
-          process.env.ALGOLIA_ADMIN_KEY &&
-          process.env.GATSBY_ALGOLIA_APP_ID
-        ),
         ...options,
         pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,
       },
