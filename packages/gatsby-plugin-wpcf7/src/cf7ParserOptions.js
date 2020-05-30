@@ -1,51 +1,52 @@
 /* eslint-disable no-useless-escape */
-import React from 'react'
-import { domToReact } from 'html-react-parser'
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React from "react"
+import { domToReact } from "html-react-parser"
 
-const pattern = node => {
+const pattern = (node) => {
   switch (node.attribs.type) {
-    case 'email':
-      return node.attribs['aria-required']
+    case "email":
+      return node.attribs["aria-required"]
         ? /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
         : /^$|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
-    case 'url':
-      return node.attribs['aria-required']
+    case "url":
+      return node.attribs["aria-required"]
         ? /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/i
         : /^$|(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/i
-    case 'tel':
-      return node.attribs['aria-required']
+    case "tel":
+      return node.attribs["aria-required"]
         ? /^[+]?[0-9()/ -]*$/i
         : /^$|[+]?[0-9()/ -]*$/i
-    case 'date':
-      return node.attribs['aria-required']
+    case "date":
+      return node.attribs["aria-required"]
         ? /^([0-9]{4,})-([0-9]{2})-([0-9]{2})$/i
         : /^$|([0-9]{4,})-([0-9]{2})-([0-9]{2})$/i
-    case 'file':
+    case "file":
       const accept = node.attribs.accept
-        ? node.attribs.accept.split(',').join('|')
-        : ''
+        ? node.attribs.accept.split(",").join("|")
+        : ""
 
-      return node.attribs['aria-required']
-        ? new RegExp(`${accept}$`, 'i')
-        : new RegExp(`^$|${accept}$`, 'i')
+      return node.attribs["aria-required"]
+        ? new RegExp(`${accept}$`, "i")
+        : new RegExp(`^$|${accept}$`, "i")
     default:
       return null
   }
 }
 
-const findInnerInputType = node => {
+const findInnerInputType = (node) => {
   let value = null
-  if (node && node.name === 'textarea') {
-    return ['textarea', node.attribs.name]
+  if (node && node.name === "textarea") {
+    return ["textarea", node.attribs.name]
   }
-  if (node && node.name === 'select') {
-    return ['select', node.attribs.name]
+  if (node && node.name === "select") {
+    return ["select", node.attribs.name]
   }
-  if (node && node.name === 'input') {
+  if (node && node.name === "input") {
     return [node.attribs.type, node.attribs.name]
   }
   if (node.children) {
-    node.children.some(child => (value = findInnerInputType(child)))
+    node.children.some((child) => (value = findInnerInputType(child)))
   }
   return value
 }
@@ -58,14 +59,14 @@ const cf7ParserOptions = ({
   isSubmitting,
 }) => {
   const parserOptions = {
-    replace: domNode => {
+    replace: (domNode) => {
       switch (domNode.name) {
-        case 'span':
+        case "span":
           return <>{domToReact(domNode.children, parserOptions)}</>
-        case 'p':
+        case "p":
           const innerFieldType = findInnerInputType(domNode)
           if (innerFieldType) {
-            if (innerFieldType[0] === 'submit') {
+            if (innerFieldType[0] === "submit") {
               return <>{domToReact(domNode.children, parserOptions)}</>
             } else {
               return (
@@ -78,15 +79,15 @@ const cf7ParserOptions = ({
             }
           }
           break
-        case 'input':
-          if (domNode.attribs.type === 'file') {
+        case "input":
+          if (domNode.attribs.type === "file") {
             registeredFileInputs.push(domNode.attribs.name)
           }
           switch (domNode.attribs.type) {
-            case 'hidden':
+            case "hidden":
               /* we probably don't need the hidden fields from the wp form */
               return <></>
-            case 'submit':
+            case "submit":
               return (
                 <button
                   className="submit-button"
@@ -97,10 +98,10 @@ const cf7ParserOptions = ({
                 </button>
               )
             default:
-              if (domNode.attribs.type === 'checkbox') {
+              if (domNode.attribs.type === "checkbox") {
                 const currentName = domNode.attribs.name
                 const index = registeredCheckboxes
-                  .map(el => el.name)
+                  .map((el) => el.name)
                   .indexOf(currentName)
                 if (index === -1) {
                   registeredCheckboxes.push({ name: currentName, counter: 0 })
@@ -122,55 +123,55 @@ const cf7ParserOptions = ({
                     min={domNode.attribs.min}
                     max={domNode.attribs.max}
                     ref={register({
-                      required: !!domNode.attribs['aria-required'],
+                      required: !!domNode.attribs["aria-required"],
                       pattern: pattern(domNode),
                       min: domNode.attribs.min,
                       max: domNode.attribs.max,
                     })}
-                    defaultValue={domNode.attribs.value || ''}
-                    defaultChecked={domNode.attribs.checked || ''}
+                    defaultValue={domNode.attribs.value || ""}
+                    defaultChecked={domNode.attribs.checked || ""}
                   />
                   {errors[domNode.attribs.name] &&
-                    errors[domNode.attribs.name].type === 'required' && (
+                    errors[domNode.attribs.name].type === "required" && (
                       <span className="error">Required</span>
                     )}
                   {errors[domNode.attribs.name] &&
-                    errors[domNode.attribs.name].type !== 'required' && (
+                    errors[domNode.attribs.name].type !== "required" && (
                       <span className="error">Invalid value</span>
                     )}
                 </>
               )
           }
-        case 'select':
+        case "select":
           return (
             <select
               name={domNode.attribs.name}
               id={domNode.attribs.name}
               ref={register({
-                required: !!domNode.attribs['aria-required'],
+                required: !!domNode.attribs["aria-required"],
               })}
             >
               {domToReact(domNode.children, parserOptions)}
             </select>
           )
-        case 'option':
+        case "option":
           return (
             <option defaultValue={domNode.attribs.value}>
               {domNode.attribs.value}
             </option>
           )
-        case 'textarea':
+        case "textarea":
           return (
             <>
               <textarea
                 name={domNode.attribs.name}
                 id={domNode.attribs.name}
-                ref={register({ required: !!domNode.attribs['aria-required'] })}
+                ref={register({ required: !!domNode.attribs["aria-required"] })}
                 rows="6"
                 cols="48"
               ></textarea>
               {errors[domNode.attribs.name] &&
-                errors[domNode.attribs.name].type === 'required' && (
+                errors[domNode.attribs.name].type === "required" && (
                   <span className="error">Required</span>
                 )}
             </>

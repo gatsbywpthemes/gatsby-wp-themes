@@ -1,7 +1,6 @@
 import React from "react"
 import parser from "html-react-parser"
 import replaceA from "./replaceA"
-import replaceImg from "./replaceImg"
 import useWordPressSettings from "../hooks/useWordPressSettings"
 
 /**
