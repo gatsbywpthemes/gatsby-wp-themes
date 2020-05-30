@@ -484,8 +484,6 @@ import React from "react"
 import ContentParser from "gatsby-plugin-wordpress-parser"
 import { cf7ParserFunction } from "gatsby-plugin-wpcf7"
 import fancyBoxParserFunction from "gatsby-plugin-wordpress-fancybox"
-// uncomment the next line to activate Mapbox
-import mapboxParserFunction from "gatsby-plugin-wp-mapbox"
 import useThemeOptions from "gatsby-theme-blog-data/src/hooks/useThemeOptions"
 
 const ParsedContent = ({ content }) => {
