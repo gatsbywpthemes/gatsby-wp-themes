@@ -20,11 +20,11 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "html-react-parser": "^0.10.3",
-    "mapbox-gl": "^1.10.0",
+    "mapbox-gl": "^1.10.1",
     "react-map-gl": "^5.2.5"
   },
   "peerDependencies": {
-    "gatsby": "^2.21.21",
+    "gatsby": "^2.22.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
