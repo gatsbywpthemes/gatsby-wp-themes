@@ -39,7 +39,6 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   addWordPressSearch: true,
-  //addAlgoliaSearch: true,
   // instantWPSearch: false,
   // addColorModes: false,
   // addFancyBox: true,
