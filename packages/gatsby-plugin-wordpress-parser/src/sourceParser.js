@@ -148,8 +148,8 @@ module.exports = async function sourceParser(
     return `background-image:url(${staticFile})`
   }
 
-  //const srcRegex = /<(img|video|audio).+?(src)=[\"'](.+?)[\"'].+?>/gm
-  //content = await replaceAsync(content, srcRegex, replaceAttrIfDownloaded)
+  const srcRegex = /<(video|audio).+?(src)=[\"'](.+?)[\"'].+?>*/gm
+  content = await replaceAsync(content, srcRegex, replaceAttrIfDownloaded)
   const hrefRegex = /<(a).+?(href)=[\"'](.+?)[\"'].+?>*/gm
   content = await replaceAsync(content, hrefRegex, replaceAttrIfDownloaded)
   const bgImageRegex = /background-image:\s*url\(['"]?([^'"\)]*)['"]?\)/gm
