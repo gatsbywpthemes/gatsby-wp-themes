@@ -8,12 +8,6 @@ import { Widgets } from './widgets'
 import { SearchForm } from './search'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { slideMenuStyles, overlayStyles, menuButtonStyles } from '../styles'
-import { resultsAlgoliaStyles } from '../styles'
-
-const searchIndices = [
-  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
-  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
-]
 
 export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
   const {
