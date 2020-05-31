@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Styled } from "theme-ui"
+import { jsx, Box } from "theme-ui"
 import { Hits, Index, connectStateResults } from "react-instantsearch-dom"
 import SearchFooter from "./SearchFooter"
 import * as hitComps from "./HitComps"
@@ -22,13 +22,13 @@ const SearchResults = ({ indices, query }) => {
       className="search-results"
       sx={{
         ...showResults,
-        variant: `search.results`
+        variant: `search.results`,
       }}
     >
       {indices.map(({ name, title, hitComp }) => (
         <Index key={name} indexName={name}>
           <header>
-            <Styled.h3>{title}</Styled.h3>
+            <h3>{title}</h3>
             <Box className="stats">
               <Stats />
             </Box>

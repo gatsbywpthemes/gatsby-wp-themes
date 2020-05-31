@@ -9,13 +9,13 @@ import useWordPressSettings from "./hooks/useWordPressSettings"
 import cf7ParserOptions from "./cf7ParserOptions"
 import Alert from "./Alert"
 
-const findId = node => {
+const findId = (node) => {
   let value = null
   if (node.attribs && node.attribs.name === "_wpcf7") {
     return node.attribs.value
   }
   if (node.children) {
-    node.children.some(child => (value = findId(child)))
+    node.children.some((child) => (value = findId(child)))
   }
   return value
 }
@@ -28,7 +28,7 @@ const ContactForm7 = ({ formObject }) => {
   const [alertState, setAlertState] = useState({
     visible: false,
     message: "",
-    className: ""
+    className: "",
   })
   const registeredCheckboxes = []
   const registeredFileInputs = []
@@ -38,7 +38,7 @@ const ContactForm7 = ({ formObject }) => {
     errors,
     registeredCheckboxes,
     registeredFileInputs,
-    isSubmitting
+    isSubmitting,
   })
 
   const onSubmit = (data, e) => {
@@ -47,7 +47,7 @@ const ContactForm7 = ({ formObject }) => {
 
     console.log("sending data", data)
 
-    Object.keys(data).forEach(el => {
+    Object.keys(data).forEach((el) => {
       if (
         typeof data[el] === "object" &&
         registeredFileInputs.indexOf(el) > -1
@@ -61,25 +61,25 @@ const ContactForm7 = ({ formObject }) => {
     axios
       .post(url, formData, {
         headers: {
-          "Content-Type": "multipart/form-data"
-        }
+          "Content-Type": "multipart/form-data",
+        },
       })
-      .then(response => {
+      .then((response) => {
         setAlertState({
           visible: true,
           message: response.data.message,
           className:
-            response.data.status === "validation_failed" ? "danger" : "success"
+            response.data.status === "validation_failed" ? "danger" : "success",
         })
         e.target.reset()
         setIsSubmitting(false)
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err)
         setAlertState({
           visible: true,
           message: err.data.message,
-          className: "danger"
+          className: "danger",
         })
       })
   }
@@ -87,6 +87,7 @@ const ContactForm7 = ({ formObject }) => {
     <>
       {!!findId && (
         <>
+          <Alert alertState={alertState} setAlertState={setAlertState} />
           <form
             className="contact-form"
             sx={{ variant: "form" }}
@@ -95,7 +96,6 @@ const ContactForm7 = ({ formObject }) => {
           >
             {domToReact(formObject.children, parserOptions)}
           </form>
-          <Alert alertState={alertState} setAlertState={setAlertState} />
         </>
       )}
     </>

@@ -6,15 +6,8 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import { Menu } from './index'
 import { Widgets } from './widgets'
 import { SearchForm } from './search'
-import SearchFormAlgolia from 'gatsby-theme-algolia/src/components/Search'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { slideMenuStyles, overlayStyles, menuButtonStyles } from '../styles'
-import { resultsAlgoliaStyles } from '../styles'
-
-const searchIndices = [
-  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
-  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
-]
 
 export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
   const {
@@ -22,7 +15,6 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
       slideMenu: { widgets },
     },
     addWordPressSearch,
-    addAlgoliaSearch,
     menuName,
   } = useThemeOptions()
 
@@ -37,7 +29,7 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
   }
 
   useEffect(() => {
-    const closeOnEsc = e => {
+    const closeOnEsc = (e) => {
       if (!(e.target.type === 'search' && e.target.value) && e.keyCode === 27) {
         setOpenClass(false)
         menuBtn.current.focus()
@@ -84,17 +76,11 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
             >
               <FiX />
             </button>
-            {addAlgoliaSearch && (
-              <div sx={resultsAlgoliaStyles}>
-                {' '}
-                <SearchFormAlgolia indices={searchIndices} />
-              </div>
-            )}
             {addWordPressSearch && <SearchForm />}
 
             <Menu menuName={menuName} />
             {!!widgets &&
-              widgets.map(widget => (
+              widgets.map((widget) => (
                 <Widgets key={widget} widget={widget} location="SlideMenu" />
               ))}
           </div>
@@ -103,6 +89,7 @@ export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {
             className="menu-overlay"
             sx={overlayStyles}
             onClick={closeMenu}
+            aria-label="Close sidebar"
           />
         </>
       )}

@@ -32,7 +32,6 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   addWordPressSearch: true,
-  // addAlgoliaSearch: false,
   // addColorModes: false,
   // addFancyBox: true,
   skipTitle: ["home-vcard", "contact"],

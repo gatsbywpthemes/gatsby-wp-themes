@@ -1,16 +1,16 @@
 const config = {
   wordPressUrl: "https://starter.alexaspalato.website",
   // uploadsPath: 'wp-content/uploads',
-  postsPath: "",
+  // postsPath: "",
   // paginationPrefix: 'page',
-
-  menuName: "main",
   // addWordPressComments: 1,
+
+  // menuName: "main",
+
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
-  disqus: process.env.GATSBY_DISQUS_NAME,
 
   skipTitle: "all",
   layoutWidth: {

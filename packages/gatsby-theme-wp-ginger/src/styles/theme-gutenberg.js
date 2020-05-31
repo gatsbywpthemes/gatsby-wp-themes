@@ -3,7 +3,7 @@ export default {
     mx: 'auto',
   },
   '& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
-    maxWidth: theme => theme.sizes.content,
+    maxWidth: (theme) => theme.sizes.content,
     width: [`calc(100% - 3rem)`, `calc(100% - 4rem)`],
   },
 
@@ -12,7 +12,7 @@ export default {
   },
 
   '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
-    maxWidth: theme => theme.sizes.content,
+    maxWidth: (theme) => theme.sizes.content,
     width: '100%',
   },
 
@@ -66,9 +66,12 @@ export default {
     px: [0, '8%'],
   },
   '.dark-color-mode & .has-background:not(.has-text-color),.dark-color-mode & .wp-block-media-text[style*="background"],.dark-color-mode & .wp-block-table.is-style-stripes tbody tr:nth-child(odd)': {
-    backgroundImage: theme => {
+    backgroundImage: (theme) => {
       return `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
     },
     backgroundBlendMode: 'multiply',
+  },
+  '.wp-block-media-text__media > .gatsby-image-wrapper': {
+    width: 'auto!important',
   },
 }

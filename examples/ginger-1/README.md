@@ -59,7 +59,6 @@ const config = {
   googleTagManagerId: 0,
   addSiteMap: false,
   siteMapOptions: {},
-  addAlgoliaSearch: false,
   addColorModes: true,
 }
 ```
@@ -322,19 +321,6 @@ Whether you want to create a site map. If set to `true`, please make sure that y
 `(type: Object, default: {})`
 
 These options are passed to the [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) options so please refer to [gatsby-plugin-sitemap options](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/#options) for the details.
-
----
-
-**addAlgoliaSearch** (optional, experimental)  
-`(default: false)`
-
-If you want to use Algolia with your project, make sure to include `.env` file in the project root:
-
-```
-GATSBY_ALGOLIA_APP_ID=your-app-id
-GATSBY_ALGOLIA_SEARCH_KEY=your-algolia-search-key
-ALGOLIA_ADMIN_KEY=your-algolia-admin-key
-```
 
 ---
 

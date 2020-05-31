@@ -32,7 +32,7 @@ module.exports = async function sourceParser(
     generateWebp = true,
     httpHeaders = {},
     debugOutput = false,
-    displayDownloadInfo = false
+    displayDownloadInfo = false,
   },
   params,
   context
@@ -43,7 +43,7 @@ module.exports = async function sourceParser(
     cache,
     reporter,
     createNodeId,
-    getNodeAndSavePathDependency
+    getNodeAndSavePathDependency,
   } = params
   const { createNode } = actions
   const supportedExtensions = ["jpeg", "jpg", "png", "webp", "tif", "tiff"]
@@ -55,7 +55,7 @@ module.exports = async function sourceParser(
     showCaptions: false,
     withWebp: true,
     tracedSVG: false,
-    pathPrefix
+    pathPrefix,
   }
   if (!content) {
     return ``
@@ -78,7 +78,7 @@ module.exports = async function sourceParser(
       imageOptions,
       createNode,
       createNodeId,
-      httpHeaders
+      httpHeaders,
     })
 
     const $ = cheerio.load(match, { xmlMode: true, decodeEntities: false })
@@ -104,7 +104,7 @@ module.exports = async function sourceParser(
               fileNode,
               imageOptions,
               reporter,
-              cache
+              cache,
             })
             el.attr("src", fluidResult.originalImg).attr(
               "data-gts-encfluid",
@@ -136,7 +136,7 @@ module.exports = async function sourceParser(
       imageOptions,
       createNode,
       createNodeId,
-      httpHeaders
+      httpHeaders,
     })
     const details = getNodeAndSavePathDependency(fileNode.id, context.path)
     const staticFile = copyToStatic({ file: fileNode, details, pathPrefix })
@@ -148,9 +148,9 @@ module.exports = async function sourceParser(
     return `background-image:url(${staticFile})`
   }
 
-  const srcRegex = /<(img|video|audio).+?(src)=[\"'](.+?)[\"'].+?>/gm
+  const srcRegex = /<(video|audio).+?(src)=[\"'](.+?)[\"'].+?>*/gm
   content = await replaceAsync(content, srcRegex, replaceAttrIfDownloaded)
-  const hrefRegex = /<(a).+?(href)=[\"'](.+?)[\"'].+?>/gm
+  const hrefRegex = /<(a).+?(href)=[\"'](.+?)[\"'].+?>*/gm
   content = await replaceAsync(content, hrefRegex, replaceAttrIfDownloaded)
   const bgImageRegex = /background-image:\s*url\(['"]?([^'"\)]*)['"]?\)/gm
   content = await replaceAsync(content, bgImageRegex, replaceBgIfDownloaded)

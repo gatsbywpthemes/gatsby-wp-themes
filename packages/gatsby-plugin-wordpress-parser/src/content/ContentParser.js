@@ -1,7 +1,6 @@
 import React from "react"
 import parser from "html-react-parser"
 import replaceA from "./replaceA"
-import replaceImg from "./replaceImg"
 import useWordPressSettings from "../hooks/useWordPressSettings"
 
 /**
@@ -27,16 +26,16 @@ export default function ContentParser({ content, customFn = [] }) {
   }
 
   customFn = Array.isArray(customFn) ? customFn : []
-  const replacementFunctions = customFn.concat([replaceA, replaceImg])
+  const replacementFunctions = customFn.concat([replaceA])
 
   const parserOptions = {
-    replace: domNode => {
-      const findMatch = replacementFunctions.find(fn =>
+    replace: (domNode) => {
+      const findMatch = replacementFunctions.find((fn) =>
         fn(domNode, { wordPressUrl, uploadsUrl, parserOptions })
       )
       if (!!findMatch)
         return findMatch(domNode, { wordPressUrl, uploadsUrl, parserOptions })
-    }
+    },
   }
 
   return <>{parser(content, parserOptions)}</>
