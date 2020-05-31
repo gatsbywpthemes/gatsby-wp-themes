@@ -30,18 +30,21 @@ module.exports = async ({ actions, graphql }, options) => {
   const tags = tagsQuery.data.allWpTag.nodes
   for (const tag of tags) {
     const postsByQuery = await graphql(GET_POSTS_BY_TAG, { slug: tag.slug })
-    const items = postsByQuery.data.wpTag.posts.nodes
-    const pathPrefix = ({ pageNumber }) =>
-      pageNumber === 0 ? tag.uri : `${tag.uri}page`
-    paginate({
-      createPage,
-      pathPrefix,
-      component: template,
-      items,
-      itemsPerPage: options.postsPerPage,
-      context: {
-        slug: tag.slug,
-      },
-    })
+
+    if (postsByQuery.data.wpTag.posts && postsByQuery.data.wpTag.posts.nodes) {
+      const items = postsByQuery.data.wpTag.posts.nodes
+      const pathPrefix = ({ pageNumber }) =>
+        pageNumber === 0 ? tag.uri : `${tag.uri}page`
+      paginate({
+        createPage,
+        pathPrefix,
+        component: template,
+        items,
+        itemsPerPage: options.postsPerPage,
+        context: {
+          slug: tag.slug,
+        },
+      })
+    }
   }
 }
