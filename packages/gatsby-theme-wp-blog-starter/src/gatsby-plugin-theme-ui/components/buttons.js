@@ -47,13 +47,17 @@ const outline = {
   border: '1px solid',
   color: 'text',
   fontWeight: 'bold',
-  boxShadow: 'inset 0 0 0 0 currentColor',
+  border: '1px solid',
+  borderColor: 'text',
   transition: '.3s',
+  boxShadow: 'none',
   a: {
     color: 'text',
   },
   ':hover:not([disabled])': {
-    boxShadow: 'inset 0 0 0 2px currentColor',
+    borderColor: 'primary',
+    bg: 'primary',
+    color: 'white',
   },
 }
 
