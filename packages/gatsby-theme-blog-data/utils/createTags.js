@@ -13,11 +13,9 @@ const GET_TAGS = `
 
 const GET_POSTS_BY_TAG = `
   query GET_POSTS_BY_TAG($slug: String!) {
-    wpTag(slug: { eq: $slug }) {
-      posts {
-        nodes {
-          id
-        }
+    allWpPost(filter: {tags: {nodes: {elemMatch: {slug: {eq: $slug}}}}}) {
+      nodes {
+        title
       }
     }
   }
@@ -31,8 +29,14 @@ module.exports = async ({ actions, graphql }, options) => {
   for (const tag of tags) {
     const postsByQuery = await graphql(GET_POSTS_BY_TAG, { slug: tag.slug })
 
-    if (postsByQuery.data.wpTag.posts && postsByQuery.data.wpTag.posts.nodes) {
-      const items = postsByQuery.data.wpTag.posts.nodes
+    if (
+      postsByQuery &&
+      postsByQuery.data &&
+      postsByQuery.data.allWpPost &&
+      postsByQuery.data.allWpPost.nodes &&
+      postsByQuery.data.allWpPost.nodes.length
+    ) {
+      const items = postsByQuery.data.allWpPost.nodes
       const pathPrefix = ({ pageNumber }) =>
         pageNumber === 0 ? tag.uri : `${tag.uri}page`
       paginate({
