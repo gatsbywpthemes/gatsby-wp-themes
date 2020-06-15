@@ -47,7 +47,6 @@ const outline = {
   border: '1px solid',
   color: 'text',
   fontWeight: 'bold',
-  border: '1px solid',
   borderColor: 'text',
   transition: '.3s',
   boxShadow: 'none',
