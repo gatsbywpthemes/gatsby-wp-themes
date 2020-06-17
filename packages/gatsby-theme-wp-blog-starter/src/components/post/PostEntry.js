@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from 'react'
+import React from 'react'
 import {
   PostEntryTitle,
   PostEntryMedia,
@@ -13,14 +13,12 @@ import {
 } from './index'
 import normalize from 'normalize-path'
 import { SocialShare } from '../social'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import { articleStyles } from '../../styles'
-import { window, exists } from 'browser-monads'
 import { useGsapReveal } from '../../hooks'
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
-  useGsapReveal()
+  useGsapReveal(50, 2, ['.gsReveal', 'p'])
   const noImgClass = !post.featuredImage ? 'no-img' : ''
   const media = post.featuredImage
     ? post.featuredImage.localFile.childImageSharp.fluid.src
@@ -55,7 +53,11 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
 
         <div className="entry-footer" sx={{ mt: `xl` }}>
           <PostEntryMeta className="entry-meta gsReveal" post={post} />
-          <ReadMoreButton location={location} post={post} gsReveal />
+          <ReadMoreButton
+            location={location}
+            post={post}
+            className="gsReveal gsRevealFromLeft"
+          />
         </div>
         {location === 'single' && (
           <>

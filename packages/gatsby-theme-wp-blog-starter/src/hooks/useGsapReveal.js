@@ -2,7 +2,13 @@ import React, { useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export const useGsapReveal = () => {
+export const useGsapReveal = (
+  distance = 50,
+  duration = 3,
+  revealEl = '.gsReveal',
+  revealElFromLeft = '.gsRevealFromLeft',
+  revealElFromRight = '.gsRevalFromRight'
+) => {
   useEffect(() => {
     if (typeof window !== `undefined`) {
       gsap.registerPlugin(ScrollTrigger)
@@ -11,12 +17,12 @@ export const useGsapReveal = () => {
 
     const animateFrom = (elem, direction = 1) => {
       let x = 0,
-        y = direction * 50
-      if (elem.classList.contains('gsRevealFromLeft')) {
-        x = -50
+        y = direction * distance
+      if (elem.classList.contains(`${revealElFromLeft}`)) {
+        x = -distance
         y = 0
-      } else if (elem.classList.contains('gsRevalFromRight')) {
-        x = 50
+      } else if (elem.classList.contains(`${revealElFromRight}`)) {
+        x = distance
         y = 0
       }
 
@@ -24,7 +30,7 @@ export const useGsapReveal = () => {
         elem,
         { x, y, autoAlpha: 0 },
         {
-          duration: 3,
+          duration,
           x: 0,
           y: 0,
           autoAlpha: 1,
@@ -35,7 +41,7 @@ export const useGsapReveal = () => {
     }
 
     const hide = (elem) => gsap.set(elem, { autoAlpha: 0 })
-    gsap.utils.toArray('.gsReveal').forEach((elem) => {
+    gsap.utils.toArray(`${revealEl}`).forEach((elem) => {
       hide(elem)
       ScrollTrigger.create({
         trigger: elem,
@@ -43,6 +49,7 @@ export const useGsapReveal = () => {
         onEnterBack: () => animateFrom(elem, -1),
         onLeave: () => hide(elem),
       })
+      ScrollTrigger.refresh()
     })
   }, [])
 }
