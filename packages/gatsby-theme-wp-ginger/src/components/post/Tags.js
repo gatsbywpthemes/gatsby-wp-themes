@@ -5,13 +5,7 @@ import { tagStyles } from '../../styles/'
 
 export const Tags = ({ tags }) => {
   return (
-    <section
-      sx={tagStyles}
-      className="entry-taxonomy entry-tags"
-      data-sal="slide-up"
-      data-sal-duration="1000"
-      data-sal-easing="ease"
-    >
+    <section sx={tagStyles} className="entry-taxonomy entry-tags">
       <h2>Tags:</h2>
       <ul sx={{}}>
         {tags.map((tag, index) => (
