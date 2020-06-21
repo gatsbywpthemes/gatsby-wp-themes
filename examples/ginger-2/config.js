@@ -6,7 +6,7 @@ const config = {
   // paginationPrefix: `page`,
   // addWordPressComments: true,
   menuName: "main",
-  //gingerWidgets: [`SocialFollow`, `RecentPosts`, `Tags`],
+  //slideMenuWidgets: [`SocialFollow`, `RecentPosts`, `Tags`],
   siteUrl: "https://gatsby-wp-ginger-kitchen.netlify.app",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,

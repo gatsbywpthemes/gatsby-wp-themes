@@ -7,7 +7,7 @@ const config = {
   // addWordPressComments: true,
   addDisqusComments: true,
   menuName: "main",
-  gingerWidgets: [
+  slideMenuWidgets: [
     `SocialFollow`,
     `RecentPosts`,
     `Categories`,
