@@ -20,7 +20,7 @@ const subdirectoryCorrection = (path, wordPressUrl) => {
 }
 const renderLink = (menuItem, wordPressUrl, postsPath) => {
   let url = menuItem.url
-  if (menuItem.connectedObject.__typename === 'WpMenuItem') {
+  if (menuItem?.connectedObject?.__typename === 'WpMenuItem') {
     const parsedUrl = new URIParser(url)
     if (menuItem.url.startsWith(`#`)) {
       return (
@@ -101,7 +101,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath, orientation) => {
       {renderLink(menuItem, wordPressUrl, postsPath)}
       <WithCollapse orientation={orientation} menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
-          {menuItem.childItems.nodes.map(item =>
+          {menuItem.childItems.nodes.map((item) =>
             renderMenuItem(item, wordPressUrl, postsPath)
           )}
         </ul>
@@ -112,7 +112,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath, orientation) => {
 
 export const Menu = ({ menuName, orientation, ...props }) => {
   const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find(n => menuName === n.name)
+  const menuEdge = menuEdges.find((n) => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
 
   const { postsPath, wordPressUrl } = useThemeOptions()
@@ -122,7 +122,7 @@ export const Menu = ({ menuName, orientation, ...props }) => {
       <nav className="menu" aria-label="main" {...props}>
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <ul role="menu" className="menuItemGroup">
-          {menuItems.nodes.map(menuItem => {
+          {menuItems.nodes.map((menuItem) => {
             if (menuItem.childItems.nodes.length) {
               return renderSubMenu(
                 menuItem,
