@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: "http://starterinstall.wst/",
+  wordPressUrl: "https://starter.alexaspalato.website",
   // uploadsPath: 'wp-content/uploads',
   postsPath: "",
   // paginationPrefix: 'page',
