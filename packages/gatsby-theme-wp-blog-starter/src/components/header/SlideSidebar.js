@@ -29,6 +29,7 @@ export const SlideSidebar = (props) => {
         icon={<MenuIcon />}
         a11yTitle="Open navigation menu"
         onClick={openMenu}
+        focusIndicator={false}
         className={openClass ? 'btn-menu-opened' : 'btn-menu-closing'}
         sx={{
           variant: `buttons.hamburger`,
@@ -47,6 +48,7 @@ export const SlideSidebar = (props) => {
           <Button
             icon={<Close />}
             a11yTitle="Close navigation menu"
+            focusIndicator={false}
             sx={{
               pointer: `cursor`,
               svg: {

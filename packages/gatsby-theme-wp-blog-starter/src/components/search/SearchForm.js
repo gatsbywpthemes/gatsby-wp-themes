@@ -6,21 +6,21 @@ import { Search as SearchIcon, FormClose } from 'grommet-icons'
 import { SearchQueries } from './index'
 import { searchStyles } from '../../styles'
 
-export const SearchForm = props => {
+export const SearchForm = (props) => {
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       setSearch(e.target.value)
     }
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     setSearch(e.target.value)
   }
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setValue(e.target.value)
   }
 
@@ -29,6 +29,7 @@ export const SearchForm = props => {
       <Flex sx={{ ...searchStyles }}>
         <Button
           a11yTitle="Search here"
+          focusIndicator={false}
           icon={<SearchIcon />}
           sx={{ ...searchStyles.icon }}
         />

@@ -3,11 +3,12 @@ import { jsx, useColorMode } from 'theme-ui'
 import { Button } from 'grommet'
 import { WiDaySunny, WiMoonAltWaningCrescent4 } from 'react-icons/wi'
 
-export const ColorSwitch = props => {
+export const ColorSwitch = (props) => {
   const [colorMode, setColorMode] = useColorMode()
   return (
     <Button
       a11yTitle="Toggle dark mode"
+      focusIndicator={false}
       onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}
       {...props}
     >

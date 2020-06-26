@@ -48,6 +48,7 @@ export const colors = {
   nlButtonBg: primary,
   nlButtonBgHover: darken(0.1, primary),
   nlButtonColor: light,
+  focusOutline: '#ddd',
 
   modes: {
     dark: {

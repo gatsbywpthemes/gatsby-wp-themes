@@ -1,17 +1,17 @@
 import { css } from '@emotion/core'
 import Typography from 'typography'
 
-export const globalStyles = theme => {
+export const globalStyles = (theme) => {
   const typography = new Typography({
     baseFontSize: theme.baseFontSize || '16px',
     baseLineHeight: theme.lineHeights.body,
     scaleRatio: 3,
     blockMarginBottom: 0.75,
-    headerFontFamily: theme.fonts.heading.split(',').map(el => {
+    headerFontFamily: theme.fonts.heading.split(',').map((el) => {
       return el.trim()
     }),
 
-    bodyFontFamily: theme.fonts.body.split(',').map(el => {
+    bodyFontFamily: theme.fonts.body.split(',').map((el) => {
       return el.trim()
     }),
     headerWeight: theme.fontWeights.heading,
@@ -121,7 +121,7 @@ export const globalStyles = theme => {
       }
     }
     *:focus {
-      outline-style: auto;
+      outline-style: dashed;
       outline-width: 1px;
       outline-color: ${theme.colors.focusOutline}!important;
     }
