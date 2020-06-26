@@ -10,7 +10,8 @@ import {
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import normalize from 'normalize-path'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+// import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const subdirectoryCorrection = (path, wordPressUrl) => {
   const wordPressUrlParsed = new URIParser(slashes(wordPressUrl))
@@ -22,9 +23,9 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
   let url = menuItem.url
   if (menuItem?.connectedObject?.__typename === 'WpMenuItem') {
     const parsedUrl = new URIParser(url)
-    if (menuItem.url.startsWith(`#`)) {
+    if (menuItem.url.includes(`#`)) {
       return (
-        <AnchorLink offset={25} href={menuItem.url}>
+        <AnchorLink to={menuItem.url}>
           <div dangerouslySetInnerHTML={{ __html: menuItem.label }} />
         </AnchorLink>
       )
