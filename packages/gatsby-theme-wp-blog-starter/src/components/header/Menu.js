@@ -10,7 +10,6 @@ import {
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import normalize from 'normalize-path'
-// import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const subdirectoryCorrection = (path, wordPressUrl) => {
@@ -19,14 +18,18 @@ const subdirectoryCorrection = (path, wordPressUrl) => {
   const subdir = wordPressUrlParsed.path()
   return normalize(path.replace(subdir, '/')) || '/'
 }
-const renderLink = (menuItem, wordPressUrl, postsPath) => {
+const renderLink = (menuItem, wordPressUrl, postsPath, closeMenu) => {
   let url = menuItem.url
+  let close = closeMenu || ''
   if (menuItem?.connectedObject?.__typename === 'WpMenuItem') {
     const parsedUrl = new URIParser(url)
     if (menuItem.url.includes(`#`)) {
       return (
         <AnchorLink to={menuItem.url}>
-          <div dangerouslySetInnerHTML={{ __html: menuItem.label }} />
+          <div
+            onClick={close}
+            dangerouslySetInnerHTML={{ __html: menuItem.label }}
+          />
         </AnchorLink>
       )
     }
@@ -74,13 +77,19 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
   }
 }
 
-const renderMenuItem = (menuItem, wordPressUrl, postsPath, orientation) => {
+const renderMenuItem = (
+  menuItem,
+  wordPressUrl,
+  postsPath,
+  orientation,
+  closeMenu
+) => {
   if (menuItem.childItems && menuItem.childItems.nodes.length) {
-    return renderSubMenu(menuItem, wordPressUrl, orientation)
+    return renderSubMenu(menuItem, wordPressUrl, orientation, closeMenu)
   } else {
     return (
       <li className={`menu-item ${menuItem.cssClasses}`} key={menuItem.id}>
-        {renderLink(menuItem, wordPressUrl, postsPath)}
+        {renderLink(menuItem, wordPressUrl, postsPath, closeMenu)}
       </li>
     )
   }
@@ -92,18 +101,24 @@ const WithCollapse = ({ orientation, children, menuItem }) =>
     children
   )
 
-const renderSubMenu = (menuItem, wordPressUrl, postsPath, orientation) => {
+const renderSubMenu = (
+  menuItem,
+  wordPressUrl,
+  postsPath,
+  orientation,
+  closeMenu
+) => {
   return (
     <li
       className="has-subMenu menu-item"
       key={menuItem.id}
       sx={{ position: `relative` }}
     >
-      {renderLink(menuItem, wordPressUrl, postsPath)}
+      {renderLink(menuItem, wordPressUrl, postsPath, closeMenu)}
       <WithCollapse orientation={orientation} menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
           {menuItem.childItems.nodes.map((item) =>
-            renderMenuItem(item, wordPressUrl, postsPath)
+            renderMenuItem(item, wordPressUrl, postsPath, closeMenu)
           )}
         </ul>
       </WithCollapse>
@@ -111,7 +126,7 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath, orientation) => {
   )
 }
 
-export const Menu = ({ menuName, orientation, ...props }) => {
+export const Menu = ({ menuName, orientation, closeMenu, ...props }) => {
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find((n) => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
@@ -129,14 +144,16 @@ export const Menu = ({ menuName, orientation, ...props }) => {
                 menuItem,
                 wordPressUrl,
                 postsPath,
-                orientation
+                orientation,
+                closeMenu
               )
             } else {
               return renderMenuItem(
                 menuItem,
                 wordPressUrl,
                 postsPath,
-                orientation
+                orientation,
+                closeMenu
               )
             }
           })}
