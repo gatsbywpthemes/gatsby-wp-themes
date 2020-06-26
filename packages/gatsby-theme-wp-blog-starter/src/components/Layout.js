@@ -7,10 +7,22 @@ import { Global } from '@emotion/core'
 import { Grommet } from 'grommet'
 import { grommetStyles, globalStyles } from '../styles'
 import Headroom from 'react-headroom'
+import { useGsapReveal } from '../hooks'
 
 import '../styles/scss/styles.scss'
 
 export const Layout = ({ children, page, type = 'page' }) => {
+  useGsapReveal(50, 2, [
+    '.gsReveal',
+    'p',
+    'li',
+    '.comment',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+  ])
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
 
   const { theme } = useThemeUI()

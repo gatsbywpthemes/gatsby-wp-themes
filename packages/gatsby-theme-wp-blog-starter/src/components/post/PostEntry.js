@@ -15,10 +15,8 @@ import normalize from 'normalize-path'
 import { SocialShare } from '../social'
 
 import { articleStyles } from '../../styles'
-import { useGsapReveal } from '../../hooks'
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
-  useGsapReveal(50, 2, ['.gsReveal', 'p'])
   const noImgClass = !post.featuredImage ? 'no-img' : ''
   const media = post.featuredImage
     ? post.featuredImage.localFile.childImageSharp.fluid.src
