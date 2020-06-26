@@ -23,6 +23,7 @@ module.exports = (options) => {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `@bumped-inc/gatsby-plugin-optional-chaining`,
+    `gatsby-plugin-anchor-links`,
 
     {
       resolve: `gatsby-source-wordpress-experimental`,

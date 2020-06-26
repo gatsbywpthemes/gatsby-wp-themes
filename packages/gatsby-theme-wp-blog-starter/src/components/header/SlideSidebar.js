@@ -9,7 +9,7 @@ import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Widgets } from '../widgets'
 import { slideSidebarStyles } from '../../styles'
 
-export const SlideSidebar = props => {
+export const SlideSidebar = (props) => {
   const [isMenuOpen, setOpenMenu] = useState(false)
   const [openClass, setOpenClass] = useState(false)
   const { slideMenuWidgets, menuName } = useThemeOptions()
@@ -59,7 +59,11 @@ export const SlideSidebar = props => {
             onClick={closeMenu}
           />
 
-          <Menu menuName={menuName} orientation="vertical" />
+          <Menu
+            menuName={menuName}
+            orientation="vertical"
+            closeMenu={closeMenu}
+          />
 
           {slideMenuWidgets &&
             slideMenuWidgets.length > 0 &&

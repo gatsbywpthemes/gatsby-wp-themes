@@ -21,6 +21,7 @@
     "apollo-link-http": "^1.5.17",
     "disqus-react": "^1.0.8",
     "gatsby-awesome-pagination": "^0.3.6",
+    "gatsby-plugin-anchor-links": "^1.1.1",
     "gatsby-plugin-google-analytics": "^2.3.2",
     "gatsby-plugin-google-tagmanager": "^2.3.3",
     "gatsby-plugin-sharp": "^2.6.9",
