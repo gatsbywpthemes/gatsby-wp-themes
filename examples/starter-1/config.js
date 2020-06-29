@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: "https://starter.alexaspalato.website",
+  wordPressUrl: "https://starter.gatsby-wp.com/",
   // wordPressUrl: "http://gatsbystarter.wst/",
 
   // uploadsPath: 'wp-content/uploads',
