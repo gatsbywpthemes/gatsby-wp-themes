@@ -1,6 +1,5 @@
 const config = {
   wordPressUrl: "https://starter.gatsby-wp.com/",
-  // wordPressUrl: "http://gatsbystarter.wst/",
 
   // uploadsPath: 'wp-content/uploads',
   postsPath: "/blog",
