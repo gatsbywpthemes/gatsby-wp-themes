@@ -6,12 +6,12 @@ import Layout from '../Layout.js'
 import { PostEntryFull } from '../post'
 import { Seo } from '../seo'
 
-const Post = props => {
+const Post = (props) => {
   const {
     post: { title, excerpt, featuredImage, uri },
   } = props
   const media = featuredImage
-    ? featuredImage.localFile.childImageSharp.fluid.src
+    ? featuredImage.node.localFile.childImageSharp.fluid.src
     : null
 
   return (

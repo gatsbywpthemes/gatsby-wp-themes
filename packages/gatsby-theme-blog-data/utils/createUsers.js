@@ -13,9 +13,11 @@ const GET_USERS = `
 
 const GET_POSTS_BY_USER = `
   query GET_POSTS_BY_USER($slug: String!) {
-    allWpPost(filter: {author: {slug: {eq: $slug }}}) {
-      nodes {
-        id
+    wpUser(slug: {eq: $slug }) {
+      posts {
+        nodes {
+          id
+        }
       }
     }
   }

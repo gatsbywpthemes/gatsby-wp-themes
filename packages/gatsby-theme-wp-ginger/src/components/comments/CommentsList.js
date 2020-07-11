@@ -11,10 +11,10 @@ const GET_COMMENTS = gql`
     comments(where: { contentId: $postId, order: ASC }) {
       nodes {
         ...CommentFields
-        children(where: { order: ASC }) {
+        replies(where: { order: ASC }) {
           nodes {
             ...CommentFields
-            children(where: { order: ASC }) {
+            replies(where: { order: ASC }) {
               nodes {
                 ...CommentFields
               }
@@ -32,7 +32,9 @@ const GET_COMMENTS = gql`
     content
     commentId
     author {
-      ...AuthorFields
+      node {
+        ...AuthorFields
+      }
     }
   }
   fragment AuthorFields on CommentAuthor {
@@ -51,7 +53,7 @@ export const CommentsList = ({ post, reloading }) => {
   const cancelReply = () => {
     setActiveComment(0)
   }
-  const addReply = id => {
+  const addReply = (id) => {
     setActiveComment(id)
   }
   const doOnCompleted = () => {
@@ -61,13 +63,14 @@ export const CommentsList = ({ post, reloading }) => {
   if (loading) return <p>Loading comments&hellip;</p>
   if (error) return <p>Some errors occur.</p>
   const comments = data.comments
+  console.log(comments)
   return (
     <Fragment>
       {comments.nodes.length > 0 ? (
         <section>
           <h2 sx={{ ...commentsStyles.title }}>Comments</h2>
           <ul sx={{ ...commentsStyles.list }}>
-            {comments.nodes.map(comment => (
+            {comments.nodes.map((comment) => (
               <Fragment key={comment.id}>
                 <Comment
                   withReply={true}
@@ -78,9 +81,9 @@ export const CommentsList = ({ post, reloading }) => {
                   cancelReply={cancelReply}
                   doOnCompleted={doOnCompleted}
                 ></Comment>
-                {comment.children.nodes.length > 0 && (
+                {comment.replies.nodes.length > 0 && (
                   <ul>
-                    {comment.children.nodes.map(reply => (
+                    {comment.replies.nodes.map((reply) => (
                       <Fragment key={reply.id}>
                         <Comment
                           withReply={true}
@@ -91,9 +94,9 @@ export const CommentsList = ({ post, reloading }) => {
                           cancelReply={cancelReply}
                           doOnCompleted={doOnCompleted}
                         ></Comment>
-                        {reply.children.nodes.length > 0 && (
+                        {reply.replies.nodes.length > 0 && (
                           <ul>
-                            {reply.children.nodes.map(replyRe => (
+                            {reply.replies.nodes.map((replyRe) => (
                               <Comment
                                 withReply={false}
                                 key={replyRe.id}
