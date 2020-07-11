@@ -16,12 +16,14 @@ const RECENT_POSTS_QUERY = graphql`
           uri
           date
           featuredImage {
-            altText
-            sourceUrl
-            imageFile {
-              childImageSharp {
-                fixed(width: 72, height: 48, quality: 80) {
-                  ...GatsbyImageSharpFixed
+            node {
+              # altText
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  fixed(width: 72, height: 48, quality: 80) {
+                    ...GatsbyImageSharpFixed
+                  }
                 }
               }
             }
@@ -41,7 +43,7 @@ const RecentPosts = () => {
       <h2 className="widget-title">Recent Posts</h2>
       <ul>
         {posts.nodes.length
-          ? posts.nodes.map(post => {
+          ? posts.nodes.map((post) => {
               const uri = normalize(`/${post.uri}`)
               return (
                 <li key={post.id}>
