@@ -22,11 +22,11 @@
   "license": "LicenseRef-LICENSE",
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
-    "html-react-parser": "^0.10.3",
+    "html-react-parser": "^0.13.0",
     "jquery": "^3.5.1"
   },
   "peerDependencies": {
-    "gatsby": "^2.22.9",
+    "gatsby": "^2.24.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
