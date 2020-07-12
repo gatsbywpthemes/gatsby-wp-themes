@@ -29,7 +29,9 @@ export const fragments = graphql`
       ...PageTemplates_starter
     }
     featuredImage {
-      ...ImageFluidFragment
+      node {
+        ...ImageFluidFragment
+      }
     }
     categories {
       nodes {
@@ -40,11 +42,13 @@ export const fragments = graphql`
       }
     }
     author {
-      name
-      slug
-      uri
-      avatar {
-        url
+      node {
+        name
+        slug
+        uri
+        avatar {
+          url
+        }
       }
     }
     tags {

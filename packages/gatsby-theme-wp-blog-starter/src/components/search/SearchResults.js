@@ -19,7 +19,7 @@ export const SearchResults = ({ type, posts, search, children }) => {
         <Stats postType={posts} search={search} />
       </header>
       <Box className="results">
-        {posts.map(post => {
+        {posts.map((post) => {
           return (
             <Box key={post.slug}>
               <h4>

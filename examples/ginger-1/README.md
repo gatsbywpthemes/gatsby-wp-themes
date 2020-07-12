@@ -42,7 +42,7 @@ const config = {
   postsPerPage: 10,
   addWordPressComments: true,
   menuName: "main",
-  gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
+  slideMenuWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
   title: `Blog Title Placeholder`,
   author: `Name Placeholder`,
@@ -156,7 +156,7 @@ menuName: "Main Menu"
 
 ---
 
-**gingerWidgets** (optional)  
+**slideMenuWidgets** (optional)  
 `(type: Array, default: ['SocialFollow', 'RecentPosts', 'Categories', 'Tags'])`
 
 The Ginger theme comes with one widget area in dthe slide-in sidebar below the navigation menu.

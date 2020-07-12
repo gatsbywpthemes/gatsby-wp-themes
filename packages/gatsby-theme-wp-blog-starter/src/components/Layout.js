@@ -12,7 +12,7 @@ import { useGsapReveal } from '../hooks'
 import '../styles/scss/styles.scss'
 
 export const Layout = ({ children, page, type = 'page' }) => {
-  useGsapReveal(50, 2, [
+  useGsapReveal(50, 3, [
     '.gsReveal',
     'p',
     'li',

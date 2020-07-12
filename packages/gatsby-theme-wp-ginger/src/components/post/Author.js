@@ -6,14 +6,14 @@ import { Link } from 'gatsby'
 export const Author = ({ post }) => {
   return (
     <>
-      {post.author && (
+      {post.author && post.author.node && (
         <>
           <span>by </span>
           <Link
             sx={{ variant: 'special.underlineOnHover' }}
-            to={post.author.uri}
+            to={post.author.node.uri}
           >
-            {post.author.name}
+            {post.author.node.name}
           </Link>
         </>
       )}

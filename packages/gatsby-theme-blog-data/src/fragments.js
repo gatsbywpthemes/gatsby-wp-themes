@@ -14,7 +14,9 @@ export const fragments = graphql`
     #   }
     # }
     featuredImage {
-      ...GatsbyImageQuery
+      node {
+        ...GatsbyImageQuery
+      }
     }
     categories {
       nodes {
@@ -28,11 +30,13 @@ export const fragments = graphql`
       ...PageTemplate
     }
     author {
-      name
-      slug
-      uri
-      avatar {
-        url
+      node {
+        name
+        slug
+        uri
+        avatar {
+          url
+        }
       }
     }
     tags {

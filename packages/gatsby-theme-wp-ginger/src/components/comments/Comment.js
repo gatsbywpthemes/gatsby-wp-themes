@@ -38,7 +38,7 @@ const Author = ({ name, url }) => {
   )
 }
 
-export const Comment = props => {
+export const Comment = (props) => {
   const {
     comment,
     activeComment,
@@ -50,7 +50,7 @@ export const Comment = props => {
   } = props
   return (
     <li className="comment" sx={{ ...commentStyles }}>
-      <Author name={comment.author.name} url={comment.author.url} />
+      <Author name={comment.author.node.name} url={comment.author.node.url} />
       <Date date={comment.date} />
       <div
         className="comment-content"

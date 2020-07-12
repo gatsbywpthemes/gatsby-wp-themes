@@ -67,7 +67,7 @@ export default {
   },
   layout: {
     container: {
-      px: [20, 30, 30, 0],
+      px: [20, 30],
     },
   },
   styles: {

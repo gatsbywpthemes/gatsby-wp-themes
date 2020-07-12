@@ -39,7 +39,9 @@ export const pageQuery = graphql`
     #   }
     # }
     featuredImage {
-      ...GatsbyImageQueryArchive
+      node {
+        ...GatsbyImageQueryArchive
+      }
     }
     categories {
       nodes {
@@ -53,11 +55,13 @@ export const pageQuery = graphql`
       ...PageTemplate
     }
     author {
-      name
-      slug
-      uri
-      avatar {
-        url
+      node {
+        name
+        slug
+        uri
+        avatar {
+          url
+        }
       }
     }
     tags {
@@ -77,7 +81,9 @@ export const pageQuery = graphql`
     excerpt
     date
     featuredImage {
-      ...GatsbyImageQueryFull
+      node {
+        ...GatsbyImageQueryFull
+      }
     }
     categories {
       nodes {
@@ -91,11 +97,13 @@ export const pageQuery = graphql`
       ...PageTemplate
     }
     author {
-      name
-      slug
-      uri
-      avatar {
-        url
+      node {
+        name
+        slug
+        uri
+        avatar {
+          url
+        }
       }
     }
     tags {

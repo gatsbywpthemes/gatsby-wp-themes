@@ -10,9 +10,9 @@ module.exports = (options) => {
   }
 
   const widgets =
-    typeof options.gingerWidgets === 'undefined'
+    typeof options.slideMenuWidgets === 'undefined'
       ? [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`]
-      : options.gingerWidgets
+      : options.slideMenuWidgets
 
   const mergedOptions = {
     addColorModes: true,

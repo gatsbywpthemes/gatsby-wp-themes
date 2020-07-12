@@ -70,7 +70,7 @@ export const SearchPagesQuery = ({ search }) => {
   return (
     <SearchResults type="Pages" query={search} posts={data.pages.nodes}>
       {clickable && data.pages.pageInfo && data.pages.pageInfo.hasNextPage && (
-        <Button onClick={loadMore} type="button">
+        <Button onClick={loadMore} focusIndicator={false} type="button">
           Load More
         </Button>
       )}

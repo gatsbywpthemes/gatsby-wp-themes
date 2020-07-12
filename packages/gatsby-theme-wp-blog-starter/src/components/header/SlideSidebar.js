@@ -9,7 +9,7 @@ import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Widgets } from '../widgets'
 import { slideSidebarStyles } from '../../styles'
 
-export const SlideSidebar = props => {
+export const SlideSidebar = (props) => {
   const [isMenuOpen, setOpenMenu] = useState(false)
   const [openClass, setOpenClass] = useState(false)
   const { slideMenuWidgets, menuName } = useThemeOptions()
@@ -29,6 +29,7 @@ export const SlideSidebar = props => {
         icon={<MenuIcon />}
         a11yTitle="Open navigation menu"
         onClick={openMenu}
+        focusIndicator={false}
         className={openClass ? 'btn-menu-opened' : 'btn-menu-closing'}
         sx={{
           variant: `buttons.hamburger`,
@@ -47,6 +48,7 @@ export const SlideSidebar = props => {
           <Button
             icon={<Close />}
             a11yTitle="Close navigation menu"
+            focusIndicator={false}
             sx={{
               pointer: `cursor`,
               svg: {
@@ -59,7 +61,11 @@ export const SlideSidebar = props => {
             onClick={closeMenu}
           />
 
-          <Menu menuName={menuName} orientation="vertical" />
+          <Menu
+            menuName={menuName}
+            orientation="vertical"
+            closeMenu={closeMenu}
+          />
 
           {slideMenuWidgets &&
             slideMenuWidgets.length > 0 &&

@@ -15,12 +15,13 @@ const RECENT_POSTS_QUERY = graphql`
         date
 
         featuredImage {
-          altText
-          sourceUrl
-          localFile {
-            childImageSharp {
-              fixed(width: 72, height: 48, quality: 80) {
-                ...GatsbyImageSharpFixed
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                fixed(width: 72, height: 48, quality: 80) {
+                  ...GatsbyImageSharpFixed
+                }
               }
             }
           }
@@ -41,15 +42,16 @@ export const RecentPosts = () => {
       <h2 className="widget-title">Recent Posts</h2>
       <ul>
         {nodes.length
-          ? nodes.map(post => {
+          ? nodes.map((post) => {
               return (
                 <li key={post.id}>
                   <Link aria-label={`Read more - ${post.title}`} to={post.uri}>
                     {post.featuredImage && (
                       <Img
-                        alt={post.featuredImage.altText}
+                        alt={post.featuredImage.node.altText}
                         fixed={
-                          post.featuredImage.localFile.childImageSharp.fixed
+                          post.featuredImage.node.localFile.childImageSharp
+                            .fixed
                         }
                       />
                     )}

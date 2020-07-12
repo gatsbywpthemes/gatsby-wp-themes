@@ -66,7 +66,7 @@ const config = {
   addWordPressComments: true,
   addDisqusComments: false,
   menuName: "main",
-  gingerWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
+  slideMenuWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
   title: `Blog Title Placeholder`,
   author: `Name Placeholder`,
@@ -205,7 +205,7 @@ menuName: "Main Menu"
 
 ---
 
-**gingerWidgets** (optional)  
+**slideMenuWidgets** (optional)  
 `(type: Array, default: ['SocialFollow', 'RecentPosts', 'Categories', 'Tags'])`
 
 Ginger theme comes with one widget area in the slide-in sidebar. Widgets are displayed below the navigation menu.
@@ -217,7 +217,7 @@ There are 4 widgets available: **SocialFollow**, **RecentPosts**, **Categories**
 - The **Tags** widget lists links to post tags. They are ordered alphabetically and include the number of posts per tag.
 - The **Newsletter** widget adds a subscription form to your MailChimp profile, (see [`MailChimp Profile`](#mailchimp))
 
-You can easily reorder the widgets. They will be displayed as specified in the **gingerWidgets** order.
+You can easily reorder the widgets. They will be displayed as specified in the **slideMenuWidgets** order.
 
 example:
 
