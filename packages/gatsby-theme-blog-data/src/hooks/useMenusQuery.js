@@ -8,7 +8,7 @@ export const useMenusQuery = () => {
       url
       target
       cssClasses
-      connectedObject {
+      connectedNode {
         __typename
       }
     }

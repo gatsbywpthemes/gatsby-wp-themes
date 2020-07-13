@@ -21,7 +21,7 @@ const subdirectoryCorrection = (path, wordPressUrl) => {
 const renderLink = (menuItem, wordPressUrl, postsPath, closeMenu) => {
   let url = menuItem.url
   let close = closeMenu || ''
-  if (menuItem?.connectedObject?.__typename === 'WpMenuItem') {
+  if (menuItem.connectedNode === null) {
     const parsedUrl = new URIParser(url)
     if (menuItem.url.includes(`#`)) {
       return (
