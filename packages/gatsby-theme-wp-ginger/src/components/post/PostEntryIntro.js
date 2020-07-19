@@ -25,7 +25,7 @@ export const PostEntryIntro = ({
           url={post.uri}
           title={post.title}
           media={
-            post.featuredImage.node
+            post.featuredImage
               ? post.featuredImage.node.localFile.childImageSharp.fluid.src
               : null
           }
