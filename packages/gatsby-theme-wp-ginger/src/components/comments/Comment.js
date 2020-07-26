@@ -69,7 +69,7 @@ export const Comment = (props) => {
         )
       ) : (
         <p className="comment-nesting-info">
-          Only two levels nesting is supported.
+          Only two levels of nesting is supported.
         </p>
       )}
     </li>
