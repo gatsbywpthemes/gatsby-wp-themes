@@ -32,14 +32,8 @@ module.exports = async ({ actions, graphql }, options) => {
     const postsByQuery = await graphql(GET_POSTS_BY_USER, {
       slug: user.slug,
     })
-    if (
-      postsByQuery &&
-      postsByQuery.data &&
-      postsByQuery.data.allWpPost &&
-      postsByQuery.data.allWpPost.nodes &&
-      postsByQuery.data.allWpPost.nodes.length
-    ) {
-      const items = postsByQuery.data.allWpPost.nodes
+    if (postsByQuery?.data?.wpUser?.posts?.nodes?.length) {
+      const items = postsByQuery.data.wpUser.posts.nodes
       const pathPrefix = ({ pageNumber }) =>
         pageNumber === 0 ? user.uri : `${user.uri}page`
       paginate({
