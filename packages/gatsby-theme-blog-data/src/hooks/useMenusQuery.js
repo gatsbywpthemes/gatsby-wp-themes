@@ -8,11 +8,7 @@ export const useMenusQuery = () => {
       url
       target
       cssClasses
-      connectedNode {
-        __typename
-      }
     }
-
     query GET_MENUS_ITEMS {
       allWpMenu {
         nodes {

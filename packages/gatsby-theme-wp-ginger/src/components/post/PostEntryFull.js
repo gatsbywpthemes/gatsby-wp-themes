@@ -54,7 +54,7 @@ export const PostEntryFull = ({ ctx, post }) => {
               bottom: 0,
             }}
           >
-            <Image img={post.featuredImage.node} />
+            <Image img={post.featuredImage} />
           </div>
           <PostEntryIntro
             post={post}

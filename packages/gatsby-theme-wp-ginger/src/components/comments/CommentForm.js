@@ -77,9 +77,10 @@ export const CommentForm = ({
   const [addComment] = useMutation(commentSubmitQuery, {
     onCompleted() {
       setCommentStatus('success')
-      setTimeout(function() {
-        doOnCompleted()
+      doOnCompleted()
+      setTimeout(function () {
         setCommentStatus('')
+        cancelReply()
       }, 5000)
     },
     onError() {
@@ -109,7 +110,7 @@ export const CommentForm = ({
     )
   }
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     setCommentStatus('loading')
     addComment({
       variables: {
@@ -166,7 +167,7 @@ export const CommentForm = ({
             sx={{ ...commentsStyles.form }}
           >
             <CommentNotes />
-            {inputFields.map(el => {
+            {inputFields.map((el) => {
               const Tag = el.tag
               const textarea = Tag === 'textarea' ? { rows: 6, cols: 48 } : {}
               return (

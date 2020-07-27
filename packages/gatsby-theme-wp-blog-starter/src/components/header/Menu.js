@@ -9,57 +9,21 @@ import {
 } from 'gatsby-theme-blog-data/src/hooks'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
-import normalize from 'normalize-path'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
-const subdirectoryCorrection = (path, wordPressUrl) => {
-  const wordPressUrlParsed = new URIParser(slashes(wordPressUrl))
-  // detect if WordPress is installed in subdirectory
-  const subdir = wordPressUrlParsed.path()
-  return normalize(path.replace(subdir, '/')) || '/'
-}
 const renderLink = (menuItem, wordPressUrl, postsPath, closeMenu) => {
   let url = menuItem.url
   let close = closeMenu || ''
-  if (menuItem.connectedNode === null) {
-    const parsedUrl = new URIParser(url)
-    if (menuItem.url.includes(`#`)) {
-      return (
-        <AnchorLink to={menuItem.url}>
-          <div
-            onClick={close}
-            dangerouslySetInnerHTML={{ __html: menuItem.label }}
-          />
-        </AnchorLink>
-      )
-    }
-    if (parsedUrl.is('relative')) {
-      url = subdirectoryCorrection(url, wordPressUrl)
-      return (
-        <Link to={url} dangerouslySetInnerHTML={{ __html: menuItem.label }} />
-      )
-    }
-    const wordPressUrlParsed = new URIParser(wordPressUrl)
-    const path = parsedUrl.path()
-    if (
-      parsedUrl.hostname() === wordPressUrlParsed.hostname() &&
-      path.indexOf(slashes(wordPressUrlParsed.path())) === 0
-    ) {
-      url = subdirectoryCorrection(path, wordPressUrl)
-      return (
-        <Link to={url} dangerouslySetInnerHTML={{ __html: menuItem.label }} />
-      )
-    }
+
+  const parsedUrl = new URIParser(url)
+  if (parsedUrl.is('absolute')) {
     const targetRelAttrs =
       menuItem.target === '_blank'
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : {}
     return (
-      <a
-        href={menuItem.url}
-        dangerouslySetInnerHTML={{ __html: menuItem.label }}
-        {...targetRelAttrs}
-      />
+      <a href={menuItem.url} {...targetRelAttrs}>
+        {menuItem.label}
+      </a>
     )
   } else {
     return menuItem.url !== '#' ? (
