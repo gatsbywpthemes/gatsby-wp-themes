@@ -34,7 +34,7 @@ const GET_COMMENTS = gql`
     parent {
       node {
         id
-        databaseId
+        commentId
       }
     }
     author {
