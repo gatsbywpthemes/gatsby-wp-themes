@@ -58,7 +58,10 @@ const Post = ({ post, ctx }) => {
         ogType="article"
         ogUrl={normalize(`/${uri}`)}
       />
-      <Container sx={{ ...containerStyles }} className="mainContainer">
+      <Container
+        sx={{ ...containerStyles, maxWidth: (theme) => theme.sizes.container }}
+        className="mainContainer"
+      >
         <Flex
           sx={{
             ...sidebarSide,
