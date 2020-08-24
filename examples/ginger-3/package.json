@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ginger-1",
+  "name": "ginger-3",
   "version": "1.0.11",
   "license": "MIT",
   "scripts": {
@@ -14,14 +14,13 @@
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "gatsby": "^2.24.48",
-    "gatsby-plugin-wpcf7": "^1.0.4",
-    "gatsby-theme-wp-ginger": "^1.0.11",
+    "gatsby": "^2.24.2",
+    "gatsby-theme-blog-data": "^1.0.11",
     "lodash.merge": "^4.6.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "prettier": "^2.1.0"
+    "prettier": "^2.0.5"
   }
 }

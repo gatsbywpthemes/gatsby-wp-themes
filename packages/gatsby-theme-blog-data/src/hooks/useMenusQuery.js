@@ -8,9 +8,6 @@ export const useMenusQuery = () => {
       url
       target
       cssClasses
-      connectedObject {
-        __typename
-      }
     }
 
     query GET_MENUS_ITEMS {

@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 export const Image = ({ img }) => {
   return (
     !!img && (
-      <Img fluid={img.localFile.childImageSharp.fluid} alt={img.altText} />
+      <Img fluid={img.node.localFile.childImageSharp.fluid} alt={img.altText} />
     )
   )
 }

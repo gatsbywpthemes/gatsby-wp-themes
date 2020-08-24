@@ -52,7 +52,10 @@ const Page = ({ page }) => {
         ogType={ogType}
         ogUrl={ogType === 'website' ? '' : uri}
       />
-      <Container sx={{ ...containerStyles }} className="mainContainer">
+      <Container
+        sx={{ ...containerStyles, maxWidth: (theme) => theme.sizes.container }}
+        className="mainContainer"
+      >
         <Flex
           sx={{
             ...sidebarSide,

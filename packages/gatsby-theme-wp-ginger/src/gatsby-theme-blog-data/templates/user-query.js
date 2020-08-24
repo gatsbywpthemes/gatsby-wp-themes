@@ -5,7 +5,7 @@ export default User
 export const pageQuery = graphql`
   query($slug: String!, $limit: Int!, $skip: Int!) {
     allWpPost(
-      filter: { author: { slug: { eq: $slug } } }
+      filter: { author: { node: { slug: { eq: $slug } } } }
       limit: $limit
       skip: $skip
       sort: { order: DESC, fields: date }

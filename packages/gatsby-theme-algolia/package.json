@@ -6,17 +6,17 @@
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.22.9",
+    "gatsby": "^2.24.2",
     "gatsby-theme-blog-data": "*",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "theme-ui": "^0.3.1"
   },
   "dependencies": {
-    "algoliasearch": "^4.2.0",
-    "gatsby-plugin-algolia": "^0.11.0",
+    "algoliasearch": "^4.3.0",
+    "gatsby-plugin-algolia": "^0.11.1",
     "normalize-path": "^3.0.0",
-    "react-instantsearch-dom": "^6.5.0",
+    "react-instantsearch-dom": "^6.6.0",
     "striptags": "^3.1.1"
   },
   "keywords": [

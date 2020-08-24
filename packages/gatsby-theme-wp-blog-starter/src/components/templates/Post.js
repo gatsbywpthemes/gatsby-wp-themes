@@ -17,7 +17,7 @@ const Post = ({ post, ctx }) => {
     template: { templateName },
   } = post
   const media = featuredImage
-    ? featuredImage.localFile.childImageSharp.fluid.src
+    ? featuredImage.node.localFile.childImageSharp.fluid.src
     : null
   const { layoutWidth } = useThemeOptions()
   const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
@@ -58,7 +58,10 @@ const Post = ({ post, ctx }) => {
         ogType="article"
         ogUrl={normalize(`/${uri}`)}
       />
-      <Container sx={{ ...containerStyles }} className="mainContainer">
+      <Container
+        sx={{ ...containerStyles, maxWidth: (theme) => theme.sizes.container }}
+        className="mainContainer"
+      >
         <Flex
           sx={{
             ...sidebarSide,

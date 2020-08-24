@@ -19,6 +19,7 @@ export const Collapse = ({ menuItem, children }) => {
       <Button
         icon={openMenu ? <FormDown /> : <FormNext />}
         a11yTitle="Open menu item"
+        focusIndicator={false}
         onClick={() => {
           const newOpenMenu = !openMenu
           setOpenMenu(newOpenMenu)

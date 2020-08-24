@@ -18,7 +18,7 @@ import { articleStyles } from '../../styles'
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''
   const media = post.featuredImage
-    ? post.featuredImage.localFile.childImageSharp.fluid.src
+    ? post.featuredImage.node.localFile.childImageSharp.fluid.src
     : null
   return (
     <article
@@ -27,7 +27,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
         ...articleStyles,
         '.entry-content': {
           pb: `m`,
-          borderBottom: t => `1px solid ${t.colors.border}`,
+          borderBottom: (t) => `1px solid ${t.colors.border}`,
         },
       }}
       {...props}

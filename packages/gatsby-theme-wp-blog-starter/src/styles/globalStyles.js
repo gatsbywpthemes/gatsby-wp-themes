@@ -122,7 +122,7 @@ export const globalStyles = (theme) => {
     }
     *:focus {
       outline-style: dashed;
-      outline-width: 1px;
+      outline-width: 0.5px;
       outline-color: ${theme.colors.focusOutline}!important;
     }
 

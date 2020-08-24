@@ -19,12 +19,12 @@
   "license": "LicenseRef-LICENSE",
   "dependencies": {
     "@emotion/core": "^10.0.28",
-    "html-react-parser": "^0.10.3",
-    "mapbox-gl": "^1.10.1",
-    "react-map-gl": "^5.2.5"
+    "html-react-parser": "^0.13.0",
+    "mapbox-gl": "^1.11.1",
+    "react-map-gl": "^5.2.7"
   },
   "peerDependencies": {
-    "gatsby": "^2.22.9",
+    "gatsby": "^2.24.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
