@@ -32,7 +32,7 @@ module.exports = async ({ actions, graphql }, options) => {
     const postsByQuery = await graphql(GET_POSTS_BY_USER, {
       slug: user.slug,
     })
-    if (postsByQuery?.data?.wpUser?.posts?.nodes?.length) {
+    if (postsByQuery.data.wpUser.posts.nodes.length) {
       const items = postsByQuery.data.wpUser.posts.nodes
       const pathPrefix = ({ pageNumber }) =>
         pageNumber === 0 ? user.uri : `${user.uri}page`

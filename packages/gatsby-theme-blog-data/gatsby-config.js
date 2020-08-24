@@ -22,7 +22,6 @@ module.exports = (options) => {
   const plugins = [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `@bumped-inc/gatsby-plugin-optional-chaining`,
     `gatsby-plugin-anchor-links`,
 
     {
