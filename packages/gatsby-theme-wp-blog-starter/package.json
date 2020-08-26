@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.24.48",
+    "gatsby": "^2.24.50",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -20,7 +20,7 @@
     "detect-browser": "^5.1.1",
     "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
-    "framer-motion": "^2.6.0",
+    "framer-motion": "^2.6.1",
     "gatsby-background-image": "^1.1.2",
     "gatsby-image": "^2.4.16",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -44,7 +44,7 @@
     "react-dom": "^16.13.0",
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^6.5.1",
+    "react-hook-form": "^6.5.3",
     "react-icons": "^3.11.0",
     "react-share": "^4.2.1",
     "react-spinners": "^0.9.0",

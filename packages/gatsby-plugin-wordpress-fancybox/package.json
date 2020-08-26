@@ -26,7 +26,7 @@
     "jquery": "^3.5.1"
   },
   "peerDependencies": {
-    "gatsby": "^2.24.48",
+    "gatsby": "^2.24.50",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

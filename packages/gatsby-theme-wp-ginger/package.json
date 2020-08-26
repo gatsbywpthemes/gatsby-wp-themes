@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "LicenseRef-LICENSE",
   "peerDependencies": {
-    "gatsby": "^2.24.48",
+    "gatsby": "^2.24.50",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -38,7 +38,7 @@
     "prismjs": "^1.21.0",
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^6.5.1",
+    "react-hook-form": "^6.5.3",
     "react-icons": "^3.11.0",
     "react-intersection-observer": "^8.27.1",
     "react-share": "^4.2.1",

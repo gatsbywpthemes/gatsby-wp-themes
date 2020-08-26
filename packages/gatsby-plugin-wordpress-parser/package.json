@@ -29,7 +29,7 @@
     "urijs": "^1.19.2"
   },
   "peerDependencies": {
-    "gatsby": "^2.24.48",
+    "gatsby": "^2.24.50",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
