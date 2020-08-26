@@ -28,7 +28,7 @@ export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
       : ''
   return (
     <Container
-      sx={{ ...containerStyles, maxWidth: (theme) => theme.sizes.container }}
+      sx={{ ...containerStyles, maxWidth: 'container' }}
       className="mainContainer"
     >
       {name && <ArchiveTitle text="Posts from: " name={name} />}
