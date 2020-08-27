@@ -26,6 +26,7 @@ const Page = ({ page }) => {
   const containerStyles =
     sidebarWidgets && sidebarPage
       ? {
+          maxWidth: 'container',
           '.entry': {
             width: [`100%`, `100%`, `100%`, `70%`],
           },

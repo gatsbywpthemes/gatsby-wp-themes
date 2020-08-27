@@ -10,6 +10,7 @@ export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
   const containerStyles =
     sidebarWidgets && archiveSidebar
       ? {
+          maxWidth: 'container',
           '.posts-list': {
             width: [`100%`, `100%`, `100%`, `70%`],
           },

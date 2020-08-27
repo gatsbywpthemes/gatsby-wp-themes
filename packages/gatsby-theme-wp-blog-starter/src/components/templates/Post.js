@@ -28,6 +28,7 @@ const Post = ({ post, ctx }) => {
   const containerStyles =
     sidebarWidgets && sidebarPage
       ? {
+          maxWidth: 'container',
           '.entry': {
             width: [`100%`, `100%`, `100%`, `70%`],
           },
@@ -39,10 +40,10 @@ const Post = ({ post, ctx }) => {
     ? pageTemplate === `left sidebar`
       ? {
           flexDirection: `row-reverse`,
-          '.entry': { pl: [0, 0, 0, layoutWidth.page] },
+          '.entry': { pl: [0, 0, 0, layoutWidth.post] },
         }
       : pageTemplate === `right sidebar`
-      ? { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
+      ? { '.entry': { pr: [0, 0, 0, layoutWidth.post] } }
       : ''
     : ''
   const disqusConfig = {
