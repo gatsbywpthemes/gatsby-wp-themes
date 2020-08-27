@@ -1,5 +1,5 @@
 import React from 'react'
-import { ApolloProvider } from 'react-apollo'
+import { ApolloProvider } from '@apollo/client'
 import { createClient } from './src/apollo/client'
 import { themeOptions } from './context'
 import defaultOptions from './utils/defaultOptions'

@@ -2,8 +2,7 @@
 import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
 import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
-import gql from 'graphql-tag'
-import { useMutation } from '@apollo/react-hooks'
+import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
 import commentStyles from '../../styles/commentStyles'
 
@@ -73,7 +72,7 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
   const [addComment, { data }] = useMutation(commentSubmitQuery, {
     onCompleted() {
       setCommentStatus('success')
-      setTimeout(function() {
+      setTimeout(function () {
         doOnCompleted()
         setCommentStatus('')
       }, 5000)
@@ -104,7 +103,7 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
     )
   }
 
-  const CommentTag = el => {
+  const CommentTag = (el) => {
     return (
       <button
         className="submit-button"
@@ -116,7 +115,7 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
     )
   }
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     setCommentStatus('loading')
     console.log(data, postId, commentId)
     addComment({
@@ -180,7 +179,7 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
             sx={commentStyles.form}
           >
             <CommentNotes />
-            {inputFields.map(el => {
+            {inputFields.map((el) => {
               const Tag = el.tag
               const { type, name } = el
               const textarea = Tag === 'textarea' ? { rows: 6, cols: 48 } : {}

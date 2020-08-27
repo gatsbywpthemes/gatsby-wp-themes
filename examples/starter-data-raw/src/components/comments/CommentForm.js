@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
 import gql from 'graphql-tag'
-import { useMutation } from '@apollo/react-hooks'
+import { useMutation } from '@apollo/client'
 import { useForm } from 'react-hook-form'
 
 const commentSubmitQuery = gql`
@@ -98,7 +98,7 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
     )
   }
 
-  const CommentTag = el => {
+  const CommentTag = (el) => {
     return (
       <button
         className="submit-button"
@@ -110,7 +110,7 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
     )
   }
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     setCommentStatus('loading')
     console.log(data, postId, commentId)
     addComment({
@@ -161,7 +161,7 @@ const CommentForm = ({ commentId = 0, postId, cancelReply }) => {
           )}
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <CommentNotes />
-            {inputFields.map(el => {
+            {inputFields.map((el) => {
               const Tag = el.tag
               const { type, name } = el
               const textarea = Tag === 'textarea' ? { rows: 6, cols: 48 } : {}

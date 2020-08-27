@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Fragment, useState } from 'react'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import gql from 'graphql-tag'
 import Comment from './Comment'
 import CommentForm from './CommentForm'
@@ -49,7 +49,7 @@ const CommentsList = ({ post }) => {
   const cancelReply = () => {
     setActiveComment(0)
   }
-  const addReply = id => {
+  const addReply = (id) => {
     setActiveComment(id)
   }
   const { data, loading, error, refetch } = useQuery(GET_COMMENTS, {
@@ -77,7 +77,7 @@ const CommentsList = ({ post }) => {
         <section sx={commentStyles.section}>
           <h2 sx={commentStyles.title}>Comments</h2>
           <ul sx={commentStyles.list}>
-            {comments.map(comment => (
+            {comments.map((comment) => (
               <Fragment key={comment.id}>
                 <Comment
                   withReply={true}
@@ -90,7 +90,7 @@ const CommentsList = ({ post }) => {
                 ></Comment>
                 {comment.children.nodes.length > 0 && (
                   <ul>
-                    {comment.children.nodes.map(reply => (
+                    {comment.children.nodes.map((reply) => (
                       <Fragment key={reply.id}>
                         <Comment
                           withReply={true}
@@ -103,7 +103,7 @@ const CommentsList = ({ post }) => {
                         ></Comment>
                         {reply.children.nodes.length > 0 && (
                           <ul>
-                            {reply.children.nodes.map(replyRe => (
+                            {reply.children.nodes.map((replyRe) => (
                               <Comment
                                 withReply={false}
                                 key={replyRe.id}

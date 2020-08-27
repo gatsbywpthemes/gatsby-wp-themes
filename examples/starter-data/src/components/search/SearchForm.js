@@ -4,7 +4,7 @@ import { useState, Fragment } from 'react'
 import { useStaticQuery } from 'gatsby'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import SearchQuery from './SearchQuery'
 
 const SearchForm = () => {
@@ -19,17 +19,17 @@ const SearchForm = () => {
   // const pages = data.wp.pages.nodes
   // const postsData = data.wp.posts
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       setSearch(e.target.value)
     }
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     setSearch(e.target.value)
   }
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setValue(e.target.value)
   }
 

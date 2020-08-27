@@ -2,7 +2,7 @@
 import { jsx, Flex } from 'theme-ui'
 import { useState } from 'react'
 import { Button } from 'grommet'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import gql from 'graphql-tag'
 import SearchResults from './SearchResults'
 import Loader from 'react-spinners/BeatLoader'

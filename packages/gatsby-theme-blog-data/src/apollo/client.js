@@ -1,10 +1,8 @@
-import { ApolloClient } from 'apollo-client'
-import { createHttpLink } from 'apollo-link-http'
-import { setContext } from 'apollo-link-context'
-import { InMemoryCache } from 'apollo-cache-inmemory'
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
+import { setContext } from '@apollo/client/link/context'
 import fetch from 'isomorphic-fetch'
 
-export const createClient = uri => {
+export const createClient = (uri) => {
   const httpLink = createHttpLink({
     uri: uri + '/graphql',
   })
