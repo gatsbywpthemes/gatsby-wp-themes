@@ -2,7 +2,7 @@
   "name": "gatsby-theme-wp-ginger",
   "description": "WordPress basic theme for Gatsby using WPGraphQL",
   "author": "Paulina Hetman <info@pehaa.com>",
-  "version": "1.0.11",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "LicenseRef-LICENSE",
   "peerDependencies": {

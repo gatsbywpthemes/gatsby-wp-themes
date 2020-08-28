@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-wp-mapbox",
   "description": "A Gatsby plugin that adds Mapbox.",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "main": "index.js",
   "author": "Paulina Hetman <info@pehaa.com>",
   "keywords": [
