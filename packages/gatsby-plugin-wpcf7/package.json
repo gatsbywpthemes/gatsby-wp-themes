@@ -20,15 +20,15 @@
   "dependencies": {
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
-    "@mdx-js/react": "^1.6.16",
+    "@mdx-js/react": "^1.6.18",
     "@theme-ui/presets": "^0.3.0",
     "emotion": "^10.0.27",
-    "html-react-parser": "^0.13.0",
-    "react-hook-form": "^6.5.3",
+    "html-react-parser": "^0.14.0",
+    "react-hook-form": "^6.8.3",
     "theme-ui": "^0.3.1"
   },
   "peerDependencies": {
-    "gatsby": "^2.24.50",
+    "gatsby": "^2.24.63",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
