@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "gatsby": "^2.22.9",
-    "gatsby-plugin-wpcf7": "^1.0.4",
-    "gatsby-theme-wp-blog-starter": "^1.0.13",
+    "gatsby-plugin-wpcf7": "*",
+    "gatsby-theme-wp-blog-starter": "*",
     "lodash.merge": "^4.6.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
