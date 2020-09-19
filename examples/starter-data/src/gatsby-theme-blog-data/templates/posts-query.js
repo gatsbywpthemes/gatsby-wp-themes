@@ -58,7 +58,7 @@ export const query = graphql`
       }
     }
   }
-  fragment PageTemplates_starter on WpContentTemplateUnion {
+  fragment PageTemplates_starter on WpContentTemplate {
     ... on WpDefaultTemplate {
       templateName
     }

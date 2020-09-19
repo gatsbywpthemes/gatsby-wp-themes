@@ -59,7 +59,7 @@ export const fragments = graphql`
       }
     }
   }
-  fragment PageTemplates_starter on WpContentTemplateUnion {
+  fragment PageTemplates_starter on WpContentTemplate {
     ... on WpDefaultTemplate {
       templateName
     }
