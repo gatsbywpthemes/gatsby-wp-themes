@@ -30,8 +30,8 @@ export const PostEntryFull = ({ ctx, post }) => {
     },
   }
   // in order to reload disqus and apply correct text color when color mode changes
-  // eslint-disable-next-line no-unused-vars
   const [colorMode] = useColorMode()
+
   return (
     <article>
       <header data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
@@ -99,7 +99,7 @@ export const PostEntryFull = ({ ctx, post }) => {
             ],
           }}
         >
-          <DiscussionEmbed {...disqusConfig} />
+          <DiscussionEmbed colorMode={colorMode} {...disqusConfig} />
         </div>
       )}
     </article>
