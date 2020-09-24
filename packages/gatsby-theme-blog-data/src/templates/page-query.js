@@ -11,6 +11,11 @@ export const pageQuery = graphql`
       uri
       slug
       isFrontPage
+      featuredImage {
+        node {
+          ...GatsbyImageQueryArchive
+        }
+      }
       template {
         ...PageTemplate
       }

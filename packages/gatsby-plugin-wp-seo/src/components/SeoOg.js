@@ -1,16 +1,13 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import {
-  useSiteSettings,
-  useSiteMetaData,
-} from 'gatsby-theme-blog-data/src/hooks'
-import slashes from 'remove-trailing-slash'
-import normalize from 'normalize-path'
+import React, { useContext } from "react"
+import { Helmet } from "react-helmet"
+import slashes from "remove-trailing-slash"
+import normalize from "normalize-path"
+import { SeoSiteSettingsContext } from "./../context"
+import { SeoOptionsContext } from "./../context"
 
 export const SeoOg = ({ pageTitle, pageDescription, ogType, media, ogUrl }) => {
-  const { siteUrl } = useSiteMetaData()
-  const siteSettings = useSiteSettings()
-
+  const { language, title } = useContext(SeoSiteSettingsContext)
+  const { siteUrl } = useContext(SeoOptionsContext)
   const normalizedOgUrl = normalize(`/${ogUrl}`)
   const absoluteOgUrl = `${slashes(siteUrl)}${normalizedOgUrl}`
 
@@ -18,11 +15,8 @@ export const SeoOg = ({ pageTitle, pageDescription, ogType, media, ogUrl }) => {
 
   return (
     <Helmet>
-      <meta
-        property="og:locale"
-        content={siteSettings.language.replace('-', '_')}
-      />
-      <meta property="og:site_name" content={siteSettings.title} />
+      <meta property="og:locale" content={language} />
+      <meta property="og:site_name" content={title} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={absoluteOgUrl} />
       <meta property="og:title" content={pageTitle} />

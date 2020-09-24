@@ -1,20 +1,18 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import {
-  useThemeOptions,
-  useSiteMetaData,
-} from 'gatsby-theme-blog-data/src/hooks'
-import { twitterUserName } from './index'
-import slashes from 'remove-trailing-slash'
+import React, { useContext } from "react"
+import { Helmet } from "react-helmet"
+import { twitterUserName } from "./../helpers"
+import slashes from "remove-trailing-slash"
+import { SeoOptionsContext } from "./../context"
 
 export const SeoTwitter = ({ pageDescription, title, media }) => {
-  const { social, siteUrl } = useSiteMetaData()
-  const siteOptions = useThemeOptions()
+  const { social, siteUrl, twitterSummaryCardImage } = useContext(
+    SeoOptionsContext
+  )
   const absoluteMedia = media ? `${slashes(siteUrl)}${media}` : null
   const twitterUser = twitterUserName(social)
 
-  const twitterSummaryImage = siteOptions.twitterSummaryCardImage
-    ? `${slashes(siteUrl)}/${siteOptions.twitterSummaryCardImage}`
+  const twitterSummaryImage = twitterSummaryCardImage
+    ? `${slashes(siteUrl)}/${twitterSummaryCardImage}`
     : false
 
   return (

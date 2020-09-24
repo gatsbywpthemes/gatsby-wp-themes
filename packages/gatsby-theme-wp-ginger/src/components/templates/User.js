@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Layout from './../Layout'
 import { ArchiveContent } from '../archive'
-import { Seo } from '../seo'
+import { SeoArchive } from 'gatsby-plugin-wp-seo'
 
 const User = ({ user, ctx }) => {
   const { name, posts, uri } = user
@@ -10,11 +10,10 @@ const User = ({ user, ctx }) => {
 
   return (
     <Layout>
-      <Seo
+      <SeoArchive
         title={`Author Archives: ${name}`}
         pageNumber={pageNumber}
-        ogType="object"
-        ogUrl={uri}
+        uri={uri}
       />
       <ArchiveContent
         name={name}

@@ -1,0 +1,20 @@
+{
+  "name": "gatsby-plugin-wp-seo",
+  "version": "1.0.0",
+  "description": "A minimal boilerplate for the essential files Gatsby looks for in a plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"No build script setup\""
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "author": "Paulina Hetman <info@pehaa.com>",
+  "license": "0BSD",
+  "dependencies": {
+    "react-helmet": "^6.1.0",
+    "remove-trailing-slash": "^0.1.1"
+  }
+}

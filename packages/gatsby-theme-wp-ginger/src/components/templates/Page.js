@@ -3,22 +3,16 @@ import { jsx } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
-import { Seo } from '../seo'
+import { SeoSingle } from 'gatsby-plugin-wp-seo'
 import { pageStyles, pageTitleStyles } from '../../styles/'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 const Page = ({ page }) => {
   const { skipTitle } = useThemeOptions()
-  const { content } = page
-  const ogType = page.isFrontPage ? 'website' : 'article'
+  const { content, ...rest } = page
   return (
     <Layout useContainer={false}>
-      <Seo
-        title={page.title}
-        description={page.excerpt}
-        ogType={ogType}
-        ogUrl={ogType === 'website' ? '/' : page.uri}
-      />
+      <SeoSingle page={rest} />
       <article>
         {skipTitle.indexOf(page.slug) === -1 && (
           <h1 sx={pageTitleStyles}>

@@ -38,7 +38,7 @@ module.exports = async ({ actions, graphql }, options) => {
   const postsQuery = await graphql(GET_POSTS)
   const posts = postsQuery.data.allWpPost.edges
 
-  posts.map(post => {
+  posts.map((post) => {
     createPage({
       path: post.node.uri,
       component: postTemplate,

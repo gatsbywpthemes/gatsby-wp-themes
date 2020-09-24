@@ -10,6 +10,7 @@ const {
   social,
   pathPrefix,
   addDisqusComments,
+  twitterSummaryCardImage,
   ...options
 } = require("./config")
 
@@ -37,6 +38,14 @@ module.exports = {
       resolve: `gatsby-plugin-wpcf7`,
       options: {
         wordPressUrl: options.wordPressUrl,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-wp-seo",
+      options: {
+        siteUrl,
+        social,
+        twitterSummaryCardImage,
       },
     },
   ],

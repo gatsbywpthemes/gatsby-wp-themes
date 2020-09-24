@@ -7,7 +7,7 @@ export const setPageTitle = (
 ) => {
   let pageTitle = title || siteTitle
   pageTitle += pageNumber > 1 ? ` | Page ${pageNumber}` : ``
-  return titleTemplate === 'default'
+  return titleTemplate === "default"
     ? `${pageTitle} | ${siteTitle}`
     : `${pageTitle} | ${siteDesription}`
 }
