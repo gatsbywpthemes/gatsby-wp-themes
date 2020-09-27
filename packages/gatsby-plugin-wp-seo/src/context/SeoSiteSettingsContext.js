@@ -15,7 +15,7 @@ export const SeoSiteSettingsContextProvider = ({ children }) => {
       }
     }
   `)
-  console.log("haha")
+
   return (
     <SeoSiteSettingsContext.Provider value={{ ...data.wp.generalSettings }}>
       {children}

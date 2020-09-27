@@ -1,6 +1,11 @@
 import React, { useContext } from "react"
-import { Helmet } from "react-helmet"
-import { SeoTwitter, SeoOg, CustomHeadElements } from "./index"
+import {
+  SeoTitleDescription,
+  SeoSiteVerifications,
+  SeoTwitter,
+  SeoOg,
+  CustomHeadElements,
+} from "./index"
 import { setPageTitle, setPageDescription } from "./../helpers/index"
 import { SeoSiteSettingsContext } from "./../context"
 
@@ -20,14 +25,8 @@ export const Seo = (props) => {
 
   return (
     <>
-      <Helmet
-        htmlAttributes={{
-          lang: ctx.language.replace("_", "-") || "en-US",
-        }}
-        title={pageTitle}
-      >
-        <meta name="description" content={pageDescription} />
-      </Helmet>
+      <SeoTitleDescription {...props} />
+      <SeoSiteVerifications />
       <SeoTwitter
         pageTitle={pageTitle}
         pageDescription={pageDescription}

@@ -31,6 +31,7 @@ module.exports = async ({ actions, graphql }, options) => {
       component: pageTemplate,
       context: {
         uri,
+        seo: options.seoWithYoast,
       },
     })
   })

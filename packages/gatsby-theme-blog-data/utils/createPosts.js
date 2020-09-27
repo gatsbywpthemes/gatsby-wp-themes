@@ -46,6 +46,7 @@ module.exports = async ({ actions, graphql }, options) => {
         uri: post.node.uri,
         prev: post.previous ? post.previous.uri : null,
         next: post.next ? post.next.uri : null,
+        seo: options.seoWithYoast,
       },
     })
   })
@@ -67,5 +68,8 @@ module.exports = async ({ actions, graphql }, options) => {
     component: blogTemplate,
     items: posts,
     itemsPerPage: postsPerPage,
+    context: {
+      seo: options.seoWithYoast,
+    },
   })
 }

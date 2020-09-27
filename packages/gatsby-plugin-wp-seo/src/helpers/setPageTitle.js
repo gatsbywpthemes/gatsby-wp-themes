@@ -2,11 +2,11 @@ export const setPageTitle = (
   title,
   siteTitle,
   siteDesription,
-  pageNumber,
+  humanPageNumber,
   titleTemplate
 ) => {
   let pageTitle = title || siteTitle
-  pageTitle += pageNumber > 1 ? ` | Page ${pageNumber}` : ``
+  pageTitle += humanPageNumber > 1 ? ` | Page ${humanPageNumber}` : ``
   return titleTemplate === "default"
     ? `${pageTitle} | ${siteTitle}`
     : `${pageTitle} | ${siteDesription}`

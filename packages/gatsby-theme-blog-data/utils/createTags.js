@@ -47,6 +47,7 @@ module.exports = async ({ actions, graphql }, options) => {
         itemsPerPage: options.postsPerPage,
         context: {
           slug: tag.slug,
+          seo: options.seoWithYoast,
         },
       })
     }
