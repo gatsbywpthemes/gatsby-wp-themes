@@ -56,9 +56,6 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
-
-  mailchimpEndpoint:
-    "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
 }
 
 module.exports = config

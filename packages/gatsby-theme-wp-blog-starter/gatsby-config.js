@@ -1,9 +1,10 @@
-module.exports = options => {
+require('dotenv').config()
+module.exports = (options) => {
   options.fonts = options.fonts || ['IBM Plex Mono', 'Roboto Slab']
   options.customFonts = []
   if (options.fonts) {
     options.customFonts = options.fonts.filter(
-      el =>
+      (el) =>
         el.toLowerCase().indexOf(`IBM Plex Mono`) === -1 &&
         el.toLowerCase().indexOf(`Roboto Slab`) === -1
     )
@@ -64,11 +65,11 @@ module.exports = options => {
     plugins.push(`gatsby-plugin-wordpress-fancybox`)
   }
 
-  if (mergedOptions.mailchimpEndpoint) {
+  if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
     plugins.push({
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint: mergedOptions.mailchimpEndpoint,
+        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
       },
     })
   }
