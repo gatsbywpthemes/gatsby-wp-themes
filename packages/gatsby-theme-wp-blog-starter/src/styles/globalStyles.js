@@ -19,7 +19,8 @@ export const globalStyles = (theme) => {
     boldWeight: theme.fontWeights.bold,
   })
   return css`
-    body, html {
+    body,
+    html {
       margin: 0;
       max-width: 100%;
       overflow-x: hidden;
@@ -125,6 +126,8 @@ export const globalStyles = (theme) => {
       outline-width: 0.5px;
       outline-color: ${theme.colors.focusOutline}!important;
     }
-
+    [aria-hidden]:focus {
+      outline: none;
+    }
   `
 }
