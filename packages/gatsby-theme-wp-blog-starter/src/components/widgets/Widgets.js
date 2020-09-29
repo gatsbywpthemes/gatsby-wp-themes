@@ -23,7 +23,9 @@ export const Widgets = ({ widget }) => {
     case 'Tags':
       return <TagsWidget />
     case 'Newsletter':
-      return <Newsletter title="subscribe to our newsletter" />
+      return process.env.GATSBY_MAILCHIMP_ENDPOINT ? (
+        <Newsletter title="subscribe to our newsletter" />
+      ) : null
 
     default:
       return ''

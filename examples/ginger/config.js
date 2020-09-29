@@ -43,9 +43,6 @@ const config = {
   // addColorModes: false,
   // addFancyBox: true,
   skipTitle: ["home"],
-  mailchimpEndpoint:
-    "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
-  seoWithYoast: true,
 }
 // https://gatsby-test-2.alexaspalato.website
 //https://gatsby-theme-demo.alexaspalato.website

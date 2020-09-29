@@ -1,4 +1,6 @@
+require('dotenv').config()
 module.exports = (options) => {
+  console.log(options)
   options.fonts = options.fonts || ['abril fatface', 'fira sans']
   options.customFonts = []
   if (options.fonts) {
@@ -74,11 +76,12 @@ module.exports = (options) => {
   /**
    * Conditionally add mailchimp subscription plugin
    */
-  if (mergedOptions.mailchimpEndpoint) {
+
+  if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
     plugins.push({
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint: mergedOptions.mailchimpEndpoint,
+        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
       },
     })
   }
