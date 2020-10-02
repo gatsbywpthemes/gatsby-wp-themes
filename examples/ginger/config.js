@@ -1,7 +1,7 @@
 const config = {
   wordPressUrl: `https://wp-pehaa.xyz/ginger`,
   // uploadsPath: `wp-content/uploads`,
-  //pathPrefix: "",
+  pathPrefix: "/demo",
   // postsPath: `/blog/`,
   // paginationPrefix: `page`,
   // addWordPressComments: true,
@@ -14,7 +14,7 @@ const config = {
     `Tags`,
     "Newsletter",
   ],
-  siteUrl: "http://localhost:9001",
+  siteUrl: "http://localhost:9001/demo",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
   // description: `Description placeholder`,

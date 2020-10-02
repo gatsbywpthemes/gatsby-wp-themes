@@ -44,6 +44,21 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
         inLanguage
       }
       openGraph {
+        frontPage {
+          title
+          description
+          image {
+            localFile {
+              childImageSharp {
+                original {
+                  height
+                  src
+                  width
+                }
+              }
+            }
+          }
+        }
         defaultImage {
           localFile {
             childImageSharp {

@@ -41,10 +41,14 @@ module.exports = async ({ actions, graphql }, options) => {
   `
 
   const slashPostsPath = postsPath ? normalize(`/${postsPath}`) : ''
-  const [postsQuery, postsPage] = await Promise.all([
-    graphql(GET_POSTS),
-    graphql(GET_POSTS_PAGE, { uri: `${normalize(slashPostsPath)}/` }),
-  ])
+  console.log('normalize(slashPostsPath)', normalize(slashPostsPath))
+  const queries = [graphql(GET_POSTS)]
+  if (normalize(postsPath)) {
+    queries.push(
+      graphql(GET_POSTS_PAGE, { uri: `${normalize(slashPostsPath)}/` })
+    )
+  }
+  const [postsQuery, postsPage] = await Promise.all(queries)
 
   const posts = postsQuery.data.allWpPost.edges
 
@@ -82,9 +86,9 @@ module.exports = async ({ actions, graphql }, options) => {
     items: posts,
     itemsPerPage: postsPerPage,
     context: {
-      title: postsPage.data.wpPage.title,
+      title: postsPage?.data.wpPage.title,
       seo: {
-        page: postsPage.data.wpPage.seo,
+        page: postsPage?.data.wpPage.seo,
         general: options.generalSeoSettings,
       },
     },

@@ -8,7 +8,7 @@ export const SeoTitleDescription = (props) => {
   const ctx = useContext(SeoSiteSettingsContext)
 
   let pageTitle = addPageNumber(
-    seo?.page?.title || title,
+    seo?.page?.title || title || `${ctx.title} | ${ctx.description}`,
     humanPageNumber,
     numberOfPages
   )

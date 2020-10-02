@@ -9,17 +9,28 @@ export const SeoOg = (props) => {
   const { seo, uri, humanPageNumber, numberOfPages, featuredImage } = props
   const { language, title } = useContext(SeoSiteSettingsContext)
   const { siteUrl, pathPrefix } = useContext(SeoOptionsContext)
+  const isFrontPage = slashes(props.uri) === ""
   const absoluteOgUrl = absolutePath(siteUrl, uri)
-  const ogType = slashes(props.uri) === "" ? "website" : seo?.page.opengraphType
+  const ogType = isFrontPage ? "website" : seo.page?.opengraphType
   const ogTitle = addPageNumber(
-    seo.page.opengraphTitle || seo.page.title,
+    seo.page?.opengraphTitle ||
+      seo.page?.title ||
+      (isFrontPage && seo.general.openGraph.frontPage.title),
     humanPageNumber,
     numberOfPages
   )
   const ogImage =
-    seo.page.opengraphImage?.localFile?.childImageSharp.original ||
+    seo.page?.opengraphImage?.localFile?.childImageSharp.original ||
     featuredImage ||
+    (isFrontPage &&
+      seo.general.openGraph.frontPage.image?.localFile?.childImageSharp
+        .original) ||
     seo.general.openGraph.defaultImage?.localFile?.childImageSharp.original
+
+  const ogDescription =
+    seo.page?.opengraphDescription ||
+    (isFrontPage && seo.general.openGraph.frontPage.description)
+
   return (
     <Helmet>
       <meta property="og:locale" content={language} />
@@ -27,6 +38,9 @@ export const SeoOg = (props) => {
       {ogType && <meta property="og:type" content={ogType} />}
       {uri && <meta property="og:url" content={absoluteOgUrl} />}
       {ogTitle && <meta property="og:title" content={ogTitle} />}
+      {ogDescription && (
+        <meta property="og:description" content={ogDescription} />
+      )}
       {ogImage.src && (
         <meta
           property="og:image"
@@ -38,13 +52,6 @@ export const SeoOg = (props) => {
       )}
       {ogImage.height && (
         <meta property="og:image:height" content={ogImage.height} />
-      )}
-
-      {seo.page.opengraphDescription && (
-        <meta
-          property="og:description"
-          content={seo.page.opengraphDescription}
-        />
       )}
     </Helmet>
   )
