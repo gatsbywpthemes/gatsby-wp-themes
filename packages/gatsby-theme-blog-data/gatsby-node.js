@@ -70,8 +70,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   }
   `)
 
-  console.log(data)
-
   const mergedOptions = {
     ...defaultOptions,
     ...options,

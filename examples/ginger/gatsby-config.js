@@ -44,6 +44,7 @@ module.exports = {
       resolve: "gatsby-plugin-wp-seo",
       options: {
         siteUrl,
+        pathPrefix,
       },
     },
   ],

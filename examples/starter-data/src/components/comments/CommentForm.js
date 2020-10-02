@@ -117,7 +117,6 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
 
   const onSubmit = (data) => {
     setCommentStatus('loading')
-    console.log(data, postId, commentId)
     addComment({
       variables: {
         author: data.author,

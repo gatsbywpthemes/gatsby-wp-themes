@@ -8,7 +8,6 @@ import { pageStyles, pageTitleStyles } from '../../styles/'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 const Page = (props) => {
-  console.log(props)
   const { page, ctx } = props
   const { skipTitle } = useThemeOptions()
   const { content, title, uri, slug } = page

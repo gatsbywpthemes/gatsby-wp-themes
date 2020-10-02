@@ -20,8 +20,6 @@ module.exports = (options) => {
 
   const url = slashes(wordPressUrl)
 
-  console.log(mergedOptions)
-
   const plugins = [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

@@ -5,7 +5,6 @@ import { SeoBlog } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 const Posts = ({ posts, ctx }) => {
-  console.log(ctx)
   const { humanPageNumber, numberOfPages, title, seo } = ctx
   const { postsPath } = useThemeOptions()
   return (

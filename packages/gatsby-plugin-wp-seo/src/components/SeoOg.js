@@ -3,13 +3,12 @@ import { Helmet } from "react-helmet"
 import slashes from "remove-trailing-slash"
 import { SeoSiteSettingsContext } from "./../context"
 import { SeoOptionsContext } from "./../context"
-import { addPageNumber } from "./helpers"
-import { absolutePath } from "./helpers"
+import { addPageNumber, absolutePath } from "./../helpers"
 
 export const SeoOg = (props) => {
   const { seo, uri, humanPageNumber, numberOfPages, featuredImage } = props
   const { language, title } = useContext(SeoSiteSettingsContext)
-  const { siteUrl } = useContext(SeoOptionsContext)
+  const { siteUrl, pathPrefix } = useContext(SeoOptionsContext)
   const absoluteOgUrl = absolutePath(siteUrl, uri)
   const ogType = slashes(props.uri) === "" ? "website" : seo?.page.opengraphType
   const ogTitle = addPageNumber(
@@ -31,7 +30,7 @@ export const SeoOg = (props) => {
       {ogImage.src && (
         <meta
           property="og:image"
-          content={absolutePath(siteUrl, ogImage.src)}
+          content={absolutePath(siteUrl, ogImage.src, pathPrefix)}
         />
       )}
       {ogImage.width && (

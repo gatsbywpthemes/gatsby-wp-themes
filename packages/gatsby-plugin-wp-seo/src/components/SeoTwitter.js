@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import { Helmet } from "react-helmet"
 import { SeoOptionsContext } from "./../context"
-import { absolutePath } from "./helpers"
+import { absolutePath } from "./../helpers"
 
 export const SeoTwitter = ({ seo }) => {
-  const { siteUrl } = useContext(SeoOptionsContext)
+  const { siteUrl, pathPrefix } = useContext(SeoOptionsContext)
   return (
     <Helmet>
       {seo.page?.twitterTitle && (
@@ -35,7 +35,8 @@ export const SeoTwitter = ({ seo }) => {
           name="twitter:image"
           content={absolutePath(
             siteUrl,
-            seo.page.twitterImage.localFile.childImageSharp.original.src
+            seo.page.twitterImage.localFile.childImageSharp.original.src,
+            pathPrefix
           )}
         />
       )}
