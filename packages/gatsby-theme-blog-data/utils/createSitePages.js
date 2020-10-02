@@ -1,13 +1,16 @@
 const normalize = require('normalize-path')
 const pageTemplate = require.resolve(`../src/templates/page-query.js`)
+const PageSeoFromWP = require(`./seo/pageSeoFromWP.js`)
 
 module.exports = async ({ actions, graphql }, options) => {
+  const includeYoast = options.seoFromWP
+
   const GET_PAGES = `
   query GET_PAGES {
     allWpPage(sort: { order: DESC, fields: date }) {
       nodes {
         uri
-        isFrontPage
+        ${includeYoast ? PageSeoFromWP : ``}
       }
     }
   }
@@ -18,7 +21,7 @@ module.exports = async ({ actions, graphql }, options) => {
   const pagesQuery = await graphql(GET_PAGES)
   const pages = pagesQuery.data.allWpPage.nodes
 
-  pages.map(({ uri, isFrontPage }) => {
+  pages.map(({ uri, seo }) => {
     /* don't create page for postsPath */
     if (normalize(`/${uri}`) === normalize(`/${options.postsPath}/`)) {
       return
@@ -31,7 +34,10 @@ module.exports = async ({ actions, graphql }, options) => {
       component: pageTemplate,
       context: {
         uri,
-        seo: options.seoWithYoast,
+        seo: includeYoast && {
+          page: seo,
+          general: options.generalSeoSettings,
+        },
       },
     })
   })

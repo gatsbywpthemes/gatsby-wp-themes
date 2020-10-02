@@ -1,39 +1,44 @@
 import React, { useContext } from "react"
 import { Helmet } from "react-helmet"
-import { twitterUserName } from "./../helpers"
-import slashes from "remove-trailing-slash"
 import { SeoOptionsContext } from "./../context"
+import { absolutePath } from "./helpers"
 
-export const SeoTwitter = ({ pageDescription, title, media }) => {
-  const { social, siteUrl, twitterSummaryCardImage } = useContext(
-    SeoOptionsContext
-  )
-  const absoluteMedia = media ? `${slashes(siteUrl)}${media}` : null
-  const twitterUser = twitterUserName(social)
-
-  const twitterSummaryImage = twitterSummaryCardImage
-    ? `${slashes(siteUrl)}/${twitterSummaryCardImage}`
-    : false
-
+export const SeoTwitter = ({ seo }) => {
+  const { siteUrl } = useContext(SeoOptionsContext)
   return (
     <Helmet>
-      {/* titter */}
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={pageDescription} />
-      {!!absoluteMedia ? (
-        <meta name="twitter:card" content="summary_large_image" />
-      ) : (
-        <meta name="twitter:card" content="summary" />
+      {seo.page?.twitterTitle && (
+        <meta name="twitter:title" content={seo.page.twitterTitle} />
       )}
-      {!!absoluteMedia ? (
-        <meta name="twitter:image" content={absoluteMedia} />
-      ) : (
-        !!twitterSummaryImage && (
-          <meta name="twitter:image" content={twitterSummaryImage} />
-        )
+      {seo.page?.twitterDescription && (
+        <meta
+          name="twitter:description"
+          content={seo.page?.twitterDescription}
+        />
       )}
-      {!!twitterUser && <meta name="twitter:site" content={twitterUser} />}
-      {!!twitterUser && <meta name="twitter:creator" content={twitterUser} />}
+      {seo.general.social.twitter?.username && (
+        <meta
+          name="twitter:creator"
+          content={`@${seo.general?.social.twitter.username}`}
+        />
+      )}
+      {seo.general.social.twitter?.username && (
+        <meta
+          name="twitter:site"
+          content={`@${seo.general?.social.twitter.username}`}
+        />
+      )}
+      <meta name="twitter:card" content={seo.general.social.twitter.cardType} />
+
+      {seo.page?.twitterImage?.localFile?.childImageSharp && (
+        <meta
+          name="twitter:image"
+          content={absolutePath(
+            siteUrl,
+            seo.page.twitterImage.localFile.childImageSharp.original.src
+          )}
+        />
+      )}
     </Helmet>
   )
 }

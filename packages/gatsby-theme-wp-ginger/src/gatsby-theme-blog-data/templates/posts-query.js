@@ -6,7 +6,6 @@ export default Blog
 export const pageQuery = graphql`
   fragment GatsbyImageQueryFull on WpMediaItem {
     altText
-    sourceUrl
     localFile {
       childImageSharp {
         fluid(maxWidth: 1200, quality: 100) {
@@ -17,7 +16,6 @@ export const pageQuery = graphql`
   }
   fragment GatsbyImageQueryArchive on WpMediaItem {
     altText
-    sourceUrl
     localFile {
       childImageSharp {
         fluid(maxWidth: 1200, maxHeight: 400, quality: 80) {

@@ -7,18 +7,34 @@ import { SeoSingle } from 'gatsby-plugin-wp-seo'
 import { pageStyles, pageTitleStyles } from '../../styles/'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-const Page = ({ page }) => {
+const Page = (props) => {
+  console.log(props)
+  const { page, ctx } = props
   const { skipTitle } = useThemeOptions()
-  const { content, ...rest } = page
+  const { content, title, uri, slug } = page
+  const featuredImage = page.featuredImage?.node.localFile.childImageSharp.fluid
+
   return (
     <Layout useContainer={false}>
-      <SeoSingle page={rest} />
+      <SeoSingle
+        isFrontPage={page.isFrontPage}
+        title={title}
+        uri={uri}
+        seo={ctx.seo}
+        featuredImage={
+          featuredImage && {
+            src: featuredImage.src,
+            width: featuredImage.width,
+            height: featuredImage.height,
+          }
+        }
+      />
       <article>
-        {skipTitle.indexOf(page.slug) === -1 && (
+        {skipTitle.indexOf(slug) === -1 && (
           <h1 sx={pageTitleStyles}>
             <span
               className="page-title-value"
-              dangerouslySetInnerHTML={{ __html: page.title }}
+              dangerouslySetInnerHTML={{ __html: title }}
             />
           </h1>
         )}

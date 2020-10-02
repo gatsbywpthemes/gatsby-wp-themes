@@ -1,6 +1,5 @@
 require('dotenv').config()
 module.exports = (options) => {
-  console.log(options)
   options.fonts = options.fonts || ['abril fatface', 'fira sans']
   options.customFonts = []
   if (options.fonts) {

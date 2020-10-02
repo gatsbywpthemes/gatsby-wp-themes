@@ -1,4 +1,5 @@
 const { paginate } = require(`gatsby-awesome-pagination`)
+const authorSeoFromWP = require(`./seo/authorSeoFromWP.js`)
 
 const GET_USERS = `
   query GET_USERS {
@@ -11,9 +12,17 @@ const GET_USERS = `
   }
   `
 
-const GET_POSTS_BY_USER = `
+module.exports = async ({ actions, graphql }, options) => {
+  const includeYoast = options.seoFromWP
+  const templatePath = `../src/templates/user-query.js`
+  const template = require.resolve(templatePath)
+  const { createPage } = actions
+  const usersQuery = await graphql(GET_USERS)
+  const users = usersQuery.data.allWpUser.nodes
+  const GET_POSTS_BY_USER = `
   query GET_POSTS_BY_USER($slug: String!) {
     wpUser(slug: {eq: $slug }) {
+      ${includeYoast ? authorSeoFromWP : ``}
       posts {
         nodes {
           id
@@ -22,12 +31,7 @@ const GET_POSTS_BY_USER = `
     }
   }
   `
-module.exports = async ({ actions, graphql }, options) => {
-  const templatePath = `../src/templates/user-query.js`
-  const template = require.resolve(templatePath)
-  const { createPage } = actions
-  const usersQuery = await graphql(GET_USERS)
-  const users = usersQuery.data.allWpUser.nodes
+
   for (const user of users) {
     const postsByQuery = await graphql(GET_POSTS_BY_USER, {
       slug: user.slug,
@@ -44,6 +48,10 @@ module.exports = async ({ actions, graphql }, options) => {
         itemsPerPage: options.postsPerPage,
         context: {
           slug: user.slug,
+          seo: includeYoast && {
+            page: postsByQuery.data.wpUser.seo,
+            general: options.generalSeoSettings,
+          },
         },
       })
     }

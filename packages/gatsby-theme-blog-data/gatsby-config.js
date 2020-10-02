@@ -17,7 +17,10 @@ module.exports = (options) => {
     parserDebugOutput,
     displayDownloadInfo,
   } = mergedOptions
+
   const url = slashes(wordPressUrl)
+
+  console.log(mergedOptions)
 
   const plugins = [
     `gatsby-plugin-sharp`,

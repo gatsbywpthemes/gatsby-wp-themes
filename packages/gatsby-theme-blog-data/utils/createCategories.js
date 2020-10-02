@@ -1,17 +1,23 @@
 const { paginate } = require(`gatsby-awesome-pagination`)
+const taxonomySeoFromWP = require(`./seo/taxonomySeoFromWP.js`)
 
-const GET_CATEGORIES = `
+module.exports = async ({ actions, graphql }, options) => {
+  const templatePath = `../src/templates/category-query.js`
+  const includeYoast = options.seoFromWP
+  const template = require.resolve(templatePath)
+  const GET_CATEGORIES = `
   query GET_CATEGORIES {
     allWpCategory {
       nodes {
         slug
         uri
+        ${includeYoast ? taxonomySeoFromWP : ``}
       }
     }
   }
   `
 
-const GET_POSTS_BY_CATEGORY = `
+  const GET_POSTS_BY_CATEGORY = `
 query GET_POSTS_BY_CATEGORY($slug: String!) {
   allWpPost(filter: {categories: {nodes: {elemMatch: {slug: {eq: $slug}}}}}) {
     nodes {
@@ -20,9 +26,6 @@ query GET_POSTS_BY_CATEGORY($slug: String!) {
   }
 }
   `
-module.exports = async ({ actions, graphql }, options) => {
-  const templatePath = `../src/templates/category-query.js`
-  const template = require.resolve(templatePath)
   const { createPage } = actions
   const categoriesQuery = await graphql(GET_CATEGORIES)
   const categories = categoriesQuery.data.allWpCategory.nodes
@@ -48,6 +51,10 @@ module.exports = async ({ actions, graphql }, options) => {
         itemsPerPage: options.postsPerPage,
         context: {
           slug: category.slug,
+          seo: includeYoast && {
+            page: category.seo,
+            general: options.generalSeoSettings,
+          },
         },
       })
     }

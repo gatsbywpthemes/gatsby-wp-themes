@@ -10,116 +10,74 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
    * Merged default theme settings and user settings.
    */
 
-  const { data } = await graphql(
-    `
-      query($seo: Boolean!) {
-        wp {
-          allSettings {
-            readingSettingsPostsPerPage
-          }
-          seo @include(if: $seo) {
-            webmaster {
-              googleVerify
-              yandexVerify
-              msVerify
-              baiduVerify
-            }
-            schema {
-              siteName
-              wordpressSiteName
-              siteUrl
-              inLanguage
-              companyName
-              companyOrPerson
-              companyLogo {
-                mediaItemUrl
+  const queryTypes = await graphql(`
+    query {
+      __type(name: "Wp") {
+        fields {
+          name
+        }
+      }
+    }
+  `)
+
+  const seoFromWP = queryTypes.data.__type.fields
+    .map((el) => el.name)
+    .includes('seo')
+
+  const conditionalSeoQuery = seoFromWP
+    ? `seo {
+      social {
+        facebook {
+          url
+        }
+        linkedIn {
+          url
+        }
+        twitter {
+          cardType
+          username
+        }
+      }
+      schema {
+        siteName
+        wordpressSiteName
+        inLanguage
+      }
+      openGraph {
+        defaultImage {
+          localFile {
+            childImageSharp {
+              original {
+                src
+                height
+                width
               }
-              logo {
-                mediaItemUrl
-              }
-              personLogo {
-                mediaItemUrl
-              }
-            }
-            breadcrumbs {
-              showBlogPage
-              separator
-              searchPrefix
-              prefix
-              homeText
-              enabled
-              boldLast
-              archivePrefix
-              notFoundText
-            }
-            social {
-              facebook {
-                url
-                defaultImage {
-                  mediaItemUrl
-                }
-              }
-              instagram {
-                url
-              }
-              linkedIn {
-                url
-              }
-              mySpace {
-                url
-              }
-              pinterest {
-                url
-                metaTag
-              }
-              twitter {
-                cardType
-                username
-              }
-              wikipedia {
-                url
-              }
-              youTube {
-                url
-              }
-            }
-            openGraph {
-              frontPage {
-                title
-                description
-                image {
-                  altText
-                  sourceUrl
-                  mediaItemUrl
-                }
-              }
-              defaultImage {
-                altText
-                sourceUrl
-                mediaItemUrl
-              }
-            }
-            # Redirects only work in the premium version of Yoast
-            redirects {
-              origin
-              target
-              format
-              type
             }
           }
         }
       }
-    `,
-    { seo: options.seoWithYoast }
-  )
-  const postsPerPage = data.wp.allSettings.readingSettingsPostsPerPage
-  const seoGlobalSettings = data.wp.seo
+    }`
+    : ``
+
+  const { data } = await graphql(`
+  query {
+    wp {
+      allSettings {
+        readingSettingsPostsPerPage
+      }
+    ${conditionalSeoQuery}
+    }
+  }
+  `)
+
+  console.log(data)
 
   const mergedOptions = {
     ...defaultOptions,
     ...options,
-    postsPerPage,
-    seoGlobalSettings,
+    postsPerPage: data.wp.allSettings.readingSettingsPostsPerPage,
+    seoFromWP,
+    generalSeoSettings: data.wp.seo,
   }
 
   await createPosts({ actions, graphql }, mergedOptions)

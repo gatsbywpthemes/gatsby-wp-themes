@@ -6,14 +6,16 @@ import { SeoArchive } from 'gatsby-plugin-wp-seo'
 
 const User = ({ user, ctx }) => {
   const { name, posts, uri } = user
-  const { humanPageNumber } = ctx
+  const { humanPageNumber, numberOfPages, seo } = ctx
 
   return (
     <Layout>
       <SeoArchive
         title={`Author Archives: ${name}`}
         humanPageNumber={humanPageNumber}
+        numberOfPages={numberOfPages}
         uri={uri}
+        seo={seo}
       />
       <ArchiveContent
         name={name}

@@ -44,8 +44,6 @@ module.exports = {
       resolve: "gatsby-plugin-wp-seo",
       options: {
         siteUrl,
-        social,
-        twitterSummaryCardImage,
       },
     },
   ],

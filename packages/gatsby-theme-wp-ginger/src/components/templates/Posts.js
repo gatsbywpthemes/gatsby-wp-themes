@@ -6,11 +6,17 @@ import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 const Posts = ({ posts, ctx }) => {
   console.log(ctx)
-  const { humanPageNumber } = ctx
+  const { humanPageNumber, numberOfPages, title, seo } = ctx
   const { postsPath } = useThemeOptions()
   return (
     <Layout>
-      <SeoBlog humanPageNumber={humanPageNumber} uri={postsPath} />
+      <SeoBlog
+        humanPageNumber={humanPageNumber}
+        numberOfPages={numberOfPages}
+        title={title}
+        uri={postsPath}
+        seo={seo}
+      />
       <ArchiveContent posts={posts} paginationPrefix={postsPath} ctx={ctx} />
     </Layout>
   )
