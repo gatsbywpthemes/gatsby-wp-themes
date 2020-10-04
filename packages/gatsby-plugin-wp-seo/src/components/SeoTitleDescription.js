@@ -18,7 +18,7 @@ export const SeoTitleDescription = (props) => {
   return (
     <Helmet
       htmlAttributes={{
-        lang: ctx.language.replace("_", "-") || "en-US",
+        lang: ctx?.language.replace("_", "-") || "en-US",
       }}
       title={pageTitle}
     >

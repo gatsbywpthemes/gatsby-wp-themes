@@ -11,8 +11,8 @@ export const Seo = (props) => {
   return (
     <SeoSiteSettingsContextProvider>
       <SeoTitleDescription {...props} />
-      {props.seo && <SeoTwitter {...props} />}
-      {props.seo && <SeoOg {...props} />}
+      {props.yoastSeo && <SeoTwitter {...props} />}
+      {props.yoastSeo && <SeoOg {...props} />}
       <CustomHeadElements {...props} />
     </SeoSiteSettingsContextProvider>
   )

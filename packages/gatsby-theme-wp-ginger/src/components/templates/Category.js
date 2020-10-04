@@ -6,13 +6,14 @@ import { Seo } from 'gatsby-plugin-wp-seo'
 
 const Category = ({ category, ctx }) => {
   const { name, posts, uri } = category
-  const { humanPageNumber, numberOfPages, seo } = ctx
+  const { humanPageNumber, numberOfPages, yoastSeo, seo } = ctx
   return (
     <Layout>
       <Seo
         title={`${name} Archives`}
         humanPageNumber={humanPageNumber}
         numberOfPages={numberOfPages}
+        yoastSeo={yoastSeo}
         seo={seo}
         uri={uri}
       />

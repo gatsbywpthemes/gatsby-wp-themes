@@ -49,7 +49,8 @@ module.exports = async ({ actions, graphql }, options) => {
         itemsPerPage: options.postsPerPage,
         context: {
           slug: tag.slug,
-          seo: includeYoast && {
+          yoastSeo: includeYoast,
+          seo: {
             page: tag.seo,
             general: options.generalSeoSettings,
           },

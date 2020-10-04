@@ -20,7 +20,8 @@ const Post = (props) => {
         }
         title={post.title}
         uri={post.uri}
-        seo={ctx?.seo}
+        yoastSeo={ctx.yoastSeo}
+        seo={ctx.seo}
       />
       <PostEntryFull {...props} />
     </Layout>

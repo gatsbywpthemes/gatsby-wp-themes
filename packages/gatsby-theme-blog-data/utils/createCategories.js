@@ -51,7 +51,8 @@ query GET_POSTS_BY_CATEGORY($slug: String!) {
         itemsPerPage: options.postsPerPage,
         context: {
           slug: category.slug,
-          seo: includeYoast && {
+          yoastSeo: includeYoast,
+          seo: {
             page: category.seo,
             general: options.generalSeoSettings,
           },

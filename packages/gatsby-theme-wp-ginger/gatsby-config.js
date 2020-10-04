@@ -42,6 +42,13 @@ module.exports = (options) => {
       },
     },
     `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-plugin-wp-seo',
+      options: {
+        siteUrl: options.siteUrl,
+        pathPrefix: options.pathPrefix,
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',

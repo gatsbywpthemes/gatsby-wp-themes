@@ -13,7 +13,13 @@ export const pageQuery = graphql`
       isFrontPage
       featuredImage {
         node {
-          ...GatsbyImageQueryArchive
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1200, maxHeight: 400, quality: 80) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
         }
       }
       template {

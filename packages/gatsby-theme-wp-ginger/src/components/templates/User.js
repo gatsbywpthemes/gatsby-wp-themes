@@ -6,7 +6,7 @@ import { Seo } from 'gatsby-plugin-wp-seo'
 
 const User = ({ user, ctx }) => {
   const { name, posts, uri } = user
-  const { humanPageNumber, numberOfPages, seo } = ctx
+  const { humanPageNumber, numberOfPages, yoastSeo, seo } = ctx
 
   return (
     <Layout>
@@ -15,6 +15,7 @@ const User = ({ user, ctx }) => {
         humanPageNumber={humanPageNumber}
         numberOfPages={numberOfPages}
         uri={uri}
+        yoastSeo={yoastSeo}
         seo={seo}
       />
       <ArchiveContent

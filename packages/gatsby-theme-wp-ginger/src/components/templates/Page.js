@@ -19,6 +19,7 @@ const Page = (props) => {
         isFrontPage={page.isFrontPage}
         title={title}
         uri={uri}
+        yoastSeo={ctx.yoastSeo}
         seo={ctx.seo}
         featuredImage={
           featuredImage && {

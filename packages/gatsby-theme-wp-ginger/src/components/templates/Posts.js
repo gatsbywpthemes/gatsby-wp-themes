@@ -5,7 +5,7 @@ import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 const Posts = ({ posts, ctx }) => {
-  const { humanPageNumber, numberOfPages, title, seo } = ctx
+  const { humanPageNumber, numberOfPages, title, yoastSeo, seo } = ctx
   const { postsPath } = useThemeOptions()
   return (
     <Layout>
@@ -14,6 +14,7 @@ const Posts = ({ posts, ctx }) => {
         numberOfPages={numberOfPages}
         title={title}
         uri={postsPath}
+        yoastSeo={yoastSeo}
         seo={seo}
       />
       <ArchiveContent posts={posts} paginationPrefix={postsPath} ctx={ctx} />
