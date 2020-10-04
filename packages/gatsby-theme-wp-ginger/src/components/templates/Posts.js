@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../Layout.js'
 import { ArchiveContent } from '../archive'
-import { SeoBlog } from 'gatsby-plugin-wp-seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 const Posts = ({ posts, ctx }) => {
@@ -9,7 +9,7 @@ const Posts = ({ posts, ctx }) => {
   const { postsPath } = useThemeOptions()
   return (
     <Layout>
-      <SeoBlog
+      <Seo
         humanPageNumber={humanPageNumber}
         numberOfPages={numberOfPages}
         title={title}

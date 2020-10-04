@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Layout from './../Layout'
 import { ArchiveContent } from '../archive'
-import { SeoArchive } from 'gatsby-plugin-wp-seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 
 const Tag = ({ tag, ctx }) => {
   const { name, posts, uri } = tag
@@ -10,7 +10,7 @@ const Tag = ({ tag, ctx }) => {
 
   return (
     <Layout>
-      <SeoArchive
+      <Seo
         title={`${name} Archives`}
         humanPageNumber={humanPageNumber}
         numberOfPages={numberOfPages}

@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
-import { SeoSingle } from 'gatsby-plugin-wp-seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 import { pageStyles, pageTitleStyles } from '../../styles/'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
@@ -15,7 +15,7 @@ const Page = (props) => {
 
   return (
     <Layout useContainer={false}>
-      <SeoSingle
+      <Seo
         isFrontPage={page.isFrontPage}
         title={title}
         uri={uri}

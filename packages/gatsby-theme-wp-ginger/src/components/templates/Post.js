@@ -3,14 +3,14 @@ import { jsx } from 'theme-ui'
 
 import Layout from '../Layout.js'
 import { PostEntryFull } from '../post'
-import { SeoSingle } from 'gatsby-plugin-wp-seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 
 const Post = (props) => {
   const { post, ctx } = props
   const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
   return (
     <Layout useContainer={false}>
-      <SeoSingle
+      <Seo
         featuredImage={
           featuredImage && {
             src: featuredImage.src,
