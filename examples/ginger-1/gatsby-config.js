@@ -40,13 +40,5 @@ module.exports = {
         wordPressUrl: options.wordPressUrl,
       },
     },
-    {
-      resolve: "gatsby-plugin-wp-seo",
-      options: {
-        siteUrl,
-        social,
-        twitterSummaryCardImage,
-      },
-    },
   ],
 }

@@ -40,12 +40,5 @@ module.exports = {
         wordPressUrl: options.wordPressUrl,
       },
     },
-    {
-      resolve: "gatsby-plugin-wp-seo",
-      options: {
-        siteUrl,
-        pathPrefix,
-      },
-    },
   ],
 }
