@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Layout from '../components/Layout'
-import { SeoSingle } from 'gatsby-plugin-wp-seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 import { pageTitleStyles, page404Styles } from '../styles'
 
 const NotFoundPage = ({ location }) => (
   <Layout location={{ location }}>
-    <SeoSingle page={{ title: '404: Not found' }} />
+    <Seo title="404: Not found" />
     <article sx={page404Styles}>
       <h1 sx={pageTitleStyles}>
         <span className="page-title-value">404</span>
