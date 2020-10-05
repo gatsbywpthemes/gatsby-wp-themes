@@ -41,16 +41,16 @@ export const SeoOg = (props) => {
       {ogDescription && (
         <meta property="og:description" content={ogDescription} />
       )}
-      {ogImage.src && (
+      {ogImage?.src && (
         <meta
           property="og:image"
           content={absolutePath(siteUrl, ogImage.src, pathPrefix)}
         />
       )}
-      {ogImage.width && (
+      {ogImage?.width && (
         <meta property="og:image:width" content={ogImage.width} />
       )}
-      {ogImage.height && (
+      {ogImage?.height && (
         <meta property="og:image:height" content={ogImage.height} />
       )}
     </Helmet>

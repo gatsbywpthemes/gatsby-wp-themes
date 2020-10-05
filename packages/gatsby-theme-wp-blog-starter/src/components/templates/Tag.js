@@ -1,19 +1,21 @@
 import React from 'react'
 import { Layout } from '../Layout'
-import { SEO } from '../seo'
 import { ArchiveContent } from '../archive'
+import { Seo } from 'gatsby-plugin-wp-seo'
 
 const Tag = ({ tag, ctx }) => {
   const { name, posts, uri } = tag
-  const { pageNumber } = ctx
+  const { humanPageNumber, numberOfPages, yoastSeo, seo } = ctx
 
   return (
     <Layout page={tag} type="tag">
-      <SEO
+      <Seo
         title={`${name} Archives`}
-        pageNumber={pageNumber}
-        ogType="object"
-        ogUrl={uri}
+        humanPageNumber={humanPageNumber}
+        numberOfPages={numberOfPages}
+        uri={uri}
+        yoastSeo={yoastSeo}
+        seo={seo}
       />
 
       <ArchiveContent
