@@ -15,9 +15,10 @@ const ALL_CATEGORIES_QUERY = graphql`
   }
 `
 
-export const CategoriesWidget = props => {
+export const CategoriesWidget = (props) => {
   const data = useStaticQuery(ALL_CATEGORIES_QUERY)
   const { nodes } = data.allWpCategory
+  const nonEmptyCategories = nodes.filter((el) => el.count)
   return (
     <section
       sx={{ ...widgetStyles.categories }}
@@ -26,8 +27,8 @@ export const CategoriesWidget = props => {
     >
       <h2 className="widget-title">Categories</h2>
       <ul>
-        {nodes.length
-          ? nodes.map(category => (
+        {nonEmptyCategories.length
+          ? nonEmptyCategories.map((category) => (
               <li key={category.slug}>
                 <Link to={`${category.uri}`}>{category.name}</Link>
               </li>
