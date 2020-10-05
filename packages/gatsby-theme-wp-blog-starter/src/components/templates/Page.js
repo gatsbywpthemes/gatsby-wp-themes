@@ -3,15 +3,15 @@ import { jsx, Container, Flex, Box } from 'theme-ui'
 import { Layout } from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
-import { SEO } from '../seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
 import { gutenbergStyles, articleStyles } from '../../styles'
 
-const Page = ({ page }) => {
+const Page = ({ page, ctx }) => {
   const {
     title,
-    excerpt,
+    isFrontPage,
     content,
     slug,
     uri,
@@ -20,7 +20,6 @@ const Page = ({ page }) => {
   const pageTemplate = templateName.toLowerCase()
   const { skipTitle, layoutWidth, sidebarWidgets } = useThemeOptions()
 
-  const ogType = page.isFrontPage ? 'website' : 'article'
   const sidebarPage = pageTemplate.includes('sidebar')
 
   const containerStyles =
@@ -44,14 +43,23 @@ const Page = ({ page }) => {
       ? { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
       : ''
     : ''
-
+  const featuredImage =
+    page.featuredImage?.node.localFile.childImageSharp.original
   return (
     <Layout page={page} type="page">
-      <SEO
+      <Seo
+        isFrontPage={isFrontPage}
         title={title}
-        description={excerpt}
-        ogType={ogType}
-        ogUrl={ogType === 'website' ? '' : uri}
+        uri={uri}
+        yoastSeo={ctx.yoastSeo}
+        seo={ctx.seo}
+        featuredImage={
+          featuredImage && {
+            src: featuredImage.src,
+            width: featuredImage.width,
+            height: featuredImage.height,
+          }
+        }
       />
       <Container sx={{ ...containerStyles }} className="mainContainer">
         <Flex

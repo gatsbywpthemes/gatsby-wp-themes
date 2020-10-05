@@ -15,9 +15,7 @@ module.exports = async ({ actions, graphql }, options) => {
     }
   }
   `
-
   const { createPage } = actions
-
   const pagesQuery = await graphql(GET_PAGES)
   const pages = pagesQuery.data.allWpPage.nodes
 

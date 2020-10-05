@@ -1,24 +1,19 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from 'theme-ui'
 import { Layout } from '../Layout'
-import { SEO } from '../seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import normalize from 'normalize-path'
 
 const Post = ({ post, ctx }) => {
   const {
     title,
-    excerpt,
     slug,
-    featuredImage,
     uri,
     template: { templateName },
   } = post
-  const media = featuredImage
-    ? featuredImage.node.localFile.childImageSharp.fluid.src
-    : null
+  const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
   const { layoutWidth } = useThemeOptions()
   const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
 
@@ -52,12 +47,18 @@ const Post = ({ post, ctx }) => {
   }
   return (
     <Layout page={post} type="post">
-      <SEO
+      <Seo
         title={title}
-        description={excerpt}
-        media={media}
-        ogType="article"
-        ogUrl={normalize(`/${uri}`)}
+        uri={uri}
+        yoastSeo={ctx.yoastSeo}
+        seo={ctx.seo}
+        featuredImage={
+          featuredImage && {
+            src: featuredImage.src,
+            width: featuredImage.width,
+            height: featuredImage.height,
+          }
+        }
       />
       <Container sx={{ ...containerStyles }} className="mainContainer">
         <Flex

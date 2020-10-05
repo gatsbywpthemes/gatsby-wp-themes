@@ -28,6 +28,13 @@ module.exports = (options) => {
       resolve: `gatsby-theme-blog-data`,
       options: mergedOptions,
     },
+    {
+      resolve: 'gatsby-plugin-wp-seo',
+      options: {
+        siteUrl: options.siteUrl,
+        pathPrefix: options.pathPrefix,
+      },
+    },
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,

@@ -11,7 +11,8 @@ const Page = (props) => {
   const { page, ctx } = props
   const { skipTitle } = useThemeOptions()
   const { content, title, uri, slug } = page
-  const featuredImage = page.featuredImage?.node.localFile.childImageSharp.fluid
+  const featuredImage =
+    page.featuredImage?.node.localFile.childImageSharp.original
 
   return (
     <Layout useContainer={false}>
