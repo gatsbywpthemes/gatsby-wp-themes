@@ -10,6 +10,7 @@ const ALL_CATEGORIES_QUERY = graphql`
         name
         slug
         uri
+        count
       }
     }
   }
