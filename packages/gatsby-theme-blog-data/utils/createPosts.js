@@ -41,9 +41,7 @@ module.exports = async ({ actions, graphql }, options) => {
   `
 
   const slashPostsPath = postsPath ? normalize(`/${postsPath}`) : ''
-  console.log('normalize(slashPostsPath)', normalize(slashPostsPath))
   const queries = [graphql(GET_POSTS)]
-  console.log('postsPath !!!!', postsPath)
   if (normalize(postsPath)) {
     queries.push(
       graphql(GET_POSTS_PAGE, { uri: `${normalize(slashPostsPath)}/` })
