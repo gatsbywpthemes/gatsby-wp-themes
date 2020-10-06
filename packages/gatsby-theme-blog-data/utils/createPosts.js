@@ -86,9 +86,9 @@ module.exports = async ({ actions, graphql }, options) => {
     items: posts,
     itemsPerPage: postsPerPage,
     context: {
-      title: postsPage?.data.wpPage.title,
+      title: postsPage && postsPage.data.wpPage.title,
       seo: {
-        page: postsPage?.data.wpPage.seo,
+        page: postsPage && postsPage.data.wpPage.seo,
         general: options.generalSeoSettings,
       },
     },
