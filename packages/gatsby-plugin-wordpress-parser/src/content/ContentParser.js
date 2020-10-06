@@ -25,9 +25,6 @@ export default function ContentParser({ content, customFn = [] }) {
     return content
   }
 
-  const regex = new RegExp(/<\?php/, "gi")
-  content = content.replace(regex, "&lt;?php")
-
   customFn = Array.isArray(customFn) ? customFn : []
   const replacementFunctions = customFn.concat([replaceA])
 

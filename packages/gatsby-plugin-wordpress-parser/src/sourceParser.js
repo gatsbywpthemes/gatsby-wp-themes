@@ -148,12 +148,21 @@ module.exports = async function sourceParser(
     return `background-image:url(${staticFile})`
   }
 
+  const replacePre = async (match, open, code) => {
+    const regex1 = new RegExp(/</, "gi")
+    code = code.replace(regex1, "&lt;")
+    const regex2 = new RegExp(/>/, "gi")
+    code = code.replace(regex2, "&gt;")
+    return `${open}${code}</code></pre>`
+  }
+
   const srcRegex = /<(video|audio).+?(src)=[\"'](.+?)[\"'].+?>*/gm
   content = await replaceAsync(content, srcRegex, replaceAttrIfDownloaded)
   const hrefRegex = /<(a).+?(href)=[\"'](.+?)[\"'].+?>*/gm
   content = await replaceAsync(content, hrefRegex, replaceAttrIfDownloaded)
   const bgImageRegex = /background-image:\s*url\(['"]?([^'"\)]*)['"]?\)/gm
   content = await replaceAsync(content, bgImageRegex, replaceBgIfDownloaded)
-
+  const preRegex = /(<pre.*><code.*?>)((.|\n)*?)<\/code><\/pre>/gm
+  content = await replaceAsync(content, preRegex, replacePre)
   return content
 }
