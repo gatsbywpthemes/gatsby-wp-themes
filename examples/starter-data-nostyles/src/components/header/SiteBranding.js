@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { withPrefix } from 'gatsby'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
@@ -12,11 +9,7 @@ export const SiteBranding = ({ title, ...props }) => {
     <>
       {logoFileName ? (
         <Link to="/" rel="home">
-          <img
-            src={`${withPrefix('/')}${logoFileName}`}
-            alt="logo"
-            sx={{ mb: 0 }}
-          />
+          <img src={`${withPrefix('/')}${logoFileName}`} alt="logo" />
         </Link>
       ) : (
         <h1 sx={{ variant: `text.branding` }} {...props}>

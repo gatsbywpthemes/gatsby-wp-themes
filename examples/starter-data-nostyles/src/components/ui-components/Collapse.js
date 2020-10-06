@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { useState, Fragment } from 'react'
 import { Button, Collapsible } from 'grommet'
 import { FormNext, FormDown } from 'grommet-icons'
@@ -23,17 +22,6 @@ export const Collapse = ({ menuItem, children }) => {
         onClick={() => {
           const newOpenMenu = !openMenu
           setOpenMenu(newOpenMenu)
-        }}
-        sx={{
-          position: 'absolute',
-          top: '4px',
-          right: 0,
-          ...openStyle,
-          svg: {
-            width: '1.5rem',
-            height: '1.5rem',
-            stroke: 'white',
-          },
         }}
       />
       <Collapsible open={openMenu}>{children}</Collapsible>

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Container, Flex } from 'theme-ui'
+import React from 'react'
 import { Layout } from '../Layout'
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { PostEntry, CommentsList, Sidebar } from '../index'
@@ -20,27 +19,6 @@ const Post = ({ post, ctx }) => {
   const pageTemplate = templateName.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
 
-  const containerStyles =
-    sidebarWidgets && sidebarPage
-      ? {
-          maxWidth: 'container',
-          '.entry': {
-            width: [`100%`, `100%`, `100%`, `70%`],
-          },
-          '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
-        }
-      : { maxWidth: layoutWidth.post }
-
-  const sidebarSide = sidebarPage
-    ? pageTemplate === `left sidebar`
-      ? {
-          flexDirection: `row-reverse`,
-          '.entry': { pl: [0, 0, 0, layoutWidth.post] },
-        }
-      : pageTemplate === `right sidebar`
-      ? { '.entry': { pr: [0, 0, 0, layoutWidth.post] } }
-      : ''
-    : ''
   const disqusConfig = {
     shortname: disqus,
     config: { identifier: slug, title },
@@ -60,19 +38,13 @@ const Post = ({ post, ctx }) => {
           }
         }
       />
-      <div sx={{ ...containerStyles }} className="mainContainer">
-        <div
-          sx={{
-            ...sidebarSide,
-            flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
-            alignItems: `flex-start`,
-          }}
-        >
+      <div className="mainContainer">
+        <div>
           <PostEntry post={post} location="single" ctx={ctx} />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </div>
         {addWordPressComments && post.commentStatus === 'open' && (
-          <div sx={{ maxWidth: layoutWidth.post }}>
+          <div>
             {disqus ? (
               <DiscussionEmbed {...disqusConfig} />
             ) : (

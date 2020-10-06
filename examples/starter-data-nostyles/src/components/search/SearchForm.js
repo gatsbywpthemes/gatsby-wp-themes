@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Flex, Box } from 'theme-ui'
+import React from 'react'
 import { useState } from 'react'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
@@ -26,21 +25,14 @@ export const SearchForm = (props) => {
 
   return (
     <div {...props}>
-      <div sx={{ ...searchStyles }}>
+      <div>
         <Button
           a11yTitle="Search here"
           focusIndicator={false}
           icon={<SearchIcon />}
-          sx={{ ...searchStyles.icon }}
         />
 
-        <div
-          className="search-box"
-          sx={{
-            ...searchStyles.box,
-            mb: [`20px`, 0],
-          }}
-        >
+        <div className="search-box">
           <input
             value={value}
             type="search"
@@ -49,7 +41,6 @@ export const SearchForm = (props) => {
             onKeyDown={handleKeyDown}
             placeholder="search here..."
             name="search"
-            sx={{ mb: [0, 0, `15px`] }}
             aria-label="Search here"
           />
         </div>
@@ -58,14 +49,6 @@ export const SearchForm = (props) => {
             a11yTitle="Reset Search"
             icon={<FormClose />}
             color="white"
-            sx={{
-              p: 0,
-              svg: {
-                stroke: `searchColor`,
-                ml: `-12px`,
-                mb: [`xxs`, `xs`, `xs`],
-              },
-            }}
             onClick={() => {
               setValue('')
               setSearch('')

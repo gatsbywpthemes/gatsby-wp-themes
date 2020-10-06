@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { Link } from 'gatsby'
 import { createLocalLink } from '../../utils'
 import { Collapse } from '../ui-components'
@@ -72,11 +71,7 @@ const renderSubMenu = (
   closeMenu
 ) => {
   return (
-    <li
-      className="has-subMenu menu-item"
-      key={menuItem.id}
-      sx={{ position: `relative` }}
-    >
+    <li className="has-subMenu menu-item" key={menuItem.id}>
       {renderLink(menuItem, wordPressUrl, postsPath, closeMenu)}
       <WithCollapse orientation={orientation} menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">

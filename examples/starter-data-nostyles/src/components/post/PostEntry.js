@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import {
   PostEntryTitle,
@@ -13,7 +10,6 @@ import {
 } from './index'
 import normalize from 'normalize-path'
 import { SocialShare } from '../social'
-import { articleStyles } from '../../styles'
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''
@@ -21,17 +17,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
     ? post.featuredImage.node.localFile.childImageSharp.fluid.src
     : null
   return (
-    <article
-      className="entry"
-      sx={{
-        ...articleStyles,
-        '.entry-content': {
-          pb: `m`,
-          borderBottom: (t) => `1px solid ${t.colors.border}`,
-        },
-      }}
-      {...props}
-    >
+    <article className="entry" {...props}>
       <PostEntryMedia location={location} post={post} className="entry-media" />
 
       <div className={`content ${noImgClass}`}>
@@ -44,7 +30,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
 
         <PostEntryContent location={location} post={post} />
 
-        <div className="entry-footer" sx={{ mt: `xl` }}>
+        <div className="entry-footer">
           <PostEntryMeta className="entry-meta" post={post} />
           <ReadMoreButton location={location} post={post} />
         </div>

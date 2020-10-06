@@ -1,13 +1,10 @@
-/** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
-
+import React from 'react'
 import { useState } from 'react'
 import { Menu as MenuIcon, Close } from 'grommet-icons'
 import { Layer, Button } from 'grommet'
 import { Menu } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Widgets } from '../widgets'
-import { slideSidebarStyles } from '../../styles'
 
 export const SlideSidebar = (props) => {
   const [isMenuOpen, setOpenMenu] = useState(false)
@@ -31,9 +28,6 @@ export const SlideSidebar = (props) => {
         onClick={openMenu}
         focusIndicator={false}
         className={openClass ? 'btn-menu-opened' : 'btn-menu-closing'}
-        sx={{
-          variant: `buttons.hamburger`,
-        }}
       />
       {isMenuOpen && (
         <Layer
@@ -43,20 +37,11 @@ export const SlideSidebar = (props) => {
           responsive={false}
           onClickOutside={closeMenu}
           onEsc={closeMenu}
-          sx={slideSidebarStyles}
         >
           <Button
             icon={<Close />}
             a11yTitle="Close navigation menu"
             focusIndicator={false}
-            sx={{
-              pointer: `cursor`,
-              svg: {
-                stroke: `headerColor`,
-                width: `15px`,
-                height: `15px`,
-              },
-            }}
             className="close"
             onClick={closeMenu}
           />
@@ -70,7 +55,7 @@ export const SlideSidebar = (props) => {
           {slideMenuWidgets &&
             slideMenuWidgets.length > 0 &&
             slideMenuWidgets.map((widget, i) => (
-              <div className="inverse" sx={{ mb: `l` }} key={i}>
+              <div className="inverse" key={i}>
                 <Widgets widget={widget} location="SlideMenu" />
               </div>
             ))}

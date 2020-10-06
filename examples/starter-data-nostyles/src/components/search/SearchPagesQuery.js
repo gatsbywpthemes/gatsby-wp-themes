@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Flex } from 'theme-ui'
+import React from 'react'
 import { useState } from 'react'
 import { Button } from 'grommet'
 import { useQuery, gql } from '@apollo/client'
@@ -60,7 +59,7 @@ export const SearchPagesQuery = ({ search }) => {
 
   if (loading)
     return (
-      <div sx={{ justifyContent: 'center', alignItems: 'center', py: 20 }}>
+      <div>
         <Loader color="#798EA3" />
       </div>
     )

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
+import React from 'react'
 import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 import {
   FaBehance,

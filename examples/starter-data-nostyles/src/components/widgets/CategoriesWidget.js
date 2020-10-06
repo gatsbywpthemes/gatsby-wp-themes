@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { widgetStyles } from '../../styles'
 
 const ALL_CATEGORIES_QUERY = graphql`
   query GetCategories {
@@ -21,11 +19,7 @@ export const CategoriesWidget = (props) => {
   const { nodes } = data.allWpCategory
   const nonEmptyCategories = nodes.filter((el) => el.count)
   return (
-    <section
-      sx={{ ...widgetStyles.categories }}
-      className="widget widget-categories"
-      {...props}
-    >
+    <section className="widget widget-categories" {...props}>
       <h2 className="widget-title">Categories</h2>
       <ul>
         {nonEmptyCategories.length

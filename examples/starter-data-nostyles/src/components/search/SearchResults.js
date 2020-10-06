@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { Fragment } from 'react'
-import { jsx, Box } from 'theme-ui'
+import React from 'react'
 import { Link } from 'gatsby'
 
 const Stats = ({ postType, search }) => (
@@ -13,7 +11,7 @@ const Stats = ({ postType, search }) => (
 
 export const SearchResults = ({ type, posts, search, children }) => {
   return (
-    <Fragment>
+    <>
       <header>
         <h3>{type}</h3>
         <Stats postType={posts} search={search} />
@@ -30,6 +28,6 @@ export const SearchResults = ({ type, posts, search, children }) => {
         })}
       </div>
       {children}
-    </Fragment>
+    </>
   )
 }

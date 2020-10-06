@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { SlideSidebar, SiteBranding } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { SearchForm } from '../search'
-import { ColorSwitch } from '../index'
 
 export const Header = () => {
   const { search } = useThemeOptions()
@@ -41,8 +40,6 @@ export const Header = () => {
 
         <SlideSidebar />
       </div>
-
-      <ColorSwitch />
     </header>
   )
 }

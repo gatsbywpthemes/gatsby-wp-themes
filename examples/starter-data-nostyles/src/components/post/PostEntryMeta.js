@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { Categories, Tags } from './index'
 
 export const PostEntryMeta = ({ post, ...props }) => {

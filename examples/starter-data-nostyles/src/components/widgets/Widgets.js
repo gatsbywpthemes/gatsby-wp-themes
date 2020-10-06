@@ -1,18 +1,12 @@
-/** @jsx jsx */
-import { jsx, Flex } from 'theme-ui'
+import React from 'react'
 import { SocialFollows } from '../social'
 import { CategoriesWidget, TagsWidget, RecentPosts, Newsletter } from './index'
-import { socialStyles } from '../../styles'
 
 export const Widgets = ({ widget }) => {
   switch (widget) {
     case 'SocialFollow':
       return (
-        <div
-          sx={{
-            ...socialStyles.follow,
-          }}
-        >
+        <div>
           <SocialFollows />
         </div>
       )

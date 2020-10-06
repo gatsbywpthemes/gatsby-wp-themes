@@ -1,8 +1,6 @@
-/** @jsx jsx */
-import { jsx, Box, Flex, Input } from 'theme-ui'
+import React from 'react'
 import { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import { widgetStyles } from '../../styles'
 
 export const Newsletter = (props) => {
   const [email, setEmail] = useState('')
@@ -19,26 +17,20 @@ export const Newsletter = (props) => {
     setEmail(e.target.value)
   }
   return (
-    <div
-      sx={{
-        ...widgetStyles.newsletter,
-      }}
-      {...props}
-    >
+    <div {...props}>
       {msg ? (
         msg
       ) : (
         <form onSubmit={handleSubmit}>
           <h2 className="widget-title">Newsletter</h2>
           <div>
-            <Input
+            <input
               placeholder="Email address"
               name="email"
               type="email"
               required
               value={email}
               onChange={handleChange}
-              sx={{ borderRadius: '5px 0 0 5px' }}
               aria-label="Add your Email address to subsribe"
             />
             <button type="submit">Subscribe</button>

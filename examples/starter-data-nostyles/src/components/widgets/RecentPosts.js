@@ -1,7 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { widgetStyles } from '../../styles'
-
+import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'
 import Img from 'gatsby-image'
@@ -38,11 +35,7 @@ export const RecentPosts = (props) => {
 
   const { nodes } = data.allWpPost
   return (
-    <section
-      sx={{ ...widgetStyles.recentPosts }}
-      className="widget widget-recent-posts"
-      {...props}
-    >
+    <section className="widget widget-recent-posts" {...props}>
       <h2 className="widget-title">Recent Posts</h2>
       <ul>
         {nodes.length
