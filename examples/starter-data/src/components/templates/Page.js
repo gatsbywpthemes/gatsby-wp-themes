@@ -1,17 +1,17 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Box } from 'theme-ui'
-import Layout from '../Layout'
+import { Layout } from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
-import SEO from '../seo/Seo'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
-import Sidebar from '../Sidebar'
-import articleStyles from '../../styles/articleStyles'
-import gutenberg from '../../styles/theme-gutenberg'
+import { ActivatePageScripts } from '../../utils/'
+import { Seo } from 'gatsby-plugin-wp-seo'
+import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { Sidebar } from '../index'
+import { gutenbergStyles, articleStyles } from '../../styles'
 
-const Page = ({ page }) => {
+const Page = ({ page, ctx }) => {
   const {
     title,
-    excerpt,
+    isFrontPage,
     content,
     slug,
     uri,
@@ -20,12 +20,12 @@ const Page = ({ page }) => {
   const pageTemplate = templateName.toLowerCase()
   const { skipTitle, layoutWidth, sidebarWidgets } = useThemeOptions()
 
-  const ogType = page.isFrontPage ? 'website' : 'article'
   const sidebarPage = pageTemplate.includes('sidebar')
 
   const containerStyles =
     sidebarWidgets && sidebarPage
       ? {
+          maxWidth: 'container',
           '.entry': {
             width: [`100%`, `100%`, `100%`, `70%`],
           },
@@ -43,19 +43,25 @@ const Page = ({ page }) => {
       ? { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
       : ''
     : ''
-
+  const featuredImage =
+    page.featuredImage?.node.localFile.childImageSharp.original
   return (
     <Layout page={page} type="page">
-      <SEO
+      <Seo
+        isFrontPage={isFrontPage}
         title={title}
-        description={excerpt}
-        ogType={ogType}
-        ogUrl={ogType === 'website' ? '' : uri}
+        uri={uri}
+        yoastSeo={ctx.yoastSeo}
+        seo={ctx.seo}
+        featuredImage={
+          featuredImage && {
+            src: featuredImage.src,
+            width: featuredImage.width,
+            height: featuredImage.height,
+          }
+        }
       />
-      <Container
-        sx={{ ...containerStyles, maxWidth: (theme) => theme.sizes.container }}
-        className="mainContainer"
-      >
+      <Container sx={{ ...containerStyles }} className="mainContainer">
         <Flex
           sx={{
             ...sidebarSide,
@@ -81,7 +87,8 @@ const Page = ({ page }) => {
                   />
                 )}
 
-              <Box className="entry-content" sx={{ ...gutenberg }}>
+              <Box className="entry-content" sx={{ ...gutenbergStyles }}>
+                <ActivatePageScripts />
                 <ParsedContent content={content} />
               </Box>
             </div>

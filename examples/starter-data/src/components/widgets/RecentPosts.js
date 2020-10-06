@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import widgetStyles from '../../styles/widgetStyles'
+import { widgetStyles } from '../../styles'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'
@@ -16,12 +16,14 @@ const RECENT_POSTS_QUERY = graphql`
         uri
         date
         featuredImage {
-          altText
-          sourceUrl
-          localFile {
-            childImageSharp {
-              fixed(width: 72, height: 48, quality: 80) {
-                ...GatsbyImageSharpFixed
+          node {
+            altText
+            sourceUrl
+            localFile {
+              childImageSharp {
+                fixed(width: 72, height: 48, quality: 80) {
+                  ...GatsbyImageSharpFixed
+                }
               }
             }
           }
@@ -31,7 +33,7 @@ const RECENT_POSTS_QUERY = graphql`
   }
 `
 
-const RecentPosts = () => {
+export const RecentPosts = (props) => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
 
   const { nodes } = data.allWpPost
@@ -39,20 +41,22 @@ const RecentPosts = () => {
     <section
       sx={{ ...widgetStyles.recentPosts }}
       className="widget widget-recent-posts"
+      {...props}
     >
       <h2 className="widget-title">Recent Posts</h2>
       <ul>
         {nodes.length
-          ? nodes.map(post => {
-              const uri = normalize(`/${post.uri}`)
+          ? nodes.map((post) => {
+              const uri = normalize(`${post.uri}`)
               return (
                 <li key={post.id}>
-                  <Link to={uri}>
+                  <Link aria-label={`Read more - ${post.title}`} to={uri}>
                     {post.featuredImage && (
                       <Img
-                        alt={post.featuredImage.altText}
+                        alt={post.featuredImage.node.altText}
                         fixed={
-                          post.featuredImage.localFile.childImageSharp.fixed
+                          post.featuredImage.node.localFile.childImageSharp
+                            .fixed
                         }
                       />
                     )}
@@ -75,5 +79,3 @@ const RecentPosts = () => {
     </section>
   )
 }
-
-export default RecentPosts

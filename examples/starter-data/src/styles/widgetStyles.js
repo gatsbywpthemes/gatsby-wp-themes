@@ -50,7 +50,7 @@ const sharedStyles = {
   '.widget-recent-posts': {},
 }
 
-export default {
+export const widgetStyles = {
   categories: {
     ...sharedStyles,
     li: {
@@ -75,12 +75,8 @@ export default {
       justifyContent: 'center',
     },
     li: {
-      px: 'xxs',
+      pr: 'xxs',
       mb: 'xxs',
-
-      '&:first-of-type': {
-        pl: 0,
-      },
     },
     a: {
       ...sharedStyles.a,

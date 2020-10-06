@@ -1,13 +1,10 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
-import SocialFollows from '../social/SocialFollows'
-import CategoriesWidget from '../widgets/Categories'
-import TagsWidget from '../widgets/Tags'
-import RecentPosts from '../widgets/RecentPosts'
-import Newsletter from '../widgets/Newsletter'
-import socialStyles from '../../styles/socialStyles'
+import { SocialFollows } from '../social'
+import { CategoriesWidget, TagsWidget, RecentPosts, Newsletter } from './index'
+import { socialStyles } from '../../styles'
 
-const Widgets = ({ widget }) => {
+export const Widgets = ({ widget }) => {
   switch (widget) {
     case 'SocialFollow':
       return (
@@ -26,11 +23,11 @@ const Widgets = ({ widget }) => {
     case 'Tags':
       return <TagsWidget />
     case 'Newsletter':
-      return <Newsletter title="subscribe to our newsletter" />
+      return process.env.GATSBY_MAILCHIMP_ENDPOINT ? (
+        <Newsletter title="subscribe to our newsletter" />
+      ) : null
 
     default:
       return ''
   }
 }
-
-export default Widgets

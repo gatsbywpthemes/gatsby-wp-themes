@@ -1,15 +1,10 @@
-import {
-  form,
-  search,
-  colors,
-  buttons,
-  text,
-  card,
-  gradients,
-  header,
-  footer,
-  list,
-} from './components'
+import { form } from './components/form'
+import { colors } from './components/colors'
+import { text } from './components/text'
+import { buttons } from './components/buttons'
+import { card } from './components/card'
+import { gradients } from './components/gradients'
+import { list } from './components/list'
 import {
   fonts,
   fontSizes,
@@ -28,11 +23,8 @@ export default {
   gradients,
   buttons,
   card,
-  search,
   form,
   list,
-  header,
-  footer,
   sizes: {
     container: 1200,
     s: 300,
@@ -75,7 +67,7 @@ export default {
   },
   layout: {
     container: {
-      px: [20, 30, 30, 0],
+      px: [20, 30],
     },
   },
   styles: {

@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import TaxonomyItem from './TaxonomyItem.js'
+import { TaxonomyItem } from './index'
 
-const Tags = ({ post }) => {
+export const Tags = ({ post, ...props }) => {
   const tags = post.tags.nodes
   return (
-    <div>
+    <div {...props}>
       {tags.length > 0 && (
         <div sx={{ variant: `text.info`, mr: `xxs`, mb: `xs` }}>
           {tags.length > 1 ? 'Tags: ' : 'Tag: '}
@@ -17,5 +17,3 @@ const Tags = ({ post }) => {
     </div>
   )
 }
-
-export default Tags

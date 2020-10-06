@@ -6,7 +6,7 @@ module.exports = {
     description: 'Gatsby starter site for Gatsby Theme Wordpress Theme.',
     author: '@alexadark',
     wordPressUrl: config.wordpressUrl,
-    siteUrl: 'http://vcard.pehaa.com',
+    siteUrl: config.siteUrl,
     social: [
       {
         name: 'twitter',
@@ -37,6 +37,13 @@ module.exports = {
         ...config,
       },
     },
+    {
+      resolve: 'gatsby-plugin-wp-seo',
+      options: {
+        siteUrl: config.siteUrl,
+        pathPrefix: config.pathPrefix,
+      },
+    },
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
@@ -50,12 +57,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-wordpress-fancybox',
-    {
-      resolve: 'gatsby-plugin-mailchimp',
-      options: {
-        endpoint:
-          'https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-mailchimp',
+    //   options: {
+    //     endpoint:process.env.GATSBY_MAILCHIMP_ENDPOINT
+    //   },
+    // },
   ],
 }

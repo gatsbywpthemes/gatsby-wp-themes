@@ -1,5 +1,5 @@
 import { lighten } from '@theme-ui/color'
-import { a } from './typo.js'
+import { a } from '../gatsby-plugin-theme-ui/components/typo'
 
 const resultStyles = {
   bg: lighten('background', 0.05),
@@ -52,7 +52,7 @@ const resultStyles = {
     p: '2px',
   },
 }
-export const search = {
+export const searchStyles = {
   width: '100%',
   mb: ['-15px', 0],
   //searchIcon

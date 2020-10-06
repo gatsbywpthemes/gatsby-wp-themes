@@ -1,6 +1,4 @@
-import { rem } from 'polished'
-
-const sharedButtonStyles = {
+export const sharedButtonStyles = {
   boxSizing: 'border-box !important',
   border: 'none',
   color: 'white',
@@ -16,10 +14,12 @@ const sharedButtonStyles = {
   px: 'm',
   borderRadius: 'xs',
   fontWeight: 500,
+  display: 'inline-block',
 
   '&:hover': {
     transform: 'translateY(-5px)',
     boxShadow: 'hover',
+    color: 'white',
     a: {
       color: 'white',
     },
@@ -47,13 +47,16 @@ const outline = {
   border: '1px solid',
   color: 'text',
   fontWeight: 'bold',
-  boxShadow: 'inset 0 0 0 0 currentColor',
+  borderColor: 'text',
   transition: '.3s',
+  boxShadow: 'none',
   a: {
     color: 'text',
   },
   ':hover:not([disabled])': {
-    boxShadow: 'inset 0 0 0 2px currentColor',
+    borderColor: 'primary',
+    bg: 'primary',
+    color: 'white',
   },
 }
 

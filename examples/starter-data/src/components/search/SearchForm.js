@@ -1,23 +1,14 @@
 /** @jsx jsx */
 import { jsx, Flex, Box } from 'theme-ui'
-import { useState, Fragment } from 'react'
-import { useStaticQuery } from 'gatsby'
+import { useState } from 'react'
 import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
-import { useQuery } from '@apollo/client'
-import SearchQuery from './SearchQuery'
+import { SearchQueries } from './index'
+import { searchStyles } from '../../styles'
 
-const SearchForm = () => {
+export const SearchForm = (props) => {
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
-  const [postsResults, setPostsResults] = useState([])
-  const [pagesResults, setPagesResults] = useState([])
-
-  // const data = useStaticQuery(POSTS_AND_PAGES_QUERY)
-  // console.log('allPostsSearch', data.wp.posts)
-  // const posts = data.wp.posts.nodes
-  // const pages = data.wp.pages.nodes
-  // const postsData = data.wp.posts
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -34,18 +25,19 @@ const SearchForm = () => {
   }
 
   return (
-    <Fragment>
-      <Flex sx={{ variant: `search` }}>
+    <Box {...props}>
+      <Flex sx={{ ...searchStyles }}>
         <Button
           a11yTitle="Search here"
+          focusIndicator={false}
           icon={<SearchIcon />}
-          sx={{ variant: `search.icon` }}
+          sx={{ ...searchStyles.icon }}
         />
 
         <Box
           className="search-box"
           sx={{
-            variant: `search.box`,
+            ...searchStyles.box,
             mb: [`20px`, 0],
           }}
         >
@@ -56,7 +48,9 @@ const SearchForm = () => {
             onSubmit={handleSubmit}
             onKeyDown={handleKeyDown}
             placeholder="search here..."
+            name="search"
             sx={{ mb: [0, 0, `15px`] }}
+            aria-label="Search here"
           />
         </Box>
         {value.length > 0 && (
@@ -79,9 +73,7 @@ const SearchForm = () => {
           />
         )}
       </Flex>
-      {search && <SearchQuery search={search} />}
-    </Fragment>
+      {search && <SearchQueries search={search} />}
+    </Box>
   )
 }
-
-export default SearchForm

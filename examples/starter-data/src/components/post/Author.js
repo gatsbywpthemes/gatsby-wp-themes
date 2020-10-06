@@ -2,13 +2,11 @@
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 
-const Author = ({ post }) => {
-  const { name, slug } = post.author
+export const Author = ({ post, ...props }) => {
+  const { name, slug } = post.author.node
   return (
-    <Link aria-label={`visit ${name} page`} to={`/author/${slug}`}>
+    <Link aria-label={`visit ${name} page`} to={`/author/${slug}`} {...props}>
       {name}
     </Link>
   )
 }
-
-export default Author

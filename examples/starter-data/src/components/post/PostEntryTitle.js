@@ -1,25 +1,26 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
-import { Fragment } from 'react'
+// eslint-disable-next-line no-unused-vars
+import React from 'react'
 import { Link } from 'gatsby'
 
-const PostEntryTitle = ({ post, location }) => {
+export const PostEntryTitle = ({ post, location, ...props }) => {
   const { title, uri } = post
 
   return (
-    <Fragment>
+    <>
       {location === 'single' ? (
         <h1
           className="entry-title"
           dangerouslySetInnerHTML={{ __html: title }}
+          {...props}
         />
       ) : (
-        <Styled.h1 as="h2" className="entry-title">
-          <Link to={`/${uri}`} dangerouslySetInnerHTML={{ __html: title }} />
+        // eslint-disable-next-line react/jsx-pascal-case
+        <Styled.h1 as="h2" className="entry-title" {...props}>
+          <Link to={`${uri}`} dangerouslySetInnerHTML={{ __html: title }} />
         </Styled.h1>
       )}
-    </Fragment>
+    </>
   )
 }
-
-export default PostEntryTitle

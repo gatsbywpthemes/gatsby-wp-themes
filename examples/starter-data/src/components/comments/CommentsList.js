@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Fragment, useState } from 'react'
-import { useQuery } from '@apollo/client'
-import gql from 'graphql-tag'
-import Comment from './Comment'
-import CommentForm from './CommentForm'
-import commentStyles from '../../styles/commentStyles'
+import { useQuery, gql } from '@apollo/client'
+import { CommentForm, Comment } from './index'
+import { commentStyles } from '../../styles'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_COMMENTS = gql`
@@ -13,10 +11,10 @@ const GET_COMMENTS = gql`
     comments(where: { contentId: $postId, order: ASC }) {
       nodes {
         ...CommentFields
-        children(where: { order: ASC }) {
+        replies(where: { order: ASC }) {
           nodes {
             ...CommentFields
-            children(where: { order: ASC }) {
+            replies(where: { order: ASC }) {
               nodes {
                 ...CommentFields
               }
@@ -33,8 +31,16 @@ const GET_COMMENTS = gql`
     approved
     content
     commentId
+    parent {
+      node {
+        id
+        commentId
+      }
+    }
     author {
-      ...AuthorFields
+      node {
+        ...AuthorFields
+      }
     }
   }
   fragment AuthorFields on CommentAuthor {
@@ -43,7 +49,7 @@ const GET_COMMENTS = gql`
   }
 `
 
-const CommentsList = ({ post }) => {
+export const CommentsList = ({ post }) => {
   const postId = post.databaseId
   const [activeComment, setActiveComment] = useState(0)
   const cancelReply = () => {
@@ -58,7 +64,6 @@ const CommentsList = ({ post }) => {
 
   const doOnCompleted = () => {
     refetch()
-    setActiveComment(0)
   }
 
   if (loading)
@@ -77,58 +82,62 @@ const CommentsList = ({ post }) => {
         <section sx={commentStyles.section}>
           <h2 sx={commentStyles.title}>Comments</h2>
           <ul sx={commentStyles.list}>
-            {comments.map((comment) => (
-              <Fragment key={comment.id}>
-                <Comment
-                  withReply={true}
-                  postId={postId}
-                  activeComment={activeComment}
-                  comment={comment}
-                  addReply={addReply}
-                  cancelReply={cancelReply}
-                  doOnCompleted={doOnCompleted}
-                ></Comment>
-                {comment.children.nodes.length > 0 && (
-                  <ul>
-                    {comment.children.nodes.map((reply) => (
-                      <Fragment key={reply.id}>
-                        <Comment
-                          withReply={true}
-                          postId={postId}
-                          activeComment={activeComment}
-                          comment={reply}
-                          addReply={addReply}
-                          cancelReply={cancelReply}
-                          doOnCompleted={doOnCompleted}
-                        ></Comment>
-                        {reply.children.nodes.length > 0 && (
-                          <ul>
-                            {reply.children.nodes.map((replyRe) => (
-                              <Comment
-                                withReply={false}
-                                key={replyRe.id}
-                                comment={replyRe}
-                                doOnCompleted={doOnCompleted}
-                              />
-                            ))}
-                          </ul>
-                        )}
-                      </Fragment>
-                    ))}
-                  </ul>
-                )}
-              </Fragment>
-            ))}
+            {comments
+              .filter((el) => el.parent === null)
+              .map((comment) => (
+                <Fragment key={comment.id}>
+                  <Comment
+                    withReply={true}
+                    postId={postId}
+                    activeComment={activeComment}
+                    comment={comment}
+                    addReply={addReply}
+                    cancelReply={cancelReply}
+                    doOnCompleted={doOnCompleted}
+                  ></Comment>
+                  {comment.replies.nodes.length > 0 && (
+                    <ul>
+                      {comment.replies.nodes.map((reply) => (
+                        <Fragment key={reply.id}>
+                          <Comment
+                            withReply={true}
+                            postId={postId}
+                            activeComment={activeComment}
+                            comment={reply}
+                            addReply={addReply}
+                            cancelReply={cancelReply}
+                            doOnCompleted={doOnCompleted}
+                          ></Comment>
+                          {reply.replies.nodes.length > 0 && (
+                            <ul>
+                              {reply.replies.nodes.map((replyRe) => (
+                                <Comment
+                                  withReply={false}
+                                  key={replyRe.id}
+                                  comment={replyRe}
+                                  doOnCompleted={doOnCompleted}
+                                />
+                              ))}
+                            </ul>
+                          )}
+                        </Fragment>
+                      ))}
+                    </ul>
+                  )}
+                </Fragment>
+              ))}
           </ul>
         </section>
       ) : (
         <p sx={{ color: 'text' }}>No comments yet</p>
       )}
       {activeComment === 0 && (
-        <CommentForm postId={postId} doOnCompleted={doOnCompleted} />
+        <CommentForm
+          postId={postId}
+          doOnCompleted={doOnCompleted}
+          cancelReply={cancelReply}
+        />
       )}
     </section>
   )
 }
-
-export default CommentsList

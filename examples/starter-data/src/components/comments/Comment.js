@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import moment from 'moment'
-import CommentForm from './CommentForm'
-import commentStyles from '../../styles/commentStyles'
+import { CommentForm } from './index'
+import { commentStyles } from '../../styles'
 
 const Reply = ({ commentId, actionOnClick }) => {
   return (
@@ -36,7 +36,7 @@ const Author = ({ name, url }) => {
   )
 }
 
-const Comment = props => {
+export const Comment = (props) => {
   const {
     comment,
     activeComment,
@@ -64,11 +64,9 @@ const Comment = props => {
         )
       ) : (
         <p className="comment-nesting-info">
-          Only two levels nesting is supported.
+          Only two levels of nesting is supported.
         </p>
       )}
     </li>
   )
 }
-
-export default Comment

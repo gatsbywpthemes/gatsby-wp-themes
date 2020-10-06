@@ -2,13 +2,11 @@
 import { jsx } from 'theme-ui'
 import Img from 'gatsby-image'
 
-const Image = ({ img, style }) =>
+export const Image = ({ img, style }) =>
   img && (
     <Img
-      fluid={img.localFile.childImageSharp.fluid}
-      alt={img.altText}
+      fluid={img.node.localFile.childImageSharp.fluid}
+      alt={img.node.altText}
       sx={style}
     />
   )
-
-export default Image

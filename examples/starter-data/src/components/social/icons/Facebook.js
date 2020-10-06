@@ -1,9 +1,9 @@
 import React from 'react'
 import { FacebookShareButton, FacebookIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
-import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 
-const Facebook = ({
+export const Facebook = ({
   url,
   title,
   children,
@@ -30,5 +30,3 @@ const Facebook = ({
     </FacebookShareButton>
   )
 }
-
-export default Facebook

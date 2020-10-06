@@ -1,10 +1,10 @@
+/* eslint-disable no-useless-escape */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState, Fragment } from 'react'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
-import commentStyles from '../../styles/commentStyles'
+import { commentStyles } from '../../styles'
 
 const commentSubmitQuery = gql`
   mutation(
@@ -65,16 +65,22 @@ const inputFields = [
   },
 ]
 
-const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
+export const CommentForm = ({
+  commentId = 0,
+  postId,
+  cancelReply,
+  doOnCompleted,
+}) => {
   const { register, handleSubmit, errors } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
 
-  const [addComment, { data }] = useMutation(commentSubmitQuery, {
+  const [addComment] = useMutation(commentSubmitQuery, {
     onCompleted() {
       setCommentStatus('success')
+      doOnCompleted()
       setTimeout(function () {
-        doOnCompleted()
         setCommentStatus('')
+        cancelReply()
       }, 5000)
     },
     onError() {
@@ -92,18 +98,6 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
   }
 
   const CommentSubmitButton = () => {
-    return (
-      <button
-        className="submit-button"
-        type="submit"
-        disabled={commentStatus === 'loading'}
-      >
-        Post Comment
-      </button>
-    )
-  }
-
-  const CommentTag = (el) => {
     return (
       <button
         className="submit-button"
@@ -180,7 +174,6 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
             <CommentNotes />
             {inputFields.map((el) => {
               const Tag = el.tag
-              const { type, name } = el
               const textarea = Tag === 'textarea' ? { rows: 6, cols: 48 } : {}
               return (
                 <p key={el.name} className={`comment-form-${el.name}`}>
@@ -213,5 +206,3 @@ const CommentForm = ({ commentId = 0, postId, cancelReply, doOnCompleted }) => {
     </Fragment>
   )
 }
-
-export default CommentForm

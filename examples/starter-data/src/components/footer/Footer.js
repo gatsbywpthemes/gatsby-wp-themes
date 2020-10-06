@@ -1,26 +1,24 @@
 /** @jsx jsx */
-import { Container, jsx, Flex, Box } from 'theme-ui'
-import FooterContent from './FooterContent'
-import SocialFollow from '../social/SocialFollows'
-import socialStyles from '../../styles/socialStyles'
+import { Container, jsx, Box } from 'theme-ui'
+import { FooterContent } from './index'
+import { SocialFollows } from '../social'
 
-const Footer = () => (
-  <footer sx={{ variant: 'footer' }}>
+import { footerStyles, socialStyles } from '../../styles'
+
+export const Footer = () => (
+  <footer sx={{ ...footerStyles }}>
     <Container sx={{ py: 0 }}>
       <FooterContent />
       <Box className="inverse">
-        <Flex
+        <SocialFollows
           sx={{
             ...socialStyles.follow,
+            display: 'flex',
             mt: `xs`,
             mb: 0,
           }}
-        >
-          <SocialFollow />
-        </Flex>
+        />
       </Box>
     </Container>
   </footer>
 )
-
-export default Footer

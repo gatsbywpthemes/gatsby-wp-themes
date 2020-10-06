@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import Layout from '../components/Layout'
-import SEO from '../components/seo/Seo'
+import { Layout } from '../components'
+import { Seo } from 'gatsby-plugin-wp-seo'
 
 const NotFoundPage = ({ location }) => (
   <Layout location={{ location }} page="404">
-    <SEO title="404: Not found" />
+    <Seo title="404: Not found" />
     <article sx={{ variant: 'page404' }}>
       <h1 sx={{ variant: 'title.page' }}>404</h1>
       <div className="entry-content">

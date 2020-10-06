@@ -1,36 +1,29 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from 'theme-ui'
-import Layout from '../Layout'
-import SEO from '../seo/Seo'
-import PostEntry from '../../components/post/PostEntry'
-import CommentsList from '../../components/comments/CommentsList'
+import { Layout } from '../Layout'
+import { Seo } from 'gatsby-plugin-wp-seo'
+import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
-import normalize from 'normalize-path'
-import Sidebar from '../Sidebar'
+import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-const Post = ({ post }) => {
+const Post = ({ post, ctx }) => {
   const {
     title,
-    excerpt,
     slug,
-    featuredImage,
     uri,
     template: { templateName },
   } = post
-  const media = featuredImage
-    ? featuredImage.localFile.childImageSharp.fluid.src
-    : null
+  const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
   const { layoutWidth } = useThemeOptions()
   const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
 
   const pageTemplate = templateName.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
-  console.log('post', post)
 
   const containerStyles =
     sidebarWidgets && sidebarPage
       ? {
+          maxWidth: 'container',
           '.entry': {
             width: [`100%`, `100%`, `100%`, `70%`],
           },
@@ -42,10 +35,10 @@ const Post = ({ post }) => {
     ? pageTemplate === `left sidebar`
       ? {
           flexDirection: `row-reverse`,
-          '.entry': { pl: [0, 0, 0, layoutWidth.page] },
+          '.entry': { pl: [0, 0, 0, layoutWidth.post] },
         }
       : pageTemplate === `right sidebar`
-      ? { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
+      ? { '.entry': { pr: [0, 0, 0, layoutWidth.post] } }
       : ''
     : ''
   const disqusConfig = {
@@ -54,12 +47,18 @@ const Post = ({ post }) => {
   }
   return (
     <Layout page={post} type="post">
-      <SEO
+      <Seo
         title={title}
-        description={excerpt}
-        media={media}
-        ogType="article"
-        ogUrl={normalize(`/${uri}`)}
+        uri={uri}
+        yoastSeo={ctx.yoastSeo}
+        seo={ctx.seo}
+        featuredImage={
+          featuredImage && {
+            src: featuredImage.src,
+            width: featuredImage.width,
+            height: featuredImage.height,
+          }
+        }
       />
       <Container sx={{ ...containerStyles }} className="mainContainer">
         <Flex
@@ -69,12 +68,16 @@ const Post = ({ post }) => {
             alignItems: `flex-start`,
           }}
         >
-          <PostEntry post={post} location="single" />
+          <PostEntry post={post} location="single" ctx={ctx} />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
         {addWordPressComments && post.commentStatus === 'open' && (
           <Container sx={{ maxWidth: layoutWidth.post }}>
-            <CommentsList post={post} />
+            {disqus ? (
+              <DiscussionEmbed {...disqusConfig} />
+            ) : (
+              <CommentsList post={post} />
+            )}
           </Container>
         )}
       </Container>

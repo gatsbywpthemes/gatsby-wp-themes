@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui'
-import useSiteMetadata from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 import {
   FaBehance,
   FaCodepen,
@@ -28,7 +28,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa'
 
-const SocialFollows = () => {
+export const SocialFollows = props => {
   const supportedIcons = [
     'behance',
     'codepen',
@@ -82,10 +82,10 @@ const SocialFollows = () => {
     FaYoutube,
   ]
 
-  const { social } = useSiteMetadata()
+  const { social } = useSiteMetaData()
 
   return (
-    <Box className="widget widget-socialFollow">
+    <Box className="widget widget-socialFollow" {...props}>
       {social &&
         social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())
@@ -102,10 +102,10 @@ const SocialFollows = () => {
                 {<Component />}
               </a>
             )
+          } else {
+            return null
           }
         })}
     </Box>
   )
 }
-
-export default SocialFollows

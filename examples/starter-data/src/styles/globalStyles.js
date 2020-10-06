@@ -1,17 +1,17 @@
 import { css } from '@emotion/core'
 import Typography from 'typography'
 
-export const globalStyles = theme => {
+export const globalStyles = (theme) => {
   const typography = new Typography({
     baseFontSize: theme.baseFontSize || '16px',
     baseLineHeight: theme.lineHeights.body,
     scaleRatio: 3,
     blockMarginBottom: 0.75,
-    headerFontFamily: theme.fonts.heading.split(',').map(el => {
+    headerFontFamily: theme.fonts.heading.split(',').map((el) => {
       return el.trim()
     }),
 
-    bodyFontFamily: theme.fonts.body.split(',').map(el => {
+    bodyFontFamily: theme.fonts.body.split(',').map((el) => {
       return el.trim()
     }),
     headerWeight: theme.fontWeights.heading,
@@ -19,7 +19,8 @@ export const globalStyles = theme => {
     boldWeight: theme.fontWeights.bold,
   })
   return css`
-    body, html {
+    body,
+    html {
       margin: 0;
       max-width: 100%;
       overflow-x: hidden;
@@ -121,10 +122,12 @@ export const globalStyles = theme => {
       }
     }
     *:focus {
-      outline-style: auto;
-      outline-width: 1px;
+      outline-style: dashed;
+      outline-width: 0.5px;
       outline-color: ${theme.colors.focusOutline}!important;
     }
-
+    [aria-hidden]:focus {
+      outline: none;
+    }
   `
 }

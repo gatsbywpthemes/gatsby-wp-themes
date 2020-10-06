@@ -1,16 +1,16 @@
 /** @jsx jsx */
 import { jsx, Box, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
-import Header from './header/Header'
-import Footer from './footer/Footer'
+import { Header } from './header'
+import { Footer } from './footer'
 import { Global } from '@emotion/core'
-import { globalStyles } from '../styles/GlobalStyles'
 import { Grommet } from 'grommet'
-import grommetTheme from '../styles/grommet'
+import { grommetStyles, globalStyles } from '../styles'
+import Headroom from 'react-headroom'
 
 import '../styles/scss/styles.scss'
 
-const Layout = ({ children, page, type = 'page' }) => {
+export const Layout = ({ children, page, type = 'page' }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
 
   const { theme } = useThemeUI()
@@ -21,7 +21,7 @@ const Layout = ({ children, page, type = 'page' }) => {
     pageTemplate.toLowerCase() === 'full width' ? 'fullWidth' : ''
 
   return (
-    <Grommet theme={grommetTheme}>
+    <Grommet theme={grommetStyles}>
       <Global styles={globalStyles(theme)} />
       <Box
         sx={{
@@ -34,7 +34,9 @@ const Layout = ({ children, page, type = 'page' }) => {
         }}
         className={`${layoutClass}-${type} ${fullWidthClass}`}
       >
-        <Header />
+        <Headroom>
+          <Header />
+        </Headroom>
         <main
           sx={{
             py: `xxl`,
@@ -51,5 +53,3 @@ const Layout = ({ children, page, type = 'page' }) => {
     </Grommet>
   )
 }
-
-export default Layout

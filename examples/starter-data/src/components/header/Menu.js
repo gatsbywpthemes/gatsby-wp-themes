@@ -9,34 +9,12 @@ import {
 } from 'gatsby-theme-blog-data/src/hooks'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
-import normalize from 'normalize-path'
 
-const subdirectoryCorrection = (path, wordPressUrl) => {
-  const wordPressUrlParsed = new URIParser(slashes(wordPressUrl))
-  // detect if WordPress is installed in subdirectory
-  const subdir = wordPressUrlParsed.path()
-  return normalize(path.replace(subdir, '/')) || '/'
-}
-const renderLink = (menuItem, wordPressUrl, postsPath) => {
+const renderLink = (menuItem, wordPressUrl, postsPath, closeMenu) => {
   let url = menuItem.url
-  if (menuItem.connectedObject.__typename === 'WpMenuItem') {
-    const parsedUrl = new URIParser(url)
-    if (menuItem.url === `#`) {
-      return menuItem.label
-    }
-    if (parsedUrl.is('relative')) {
-      url = subdirectoryCorrection(url, wordPressUrl)
-      return <Link to={url}> {menuItem.label}</Link>
-    }
-    const wordPressUrlParsed = new URIParser(wordPressUrl)
-    const path = parsedUrl.path()
-    if (
-      parsedUrl.hostname() === wordPressUrlParsed.hostname() &&
-      path.indexOf(slashes(wordPressUrlParsed.path())) === 0
-    ) {
-      url = subdirectoryCorrection(path, wordPressUrl)
-      return <Link to={url}> {menuItem.label}</Link>
-    }
+  let close = closeMenu || ''
+  const parsedUrl = new URIParser(url)
+  if (parsedUrl.is('absolute')) {
     const targetRelAttrs =
       menuItem.target === '_blank'
         ? { target: '_blank', rel: 'noopener noreferrer' }
@@ -49,15 +27,12 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
   } else {
     return menuItem.url !== '#' ? (
       menuItem.url === wordPressUrl ? (
-        <Link to="/"> {menuItem.label}</Link>
+        <Link to="/" dangerouslySetInnerHTML={{ __html: menuItem.label }} />
       ) : (
         <Link
-          to={`${normalize(
-            createLocalLink(menuItem.url, slashes(wordPressUrl))
-          )}/`}
-        >
-          {menuItem.label}
-        </Link>
+          to={createLocalLink(menuItem.url, slashes(wordPressUrl))}
+          dangerouslySetInnerHTML={{ __html: menuItem.label }}
+        />
       )
     ) : (
       menuItem.label
@@ -65,53 +40,84 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
   }
 }
 
-const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
+const renderMenuItem = (
+  menuItem,
+  wordPressUrl,
+  postsPath,
+  orientation,
+  closeMenu
+) => {
   if (menuItem.childItems && menuItem.childItems.nodes.length) {
-    return renderSubMenu(menuItem, wordPressUrl)
+    return renderSubMenu(menuItem, wordPressUrl, orientation, closeMenu)
   } else {
     return (
-      <li className="menu-item" key={menuItem.id}>
-        {renderLink(menuItem, wordPressUrl, postsPath)}
+      <li className={`menu-item ${menuItem.cssClasses}`} key={menuItem.id}>
+        {renderLink(menuItem, wordPressUrl, postsPath, closeMenu)}
       </li>
     )
   }
 }
+const WithCollapse = ({ orientation, children, menuItem }) =>
+  orientation === 'vertical' ? (
+    <Collapse menuItem={menuItem}>{children}</Collapse>
+  ) : (
+    children
+  )
 
-const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
+const renderSubMenu = (
+  menuItem,
+  wordPressUrl,
+  postsPath,
+  orientation,
+  closeMenu
+) => {
   return (
     <li
       className="has-subMenu menu-item"
       key={menuItem.id}
       sx={{ position: `relative` }}
     >
-      {renderLink(menuItem, wordPressUrl, postsPath)}
-      <Collapse menuItem={menuItem}>
+      {renderLink(menuItem, wordPressUrl, postsPath, closeMenu)}
+      <WithCollapse orientation={orientation} menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
-          {menuItem.childItems.nodes.map(item =>
-            renderMenuItem(item, wordPressUrl, postsPath)
+          {menuItem.childItems.nodes.map((item) =>
+            renderMenuItem(item, wordPressUrl, postsPath, closeMenu)
           )}
         </ul>
-      </Collapse>
+      </WithCollapse>
     </li>
   )
 }
 
-const Menu = ({ menuName }) => {
+export const Menu = ({ menuName, orientation, closeMenu, ...props }) => {
   const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find(n => menuName === n.name)
+  const menuEdge = menuEdges.find((n) => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
 
   const { postsPath, wordPressUrl } = useThemeOptions()
 
   if (menuItems) {
     return (
-      <nav className="menu" aria-label="main">
+      <nav className="menu" aria-label="main" {...props}>
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <ul role="menu" className="menuItemGroup">
-          {menuItems.nodes.map(menuItem => {
+          {menuItems.nodes.map((menuItem) => {
             if (menuItem.childItems.nodes.length) {
-              return renderSubMenu(menuItem, wordPressUrl, postsPath)
+              return renderSubMenu(
+                menuItem,
+                wordPressUrl,
+                postsPath,
+                orientation,
+                closeMenu
+              )
             } else {
-              return renderMenuItem(menuItem, wordPressUrl, postsPath)
+              return renderMenuItem(
+                menuItem,
+                wordPressUrl,
+                postsPath,
+                orientation,
+                closeMenu
+              )
             }
           })}
         </ul>
@@ -121,5 +127,3 @@ const Menu = ({ menuName }) => {
     return null
   }
 }
-
-export default Menu

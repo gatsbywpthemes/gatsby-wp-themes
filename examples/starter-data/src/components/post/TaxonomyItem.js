@@ -1,17 +1,13 @@
 /** @jsx jsx */
-import { jsx, Button } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 
-const TaxonomyItem = ({ taxName, item, key }) => (
-  <Button variant="primary.small" sx={{ mr: `xxs`, mb: `xs` }} key={key}>
-    <Link
-      to={`/${item.uri}`}
-      key={item.id}
-      aria-label={`visit ${taxName} ${item.name} page`}
-    >
-      {item.name}
-    </Link>
-  </Button>
+export const TaxonomyItem = ({ taxName, item, ...props }) => (
+  <Link
+    to={`${item.uri}`}
+    aria-label={`visit ${taxName} ${item.name} page`}
+    sx={{ mr: `xxs`, mb: `xs`, variant: `buttons.primary.small` }}
+  >
+    {item.name}
+  </Link>
 )
-
-export default TaxonomyItem

@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import useThemeOptions from 'gatsby-theme-blog-data/src/hooks/useThemeOptions'
-import normalize from 'normalize-path'
-import paginationStyles from '../../styles/paginationStyles'
+import { paginationStyles } from '../../styles'
 
 const renderPreviousLink = previousPagePath => {
   if (previousPagePath) {
@@ -38,7 +36,7 @@ export const Pagination = ({ ctx }) => {
   return (
     <nav sx={paginationStyles}>
       {renderPreviousLink(previousPagePath)}
-      <span aria-current="page" className="page-numbers current">
+      <span aria-current="page" className="page-numbers current" sx={{}}>
         {humanPageNumber}
       </span>
       {renderNextLink(nextPagePath)}

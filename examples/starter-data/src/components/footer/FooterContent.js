@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FooterContent = () => {
+export const FooterContent = () => {
   return (
     <div>
       © {new Date().getFullYear()} | Built with{` `}
@@ -9,5 +9,3 @@ const FooterContent = () => {
     </div>
   )
 }
-
-export default FooterContent

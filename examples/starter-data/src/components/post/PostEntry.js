@@ -1,20 +1,24 @@
 /** @jsx jsx */
-import { jsx, Flex, Button } from 'theme-ui'
-import { Link } from 'gatsby'
-import PostEntryTitle from './PostEntryTitle'
-import PostEntryMedia from './PostEntryMedia'
-import PostEntryContent from './PostEntryContent'
-import PostEntryMeta from './PostEntryMeta'
-import PostEntryInfo from './PostEntryInfo'
+import { jsx } from 'theme-ui'
+// eslint-disable-next-line no-unused-vars
+import React from 'react'
+import {
+  PostEntryTitle,
+  PostEntryMedia,
+  PostEntryContent,
+  PostEntryMeta,
+  PostEntryInfo,
+  ReadMoreButton,
+  PrevNextPostNavigation,
+} from './index'
 import normalize from 'normalize-path'
-import SocialShare from '../social/SocialShare'
-import articleStyles from '../../styles/articleStyles'
-import gutenberg from '../../styles/theme-gutenberg'
+import { SocialShare } from '../social'
+import { articleStyles } from '../../styles'
 
-const PostEntry = ({ post, location }) => {
+export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''
   const media = post.featuredImage
-    ? post.featuredImage.localFile.childImageSharp.fluid.src
+    ? post.featuredImage.node.localFile.childImageSharp.fluid.src
     : null
   return (
     <article
@@ -23,9 +27,10 @@ const PostEntry = ({ post, location }) => {
         ...articleStyles,
         '.entry-content': {
           pb: `m`,
-          borderBottom: t => `1px solid ${t.colors.border}`,
+          borderBottom: (t) => `1px solid ${t.colors.border}`,
         },
       }}
+      {...props}
     >
       <PostEntryMedia location={location} post={post} className="entry-media" />
 
@@ -36,40 +41,24 @@ const PostEntry = ({ post, location }) => {
           className="entry-title"
         />
         <PostEntryInfo className="entry-info" post={post} />
-        <div id="content" sx={{ ...gutenberg }}>
-          <PostEntryContent
-            location={location}
-            post={post}
-            className="entry-content"
-          />
-        </div>
+
+        <PostEntryContent location={location} post={post} />
+
         <div className="entry-footer" sx={{ mt: `xl` }}>
           <PostEntryMeta className="entry-meta" post={post} />
-          {location !== 'single' && (
-            <Flex sx={{ justifyContent: [`center`, `flex-end`] }}>
-              <Button
-                className="read-more"
-                a11YTitle="Read More from this post"
-                variant="secondary"
-                sx={{ mt: `20px` }}
-              >
-                <Link to={post.uri} aria-label="Read More from this post">
-                  Read More
-                </Link>
-              </Button>
-            </Flex>
-          )}
+          <ReadMoreButton location={location} post={post} />
         </div>
         {location === 'single' && (
-          <SocialShare
-            url={normalize(`/${post.uri}`)}
-            title={post.title}
-            media={media}
-          />
+          <>
+            <SocialShare
+              url={normalize(`/${post.uri}`)}
+              title={post.title}
+              media={media}
+            />
+            <PrevNextPostNavigation ctx={ctx} />
+          </>
         )}
       </div>
     </article>
   )
 }
-
-export default PostEntry

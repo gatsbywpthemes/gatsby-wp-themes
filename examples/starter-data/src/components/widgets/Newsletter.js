@@ -2,20 +2,20 @@
 import { jsx, Box, Flex, Input } from 'theme-ui'
 import { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import widgetStyles from '../../styles/widgetStyles'
+import { widgetStyles } from '../../styles'
 
-const Newsletter = () => {
+export const Newsletter = (props) => {
   const [email, setEmail] = useState('')
   const [msg, setMsg] = useState()
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    addToMailchimp(email).then(data => {
+    addToMailchimp(email).then((data) => {
       return data.result === 'success'
         ? setMsg(data.msg)
         : setMsg('This email has already subscribed, try with another one')
     })
   }
-  const handleChange = e => {
+  const handleChange = (e) => {
     setEmail(e.target.value)
   }
   return (
@@ -23,6 +23,7 @@ const Newsletter = () => {
       sx={{
         ...widgetStyles.newsletter,
       }}
+      {...props}
     >
       {msg ? (
         msg
@@ -33,10 +34,12 @@ const Newsletter = () => {
             <Input
               placeholder="Email address"
               name="email"
-              type="text"
+              type="email"
+              required
               value={email}
               onChange={handleChange}
               sx={{ borderRadius: '5px 0 0 5px' }}
+              aria-label="Add your Email address to subsribe"
             />
             <button type="submit">Subscribe</button>
           </Flex>
@@ -45,5 +48,3 @@ const Newsletter = () => {
     </Box>
   )
 }
-
-export default Newsletter

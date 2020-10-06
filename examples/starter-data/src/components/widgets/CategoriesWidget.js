@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import widgetStyles from '../../styles/widgetStyles'
+import { widgetStyles } from '../../styles'
 
 const ALL_CATEGORIES_QUERY = graphql`
   query GetCategories {
@@ -10,25 +10,28 @@ const ALL_CATEGORIES_QUERY = graphql`
         name
         slug
         uri
+        count
       }
     }
   }
 `
 
-const CategoriesWidget = () => {
+export const CategoriesWidget = (props) => {
   const data = useStaticQuery(ALL_CATEGORIES_QUERY)
   const { nodes } = data.allWpCategory
+  const nonEmptyCategories = nodes.filter((el) => el.count)
   return (
     <section
       sx={{ ...widgetStyles.categories }}
       className="widget widget-categories"
+      {...props}
     >
       <h2 className="widget-title">Categories</h2>
       <ul>
-        {nodes.length
-          ? nodes.map(category => (
+        {nonEmptyCategories.length
+          ? nonEmptyCategories.map((category) => (
               <li key={category.slug}>
-                <Link to={`/${category.uri}`}>{category.name}</Link>
+                <Link to={`${category.uri}`}>{category.name}</Link>
               </li>
             ))
           : null}
@@ -36,5 +39,3 @@ const CategoriesWidget = () => {
     </section>
   )
 }
-
-export default CategoriesWidget

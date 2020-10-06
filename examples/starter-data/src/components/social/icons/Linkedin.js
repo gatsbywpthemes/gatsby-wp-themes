@@ -1,9 +1,9 @@
 import React from 'react'
 import { LinkedinShareButton, LinkedinIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
-import useSiteMetaData from 'gatsby-theme-blog-data/src/hooks/useSiteMetadata'
+import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 
-const Linkedin = ({
+export const Linkedin = ({
   url,
   title,
   children,
@@ -30,5 +30,3 @@ const Linkedin = ({
     </LinkedinShareButton>
   )
 }
-
-export default Linkedin

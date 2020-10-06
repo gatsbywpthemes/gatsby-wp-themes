@@ -1,14 +1,13 @@
 /** @jsx jsx */
-import { jsx, Flex, Box } from 'theme-ui'
+import { jsx, Flex } from 'theme-ui'
 import { useState } from 'react'
 import { Button } from 'grommet'
-import { useQuery } from '@apollo/client'
-import gql from 'graphql-tag'
-import SearchResults from './SearchResults'
+import { useQuery, gql } from '@apollo/client'
+import { SearchResults } from './index'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_PAGES = gql`
-  fragment PostFields on Page {
+  fragment PageFields on Page {
     title
     slug
     uri
@@ -21,13 +20,13 @@ const GET_PAGES = gql`
         endCursor
       }
       nodes {
-        ...PostFields
+        ...PageFields
       }
     }
   }
 `
 
-const SearchQuery = ({ search }) => {
+export const SearchPagesQuery = ({ search }) => {
   const [clickable, setClickable] = useState(true)
   const { data, loading, error, fetchMore } = useQuery(GET_PAGES, {
     variables: { search },
@@ -70,12 +69,10 @@ const SearchQuery = ({ search }) => {
   return (
     <SearchResults type="Pages" query={search} posts={data.pages.nodes}>
       {clickable && data.pages.pageInfo && data.pages.pageInfo.hasNextPage && (
-        <Button onClick={loadMore} type="button">
+        <Button onClick={loadMore} focusIndicator={false} type="button">
           Load More
         </Button>
       )}
     </SearchResults>
   )
 }
-
-export default SearchQuery

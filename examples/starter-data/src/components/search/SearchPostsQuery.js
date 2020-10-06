@@ -2,9 +2,8 @@
 import { jsx, Flex } from 'theme-ui'
 import { useState } from 'react'
 import { Button } from 'grommet'
-import { useQuery } from '@apollo/client'
-import gql from 'graphql-tag'
-import SearchResults from './SearchResults'
+import { useQuery, gql } from '@apollo/client'
+import { SearchResults } from './index'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_POSTS = gql`
@@ -27,7 +26,7 @@ const GET_POSTS = gql`
   }
 `
 
-const SearchQuery = ({ search }) => {
+export const SearchPostsQuery = ({ search }) => {
   const [clickable, setClickable] = useState(true)
   const { data, loading, error, fetchMore } = useQuery(GET_POSTS, {
     variables: { search },
@@ -70,12 +69,10 @@ const SearchQuery = ({ search }) => {
   return (
     <SearchResults type="Posts" query={search} posts={data.posts.nodes}>
       {clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
-        <Button onClick={loadMore} type="button">
+        <Button onClick={loadMore} focusIndicator={false} type="button">
           Load More
         </Button>
       )}
     </SearchResults>
   )
 }
-
-export default SearchQuery
