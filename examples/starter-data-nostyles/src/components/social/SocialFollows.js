@@ -28,7 +28,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa'
 
-export const SocialFollows = props => {
+export const SocialFollows = (props) => {
   const supportedIcons = [
     'behance',
     'codepen',
@@ -85,7 +85,7 @@ export const SocialFollows = props => {
   const { social } = useSiteMetaData()
 
   return (
-    <Box className="widget widget-socialFollow" {...props}>
+    <div className="widget widget-socialFollow" {...props}>
       {social &&
         social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())
@@ -106,6 +106,6 @@ export const SocialFollows = props => {
             return null
           }
         })}
-    </Box>
+    </div>
   )
 }

@@ -23,7 +23,7 @@ export const Layout = ({ children, page, type = 'page' }) => {
   return (
     <Grommet theme={grommetStyles}>
       <Global styles={globalStyles(theme)} />
-      <Box
+      <div
         sx={{
           '&.fullWidth': {
             '.mainContainer': {
@@ -49,7 +49,7 @@ export const Layout = ({ children, page, type = 'page' }) => {
           <Fragment>{children}</Fragment>
         </main>
         <Footer />
-      </Box>
+      </div>
     </Grommet>
   )
 }

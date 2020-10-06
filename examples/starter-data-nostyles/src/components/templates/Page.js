@@ -61,7 +61,7 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <Container sx={{ ...containerStyles }} className="mainContainer">
+      <div sx={{ ...containerStyles }} className="mainContainer">
         <div
           sx={{
             ...sidebarSide,
@@ -87,15 +87,15 @@ const Page = ({ page, ctx }) => {
                   />
                 )}
 
-              <Box className="entry-content" sx={{ ...gutenbergStyles }}>
+              <div className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />
                 <ParsedContent content={content} />
-              </Box>
+              </div>
             </div>
           </article>
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </div>
-      </Container>
+      </div>
     </Layout>
   )
 }

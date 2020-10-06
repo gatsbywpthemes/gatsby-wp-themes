@@ -60,7 +60,7 @@ const Post = ({ post, ctx }) => {
           }
         }
       />
-      <Container sx={{ ...containerStyles }} className="mainContainer">
+      <div sx={{ ...containerStyles }} className="mainContainer">
         <div
           sx={{
             ...sidebarSide,
@@ -72,15 +72,15 @@ const Post = ({ post, ctx }) => {
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </div>
         {addWordPressComments && post.commentStatus === 'open' && (
-          <Container sx={{ maxWidth: layoutWidth.post }}>
+          <div sx={{ maxWidth: layoutWidth.post }}>
             {disqus ? (
               <DiscussionEmbed {...disqusConfig} />
             ) : (
               <CommentsList post={post} />
             )}
-          </Container>
+          </div>
         )}
-      </Container>
+      </div>
     </Layout>
   )
 }

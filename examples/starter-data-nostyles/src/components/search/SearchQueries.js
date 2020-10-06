@@ -7,7 +7,7 @@ export const SearchQueries = ({ search, ...props }) => {
   const showResults =
     search && search.length > 0 ? { display: `block` } : { display: `none` }
   return (
-    <Box
+    <div
       className="search-results"
       sx={{
         ...showResults,
@@ -17,6 +17,6 @@ export const SearchQueries = ({ search, ...props }) => {
     >
       <SearchPostsQuery search={search} />
       <SearchPagesQuery search={search} />
-    </Box>
+    </div>
   )
 }

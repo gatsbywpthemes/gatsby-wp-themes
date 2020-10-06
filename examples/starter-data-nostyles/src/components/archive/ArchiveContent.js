@@ -28,7 +28,7 @@ export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
         : { '.posts-list': { pr: [0, 0, 0, layoutWidth.archive] } }
       : ''
   return (
-    <Container
+    <div
       sx={{ ...containerStyles, maxWidth: 'container' }}
       className="mainContainer"
     >
@@ -44,6 +44,6 @@ export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
         {archiveSidebar && <Sidebar widgets={sidebarWidgets} />}
       </div>
       <Pagination ctx={ctx} />
-    </Container>
+    </div>
   )
 }

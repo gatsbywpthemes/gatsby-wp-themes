@@ -24,7 +24,7 @@ export const SlideSidebar = (props) => {
   }
 
   return (
-    <Box {...props}>
+    <div {...props}>
       <Button
         icon={<MenuIcon />}
         a11yTitle="Open navigation menu"
@@ -70,12 +70,12 @@ export const SlideSidebar = (props) => {
           {slideMenuWidgets &&
             slideMenuWidgets.length > 0 &&
             slideMenuWidgets.map((widget, i) => (
-              <Box className="inverse" sx={{ mb: `l` }} key={i}>
+              <div className="inverse" sx={{ mb: `l` }} key={i}>
                 <Widgets widget={widget} location="SlideMenu" />
-              </Box>
+              </div>
             ))}
         </Layer>
       )}
-    </Box>
+    </div>
   )
 }

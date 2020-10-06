@@ -7,11 +7,11 @@ export const Categories = ({ post, ...props }) => {
   return (
     <div sx={{ mb: `xxs` }} {...props}>
       {categories.length > 0 && (
-        <Box sx={{ variant: `text.info`, mr: `xxs`, mb: `xs` }}>
+        <div sx={{ variant: `text.info`, mr: `xxs`, mb: `xs` }}>
           {categories.length > 1 ? 'Categories: ' : 'Category: '}
-        </Box>
+        </div>
       )}
-      {categories.map(cat => (
+      {categories.map((cat) => (
         <TaxonomyItem taxName="category" item={cat} key={cat.slug} />
       ))}
     </div>

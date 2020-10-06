@@ -19,7 +19,7 @@ export const Newsletter = (props) => {
     setEmail(e.target.value)
   }
   return (
-    <Box
+    <div
       sx={{
         ...widgetStyles.newsletter,
       }}
@@ -45,6 +45,6 @@ export const Newsletter = (props) => {
           </div>
         </form>
       )}
-    </Box>
+    </div>
   )
 }

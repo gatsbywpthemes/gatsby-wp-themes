@@ -25,7 +25,7 @@ export const SearchForm = (props) => {
   }
 
   return (
-    <Box {...props}>
+    <div {...props}>
       <div sx={{ ...searchStyles }}>
         <Button
           a11yTitle="Search here"
@@ -34,7 +34,7 @@ export const SearchForm = (props) => {
           sx={{ ...searchStyles.icon }}
         />
 
-        <Box
+        <div
           className="search-box"
           sx={{
             ...searchStyles.box,
@@ -52,7 +52,7 @@ export const SearchForm = (props) => {
             sx={{ mb: [0, 0, `15px`] }}
             aria-label="Search here"
           />
-        </Box>
+        </div>
         {value.length > 0 && (
           <Button
             a11yTitle="Reset Search"
@@ -74,6 +74,6 @@ export const SearchForm = (props) => {
         )}
       </div>
       {search && <SearchQueries search={search} />}
-    </Box>
+    </div>
   )
 }

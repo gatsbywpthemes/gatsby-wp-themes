@@ -9,13 +9,13 @@ export const Sidebar = ({ widgets, ...props }) => {
   return (
     <>
       {widgets && widgets.length > 0 && (
-        <Box className="sidebar" sx={sidebarStyles} {...props}>
+        <div className="sidebar" sx={sidebarStyles} {...props}>
           {widgets.map((widget, i) => (
-            <Box sx={{ my: `l` }} key={i}>
+            <div sx={{ my: `l` }} key={i}>
               <Widgets widget={widget} />
-            </Box>
+            </div>
           ))}
-        </Box>
+        </div>
       )}
     </>
   )
