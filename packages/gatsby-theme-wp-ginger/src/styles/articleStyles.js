@@ -5,12 +5,28 @@ export const articleStyles = {
     content: {
       ...gutenberg,
       py: ['2rem', '2rem', '4rem'],
+      '.entry-tags': {
+        mb: '3rem',
+        ul: {
+          listStyle: 'none',
+          display: 'flex',
+          flexWrap: 'wrap',
+          p: 0,
+          ml: '-0.25rem',
+          mb: '0.25rem',
+        },
+        li: { px: 1, m: 0 },
+        a: {
+          variant: 'special.underlineOnHover',
+          fontSize: 'xxs',
+        },
+      },
     },
     splash: {
       position: 'relative',
       zIndex: 1,
       height: ['auto', 'auto', '100vh'],
-      minHeight: theme => [
+      minHeight: (theme) => [
         `none`,
         `calc(100vh - ${theme.sizes.header[1]})`,
         '100vh',
@@ -40,22 +56,5 @@ export const articleStyles = {
         color: 'scrollDownBg',
       },
     },
-  },
-}
-
-export const tagStyles = {
-  mb: '3rem',
-  ul: {
-    listStyle: 'none',
-    display: 'flex',
-    flexWrap: 'wrap',
-    p: 0,
-    ml: '-0.25rem',
-    mb: '0.25rem',
-  },
-  li: { px: 1, m: 0 },
-  a: {
-    variant: 'special.underlineOnHover',
-    fontSize: 'xxs',
   },
 }

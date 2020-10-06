@@ -17,6 +17,7 @@ module.exports = (options) => {
     parserDebugOutput,
     displayDownloadInfo,
   } = mergedOptions
+
   const url = slashes(wordPressUrl)
 
   const plugins = [

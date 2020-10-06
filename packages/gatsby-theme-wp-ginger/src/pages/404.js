@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Layout from '../components/Layout'
-import { Seo } from '../components/seo'
-import { page404Styles } from '../styles'
-import { pageTitleStyles } from '../styles/'
+import { Seo } from 'gatsby-plugin-wp-seo'
+import { pageTitleStyles, page404Styles } from '../styles'
 
 const NotFoundPage = ({ location }) => (
   <Layout location={{ location }}>

@@ -19,7 +19,6 @@ const DEFAULT_OPTIONS = {
   sidebarWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
   slideMenuWidgets: [],
   archiveSidebar: false,
-
   addFancyBox: false,
   pageCreateDebugOutput: false,
   parserDebugOutput: false,

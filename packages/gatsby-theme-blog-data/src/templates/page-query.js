@@ -11,6 +11,19 @@ export const pageQuery = graphql`
       uri
       slug
       isFrontPage
+      featuredImage {
+        node {
+          localFile {
+            childImageSharp {
+              original {
+                width
+                height
+                src
+              }
+            }
+          }
+        }
+      }
       template {
         ...PageTemplate
       }

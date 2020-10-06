@@ -67,7 +67,6 @@ export const CommentsList = ({ post, reloading }) => {
   if (loading) return <p>Loading comments&hellip;</p>
   if (error) return <p>Some errors occur.</p>
   const comments = data.comments
-  console.log(comments)
   return (
     <Fragment>
       {comments.nodes.length > 0 ? (

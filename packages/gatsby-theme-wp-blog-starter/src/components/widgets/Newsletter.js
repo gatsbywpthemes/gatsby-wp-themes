@@ -4,18 +4,18 @@ import { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { widgetStyles } from '../../styles'
 
-export const Newsletter = props => {
+export const Newsletter = (props) => {
   const [email, setEmail] = useState('')
   const [msg, setMsg] = useState()
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    addToMailchimp(email).then(data => {
+    addToMailchimp(email).then((data) => {
       return data.result === 'success'
         ? setMsg(data.msg)
         : setMsg('This email has already subscribed, try with another one')
     })
   }
-  const handleChange = e => {
+  const handleChange = (e) => {
     setEmail(e.target.value)
   }
   return (
@@ -34,7 +34,8 @@ export const Newsletter = props => {
             <Input
               placeholder="Email address"
               name="email"
-              type="text"
+              type="email"
+              required
               value={email}
               onChange={handleChange}
               sx={{ borderRadius: '5px 0 0 5px' }}

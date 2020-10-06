@@ -28,6 +28,7 @@
     "gatsby-plugin-typography": "^2.5.11",
     "gatsby-plugin-wordpress-fancybox": "*",
     "gatsby-plugin-wpcf7": "*",
+    "gatsby-plugin-wp-seo": "*",
     "gatsby-theme-blog-data": "*",
     "graphql-tag": "^2.11.0",
     "grommet": "^2.15.0",

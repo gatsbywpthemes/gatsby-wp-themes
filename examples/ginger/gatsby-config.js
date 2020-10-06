@@ -6,10 +6,10 @@
 require("dotenv").config()
 const {
   author,
-  siteUrl,
   social,
   pathPrefix,
   addDisqusComments,
+  twitterSummaryCardImage,
   ...options
 } = require("./config")
 
@@ -18,7 +18,7 @@ module.exports = {
   siteMetadata: {
     author,
     wordPressUrl: options.wordpressUrl,
-    siteUrl,
+    siteUrl: options.siteUrl,
     social,
   },
   plugins: [

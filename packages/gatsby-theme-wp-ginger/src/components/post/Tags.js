@@ -1,11 +1,15 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import { tagStyles } from '../../styles/'
 
 export const Tags = ({ tags }) => {
   return (
-    <section sx={tagStyles} className="entry-taxonomy entry-tags">
+    <section
+      className="entry-taxonomy entry-tags"
+      data-sal="slide-up"
+      data-sal-duration="1000"
+      data-sal-easing="ease"
+    >
       <h2>Tags:</h2>
       <ul sx={{}}>
         {tags.map((tag, index) => (

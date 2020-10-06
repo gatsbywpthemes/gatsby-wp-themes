@@ -1,21 +1,21 @@
 import React from 'react'
 import Layout from '../Layout.js'
 import { ArchiveContent } from '../archive'
-import { Seo } from '../seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import slashes from 'remove-trailing-slash'
 
 const Posts = ({ posts, ctx }) => {
-  const { pageNumber } = ctx
+  const { humanPageNumber, numberOfPages, title, yoastSeo, seo } = ctx
   const { postsPath } = useThemeOptions()
-  const ogType = slashes(postsPath) === '' ? 'website' : 'object'
   return (
     <Layout>
       <Seo
-        titleTemplate={'withDescription'}
-        pageNumber={pageNumber}
-        ogType={ogType}
-        ogUrl={postsPath}
+        humanPageNumber={humanPageNumber}
+        numberOfPages={numberOfPages}
+        title={title}
+        uri={postsPath}
+        yoastSeo={yoastSeo}
+        seo={seo}
       />
       <ArchiveContent posts={posts} paginationPrefix={postsPath} ctx={ctx} />
     </Layout>

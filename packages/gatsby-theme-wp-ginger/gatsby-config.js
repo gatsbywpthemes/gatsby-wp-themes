@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = (options) => {
   options.fonts = options.fonts || ['abril fatface', 'fira sans']
   options.customFonts = []
@@ -41,6 +42,13 @@ module.exports = (options) => {
       },
     },
     `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-plugin-wp-seo',
+      options: {
+        siteUrl: options.siteUrl,
+        pathPrefix: options.pathPrefix,
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
@@ -74,11 +82,12 @@ module.exports = (options) => {
   /**
    * Conditionally add mailchimp subscription plugin
    */
-  if (mergedOptions.mailchimpEndpoint) {
+
+  if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
     plugins.push({
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint: mergedOptions.mailchimpEndpoint,
+        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
       },
     })
   }

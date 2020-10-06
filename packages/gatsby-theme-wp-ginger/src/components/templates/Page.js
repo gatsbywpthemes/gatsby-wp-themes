@@ -3,28 +3,39 @@ import { jsx } from 'theme-ui'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
-import { Seo } from '../seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 import { pageStyles, pageTitleStyles } from '../../styles/'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-const Page = ({ page }) => {
+const Page = (props) => {
+  const { page, ctx } = props
   const { skipTitle } = useThemeOptions()
-  const { content } = page
-  const ogType = page.isFrontPage ? 'website' : 'article'
+  const { content, title, uri, slug } = page
+  const featuredImage =
+    page.featuredImage?.node.localFile.childImageSharp.original
+
   return (
     <Layout useContainer={false}>
       <Seo
-        title={page.title}
-        description={page.excerpt}
-        ogType={ogType}
-        ogUrl={ogType === 'website' ? '/' : page.uri}
+        isFrontPage={page.isFrontPage}
+        title={title}
+        uri={uri}
+        yoastSeo={ctx.yoastSeo}
+        seo={ctx.seo}
+        featuredImage={
+          featuredImage && {
+            src: featuredImage.src,
+            width: featuredImage.width,
+            height: featuredImage.height,
+          }
+        }
       />
       <article>
-        {skipTitle.indexOf(page.slug) === -1 && (
+        {skipTitle.indexOf(slug) === -1 && (
           <h1 sx={pageTitleStyles}>
             <span
               className="page-title-value"
-              dangerouslySetInnerHTML={{ __html: page.title }}
+              dangerouslySetInnerHTML={{ __html: title }}
             />
           </h1>
         )}

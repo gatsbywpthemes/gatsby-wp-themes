@@ -10,21 +10,87 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
    * Merged default theme settings and user settings.
    */
 
-  const { data } = await graphql(`
+  const queryTypes = await graphql(`
     query {
-      wp {
-        allSettings {
-          readingSettingsPostsPerPage
+      __type(name: "Wp") {
+        fields {
+          name
         }
       }
     }
   `)
-  const postsPerPage = data.wp.allSettings.readingSettingsPostsPerPage
+
+  const seoFromWP = queryTypes.data.__type.fields
+    .map((el) => el.name)
+    .includes('seo')
+
+  const conditionalSeoQuery = seoFromWP
+    ? `seo {
+      social {
+        facebook {
+          url
+        }
+        linkedIn {
+          url
+        }
+        twitter {
+          cardType
+          username
+        }
+      }
+      schema {
+        siteName
+        wordpressSiteName
+        inLanguage
+      }
+      openGraph {
+        frontPage {
+          title
+          description
+          image {
+            localFile {
+              childImageSharp {
+                original {
+                  height
+                  src
+                  width
+                }
+              }
+            }
+          }
+        }
+        defaultImage {
+          localFile {
+            childImageSharp {
+              original {
+                src
+                height
+                width
+              }
+            }
+          }
+        }
+      }
+    }`
+    : ``
+
+  const { data } = await graphql(`
+  query {
+    wp {
+      allSettings {
+        readingSettingsPostsPerPage
+      }
+    ${conditionalSeoQuery}
+    }
+  }
+  `)
 
   const mergedOptions = {
     ...defaultOptions,
     ...options,
-    postsPerPage,
+    postsPerPage: data.wp.allSettings.readingSettingsPostsPerPage,
+    seoFromWP,
+    generalSeoSettings: data.wp.seo,
   }
 
   await createPosts({ actions, graphql }, mergedOptions)

@@ -1,8 +1,8 @@
 const config = {
   wordPressUrl: `https://wp-pehaa.xyz/ginger`,
   // uploadsPath: `wp-content/uploads`,
-  // pathPrefix: "",
-  postsPath: `/blog/`,
+  pathPrefix: "/demo",
+  // postsPath: `/blog/`,
   // paginationPrefix: `page`,
   // addWordPressComments: true,
   addDisqusComments: true,
@@ -14,7 +14,7 @@ const config = {
     `Tags`,
     "Newsletter",
   ],
-  siteUrl: "https://gatsby-wp-ginger.netlify.app/",
+  siteUrl: "http://localhost:9001/demo",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
   // description: `Description placeholder`,
@@ -43,8 +43,6 @@ const config = {
   // addColorModes: false,
   // addFancyBox: true,
   skipTitle: ["home"],
-  mailchimpEndpoint:
-    "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
 }
 // https://gatsby-test-2.alexaspalato.website
 //https://gatsby-theme-demo.alexaspalato.website

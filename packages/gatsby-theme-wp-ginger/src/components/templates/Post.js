@@ -1,32 +1,30 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
+
 import Layout from '../Layout.js'
 import { PostEntryFull } from '../post'
-import { Seo } from '../seo'
+import { Seo } from 'gatsby-plugin-wp-seo'
 
 const Post = (props) => {
-  const {
-    post: { title, excerpt, featuredImage, uri },
-  } = props
-  const media = featuredImage
-    ? featuredImage.node.localFile.childImageSharp.fluid.src
-    : null
-
+  const { post, ctx } = props
+  const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
   return (
-    <>
-      <Layout useContainer={false}>
-        <Seo
-          title={title}
-          description={excerpt}
-          media={media}
-          ogType="article"
-          ogUrl={uri}
-        />
-        <PostEntryFull {...props} />
-      </Layout>
-    </>
+    <Layout useContainer={false}>
+      <Seo
+        featuredImage={
+          featuredImage && {
+            src: featuredImage.src,
+            width: featuredImage.width,
+            height: featuredImage.height,
+          }
+        }
+        title={post.title}
+        uri={post.uri}
+        yoastSeo={ctx.yoastSeo}
+        seo={ctx.seo}
+      />
+      <PostEntryFull {...props} />
+    </Layout>
   )
 }
 
