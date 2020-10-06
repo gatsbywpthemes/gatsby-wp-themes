@@ -3,8 +3,6 @@ import { Header } from './header'
 import { Footer } from './footer'
 import { Grommet } from 'grommet'
 
-import '../styles/scss/styles.scss'
-
 export const Layout = ({ children, page, type = 'page' }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
 

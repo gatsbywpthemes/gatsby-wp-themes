@@ -44,12 +44,9 @@ module.exports = {
         pathPrefix: config.pathPrefix,
       },
     },
-    'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-theme-ui',
     'gatsby-plugin-sass',
-
     {
       resolve: 'gatsby-plugin-wpcf7',
       options: {
