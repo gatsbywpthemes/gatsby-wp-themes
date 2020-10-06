@@ -30,7 +30,7 @@ export const Newsletter = (props) => {
       ) : (
         <form onSubmit={handleSubmit}>
           <h2 className="widget-title">Newsletter</h2>
-          <Flex>
+          <div>
             <Input
               placeholder="Email address"
               name="email"
@@ -42,7 +42,7 @@ export const Newsletter = (props) => {
               aria-label="Add your Email address to subsribe"
             />
             <button type="submit">Subscribe</button>
-          </Flex>
+          </div>
         </form>
       )}
     </Box>

@@ -1,11 +1,9 @@
-/** @jsx jsx */
-import { jsx, Container } from 'theme-ui'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { SlideSidebar, SiteBranding } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { SearchForm } from '../search'
 import { ColorSwitch } from '../index'
-import { headerStyles } from '../../styles'
 
 export const Header = () => {
   const { search } = useThemeOptions()
@@ -27,8 +25,8 @@ export const Header = () => {
   const { title } = data.wp.generalSettings
 
   return (
-    <header className="header" sx={{ ...headerStyles }}>
-      <Container className="container">
+    <header className="header">
+      <div className="container">
         {search && (
           <SearchForm
             sx={{
@@ -39,34 +37,12 @@ export const Header = () => {
           />
         )}
 
-        <SiteBranding
-          title={title}
-          sx={{
-            width: [`50%`, `50%`, `33%`],
-            display: `flex`,
-            ...styles,
-          }}
-        />
+        <SiteBranding title={title} />
 
-        <SlideSidebar
-          sx={{
-            width: [`50%`, `50%`, `33%`],
-            display: `flex`,
-            justifyContent: `flex-end`,
-          }}
-        />
-      </Container>
+        <SlideSidebar />
+      </div>
 
-      <ColorSwitch
-        sx={{
-          position: `absolute`,
-          right: [`6%`, `6%`, `2%`],
-          top: [15, 15, 25],
-          '.headroom--pinned &': {
-            top: [10, 10, 15],
-          },
-        }}
-      />
+      <ColorSwitch />
     </header>
   )
 }

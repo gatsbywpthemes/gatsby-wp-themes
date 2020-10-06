@@ -1,9 +1,7 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { Fragment, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import { CommentForm, Comment } from './index'
-import { commentStyles } from '../../styles'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_COMMENTS = gql`
@@ -69,7 +67,7 @@ export const CommentsList = ({ post }) => {
   if (loading)
     return (
       <Fragment>
-        <span sx={{ color: 'text' }}>Comments are loading...</span>
+        <span>Comments are loading...</span>
         <Loader size={8} margin={5} />
       </Fragment>
     )
@@ -79,9 +77,9 @@ export const CommentsList = ({ post }) => {
   return (
     <section>
       {comments.length > 0 ? (
-        <section sx={commentStyles.section}>
-          <h2 sx={commentStyles.title}>Comments</h2>
-          <ul sx={commentStyles.list}>
+        <section>
+          <h2>Comments</h2>
+          <ul>
             {comments
               .filter((el) => el.parent === null)
               .map((comment) => (
@@ -129,7 +127,7 @@ export const CommentsList = ({ post }) => {
           </ul>
         </section>
       ) : (
-        <p sx={{ color: 'text' }}>No comments yet</p>
+        <p>No comments yet</p>
       )}
       {activeComment === 0 && (
         <CommentForm

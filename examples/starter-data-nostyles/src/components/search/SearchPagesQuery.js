@@ -60,9 +60,9 @@ export const SearchPagesQuery = ({ search }) => {
 
   if (loading)
     return (
-      <Flex sx={{ justifyContent: 'center', alignItems: 'center', py: 20 }}>
+      <div sx={{ justifyContent: 'center', alignItems: 'center', py: 20 }}>
         <Loader color="#798EA3" />
-      </Flex>
+      </div>
     )
   if (error) return <p>Error - {error.message}</p>
   //loadMore()

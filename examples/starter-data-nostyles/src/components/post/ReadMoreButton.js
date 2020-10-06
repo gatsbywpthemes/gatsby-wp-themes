@@ -7,7 +7,7 @@ import { Link } from 'gatsby'
 export const ReadMoreButton = ({ location, post, ...props }) => (
   <>
     {location !== 'single' && (
-      <Flex sx={{ justifyContent: [`center`, `flex-end`] }} {...props}>
+      <div sx={{ justifyContent: [`center`, `flex-end`] }} {...props}>
         <Link
           to={post.uri}
           className="read-more"
@@ -16,7 +16,7 @@ export const ReadMoreButton = ({ location, post, ...props }) => (
         >
           Read More
         </Link>
-      </Flex>
+      </div>
     )}
   </>
 )

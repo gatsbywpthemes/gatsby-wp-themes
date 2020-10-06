@@ -1,7 +1,6 @@
 import React from 'react'
 import moment from 'moment'
 import { CommentForm } from './index'
-import { commentStyles } from '../../styles'
 
 const Reply = ({ commentId, actionOnClick }) => {
   return (
@@ -45,7 +44,7 @@ export const Comment = (props) => {
     doOnCompleted,
   } = props
   return (
-    <li className="comment" sx={commentStyles.comment}>
+    <li className="comment">
       <Author name={comment.author.name} url={comment.author.url} />
       {moment(comment.date).format(`MMMM D, YYYY`)}
       <div dangerouslySetInnerHTML={{ __html: comment.content }} />

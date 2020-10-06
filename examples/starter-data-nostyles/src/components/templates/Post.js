@@ -61,7 +61,7 @@ const Post = ({ post, ctx }) => {
         }
       />
       <Container sx={{ ...containerStyles }} className="mainContainer">
-        <Flex
+        <div
           sx={{
             ...sidebarSide,
             flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
@@ -70,7 +70,7 @@ const Post = ({ post, ctx }) => {
         >
           <PostEntry post={post} location="single" ctx={ctx} />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
-        </Flex>
+        </div>
         {addWordPressComments && post.commentStatus === 'open' && (
           <Container sx={{ maxWidth: layoutWidth.post }}>
             {disqus ? (

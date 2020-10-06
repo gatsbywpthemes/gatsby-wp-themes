@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { Container, jsx, Box } from 'theme-ui'
+import React from 'react'
 import { FooterContent } from './index'
 import { SocialFollows } from '../social'
 
@@ -7,9 +6,9 @@ import { footerStyles, socialStyles } from '../../styles'
 
 export const Footer = () => (
   <footer sx={{ ...footerStyles }}>
-    <Container sx={{ py: 0 }}>
+    <div sx={{ py: 0 }}>
       <FooterContent />
-      <Box className="inverse">
+      <div className="inverse">
         <SocialFollows
           sx={{
             ...socialStyles.follow,
@@ -18,7 +17,7 @@ export const Footer = () => (
             mb: 0,
           }}
         />
-      </Box>
-    </Container>
+      </div>
+    </div>
   </footer>
 )

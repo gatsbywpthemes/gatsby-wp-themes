@@ -3,7 +3,6 @@ import React from 'react'
 import { useState, Fragment } from 'react'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
-import { commentStyles } from '../../styles'
 
 const commentSubmitQuery = gql`
   mutation(
@@ -158,11 +157,7 @@ export const CommentForm = ({
               Cancel
             </button>
           )}
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            noValidate
-            sx={commentStyles.form}
-          >
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <CommentNotes />
             {inputFields.map((el) => {
               const Tag = el.tag

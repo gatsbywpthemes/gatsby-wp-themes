@@ -33,7 +33,7 @@ export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
       className="mainContainer"
     >
       {name && <ArchiveTitle text="Posts from: " name={name} />}
-      <Flex
+      <div
         sx={{
           ...sidebarSide,
           flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
@@ -42,7 +42,7 @@ export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
       >
         <PostsList posts={posts} />
         {archiveSidebar && <Sidebar widgets={sidebarWidgets} />}
-      </Flex>
+      </div>
       <Pagination ctx={ctx} />
     </Container>
   )

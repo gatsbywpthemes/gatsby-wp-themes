@@ -62,7 +62,7 @@ const Page = ({ page, ctx }) => {
         }
       />
       <Container sx={{ ...containerStyles }} className="mainContainer">
-        <Flex
+        <div
           sx={{
             ...sidebarSide,
             flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
@@ -94,7 +94,7 @@ const Page = ({ page, ctx }) => {
             </div>
           </article>
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
-        </Flex>
+        </div>
       </Container>
     </Layout>
   )

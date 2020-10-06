@@ -26,7 +26,7 @@ export const SearchForm = (props) => {
 
   return (
     <Box {...props}>
-      <Flex sx={{ ...searchStyles }}>
+      <div sx={{ ...searchStyles }}>
         <Button
           a11yTitle="Search here"
           focusIndicator={false}
@@ -72,7 +72,7 @@ export const SearchForm = (props) => {
             }}
           />
         )}
-      </Flex>
+      </div>
       {search && <SearchQueries search={search} />}
     </Box>
   )

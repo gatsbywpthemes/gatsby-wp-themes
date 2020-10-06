@@ -8,13 +8,13 @@ export const Widgets = ({ widget }) => {
   switch (widget) {
     case 'SocialFollow':
       return (
-        <Flex
+        <div
           sx={{
             ...socialStyles.follow,
           }}
         >
           <SocialFollows />
-        </Flex>
+        </div>
       )
     case 'RecentPosts':
       return <RecentPosts />
