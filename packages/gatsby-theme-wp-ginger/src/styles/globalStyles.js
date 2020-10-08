@@ -18,6 +18,8 @@ export const globalStyles = (theme) => {
     bodyWeight: theme.fontWeights.body,
     boldWeight: theme.fontWeights.bold,
   })
+  //console.log(typography.toString())
+  typography.injectStyles()
   return css`
     body {
       margin: 0;
@@ -94,7 +96,7 @@ export const globalStyles = (theme) => {
     iframe {
       width: 100%;
     }
-    ${typography.toString()}
+
     @media screen and (max-width: ${theme.breakpoints[0]}) {
       html {
         font-size: 16px;
