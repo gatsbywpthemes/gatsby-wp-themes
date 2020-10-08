@@ -99,7 +99,7 @@ export const PostEntryFull = ({ ctx, post }) => {
             ],
           }}
         >
-          <DiscussionEmbed colorMode={colorMode} {...disqusConfig} />
+          <DiscussionEmbed colormode={colorMode} {...disqusConfig} />
         </div>
       )}
     </article>
