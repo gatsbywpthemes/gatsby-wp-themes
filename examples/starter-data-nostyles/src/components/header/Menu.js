@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { createLocalLink } from '../../utils'
-import { Collapse } from '../ui-components'
 import {
   useMenusQuery,
   useThemeOptions,
@@ -11,7 +10,6 @@ import slashes from 'remove-trailing-slash'
 
 const renderLink = (menuItem, wordPressUrl, postsPath, closeMenu) => {
   let url = menuItem.url
-  let close = closeMenu || ''
   const parsedUrl = new URIParser(url)
   if (parsedUrl.is('absolute')) {
     const targetRelAttrs =
@@ -56,12 +54,6 @@ const renderMenuItem = (
     )
   }
 }
-const WithCollapse = ({ orientation, children, menuItem }) =>
-  orientation === 'vertical' ? (
-    <Collapse menuItem={menuItem}>{children}</Collapse>
-  ) : (
-    children
-  )
 
 const renderSubMenu = (
   menuItem,
@@ -73,13 +65,11 @@ const renderSubMenu = (
   return (
     <li className="has-subMenu menu-item" key={menuItem.id}>
       {renderLink(menuItem, wordPressUrl, postsPath, closeMenu)}
-      <WithCollapse orientation={orientation} menuItem={menuItem}>
-        <ul className="menuItemGroup sub-menu">
-          {menuItem.childItems.nodes.map((item) =>
-            renderMenuItem(item, wordPressUrl, postsPath, closeMenu)
-          )}
-        </ul>
-      </WithCollapse>
+      <ul className="menuItemGroup sub-menu">
+        {menuItem.childItems.nodes.map((item) =>
+          renderMenuItem(item, wordPressUrl, postsPath, closeMenu)
+        )}
+      </ul>
     </li>
   )
 }

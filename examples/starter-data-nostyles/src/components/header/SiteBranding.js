@@ -12,7 +12,7 @@ export const SiteBranding = ({ title, ...props }) => {
           <img src={`${withPrefix('/')}${logoFileName}`} alt="logo" />
         </Link>
       ) : (
-        <h1 sx={{ variant: `text.branding` }} {...props}>
+        <h1 {...props}>
           <Link to="/" rel="home">
             {title}
           </Link>

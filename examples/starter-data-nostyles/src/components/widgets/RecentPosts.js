@@ -53,17 +53,15 @@ export const RecentPosts = (props) => {
                         }
                       />
                     )}
+                  </Link>{' '}
+                  <Link className="widget-post-date" to={uri}>
+                    <time className="entry-date" dateTime={post.date}>
+                      {moment(post.date).format(`MMMM DD, YYYY`)}
+                    </time>
+                  </Link>{' '}
+                  <Link className="widget-post-title" to={uri}>
+                    {post.title}
                   </Link>
-                  <div className="textual">
-                    <Link className="widget-post-date" to={uri}>
-                      <time className="entry-date" dateTime={post.date}>
-                        {moment(post.date).format(`MMMM DD, YYYY`)}
-                      </time>
-                    </Link>
-                    <Link className="widget-post-title" to={uri}>
-                      {post.title}
-                    </Link>
-                  </div>
                 </li>
               )
             })

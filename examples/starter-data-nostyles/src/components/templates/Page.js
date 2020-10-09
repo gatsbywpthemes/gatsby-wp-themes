@@ -16,7 +16,7 @@ const Page = ({ page, ctx }) => {
     template: { templateName },
   } = page
   const pageTemplate = templateName.toLowerCase()
-  const { skipTitle, layoutWidth, sidebarWidgets } = useThemeOptions()
+  const { skipTitle, sidebarWidgets } = useThemeOptions()
 
   const sidebarPage = pageTemplate.includes('sidebar')
 

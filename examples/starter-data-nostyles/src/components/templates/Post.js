@@ -13,7 +13,7 @@ const Post = ({ post, ctx }) => {
     template: { templateName },
   } = post
   const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
-  const { layoutWidth } = useThemeOptions()
+
   const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
 
   const pageTemplate = templateName.toLowerCase()
