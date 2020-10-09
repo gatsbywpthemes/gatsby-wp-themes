@@ -17,8 +17,8 @@ const Post = ({ post, ctx }) => {
   const { layoutWidth } = useThemeOptions()
   const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
 
-  const pageTemplate = templateName.toLowerCase()
-  const sidebarPage = pageTemplate.includes('sidebar')
+  const pageTemplate = templateName
+  const sidebarPage = pageTemplate?.toLowerCase().includes('sidebar')
 
   const containerStyles =
     sidebarWidgets && sidebarPage
@@ -32,12 +32,12 @@ const Post = ({ post, ctx }) => {
       : { maxWidth: layoutWidth.post }
 
   const sidebarSide = sidebarPage
-    ? pageTemplate === `left sidebar`
+    ? pageTemplate === `Left Sidebar`
       ? {
           flexDirection: `row-reverse`,
           '.entry': { pl: [0, 0, 0, layoutWidth.post] },
         }
-      : pageTemplate === `right sidebar`
+      : pageTemplate === `Right Sidebar`
       ? { '.entry': { pr: [0, 0, 0, layoutWidth.post] } }
       : ''
     : ''

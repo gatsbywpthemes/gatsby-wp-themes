@@ -9,7 +9,9 @@ export const pageQuery = graphql`
       content
       commentStatus
       databaseId
-      ...PostTemplateFragment_starter
+      template {
+        templateName
+      }
     }
   }
 `

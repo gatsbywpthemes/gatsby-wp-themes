@@ -27,7 +27,7 @@ export const fragments = graphql`
       }
     }
     template {
-      ...PageTemplate
+      templateName
     }
     author {
       node {
@@ -47,11 +47,7 @@ export const fragments = graphql`
       }
     }
   }
-  fragment PageTemplate on WpContentTemplate {
-    ... on WpDefaultTemplate {
-      templateName
-    }
-  }
+
   fragment GatsbyImageQuery on WpMediaItem {
     altText
     sourceUrl

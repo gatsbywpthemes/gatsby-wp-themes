@@ -26,7 +26,7 @@ export const fragments = graphql`
     #   }
     # }
     template {
-      ...PageTemplates_starter
+      templateName
     }
     featuredImage {
       node {
@@ -57,11 +57,6 @@ export const fragments = graphql`
         slug
         uri
       }
-    }
-  }
-  fragment PageTemplates_starter on WpContentTemplate {
-    ... on WpDefaultTemplate {
-      templateName
     }
   }
 `
