@@ -9,8 +9,8 @@ export const Categories = ({ post, ...props }) => {
         <h3>{categories.length > 1 ? 'Categories: ' : 'Category: '}</h3>
         <ul {...props}>
           {categories.map((cat) => (
-            <li>
-              <TaxonomyItem taxName="category" item={cat} key={cat.slug} />
+            <li key={cat.slug}>
+              <TaxonomyItem taxName="category" item={cat} />
             </li>
           ))}
         </ul>

@@ -9,8 +9,8 @@ export const Tags = ({ post, ...props }) => {
         <h3>{tags.length > 1 ? 'Tags: ' : 'Tag: '}</h3>
         <ul {...props}>
           {tags.map((tag) => (
-            <li>
-              <TaxonomyItem taxName="tag" item={tag} key={tag.slug} />
+            <li key={tag.slug}>
+              <TaxonomyItem taxName="tag" item={tag} />
             </li>
           ))}
         </ul>
