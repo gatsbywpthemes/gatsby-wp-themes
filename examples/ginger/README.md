@@ -108,6 +108,8 @@ Unless you redefined your uploads destination, skip this setting.
 **pathPrefix** (optional)  
 `(default: "")`
 
+This setting is highly optional, use only if you know what you are doing
+
 Typically, your Gatsby website will be hosted at the root of its domain. In that case, the pathPrefix is an empty string and you can skip this setting.  
 You will need to set the pathPrefix though, if your gatsby website is hosted at something other than the root (/), for example `https://example.com/demo`
 
