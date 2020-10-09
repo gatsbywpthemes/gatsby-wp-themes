@@ -6,7 +6,7 @@
       {
         "languages": ["javascript", "css", "markup", "php"],
         "plugins": ["show-language"],
-        "theme": "twilight",
+        "theme": "shades-of-purple",
         "css": true
       }
     ]
