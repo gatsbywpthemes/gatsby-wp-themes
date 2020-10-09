@@ -7,19 +7,12 @@ import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
 
 const Page = ({ page, ctx }) => {
-  const {
-    title,
-    isFrontPage,
-    content,
-    slug,
-    uri,
-    template: { templateName },
-  } = page
-  const pageTemplate = templateName.toLowerCase()
+  const { title, isFrontPage, content, slug, uri, template } = page
+  const pageTemplate = template.__typename.toLowerCase()
   const { skipTitle, sidebarWidgets } = useThemeOptions()
 
-  const sidebarPage = pageTemplate.includes('sidebar')
-
+  const sidebarPage = pageTemplate?.includes('sidebar')
+  console.log(sidebarPage)
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   return (

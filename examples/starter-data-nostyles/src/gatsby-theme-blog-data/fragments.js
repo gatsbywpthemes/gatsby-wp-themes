@@ -63,14 +63,5 @@ export const fragments = graphql`
     ... on WpDefaultTemplate {
       templateName
     }
-    ... on WpFullWidthTemplate {
-      templateName
-    }
-    ... on WpLeftSidebarTemplate {
-      templateName
-    }
-    ... on WpRightSidebarTemplate {
-      templateName
-    }
   }
 `
