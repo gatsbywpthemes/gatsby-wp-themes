@@ -6,7 +6,7 @@ export const paginationStyles = {
   fontSize: 'xs',
   overflow: 'hidden',
   mb: '1rem',
-  '&> :first-child, &> :last-child': {
+  '&> a:first-of-type, &> a:last-of-type': {
     flex: 1,
   },
   '.left': {

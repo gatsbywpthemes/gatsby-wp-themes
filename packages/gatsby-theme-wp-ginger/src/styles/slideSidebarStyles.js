@@ -24,16 +24,16 @@ export const slideMenuStyles = {
   zIndex: 100,
   transform: 'translate3d(100%, 0, 0)',
   transition: 'transform 1s, visibility 0s 1s',
-  '&:nth-child(n)': {
+  '&:nth-of-type(n)': {
     borderRadius: 0,
     bg: 'sidebarBg',
     color: 'sidebarColor',
     fontFamily: 'body',
-    width: theme => ['100%', theme.sizes.sidebar],
+    width: (theme) => ['100%', theme.sizes.sidebar],
     display: `flex`,
     overflowY: 'scroll',
     boxShadow: ['none', '-10px 0 40px rgba(0,0,0,0.3)'],
-    a: theme => theme.styles.root.a,
+    a: (theme) => theme.styles.root.a,
   },
 
   px: ['2rem', '3rem'],

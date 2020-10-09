@@ -32,7 +32,7 @@ export default {
     position: 'relative',
     width: '100%',
   },
-  '.alignfull:first-child': {
+  '.alignfull:first-of-type': {
     mt: 0,
   },
 
@@ -65,7 +65,7 @@ export default {
     pt: ['1.5rem', 0, 0],
     px: [0, '8%'],
   },
-  '.dark-color-mode & .has-background:not(.has-text-color),.dark-color-mode & .wp-block-media-text[style*="background"],.dark-color-mode & .wp-block-table.is-style-stripes tbody tr:nth-child(odd)': {
+  '.dark-color-mode & .has-background:not(.has-text-color),.dark-color-mode & .wp-block-media-text[style*="background"],.dark-color-mode & .wp-block-table.is-style-stripes tbody tr:nth-of-type(odd)': {
     backgroundImage: (theme) => {
       return `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
     },

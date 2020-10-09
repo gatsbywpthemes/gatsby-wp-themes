@@ -64,7 +64,7 @@ const widget = {
       fontSize: 'xs',
     },
     ...sharedStyles,
-    'a:nth-child(n)': {
+    'a:nth-of-type(n)': {
       textDecoration: 'underline',
       '&:hover': {
         textDecoration: 'none',
