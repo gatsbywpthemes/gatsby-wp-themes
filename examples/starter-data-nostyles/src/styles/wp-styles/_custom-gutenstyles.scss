@@ -1,0 +1,115 @@
+/* fix for wp gallery */
+.blocks-gallery-grid,
+.wp-block-image figure {
+  width: 100%;
+}
+figure,
+.gatsby-image-wrapper {
+  max-width: 100%;
+}
+.gatsby-image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.wp-block-gallery {
+  margin-left: 0;
+}
+.wp-block-embed__wrapper {
+  position: relative;
+}
+.wp-block-embed__wrapper:before {
+  content: '';
+  display: block;
+  padding-top: 50%;
+}
+.wp-embed-aspect-21-9 .wp-block-embed__wrapper:before {
+  padding-top: 42.85%;
+}
+
+.wp-embed-aspect-18-9 .wp-block-embed__wrapper:before {
+  padding-top: 50%;
+}
+
+.wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
+  padding-top: 56.25%;
+}
+
+.wp-embed-aspect-4-3 .wp-block-embed__wrapper:before {
+  padding-top: 75%;
+}
+
+.wp-embed-aspect-1-1 .wp-block-embed__wrapper:before {
+  padding-top: 100%;
+}
+
+.wp-embed-aspect-9-16 .wp-block-embed__wrapper:before {
+  padding-top: 177.78%;
+}
+
+.wp-embed-aspect-1-2 .wp-block-embed__wrapper:before {
+  padding-top: 200%;
+}
+
+.wp-block-embed__wrapper iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.wp-block-media-text.has-background .wp-block-media-text__content {
+  padding: 1.5rem;
+}
+
+.wp-block-gallery:not(.is-cropped) .blocks-gallery-grid {
+  align-items: flex-end;
+}
+
+*[class*='_inner-container'] > *:last-child {
+  margin-bottom: 0;
+}
+
+// .entry p,
+// .entry blockquote,
+// .entry h1,
+// .entry h2,
+// .entry h3,
+// .entry h4,
+// .entry h5,
+// .entry h6,
+// .entry-info,
+// .entry .animate-on-scroll {
+//   opacity: 0;
+//   transform: translate3d(0, 2.5rem, 0);
+//   transition-property: opacity, transform, -webkit-transform;
+//   transition-duration: 2s;
+// }
+// .entry .sal-disabled,
+// .entry .sal-animate:nth-child(n) {
+//   opacity: 1;
+//   transform: translate3d(0, 0, 0);
+// }
+
+.dark-color-mode .has-background:not(.has-text-color),
+.dark-color-mode .wp-block-media-text[style*='background'],
+.dark-color-mode .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+  /* background-color: transparent !important; */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-blend-mode: multiply;
+}
+
+.dark-color-mode hr {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.blocks-gallery-item {
+  overflow: hidden;
+}
+.entry-content .wp-block-gallery .blocks-gallery-item a {
+  transition: 1s;
+}
+.blocks-gallery-item a:hover {
+  transform: scale(1.1);
+}

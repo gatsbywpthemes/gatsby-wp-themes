@@ -1,23 +1,16 @@
 import React from 'react'
 import { Header } from './header'
 import { Footer } from './footer'
-import { Grommet } from 'grommet'
+import 'normalize.css'
+import '../styles/globalstyles.scss'
+import '../styles/wp-styles/styles.scss'
 
-export const Layout = ({ children, page, type = 'page' }) => {
-  const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
-
-  const pageTemplate = page && page.template ? page.template.templateName : ''
-
-  const fullWidthClass =
-    pageTemplate.toLowerCase() === 'full width' ? 'fullWidth' : ''
-
+export const Layout = ({ children }) => {
   return (
-    <Grommet>
-      <div className={`${layoutClass}-${type} ${fullWidthClass}`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </div>
-    </Grommet>
+    <div>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </div>
   )
 }

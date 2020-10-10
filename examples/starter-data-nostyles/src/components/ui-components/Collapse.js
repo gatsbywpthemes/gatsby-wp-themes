@@ -5,14 +5,7 @@ import { FormNext, FormDown } from 'grommet-icons'
 
 export const Collapse = ({ menuItem, children }) => {
   const [openMenu, setOpenMenu] = useState(false)
-  const openStyle =
-    menuItem.url === '#'
-      ? {
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'flex-end',
-        }
-      : ''
+
   return (
     <Fragment>
       <Button

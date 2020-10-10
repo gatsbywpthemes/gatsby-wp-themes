@@ -25,7 +25,7 @@ export const pageQuery = graphql`
         }
       }
       template {
-        ...PageTemplate
+        templateName
       }
     }
   }

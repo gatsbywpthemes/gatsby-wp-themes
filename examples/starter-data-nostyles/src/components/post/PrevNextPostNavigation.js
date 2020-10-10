@@ -10,7 +10,7 @@ const renderPreviousLink = ({ prev }) => {
   }
 
   return (
-    <Link className="left" to={previousLink}>
+    <Link className="prev" to={previousLink}>
       <span>Previous</span>
     </Link>
   )
@@ -19,7 +19,7 @@ const renderPreviousLink = ({ prev }) => {
 const renderNextLink = ({ next }) => {
   if (next) {
     return (
-      <Link className="right" to={`${next}`}>
+      <Link className="next" to={`${next}`}>
         <span>Up Next</span>
       </Link>
     )

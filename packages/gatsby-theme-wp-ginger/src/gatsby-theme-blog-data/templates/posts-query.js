@@ -50,7 +50,7 @@ export const pageQuery = graphql`
       }
     }
     template {
-      ...PageTemplate
+      templateName
     }
     author {
       node {
@@ -92,7 +92,7 @@ export const pageQuery = graphql`
       }
     }
     template {
-      ...PageTemplate
+      templateName
     }
     author {
       node {

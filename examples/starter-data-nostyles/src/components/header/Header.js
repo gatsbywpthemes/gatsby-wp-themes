@@ -1,11 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { SlideSidebar, SiteBranding } from './index'
+import { Menu, SiteBranding } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { SearchForm } from '../search'
 
 export const Header = () => {
-  const { search } = useThemeOptions()
+  const { search, menuName } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -27,7 +27,7 @@ export const Header = () => {
 
         <SiteBranding title={title} />
 
-        <SlideSidebar />
+        <Menu menuName={menuName} />
       </div>
     </header>
   )

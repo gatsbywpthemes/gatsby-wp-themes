@@ -4,7 +4,7 @@ import { Sidebar } from '../index'
 import { ArchiveTitle, PostsList, Pagination } from './index'
 
 export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
-  const { layoutWidth, archiveSidebar, sidebarWidgets } = useThemeOptions()
+  const { archiveSidebar, sidebarWidgets } = useThemeOptions()
 
   return (
     <div className="mainContainer">
