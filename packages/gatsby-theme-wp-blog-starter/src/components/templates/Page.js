@@ -15,7 +15,7 @@ const Page = ({ page, ctx }) => {
     content,
     slug,
     uri,
-    template: { templateName },
+    template: { __typename: templateName },
   } = page
   const pageTemplate = templateName?.toLowerCase()
   const { skipTitle, layoutWidth, sidebarWidgets } = useThemeOptions()
@@ -34,12 +34,12 @@ const Page = ({ page, ctx }) => {
       : { maxWidth: layoutWidth.page }
 
   const sidebarSide = sidebarPage
-    ? pageTemplate === `left sidebar`
+    ? pageTemplate.includes('leftsidebar')
       ? {
           flexDirection: `row-reverse`,
           '.entry': { pl: [0, 0, 0, layoutWidth.page] },
         }
-      : pageTemplate === `right sidebar`
+      : pageTemplate.includes('rightsidebar')
       ? { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
       : ''
     : ''

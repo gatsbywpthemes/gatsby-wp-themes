@@ -8,11 +8,7 @@ export const fragments = graphql`
     title
     excerpt
     date
-    # postFormats {
-    #   taxonomyInfo {
-    #     name
-    #   }
-    # }
+
     featuredImage {
       node {
         ...GatsbyImageQuery
@@ -27,6 +23,7 @@ export const fragments = graphql`
       }
     }
     template {
+      __typename
       templateName
     }
     author {
