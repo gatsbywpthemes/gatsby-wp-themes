@@ -4,6 +4,7 @@ export const useMenusQuery = () => {
   const data = useStaticQuery(graphql`
     fragment MenuFields on WpMenuItem {
       id
+      parentId
       label
       url
       target
@@ -20,16 +21,6 @@ export const useMenusQuery = () => {
           menuItems {
             nodes {
               ...MenuFields
-              childItems {
-                nodes {
-                  ...MenuFields
-                  childItems {
-                    nodes {
-                      ...MenuFields
-                    }
-                  }
-                }
-              }
             }
           }
         }

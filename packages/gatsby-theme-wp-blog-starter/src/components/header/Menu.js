@@ -10,6 +10,24 @@ import {
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 
+const flatListToHierarchical = (
+  data = [],
+  { idKey = 'key', parentKey = 'parentId', childrenKey = 'children' } = {}
+) => {
+  const tree = []
+  const childrenOf = {}
+  data.forEach((item) => {
+    const newItem = { ...item }
+    const { [idKey]: id, [parentKey]: parentId = 0 } = newItem
+    childrenOf[id] = childrenOf[id] || []
+    newItem[childrenKey] = childrenOf[id]
+    parentId
+      ? (childrenOf[parentId] = childrenOf[parentId] || []).push(newItem)
+      : tree.push(newItem)
+  })
+  return tree
+}
+
 const renderLink = (menuItem, wordPressUrl, postsPath, closeMenu) => {
   let url = menuItem.url
   let close = closeMenu || ''
@@ -40,14 +58,8 @@ const renderLink = (menuItem, wordPressUrl, postsPath, closeMenu) => {
   }
 }
 
-const renderMenuItem = (
-  menuItem,
-  wordPressUrl,
-  postsPath,
-  orientation,
-  closeMenu
-) => {
-  if (menuItem.childItems && menuItem.childItems.nodes.length) {
+const renderMenuItem = (menuItem, wordPressUrl, orientation, closeMenu) => {
+  if (menuItem.children.length) {
     return renderSubMenu(menuItem, wordPressUrl, orientation, closeMenu)
   } else {
     return (
@@ -64,13 +76,7 @@ const WithCollapse = ({ orientation, children, menuItem }) =>
     children
   )
 
-const renderSubMenu = (
-  menuItem,
-  wordPressUrl,
-  postsPath,
-  orientation,
-  closeMenu
-) => {
+const renderSubMenu = (menuItem, wordPressUrl, orientation, closeMenu) => {
   return (
     <li
       className="has-subMenu menu-item"
@@ -80,7 +86,7 @@ const renderSubMenu = (
       {renderLink(menuItem, wordPressUrl, postsPath, closeMenu)}
       <WithCollapse orientation={orientation} menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
-          {menuItem.childItems.nodes.map((item) =>
+          {menuItem.children.map((item) =>
             renderMenuItem(item, wordPressUrl, postsPath, closeMenu)
           )}
         </ul>
@@ -97,16 +103,16 @@ export const Menu = ({ menuName, orientation, closeMenu, ...props }) => {
   const { postsPath, wordPressUrl } = useThemeOptions()
 
   if (menuItems) {
+    const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
     return (
       <nav className="menu" aria-label="main" {...props}>
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <ul role="menu" className="menuItemGroup">
-          {menuItems.nodes.map((menuItem) => {
-            if (menuItem.childItems.nodes.length) {
+          {menuNodes.map((menuItem) => {
+            if (menuItem.children.length) {
               return renderSubMenu(
                 menuItem,
                 wordPressUrl,
-                postsPath,
                 orientation,
                 closeMenu
               )
@@ -114,7 +120,6 @@ export const Menu = ({ menuName, orientation, closeMenu, ...props }) => {
               return renderMenuItem(
                 menuItem,
                 wordPressUrl,
-                postsPath,
                 orientation,
                 closeMenu
               )

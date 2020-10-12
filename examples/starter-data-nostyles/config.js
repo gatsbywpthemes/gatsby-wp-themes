@@ -36,6 +36,7 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
+  seoWithYoast: true,
 }
 
 module.exports = config

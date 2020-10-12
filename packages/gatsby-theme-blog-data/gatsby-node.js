@@ -4,11 +4,17 @@ const createSitePages = require(`./utils/createSitePages`)
 const createCategories = require(`./utils/createCategories`)
 const createTags = require(`./utils/createTags`)
 const createUsers = require(`./utils/createUsers`)
+const generalSeoFromWP = require(`./utils/seo/generalSeoFromWP`)
 
 exports.createPages = async ({ actions, graphql, reporter }, options) => {
   /**
    * Merged default theme settings and user settings.
    */
+
+  const mergedOptions = {
+    ...defaultOptions,
+    ...options,
+  }
 
   const queryTypes = await graphql(`
     query {
@@ -20,78 +26,28 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     }
   `)
 
-  const seoFromWP = queryTypes.data.__type.fields
-    .map((el) => el.name)
-    .includes('seo')
+  const seoFromWP =
+    options.seoWithYoast &&
+    queryTypes.data.__type.fields.map((el) => el.name).includes('seo')
 
-  const conditionalSeoQuery = seoFromWP
-    ? `seo {
-      social {
-        facebook {
-          url
-        }
-        linkedIn {
-          url
-        }
-        twitter {
-          cardType
-          username
-        }
-      }
-      schema {
-        siteName
-        wordpressSiteName
-        inLanguage
-      }
-      openGraph {
-        frontPage {
-          title
-          description
-          image {
-            localFile {
-              childImageSharp {
-                original {
-                  height
-                  src
-                  width
-                }
-              }
-            }
-          }
-        }
-        defaultImage {
-          localFile {
-            childImageSharp {
-              original {
-                src
-                height
-                width
-              }
-            }
-          }
-        }
-      }
-    }`
-    : ``
+  const conditionalSeoQuery = seoFromWP ? generalSeoFromWP : ``
 
   const { data } = await graphql(`
-  query {
-    wp {
-      allSettings {
-        readingSettingsPostsPerPage
+    query {
+      wp {
+        allSettings {
+          readingSettingsPostsPerPage
+        }
+      ${conditionalSeoQuery}
       }
-    ${conditionalSeoQuery}
     }
-  }
   `)
 
-  const mergedOptions = {
-    ...defaultOptions,
-    ...options,
+  Object.assign(mergedOptions, {
     postsPerPage: data.wp.allSettings.readingSettingsPostsPerPage,
     seoFromWP,
     generalSeoSettings: data.wp.seo,
-  }
+  })
 
   await createPosts({ actions, graphql }, mergedOptions)
   await createSitePages({ actions, graphql }, mergedOptions)
