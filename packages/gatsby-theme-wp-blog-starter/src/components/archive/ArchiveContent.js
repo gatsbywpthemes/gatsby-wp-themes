@@ -4,7 +4,7 @@ import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
 import { ArchiveTitle, PostsList, Pagination } from './index'
 
-export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
+export const ArchiveContent = ({ posts, ctx, name }) => {
   const { layoutWidth, archiveSidebar, sidebarWidgets } = useThemeOptions()
 
   const containerStyles =

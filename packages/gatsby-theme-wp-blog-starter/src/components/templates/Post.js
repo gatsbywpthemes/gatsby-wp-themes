@@ -11,13 +11,13 @@ const Post = ({ post, ctx }) => {
     title,
     slug,
     uri,
-    template: { templateName },
+    template: { __typename: templateName },
   } = post
   const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
   const { layoutWidth } = useThemeOptions()
   const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
 
-  const pageTemplate = templateName
+  const pageTemplate = templateName?.toLowerCase()
   const sidebarPage = pageTemplate?.toLowerCase().includes('sidebar')
 
   const containerStyles =
@@ -32,12 +32,12 @@ const Post = ({ post, ctx }) => {
       : { maxWidth: layoutWidth.post }
 
   const sidebarSide = sidebarPage
-    ? pageTemplate === `Left Sidebar`
+    ? pageTemplate.includes('leftsidebar')
       ? {
           flexDirection: `row-reverse`,
           '.entry': { pl: [0, 0, 0, layoutWidth.post] },
         }
-      : pageTemplate === `Right Sidebar`
+      : pageTemplate.includes('rightsidebar')
       ? { '.entry': { pr: [0, 0, 0, layoutWidth.post] } }
       : ''
     : ''
