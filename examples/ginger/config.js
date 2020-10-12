@@ -43,6 +43,7 @@ const config = {
   // addColorModes: false,
   // addFancyBox: true,
   skipTitle: ["home"],
+  seoWithYoast: true,
 }
 // https://gatsby-test-2.alexaspalato.website
 //https://gatsby-theme-demo.alexaspalato.website
