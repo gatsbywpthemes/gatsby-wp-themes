@@ -1,14 +1,14 @@
 const config = {
-  wordPressUrl: 'https://starter.gatsby-wp.com/',
+  wordPressUrl: 'https://wp-pehaa.xyz/ginger/',
   siteUrl: 'https://example.com',
   //pathPrefix: '/demo',
 
   // uploadsPath: 'wp-content/uploads',
-  // postsPath: '/blog',
+  postsPath: '/blog',
   // paginationPrefix: 'page',
 
   // disqus: process.env.GATSBY_DISQUS_NAME,
-  menuName: 'main',
+  menuName: 'mainw',
   // addWordPressComments: 1,
   // gaTrackingId: 0,
   // googleTagManagerId: 0,

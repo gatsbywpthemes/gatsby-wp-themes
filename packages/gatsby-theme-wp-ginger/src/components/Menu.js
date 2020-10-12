@@ -10,7 +10,25 @@ import {
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 
-const renderLink = (menuItem, wordPressUrl, postsPath) => {
+const flatListToHierarchical = (
+  data = [],
+  { idKey = 'key', parentKey = 'parentId', childrenKey = 'children' } = {}
+) => {
+  const tree = []
+  const childrenOf = {}
+  data.forEach((item) => {
+    const newItem = { ...item }
+    const { [idKey]: id, [parentKey]: parentId = 0 } = newItem
+    childrenOf[id] = childrenOf[id] || []
+    newItem[childrenKey] = childrenOf[id]
+    parentId
+      ? (childrenOf[parentId] = childrenOf[parentId] || []).push(newItem)
+      : tree.push(newItem)
+  })
+  return tree
+}
+
+const renderLink = (menuItem, wordPressUrl) => {
   let url = menuItem.url
   const parsedUrl = new URIParser(url)
   if (parsedUrl.is('absolute')) {
@@ -39,31 +57,29 @@ const renderLink = (menuItem, wordPressUrl, postsPath) => {
   }
 }
 
-const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
-  if (menuItem.childItems && menuItem.childItems.nodes.length) {
+const renderMenuItem = (menuItem, wordPressUrl) => {
+  if (menuItem.children.length) {
     return renderSubMenu(menuItem, wordPressUrl)
   } else {
     return (
       <li className={`menu-item ${menuItem.cssClasses}`} key={menuItem.id}>
-        {renderLink(menuItem, wordPressUrl, postsPath)}
+        {renderLink(menuItem, wordPressUrl)}
       </li>
     )
   }
 }
 
-const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
+const renderSubMenu = (menuItem, wordPressUrl) => {
   return (
     <li
       className="has-subMenu menu-item"
       key={menuItem.id}
       sx={{ position: 'relative' }}
     >
-      {renderLink(menuItem, wordPressUrl, postsPath)}
+      {renderLink(menuItem, wordPressUrl)}
       <Collapse menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
-          {menuItem.childItems.nodes.map((item) =>
-            renderMenuItem(item, wordPressUrl, postsPath)
-          )}
+          {menuItem.children.map((item) => renderMenuItem(item, wordPressUrl))}
         </ul>
       </Collapse>
     </li>
@@ -71,12 +87,13 @@ const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
 }
 
 export const Menu = ({ menuName }) => {
-  const { wordPressUrl, postsPath } = useThemeOptions()
+  const { wordPressUrl } = useThemeOptions()
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find((n) => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
 
   if (menuItems) {
+    const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
     return (
       <nav
         className="menu"
@@ -87,11 +104,11 @@ export const Menu = ({ menuName }) => {
       >
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <ul sx={{ variant: 'special' }} role="menu" className="menuItemGroup">
-          {menuItems.nodes.map((menuItem) => {
-            if (menuItem.childItems.nodes.length) {
-              return renderSubMenu(menuItem, wordPressUrl, postsPath)
+          {menuNodes.map((menuItem) => {
+            if (menuItem.children.length) {
+              return renderSubMenu(menuItem, wordPressUrl)
             } else {
-              return renderMenuItem(menuItem, wordPressUrl, postsPath)
+              return renderMenuItem(menuItem, wordPressUrl)
             }
           })}
         </ul>
