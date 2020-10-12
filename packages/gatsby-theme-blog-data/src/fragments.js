@@ -23,7 +23,6 @@ export const fragments = graphql`
       }
     }
     template {
-      __typename
       templateName
     }
     author {

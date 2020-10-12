@@ -5,42 +5,27 @@ import { Seo } from 'gatsby-plugin-wp-seo'
 import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useLayoutStyles } from '../../utils'
 
 const Post = ({ post, ctx }) => {
   const {
     title,
     slug,
     uri,
-    template: { __typename: templateName },
+    template: { templateName },
   } = post
   const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
-  const { layoutWidth } = useThemeOptions()
-  const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
 
-  const pageTemplate = templateName?.toLowerCase()
-  const sidebarPage = pageTemplate?.toLowerCase().includes('sidebar')
+  const { disqus, addWordPressComments } = useThemeOptions()
 
-  const containerStyles =
-    sidebarWidgets && sidebarPage
-      ? {
-          maxWidth: 'container',
-          '.entry': {
-            width: [`100%`, `100%`, `100%`, `70%`],
-          },
-          '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
-        }
-      : { maxWidth: layoutWidth.post }
+  const {
+    containerStyles,
+    sidebarSide,
+    sidebarPage,
+    sidebarWidgets,
+    layoutWidth,
+  } = useLayoutStyles('post', templateName)
 
-  const sidebarSide = sidebarPage
-    ? pageTemplate.includes('leftsidebar')
-      ? {
-          flexDirection: `row-reverse`,
-          '.entry': { pl: [0, 0, 0, layoutWidth.post] },
-        }
-      : pageTemplate.includes('rightsidebar')
-      ? { '.entry': { pr: [0, 0, 0, layoutWidth.post] } }
-      : ''
-    : ''
   const disqusConfig = {
     shortname: disqus,
     config: { identifier: slug, title },
