@@ -28,7 +28,7 @@ const flatListToHierarchical = (
   return tree
 }
 
-const renderLink = (menuItem, wordPressUrl, postsPath, closeMenu) => {
+const renderLink = (menuItem, wordPressUrl, closeMenu) => {
   let url = menuItem.url
   let close = closeMenu || ''
   const parsedUrl = new URIParser(url)
@@ -64,7 +64,7 @@ const renderMenuItem = (menuItem, wordPressUrl, orientation, closeMenu) => {
   } else {
     return (
       <li className={`menu-item ${menuItem.cssClasses}`} key={menuItem.id}>
-        {renderLink(menuItem, wordPressUrl, postsPath, closeMenu)}
+        {renderLink(menuItem, wordPressUrl, closeMenu)}
       </li>
     )
   }
@@ -83,11 +83,11 @@ const renderSubMenu = (menuItem, wordPressUrl, orientation, closeMenu) => {
       key={menuItem.id}
       sx={{ position: `relative` }}
     >
-      {renderLink(menuItem, wordPressUrl, postsPath, closeMenu)}
+      {renderLink(menuItem, wordPressUrl, closeMenu)}
       <WithCollapse orientation={orientation} menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
           {menuItem.children.map((item) =>
-            renderMenuItem(item, wordPressUrl, postsPath, closeMenu)
+            renderMenuItem(item, wordPressUrl, closeMenu)
           )}
         </ul>
       </WithCollapse>
@@ -100,7 +100,7 @@ export const Menu = ({ menuName, orientation, closeMenu, ...props }) => {
   const menuEdge = menuEdges.find((n) => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
 
-  const { postsPath, wordPressUrl } = useThemeOptions()
+  const { wordPressUrl } = useThemeOptions()
 
   if (menuItems) {
     const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
