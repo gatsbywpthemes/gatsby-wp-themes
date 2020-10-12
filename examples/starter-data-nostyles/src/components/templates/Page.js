@@ -7,8 +7,15 @@ import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
 
 const Page = ({ page, ctx }) => {
-  const { title, isFrontPage, content, slug, uri, template } = page
-  const pageTemplate = template.__typename.toLowerCase()
+  const {
+    title,
+    isFrontPage,
+    content,
+    slug,
+    uri,
+    template: { templateName },
+  } = page
+  const pageTemplate = templateName.toLowerCase()
   const { skipTitle, sidebarWidgets } = useThemeOptions()
 
   const sidebarPage = pageTemplate?.includes('sidebar')

@@ -6,12 +6,17 @@ import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 const Post = ({ post, ctx }) => {
-  const { title, slug, uri, template } = post
+  const {
+    title,
+    slug,
+    uri,
+    template: { templateName },
+  } = post
   const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
 
   const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
 
-  const pageTemplate = template.__typename?.toLowerCase()
+  const pageTemplate = templateName.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
 
   const disqusConfig = {
