@@ -120,7 +120,7 @@ export const globalStyles = (theme) => {
       }
     }
     *:focus {
-      outline-style: auto;
+      outline-style: solid;
       outline-width: 3px;
       outline-color: ${theme.colors.focusOutline}!important;
     }

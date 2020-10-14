@@ -66,7 +66,7 @@ export const slideMenuStyles = {
       m: 0,
       p: 0,
       listStyle: 'none',
-      a: {
+      'a, span': {
         display: 'block',
         py: '0.75rem',
         position: 'relative',
@@ -75,7 +75,7 @@ export const slideMenuStyles = {
       'a:hover': {
         opacity: 0.6,
       },
-      'a:after': {
+      'a:after, span:after': {
         content: '""',
         borderBottom: '1px solid',
         opacity: 0.2,
@@ -84,10 +84,10 @@ export const slideMenuStyles = {
         right: 0,
         bottom: 0,
       },
-      'ul a': {
+      'ul a, ul span': {
         pl: '1.5rem',
       },
-      'ul ul a': {
+      'ul ul a, ul ul span': {
         pl: '3rem',
       },
     },
@@ -97,7 +97,7 @@ export const slideMenuStyles = {
     },
     '.collapse': {
       position: 'absolute',
-      height: '3rem',
+      height: '2.5rem',
       top: '0',
       right: 0,
       svg: {
