@@ -14,7 +14,7 @@ const config = {
     `Tags`,
     "Newsletter",
   ],
-  siteUrl: "http://localhost:9001/demo",
+  siteUrl: "http://localhost:9001",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
   // description: `Description placeholder`,
