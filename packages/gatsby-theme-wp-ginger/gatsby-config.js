@@ -1,14 +1,6 @@
 require('dotenv').config()
 module.exports = (options) => {
-  options.fonts = options.fonts || ['abril fatface', 'fira sans']
-  options.customFonts = []
-  if (options.fonts) {
-    options.customFonts = options.fonts.filter(
-      (el) =>
-        el.toLowerCase().indexOf(`fira sans`) === -1 &&
-        el.toLowerCase().indexOf(`abril fatface`) === -1
-    )
-  }
+  options.fonts = options.fonts || ['Abril Fatface', 'Fira Sans:300,700']
 
   const widgets =
     typeof options.slideMenuWidgets === 'undefined'
@@ -62,11 +54,11 @@ module.exports = (options) => {
    * Conditionally add google fonts plugin
    * to avoid errors on build
    */
-  if (mergedOptions.customFonts.length) {
+  if (options.fonts.length) {
     plugins.push({
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: mergedOptions.customFonts,
+        fonts: options.fonts,
         display: 'swap',
       },
     })

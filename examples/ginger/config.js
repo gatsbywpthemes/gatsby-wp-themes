@@ -33,7 +33,7 @@ const config = {
     },
   ],
   twitterSummaryCardImage: `Gatsby_Monogram.png`,
-  fonts: ["Abril Fatface", "Fira Sans"],
+  fonts: ["Abril Fatface", "Fira Sans:300,700"],
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,
