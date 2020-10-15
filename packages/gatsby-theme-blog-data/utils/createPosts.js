@@ -43,7 +43,7 @@ module.exports = async ({ actions, graphql }, options) => {
   if (postsPath && postsPath !== '/') {
     queries.push(graphql(GET_POSTS_PAGE, { uri: postsPath }))
   }
-  const [postsQuery, postsPage] = await Promise.all(queries)
+  const [postsQuery, postsPageQuery] = await Promise.all(queries)
 
   const posts = postsQuery.data.allWpPost.edges
 
@@ -80,9 +80,9 @@ module.exports = async ({ actions, graphql }, options) => {
     items: posts,
     itemsPerPage: postsPerPage,
     context: {
-      title: postsPage && postsPage.data.wpPage.title,
+      title: postsPageQuery && postsPageQuery.data.wpPage.title,
       seo: {
-        page: postsPage && postsPage.data.wpPage.seo,
+        page: postsPageQuery && postsPageQuery.data.wpPage.seo,
         general: options.generalSeoSettings,
       },
     },
