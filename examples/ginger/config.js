@@ -2,7 +2,6 @@ const config = {
   wordPressUrl: `https://wp-pehaa.xyz/ginger`,
   // uploadsPath: `wp-content/uploads`,
   //pathPrefix: "",
-  postsPath: `/blog/`,
   // paginationPrefix: `page`,
   // addWordPressComments: true,
   addDisqusComments: true,

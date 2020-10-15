@@ -10,6 +10,7 @@ module.exports = async ({ actions, graphql }, options) => {
     allWpPage(sort: { order: DESC, fields: date }) {
       nodes {
         uri
+        isPostsPage
         ${includeYoast ? PageSeoFromWP : ``}
       }
     }
@@ -19,9 +20,9 @@ module.exports = async ({ actions, graphql }, options) => {
   const pagesQuery = await graphql(GET_PAGES)
   const pages = pagesQuery.data.allWpPage.nodes
 
-  pages.map(({ uri, seo }) => {
+  pages.map(({ uri, isPostsPage, seo }) => {
     /* don't create page for postsPath */
-    if (normalize(`/${uri}`) === normalize(`/${options.postsPath}/`)) {
+    if (isPostsPage) {
       return
     }
     if (options.pageCreateDebugOutput) {

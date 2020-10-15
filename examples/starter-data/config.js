@@ -4,7 +4,6 @@ const config = {
   pathPrefix: '/demo',
 
   // uploadsPath: 'wp-content/uploads',
-  // postsPath: '/blog',
   // paginationPrefix: 'page',
 
   // disqus: process.env.GATSBY_DISQUS_NAME,

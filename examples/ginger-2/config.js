@@ -2,7 +2,6 @@ const config = {
   wordPressUrl: `https://wp-pehaa.xyz/ginger-kitchen/`,
   // uploadsPath: `wp-content/uploads`,
   // pathPrefix: "",
-  postsPath: `blog`,
   // paginationPrefix: `page`,
   // addWordPressComments: true,
   menuName: "main",

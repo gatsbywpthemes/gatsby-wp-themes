@@ -2,7 +2,6 @@ const config = {
   wordPressUrl: "https://starter.gatsby-wp.com/",
 
   // uploadsPath: 'wp-content/uploads',
-  postsPath: "/blog",
   // paginationPrefix: 'page',
 
   // disqus: 'webstantly',

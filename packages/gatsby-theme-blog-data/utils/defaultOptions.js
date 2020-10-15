@@ -6,7 +6,6 @@ const DEFAULT_OPTIONS = {
   wordPressUrl: ``,
   uploadsPath: `wp-content/uploads`,
   pathPrefix: ``,
-  postsPath: ``,
   paginationPrefix: `page`,
   menuName: `main`,
   disqus: process.env.GATSBY_DISQUS_NAME,

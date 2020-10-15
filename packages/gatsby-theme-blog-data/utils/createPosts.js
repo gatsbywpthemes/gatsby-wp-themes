@@ -10,7 +10,6 @@ module.exports = async ({ actions, graphql }, options) => {
   const postTemplatePath = `../src/templates/post-query.js`
   const postTemplate = require.resolve(postTemplatePath)
   const { postsPath, paginationPrefix, postsPerPage } = options
-
   const { createPage } = actions
 
   const GET_POSTS = `
@@ -40,12 +39,9 @@ module.exports = async ({ actions, graphql }, options) => {
     }
   `
 
-  const slashPostsPath = postsPath ? normalize(`/${postsPath}`) : ''
   const queries = [graphql(GET_POSTS)]
-  if (normalize(postsPath)) {
-    queries.push(
-      graphql(GET_POSTS_PAGE, { uri: `${normalize(slashPostsPath)}/` })
-    )
+  if (postsPath && postsPath !== '/') {
+    queries.push(graphql(GET_POSTS_PAGE, { uri: postsPath }))
   }
   const [postsQuery, postsPage] = await Promise.all(queries)
 
@@ -68,15 +64,13 @@ module.exports = async ({ actions, graphql }, options) => {
     })
   })
 
-  if (postsPath === false) {
+  if (!postsPath) {
     return
   }
 
   const pathPrefix = ({ pageNumber }) => {
     /* will be replaced by postsPage from settings once availble */
-    return pageNumber === 0
-      ? `${normalize(slashPostsPath)}/`
-      : `${normalize(slashPostsPath)}/${paginationPrefix}`
+    return pageNumber === 0 ? postsPath : `${postsPath}${paginationPrefix}`
   }
 
   paginate({

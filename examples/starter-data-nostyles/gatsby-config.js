@@ -35,6 +35,8 @@ module.exports = {
       resolve: 'gatsby-theme-blog-data',
       options: {
         ...config,
+        pathPrefix:
+          process.env.NODE_ENV === 'development' ? '' : config.pathPrefix,
       },
     },
     {
