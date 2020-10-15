@@ -15,6 +15,8 @@ module.exports = {
       resolve: `gatsby-theme-wp-blog-starter`,
       options: {
         ...options,
+        pathPrefix:
+          process.env.NODE_ENV === "development" ? "" : options.pathPrefix,
       },
     },
     {
