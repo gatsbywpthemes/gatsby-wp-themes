@@ -9,7 +9,6 @@ module.exports = (options) => {
 
   const mergedOptions = {
     addColorModes: true,
-    addFancyBox: true,
     skipTitle: [],
     widgetAreas: {
       slideMenu: {
@@ -68,9 +67,9 @@ module.exports = (options) => {
    * Conditionally add google fonts plugin
    * to avoid errors on build
    */
-  if (mergedOptions.addFancyBox) {
-    plugins.push(`gatsby-plugin-wordpress-fancybox`)
-  }
+
+  plugins.push(`gatsby-plugin-wordpress-lightbox`)
+
   /**
    * Conditionally add mailchimp subscription plugin
    */

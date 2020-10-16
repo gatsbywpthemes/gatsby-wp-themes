@@ -40,7 +40,6 @@ const config = {
   addWordPressSearch: true,
   // instantWPSearch: false,
   // addColorModes: false,
-  // addFancyBox: true,
   skipTitle: ["home"],
   seoWithYoast: true,
 }

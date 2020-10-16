@@ -83,7 +83,6 @@ const config = {
   addSiteMap: false,
   siteMapOptions: {},
   addColorModes: true,
-  addFancyBox: true,
   skipTitle: [],
   mailchimpEndpoint: "",
 }
@@ -340,15 +339,6 @@ If you want to add dark mode switcher.
 
 ---
 
-**addFancyBox** (optional)  
-`(default: true)`
-
-Adds fancybox functionnality to the galeries.
-
-It will work for any gallery built with the Gutenberg gallery block that has "Link To" set to "Media File".
-
----
-
 **skipTitle** (optional)  
 `(default: [])`
 
@@ -459,10 +449,7 @@ import useThemeOptions from "gatsby-theme-blog-data/src/hooks/useThemeOptions"
 
 const ParsedContent = ({ content }) => {
   const options = useThemeOptions()
-  const parserFunctions = [cf7ParserFunction]
-  if (options.addFancyBox) {
-    parserFunctions.push(fancyBoxParserFunction)
-  }
+  const parserFunctions = [cf7ParserFunction, fancyBoxParserFunction]
   // uncomment the next line to activate Mapbox
   parserFunctions.push(mapboxParserFunction)
   return <ContentParser content={content} customFn={parserFunctions} />

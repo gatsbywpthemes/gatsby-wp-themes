@@ -1,0 +1,38 @@
+{
+  "name": "gatsby-plugin-wordpress-lightbox",
+  "description": "A Gatsby plugin that adds Fancybox to galleries.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Paulina Hetman <info@pehaa.com>",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "form",
+    "wordpress",
+    "wpgraphql",
+    "parser",
+    "fancybox",
+    "lightbox",
+    "gallery"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pehaa/gatsby-plugin-wordpress-fancybox.git"
+  },
+  "license": "LicenseRef-LICENSE",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "html-react-parser": "^0.14.0",
+    "jquery": "^3.5.1",
+    "simple-react-lightbox": "^3.3.4-1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.24.63",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4"
+}

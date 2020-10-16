@@ -1,0 +1,1 @@
+export { lightboxParserFunction } from "./lightboxParserFunction"

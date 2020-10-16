@@ -12,7 +12,6 @@ module.exports = (options) => {
 
   const mergedOptions = {
     addColorModes: true,
-    addFancyBox: true,
     skipTitle: [],
 
     layoutWidth: {
@@ -64,13 +63,7 @@ module.exports = (options) => {
     })
   }
 
-  /**
-   * Conditionally add fancy box plugin
-   * to avoid errors on build
-   */
-  if (mergedOptions.addFancyBox) {
-    plugins.push(`gatsby-plugin-wordpress-fancybox`)
-  }
+  plugins.push(`gatsby-plugin-wordpress-lightbox`)
 
   if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
     plugins.push({
