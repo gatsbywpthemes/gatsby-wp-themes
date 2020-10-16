@@ -58,7 +58,7 @@ module.exports = {
         wordPressUrl: config.wordPressUrl,
       },
     },
-    'gatsby-plugin-wordpress-fancybox',
+    'gatsby-plugin-wordpress-lightbox',
     // {
     //   resolve: 'gatsby-plugin-mailchimp',
     //   options: {

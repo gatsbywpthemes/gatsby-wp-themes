@@ -1,29 +1,24 @@
-# gatsby-plugin-wordpress-fancybox
+# gatsby-plugin-wordpress-lightbox
 
 ## Description
 
-`gatsby-plugin-wordpress-fancybox` parses your content and adds fancybox functionnality to each instance of the `.wp-block-gallery` that contains links to images.
-It uses the `@fancyapps/fancybox` jQuery plugin.
+`gatsby-plugin-wordpress-lightbox` parses your content and adds fancybox functionnality to each instance of the `.wp-block-gallery` that contains links to images.
+It uses the [`simple-react-lightbox`](https://github.com/michelecocuccio/simple-react-lightbox) library.
 
 ## How to install (in the working project)
-
-```bash
-cd packages
-git clone git@github.com:pehaa/gatsby-plugin-wordpress-fancybox.git
-```
 
 ```javascript
 /* in the theme/site gatsby-config.js */
 plugins: [
   ...,
-  'gatsby-plugin-wordpress-fancybox',
+  'gatsby-plugin-wordpress-lightbox',
   ...
 ],
 
 /* in the theme/sit package.json */
 "dependencies": {
 /* ... */
-  "gatsby-plugin-wordpress-fancybox": "*",
+  "gatsby-plugin-wordpress-lightbox": "*",
 /* ... */
 },
 ```
@@ -36,30 +31,29 @@ Wherever you need to display the post content:
 
 ```javascript
 import ContentParser from "gatsby-plugin-wordpress-parser"
-import fancyBoxParserFunction from "gatsby-plugin-wordpress-fancybox"
+import fancyBoxParserFunction from "gatsby-plugin-wordpress-lightbox"
 ```
 
 replace `<div dangerouslySetInnerHTML={{ __html: content }} />` with:
 
 ```javascript
 <div>
-  <ContentParser content={content} customFn={[fancyBoxParserFunction]} />
+  <ContentParser content={content} customFn={[lightboxParserFunction]} />
 </div>
 ```
 
 or if you use ContentParser already, for example with `gatsby-plugin-wpcf7`
 
 ```javascript
-import ContentParser from "gatsby-plugin-wordpress-parser"
-import { cf7ParserFunction } from "gatsby-plugin-wpcf7"
-import fancyBoxParserFunction from "gatsby-plugin-wordpress-fancybox"
-```
+import React from 'react'
+import ContentParser from 'gatsby-plugin-wordpress-parser'
+import { cf7ParserFunction } from 'gatsby-plugin-wpcf7'
+import { lightboxParserFunction } from 'gatsby-plugin-wordpress-lightbox'
 
-```javascript
-<div>
-  <ContentParser
-    content={content}
-    customFn={[cf7ParserFunction, fancyBoxParserFunction]}
-  />
-</div>
+const ParsedContent = ({ content }) => {
+  const parserFunctions = [cf7ParserFunction, lightboxParserFunction]
+  return <ContentParser content={content} customFn={parserFunctions} />
+}
+
+export default ParsedContent
 ```

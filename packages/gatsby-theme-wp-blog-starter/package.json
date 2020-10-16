@@ -30,7 +30,7 @@
     "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gatsby-plugin-styled-components": "^3.3.11",
     "gatsby-plugin-theme-ui": "^0.3.0",
-    "gatsby-plugin-wordpress-fancybox": "*",
+    "gatsby-plugin-wordpress-lightbox": "*",
     "gatsby-plugin-wp-seo": "*",
     "gatsby-theme-blog-data": "*",
     "gatsby-theme-style-guide": "^0.3.1",
