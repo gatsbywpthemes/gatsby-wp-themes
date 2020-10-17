@@ -39,6 +39,12 @@ module.exports = (options) => {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-wordpress-lightbox`,
+      options: {
+        ...options.lightboxOptions || {}
+      }
+    }
     // {
     //   resolve: `gatsby-plugin-scroll-reveal`,
     //   options: {
@@ -62,8 +68,6 @@ module.exports = (options) => {
       },
     })
   }
-
-  plugins.push(`gatsby-plugin-wordpress-lightbox`)
 
   if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
     plugins.push({

@@ -48,6 +48,12 @@ module.exports = (options) => {
         disable: !process.env.ANALYZE_BUNDLE_SIZE,
       },
     },
+    {
+      resolve: `gatsby-plugin-wordpress-lightbox`,
+      options: {
+        ...options.lightboxOptions || {}
+      }
+    }
   ]
   /**
    * Conditionally add google fonts plugin
@@ -63,12 +69,7 @@ module.exports = (options) => {
     })
   }
 
-  /**
-   * Conditionally add google fonts plugin
-   * to avoid errors on build
-   */
 
-  plugins.push(`gatsby-plugin-wordpress-lightbox`)
 
   /**
    * Conditionally add mailchimp subscription plugin

@@ -1,1 +1,1 @@
-export { lightboxParserFunction } from "./lightboxParserFunction"
+export { lightboxParserFunction } from "./src/lightboxParserFunction"

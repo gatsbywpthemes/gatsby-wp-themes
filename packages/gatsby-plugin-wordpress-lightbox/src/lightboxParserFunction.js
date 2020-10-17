@@ -1,6 +1,7 @@
 import React from "react"
 import { domToReact } from "html-react-parser"
-import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox'
+import SimpleReactLightbox from 'simple-react-lightbox'
+import LightboxWrapper from "./LightboxWrapper"
 
 const findInnerA = node => {
   let value = null
@@ -15,6 +16,7 @@ const findInnerA = node => {
 }
 
 export const lightboxParserFunction = (node, { parserOptions }) => {
+
   const parserOptionsInner = {
     replace: domNode => {
       if (domNode.name === "a") {
@@ -42,19 +44,15 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
   ) {
     const Tag = node.name
     return (
-      <>
-        <SimpleReactLightbox>
-          <SRLWrapper options={{
-            buttons: {
-              showDownloadButton: false
-            }
-          }}>
-            <Tag className={node.attribs.class}>
-              {domToReact(node.children, parserOptionsInner)}
-            </Tag>
-          </SRLWrapper>
-        </SimpleReactLightbox>
-      </>
+
+      <SimpleReactLightbox>
+        <LightboxWrapper>
+          <Tag className={node.attribs.class}>
+            {domToReact(node.children, parserOptionsInner)}
+          </Tag>
+        </LightboxWrapper>
+      </SimpleReactLightbox>
+
     )
   }
 }
