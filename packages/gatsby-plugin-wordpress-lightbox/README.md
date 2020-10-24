@@ -31,7 +31,7 @@ Wherever you need to display the post content:
 
 ```javascript
 import ContentParser from "gatsby-plugin-wordpress-parser"
-import fancyBoxParserFunction from "gatsby-plugin-wordpress-lightbox"
+import { lightboxParserFunction } from "gatsby-plugin-wordpress-lightbox"
 ```
 
 replace `<div dangerouslySetInnerHTML={{ __html: content }} />` with:
