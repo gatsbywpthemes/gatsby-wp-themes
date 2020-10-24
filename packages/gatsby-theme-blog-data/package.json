@@ -6,29 +6,29 @@
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.24.63",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "gatsby": "^2.24.85",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@apollo/client": "^3.2.0",
-    "@babel/core": "^7.11.6",
+    "@apollo/client": "^3.2.5",
+    "@babel/core": "^7.12.3",
     "add": "^2.0.6",
     "disqus-react": "^1.0.10",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-plugin-anchor-links": "^1.1.1",
-    "gatsby-plugin-google-analytics": "^2.3.14",
-    "gatsby-plugin-google-tagmanager": "^2.3.12",
-    "gatsby-plugin-sharp": "^2.6.36",
-    "gatsby-plugin-sitemap": "^2.4.13",
+    "gatsby-plugin-google-analytics": "^2.3.19",
+    "gatsby-plugin-google-tagmanager": "^2.3.16",
+    "gatsby-plugin-sharp": "^2.6.43",
+    "gatsby-plugin-sitemap": "^2.4.17",
     "gatsby-plugin-wordpress-parser": "*",
-    "gatsby-source-filesystem": "^2.3.30",
+    "gatsby-source-filesystem": "^2.3.35",
     "gatsby-source-wordpress-experimental": "1.7.9",
-    "gatsby-transformer-sharp": "^2.5.15",
-    "isomorphic-fetch": "^2.2.1",
+    "gatsby-transformer-sharp": "^2.5.19",
+    "isomorphic-fetch": "^3.0.0",
     "normalize-path": "^3.0.0",
     "remove-trailing-slash": "^0.1.1",
-    "yarn": "^1.22.5"
+    "yarn": "^1.22.10"
   },
   "keywords": [
     "gatsby",
