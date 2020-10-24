@@ -30,7 +30,6 @@ const flatListToHierarchical = (
 
 const renderLink = (menuItem, wordPressUrl, closeMenu) => {
   let url = menuItem.url
-  let close = closeMenu || ''
   const parsedUrl = new URIParser(url)
   if (parsedUrl.is('absolute')) {
     const targetRelAttrs =

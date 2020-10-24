@@ -61,7 +61,6 @@ const config = {
   wordPressUrl: ``,
   uploadsPath: `wp-content/uploads`,
   pathPrefix: "",
-  postsPath: ``,
   paginationPrefix: `page`,
   addWordPressComments: true,
   addDisqusComments: false,
@@ -127,35 +126,6 @@ pathPrefix: "/demo"
 ```bash
 gatsby build --prefix-paths
 ```
-
----
-
-**postsPath** (optional)  
-`(default: "")`
-
-This is an important setting. It should reflect your WordPress _Reading > Your homepage_ displays settings, otherwise your Gatsby website may not work properly.
-
-That is:
-
-- `postsPath` should be left empty if your WordPress homepage displays your latest posts. This corresponds to the default in Settings > Reading > Your homepage displays.
-
-- If you chose a static page and set a Posts page, you should use the Posts page slug as your `postsPath`.
-
-- If your WordPress website doesn't display blog page (homepage displays a static page and Posts page is not defined), you should set `postsPath` to `false`.
-
-example:
-
-```javascript
-postsPath: "blog"
-```
-
-or
-
-```javascript
-postsPath: false
-```
-
-In the future, this setting will be removed. The WordPress Reading Settings > Your homepage displays will be used automatically.
 
 ---
 

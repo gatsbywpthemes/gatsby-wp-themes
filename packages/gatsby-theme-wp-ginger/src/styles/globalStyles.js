@@ -19,7 +19,6 @@ export const globalStyles = (theme) => {
     boldWeight: theme.fontWeights.bold,
   })
   //console.log(typography.toString())
-  typography.injectStyles()
   return css`
     body {
       margin: 0;
@@ -97,7 +96,11 @@ export const globalStyles = (theme) => {
       width: 100%;
     }
 
-    @media screen and (max-width: ${theme.breakpoints[0]}) {
+    ${typography.toString().replace(/-child/gi, '-of-type')}
+    @media
+      screen
+      and
+      (max-width: ${theme.breakpoints[0]}) {
       html {
         font-size: 16px;
       }
@@ -117,7 +120,7 @@ export const globalStyles = (theme) => {
       }
     }
     *:focus {
-      outline-style: auto;
+      outline-style: solid;
       outline-width: 3px;
       outline-color: ${theme.colors.focusOutline}!important;
     }

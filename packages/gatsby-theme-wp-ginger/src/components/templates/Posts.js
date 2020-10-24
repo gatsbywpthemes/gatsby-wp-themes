@@ -17,7 +17,7 @@ const Posts = ({ posts, ctx }) => {
         yoastSeo={yoastSeo}
         seo={seo}
       />
-      <ArchiveContent posts={posts} paginationPrefix={postsPath} ctx={ctx} />
+      <ArchiveContent posts={posts} ctx={ctx} />
     </Layout>
   )
 }

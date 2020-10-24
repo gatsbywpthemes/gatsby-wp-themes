@@ -28,37 +28,35 @@ To use this theme in your Gatsby sites, follow these instructions:
 
 2.  Add the theme to your `gatsby-config.js`:
 
-
-       ``` {
-          resolve: `gatsby-theme-blog-data`,
-          options: {
-            wordPressUrl: ``,
-            uploadsPath: `wp-content/uploads`,
-            postsPath:`,
-            paginationPrefix: `page`,
-            postsPerPage: 10,
-            disqus: ``,
-            addWordPressComments: 1,
-            gaTrackingId: 0,
-            googleTagManagerId: 0,
-            addSiteMap: false,
-            siteMapOptions: {},
-              widgetAreas: {
-                slideMenu: {
-                  widgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
-                          },
-                sidebar: {
-                  widgets: [],
-                  position: 'right',
-                  location: {
-                  archive: false,
-                  single: false,
-                    pages: false, //options: all for all pages or array of page slugs
-                      },
-                  },
-                },
-              },
-            }
+    ```{
+       resolve: `gatsby-theme-blog-data`,
+       options: {
+         wordPressUrl: ``,
+         uploadsPath: `wp-content/uploads`,
+         paginationPrefix: `page`,
+         postsPerPage: 10,
+         disqus: ``,
+         addWordPressComments: 1,
+         gaTrackingId: 0,
+         googleTagManagerId: 0,
+         addSiteMap: false,
+         siteMapOptions: {},
+           widgetAreas: {
+             slideMenu: {
+               widgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
+                       },
+             sidebar: {
+               widgets: [],
+               position: 'right',
+               location: {
+               archive: false,
+               single: false,
+                 pages: false, //options: all for all pages or array of page slugs
+                   },
+               },
+             },
+           },
+         }
     ```
 
 3.  Start your site
@@ -70,7 +68,6 @@ To use this theme in your Gatsby sites, follow these instructions:
 
 `wordPressUrl` - source site. mandatory
 `uploadsPath` - path to uploads if it's different from `wp-content/uploads`
-`postsPath` - the path for your posts, let it empty if you want them as home page
 
 `paginationPrefix` - the prefix of the pages
 

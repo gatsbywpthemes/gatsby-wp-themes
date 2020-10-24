@@ -52,7 +52,7 @@ const renderLink = (menuItem, wordPressUrl) => {
         />
       )
     ) : (
-      menuItem.label
+      <span>{menuItem.label}</span>
     )
   }
 }

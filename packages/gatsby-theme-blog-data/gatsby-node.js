@@ -38,15 +38,32 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
         allSettings {
           readingSettingsPostsPerPage
         }
-      ${conditionalSeoQuery}
+        ${conditionalSeoQuery}
+      }
+      frontPage: allWpPage(filter: {isFrontPage: {eq: true}}) {
+        nodes {
+          uri
+        }
+      }
+      postsPage: allWpPage(filter: {isPostsPage: {eq: true}}) {
+        nodes {
+          uri
+        }
       }
     }
   `)
+
+  const postsPath = data.postsPage.nodes.length
+    ? data.postsPage.nodes[0].uri
+    : data.frontPage.nodes.length
+    ? false
+    : '/'
 
   Object.assign(mergedOptions, {
     postsPerPage: data.wp.allSettings.readingSettingsPostsPerPage,
     seoFromWP,
     generalSeoSettings: data.wp.seo,
+    postsPath,
   })
 
   await createPosts({ actions, graphql }, mergedOptions)
