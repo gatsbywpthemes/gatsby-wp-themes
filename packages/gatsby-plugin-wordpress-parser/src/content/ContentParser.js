@@ -28,13 +28,20 @@ export default function ContentParser({ content, customFn = [] }) {
   customFn = Array.isArray(customFn) ? customFn : []
   const replacementFunctions = customFn.concat([replaceA])
 
+  const firstFind = (d, args, array, index = 0) => {
+    if (index < array.length - 1) {
+      return array[index](d, args) || firstFind(d, args, array, index + 1)
+    }
+    return array[index](d, args)
+  }
+
   const parserOptions = {
     replace: (domNode) => {
-      const findMatch = replacementFunctions.find((fn) =>
-        fn(domNode, { wordPressUrl, uploadsUrl, parserOptions })
+      return firstFind(
+        domNode,
+        { wordPressUrl, uploadsUrl, parserOptions },
+        replacementFunctions
       )
-      if (!!findMatch)
-        return findMatch(domNode, { wordPressUrl, uploadsUrl, parserOptions })
     },
   }
 
