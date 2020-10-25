@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: "http://starterinstall.wst/",
+  wordPressUrl: "https://starter.gatsby-wp.com/",
   // uploadsPath: 'wp-content/uploads',
   // paginationPrefix: 'page',
 

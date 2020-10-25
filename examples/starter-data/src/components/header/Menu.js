@@ -58,7 +58,7 @@ const renderLink = (menuItem, wordPressUrl, closeMenu) => {
 }
 
 const renderMenuItem = (menuItem, wordPressUrl, orientation, closeMenu) => {
-  if (menuItem.children?.length) {
+  if (menuItem.children.length) {
     return renderSubMenu(menuItem, wordPressUrl, orientation, closeMenu)
   } else {
     return (
