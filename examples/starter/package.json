@@ -13,7 +13,6 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "babel-preset-gatsby": "^0.5.14",
     "gatsby": "^2.24.85",
     "gatsby-plugin-wpcf7": "*",
     "gatsby-theme-wp-blog-starter": "*",
