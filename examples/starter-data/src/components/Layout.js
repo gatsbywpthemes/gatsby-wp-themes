@@ -15,10 +15,10 @@ export const Layout = ({ children, page, type = 'page' }) => {
 
   const { theme } = useThemeUI()
 
-  const pageTemplate = page && page.template ? page.template.templateName : ''
+  const pageTemplate = page && page.template ? page.template.__typename : ''
 
   const fullWidthClass =
-    pageTemplate.toLowerCase() === 'full width' ? 'fullWidth' : ''
+    pageTemplate === 'WpFullWidthTemplate' ? 'fullWidth' : ''
 
   return (
     <Grommet theme={grommetStyles}>

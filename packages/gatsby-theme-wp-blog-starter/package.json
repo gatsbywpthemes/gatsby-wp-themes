@@ -7,8 +7,8 @@
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.24.85",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "dependencies": {
     "@emotion/styled": "^10.0.27",
@@ -16,6 +16,7 @@
     "@theme-ui/presets": "^0.3.0",
     "autoprefixer": "^10.0.1",
     "babel-plugin-prismjs": "^2.0.1",
+    "babel-preset-gatsby": "^0.5.14",
     "detect-browser": "^5.2.0",
     "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
@@ -33,15 +34,14 @@
     "gatsby-plugin-wordpress-lightbox": "*",
     "gatsby-plugin-wp-seo": "*",
     "gatsby-theme-blog-data": "*",
-    "gatsby-theme-style-guide": "^0.3.1",
     "grommet": "^2.15.2",
     "grommet-icons": "^4.5.0",
     "moment": "^2.29.1",
     "polished": "^4.0.3",
     "prismjs": "^1.22.0",
-    "react": "^16.13.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^16.13.0",
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^6.9.6",

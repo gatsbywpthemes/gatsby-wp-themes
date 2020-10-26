@@ -2,7 +2,7 @@
 import { jsx, Container, Flex, Box } from 'theme-ui'
 import { Layout } from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
-import { ActivatePageScripts } from '../../utils/'
+import { ActivatePageScripts, useLayoutStyles } from '../../utils/'
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
@@ -17,32 +17,16 @@ const Page = ({ page, ctx }) => {
     uri,
     template: { templateName },
   } = page
-  const pageTemplate = templateName.toLowerCase()
-  const { skipTitle, layoutWidth, sidebarWidgets } = useThemeOptions()
 
-  const sidebarPage = pageTemplate.includes('sidebar')
+  const { skipTitle } = useThemeOptions()
 
-  const containerStyles =
-    sidebarWidgets && sidebarPage
-      ? {
-          maxWidth: 'container',
-          '.entry': {
-            width: [`100%`, `100%`, `100%`, `70%`],
-          },
-          '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
-        }
-      : { maxWidth: layoutWidth.page }
+  const {
+    containerStyles,
+    sidebarSide,
+    sidebarPage,
+    sidebarWidgets,
+  } = useLayoutStyles('page', templateName)
 
-  const sidebarSide = sidebarPage
-    ? pageTemplate === `left sidebar`
-      ? {
-          flexDirection: `row-reverse`,
-          '.entry': { pl: [0, 0, 0, layoutWidth.page] },
-        }
-      : pageTemplate === `right sidebar`
-      ? { '.entry': { pr: [0, 0, 0, layoutWidth.page] } }
-      : ''
-    : ''
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   return (
