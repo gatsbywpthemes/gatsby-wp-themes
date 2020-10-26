@@ -43,12 +43,8 @@ module.exports = (options) => {
     {
       resolve: `gatsby-plugin-wordpress-parser`,
       options: {
-        wordPressUrl: url,
-        uploadsUrl: `${url}/${uploadsPath}`,
         processPostTypes: ['WpPage', 'WpPost'],
-        pathPrefix,
         debugOutput: parserDebugOutput,
-        displayDownloadInfo,
       },
     },
   ]
