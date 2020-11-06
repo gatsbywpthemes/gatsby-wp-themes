@@ -32,7 +32,6 @@ const config = {
   // siteMapOptions: {},
   addWordPressSearch: true,
   // addColorModes: false,
-  // addFancyBox: true,
   skipTitle: ["home", "contact-us"],
 }
 // https://gatsby-test-2.alexaspalato.website

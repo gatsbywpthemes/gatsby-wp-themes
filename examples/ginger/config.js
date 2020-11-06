@@ -40,9 +40,9 @@ const config = {
   addWordPressSearch: true,
   // instantWPSearch: false,
   // addColorModes: false,
-  // addFancyBox: true,
   skipTitle: ["home"],
   seoWithYoast: true,
+  lightboxSettings: {},
 }
 // https://gatsby-test-2.alexaspalato.website
 //https://gatsby-theme-demo.alexaspalato.website

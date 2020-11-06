@@ -32,7 +32,6 @@ const config = {
   // siteMapOptions: {},
   addWordPressSearch: true,
   // addColorModes: false,
-  // addFancyBox: true,
   skipTitle: ["home-vcard", "contact"],
   seoWithYoast: true,
 }

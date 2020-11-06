@@ -1,5 +1,4 @@
 const sourceParser = require("./sourceParser")
-const debugLog = require("./utils").debugLog
 
 const findExistingNode = (uri, allNodes) =>
   allNodes.find(node => node.sourceUri === uri)
@@ -22,7 +21,7 @@ module.exports = async function createResolvers(params, pluginOptions) {
 
   const logger = (...args) => {
     args.unshift(">>>")
-    debugLog(debugOutput, ...args)
+    debugOutput && console.log(...args)
   }
 
   // `content` field Resolver

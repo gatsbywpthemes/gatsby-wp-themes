@@ -26,9 +26,9 @@ If you want to redirect all non logged-in users accessing your WordPress site UR
 
 Ginger theme is compatible with Contact Form 7 WordPress plugin. If you want to have a form on your website, make sure to install Contact Form 7. Next proceed as you would normally do, create your form(s) and add them within your pages(s).
 
-### Fancybox Galleries
+### Lightbox Galleries
 
-Ginger theme comes with fancybox galleries (clicking a photo opens a fullscreen-mode slideshow). This feature is optional, enabled by default (you can turn it off here).
+Ginger theme comes with lightbox galleries (clicking a photo opens a fullscreen-mode slideshow). This feature is optional, enabled by default (you can turn it off here).
 There is also a particular configuration required for the gallery itself, that needs to be set up on your WordPress website.
 
 Edit your WordPress page.  
@@ -83,7 +83,6 @@ const config = {
   addSiteMap: false,
   siteMapOptions: {},
   addColorModes: true,
-  addFancyBox: true,
   skipTitle: [],
   mailchimpEndpoint: "",
 }
@@ -340,15 +339,6 @@ If you want to add dark mode switcher.
 
 ---
 
-**addFancyBox** (optional)  
-`(default: true)`
-
-Adds fancybox functionnality to the galeries.
-
-It will work for any gallery built with the Gutenberg gallery block that has "Link To" set to "Media File".
-
----
-
 **skipTitle** (optional)  
 `(default: [])`
 
@@ -454,15 +444,12 @@ It should he something like that:
 import React from "react"
 import ContentParser from "gatsby-plugin-wordpress-parser"
 import { cf7ParserFunction } from "gatsby-plugin-wpcf7"
-import fancyBoxParserFunction from "gatsby-plugin-wordpress-fancybox"
+import {lightboxParserFunction}from "gatsby-plugin-wordpress-lightbox"
 import useThemeOptions from "gatsby-theme-blog-data/src/hooks/useThemeOptions"
 
 const ParsedContent = ({ content }) => {
   const options = useThemeOptions()
-  const parserFunctions = [cf7ParserFunction]
-  if (options.addFancyBox) {
-    parserFunctions.push(fancyBoxParserFunction)
-  }
+  const parserFunctions = [cf7ParserFunction, lightboxParserFunction]
   // uncomment the next line to activate Mapbox
   parserFunctions.push(mapboxParserFunction)
   return <ContentParser content={content} customFn={parserFunctions} />
