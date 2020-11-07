@@ -40,6 +40,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-chakra-ui',
+      options: {
+        isResettingCSS: true,
+        isUsingColorMode: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-wp-seo',
       options: {
         siteUrl: config.siteUrl,
@@ -57,7 +64,7 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-wordpress-lightbox',
-      options: {}
+      options: {},
     },
     // {
     //   resolve: 'gatsby-plugin-mailchimp',
