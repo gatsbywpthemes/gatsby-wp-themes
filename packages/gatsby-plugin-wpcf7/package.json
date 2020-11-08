@@ -18,7 +18,7 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "@emotion/core": "^10.0.35",
+    "@emotion/core": "10.0.35",
     "@emotion/styled": "^10.0.27",
     "@mdx-js/react": "^1.6.19",
     "@theme-ui/presets": "^0.3.0",
