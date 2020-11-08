@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Menu, SiteBranding } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { SearchForm } from '../search'
+import { ColorSwitch } from '../ColorSwitch'
 import {
   Box,
   Flex,
@@ -45,6 +46,7 @@ export const Header = () => {
         <Menu menuName={menuName} />
         <Button colorScheme="pink">Button</Button>
       </Flex>
+      <ColorSwitch />
     </Box>
   )
 }
