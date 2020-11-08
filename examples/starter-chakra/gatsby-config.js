@@ -56,12 +56,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-wpcf7',
-      options: {
-        wordPressUrl: config.wordPressUrl,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-wpcf7',
+    //   options: {
+    //     wordPressUrl: config.wordPressUrl,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-wordpress-lightbox',
       options: {},
@@ -69,7 +69,7 @@ module.exports = {
     // {
     //   resolve: 'gatsby-plugin-mailchimp',
     //   options: {
-    //     endpoint:process.env.GATSBY_MAILCHIMP_ENDPOINT
+    //     endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
     //   },
     // },
   ],

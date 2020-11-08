@@ -13,6 +13,7 @@ import {
   useTheme,
   Button,
   jsx,
+  CenterContainer,
 } from '@chakra-ui/core'
 
 export const Header = () => {
@@ -32,12 +33,15 @@ export const Header = () => {
   const { title } = data.wp.generalSettings
 
   return (
-    <Box as="header" bg="secondary" className="header">
-      <Flex maxW="1200px" mx="auto" className="container">
+    <Box as="header" bg="gray.700" color="white" className="header">
+      <Flex
+        maxW="container.xl"
+        mx="auto"
+        px={[4, 4, 5, 10]}
+        justify="space-between"
+      >
         {search && <SearchForm />}
-
         <SiteBranding title={title} />
-
         <Menu menuName={menuName} />
         <Button colorScheme="pink">Button</Button>
       </Flex>
