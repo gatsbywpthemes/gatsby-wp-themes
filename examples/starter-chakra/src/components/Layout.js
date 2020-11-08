@@ -9,10 +9,10 @@ import '../styles/wp-styles/styles.scss'
 
 export const Layout = ({ children }) => {
   return (
-    <ChakraProvider theme={customTheme}>
+    <>
       <Header />
       <main>{children}</main>
       <Footer />
-    </ChakraProvider>
+    </>
   )
 }

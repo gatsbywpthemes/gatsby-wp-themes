@@ -31,6 +31,7 @@ module.exports = {
     ],
   },
   plugins: [
+    'gatsby-plugin-chakra-ui',
     {
       resolve: 'gatsby-theme-blog-data',
       options: {
@@ -39,13 +40,7 @@ module.exports = {
           process.env.NODE_ENV === 'development' ? '' : config.pathPrefix,
       },
     },
-    {
-      resolve: 'gatsby-plugin-chakra-ui',
-      options: {
-        isResettingCSS: true,
-        isUsingColorMode: false,
-      },
-    },
+
     {
       resolve: 'gatsby-plugin-wp-seo',
       options: {

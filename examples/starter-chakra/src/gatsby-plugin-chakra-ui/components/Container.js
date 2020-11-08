@@ -1,4 +1,4 @@
-export const CenterContainer = {
+export const Container = {
   baseStyle: {
     px: [5, 5, 6, 10],
     mx: 'auto',
