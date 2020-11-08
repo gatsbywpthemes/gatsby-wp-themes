@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import { Button } from 'grommet'
-import { Search as SearchIcon, FormClose } from 'grommet-icons'
+import { Input, IconButton } from '@chakra-ui/core'
+import { SmallCloseIcon } from '@chakra-ui/icons'
+
 import { SearchQueries } from './index'
 
 export const SearchForm = (props) => {
@@ -25,35 +26,36 @@ export const SearchForm = (props) => {
   return (
     <div {...props}>
       <div>
-        <Button
-          a11yTitle="Search here"
-          focusIndicator={false}
-          icon={<SearchIcon />}
-        />
-
         <div className="search-box">
-          <input
+          <Input
             value={value}
             type="search"
+            variant="unstyled"
+            maxW="80%"
             onChange={handleChange}
             onSubmit={handleSubmit}
             onKeyDown={handleKeyDown}
             placeholder="search here..."
+            fontSize="3xl"
+            color="blue.100"
+            borderLeft="5px solid"
+            borderColor="primary"
+            borderRadius={0}
+            px={5}
             name="search"
             aria-label="Search here"
           />
         </div>
-        {value.length > 0 && (
-          <Button
-            a11yTitle="Reset Search"
-            icon={<FormClose />}
+        {/* {value.length > 0 && (
+          <SmallCloseIcon
+            aria-label="Reset Search"
             color="white"
             onClick={() => {
               setValue('')
               setSearch('')
             }}
           />
-        )}
+        )} */}
       </div>
       {search && <SearchQueries search={search} />}
     </div>

@@ -3,19 +3,10 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Menu, SiteBranding } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { SearchForm } from '../search'
+
 import { ColorSwitch } from '../ColorSwitch'
-import {
-  Box,
-  Flex,
-  Heading,
-  Input,
-  Icon,
-  useTheme,
-  Button,
-  jsx,
-  CenterContainer,
-} from '@chakra-ui/core'
+import { SearchModal } from '../search'
+import { Box, Flex, jsx } from '@chakra-ui/core'
 
 export const Header = () => {
   const { search, menuName } = useThemeOptions()
@@ -41,11 +32,13 @@ export const Header = () => {
         px={[4, 4, 5, 10]}
         justify="space-between"
       >
-        {search && <SearchForm />}
-        <SiteBranding title={title} />
+        <Flex>
+          <SiteBranding title={title} />
+          {search && <SearchModal />}
+        </Flex>
         {/* <Menu menuName={menuName} /> */}
+        <ColorSwitch />
       </Flex>
-      <ColorSwitch />
     </Box>
   )
 }
