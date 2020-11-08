@@ -1,11 +1,15 @@
 import { extendTheme } from '@chakra-ui/core'
 import { colors } from './foundations'
 import { CenterContainer } from './components'
+import { branding } from './textStyles'
 
 const theme = extendTheme({
   colors,
   components: {
     CenterContainer,
+  },
+  textStyles: {
+    branding,
   },
 
   gradients: {

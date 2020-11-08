@@ -43,8 +43,7 @@ export const Header = () => {
       >
         {search && <SearchForm />}
         <SiteBranding title={title} />
-        <Menu menuName={menuName} />
-        <Button colorScheme="pink">Button</Button>
+        {/* <Menu menuName={menuName} /> */}
       </Flex>
       <ColorSwitch />
     </Box>
