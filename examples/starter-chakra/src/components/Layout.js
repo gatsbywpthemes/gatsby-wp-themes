@@ -1,11 +1,9 @@
 /** @jsx jsx */
-import React from 'react'
 import { Header } from './header'
 import { Footer } from './footer'
 import { Box, jsx } from '@chakra-ui/core'
-import customTheme from '../gatsby-plugin-chakra-ui/theme'
 import Headroom from 'react-headroom'
-import '../styles/wp-styles/styles.scss'
+import 'styles/wp-styles/styles.scss'
 
 export const Layout = ({ children, page, type = 'page' }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''

@@ -1,15 +1,35 @@
 import { extendTheme } from '@chakra-ui/core'
+
 import { colors } from './foundations'
+import {
+  fontSizes,
+  fonts,
+  lineHeights,
+  fontWeights,
+  base,
+} from './foundations/typography'
 import { Container as CenterContainer } from './components'
 import { branding } from './textStyles'
+import styles from './styles'
 
 const theme = extendTheme({
   colors,
+  fontSizes,
+  fonts,
+  lineHeights,
+  fontWeights,
+  transition: {
+    sm: `all .2s ease-in-out`,
+    md: `all .4s ease-in-out`,
+    lg: `all .8s ease-in-out`,
+    xl: `all 1s ease-in-out`,
+  },
   components: {
     CenterContainer,
   },
   textStyles: {
     branding,
+    ...base,
   },
 
   gradients: {
@@ -22,6 +42,7 @@ const theme = extendTheme({
         `linear-gradient(60deg, ${t.colors.primary}, ${t.colors.purple} )`,
     },
   },
+  styles,
 })
 
 export default theme

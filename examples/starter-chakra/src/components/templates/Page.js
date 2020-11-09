@@ -8,6 +8,7 @@ import { useLayoutStyles } from 'utils/hooks'
 
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { gutenbergStyles } from 'styles/gutenbergStyles'
 import { Sidebar } from '../index'
 
 const Page = ({ page, ctx }) => {
@@ -64,7 +65,7 @@ const Page = ({ page, ctx }) => {
                   />
                 )}
 
-              <div className="entry-content">
+              <div className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />
                 <ParsedContent content={content} />
               </div>

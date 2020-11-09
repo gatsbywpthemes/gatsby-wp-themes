@@ -1,16 +1,6 @@
 import { theme } from '@chakra-ui/core'
 
-const {
-  gray,
-  red,
-  orange,
-  yellow,
-  green,
-  teal,
-  cyan,
-  purple,
-  pink,
-} = theme.colors
+const { red, orange, yellow, green, teal, cyan, purple, pink } = theme.colors
 
 const blue = {
   50: '#e2ffff',
@@ -24,15 +14,30 @@ const blue = {
   800: '#083245',
   900: '#00141a',
 }
+const gray = {
+  50: '#e6f9ff',
+  100: '#ccdfe5',
+  200: '#b1c6cd',
+  300: '#93aeb7',
+  400: '#7795a1',
+  500: '#5e7a88',
+  600: '#47626b',
+  700: '#31484d',
+  800: '#192e30',
+  900: '#001514',
+}
 
 export const colors = {
-  background: blue[800],
-  text: blue[50],
-  primary: teal[400],
-  secondary: red[500],
-  accent: yellow[300],
+  light: gray[100],
+  ultraLight: gray[50],
+  dark: gray[800],
+  ultraDark: gray[900],
+  primary: gray[600],
+  secondary: gray[700],
+  accentLight: red[300],
+  accentDark: red[500],
   highlight: orange[500],
-  mutted: gray[100],
-  bgHeader: blue[900],
+  mutted: gray[200],
   blue,
+  gray,
 }
