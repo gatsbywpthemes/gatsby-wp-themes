@@ -1,7 +1,7 @@
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { useToken } from '@chakra-ui/core'
 
-const useLayoutWidth = (layoutType) => {
+const useLayoutWidth = () => {
   const { layoutWidth } = useThemeOptions()
   const [xl, lg, md, sm] = useToken('sizes', [
     'container.xl',
@@ -10,7 +10,7 @@ const useLayoutWidth = (layoutType) => {
     'container.sm',
   ])
 
-  function archiveWidth() {
+  function getLayoutWidth(layoutType) {
     switch (layoutWidth[layoutType]) {
       case 'xl':
         return xl
@@ -25,14 +25,14 @@ const useLayoutWidth = (layoutType) => {
     }
   }
 
-  return [archiveWidth, xl, lg, md, sm]
+  return [getLayoutWidth, xl, lg, md, sm]
 }
 
 const useLayoutStyles = (layoutType, templateName) => {
   const { sidebarWidgets } = useThemeOptions()
   const pageTemplate = templateName?.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
-  const [archiveWidth, xl, md, lg, sm] = useLayoutWidth()
+  const [getLayoutWidth, xl, md, lg, sm] = useLayoutWidth()
 
   const containerStyles =
     sidebarWidgets && sidebarPage
@@ -43,7 +43,7 @@ const useLayoutStyles = (layoutType, templateName) => {
           },
           '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
         }
-      : { maxWidth: archiveWidth(layoutType) }
+      : { maxWidth: getLayoutWidth(layoutType) }
 
   const sidebarSide = sidebarPage
     ? pageTemplate === `left sidebar`
@@ -61,7 +61,7 @@ const useLayoutStyles = (layoutType, templateName) => {
     sidebarSide,
     sidebarPage,
     sidebarWidgets,
-    archiveWidth,
+    getLayoutWidth,
   }
 }
 

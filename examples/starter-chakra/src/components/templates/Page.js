@@ -1,7 +1,11 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx, Flex } from '@chakra-ui/core'
+import { Container } from 'uiComponents'
 import { Layout } from '../Layout'
-import ParsedContent from '../../utils/ParsedContent'
-import { ActivatePageScripts } from '../../utils/'
+import ParsedContent from 'utils/ParsedContent'
+import { ActivatePageScripts } from 'utils'
+import { useLayoutStyles } from 'utils/hooks'
+
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
@@ -15,11 +19,14 @@ const Page = ({ page, ctx }) => {
     uri,
     template: { templateName },
   } = page
-  const pageTemplate = templateName.toLowerCase()
-  const { skipTitle, sidebarWidgets } = useThemeOptions()
+  const {
+    containerStyles,
+    sidebarSide,
+    sidebarPage,
+    sidebarWidgets,
+  } = useLayoutStyles('post', templateName.toLowerCase())
+  const { skipTitle } = useThemeOptions()
 
-  const sidebarPage = pageTemplate?.includes('sidebar')
-  console.log(sidebarPage)
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   return (
@@ -38,8 +45,14 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <div className="mainContainer">
-        <div>
+      <Container className="mainContainer" sx={{ ...containerStyles }}>
+        <Flex
+          sx={{
+            ...sidebarSide,
+            flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+            alignItems: `flex-start`,
+          }}
+        >
           <article className="entry">
             <div className="content page-content">
               {skipTitle &&
@@ -58,8 +71,8 @@ const Page = ({ page, ctx }) => {
             </div>
           </article>
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
-        </div>
-      </div>
+        </Flex>
+      </Container>
     </Layout>
   )
 }
