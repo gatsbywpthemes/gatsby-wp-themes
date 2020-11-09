@@ -2,7 +2,7 @@
 import React from 'react'
 import { Header } from './header'
 import { Footer } from './footer'
-import { useTheme, ChakraProvider, Box, jsx } from '@chakra-ui/core'
+import { Box, jsx } from '@chakra-ui/core'
 import customTheme from '../gatsby-plugin-chakra-ui/theme'
 import Headroom from 'react-headroom'
 import '../styles/wp-styles/styles.scss'

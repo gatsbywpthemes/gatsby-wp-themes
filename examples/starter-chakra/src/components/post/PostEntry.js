@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Box } from '@chakra-ui/core'
 import React from 'react'
 import {
   PostEntryTitle,
@@ -17,7 +19,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
     ? post.featuredImage.node.localFile.childImageSharp.fluid.src
     : null
   return (
-    <article className="entry" {...props}>
+    <Box as="article" mb={8} className="entry" {...props}>
       <PostEntryMedia location={location} post={post} className="entry-media" />
 
       <div className={`content ${noImgClass}`}>
@@ -45,6 +47,6 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
           </>
         )}
       </div>
-    </article>
+    </Box>
   )
 }
