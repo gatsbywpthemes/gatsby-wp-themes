@@ -4,29 +4,12 @@ import { Container } from 'uiComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
 import { ArchiveTitle, PostsList, Pagination } from './index'
+import { useLayoutWidth } from 'utils/hooks'
 
 export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
-  const { archiveSidebar, sidebarWidgets, layoutWidth } = useThemeOptions()
-  const [xl, lg, md, sm] = useToken('sizes', [
-    'container.xl',
-    'container.lg',
-    'container.md',
-    'container.sm',
-  ])
-  function archiveWidth() {
-    switch (layoutWidth.archive) {
-      case 'xl':
-        return xl
-      case 'md':
-        return md
-      case 'lg':
-        return lg
-      case 'sm':
-        return sm
-      default:
-        return '1280px'
-    }
-  }
+  const { archiveSidebar, sidebarWidgets } = useThemeOptions()
+
+  const [archiveWidth, xl] = useLayoutWidth('archive')
 
   const containerStyles =
     sidebarWidgets && archiveSidebar

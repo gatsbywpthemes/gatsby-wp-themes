@@ -1,9 +1,12 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx, Flex } from '@chakra-ui/core'
+import { Container } from 'uiComponents'
 import { Layout } from '../Layout'
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useLayoutStyles } from 'utils/hooks'
 
 const Post = ({ post, ctx }) => {
   const {
@@ -13,11 +16,14 @@ const Post = ({ post, ctx }) => {
     template: { templateName },
   } = post
   const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
+  const {
+    containerStyles,
+    sidebarSide,
+    sidebarPage,
+    sidebarWidgets,
+  } = useLayoutStyles('post', templateName.toLowerCase())
 
-  const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
-
-  const pageTemplate = templateName.toLowerCase()
-  const sidebarPage = pageTemplate.includes('sidebar')
+  const { disqus, addWordPressComments } = useThemeOptions()
 
   const disqusConfig = {
     shortname: disqus,
@@ -38,11 +44,17 @@ const Post = ({ post, ctx }) => {
           }
         }
       />
-      <div className="mainContainer">
-        <div>
+      <Container className="mainContainer" sx={{ ...containerStyles }}>
+        <Flex
+          sx={{
+            ...sidebarSide,
+            flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+            alignItems: `flex-start`,
+          }}
+        >
           <PostEntry post={post} location="single" ctx={ctx} />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
-        </div>
+        </Flex>
         {addWordPressComments && post.commentStatus === 'open' && (
           <div>
             {disqus ? (
@@ -52,7 +64,7 @@ const Post = ({ post, ctx }) => {
             )}
           </div>
         )}
-      </div>
+      </Container>
     </Layout>
   )
 }
