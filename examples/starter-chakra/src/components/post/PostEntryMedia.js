@@ -1,4 +1,5 @@
 import React from 'react'
+import { Box } from '@chakra-ui/core'
 import { Link } from 'gatsby'
 import { Image } from '../images'
 
@@ -18,9 +19,9 @@ export const PostEntryMedia = ({ post, location, ...props }) => {
     <>
       {img && (
         <WithLink location={location} post={post}>
-          <div className="entry-media" {...props}>
+          <Box className="entry-media" {...props}>
             <Image img={img} />
-          </div>
+          </Box>
         </WithLink>
       )}
     </>

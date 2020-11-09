@@ -19,10 +19,23 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
     ? post.featuredImage.node.localFile.childImageSharp.fluid.src
     : null
   return (
-    <Box as="article" mb={8} className="entry" {...props}>
-      <PostEntryMedia location={location} post={post} className="entry-media" />
+    <Box
+      as="article"
+      mb={14}
+      bg="white"
+      boxShadow="lg"
+      className="entry"
+      borderBottomRadius="lg"
+      {...props}
+    >
+      <PostEntryMedia
+        location={location}
+        post={post}
+        className="entry-media"
+        sx={{ '.gatsby-image-wrapper': { borderTopRadius: 'lg' } }}
+      />
 
-      <div className={`content ${noImgClass}`}>
+      <Box p={[5, 12]} className={`content ${noImgClass}`}>
         <PostEntryTitle
           location={location}
           post={post}
@@ -46,7 +59,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
             <PrevNextPostNavigation ctx={ctx} />
           </>
         )}
-      </div>
+      </Box>
     </Box>
   )
 }

@@ -9,11 +9,11 @@ export const PostEntryContent = ({ post, location, ...props }) => {
   const content = location === 'single' ? post.content : post.excerpt
   const attributes = location === 'single' ? { id: 'content' } : {}
   return (
-    <div {...attributes} {...props} sx={{ ...gutenbergStyles }}>
-      <div className="entry-content">
+    <Box {...attributes} {...props} sx={{ ...gutenbergStyles }}>
+      <Box className="entry-content">
         <ActivatePostScripts />
         <ParsedContent content={content} />
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
