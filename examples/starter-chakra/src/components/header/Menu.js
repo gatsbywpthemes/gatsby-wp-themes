@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import React from 'react'
 import { Link } from 'gatsby'
 import { createLocalLink } from '../../utils'
@@ -7,6 +8,15 @@ import {
 } from 'gatsby-theme-blog-data/src/hooks'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
+import {
+  Menu as SubmenuTriggerWrapper,
+  MenuButton as SubmenuTrigger,
+  MenuList as SubmenuWrapper,
+  MenuItem as SubMenuItem,
+  Box,
+  Button,
+  jsx,
+} from '@chakra-ui/core'
 
 const flatListToHierarchical = (
   data = [],
@@ -69,16 +79,18 @@ const renderMenuItem = (menuItem, wordPressUrl) => {
 
 const renderSubMenu = (menuItem, wordPressUrl) => {
   return (
-    <li className="has-subMenu menu-item" key={menuItem.id}>
-      {renderLink(menuItem, wordPressUrl)}
-      <ul className="menuItemGroup sub-menu">
-        {menuItem.children.map((item) => renderMenuItem(item, wordPressUrl))}
-      </ul>
-    </li>
+    <SubmenuTriggerWrapper>
+      <li className="has-subMenu menu-item" key={menuItem.id}>
+        {renderLink(menuItem, wordPressUrl)}
+        <ul className="menuItemGroup sub-menu">
+          {menuItem.children.map((item) => renderMenuItem(item, wordPressUrl))}
+        </ul>
+      </li>
+    </SubmenuTriggerWrapper>
   )
 }
 
-export const Menu = ({ menuName, ...props }) => {
+export const Menu = ({ menuName, orientation, ...props }) => {
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find((n) => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null

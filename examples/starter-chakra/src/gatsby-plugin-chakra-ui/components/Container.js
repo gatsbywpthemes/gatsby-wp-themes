@@ -11,7 +11,7 @@ export const Container = {
       maxW: 'container.md',
     },
     lg: {
-      maxW: 'container.lg',
+      maxW: '960px',
     },
     xl: {
       maxW: 'container.xl',

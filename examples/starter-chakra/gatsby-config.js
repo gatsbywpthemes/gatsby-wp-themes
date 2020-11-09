@@ -1,4 +1,5 @@
 const config = require('./config')
+const path = require('path')
 
 module.exports = {
   siteMetadata: {
@@ -40,7 +41,6 @@ module.exports = {
           process.env.NODE_ENV === 'development' ? '' : config.pathPrefix,
       },
     },
-
     {
       resolve: 'gatsby-plugin-wp-seo',
       options: {
@@ -57,6 +57,17 @@ module.exports = {
     //     wordPressUrl: config.wordPressUrl,
     //   },
     // },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        pages: path.join(__dirname, 'src/pages'),
+        styles: path.join(__dirname, 'src/styles'),
+        components: path.join(__dirname, 'src/components'),
+        uiComponents: path.join(__dirname, 'src/components/ui-components'),
+        utils: path.join(__dirname, 'src/utils'),
+      },
+    },
     {
       resolve: 'gatsby-plugin-wordpress-lightbox',
       options: {},

@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { useStyleConfig, Box, jsx } from '@chakra-ui/core'
 
-export const Container = ({ size, ...rest }) => {
+export const Container = ({ size, sx, ...rest }) => {
   const styles = useStyleConfig('CenterContainer', { size })
-  return <Box sx={styles} {...rest} />
+  const customStyles = sx
+  return <Box sx={{ ...styles, ...customStyles }} {...rest} />
 }
