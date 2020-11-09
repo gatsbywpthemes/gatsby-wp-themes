@@ -15,14 +15,8 @@
   "dependencies": {
     "@chakra-ui/core": "^1.0.0-rc.8",
     "@chakra-ui/icons": "^1.0.0-rc.8",
-    "@emotion/styled": "^10.0.27",
-    "@theme-ui/color": "^0.3.1",
-    "@theme-ui/presets": "^0.3.0",
-    "autoprefixer": "^10.0.1",
     "babel-plugin-prismjs": "^2.0.1",
     "detect-browser": "^5.2.0",
-    "emotion": "^10.0.27",
-    "emotion-theming": "^10.0.27",
     "framer-motion": "^2.9.4",
     "gatsby": "^2.24.85",
     "gatsby-background-image": "^1.1.2",
@@ -61,7 +55,6 @@
     "striptags": "^3.1.1",
     "styled-components": "^5.2.0",
     "styled-icons": "^10.22.0",
-    "theme-ui": "^0.3.1",
     "typeface-ibm-plex-mono": "^1.1.13",
     "typeface-roboto-slab": "^1.1.13",
     "typography": "^0.16.19"
