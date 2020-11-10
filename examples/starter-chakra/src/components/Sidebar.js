@@ -17,9 +17,9 @@ export const Sidebar = ({ widgets, ...props }) => {
           {...props}
         >
           {widgets.map((widget, i) => (
-            <div key={i}>
+            <Box key={i} sx={{ '.widget': { my: 10 } }}>
               <Widgets widget={widget} />
-            </div>
+            </Box>
           ))}
         </Box>
       )}

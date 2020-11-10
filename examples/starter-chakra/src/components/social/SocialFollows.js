@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, HStack } from '@chakra-ui/core'
 import React from 'react'
 import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 import {
@@ -84,7 +86,12 @@ export const SocialFollows = (props) => {
   const { social } = useSiteMetaData()
 
   return (
-    <div className="widget widget-socialFollow" {...props}>
+    <HStack
+      spacing={5}
+      justify="center"
+      className="widget widget-socialFollow"
+      {...props}
+    >
       {social &&
         social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())
@@ -105,6 +112,6 @@ export const SocialFollows = (props) => {
             return null
           }
         })}
-    </div>
+    </HStack>
   )
 }

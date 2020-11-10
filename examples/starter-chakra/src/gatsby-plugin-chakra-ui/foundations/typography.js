@@ -42,7 +42,7 @@ export const a = {
   fontWeight: 'bold',
   textDecoration: 'none',
   '&:hover': {
-    color: 'primary',
+    textDecoration: 'none',
   },
 }
 const heading = {

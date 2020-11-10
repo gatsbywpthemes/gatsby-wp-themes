@@ -10,6 +10,7 @@ import {
 } from './foundations/typography'
 import { Container as CenterContainer } from './components'
 import { layerStyles } from './layerStyles'
+import { textStyles } from './textStyles'
 
 import { styles } from './styles'
 
@@ -29,6 +30,7 @@ const theme = extendTheme({
     CenterContainer,
   },
   textStyles: {
+    ...textStyles,
     ...base,
   },
   layerStyles: {

@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx, VStack, Link as ChakraLink } from '@chakra-ui/core'
+import { BorderTitle } from 'uiComponents'
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
@@ -20,16 +23,23 @@ export const CategoriesWidget = (props) => {
   const nonEmptyCategories = nodes.filter((el) => el.count)
   return (
     <section className="widget widget-categories" {...props}>
-      <h2 className="widget-title">Categories</h2>
-      <ul>
+      <BorderTitle as="h2" className="widget-title" mt={2} mb={5}>
+        Categories
+      </BorderTitle>
+      <VStack align="flex-start">
         {nonEmptyCategories.length
           ? nonEmptyCategories.map((category) => (
-              <li key={category.slug}>
-                <Link to={`${category.uri}`}>{category.name}</Link>
-              </li>
+              <ChakraLink
+                as={Link}
+                textStyle="special"
+                key={category.slug}
+                to={`${category.uri}`}
+              >
+                {category.name}
+              </ChakraLink>
             ))
           : null}
-      </ul>
+      </VStack>
     </section>
   )
 }
