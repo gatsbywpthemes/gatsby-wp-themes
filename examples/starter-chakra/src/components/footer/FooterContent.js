@@ -1,11 +1,12 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx, Center } from '@chakra-ui/core'
 
-export const FooterContent = () => {
+export const FooterContent = (props) => {
   return (
-    <div>
-      © {new Date().getFullYear()} | Built with{` `}
-      <a href="https://www.wpgraphql.com">WPGraphQL</a> and{` `}
+    <Center color="light" {...props}>
+      © {new Date().getFullYear()} | Built with{`  `}
+      <a href="https://www.wpgraphql.com">WPGraphQL</a> and{`  `}
       <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </div>
+    </Center>
   )
 }
