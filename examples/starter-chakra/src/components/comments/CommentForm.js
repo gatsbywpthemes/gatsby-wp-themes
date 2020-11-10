@@ -1,5 +1,7 @@
+/** @jsx jsx */
 /* eslint-disable no-useless-escape */
-import React from 'react'
+import { jsx, Text, Heading } from '@chakra-ui/core'
+import { TransparentCard, Textarea, Input } from 'uiComponents'
 import { useState, Fragment } from 'react'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
@@ -85,13 +87,13 @@ export const CommentForm = ({
       setCommentStatus('error')
     },
   })
-  const CommentNotes = () => {
+  const CommentNotes = (props) => {
     return (
-      <p className="comment-notes">
+      <Text as="p" className="comment-notes" {...props}>
         <span id="email-notes">Your email address will not be published.</span>
         <br />
         Required fields are marked <span className="required">*</span>
-      </p>
+      </Text>
     )
   }
 
@@ -147,7 +149,11 @@ export const CommentForm = ({
       {!!commentStatus && <CommentStatusFeedback />}
       {!commentStatus && (
         <div>
-          {!commentId && <h2>Leave a comment</h2>}
+          {!commentId && (
+            <Heading as="h2" textAlign="center" mb={7}>
+              Leave a comment
+            </Heading>
+          )}
           {!!commentId && (
             <button
               type="button"
@@ -157,8 +163,23 @@ export const CommentForm = ({
               Cancel
             </button>
           )}
-          <form onSubmit={handleSubmit(onSubmit)} noValidate>
-            <CommentNotes />
+          <TransparentCard
+            as="form"
+            p={[5, 10]}
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            sx={{
+              '.comment &': {
+                boxShadow: 'none',
+                p: 5,
+              },
+            }}
+          >
+            <CommentNotes
+              textStyle="special"
+              textAlign="center"
+              textTransform="uppercase"
+            />
             {inputFields.map((el) => {
               const Tag = el.tag
               const textarea = Tag === 'textarea' ? { rows: 6, cols: 48 } : {}
@@ -187,7 +208,7 @@ export const CommentForm = ({
               )
             })}
             <CommentSubmitButton />
-          </form>
+          </TransparentCard>
         </div>
       )}
     </Fragment>

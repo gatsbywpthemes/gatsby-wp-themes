@@ -1,16 +1,22 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx, Flex } from '@chakra-ui/core'
+import { TransparentCard } from 'uiComponents'
 import moment from 'moment'
 import { CommentForm } from './index'
 
 const Reply = ({ commentId, actionOnClick }) => {
   return (
-    <button
+    <Flex
+      as="button"
       type="button"
+      mt={4}
+      ml="auto"
+      textStyle="special"
       onClick={() => actionOnClick(commentId)}
       className="comment-button-reply"
     >
       Reply
-    </button>
+    </Flex>
   )
 }
 
@@ -44,7 +50,7 @@ export const Comment = (props) => {
     doOnCompleted,
   } = props
   return (
-    <li className="comment">
+    <TransparentCard as="li" listStyleType="none" mb={4} className="comment">
       <Author name={comment.author.name} url={comment.author.url} />
       {moment(comment.date).format(`MMMM D, YYYY`)}
       <div dangerouslySetInnerHTML={{ __html: comment.content }} />
@@ -57,13 +63,15 @@ export const Comment = (props) => {
             doOnCompleted={doOnCompleted}
           />
         ) : (
-          <Reply commentId={comment.commentId} actionOnClick={addReply} />
+          <Flex>
+            <Reply commentId={comment.commentId} actionOnClick={addReply} />
+          </Flex>
         )
       ) : (
         <p className="comment-nesting-info">
           Only two levels of nesting is supported.
         </p>
       )}
-    </li>
+    </TransparentCard>
   )
 }

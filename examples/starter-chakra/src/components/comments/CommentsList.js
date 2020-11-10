@@ -1,4 +1,7 @@
+/** @jsx jsx */
+import { jsx, Heading, Box } from '@chakra-ui/core'
 import React from 'react'
+import { Container } from 'uiComponents'
 import { Fragment, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import { CommentForm, Comment } from './index'
@@ -75,10 +78,12 @@ export const CommentsList = ({ post }) => {
 
   const comments = data.comments.nodes
   return (
-    <section>
+    <>
       {comments.length > 0 ? (
-        <section>
-          <h2>Comments</h2>
+        <Container as="section" size="lg" mb={14} sx={{ ul: { pl: 7 } }}>
+          <Heading as="h2" mb={7} textAlign="center">
+            Comments
+          </Heading>
           <ul>
             {comments
               .filter((el) => el.parent === null)
@@ -125,7 +130,7 @@ export const CommentsList = ({ post }) => {
                 </Fragment>
               ))}
           </ul>
-        </section>
+        </Container>
       ) : (
         <p>No comments yet</p>
       )}
@@ -136,6 +141,6 @@ export const CommentsList = ({ post }) => {
           cancelReply={cancelReply}
         />
       )}
-    </section>
+    </>
   )
 }

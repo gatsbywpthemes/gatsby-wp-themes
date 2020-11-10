@@ -35,6 +35,7 @@ export const lineHeights = {
 export const p = {
   fontSize: ['md'],
   lineHeight: 'body',
+  mb: 5,
 }
 export const a = {
   transition: 'all .4s ease-in-out',
