@@ -1,6 +1,19 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx, Flex, Button } from '@chakra-ui/core'
 import { Link } from 'gatsby'
 
+const LinkButton = (props) => (
+  <Button
+    as={Link}
+    variant="ghost"
+    size="xs"
+    className="prev"
+    colorScheme="red"
+    textTransform="uppercase"
+    letterSpacing="widest"
+    {...props}
+  />
+)
 const renderPreviousLink = ({ prev }) => {
   let previousLink = null
   if (!prev) {
@@ -10,18 +23,18 @@ const renderPreviousLink = ({ prev }) => {
   }
 
   return (
-    <Link className="prev" to={previousLink}>
+    <LinkButton to={previousLink} aria-label="visit previous post">
       <span>Previous</span>
-    </Link>
+    </LinkButton>
   )
 }
 
 const renderNextLink = ({ next }) => {
   if (next) {
     return (
-      <Link className="next" to={`${next}`}>
-        <span>Up Next</span>
-      </Link>
+      <LinkButton aria-label="visit next post" to={`${next}`}>
+        <span>Next</span>
+      </LinkButton>
     )
   } else {
     return <span />
@@ -30,9 +43,9 @@ const renderNextLink = ({ next }) => {
 
 export const PrevNextPostNavigation = ({ ctx, style }) => {
   return (
-    <nav>
+    <Flex as="nav" justify="space-between" mt={16}>
       {renderPreviousLink(ctx)}
       {renderNextLink(ctx)}
-    </nav>
+    </Flex>
   )
 }
