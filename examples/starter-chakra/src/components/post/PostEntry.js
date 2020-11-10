@@ -1,5 +1,11 @@
 /** @jsx jsx */
-import { jsx, Box } from '@chakra-ui/core'
+import {
+  jsx,
+  Box,
+  Center,
+  Divider,
+  useColorModeValue as colorMode,
+} from '@chakra-ui/core'
 import React from 'react'
 import {
   PostEntryTitle,
@@ -19,15 +25,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
     ? post.featuredImage.node.localFile.childImageSharp.fluid.src
     : null
   return (
-    <Box
-      as="article"
-      mb={14}
-      bg="white"
-      boxShadow="lg"
-      className="entry"
-      borderBottomRadius="lg"
-      {...props}
-    >
+    <Box as="article" mb={14} className="entry" {...props}>
       <PostEntryMedia
         location={location}
         post={post}
@@ -35,15 +33,29 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
         sx={{ '.gatsby-image-wrapper': { borderTopRadius: 'lg' } }}
       />
 
-      <Box p={[5, 12]} className={`content ${noImgClass}`}>
+      <Box
+        p={[5, 12]}
+        bg={colorMode('white', 'ultraDark')}
+        boxShadow="lg"
+        borderBottomRadius="lg"
+        className={`content ${noImgClass}`}
+      >
         <PostEntryTitle
           location={location}
           post={post}
+          textTransform="uppercase"
+          textStyle="h2"
+          mb={5}
           className="entry-title"
         />
         <PostEntryInfo className="entry-info" post={post} />
 
         <PostEntryContent location={location} post={post} />
+        {location !== 'single' && (
+          <Center height={20}>
+            <Divider />
+          </Center>
+        )}
 
         <div className="entry-footer">
           <PostEntryMeta className="entry-meta" post={post} />

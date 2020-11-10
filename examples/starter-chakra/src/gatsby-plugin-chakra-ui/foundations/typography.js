@@ -58,22 +58,22 @@ const heading = {
 export const h1 = {
   ...heading,
   fontSize: ['3xl', '4xl'],
-  mt: 1,
+  // mt: 1,
 }
 export const h2 = {
   ...heading,
   fontSize: ['2xl', '3xl'],
-  mt: 1,
+  // mt: 1,
 }
 
 export const h3 = {
   ...heading,
   fontSize: ['xl', '2xl'],
-  mt: 2,
+  // mt: 2,
 }
 export const h4 = {
   ...heading,
-  fontSize: ['xl', '2xl'],
+  fontSize: ['lg', 'xl'],
 }
 
 export const h5 = {
@@ -84,7 +84,7 @@ export const h6 = {
   ...heading,
   fontSize: 'xs',
   color: 'muted',
-  mb: 1,
+  // mb: 1,
 }
 export const blockquote = {
   fontStyle: 'italic',

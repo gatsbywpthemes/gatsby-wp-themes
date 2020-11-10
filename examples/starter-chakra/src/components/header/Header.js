@@ -26,7 +26,7 @@ export const Header = () => {
   const { title } = data.wp.generalSettings
 
   return (
-    <Box as="header" bg="gray.700" color="white" className="header">
+    <Box as="header" bg="ultraDark" py={4} color="white" className="header">
       <Container display="flex" justifyContent="space-between">
         <Flex>
           <SiteBranding title={title} />

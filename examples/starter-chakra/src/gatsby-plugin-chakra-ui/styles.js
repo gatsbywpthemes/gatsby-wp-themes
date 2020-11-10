@@ -1,7 +1,7 @@
 import { mode } from '@chakra-ui/theme-tools'
 import { base } from './foundations/typography'
 
-const styles = {
+export const styles = {
   global: (props) => ({
     body: {
       fontFamily: 'body',
@@ -20,5 +20,3 @@ const styles = {
     ...base,
   }),
 }
-
-export default styles

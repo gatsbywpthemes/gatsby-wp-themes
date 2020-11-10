@@ -13,7 +13,7 @@ export const SiteBranding = ({ title, ...props }) => {
           <img src={`${withPrefix('/')}${logoFileName}`} alt="logo" />
         </Link>
       ) : (
-        <Heading as="h1" textStyle="branding" {...props}>
+        <Heading as="h1" textTransform="uppercase" {...props}>
           <Link to="/" rel="home">
             {title}
           </Link>

@@ -9,8 +9,9 @@ import {
   base,
 } from './foundations/typography'
 import { Container as CenterContainer } from './components'
-import { branding } from './textStyles'
-import styles from './styles'
+import { layerStyles } from './layerStyles'
+
+import { styles } from './styles'
 
 const theme = extendTheme({
   colors,
@@ -28,8 +29,10 @@ const theme = extendTheme({
     CenterContainer,
   },
   textStyles: {
-    branding,
     ...base,
+  },
+  layerStyles: {
+    ...layerStyles,
   },
 
   gradients: {
