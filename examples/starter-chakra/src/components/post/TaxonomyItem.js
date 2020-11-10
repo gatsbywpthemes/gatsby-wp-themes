@@ -10,6 +10,7 @@ export const TaxonomyItem = ({ taxName, item, ...props }) => (
     aria-label="visit taxonomy page"
     colorScheme="teal"
     mr={3}
+    mb={[3, 0]}
     to={`${item.uri}`}
     aria-label={`visit ${taxName} ${item.name} page`}
   >
