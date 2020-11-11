@@ -1,15 +1,14 @@
 /** @jsx jsx */
 import { jsx, Flex } from '@chakra-ui/core'
-import { Container } from 'uiComponents'
-import { Layout } from '../Layout'
-import ParsedContent from 'utils/ParsedContent'
-import { ActivatePageScripts } from 'utils'
-import { useLayoutStyles } from 'utils/hooks'
+import { Container } from 'starterUiComponents'
+import { Layout, Sidebar } from 'starterComponents'
+import ParsedContent from 'starterUtils/ParsedContent'
+import { ActivatePageScripts } from 'starterUtils'
+import { useLayoutStyles } from 'starterUtils/hooks'
 
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { gutenbergStyles } from 'styles/gutenbergStyles'
-import { Sidebar } from '../index'
+import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
   const {

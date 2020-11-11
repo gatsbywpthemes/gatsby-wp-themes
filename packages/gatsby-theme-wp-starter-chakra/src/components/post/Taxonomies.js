@@ -6,7 +6,7 @@ import {
   useColorModeValue as colorMode,
 } from '@chakra-ui/core'
 
-import { TaxonomyItem } from './index'
+import { TaxonomyItem } from 'starterComponents'
 
 export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
   const taxonomies = post[taxName].nodes

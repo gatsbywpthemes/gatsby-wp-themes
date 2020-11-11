@@ -15,9 +15,9 @@ import {
   PostEntryInfo,
   ReadMoreButton,
   PrevNextPostNavigation,
-} from './index'
+} from 'starterComponents'
 import normalize from 'normalize-path'
-import { SocialShare } from '../social'
+import { SocialShare } from 'starterComponents'
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''

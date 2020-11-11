@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Flex } from '@chakra-ui/core'
-import { TransparentCard } from 'uiComponents'
+import { TransparentCard } from 'starterUiComponents'
 import moment from 'moment'
-import { CommentForm } from './index'
+import { CommentForm } from 'starterComponents'
 
 const Reply = ({ commentId, actionOnClick }) => {
   return (

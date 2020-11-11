@@ -1,5 +1,5 @@
 import React from 'react'
-import { Taxonomies } from './index'
+import { Taxonomies } from 'starterComponents'
 
 export const PostEntryMeta = ({ post, ...props }) => {
   return (

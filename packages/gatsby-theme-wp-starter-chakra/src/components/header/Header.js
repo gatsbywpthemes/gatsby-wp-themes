@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Menu, SiteBranding } from './index'
-import { Container } from '../ui-components'
+import { Menu, SiteBranding } from 'starterComponents'
+import { Container } from 'starterUiComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-import { ColorSwitch } from '../ColorSwitch'
-import { SearchModal } from '../search'
+import { ColorSwitch } from 'starterComponents'
+import { SearchModal } from 'starterComponents'
 import { Box, Flex, jsx, Button } from '@chakra-ui/core'
 
 export const Header = () => {

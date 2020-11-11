@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, HStack } from '@chakra-ui/core'
-import React from 'react'
 import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
 import {
   FaBehance,

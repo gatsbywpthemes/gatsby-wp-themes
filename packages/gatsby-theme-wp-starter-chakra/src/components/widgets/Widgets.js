@@ -1,6 +1,11 @@
 import React from 'react'
-import { SocialFollows } from '../social'
-import { CategoriesWidget, TagsWidget, RecentPosts, Newsletter } from './index'
+import {
+  CategoriesWidget,
+  TagsWidget,
+  RecentPosts,
+  Newsletter,
+  SocialFollows,
+} from 'starterComponents'
 
 export const Widgets = ({ widget }) => {
   switch (widget) {

@@ -7,7 +7,7 @@ import {
   Box,
   Link as ChakraLink,
 } from '@chakra-ui/core'
-import { BorderTitle } from 'uiComponents'
+import { BorderTitle } from 'starterUiComponents'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'

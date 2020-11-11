@@ -28,13 +28,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-root-import",
       options: {
-        src: "gatsby-theme-wp-starter-chakra/src",
-        pages: "gatsby-theme-wp-starter-chakra/src/pages",
-        styles: "gatsby-theme-wp-starter-chakra/src/styles",
-        components: "gatsby-theme-wp-starter-chakra/src/components",
-        uiComponents:
+        starterSrc: "gatsby-theme-wp-starter-chakra/src",
+        starterPages: "gatsby-theme-wp-starter-chakra/src/pages",
+        starterStyles: "gatsby-theme-wp-starter-chakra/src/styles",
+        starterComponents: "gatsby-theme-wp-starter-chakra/src/components",
+        starterUiComponents:
           "gatsby-theme-wp-starter-chakra/src/components/ui-components",
-        utils: "gatsby-theme-wp-starter-chakra/src/utils",
+        starterUtils: "gatsby-theme-wp-starter-chakra/src/utils",
       },
     },
   ],

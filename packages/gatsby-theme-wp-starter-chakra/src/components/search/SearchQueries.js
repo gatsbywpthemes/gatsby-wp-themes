@@ -1,5 +1,5 @@
 import React from 'react'
-import { SearchPostsQuery, SearchPagesQuery } from './index'
+import { SearchPostsQuery, SearchPagesQuery } from 'starterComponents'
 
 export const SearchQueries = ({ search, ...props }) => {
   return (

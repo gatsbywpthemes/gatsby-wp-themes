@@ -1,6 +1,6 @@
 import { Box, useColorModeValue as colorMode } from '@chakra-ui/core'
 import React from 'react'
-import { Date, Author } from './index'
+import { Date, Author } from 'starterComponents'
 
 export const PostEntryInfo = ({ post, ...props }) => {
   return (

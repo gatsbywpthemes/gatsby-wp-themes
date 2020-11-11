@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex, Box } from '@chakra-ui/core'
-import { BorderTitle } from 'uiComponents'
+import { BorderTitle } from 'starterUiComponents'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 const ALL_TAGS_QUERY = graphql`

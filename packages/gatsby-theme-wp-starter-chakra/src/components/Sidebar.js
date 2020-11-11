@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box, useColorModeValue as colorMode } from '@chakra-ui/core'
 import React from 'react'
-import { Widgets } from './widgets'
+import { Widgets } from 'starterComponents'
 
 export const Sidebar = ({ widgets, ...props }) => {
   const bgColor = colorMode('white', 'ultraDark')

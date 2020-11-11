@@ -1,14 +1,9 @@
 /** @jsx jsx */
-import {
-  Box,
-  jsx,
-  DarkMode,
-  useColorModeValue as colorMode,
-} from '@chakra-ui/core'
-import { Container } from 'uiComponents'
-import React from 'react'
-import { FooterContent } from './index'
-import { SocialFollows } from '../social'
+import { Box, jsx, useColorModeValue as colorMode } from '@chakra-ui/core'
+import { Container } from 'starterUiComponents'
+
+import { FooterContent } from 'starterComponents'
+import { SocialFollows } from 'starterComponents'
 
 export const Footer = () => (
   <Box as="footer" py={7} bg={colorMode('gray.800', 'gray.900')}>

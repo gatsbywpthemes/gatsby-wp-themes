@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx, Flex, useToken } from '@chakra-ui/core'
-import { Container } from 'uiComponents'
+import { jsx, Flex } from '@chakra-ui/core'
+import { Container } from 'starterUiComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { Sidebar } from '../index'
-import { ArchiveTitle, PostsList, Pagination } from './index'
-import { useLayoutWidth } from 'utils/hooks'
+import { Sidebar } from 'starterComponents'
+import { ArchiveTitle, PostsList, Pagination } from 'starterComponents'
+import { useLayoutWidth } from 'starterUtils/hooks'
 
-export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
+export const ArchiveContent = ({ posts, ctx, name }) => {
   const { archiveSidebar, sidebarWidgets } = useThemeOptions()
 
   const [archiveWidth, xl] = useLayoutWidth('archive')

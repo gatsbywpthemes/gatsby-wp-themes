@@ -16,7 +16,7 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/core'
 import { SearchIcon } from '@chakra-ui/icons'
-import { SearchForm } from './SearchForm'
+import { SearchForm } from 'starterComponents'
 
 export const SearchModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()

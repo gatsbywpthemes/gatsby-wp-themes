@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Button } from 'grommet'
 import { useQuery, gql } from '@apollo/client'
-import { SearchResults } from './index'
+import { SearchResults } from 'starterComponents'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_POSTS = gql`

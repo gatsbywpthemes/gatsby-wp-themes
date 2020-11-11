@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import { jsx, Flex } from '@chakra-ui/core'
-import { Container } from 'uiComponents'
-import { Layout } from '../Layout'
+import { Container } from 'starterUiComponents'
+import { Layout, PostEntry, CommentsList, Sidebar } from 'starterComponents'
 import { Seo } from 'gatsby-plugin-wp-seo'
-import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { useLayoutStyles } from 'utils/hooks'
+import { useLayoutStyles } from 'starterUtils/hooks'
 
 const Post = ({ post, ctx }) => {
   const {
