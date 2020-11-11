@@ -48,6 +48,6 @@ export const colors = {
   accentDark: red[500],
   highlight: orange[500],
   mutted: gray[200],
-  blue,
+
   // gray,
 }

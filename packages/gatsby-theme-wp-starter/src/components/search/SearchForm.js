@@ -1,8 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Input, IconButton } from '@chakra-ui/core'
-import { SmallCloseIcon } from '@chakra-ui/icons'
-
+import { Input } from '@chakra-ui/core'
 import { SearchQueries } from './index'
 
 export const SearchForm = (props) => {
@@ -37,7 +35,6 @@ export const SearchForm = (props) => {
             onKeyDown={handleKeyDown}
             placeholder="search here..."
             fontSize="3xl"
-            color="blue.100"
             borderLeft="5px solid"
             borderColor="primary"
             borderRadius={0}
