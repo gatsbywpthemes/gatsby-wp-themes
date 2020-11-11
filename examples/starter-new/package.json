@@ -16,7 +16,7 @@
     "gatsby": "^2.24.85",
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-wpcf7": "*",
-    "gatsby-theme-wp-starter-chakra": "*",
+    "gatsby-theme-wp-starter": "*",
     "lodash.merge": "^4.6.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
