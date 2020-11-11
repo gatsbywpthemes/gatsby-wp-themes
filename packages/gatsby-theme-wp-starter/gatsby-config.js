@@ -50,10 +50,7 @@ module.exports = (options) => {
         starterUtils: path.join(__dirname, 'src/utils'),
       },
     },
-
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-wordpress-lightbox`,

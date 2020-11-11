@@ -21,7 +21,7 @@ const typography = new Typography({
 })
 
 export const styles = {
-  global: (props, theme) => {
+  global: (props) => {
     return {
       html: {
         fontSize: typography?.baseFontSize,

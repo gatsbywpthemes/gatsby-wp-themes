@@ -1,23 +1,27 @@
+/** @jsx jsx */
+import {
+  jsx,
+  IconButton,
+  useDisclosure,
+  Collapse as Collapsible,
+} from '@chakra-ui/core'
+
 import React from 'react'
-import { useState, Fragment } from 'react'
-import { Button, Collapsible } from 'grommet'
-import { FormNext, FormDown } from 'grommet-icons'
+
+import { ChevronRightIcon, ChevronDownIcon } from '@chakra-ui/icons'
 
 export const Collapse = ({ menuItem, children }) => {
-  const [openMenu, setOpenMenu] = useState(false)
-
+  const { isOpen, onToggle } = useDisclosure()
   return (
-    <Fragment>
-      <Button
-        icon={openMenu ? <FormDown /> : <FormNext />}
-        a11yTitle="Open menu item"
-        focusIndicator={false}
-        onClick={() => {
-          const newOpenMenu = !openMenu
-          setOpenMenu(newOpenMenu)
-        }}
+    <>
+      <IconButton
+        icon={isOpen ? <ChevronDownIcon /> : <ChevronRightIcon />}
+        aria-label="Open menu item"
+        variant="unstyled"
+        size="sm"
+        onClick={onToggle}
       />
-      <Collapsible open={openMenu}>{children}</Collapsible>
-    </Fragment>
+      <Collapsible in={isOpen}>{children}</Collapsible>
+    </>
   )
 }
