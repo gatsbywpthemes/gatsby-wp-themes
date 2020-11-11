@@ -12,7 +12,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-theme-wp-blog-starter`,
+      resolve: `gatsby-theme-wp-starter-chakra`,
       options: {
         ...options,
         pathPrefix:
@@ -23,6 +23,18 @@ module.exports = {
       resolve: "gatsby-plugin-wpcf7",
       options: {
         wordPressUrl: options.wordPressUrl,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        src: "gatsby-theme-wp-starter-chakra/src",
+        pages: "gatsby-theme-wp-starter-chakra/src/pages",
+        styles: "gatsby-theme-wp-starter-chakra/src/styles",
+        components: "gatsby-theme-wp-starter-chakra/src/components",
+        uiComponents:
+          "gatsby-theme-wp-starter-chakra/src/components/ui-components",
+        utils: "gatsby-theme-wp-starter-chakra/src/utils",
       },
     },
   ],

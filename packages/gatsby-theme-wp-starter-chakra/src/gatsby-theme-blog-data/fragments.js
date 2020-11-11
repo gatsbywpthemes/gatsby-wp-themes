@@ -1,17 +1,6 @@
 import { graphql } from 'gatsby'
 
 export const fragments = graphql`
-  fragment ImageFluidFragment on WpMediaItem {
-    altText
-    sourceUrl
-    localFile {
-      childImageSharp {
-        fluid(maxWidth: 1200, maxHeight: 600, quality: 80) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-  }
   fragment PostTemplateFragment_starter on WpPost {
     id
     uri
@@ -19,18 +8,10 @@ export const fragments = graphql`
     title
     excerpt
     date
-    databaseId
-    # postFormats {
-    #   taxonomyInfo {
-    #     name
-    #   }
-    # }
-    template {
-      templateName
-    }
+
     featuredImage {
       node {
-        ...ImageFluidFragment
+        ...GatsbyImageQuery_starter
       }
     }
     categories {
@@ -40,6 +21,9 @@ export const fragments = graphql`
         name
         uri
       }
+    }
+    template {
+      templateName
     }
     author {
       node {
@@ -56,6 +40,18 @@ export const fragments = graphql`
         name
         slug
         uri
+      }
+    }
+  }
+
+  fragment GatsbyImageQuery_starter on WpMediaItem {
+    altText
+    sourceUrl
+    localFile {
+      childImageSharp {
+        fluid(maxWidth: 1200, maxHeight: 600, quality: 80) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
       }
     }
   }

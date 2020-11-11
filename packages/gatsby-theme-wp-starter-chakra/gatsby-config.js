@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require('path')
 module.exports = (options) => {
   options.fonts = options.fonts || ['IBM Plex Mono', 'Roboto Slab']
   options.customFonts = []
@@ -34,17 +35,29 @@ module.exports = (options) => {
         pathPrefix: options.pathPrefix,
       },
     },
-    `gatsby-plugin-theme-ui`,
+    'gatsby-plugin-chakra-ui',
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        pages: path.join(__dirname, 'src/pages'),
+        styles: path.join(__dirname, 'src/styles'),
+        components: path.join(__dirname, 'src/components'),
+        uiComponents: path.join(__dirname, 'src/components/ui-components'),
+        utils: path.join(__dirname, 'src/utils'),
+      },
+    },
+
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-theme-ui`,
+
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-wordpress-lightbox`,
       options: {
-        ...options.lightboxOptions || {}
-      }
-    }
+        ...(options.lightboxOptions || {}),
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-scroll-reveal`,
     //   options: {
