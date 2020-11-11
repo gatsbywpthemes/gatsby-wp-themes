@@ -20,7 +20,12 @@ const theme = extendTheme({
   fonts,
   lineHeights,
   fontWeights,
-
+  transition: {
+    sm: `all .2s ease-in-out`,
+    md: `all .4s ease-in-out`,
+    lg: `all .8s ease-in-out`,
+    xl: `all 1s ease-in-out`,
+  },
   components: {
     CenterContainer,
   },

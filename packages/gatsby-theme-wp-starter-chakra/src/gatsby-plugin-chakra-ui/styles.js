@@ -19,15 +19,14 @@ const typography = new Typography({
   bodyWeight: theme.fontWeights.body,
   boldWeight: theme.fontWeights.bold,
 })
-
 export const styles = {
-  global: (props, theme) => {
+  global: (props) => {
     return {
       html: {
-        fontSize: typography?.baseFontSize,
+        fontSize: typography.baseFontSize,
       },
       body: {
-        fontFamily: 'body',
+        fontFamily: typography.bodyFontFamily,
         color: mode('dark', 'ultraLight')(props),
         bg: mode('ultraLight', 'dark')(props),
         transition: 'all .4s ease-in-out',

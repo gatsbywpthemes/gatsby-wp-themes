@@ -13,7 +13,7 @@ export const Header = () => {
   const { search, menuName } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
-    query {
+    query SiteTitleQuery {
       wp {
         generalSettings {
           title
