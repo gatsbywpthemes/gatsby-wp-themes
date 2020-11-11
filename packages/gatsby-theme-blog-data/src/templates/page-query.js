@@ -4,7 +4,7 @@ import Page from '../components/Page'
 export default Page
 
 export const pageQuery = graphql`
-  query GET_PAGE($uri: String!) {
+  query($uri: String!) {
     wpPage(uri: { eq: $uri }) {
       title
       content
