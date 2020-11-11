@@ -14,9 +14,9 @@ const config = {
 
   skipTitle: "all",
   layoutWidth: {
-    page: "l",
-    post: "l",
-    archive: "l",
+    page: "lg",
+    post: "lg",
+    archive: "lg",
   },
   sidebarWidgets: [
     "Categories",

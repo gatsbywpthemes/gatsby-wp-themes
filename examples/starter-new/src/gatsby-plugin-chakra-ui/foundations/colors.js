@@ -9,7 +9,7 @@ const {
   cyan,
   purple,
   pink,
-  // gray,
+  gray,
 } = theme.colors
 
 const blue = {
@@ -24,22 +24,22 @@ const blue = {
   800: "#083245",
   900: "#00141a",
 }
-const gray = {
-  50: "#e6f9ff",
-  100: "#ccdfe5",
-  200: "#b1c6cd",
-  300: "#93aeb7",
-  400: "#7795a1",
-  500: "#5e7a88",
-  600: "#47626b",
-  700: "#31484d",
-  800: "#192e30",
-  900: "#001514",
-}
+// const gray = {
+//   50: "#e6f9ff",
+//   100: "#ccdfe5",
+//   200: "#b1c6cd",
+//   300: "#93aeb7",
+//   400: "#7795a1",
+//   500: "#5e7a88",
+//   600: "#47626b",
+//   700: "#31484d",
+//   800: "#192e30",
+//   900: "#001514",
+// }
 
 export const colors = {
-  light: orange[100],
-  ultraLight: orange[50],
+  light: gray[100],
+  ultraLight: gray[50],
   dark: gray[800],
   ultraDark: gray[900],
   primary: gray[600],

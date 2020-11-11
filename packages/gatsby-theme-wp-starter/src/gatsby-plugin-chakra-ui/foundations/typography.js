@@ -15,10 +15,10 @@ export const fontSizes = {
   '9xl': rem(128),
 }
 
-export const fonts = {
-  body: 'IBM Plex Mono',
-  heading: 'Roboto Slab',
-}
+// export const fonts = {
+//   body: 'IBM Plex Mono',
+//   heading: 'Roboto Slab',
+// }
 
 export const fontWeights = {
   body: 400,
