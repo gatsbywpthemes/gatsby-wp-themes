@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Flex } from '@chakra-ui/core'
-import { Container } from 'starterUiComponents'
+import { jsx, Flex, Box } from '@chakra-ui/core'
+import { Container, Card } from 'starterUiComponents'
 import { Layout, Sidebar } from 'starterComponents'
 import ParsedContent from 'starterUtils/ParsedContent'
 import { ActivatePageScripts } from 'starterUtils'
@@ -53,7 +53,13 @@ const Page = ({ page, ctx }) => {
             alignItems: `flex-start`,
           }}
         >
-          <article className="entry">
+          <Card
+            as="article"
+            className="entry"
+            p={templateName === 'Full Width' ? 0 : [5, 16]}
+            borderRadius={templateName === 'Full Width' ? 0 : 'lg'}
+            boxShadow={templateName === 'Full Width' ? 0 : 'lg'}
+          >
             <div className="content page-content">
               {skipTitle &&
                 !skipTitle.includes(slug) &&
@@ -69,7 +75,7 @@ const Page = ({ page, ctx }) => {
                 <ParsedContent content={content} />
               </div>
             </div>
-          </article>
+          </Card>
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
       </Container>

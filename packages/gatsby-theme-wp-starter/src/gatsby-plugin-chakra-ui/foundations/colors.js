@@ -10,44 +10,47 @@ const {
   purple,
   pink,
   gray,
+  blue,
 } = theme.colors
 
-const blue = {
-  50: '#e2ffff',
-  100: '#baf2f7',
-  200: '#90e5f0',
-  300: '#67d6ea',
-  400: '#43c4e3',
-  500: '#30a4ca',
-  600: '#237c9e',
-  700: '#175671',
-  800: '#083245',
-  900: '#00141a',
+const hotPink = {
+  100: '#fffafc',
+  200: '#ffdbe8',
+  300: '#ffb8d2',
+  400: '#ff85b4',
+  500: '#ff1472',
+  600: '#f0005c',
+  700: '#d6004f',
+  800: '#bd0042',
+  900: '#990033',
 }
-// const gray = {
-//   50: '#e6f9ff',
-//   100: '#ccdfe5',
-//   200: '#b1c6cd',
-//   300: '#93aeb7',
-//   400: '#7795a1',
-//   500: '#5e7a88',
-//   600: '#47626b',
-//   700: '#31484d',
-//   800: '#192e30',
-//   900: '#001514',
-// }
+
+//Palette
+
+const light = gray[100],
+  ultraLight = gray[50],
+  dark = gray[800],
+  ultraDark = gray[900],
+  primary = red[500],
+  secondary = teal[500],
+  highlight = hotPink[500],
+  mutted = gray[200]
 
 export const colors = {
-  light: gray[100],
-  ultraLight: gray[50],
-  dark: gray[800],
-  ultraDark: gray[900],
-  primary: gray[600],
-  secondary: gray[700],
-  accentLight: pink[500],
-  accentDark: red[500],
-  highlight: orange[500],
-  mutted: gray[200],
-
-  // gray,
+  light,
+  ultraLight,
+  dark,
+  ultraDark,
+  primary,
+  secondary,
+  highlight,
+  mutted,
+  bg: ultraLight,
+  text: ultraDark,
+  headerBg: 'white',
+  dark: {
+    headerBg: ultraDark,
+    bg: dark,
+    text: ultraLight,
+  },
 }

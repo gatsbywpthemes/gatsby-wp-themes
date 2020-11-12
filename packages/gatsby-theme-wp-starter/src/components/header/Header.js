@@ -7,7 +7,13 @@ import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 import { ColorSwitch } from 'starterComponents'
 import { SearchModal } from 'starterComponents'
-import { Box, Flex, jsx, Button } from '@chakra-ui/core'
+import {
+  Box,
+  Flex,
+  jsx,
+  Button,
+  useColorModeValue as colorMode,
+} from '@chakra-ui/core'
 
 export const Header = () => {
   const { search, menuName } = useThemeOptions()
@@ -26,7 +32,13 @@ export const Header = () => {
   const { title } = data.wp.generalSettings
 
   return (
-    <Box as="header" bg="ultraDark" py={4} color="white" className="header">
+    <Box
+      as="header"
+      bg={colorMode('headerBg', 'dark.headerBg')}
+      py={4}
+      className="header"
+      boxShadow="md"
+    >
       <Container display="flex" justifyContent="space-between">
         <Flex>
           <SiteBranding title={title} />

@@ -8,7 +8,7 @@ import {
   fontWeights,
   base,
 } from './foundations/typography'
-import { Container as CenterContainer } from './components'
+import { Container as CenterContainer, Card } from './components'
 import { layerStyles } from './layerStyles'
 import { textStyles } from './textStyles'
 
@@ -28,6 +28,7 @@ const theme = extendTheme({
   },
   components: {
     CenterContainer,
+    Card,
   },
   textStyles: {
     ...textStyles,

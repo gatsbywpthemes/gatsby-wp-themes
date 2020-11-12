@@ -21,7 +21,7 @@ export const SearchModal = () => {
     <>
       <IconButton
         aria-label="Search"
-        icon={<SearchIcon color="gray.200" />}
+        icon={<SearchIcon color={colorMode('gray.600', 'light')} />}
         variant="unstyled"
         onClick={onOpen}
         size="lg"
@@ -40,7 +40,7 @@ export const SearchModal = () => {
         // width="100%"
       >
         <DrawerOverlay />
-        <DrawerContent bg={colorMode('light', 'dark')} p={4}>
+        <DrawerContent bg={colorMode('white', 'dark')} p={4}>
           <DrawerBody>
             <DrawerCloseButton />
             <SearchForm />

@@ -2,7 +2,7 @@ import React from 'react'
 import { withPrefix } from 'gatsby'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Link } from 'gatsby'
-import { Heading } from '@chakra-ui/core'
+import { Heading, Link as ChakraLink } from '@chakra-ui/core'
 
 export const SiteBranding = ({ title, ...props }) => {
   const { logoFileName } = useThemeOptions()
@@ -13,10 +13,22 @@ export const SiteBranding = ({ title, ...props }) => {
           <img src={`${withPrefix('/')}${logoFileName}`} alt="logo" />
         </Link>
       ) : (
-        <Heading as="h1" textTransform="uppercase" {...props}>
-          <Link to="/" rel="home">
+        <Heading
+          as="h1"
+          textTransform="uppercase"
+          fontSize="2xl"
+          letterSpacing="wider"
+          {...props}
+        >
+          <ChakraLink
+            as={Link}
+            transition="color .4s ease-in-out"
+            _hover={{ textDecoration: 'none', color: 'primary' }}
+            to="/"
+            rel="home"
+          >
             {title}
-          </Link>
+          </ChakraLink>
         </Heading>
       )}
     </>

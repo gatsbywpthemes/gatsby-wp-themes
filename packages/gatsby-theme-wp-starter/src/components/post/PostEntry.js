@@ -17,6 +17,7 @@ import {
   PrevNextPostNavigation,
   SocialShare,
 } from 'starterComponents'
+import { Card } from 'starterUiComponents'
 import normalize from 'normalize-path'
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
@@ -33,11 +34,8 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
         sx={{ '.gatsby-image-wrapper': { borderTopRadius: 'lg' } }}
       />
 
-      <Box
-        p={[5, 12]}
-        bg={colorMode('white', 'ultraDark')}
-        boxShadow="lg"
-        borderBottomRadius="lg"
+      <Card
+        borderTopRadius={media ? 0 : 'lg'}
         className={`content ${noImgClass}`}
       >
         <PostEntryTitle
@@ -71,7 +69,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
             <PrevNextPostNavigation ctx={ctx} />
           </>
         )}
-      </Box>
+      </Card>
     </Box>
   )
 }

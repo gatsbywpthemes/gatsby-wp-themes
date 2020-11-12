@@ -1,6 +1,8 @@
 import { extendTheme } from "@chakra-ui/core"
+import customTheme from "gatsby-theme-wp-starter/src/gatsby-plugin-chakra-ui/theme"
+import typographySettings from "../../configTypography"
 
-import { colors } from "./foundations"
+// import { colors } from "./foundations"
 import {
   fontSizes,
   fonts,
@@ -15,15 +17,16 @@ import { textStyles } from "./textStyles"
 import { styles } from "./styles"
 
 const theme = extendTheme({
-  colors,
+  // colors,
+  ...customTheme,
   fontSizes,
   fonts,
   lineHeights,
   fontWeights,
 
-  components: {
-    CenterContainer,
-  },
+  // components: {
+  //   CenterContainer,
+  // },
   textStyles: {
     ...textStyles,
     ...base,
@@ -42,7 +45,9 @@ const theme = extendTheme({
         `linear-gradient(60deg, ${t.colors.primary}, ${t.colors.purple} )`,
     },
   },
-  styles,
+  // styles: {
+  //   ...styles,
+  // },
 })
 
 export default theme

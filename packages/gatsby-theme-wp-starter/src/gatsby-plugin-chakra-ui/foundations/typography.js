@@ -50,7 +50,6 @@ const heading = {
   fontFamily: 'heading',
   lineHeight: 'heading',
   fontWeight: 'heading',
-  color: 'text',
   a: {
     borderBottom: 'none',
   },
@@ -90,11 +89,12 @@ export const h6 = {
 export const blockquote = {
   fontStyle: 'italic',
   px: [5, 12],
-  py: 10,
+  py: 8,
   borderLeft: '5px solid',
   borderColor: 'primary',
   maxWidth: '800px !important',
   mx: 'auto',
+  my: 10,
 }
 
 export const base = {
