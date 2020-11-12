@@ -16,9 +16,9 @@ export const ArchiveContent = ({ posts, ctx, name }) => {
       ? {
           maxWidth: xl,
           '.posts-list': {
-            width: [`100%`, `100%`, `100%`, `70%`],
+            width: { base: '100%', lg: '67%', xl: '70%' },
           },
-          '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
+          '.sidebar': { width: { base: '100%', lg: '33%', xl: '30%' } },
         }
       : { maxWidth: archiveWidth() }
 
@@ -28,12 +28,12 @@ export const ArchiveContent = ({ posts, ctx, name }) => {
         ? {
             flexDirection: `row-reverse`,
             '.posts-list': {
-              pl: [0, 0, 0, 8],
+              pl: { base: 0, lg: 8 },
             },
           }
         : {
             '.posts-list': {
-              pr: [0, 0, 0, 8],
+              pr: { base: 0, lg: 8 },
             },
           }
       : ''
@@ -44,7 +44,7 @@ export const ArchiveContent = ({ posts, ctx, name }) => {
       <Flex
         sx={{
           ...sidebarSide,
-          flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+          flexWrap: { base: `wrap`, lg: `wrap` },
           alignItems: `flex-start`,
         }}
       >
