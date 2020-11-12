@@ -1,0 +1,27 @@
+body {
+  font-family: "Fira Sans", sans-serif;
+}
+h1,
+.h1,
+.heading-font,
+h2,
+h3 {
+  font-family: "Prata", serif;
+}
+.entry-excerpt {
+}
+
+.meta-data {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.btn-sm.text-uppercase {
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  line-height: 2;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
