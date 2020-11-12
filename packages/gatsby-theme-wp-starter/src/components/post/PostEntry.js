@@ -42,7 +42,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
           location={location}
           post={post}
           textTransform="uppercase"
-          textStyle="h2"
+          fontSize={['2xl', '3xl']}
           mb={5}
           className="entry-title"
         />

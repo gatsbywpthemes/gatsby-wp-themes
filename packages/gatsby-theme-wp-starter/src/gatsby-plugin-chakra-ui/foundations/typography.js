@@ -28,7 +28,7 @@ export const fontWeights = {
 
 export const lineHeights = {
   body: 1.8,
-  heading: 1.1,
+  heading: 1.4,
   loose: 2,
 }
 
@@ -83,8 +83,6 @@ export const h5 = {
 export const h6 = {
   ...heading,
   fontSize: 'xs',
-  color: 'muted',
-  // mb: 1,
 }
 export const blockquote = {
   fontStyle: 'italic',

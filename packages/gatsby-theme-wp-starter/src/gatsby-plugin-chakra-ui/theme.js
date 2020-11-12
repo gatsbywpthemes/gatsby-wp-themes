@@ -32,7 +32,7 @@ const theme = extendTheme({
   },
   textStyles: {
     ...textStyles,
-    ...base,
+    // ...base,
   },
   layerStyles: {
     ...layerStyles,

@@ -31,9 +31,9 @@ const light = gray[100],
   ultraLight = gray[50],
   dark = gray[800],
   ultraDark = gray[900],
-  primary = red[500],
+  primary = red[600],
   secondary = teal[500],
-  highlight = hotPink[500],
+  highlight = red[500],
   mutted = gray[200]
 
 export const colors = {
@@ -48,8 +48,10 @@ export const colors = {
   bg: ultraLight,
   text: ultraDark,
   headerBg: 'white',
+  searchBg: 'white',
   dark: {
     headerBg: ultraDark,
+    searchBg: ultraDark,
     bg: dark,
     text: ultraLight,
   },

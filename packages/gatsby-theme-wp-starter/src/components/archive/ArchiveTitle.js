@@ -14,11 +14,11 @@ export const ArchiveTitle = ({ name, text }) => {
       mb={10}
       borderRadius="lg"
       display="inline-block"
-      bg={colorMode('gray.200', 'gray.900')}
+      bg={colorMode('light', 'primary')}
       className="archive-title"
       boxShadow="md"
     >
-      <Heading fontSize="2xl" textTransform="uppercase">
+      <Heading fontSize="xl" textTransform="uppercase">
         {text} {name}
       </Heading>
     </Box>
