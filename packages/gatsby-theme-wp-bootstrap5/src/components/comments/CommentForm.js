@@ -157,7 +157,7 @@ export const CommentForm = ({
               <span>Cancel</span>
             </button>
           )}
-          <form className="mb-5" onSubmit={handleSubmit(onSubmit)} noValidate>
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <CommentNotes />
             {inputFields.map((el) => {
               const Tag = el.tag

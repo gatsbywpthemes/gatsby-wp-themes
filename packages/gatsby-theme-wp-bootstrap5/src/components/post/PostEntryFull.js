@@ -51,7 +51,7 @@ export const PostEntryFull = ({ ctx, post }) => {
           <PrevNextPostNavigation ctx={ctx} />
         </div>
         {!!addWordPressComments && post.commentStatus === 'open' && (
-          <section className="border-top border-dark pt-4">
+          <section className="border-top border-dark pt-4 mb-5">
             <CommentsList post={post} />
           </section>
         )}
