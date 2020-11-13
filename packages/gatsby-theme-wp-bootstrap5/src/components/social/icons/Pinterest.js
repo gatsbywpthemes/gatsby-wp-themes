@@ -8,11 +8,11 @@ export const Pinterest = ({
   media,
   title,
   children,
-  round = true,
+  round = false,
   size = 32,
   borderRadius = 0,
-  iconBgStyle = {},
-  logoFillColor = 'white',
+  bgStyle = { fill: '#303030' },
+  iconFillColor = 'white',
 }) => {
   const { siteUrl } = useSiteMetaData()
   const shareUrl = `${slashes(siteUrl)}${url}`
@@ -26,8 +26,8 @@ export const Pinterest = ({
           round={round}
           size={size}
           borderRadius={borderRadius}
-          iconBgStyle={iconBgStyle}
-          logoFillColor={logoFillColor}
+          bgStyle={bgStyle}
+          iconFillColor={iconFillColor}
         />
       )}
     </PinterestShareButton>

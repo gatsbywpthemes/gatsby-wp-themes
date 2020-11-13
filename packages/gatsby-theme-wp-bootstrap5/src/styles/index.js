@@ -7,7 +7,7 @@ export * from './pageStyles'
 export * from './pageTitleStyles'
 export * from './page404Styles'
 export * from './paginationStyles'
-export * from './searchStyles'
+
 export * from './slideSidebarStyles'
 export * from './socialStyles'
 export * from './widgetStyles'

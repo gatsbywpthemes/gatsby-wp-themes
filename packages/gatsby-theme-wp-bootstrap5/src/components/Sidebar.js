@@ -4,7 +4,7 @@ import { Widgets } from './widgets'
 import { SearchForm } from './search'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-export const Sidebar = (props) => {
+export const Sidebar = ({ className, ...props }) => {
   const {
     widgetAreas: {
       slideMenu: { widgets },
@@ -13,7 +13,7 @@ export const Sidebar = (props) => {
   } = useThemeOptions()
 
   return (
-    <div {...props}>
+    <div className={`${className} col-lg-3`} {...props}>
       {addWordPressSearch && <SearchForm />}
 
       {!!widgets &&

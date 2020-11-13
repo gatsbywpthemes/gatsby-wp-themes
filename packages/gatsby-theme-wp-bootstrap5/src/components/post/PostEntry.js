@@ -11,7 +11,7 @@ export const PostEntry = ({ ctx, post, location = 'archive' }) => {
   return (
     <article
       className="entry col-lg-4 mb-4"
-      data-sal="slide-up"
+      data-sal="fade"
       data-sal-duration="1000"
       data-sal-easing="ease"
     >

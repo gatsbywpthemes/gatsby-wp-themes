@@ -118,3 +118,7 @@ figure,
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
 }
+
+.wp-block-media-text__media > .gatsby-image-wrapper {
+  width: auto !important;
+}

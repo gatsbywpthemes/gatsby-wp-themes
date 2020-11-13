@@ -1,10 +1,7 @@
-/* eslint-disable no-useless-escape */
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { Fragment, useState } from 'react'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
-import { commentsStyles, replyButtonStyles } from '../../styles/'
 
 const commentSubmitQuery = gql`
   mutation(
@@ -46,6 +43,7 @@ const inputFields = [
     label: 'Name*',
     required: true,
     pattern: null,
+    placeholder: 'Joe Doe',
   },
   {
     tag: 'input',
@@ -54,6 +52,7 @@ const inputFields = [
     label: 'Email*',
     required: true,
     pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+    placeholder: 'joe@doe.com',
   },
   {
     tag: 'input',
@@ -62,6 +61,7 @@ const inputFields = [
     label: 'Website',
     required: false,
     pattern: /^$|(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/i,
+    placeholder: 'https://joe.doe.com',
   },
 ]
 
@@ -89,7 +89,7 @@ export const CommentForm = ({
 
   const CommentNotes = () => {
     return (
-      <p className="comment-notes">
+      <p className="comment-notes text-center">
         <span id="email-notes">Your email address will not be published.</span>
         <br />
         Required fields are marked <span className="required">*</span>
@@ -100,7 +100,7 @@ export const CommentForm = ({
   const CommentSubmitButton = () => {
     return (
       <button
-        className="submit-button"
+        className="btn btn-dark text-uppercase"
         type="submit"
         disabled={commentStatus === 'loading'}
       >
@@ -146,33 +146,29 @@ export const CommentForm = ({
     <Fragment>
       {!!commentStatus && <CommentStatusFeedback />}
       {!commentStatus && (
-        <div sx={{ ...commentsStyles.formWrapper }}>
-          {!commentId && (
-            <h2 sx={{ ...commentsStyles.title }}>Leave a comment</h2>
-          )}
+        <div>
+          {!commentId && <h2 className="h3 text-center">Leave a comment</h2>}
           {!!commentId && (
             <button
-              sx={replyButtonStyles}
               type="button"
-              className="comment-button-cancel"
+              className="btn btn-sm btn-dark"
               onClick={cancelReply}
             >
               <span>Cancel</span>
             </button>
           )}
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            noValidate
-            sx={{ ...commentsStyles.form }}
-          >
+          <form className="mb-5" onSubmit={handleSubmit(onSubmit)} noValidate>
             <CommentNotes />
             {inputFields.map((el) => {
               const Tag = el.tag
-              const textarea = Tag === 'textarea' ? { rows: 6, cols: 48 } : {}
+              const style = Tag === 'textarea' ? { height: '8rem' } : {}
               return (
-                <p key={el.name} className={`comment-form-${el.name}`}>
-                  <label htmlFor={el.name}>{el.label}</label>
+                <div
+                  key={el.name}
+                  className={`form-floating mb-2 comment-form-${el.name}`}
+                >
                   <Tag
+                    className="form-control"
                     ref={register({
                       required: el.required,
                       pattern: el.pattern,
@@ -182,15 +178,16 @@ export const CommentForm = ({
                     name={el.name}
                     placeholder={el.placeholder}
                     aria-required={el.required}
-                    {...textarea}
+                    style={{ ...style }}
                   />
+                  <label htmlFor={el.name}>{el.label}</label>
                   {errors[el.name] && errors[el.name].type === 'required' && (
                     <span className="error">Required</span>
                   )}
                   {errors[el.name] && errors[el.name].type === 'pattern' && (
                     <span className="error">Invalid value</span>
                   )}
-                </p>
+                </div>
               )
             })}
             <CommentSubmitButton />

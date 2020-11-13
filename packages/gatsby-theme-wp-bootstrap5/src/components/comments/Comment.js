@@ -1,20 +1,15 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Date } from '../post'
 import { CommentForm } from './index'
-import { commentStyles, replyButtonStyles } from '../../styles/'
 
 const Reply = ({ commentId, actionOnClick }) => {
   return (
     <button
-      sx={{ ...replyButtonStyles }}
       type="button"
       onClick={() => actionOnClick(commentId)}
-      className="comment-button-reply"
+      className="btn btn-sm btn-dark comment-button-reply"
     >
-      <span>Reply</span>
+      Reply
     </button>
   )
 }
@@ -29,10 +24,10 @@ const Author = ({ name, url }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {name}
+          <small>{name}</small>
         </a>
       ) : (
-        <span className="comment-author">{name}</span>
+        <small className="comment-author">{name}</small>
       )}
     </>
   )
@@ -49,8 +44,9 @@ export const Comment = (props) => {
     doOnCompleted,
   } = props
   return (
-    <li className="comment" sx={{ ...commentStyles }}>
+    <li className="comment list-group-item mb-2 px-2">
       <Author name={comment.author.node.name} url={comment.author.node.url} />
+      <br />
       <Date date={comment.date} />
       <div
         className="comment-content"
@@ -68,7 +64,7 @@ export const Comment = (props) => {
           <Reply commentId={comment.commentId} actionOnClick={addReply} />
         )
       ) : (
-        <p className="comment-nesting-info">
+        <p className="comment-nesting-info mb-0">
           Only two levels of nesting is supported.
         </p>
       )}

@@ -4,7 +4,7 @@ const config = {
   //pathPrefix: "",
   // paginationPrefix: `page`,
   // addWordPressComments: true,
-  addDisqusComments: true,
+  addDisqusComments: false,
   menuName: "main",
   slideMenuWidgets: [
     `SocialFollow`,
@@ -40,7 +40,7 @@ const config = {
   addWordPressSearch: true,
   // instantWPSearch: false,
   // addColorModes: false,
-  skipTitle: ["home"],
+  skipTitle: ["home", "contact"],
   seoWithYoast: true,
   lightboxSettings: {},
 }

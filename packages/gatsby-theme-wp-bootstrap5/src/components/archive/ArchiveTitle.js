@@ -1,12 +1,10 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { pageTitleStyles } from '../../styles'
+import React from 'react'
 
 export const ArchiveTitle = ({ name, text }) => {
   return (
-    <h1 sx={pageTitleStyles}>
-      <span className="page-title-pre">{text}</span>
-      <span className="page-title-value">{name}</span>
+    <h1 className="text-center mb-5">
+      <span className="d-block h6 lh-1">{text}</span>
+      <span className="">{name}</span>
     </h1>
   )
 }

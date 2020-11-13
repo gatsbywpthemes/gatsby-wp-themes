@@ -9,7 +9,7 @@ const Post = (props) => {
   const { post, ctx } = props
   const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
   return (
-    <Layout useContainer={false}>
+    <Layout>
       <Seo
         featuredImage={
           featuredImage && {

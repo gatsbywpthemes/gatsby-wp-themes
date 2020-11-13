@@ -12,7 +12,7 @@ export const ArchiveContent = ({
 }) => {
   return (
     <>
-      <section {...props}>
+      <section className="my-5" {...props}>
         {name && <ArchiveTitle text={text} name={name} />}
         <div className="row">
           <div className="col-lg-9">
@@ -24,7 +24,7 @@ export const ArchiveContent = ({
               <Pagination ctx={ctx} />
             </div>
           </div>
-          <Sidebar className="col-lg-3" />
+          <Sidebar />
         </div>
       </section>
     </>

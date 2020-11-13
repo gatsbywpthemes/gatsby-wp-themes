@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { Fragment, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import { CommentForm, Comment } from './index'
@@ -71,8 +70,8 @@ export const CommentsList = ({ post, reloading }) => {
     <Fragment>
       {comments.nodes.length > 0 ? (
         <section>
-          <h2 sx={{ ...commentsStyles.title }}>Comments</h2>
-          <ul sx={{ ...commentsStyles.list }}>
+          <h2 className="text-center h3 mb-4">Comments</h2>
+          <ul className="comments-list list-group mb-5">
             {comments.nodes
               .filter((el) => el.parent === null)
               .map((comment) => (
