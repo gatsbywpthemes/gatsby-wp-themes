@@ -35,7 +35,7 @@ module.exports = (options) => {
         pathPrefix: options.pathPrefix,
       },
     },
-    'gatsby-plugin-chakra-ui',
+    '@chakra-ui/gatsby-plugin',
     {
       resolve: 'gatsby-plugin-root-import',
       options: {

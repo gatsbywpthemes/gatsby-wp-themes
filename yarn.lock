@@ -1449,6 +1449,11 @@
     "@chakra-ui/icon" "1.0.0-rc.8"
     "@chakra-ui/utils" "1.0.0-rc.8"
 
+"@chakra-ui/gatsby-plugin@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/gatsby-plugin/-/gatsby-plugin-1.0.0.tgz#e11948e3a7b6f1bec521aa46449bb29664bed53d"
+  integrity sha512-u4r3EWr+8ZhdU3Fr+Vwukh/uaccF6n/IwvIaEU7Kc51YU9qBAQkwzYrMV52qSMrnaGJWVlfcHIElvtgSqHlslA==
+
 "@chakra-ui/hooks@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@chakra-ui/hooks/-/hooks-1.0.0.tgz#058343eb587626ca60949addf3c64ad3318a8e17"
