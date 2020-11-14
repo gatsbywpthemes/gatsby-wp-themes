@@ -4,7 +4,7 @@ import {
   Box,
   Heading,
   useColorModeValue as colorMode,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 export const ArchiveTitle = ({ name, text }) => {
   return (

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* eslint-disable no-useless-escape */
-import { jsx, Text, Heading } from '@chakra-ui/core'
+import { jsx, Text, Heading } from '@chakra-ui/react'
 import { TransparentCard, Textarea, Input } from 'starterUiComponents'
 import { useState, Fragment } from 'react'
 import { useMutation, gql } from '@apollo/client'

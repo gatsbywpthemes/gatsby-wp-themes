@@ -16,7 +16,7 @@ import {
   Box,
   Button,
   jsx,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 const flatListToHierarchical = (
   data = [],

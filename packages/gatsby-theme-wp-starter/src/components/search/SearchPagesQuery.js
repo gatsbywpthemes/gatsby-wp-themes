@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Button } from '@chakra-ui/core'
+import { Button } from '@chakra-ui/react'
 import { useQuery, gql } from '@apollo/client'
 import { SearchResults } from 'starterComponents'
 import Loader from 'react-spinners/BeatLoader'

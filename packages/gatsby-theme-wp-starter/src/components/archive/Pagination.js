@@ -5,7 +5,7 @@ import {
   Box,
   Link as ChakraLink,
   useColorModeValue as colorMode,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import { Link } from 'gatsby'
 
 const renderPreviousLink = (previousPagePath) => {

@@ -10,7 +10,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useColorModeValue as colorMode,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 import { SearchForm } from 'starterComponents'
 

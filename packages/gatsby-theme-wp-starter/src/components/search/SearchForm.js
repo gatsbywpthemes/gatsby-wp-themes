@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Input } from '@chakra-ui/core'
+import { Input } from '@chakra-ui/react'
 import { SearchQueries } from './index'
 
 export const SearchForm = (props) => {

@@ -1,4 +1,4 @@
-import { Box, useColorModeValue as colorMode } from '@chakra-ui/core'
+import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
 import React from 'react'
 import { Date, Author } from 'starterComponents'
 

@@ -4,7 +4,7 @@ import {
   IconButton,
   useDisclosure,
   Collapse as Collapsible,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import React from 'react'
 

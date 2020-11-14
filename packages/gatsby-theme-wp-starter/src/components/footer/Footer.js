@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Box, jsx, useColorModeValue as colorMode } from '@chakra-ui/core'
+import { Box, jsx, useColorModeValue as colorMode } from '@chakra-ui/react'
 import { Container } from 'starterUiComponents'
 
 import { FooterContent } from 'starterComponents'

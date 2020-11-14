@@ -4,7 +4,7 @@ import {
   Heading,
   Flex,
   useColorModeValue as colorMode,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import { TaxonomyItem } from 'starterComponents'
 

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useColorMode, IconButton } from '@chakra-ui/core'
+import { jsx, useColorMode, IconButton } from '@chakra-ui/react'
 
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 

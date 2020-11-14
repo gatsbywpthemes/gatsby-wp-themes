@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Box } from '@chakra-ui/core'
+import { jsx, Flex, Box } from '@chakra-ui/react'
 import { Container, Card } from 'starterUiComponents'
 import { Layout, Sidebar } from 'starterComponents'
 import ParsedContent from 'starterUtils/ParsedContent'

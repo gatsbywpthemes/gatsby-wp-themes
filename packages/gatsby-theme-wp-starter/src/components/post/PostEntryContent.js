@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box } from '@chakra-ui/core'
+import { jsx, Box } from '@chakra-ui/react'
 import ParsedContent from 'starterUtils/ParsedContent'
 import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 

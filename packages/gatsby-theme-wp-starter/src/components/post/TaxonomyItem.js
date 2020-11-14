@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Button } from '@chakra-ui/core'
+import { jsx, Button } from '@chakra-ui/react'
 
 import { Link } from 'gatsby'
 

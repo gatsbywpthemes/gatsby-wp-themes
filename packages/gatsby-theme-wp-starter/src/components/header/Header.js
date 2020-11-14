@@ -13,7 +13,7 @@ import {
   jsx,
   Button,
   useColorModeValue as colorMode,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 export const Header = () => {
   const { search, menuName } = useThemeOptions()

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Heading, Box } from '@chakra-ui/core'
+import { jsx, Heading, Box } from '@chakra-ui/react'
 import React from 'react'
 import { Container } from 'starterUiComponents'
 import { Fragment, useState } from 'react'

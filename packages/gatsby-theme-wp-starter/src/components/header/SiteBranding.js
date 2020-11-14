@@ -2,7 +2,7 @@ import React from 'react'
 import { withPrefix } from 'gatsby'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Link } from 'gatsby'
-import { Heading, Link as ChakraLink } from '@chakra-ui/core'
+import { Heading, Link as ChakraLink } from '@chakra-ui/react'
 
 export const SiteBranding = ({ title, ...props }) => {
   const { logoFileName } = useThemeOptions()

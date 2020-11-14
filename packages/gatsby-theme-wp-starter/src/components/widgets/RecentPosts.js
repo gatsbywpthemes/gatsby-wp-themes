@@ -6,7 +6,7 @@ import {
   HStack,
   Box,
   Link as ChakraLink,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import { BorderTitle } from 'starterUiComponents'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'

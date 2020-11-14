@@ -1,5 +1,5 @@
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { useToken } from '@chakra-ui/core'
+import { useToken } from '@chakra-ui/react'
 
 const useLayoutWidth = () => {
   const { layoutWidth } = useThemeOptions()

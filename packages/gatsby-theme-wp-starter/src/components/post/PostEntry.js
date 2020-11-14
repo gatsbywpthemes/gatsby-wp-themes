@@ -5,7 +5,7 @@ import {
   Center,
   Divider,
   useColorModeValue as colorMode,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import React from 'react'
 import {
   PostEntryTitle,

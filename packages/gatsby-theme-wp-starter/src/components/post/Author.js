@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Link as ChakraLink } from '@chakra-ui/core'
+import { jsx, Link as ChakraLink } from '@chakra-ui/react'
 import { Link } from 'gatsby'
 
 export const Author = ({ post, ...props }) => {

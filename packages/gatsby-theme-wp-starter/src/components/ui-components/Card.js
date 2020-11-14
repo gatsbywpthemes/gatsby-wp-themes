@@ -4,7 +4,7 @@ import {
   Box,
   jsx,
   useColorModeValue as colorMode,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 // export const Card = ({ variant, sx, ...rest }) => {
 //   const styles = useStyleConfig('Card', { variant })

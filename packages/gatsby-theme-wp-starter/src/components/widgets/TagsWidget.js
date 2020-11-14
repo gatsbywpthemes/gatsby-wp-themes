@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Box } from '@chakra-ui/core'
+import { jsx, Flex, Box } from '@chakra-ui/react'
 import { BorderTitle } from 'starterUiComponents'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 

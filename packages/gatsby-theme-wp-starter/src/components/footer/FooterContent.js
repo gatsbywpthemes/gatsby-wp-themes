@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Center } from '@chakra-ui/core'
+import { jsx, Center } from '@chakra-ui/react'
 
 export const FooterContent = (props) => {
   return (
