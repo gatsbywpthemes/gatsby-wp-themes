@@ -1,6 +1,5 @@
-/** @jsx jsx */
+import React from 'react'
 import {
-  jsx,
   Flex,
   Box,
   Link as ChakraLink,

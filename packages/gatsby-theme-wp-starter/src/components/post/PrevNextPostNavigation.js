@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Flex, Button } from '@chakra-ui/react'
+import React from 'react'
+import { Flex, Button } from '@chakra-ui/react'
 import { Link } from 'gatsby'
 
 const LinkButton = (props) => (

@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Flex } from '@chakra-ui/react'
+import React from 'react'
+import { Flex } from '@chakra-ui/react'
 import { TransparentCard } from 'starterUiComponents'
 import moment from 'moment'
 import { CommentForm } from 'starterComponents'

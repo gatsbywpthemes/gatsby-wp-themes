@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, VStack, Link as ChakraLink } from '@chakra-ui/react'
+import React from 'react'
+import { VStack, Link as ChakraLink } from '@chakra-ui/react'
 import { BorderTitle } from 'starterUiComponents'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 

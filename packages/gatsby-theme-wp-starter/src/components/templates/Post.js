@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Flex } from '@chakra-ui/react'
+import React from 'react'
+import { Flex } from '@chakra-ui/react'
 import { Container } from 'starterUiComponents'
 import { Layout, PostEntry, CommentsList, Sidebar } from 'starterComponents'
 import { Seo } from 'gatsby-plugin-wp-seo'

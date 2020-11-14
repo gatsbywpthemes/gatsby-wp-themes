@@ -1,8 +1,7 @@
-/** @jsx jsx */
+import React from 'react'
 import {
   useStyleConfig,
   Box,
-  jsx,
   useColorModeValue as colorMode,
 } from '@chakra-ui/react'
 

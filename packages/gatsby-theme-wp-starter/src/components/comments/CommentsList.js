@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx, Heading, Box } from '@chakra-ui/react'
 import React from 'react'
+import { Heading, Box } from '@chakra-ui/react'
 import { Container } from 'starterUiComponents'
 import { Fragment, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'

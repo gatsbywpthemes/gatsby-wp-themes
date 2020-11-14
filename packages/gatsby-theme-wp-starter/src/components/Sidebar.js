@@ -1,7 +1,6 @@
-/** @jsx jsx */
-import { jsx, Box, useColorModeValue as colorMode } from '@chakra-ui/react'
-import { Card } from 'starterUiComponents'
 import React from 'react'
+import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
+import { Card } from 'starterUiComponents'
 import { Widgets } from 'starterComponents'
 
 export const Sidebar = ({ widgets, ...props }) => {

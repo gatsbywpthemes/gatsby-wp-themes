@@ -1,6 +1,6 @@
-/** @jsx jsx */
+import React from 'react'
 import { Footer, Header } from 'starterComponents'
-import { Box, jsx } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
 import 'starterStyles/wp-styles/styles.scss'
 

@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Box, useColorModeValue as colorMode } from '@chakra-ui/react'
+import React from 'react'
+import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
 
 export const TransparentCard = (props) => (
   <Box

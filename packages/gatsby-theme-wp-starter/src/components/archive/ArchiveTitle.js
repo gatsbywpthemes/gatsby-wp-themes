@@ -1,10 +1,5 @@
-/** @jsx jsx */
-import {
-  jsx,
-  Box,
-  Heading,
-  useColorModeValue as colorMode,
-} from '@chakra-ui/react'
+import React from 'react'
+import { Box, Heading, useColorModeValue as colorMode } from '@chakra-ui/react'
 
 export const ArchiveTitle = ({ name, text }) => {
   return (

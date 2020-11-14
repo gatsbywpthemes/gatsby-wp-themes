@@ -1,12 +1,9 @@
-/** @jsx jsx */
+import React from 'react'
 import {
-  jsx,
   IconButton,
   useDisclosure,
   Collapse as Collapsible,
 } from '@chakra-ui/react'
-
-import React from 'react'
 
 import { ChevronRightIcon, ChevronDownIcon } from '@chakra-ui/icons'
 

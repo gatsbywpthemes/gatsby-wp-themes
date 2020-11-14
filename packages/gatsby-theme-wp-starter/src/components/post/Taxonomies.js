@@ -1,10 +1,5 @@
-/** @jsx jsx */
-import {
-  jsx,
-  Heading,
-  Flex,
-  useColorModeValue as colorMode,
-} from '@chakra-ui/react'
+import React from 'react'
+import { Heading, Flex, useColorModeValue as colorMode } from '@chakra-ui/react'
 
 import { TaxonomyItem } from 'starterComponents'
 

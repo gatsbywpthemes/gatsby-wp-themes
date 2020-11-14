@@ -1,7 +1,7 @@
 import { mode } from "@chakra-ui/theme-tools"
 
 import { base } from "./foundations/typography"
-import typographySettings from "../../configTypography"
+import typographySettings from "../../../configTypography"
 
 export const styles = {
   global: (props) => {

@@ -1,12 +1,11 @@
-/** @jsx jsx */
+import React from 'react'
 import {
-  jsx,
   Box,
   Center,
   Divider,
   useColorModeValue as colorMode,
 } from '@chakra-ui/react'
-import React from 'react'
+
 import {
   PostEntryTitle,
   PostEntryMedia,

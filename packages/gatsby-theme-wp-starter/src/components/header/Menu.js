@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import React from 'react'
 import { Link } from 'gatsby'
 import { createLocalLink } from 'starterUtils'
@@ -15,7 +14,6 @@ import {
   MenuItem as SubMenuItem,
   Box,
   Button,
-  jsx,
 } from '@chakra-ui/react'
 
 const flatListToHierarchical = (

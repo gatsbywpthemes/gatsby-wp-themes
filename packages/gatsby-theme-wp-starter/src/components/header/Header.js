@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Menu, SiteBranding } from 'starterComponents'
@@ -10,7 +9,6 @@ import { SearchModal } from 'starterComponents'
 import {
   Box,
   Flex,
-  jsx,
   Button,
   useColorModeValue as colorMode,
 } from '@chakra-ui/react'

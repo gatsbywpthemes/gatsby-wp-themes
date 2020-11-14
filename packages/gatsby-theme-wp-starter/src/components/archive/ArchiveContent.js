@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Flex } from '@chakra-ui/react'
+import React from 'react'
+import { Flex } from '@chakra-ui/react'
 import { Container } from 'starterUiComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from 'starterComponents'
