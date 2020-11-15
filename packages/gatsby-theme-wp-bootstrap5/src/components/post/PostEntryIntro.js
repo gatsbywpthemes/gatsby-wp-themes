@@ -13,8 +13,10 @@ export const PostEntryIntro = ({ ctx, post, location = 'archive' }) => {
   return (
     <>
       <div className="p-3 ">
-        <PublicationDate {...{ post, location }} />
+        <Categories className="mb-3" post={post} />
+
         <PostEntryTitle {...{ post, location }} />
+        <PublicationDate {...{ post, location }} />
         <PostEntryExcerpt {...{ post, location }} />
       </div>
       <div className="mt-auto mx-3 mb-3">

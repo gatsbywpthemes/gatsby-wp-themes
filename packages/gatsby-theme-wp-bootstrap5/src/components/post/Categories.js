@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 export const Categories = ({ className, post }) => {
   return (
     <div className={className}>
-      <small>in </small>
       {post.categories.nodes
         .map((category) => (
           <Link
@@ -17,7 +16,7 @@ export const Categories = ({ className, post }) => {
           </Link>
         ))
         .reduce((accu, elem) => {
-          return accu === null ? [elem] : [...accu, ' · ', elem]
+          return accu === null ? [elem] : [...accu, ' ', elem]
         }, null)}
     </div>
   )

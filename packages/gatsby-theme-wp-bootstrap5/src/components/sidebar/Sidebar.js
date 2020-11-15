@@ -1,7 +1,5 @@
 import React from 'react'
-
-import { Widgets } from './widgets'
-import { SearchForm } from './search'
+import { Widgets, SearchForm } from '../index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 export const Sidebar = ({ className, ...props }) => {
