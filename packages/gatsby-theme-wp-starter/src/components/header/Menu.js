@@ -16,7 +16,7 @@ import {
   useColorModeValue as colorMode,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
-import { Card } from 'starterUiComponents'
+import { Collapse } from 'starterUiComponents'
 
 const flatListToHierarchical = (
   data = [],
@@ -77,6 +77,13 @@ const renderMenuItem = (menuItem, wordPressUrl) => {
   }
 }
 
+const WithCollapse = ({ orientation, children, menuItem }) =>
+  orientation === 'V' ? (
+    <Collapse menuItem={menuItem}>{children}</Collapse>
+  ) : (
+    children
+  )
+
 const renderSubMenu = (menuItem, wordPressUrl, orientation) => {
   return (
     <chakra.li
@@ -85,10 +92,12 @@ const renderSubMenu = (menuItem, wordPressUrl, orientation) => {
       // _after={orientation === 'H' && { content: "'>'" }}
       key={menuItem.id}
     >
-      {renderLink(menuItem, wordPressUrl)}
-      <chakra.ul className="menuItemGroup sub-menu">
-        {menuItem.children.map((item) => renderMenuItem(item, wordPressUrl))}
-      </chakra.ul>
+      <WithCollapse orientation={orientation} menuItem={menuItem}>
+        {orientation === 'H' && renderLink(menuItem, wordPressUrl)}
+        <chakra.ul className="menuItemGroup sub-menu">
+          {menuItem.children.map((item) => renderMenuItem(item, wordPressUrl))}
+        </chakra.ul>
+      </WithCollapse>
     </chakra.li>
   )
 }
@@ -189,12 +198,27 @@ const menuHStyles = {
     },
   },
 }
-const menuVStyles = {}
+const menuVStyles = {
+  '.menu-item': {
+    display: 'block',
+    py: 4,
+    borderBottom: '1px solid',
+    borderColor: 'dark',
+    '&:last-of-type': {
+      border: 'none',
+    },
+  },
+  '[aria-current]': {
+    fontStyle: 'italic',
+    fontWeight: 'body',
+  },
+}
 
 const styles = {
   li: {
     listStyleType: 'none',
   },
+  // ...menuVStyles,
   '@media( min-width:960px)': {
     ...menuHStyles,
   },

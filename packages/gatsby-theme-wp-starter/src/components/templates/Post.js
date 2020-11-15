@@ -47,7 +47,7 @@ const Post = ({ post, ctx }) => {
         <Flex
           sx={{
             ...sidebarSide,
-            flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+            flexWrap: { base: 'wrap', lg: 'nowrap' },
             alignItems: `flex-start`,
           }}
         >

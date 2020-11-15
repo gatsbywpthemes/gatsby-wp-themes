@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Menu, SiteBranding } from 'starterComponents'
+import { Menu, SiteBranding, SlideSidebar } from 'starterComponents'
 import { Container } from 'starterUiComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
@@ -10,11 +10,13 @@ import {
   Box,
   Flex,
   HStack,
+  useMediaQuery,
   useColorModeValue as colorMode,
 } from '@chakra-ui/react'
 
 export const Header = () => {
   const { search, menuName } = useThemeOptions()
+  const [isLargerThan960] = useMediaQuery('(min-width: 960px)')
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -43,7 +45,12 @@ export const Header = () => {
           {search && <SearchModal />}
         </Flex>
         <HStack>
-          <Menu menuName={menuName} orientation="H" />
+          {isLargerThan960 ? (
+            <Menu menuName={menuName} orientation="H" />
+          ) : (
+            <SlideSidebar />
+          )}
+
           <ColorSwitch />
         </HStack>
       </Container>
