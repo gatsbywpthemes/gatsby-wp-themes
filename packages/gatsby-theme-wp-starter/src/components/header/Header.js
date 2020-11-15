@@ -9,7 +9,7 @@ import { SearchModal } from 'starterComponents'
 import {
   Box,
   Flex,
-  Button,
+  HStack,
   useColorModeValue as colorMode,
 } from '@chakra-ui/react'
 
@@ -42,8 +42,10 @@ export const Header = () => {
           <SiteBranding title={title} />
           {search && <SearchModal />}
         </Flex>
-        {/* <Menu menuName={menuName} /> */}
-        <ColorSwitch />
+        <HStack>
+          <Menu menuName={menuName} orientation="H" />
+          <ColorSwitch />
+        </HStack>
       </Container>
     </Box>
   )

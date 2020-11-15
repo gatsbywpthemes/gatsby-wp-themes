@@ -8,13 +8,13 @@ import {
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import {
-  Menu as SubmenuTriggerWrapper,
-  MenuButton as SubmenuTrigger,
-  MenuList as SubmenuWrapper,
-  MenuItem as SubMenuItem,
   Box,
   Button,
+  useMediaQuery,
+  chakra,
+  IconButton,
 } from '@chakra-ui/react'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
 const flatListToHierarchical = (
   data = [],
@@ -75,16 +75,19 @@ const renderMenuItem = (menuItem, wordPressUrl) => {
   }
 }
 
-const renderSubMenu = (menuItem, wordPressUrl) => {
+const renderSubMenu = (menuItem, wordPressUrl, orientation) => {
   return (
-    <SubmenuTriggerWrapper>
-      <li className="has-subMenu menu-item" key={menuItem.id}>
-        {renderLink(menuItem, wordPressUrl)}
-        <ul className="menuItemGroup sub-menu">
-          {menuItem.children.map((item) => renderMenuItem(item, wordPressUrl))}
-        </ul>
-      </li>
-    </SubmenuTriggerWrapper>
+    <chakra.li
+      className="has-subMenu menu-item"
+      position="relative"
+      _after={orientation === 'H' && { content: "'>'" }}
+      key={menuItem.id}
+    >
+      {renderLink(menuItem, wordPressUrl)}
+      <ul className="menuItemGroup sub-menu">
+        {menuItem.children.map((item) => renderMenuItem(item, wordPressUrl))}
+      </ul>
+    </chakra.li>
   )
 }
 
@@ -98,20 +101,50 @@ export const Menu = ({ menuName, orientation, ...props }) => {
   if (menuItems) {
     const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
     return (
-      <nav className="menu" aria-label="main" {...props}>
+      <chakra.nav
+        className="menu"
+        sx={{ ...styles }}
+        aria-label="main"
+        {...props}
+      >
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <ul role="menu" className="menuItemGroup">
           {menuNodes.map((menuItem) => {
             if (menuItem.children.length) {
-              return renderSubMenu(menuItem, wordPressUrl)
+              return renderSubMenu(menuItem, wordPressUrl, orientation)
             } else {
               return renderMenuItem(menuItem, wordPressUrl)
             }
           })}
         </ul>
-      </nav>
+      </chakra.nav>
     )
   } else {
     return null
   }
+}
+const menuHStyles = {
+  '>ul': {
+    display: 'flex',
+    '>li': {
+      fontWeight: 'bold',
+      px: 3,
+      '&.has-subMenu': {
+        '&:after': {},
+      },
+    },
+  },
+  '.sub-menu': {
+    display: 'none',
+  },
+}
+const menuVStyles = {}
+
+const styles = {
+  li: {
+    listStyleType: 'none',
+  },
+  '@media( min-width:960px)': {
+    ...menuHStyles,
+  },
 }
