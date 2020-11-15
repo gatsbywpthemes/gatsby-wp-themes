@@ -24,7 +24,7 @@ const Page = ({ page, ctx }) => {
     sidebarSide,
     sidebarPage,
     sidebarWidgets,
-  } = useLayoutStyles('post', templateName.toLowerCase())
+  } = useLayoutStyles('page', templateName.toLowerCase())
   const { skipTitle } = useThemeOptions()
 
   const featuredImage =
@@ -49,18 +49,18 @@ const Page = ({ page, ctx }) => {
         <Flex
           sx={{
             ...sidebarSide,
-            flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+            flexWrap: { base: 'wrap', lg: 'nowrap' },
             alignItems: `flex-start`,
           }}
         >
-          <Card
-            as="article"
-            className="entry"
-            p={templateName === 'Full Width' ? 0 : [5, 16]}
-            borderRadius={templateName === 'Full Width' ? 0 : 'lg'}
-            boxShadow={templateName === 'Full Width' ? 0 : 'lg'}
-          >
-            <div className="content page-content">
+          <article className="entry">
+            <Card
+              className="content page-content"
+              p={templateName === 'Full Width' ? 0 : [5, 16]}
+              borderRadius={templateName === 'Full Width' ? 0 : 'lg'}
+              boxShadow={templateName === 'Full Width' ? 0 : 'lg'}
+              mb={{ base: 14, lg: 0 }}
+            >
               {skipTitle &&
                 !skipTitle.includes(slug) &&
                 skipTitle !== 'all' && (
@@ -74,8 +74,8 @@ const Page = ({ page, ctx }) => {
                 <ActivatePageScripts />
                 <ParsedContent content={content} />
               </div>
-            </div>
-          </Card>
+            </Card>
+          </article>
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
       </Container>
