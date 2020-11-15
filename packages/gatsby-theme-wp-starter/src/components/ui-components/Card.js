@@ -2,6 +2,7 @@ import React from 'react'
 import {
   useStyleConfig,
   Box,
+  chakra,
   useColorModeValue as colorMode,
 } from '@chakra-ui/react'
 
@@ -22,3 +23,12 @@ export const Card = (props) => {
     />
   )
 }
+
+// export const Card = chakra('div', {
+//   baseStyle: {
+//     rounded: 'lg',
+//     shadow: 'lg',
+//     p: [5, 12],
+//     bg: colorMode('white', 'ultraDark'),
+//   },
+// })

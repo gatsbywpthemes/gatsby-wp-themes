@@ -1,12 +1,11 @@
 import { extendTheme } from '@chakra-ui/react'
 
-import { colors } from './foundations'
+import { colors, breakpoints } from './foundations'
 import {
   fontSizes,
   fonts,
   lineHeights,
   fontWeights,
-  base,
 } from './foundations/typography'
 import { Container as CenterContainer, Card } from './components'
 import { layerStyles } from './layerStyles'
@@ -20,12 +19,8 @@ const theme = extendTheme({
   fonts,
   lineHeights,
   fontWeights,
-  transition: {
-    sm: `all .2s ease-in-out`,
-    md: `all .4s ease-in-out`,
-    lg: `all .8s ease-in-out`,
-    xl: `all 1s ease-in-out`,
-  },
+  breakpoints,
+
   components: {
     CenterContainer,
     Card,
