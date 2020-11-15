@@ -1,4 +1,4 @@
-export * from './Header'
+export * from './header'
 export * from './archive'
 export * from './comments'
 export * from './footer'

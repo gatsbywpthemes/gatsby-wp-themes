@@ -60,7 +60,7 @@ export const PrevNextPostNavigation = ({ ctx, style }) => {
     <nav className="" aria-label="Page navigation">
       <ul className="pagination justify-content-between mb-0">
         <li className="page-item">{renderPreviousLink(ctx)}</li>
-        <li class="page-item">{renderNextLink(ctx)}</li>
+        <li className="page-item">{renderNextLink(ctx)}</li>
       </ul>
     </nav>
   )

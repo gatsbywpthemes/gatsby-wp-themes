@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Menu } from './index'
+import { Menu } from '../index'
 import {
   useThemeOptions,
   useSiteSettings,
