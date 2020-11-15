@@ -13,8 +13,10 @@ import {
   useMediaQuery,
   chakra,
   IconButton,
+  useColorModeValue as colorMode,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import { Card } from 'starterUiComponents'
 
 const flatListToHierarchical = (
   data = [],
@@ -80,13 +82,13 @@ const renderSubMenu = (menuItem, wordPressUrl, orientation) => {
     <chakra.li
       className="has-subMenu menu-item"
       position="relative"
-      _after={orientation === 'H' && { content: "'>'" }}
+      // _after={orientation === 'H' && { content: "'>'" }}
       key={menuItem.id}
     >
       {renderLink(menuItem, wordPressUrl)}
-      <ul className="menuItemGroup sub-menu">
+      <chakra.ul className="menuItemGroup sub-menu">
         {menuItem.children.map((item) => renderMenuItem(item, wordPressUrl))}
-      </ul>
+      </chakra.ul>
     </chakra.li>
   )
 }
@@ -130,12 +132,55 @@ const menuHStyles = {
       fontWeight: 'bold',
       px: 3,
       '&.has-subMenu': {
+        cursor: 'pointer',
+        position: 'relative',
+        '&:hover': {
+          '.sub-menu': {
+            visibility: 'visible',
+            opacity: 1,
+            transform: 'translateY(10px)',
+          },
+        },
         '&:after': {},
       },
     },
   },
   '.sub-menu': {
-    display: 'none',
+    position: 'absolute',
+    display: 'block',
+    visibility: 'hidden',
+    opacity: '0',
+    // bg: colorMode('white', 'ultraDark'),
+    bg: 'black',
+    color: 'white',
+    shadow: 'lg',
+    rounded: 'md',
+    width: 'auto',
+    whiteSpace: 'nowrap',
+    transition: 'all .4s ease-in-out',
+    transform: 'translateY(20px)',
+    left: -4,
+    px: 5,
+    py: 4,
+    '>li': {
+      py: 1,
+      a: {
+        '&:hover': {
+          color: 'primary',
+        },
+      },
+    },
+    '&:before': {
+      content: "''",
+      width: 0,
+      height: 0,
+      borderLeft: '7.5px solid transparent',
+      borderRight: '7.5px solid transparent',
+      borderBottom: '10px solid black',
+      position: 'absolute',
+      top: '-10px',
+      left: '45%',
+    },
   },
 }
 const menuVStyles = {}
