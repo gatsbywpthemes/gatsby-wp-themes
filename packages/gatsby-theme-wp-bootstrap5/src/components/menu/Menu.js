@@ -16,7 +16,7 @@ export const Menu = ({ menuName }) => {
     const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
     return (
       <nav
-        className="navbar navbar-expand-lg text-left text-uppercase border mt-5"
+        className="navbar navbar-expand-lg text-left text-uppercase border sticky-top bg-light"
         aria-label="main"
       >
         <div className="container">

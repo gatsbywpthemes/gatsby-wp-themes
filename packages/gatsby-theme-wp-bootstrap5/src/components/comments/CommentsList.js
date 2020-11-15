@@ -2,7 +2,6 @@ import React from 'react'
 import { Fragment, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import { CommentForm, Comment } from './index'
-import { commentsStyles } from '../../styles/'
 
 const GET_COMMENTS = gql`
   query($postId: ID!) {
@@ -119,7 +118,7 @@ export const CommentsList = ({ post, reloading }) => {
           </ul>
         </section>
       ) : (
-        <p sx={{ ...commentsStyles.noComments }}>No comments yet</p>
+        <p>No comments yet</p>
       )}
       {activeComment === 0 && (
         <CommentForm

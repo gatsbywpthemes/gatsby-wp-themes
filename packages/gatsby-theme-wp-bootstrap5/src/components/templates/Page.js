@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx } from '@emotion/react'
+import React from 'react'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
 import { Seo } from 'gatsby-plugin-wp-seo'
-import { pageStyles, pageTitleStyles } from '../../styles/'
+import { pageStyles } from '../../styles/'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 const Page = (props) => {
@@ -32,14 +33,14 @@ const Page = (props) => {
       />
       <article>
         {skipTitle.indexOf(slug) === -1 && (
-          <h1 sx={pageTitleStyles}>
+          <h1 className="text-center display-3 py-3 py-lg-5">
             <span
               className="page-title-value"
               dangerouslySetInnerHTML={{ __html: title }}
             />
           </h1>
         )}
-        <div className="entry-content" sx={pageStyles}>
+        <div className="entry-content" css={pageStyles}>
           <ActivatePageScripts />
           <ParsedContent content={content} />
         </div>

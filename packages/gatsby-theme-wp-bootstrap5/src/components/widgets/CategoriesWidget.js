@@ -26,7 +26,7 @@ export const CategoriesWidget = () => {
         {nonEmptyCategories.length
           ? nonEmptyCategories.map((category) => (
               <li
-                className="list-group-item d-flex justify-content-between align-items-center "
+                className="list-group-item bg-transparent d-flex justify-content-between align-items-center pl-0"
                 key={category.slug}
               >
                 <Link

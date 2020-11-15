@@ -1,16 +1,14 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Link } from 'gatsby'
-export const Categories = ({ post }) => {
+export const Categories = ({ className, post }) => {
   return (
-    <small>
-      <i>in </i>
+    <div className={className}>
+      <small>in </small>
       {post.categories.nodes
         .map((category) => (
           <Link
-            className="d-inline-block text-secondary"
+            className="d-inline-block text-decoration-none text-white meta-data text-uppercase badge bg-secondary"
             key={category.name}
             to={category.uri}
             rel="category"
@@ -21,6 +19,6 @@ export const Categories = ({ post }) => {
         .reduce((accu, elem) => {
           return accu === null ? [elem] : [...accu, ' · ', elem]
         }, null)}
-    </small>
+    </div>
   )
 }

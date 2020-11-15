@@ -182,10 +182,10 @@ export const CommentForm = ({
                   />
                   <label htmlFor={el.name}>{el.label}</label>
                   {errors[el.name] && errors[el.name].type === 'required' && (
-                    <span className="error">Required</span>
+                    <span className="error text-danger">Required</span>
                   )}
                   {errors[el.name] && errors[el.name].type === 'pattern' && (
-                    <span className="error">Invalid value</span>
+                    <span className="error text-danger">Invalid value</span>
                   )}
                 </div>
               )

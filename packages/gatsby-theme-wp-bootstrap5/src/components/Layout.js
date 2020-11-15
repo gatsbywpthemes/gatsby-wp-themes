@@ -1,10 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { Link } from 'gatsby'
-import {
-  useThemeOptions,
-  useSiteSettings,
-} from 'gatsby-theme-blog-data/src/hooks'
 import { Footer } from './footer'
 import { Header } from './header'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -15,20 +10,17 @@ const MaybeWithContainer = ({ useContainer, children }) => {
   return !useContainer ? children : <div className="container">{children}</div>
 }
 
-const Layout = ({ useContainer = true, children }) => {
-  const siteSettings = useSiteSettings()
-  const { addColorModes } = useThemeOptions()
-
+const Layout = ({ useContainer = true, children, is404 = false }) => {
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Header />
-      <main>
+      <main className={is404 ? 'm-auto text-center' : undefined}>
         <MaybeWithContainer useContainer={useContainer}>
           {children}
         </MaybeWithContainer>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

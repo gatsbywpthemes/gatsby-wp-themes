@@ -12,7 +12,6 @@ const RECENT_POSTS_QUERY = graphql`
         title
         uri
         date
-
         featuredImage {
           node {
             altText
@@ -34,49 +33,51 @@ export const RecentPosts = () => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
   const { nodes } = data.allWpPost
   return (
-    <WidgetContainer className="widget-recent-posts">
-      <h2 className="widget-title h4">Recent Posts</h2>
-      <ul className="list-group list-group-flush">
-        {nodes.length
-          ? nodes.map((post) => {
-              return (
-                <li
-                  className="list-group-item d-flex  align-items-center px-0"
-                  key={post.id}
+    !!nodes.length && (
+      <WidgetContainer className="widget-recent-posts">
+        <h2 className="widget-title h4">Recent Posts</h2>
+        <ul className="list-group list-group-flush">
+          {nodes.map((post) => {
+            return (
+              <li
+                className="list-group-item bg-transparent d-flex align-items-center px-0"
+                key={post.id}
+              >
+                <Link
+                  className="mr-3"
+                  aria-label={`Read more - ${post.title}`}
+                  to={post.uri}
                 >
+                  {post.featuredImage && (
+                    <Img
+                      alt={post.featuredImage.node.altText}
+                      fixed={
+                        post.featuredImage.node.localFile.childImageSharp.fixed
+                      }
+                    />
+                  )}
+                </Link>
+                <small className="textual">
                   <Link
-                    className="mr-3"
-                    aria-label={`Read more - ${post.title}`}
+                    className="widget-post-date text-decoration-none text-secondary"
                     to={post.uri}
                   >
-                    {post.featuredImage && (
-                      <Img
-                        alt={post.featuredImage.node.altText}
-                        fixed={
-                          post.featuredImage.node.localFile.childImageSharp
-                            .fixed
-                        }
-                      />
-                    )}
+                    <time className="entry-date" dateTime={post.date}>
+                      {moment(post.date).format(`MMMM DD, YYYY`)}
+                    </time>
                   </Link>
-                  <small className="textual">
-                    <Link className="widget-post-date" to={post.uri}>
-                      <time className="entry-date" dateTime={post.date}>
-                        {moment(post.date).format(`MMMM DD, YYYY`)}
-                      </time>
-                    </Link>
-                    <br />
-                    <Link
-                      className="widget-post-title heading-font"
-                      to={post.uri}
-                      dangerouslySetInnerHTML={{ __html: post.title }}
-                    />
-                  </small>
-                </li>
-              )
-            })
-          : null}
-      </ul>
-    </WidgetContainer>
+                  <br />
+                  <Link
+                    className="widget-post-title heading-font text-decoration-none text-reset"
+                    to={post.uri}
+                    dangerouslySetInnerHTML={{ __html: post.title }}
+                  />
+                </small>
+              </li>
+            )
+          })}
+        </ul>
+      </WidgetContainer>
+    )
   )
 }

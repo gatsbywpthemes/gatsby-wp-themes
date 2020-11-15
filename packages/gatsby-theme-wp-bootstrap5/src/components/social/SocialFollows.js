@@ -97,7 +97,7 @@ export const SocialFollows = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Follow on ${name}`}
-                className="mx-2 h5"
+                className="mx-2 h5 text-reset"
               >
                 {<FontAwesomeIcon icon={components[index]} />}
               </a>

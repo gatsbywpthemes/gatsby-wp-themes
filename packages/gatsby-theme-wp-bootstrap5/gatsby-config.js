@@ -22,14 +22,13 @@ module.exports = (options) => {
       resolve: `gatsby-theme-blog-data`,
       options: mergedOptions,
     },
-    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
         threshold: 0.1,
         once: true,
-        selector: `[data-sal], .entry-content blockquote, .entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6, .entry-content .animate-on-scroll`,
+        selector: `[data-sal]`,
       },
     },
     `gatsby-plugin-sass`,
@@ -51,9 +50,9 @@ module.exports = (options) => {
     {
       resolve: `gatsby-plugin-wordpress-lightbox`,
       options: {
-        ...options.lightboxOptions || {}
-      }
-    }
+        ...(options.lightboxOptions || {}),
+      },
+    },
   ]
   /**
    * Conditionally add google fonts plugin
@@ -68,8 +67,6 @@ module.exports = (options) => {
       },
     })
   }
-
-
 
   /**
    * Conditionally add mailchimp subscription plugin

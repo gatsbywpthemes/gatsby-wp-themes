@@ -1,12 +1,10 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 
 export const PostEntryExcerpt = ({ post, location }) => {
   return (
-    location === 'archive' &&
     post.excerpt && (
       <div
-        className="entry-excerpt"
+        className="entry-excerpt text-secondary"
         dangerouslySetInnerHTML={{
           __html: post.excerpt.slice(0, 160) + `[...]`,
         }}

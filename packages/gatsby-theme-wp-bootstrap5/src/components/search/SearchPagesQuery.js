@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from 'grommet'
 import { useQuery, gql } from '@apollo/client'
 import { SearchResults } from './index'

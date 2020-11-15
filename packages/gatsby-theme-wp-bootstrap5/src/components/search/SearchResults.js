@@ -13,7 +13,7 @@ export const SearchResults = ({ type, posts, search, children }) => {
   return (
     <div className="search-results  border-bottom border-dark mb-4">
       <header className="d-flex justify-content-between align-items-center">
-        <h3 className="h6">{type}</h3>
+        <h3 className="h5">{type}</h3>
         <Stats postType={posts} search={search} />
       </header>
       <ul className="results list-group list-group-flush">
@@ -21,6 +21,7 @@ export const SearchResults = ({ type, posts, search, children }) => {
           return (
             <li className="list-group-item px-0" key={post.slug}>
               <Link
+                className="text-reset text-decoration-none heading-font"
                 to={post.uri}
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />

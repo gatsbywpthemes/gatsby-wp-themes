@@ -12,8 +12,13 @@ export const FooterContent = () => {
       {` `}
       <small>
         Built with{` `}
-        <a href="https://www.wpgraphql.com">WPGraphQL</a> and{` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <a className="text-reset" href="https://www.wpgraphql.com">
+          WPGraphQL
+        </a>{' '}
+        and{` `}
+        <a className="text-reset" href="https://www.gatsbyjs.org">
+          Gatsby
+        </a>
       </small>
     </div>
   )

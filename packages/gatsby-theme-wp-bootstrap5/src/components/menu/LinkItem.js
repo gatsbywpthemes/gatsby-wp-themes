@@ -7,7 +7,7 @@ import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 export const LinkItem = ({ menuItem, sub }) => {
   const { wordPressUrl } = useThemeOptions()
-  const itemClass = sub ? 'nav-link p-2' : 'nav-link'
+  const itemClass = sub ? 'nav-link text-reset p-2' : 'text-reset nav-link'
   let url = menuItem.url
   const parsedUrl = new URIParser(url)
   if (parsedUrl.is('absolute')) {
@@ -36,7 +36,7 @@ export const LinkItem = ({ menuItem, sub }) => {
         />
       )
     ) : (
-      <span>{menuItem.label}</span>
+      <span className={itemClass}>{menuItem.label}</span>
     )
   }
 }

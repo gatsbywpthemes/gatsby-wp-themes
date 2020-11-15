@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import ParsedContent from '../../utils/ParsedContent'
@@ -10,11 +8,10 @@ export const PostEntryContent = ({ content, location = 'archive' }) => {
     <>
       {location === 'single' && (
         <div
-          /* data-sal="fade"
+          data-sal="slide-up"
           data-sal-duration="1000"
-          data-sal-easing="ease" */
-          className="entry-content"
-          sx={{ mb: '2rem' }}
+          data-sal-easing="ease"
+          className="entry-content mb-4"
         >
           <ActivatePostScripts />
           <ParsedContent content={content} />

@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-
+import React from 'react'
 import Layout from '../Layout.js'
 import { PostEntryFull } from '../post'
 import { Seo } from 'gatsby-plugin-wp-seo'

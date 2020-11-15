@@ -4,6 +4,9 @@ import {
   PostEntryContent,
   PrevNextPostNavigation,
   Tags,
+  PublicationDate,
+  Categories,
+  Author,
 } from './index'
 import { SocialShare } from '../social'
 import { CommentsList } from '../comments'
@@ -30,7 +33,10 @@ export const PostEntryFull = ({ ctx, post }) => {
         data-sal-duration="1000"
         data-sal-easing="ease"
       >
+        <Categories className="mb-3" post={post} />
         <PostEntryTitle post={post} ctx={ctx} location="single" />
+        <PublicationDate post={post} location="single" /> &middot;{' '}
+        <Author post={post} />
       </header>
       <div id="content" className="col-lg-9">
         <Image img={post.featuredImage} />

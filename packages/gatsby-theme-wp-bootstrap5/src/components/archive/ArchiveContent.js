@@ -12,7 +12,7 @@ export const ArchiveContent = ({
 }) => {
   return (
     <>
-      <section className="my-5" {...props}>
+      <section className="my-5">
         {name && <ArchiveTitle text={text} name={name} />}
         <div className="row">
           <div className="col-lg-9">
@@ -21,8 +21,8 @@ export const ArchiveContent = ({
                 posts.nodes.map((post) => (
                   <PostEntry key={post.id} post={post} />
                 ))}
-              <Pagination ctx={ctx} />
             </div>
+            <Pagination ctx={ctx} />
           </div>
           <Sidebar />
         </div>

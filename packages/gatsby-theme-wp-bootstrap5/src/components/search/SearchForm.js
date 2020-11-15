@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useState, Fragment } from 'react'
+import React, { useState } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
 import { SearchQueries } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
@@ -23,7 +21,7 @@ export const SearchForm = () => {
   }
 
   return (
-    <Fragment>
+    <>
       <div className="search-box mb-4">
         <form className="list-group list-group-flush" onSubmit={handleSubmit}>
           <div className="input-group">
@@ -64,6 +62,6 @@ export const SearchForm = () => {
 
       {/* value && search so that results are reset on Escape */}
       {value && search && <SearchQueries search={search} />}
-    </Fragment>
+    </>
   )
 }

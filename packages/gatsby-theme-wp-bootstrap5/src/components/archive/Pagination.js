@@ -1,16 +1,10 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { Link } from 'gatsby'
-import { paginationStyles, paginationLinkStyles } from '../../styles'
 
-const renderPreviousLink = previousPagePath => {
+const renderPreviousLink = (previousPagePath) => {
   if (previousPagePath) {
     return (
-      <Link
-        className="left"
-        sx={{ ...paginationLinkStyles, fontSize: 'xs' }}
-        to={previousPagePath}
-      >
+      <Link className="btn btn-dark text-uppercase" to={previousPagePath}>
         <span>Previous</span>
       </Link>
     )
@@ -19,14 +13,10 @@ const renderPreviousLink = previousPagePath => {
   }
 }
 
-const renderNextLink = nextPagePath => {
+const renderNextLink = (nextPagePath) => {
   if (nextPagePath) {
     return (
-      <Link
-        className="right"
-        sx={{ ...paginationLinkStyles, fontSize: 'xs' }}
-        to={nextPagePath}
-      >
+      <Link className="btn btn-dark text-uppercase" to={nextPagePath}>
         <span>Next</span>
       </Link>
     )
@@ -42,12 +32,16 @@ export const Pagination = ({ ctx }) => {
     return ''
   }
   return (
-    <nav sx={paginationStyles}>
-      {renderPreviousLink(previousPagePath)}
-      <span aria-current="page" className="page-numbers current">
-        {humanPageNumber}
-      </span>
-      {renderNextLink(nextPagePath)}
+    <nav className="border-top pt-4" aria-label="Page navigation">
+      <ul className="pagination justify-content-between">
+        <li className="page-item">{renderPreviousLink(previousPagePath)}</li>
+        <li className="page-item disabled">
+          <span className="page-link" aria-current="page">
+            {humanPageNumber}
+          </span>
+        </li>
+        <li className="page-item">{renderNextLink(nextPagePath)}</li>
+      </ul>
     </nav>
   )
 }

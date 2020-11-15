@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `https://wp-pehaa.xyz/ginger`,
+  wordPressUrl: `https://wp-pehaa.xyz/five-boots`,
   // uploadsPath: `wp-content/uploads`,
   //pathPrefix: "",
   // paginationPrefix: `page`,
@@ -44,10 +44,5 @@ const config = {
   seoWithYoast: true,
   lightboxSettings: {},
 }
-// https://gatsby-test-2.alexaspalato.website
-//https://gatsby-theme-demo.alexaspalato.website
-//`https://gatsby-theme-demo.alexaspalato.website`,
-// `https://gatsby-theme-demo.alexaspalato.website/wp-content/uploads/`,
-// `https://wp-pehaa.com/demo-pehaa1`,
-// `https://wp-pehaa.com/demo-pehaa1/wp-content/uploads/`,
+
 module.exports = config
