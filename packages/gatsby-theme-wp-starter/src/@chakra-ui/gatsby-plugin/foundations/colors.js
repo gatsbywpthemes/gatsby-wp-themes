@@ -49,10 +49,14 @@ export const colors = {
   text: ultraDark,
   headerBg: 'white',
   searchBg: 'white',
+  mobileMenuBg: 'black',
+  mobileMenuColor: 'white',
   dark: {
     headerBg: ultraDark,
     searchBg: ultraDark,
     bg: dark,
     text: ultraLight,
+    mobileMenuBg: 'black',
+    mobileMenuColor: 'white',
   },
 }

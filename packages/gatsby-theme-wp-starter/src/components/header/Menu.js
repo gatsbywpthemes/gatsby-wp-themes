@@ -8,12 +8,9 @@ import {
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import {
-  Box,
-  Button,
-  useMediaQuery,
   chakra,
-  IconButton,
   useColorModeValue as colorMode,
+  useBreakpointValue,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { Collapse } from 'starterUiComponents'
@@ -108,13 +105,14 @@ export const Menu = ({ menuName, orientation, ...props }) => {
   const menuItems = menuEdge ? menuEdge.menuItems : null
 
   const { wordPressUrl } = useThemeOptions()
+  const style = useBreakpointValue({ base: menuVStyles, lg: menuHStyles })
 
   if (menuItems) {
     const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
     return (
       <chakra.nav
         className="menu"
-        sx={{ ...styles }}
+        sx={{ ...style, li: { listStyle: 'none' } }}
         aria-label="main"
         {...props}
       >
@@ -134,7 +132,8 @@ export const Menu = ({ menuName, orientation, ...props }) => {
     return null
   }
 }
-const menuHStyles = {
+
+export const menuHStyles = {
   '>ul': {
     display: 'flex',
     '>li': {
@@ -198,7 +197,8 @@ const menuHStyles = {
     },
   },
 }
-const menuVStyles = {
+
+export const menuVStyles = {
   '.menu-item': {
     display: 'block',
     py: 4,
@@ -211,15 +211,5 @@ const menuVStyles = {
   '[aria-current]': {
     fontStyle: 'italic',
     fontWeight: 'body',
-  },
-}
-
-const styles = {
-  li: {
-    listStyleType: 'none',
-  },
-  // ...menuVStyles,
-  '@media( min-width:960px)': {
-    ...menuHStyles,
   },
 }
