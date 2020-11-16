@@ -165,6 +165,7 @@ export const menuHStyles = {
         '&:hover': {
           '.sub-menu': {
             visibility: 'visible',
+            // display: 'block',
             opacity: 1,
             transform: 'translateY(8px)',
           },
@@ -175,7 +176,7 @@ export const menuHStyles = {
   },
   '.sub-menu': {
     position: 'absolute',
-    display: 'block',
+    // display: 'none',
     visibility: 'hidden',
     opacity: '0',
     // bg: colorMode('white', 'ultraDark'),
