@@ -18,6 +18,7 @@ export const Collapse = ({ menuItem, children }) => {
         }
       : ''
   return (
+    //TODO: remove focus color on click
     <>
       <IconButton
         icon={isOpen ? <ChevronDownIcon /> : <ChevronRightIcon />}
@@ -27,7 +28,7 @@ export const Collapse = ({ menuItem, children }) => {
         onClick={onToggle}
         sx={{
           position: 'absolute',
-          top: '4px',
+          top: 2,
           right: 0,
           ...openStyle,
           svg: {

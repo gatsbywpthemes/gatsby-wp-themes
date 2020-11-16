@@ -105,14 +105,28 @@ export const Menu = ({ menuName, orientation, ...props }) => {
   const menuItems = menuEdge ? menuEdge.menuItems : null
 
   const { wordPressUrl } = useThemeOptions()
-  const style = useBreakpointValue({ base: menuVStyles, lg: menuHStyles })
+  const styleVariant = useBreakpointValue({
+    base: menuVStyles,
+    lg: menuHStyles,
+  })
+  const style = {
+    ...styleVariant,
+    li: {
+      listStyle: 'none',
+      fontWeight: 'bold',
+      textTransform: 'uppercase',
+      fontSize: 'xs',
+      letterSpacing: 'wider',
+      px: 3,
+    },
+  }
 
   if (menuItems) {
     const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
     return (
       <chakra.nav
         className="menu"
-        sx={{ ...style, li: { listStyle: 'none' } }}
+        sx={{ ...style }}
         aria-label="main"
         {...props}
       >
@@ -137,11 +151,11 @@ export const menuHStyles = {
   '>ul': {
     display: 'flex',
     '>li': {
-      fontWeight: 'bold',
-      textTransform: 'uppercase',
-      fontSize: 'xs',
-      letterSpacing: 'wider',
-      px: 3,
+      // fontWeight: 'bold',
+      // textTransform: 'uppercase',
+      // fontSize: 'xs',
+      // letterSpacing: 'wider',
+      // px: 3,
       '&.has-subMenu': {
         a: {
           // fontWeight: 'medium !important',
@@ -201,9 +215,9 @@ export const menuHStyles = {
 export const menuVStyles = {
   '.menu-item': {
     display: 'block',
-    py: 4,
-    borderBottom: '1px solid',
-    borderColor: 'dark',
+    py: 3,
+    borderBottom: '1px dashed rgba(256,256,256,.2)',
+
     '&:last-of-type': {
       border: 'none',
     },

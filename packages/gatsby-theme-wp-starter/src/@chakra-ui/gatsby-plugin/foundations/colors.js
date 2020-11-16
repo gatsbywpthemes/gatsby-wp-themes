@@ -50,13 +50,13 @@ export const colors = {
   headerBg: 'white',
   searchBg: 'white',
   mobileMenuBg: 'black',
-  mobileMenuColor: 'white',
+  mobileMenuColor: light,
   dark: {
     headerBg: ultraDark,
     searchBg: ultraDark,
     bg: dark,
     text: ultraLight,
     mobileMenuBg: 'black',
-    mobileMenuColor: 'white',
+    mobileMenuColor: light,
   },
 }

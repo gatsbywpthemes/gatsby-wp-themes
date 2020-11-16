@@ -28,16 +28,21 @@ export const SlideSidebar = () => {
         }
         onClick={onOpen}
         size="lg"
-        borderLeftRadius={0}
         boxSize={8}
         cursor="pointer"
       />{' '}
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent bg={colorMode('white', 'ultraDark')} p={4}>
+        <DrawerContent
+          bg={colorMode('mobileMenuBg', 'dark.MobileMenuBg')}
+          minW={{ base: '100%', md: '420px' }}
+          color={colorMode('mobileMenuColor', 'dark.mobileMenuColor')}
+          shadow="2xl"
+          p={4}
+        >
           <DrawerBody>
             <DrawerCloseButton />
-            <Menu menuName={menuName} orientation="V" />
+            <Menu menuName={menuName} orientation="V" mt={7} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
