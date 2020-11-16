@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React from 'react'
 import { Fragment, useState } from 'react'
 import { useMutation, gql } from '@apollo/client'
