@@ -11,6 +11,8 @@ import {
   chakra,
   useColorModeValue as colorMode,
   useBreakpointValue,
+  useDisclosure,
+  SlideFade,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { Collapse } from 'starterUiComponents'
@@ -81,19 +83,41 @@ const WithCollapse = ({ orientation, children, menuItem }) =>
     children
   )
 
-const renderSubMenu = (menuItem, wordPressUrl, orientation) => {
+const WithSlideFade = ({ orientation, children, isOpen }) =>
+  orientation === 'H' ? (
+    <SlideFade in={isOpen} offsetY="8px">
+      {children}
+    </SlideFade>
+  ) : (
+    children
+  )
+
+const renderSubMenu = (
+  menuItem,
+  wordPressUrl,
+  orientation,
+  isOpen,
+  onOpen,
+  onClose
+) => {
   return (
     <chakra.li
       className="has-subMenu menu-item"
       position="relative"
+      onMouseEnter={orientation === 'H' && onOpen}
+      onMouseLeave={orientation === 'H' && onClose}
       // _after={orientation === 'H' && { content: "'>'" }}
       key={menuItem.id}
     >
       <WithCollapse orientation={orientation} menuItem={menuItem}>
         {orientation === 'H' && renderLink(menuItem, wordPressUrl)}
-        <chakra.ul className="menuItemGroup sub-menu">
-          {menuItem.children.map((item) => renderMenuItem(item, wordPressUrl))}
-        </chakra.ul>
+        <WithSlideFade orientation={orientation} isOpen={isOpen}>
+          <chakra.ul className="menuItemGroup sub-menu">
+            {menuItem.children.map((item) =>
+              renderMenuItem(item, wordPressUrl)
+            )}
+          </chakra.ul>
+        </WithSlideFade>
       </WithCollapse>
     </chakra.li>
   )
@@ -103,6 +127,7 @@ export const Menu = ({ menuName, orientation, ...props }) => {
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find((n) => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
+  const { isOpen, onToggle, onOpen, onClose } = useDisclosure()
 
   const { wordPressUrl } = useThemeOptions()
   const styleVariant = useBreakpointValue({
@@ -111,6 +136,7 @@ export const Menu = ({ menuName, orientation, ...props }) => {
   })
   const style = {
     ...styleVariant,
+
     li: {
       listStyle: 'none',
       fontWeight: 'bold',
@@ -134,7 +160,14 @@ export const Menu = ({ menuName, orientation, ...props }) => {
         <ul role="menu" className="menuItemGroup">
           {menuNodes.map((menuItem) => {
             if (menuItem.children.length) {
-              return renderSubMenu(menuItem, wordPressUrl, orientation)
+              return renderSubMenu(
+                menuItem,
+                wordPressUrl,
+                orientation,
+                isOpen,
+                onOpen,
+                onClose
+              )
             } else {
               return renderMenuItem(menuItem, wordPressUrl)
             }
@@ -164,10 +197,10 @@ export const menuHStyles = {
         position: 'relative',
         '&:hover': {
           '.sub-menu': {
-            visibility: 'visible',
+            // visibility: 'visible',
             // display: 'block',
-            opacity: 1,
-            transform: 'translateY(8px)',
+            // opacity: 1,
+            // transform: 'translateY(8px)',
           },
         },
         '&:after': {},
@@ -177,18 +210,19 @@ export const menuHStyles = {
   '.sub-menu': {
     position: 'absolute',
     // display: 'none',
-    visibility: 'hidden',
-    opacity: '0',
+    // visibility: 'hidden',
+    // opacity: '0',
     // bg: colorMode('white', 'ultraDark'),
+
     bg: 'black',
     color: 'white',
     shadow: 'lg',
     rounded: 'md',
     width: 'auto',
     whiteSpace: 'nowrap',
-    transition: 'all .4s ease-in-out',
-    transform: 'translateY(15px)',
-    left: -4,
+    // transition: 'all .4s ease-in-out',
+    transform: 'translate(-20px, 15px)',
+    // left: -4,
     px: 5,
     py: 4,
     '>li': {
