@@ -2,7 +2,6 @@ import React from 'react'
 import { Flex, Box } from '@chakra-ui/react'
 import { Container, Card } from 'starterUiComponents'
 import { Layout, Sidebar } from 'starterComponents'
-import ParsedContent from 'starterUtils/ParsedContent'
 import { ActivatePageScripts } from 'starterUtils'
 import { useLayoutStyles } from 'starterUtils/hooks'
 
@@ -72,7 +71,7 @@ const Page = ({ page, ctx }) => {
 
               <div className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />
-                <ParsedContent content={content} />
+                <Box dangerouslySetInnerHTML={{ __html: content }} />
               </div>
             </Card>
           </article>

@@ -40,6 +40,7 @@ module.exports = (options) => {
         path: `${__dirname}/src/images`,
       },
     },
+
     {
       resolve: `gatsby-plugin-wordpress-parser`,
       options: {
@@ -47,6 +48,7 @@ module.exports = (options) => {
         debugOutput: parserDebugOutput,
       },
     },
+
   ]
 
   /**

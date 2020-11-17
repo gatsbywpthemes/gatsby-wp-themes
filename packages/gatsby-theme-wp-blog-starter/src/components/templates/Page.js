@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Box } from 'theme-ui'
 import { Layout } from '../Layout'
-import ParsedContent from '../../utils/ParsedContent'
+
 import { ActivatePageScripts, useLayoutStyles } from '../../utils/'
 import { Seo } from 'gatsby-plugin-wp-seo'
+
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
 import { gutenbergStyles, articleStyles } from '../../styles'
@@ -73,7 +74,8 @@ const Page = ({ page, ctx }) => {
 
               <Box className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />
-                <ParsedContent content={content} />
+                {/* <ParsedContent content={content} /> */}
+                <Box dangerouslySetInnerHTML={{ __html: content }} />
               </Box>
             </div>
           </article>
