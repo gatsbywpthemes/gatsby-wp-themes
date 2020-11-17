@@ -1,10 +1,10 @@
 import React from 'react'
 import { useDisclosure, SlideFade, chakra } from '@chakra-ui/react'
 import { Collapse } from 'starterUiComponents'
-import { MenuLink } from 'starterComponents'
+import { MenuLink, MenuItem } from 'starterComponents'
 
-export const SubMenu = ({ menuItem, wordPressUrl, orientation }) => {
-  const { isOpen, onToggle, onOpen, onClose } = useDisclosure()
+export const SubMenu = ({ menuItem, orientation }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   const WithCollapse = ({ orientation, children, menuItem }) =>
     orientation === 'V' ? (
@@ -32,14 +32,12 @@ export const SubMenu = ({ menuItem, wordPressUrl, orientation }) => {
       key={menuItem.id}
     >
       <WithCollapse orientation={orientation} menuItem={menuItem}>
-        {orientation === 'H' && (
-          <MenuLink menuItem={menuItem} wordPressUrl={wordPressUrl} />
-        )}
+        {orientation === 'H' && <MenuLink menuItem={menuItem} />}
         <WithSlideFade orientation={orientation} isOpen={isOpen}>
           <chakra.ul className="menuItemGroup sub-menu">
-            {/* {menuItem.children.map((item) =>
-              renderMenuItem(item, wordPressUrl)
-            )} */}
+            {menuItem.children.map((item) => (
+              <MenuItem key={item.id} menuItem={item} />
+            ))}
           </chakra.ul>
         </WithSlideFade>
       </WithCollapse>

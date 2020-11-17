@@ -3,8 +3,10 @@ import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import { createLocalLink } from 'starterUtils'
 import { Link } from 'gatsby'
+import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-export const MenuLink = ({ menuItem, wordPressUrl }) => {
+export const MenuLink = ({ menuItem }) => {
+  const { wordPressUrl } = useThemeOptions()
   let url = menuItem.url
   const parsedUrl = new URIParser(url)
   if (parsedUrl.is('absolute')) {
