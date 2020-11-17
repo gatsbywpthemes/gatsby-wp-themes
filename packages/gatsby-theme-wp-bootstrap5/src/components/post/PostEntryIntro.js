@@ -4,8 +4,6 @@ import {
   PostEntryTitle,
   PostEntryExcerpt,
   Categories,
-  Author,
-  PrevNextPostNavigation,
 } from './index'
 import { Link } from 'gatsby'
 
@@ -14,7 +12,6 @@ export const PostEntryIntro = ({ ctx, post, location = 'archive' }) => {
     <>
       <div className="p-3 ">
         <Categories className="mb-3" post={post} />
-
         <PostEntryTitle {...{ post, location }} />
         <PublicationDate {...{ post, location }} />
         <PostEntryExcerpt {...{ post, location }} />

@@ -10,8 +10,10 @@ export const Sidebar = ({ className, ...props }) => {
     addWordPressSearch,
   } = useThemeOptions()
 
+  className = className || ''
+
   return (
-    <div className={`${className} col-lg-3`} {...props}>
+    <div className={`${className} col-md-6 col-lg-3`} {...props}>
       {addWordPressSearch && <SearchForm />}
 
       {!!widgets &&

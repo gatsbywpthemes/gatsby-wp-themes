@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Footer, Header } from './index'
-import 'bootstrap/dist/css/bootstrap.css'
+import '../styles/bootstrap-build/bootstrap.scss'
 import '../styles/blocks.css'
 import '../styles/custom-gutenstyles.css'
 

@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
-import React from 'react'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'

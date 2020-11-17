@@ -15,7 +15,7 @@ export const ArchiveContent = ({
       <section className="my-5">
         {name && <ArchiveTitle text={text} name={name} />}
         <div className="row">
-          <div className="col-lg-9">
+          <div className="col-md-6 col-lg-9">
             <div className="row">
               {posts.nodes &&
                 posts.nodes.map((post) => (

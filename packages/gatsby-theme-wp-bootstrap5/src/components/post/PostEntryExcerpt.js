@@ -6,7 +6,7 @@ export const PostEntryExcerpt = ({ post, location }) => {
       <div
         className="entry-excerpt text-secondary"
         dangerouslySetInnerHTML={{
-          __html: post.excerpt.slice(0, 160) + `[...]`,
+          __html: post.excerpt,
         }}
       />
     )
