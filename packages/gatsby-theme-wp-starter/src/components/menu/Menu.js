@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  useMenusQuery,
-  useThemeOptions,
-} from 'gatsby-theme-blog-data/src/hooks'
+import { useMenusQuery } from 'gatsby-theme-blog-data/src/hooks'
 
 import { chakra, useBreakpointValue } from '@chakra-ui/react'
 import { MenuItem, SubMenu, flatListToHierarchical } from 'starterComponents'
@@ -63,39 +60,6 @@ export const menuHStyles = {
         cursor: 'pointer',
         position: 'relative',
       },
-    },
-  },
-  '.sub-menu': {
-    position: 'absolute',
-    zIndex: 10,
-    bg: 'black',
-    color: 'white',
-    shadow: 'lg',
-    rounded: 'md',
-    width: 'auto',
-    whiteSpace: 'nowrap',
-    transform: 'translate(-20px, 15px)',
-
-    px: 5,
-    py: 4,
-    '>li': {
-      py: 1,
-      a: {
-        '&:hover': {
-          color: 'primary',
-        },
-      },
-    },
-    '&:before': {
-      content: "''",
-      width: 0,
-      height: 0,
-      borderLeft: '7px solid transparent',
-      borderRight: '7px solid transparent',
-      borderBottom: '7px solid black',
-      position: 'absolute',
-      top: '-5px',
-      left: 5,
     },
   },
 }

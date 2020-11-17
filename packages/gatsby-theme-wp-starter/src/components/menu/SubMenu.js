@@ -22,6 +22,40 @@ export const SubMenu = ({ menuItem, orientation }) => {
       children
     )
 
+  const subMenuStyles = {
+    position: 'absolute',
+    zIndex: 10,
+    bg: 'black',
+    color: 'white',
+    shadow: 'lg',
+    rounded: 'md',
+    width: 'auto',
+    whiteSpace: 'nowrap',
+    transform: 'translate(-20px, 15px)',
+
+    px: 5,
+    py: 4,
+    '>li': {
+      py: 1,
+      a: {
+        '&:hover': {
+          color: 'primary',
+        },
+      },
+    },
+    '&:before': {
+      content: "''",
+      width: 0,
+      height: 0,
+      borderLeft: '7px solid transparent',
+      borderRight: '7px solid transparent',
+      borderBottom: '7px solid black',
+      position: 'absolute',
+      top: '-5px',
+      left: 5,
+    },
+  }
+
   return (
     <chakra.li
       className="has-subMenu menu-item"
@@ -34,7 +68,10 @@ export const SubMenu = ({ menuItem, orientation }) => {
       <WithCollapse orientation={orientation} menuItem={menuItem}>
         {orientation === 'H' && <MenuLink menuItem={menuItem} />}
         <WithSlideFade orientation={orientation} isOpen={isOpen}>
-          <chakra.ul className="menuItemGroup sub-menu">
+          <chakra.ul
+            className="menuItemGroup sub-menu"
+            sx={orientation === 'H' && { ...subMenuStyles }}
+          >
             {menuItem.children.map((item) => (
               <MenuItem key={item.id} menuItem={item} />
             ))}
