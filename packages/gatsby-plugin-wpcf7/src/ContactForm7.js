@@ -1,13 +1,10 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import axios from "axios"
 import { domToReact } from "html-react-parser"
 import useWordPressSettings from "./hooks/useWordPressSettings"
 import cf7ParserOptions from "./cf7ParserOptions"
-import Alert from "./Alert"
+import { Form, Alert } from "./components"
 
 const findId = (node) => {
   let value = null
@@ -88,14 +85,9 @@ const ContactForm7 = ({ formObject }) => {
       {!!findId && (
         <>
           <Alert alertState={alertState} setAlertState={setAlertState} />
-          <form
-            className="contact-form"
-            sx={{ variant: "form" }}
-            onSubmit={handleSubmit(onSubmit)}
-            noValidate
-          >
+          <Form onSubmit={handleSubmit(onSubmit)} noValidate>
             {domToReact(formObject.children, parserOptions)}
-          </form>
+          </Form>
         </>
       )}
     </>

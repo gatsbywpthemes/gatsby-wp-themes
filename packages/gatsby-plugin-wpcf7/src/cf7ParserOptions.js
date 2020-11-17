@@ -2,6 +2,15 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from "react"
 import { domToReact } from "html-react-parser"
+import {
+  FormField,
+  Label,
+  Input,
+  Textarea,
+  Error,
+  SubmitButton,
+  Select,
+} from "./components"
 
 const pattern = (node) => {
   switch (node.attribs.type) {
@@ -70,15 +79,22 @@ const cf7ParserOptions = ({
               return <>{domToReact(domNode.children, parserOptions)}</>
             } else {
               return (
-                <p
+                <FormField
                   className={`form-field form-field-${innerFieldType[0]} form-field-${innerFieldType[1]}`}
                 >
                   {domToReact(domNode.children, parserOptions)}
-                </p>
+                </FormField>
               )
             }
           }
           break
+        case "label":
+          const { class: labelClassName, ...rest } = domNode.attribs
+          return (
+            <Label className={labelClassName} {...rest}>
+              {domToReact(domNode.children, parserOptions)}
+            </Label>
+          )
         case "input":
           if (domNode.attribs.type === "file") {
             registeredFileInputs.push(domNode.attribs.name)
@@ -89,13 +105,9 @@ const cf7ParserOptions = ({
               return <></>
             case "submit":
               return (
-                <button
-                  className="submit-button"
-                  type="submit"
-                  disabled={isSubmitting}
-                >
+                <SubmitButton disabled={isSubmitting}>
                   {domNode.attribs.value}
-                </button>
+                </SubmitButton>
               )
             default:
               if (domNode.attribs.type === "checkbox") {
@@ -114,7 +126,7 @@ const cf7ParserOptions = ({
               }
               return (
                 <>
-                  <input
+                  <Input
                     id={domNode.attribs.newName || domNode.attribs.name}
                     className={domNode.attribs.class}
                     type={domNode.attribs.type}
@@ -133,18 +145,18 @@ const cf7ParserOptions = ({
                   />
                   {errors[domNode.attribs.name] &&
                     errors[domNode.attribs.name].type === "required" && (
-                      <span className="error">Required</span>
+                      <Error>Required</Error>
                     )}
                   {errors[domNode.attribs.name] &&
                     errors[domNode.attribs.name].type !== "required" && (
-                      <span className="error">Invalid value</span>
+                      <Error>Invalid value</Error>
                     )}
                 </>
               )
           }
         case "select":
           return (
-            <select
+            <Select
               name={domNode.attribs.name}
               id={domNode.attribs.name}
               ref={register({
@@ -152,7 +164,7 @@ const cf7ParserOptions = ({
               })}
             >
               {domToReact(domNode.children, parserOptions)}
-            </select>
+            </Select>
           )
         case "option":
           return (
@@ -163,16 +175,16 @@ const cf7ParserOptions = ({
         case "textarea":
           return (
             <>
-              <textarea
+              <Textarea
                 name={domNode.attribs.name}
                 id={domNode.attribs.name}
                 ref={register({ required: !!domNode.attribs["aria-required"] })}
                 rows="6"
                 cols="48"
-              ></textarea>
+              />
               {errors[domNode.attribs.name] &&
                 errors[domNode.attribs.name].type === "required" && (
-                  <span className="error">Required</span>
+                  <Error>Required</Error>
                 )}
             </>
           )

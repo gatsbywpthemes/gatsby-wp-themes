@@ -1,0 +1,6 @@
+export * from './CategoriesWidget'
+export * from './TagsWidget'
+export * from './RecentPosts'
+export * from './Newsletter'
+export * from './Widgets'
+export * from './WidgetContainer'
