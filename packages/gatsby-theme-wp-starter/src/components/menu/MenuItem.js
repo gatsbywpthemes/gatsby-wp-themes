@@ -1,4 +1,5 @@
 import React from 'react'
+import { chakra } from '@chakra-ui/react'
 import { SubMenu, MenuLink } from 'starterComponents'
 
 export const MenuItem = ({ menuItem }) => {
@@ -6,9 +7,12 @@ export const MenuItem = ({ menuItem }) => {
     return <SubMenu menuItem={menuItem} />
   } else {
     return (
-      <li className={`menu-item ${menuItem.cssClasses}`} key={menuItem.id}>
+      <chakra.li
+        className={`menu-item ${menuItem.cssClasses}`}
+        key={menuItem.id}
+      >
         <MenuLink menuItem={menuItem} />
-      </li>
+      </chakra.li>
     )
   }
 }
