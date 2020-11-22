@@ -1,8 +1,7 @@
 import React from 'react'
-import { Layout } from '../Layout'
+import { Layout, ArchiveContent } from 'starterComponents'
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { ArchiveContent } from '../archive'
 
 const Posts = ({ posts, ctx }) => {
   const { humanPageNumber, numberOfPages, title, yoastSeo, seo } = ctx

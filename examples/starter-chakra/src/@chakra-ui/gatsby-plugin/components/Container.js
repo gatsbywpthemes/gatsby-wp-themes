@@ -16,8 +16,8 @@ export const Container = {
     xl: {
       maxW: 'container.xl',
     },
-    defaultProps: {
-      size: 'xl',
-    },
+  },
+  defaultProps: {
+    size: 'xl',
   },
 }

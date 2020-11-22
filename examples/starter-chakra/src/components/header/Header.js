@@ -1,19 +1,25 @@
-/** @jsx jsx */
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Menu, SiteBranding } from './index'
-import { Container } from '../ui-components'
+import { Menu, SiteBranding, SlideSidebar } from 'starterComponents'
+import { Container } from 'starterUiComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-import { ColorSwitch } from '../ColorSwitch'
-import { SearchModal } from '../search'
-import { Box, Flex, jsx, Button } from '@chakra-ui/core'
+import { ColorSwitch } from 'starterComponents'
+import { SearchModal } from 'starterComponents'
+import {
+  Box,
+  Flex,
+  HStack,
+  useMediaQuery,
+  useColorModeValue as colorMode,
+} from '@chakra-ui/react'
 
 export const Header = () => {
   const { search, menuName } = useThemeOptions()
+  const [isLargerThan960] = useMediaQuery('(min-width: 960px)')
 
   const data = useStaticQuery(graphql`
-    query {
+    query SiteTitleQuery {
       wp {
         generalSettings {
           title
@@ -26,14 +32,27 @@ export const Header = () => {
   const { title } = data.wp.generalSettings
 
   return (
-    <Box as="header" bg="ultraDark" py={4} color="white" className="header">
+    <Box
+      as="header"
+      bg={colorMode('headerBg', 'dark.headerBg')}
+      py={4}
+      className="header"
+      boxShadow="md"
+    >
       <Container display="flex" justifyContent="space-between">
         <Flex>
           <SiteBranding title={title} />
           {search && <SearchModal />}
         </Flex>
-        {/* <Menu menuName={menuName} /> */}
-        <ColorSwitch />
+        <HStack>
+          {isLargerThan960 ? (
+            <Menu menuName={menuName} orientation="H" />
+          ) : (
+            <SlideSidebar />
+          )}
+
+          <ColorSwitch />
+        </HStack>
       </Container>
     </Box>
   )

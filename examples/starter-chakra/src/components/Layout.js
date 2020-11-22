@@ -1,9 +1,8 @@
-/** @jsx jsx */
-import { Header } from './header'
-import { Footer } from './footer'
-import { Box, jsx } from '@chakra-ui/core'
+import React from 'react'
+import { Footer, Header } from 'starterComponents'
+import { Box } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
-import 'styles/wp-styles/styles.scss'
+import 'starterStyles/wp-styles/styles.scss'
 
 export const Layout = ({ children, page, type = 'page' }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
@@ -23,9 +22,9 @@ export const Layout = ({ children, page, type = 'page' }) => {
       }}
       className={`${layoutClass}-${type} ${fullWidthClass}`}
     >
-      <Headroom>
-        <Header />
-      </Headroom>
+      {/* <Headroom> */}
+      <Header />
+      {/* </Headroom> */}
       <Box
         as="main"
         py={16}

@@ -1,15 +1,13 @@
-/** @jsx jsx */
-import { jsx, Flex } from '@chakra-ui/core'
-import { Container } from 'uiComponents'
-import { Layout } from '../Layout'
-import ParsedContent from 'utils/ParsedContent'
-import { ActivatePageScripts } from 'utils'
-import { useLayoutStyles } from 'utils/hooks'
+import React from 'react'
+import { Flex, Box } from '@chakra-ui/react'
+import { Container, Card } from 'starterUiComponents'
+import { Layout, Sidebar } from 'starterComponents'
+import { ActivatePageScripts } from 'starterUtils'
+import { useLayoutStyles } from 'starterUtils/hooks'
 
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { gutenbergStyles } from 'styles/gutenbergStyles'
-import { Sidebar } from '../index'
+import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
   const {
@@ -25,7 +23,7 @@ const Page = ({ page, ctx }) => {
     sidebarSide,
     sidebarPage,
     sidebarWidgets,
-  } = useLayoutStyles('post', templateName.toLowerCase())
+  } = useLayoutStyles('page', templateName.toLowerCase())
   const { skipTitle } = useThemeOptions()
 
   const featuredImage =
@@ -50,12 +48,18 @@ const Page = ({ page, ctx }) => {
         <Flex
           sx={{
             ...sidebarSide,
-            flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+            flexWrap: { base: 'wrap', lg: 'nowrap' },
             alignItems: `flex-start`,
           }}
         >
           <article className="entry">
-            <div className="content page-content">
+            <Card
+              className="content page-content"
+              p={templateName === 'Full Width' ? 0 : [5, 16]}
+              borderRadius={templateName === 'Full Width' ? 0 : 'lg'}
+              boxShadow={templateName === 'Full Width' ? 0 : 'lg'}
+              mb={{ base: 14, lg: 0 }}
+            >
               {skipTitle &&
                 !skipTitle.includes(slug) &&
                 skipTitle !== 'all' && (
@@ -67,9 +71,9 @@ const Page = ({ page, ctx }) => {
 
               <div className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />
-                <ParsedContent content={content} />
+                <Box dangerouslySetInnerHTML={{ __html: content }} />
               </div>
-            </div>
+            </Card>
           </article>
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>

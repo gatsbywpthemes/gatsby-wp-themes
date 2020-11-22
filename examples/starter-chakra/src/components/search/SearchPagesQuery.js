@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import { Button } from 'grommet'
+import { Button } from '@chakra-ui/react'
 import { useQuery, gql } from '@apollo/client'
-import { SearchResults } from './index'
+import { SearchResults } from 'starterComponents'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_PAGES = gql`
@@ -68,7 +68,12 @@ export const SearchPagesQuery = ({ search }) => {
   return (
     <SearchResults type="Pages" query={search} posts={data.pages.nodes}>
       {clickable && data.pages.pageInfo && data.pages.pageInfo.hasNextPage && (
-        <Button onClick={loadMore} focusIndicator={false} type="button">
+        <Button
+          onClick={loadMore}
+          size="small"
+          colorScheme="teal"
+          type="button"
+        >
           Load More
         </Button>
       )}

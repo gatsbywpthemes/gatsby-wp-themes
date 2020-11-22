@@ -1,4 +1,4 @@
-import { Box, Heading } from '@chakra-ui/core'
+import { Box, Heading } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'gatsby'
 

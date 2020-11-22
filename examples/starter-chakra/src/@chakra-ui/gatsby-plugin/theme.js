@@ -1,14 +1,13 @@
-import { extendTheme } from '@chakra-ui/core'
+import { extendTheme } from '@chakra-ui/react'
 
-import { colors } from './foundations'
+import { colors, breakpoints } from './foundations'
 import {
   fontSizes,
   fonts,
   lineHeights,
   fontWeights,
-  base,
 } from './foundations/typography'
-import { Container as CenterContainer } from './components'
+import { Container as CenterContainer, Card } from './components'
 import { layerStyles } from './layerStyles'
 import { textStyles } from './textStyles'
 
@@ -20,13 +19,15 @@ const theme = extendTheme({
   fonts,
   lineHeights,
   fontWeights,
+  breakpoints,
 
   components: {
     CenterContainer,
+    Card,
   },
   textStyles: {
     ...textStyles,
-    ...base,
+    // ...base,
   },
   layerStyles: {
     ...layerStyles,

@@ -1,5 +1,5 @@
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { useToken } from '@chakra-ui/core'
+import { useToken } from '@chakra-ui/react'
 
 const useLayoutWidth = () => {
   const { layoutWidth } = useThemeOptions()
@@ -39,9 +39,9 @@ const useLayoutStyles = (layoutType, templateName) => {
       ? {
           maxWidth: xl,
           '.entry': {
-            width: [`100%`, `100%`, `100%`, `70%`],
+            width: { base: '100%', lg: '67%', xl: '70%' },
           },
-          '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
+          '.sidebar': { width: { base: '100%', lg: '33%', xl: '30%' } },
         }
       : { maxWidth: getLayoutWidth(layoutType) }
 
@@ -49,10 +49,10 @@ const useLayoutStyles = (layoutType, templateName) => {
     ? pageTemplate === `left sidebar`
       ? {
           flexDirection: `row-reverse`,
-          '.entry': { pl: [0, 0, 0, 8] },
+          '.entry': { pl: { base: 0, lg: 8 } },
         }
       : pageTemplate === `right sidebar`
-      ? { '.entry': { pr: [0, 0, 0, 8] } }
+      ? { '.entry': { pr: { base: 0, lg: 8 } } }
       : ''
     : ''
 

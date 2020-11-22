@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Flex } from '@chakra-ui/core'
+import React from 'react'
+import { Flex } from '@chakra-ui/react'
 
 export const BorderTitle = (props) => (
   <Flex

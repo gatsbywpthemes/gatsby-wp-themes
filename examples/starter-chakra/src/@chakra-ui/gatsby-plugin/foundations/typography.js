@@ -15,10 +15,10 @@ export const fontSizes = {
   '9xl': rem(128),
 }
 
-export const fonts = {
-  body: 'IBM Plex Mono',
-  heading: 'Roboto Slab',
-}
+// export const fonts = {
+//   body: 'IBM Plex Mono',
+//   heading: 'Roboto Slab',
+// }
 
 export const fontWeights = {
   body: 400,
@@ -28,7 +28,7 @@ export const fontWeights = {
 
 export const lineHeights = {
   body: 1.8,
-  heading: 1.1,
+  heading: 1.4,
   loose: 2,
 }
 
@@ -50,7 +50,6 @@ const heading = {
   fontFamily: 'heading',
   lineHeight: 'heading',
   fontWeight: 'heading',
-  color: 'text',
   a: {
     borderBottom: 'none',
   },
@@ -84,17 +83,16 @@ export const h5 = {
 export const h6 = {
   ...heading,
   fontSize: 'xs',
-  color: 'muted',
-  // mb: 1,
 }
 export const blockquote = {
   fontStyle: 'italic',
   px: [5, 12],
-  py: 10,
+  py: 8,
   borderLeft: '5px solid',
   borderColor: 'primary',
   maxWidth: '800px !important',
   mx: 'auto',
+  my: 10,
 }
 
 export const base = {

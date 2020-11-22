@@ -1,12 +1,11 @@
-/** @jsx jsx */
+import React from 'react'
 import {
-  jsx,
   Box,
   Center,
   Divider,
   useColorModeValue as colorMode,
-} from '@chakra-ui/core'
-import React from 'react'
+} from '@chakra-ui/react'
+
 import {
   PostEntryTitle,
   PostEntryMedia,
@@ -15,9 +14,10 @@ import {
   PostEntryInfo,
   ReadMoreButton,
   PrevNextPostNavigation,
-} from './index'
+  SocialShare,
+} from 'starterComponents'
+import { Card } from 'starterUiComponents'
 import normalize from 'normalize-path'
-import { SocialShare } from '../social'
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''
@@ -33,18 +33,15 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
         sx={{ '.gatsby-image-wrapper': { borderTopRadius: 'lg' } }}
       />
 
-      <Box
-        p={[5, 12]}
-        bg={colorMode('white', 'ultraDark')}
-        boxShadow="lg"
-        borderBottomRadius="lg"
+      <Card
+        borderTopRadius={media ? 0 : 'lg'}
         className={`content ${noImgClass}`}
       >
         <PostEntryTitle
           location={location}
           post={post}
           textTransform="uppercase"
-          textStyle="h2"
+          fontSize={['2xl', '3xl']}
           mb={5}
           className="entry-title"
         />
@@ -71,7 +68,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
             <PrevNextPostNavigation ctx={ctx} />
           </>
         )}
-      </Box>
+      </Card>
     </Box>
   )
 }

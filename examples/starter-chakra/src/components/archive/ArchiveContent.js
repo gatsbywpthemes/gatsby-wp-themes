@@ -1,12 +1,12 @@
-/** @jsx jsx */
-import { jsx, Flex, useToken } from '@chakra-ui/core'
-import { Container } from 'uiComponents'
+import React from 'react'
+import { Flex } from '@chakra-ui/react'
+import { Container } from 'starterUiComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { Sidebar } from '../index'
-import { ArchiveTitle, PostsList, Pagination } from './index'
-import { useLayoutWidth } from 'utils/hooks'
+import { Sidebar } from 'starterComponents'
+import { ArchiveTitle, PostsList, Pagination } from 'starterComponents'
+import { useLayoutWidth } from 'starterUtils/hooks'
 
-export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
+export const ArchiveContent = ({ posts, ctx, name }) => {
   const { archiveSidebar, sidebarWidgets } = useThemeOptions()
 
   const [archiveWidth, xl] = useLayoutWidth('archive')
@@ -16,9 +16,9 @@ export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
       ? {
           maxWidth: xl,
           '.posts-list': {
-            width: [`100%`, `100%`, `100%`, `70%`],
+            width: { base: '100%', lg: '67%', xl: '70%' },
           },
-          '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
+          '.sidebar': { width: { base: '100%', lg: '33%', xl: '30%' } },
         }
       : { maxWidth: archiveWidth() }
 
@@ -28,12 +28,12 @@ export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
         ? {
             flexDirection: `row-reverse`,
             '.posts-list': {
-              pl: [0, 0, 0, 8],
+              pl: { base: 0, lg: 8 },
             },
           }
         : {
             '.posts-list': {
-              pr: [0, 0, 0, 8],
+              pr: { base: 0, lg: 8 },
             },
           }
       : ''
@@ -44,7 +44,7 @@ export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
       <Flex
         sx={{
           ...sidebarSide,
-          flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+          flexWrap: { base: `wrap`, lg: `wrap` },
           alignItems: `flex-start`,
         }}
       >

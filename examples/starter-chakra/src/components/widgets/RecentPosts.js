@@ -1,13 +1,6 @@
-/** @jsx jsx */
-import {
-  jsx,
-  Flex,
-  VStack,
-  HStack,
-  Box,
-  Link as ChakraLink,
-} from '@chakra-ui/core'
-import { BorderTitle } from 'uiComponents'
+import React from 'react'
+import { Flex, VStack, HStack, Box, Link as ChakraLink } from '@chakra-ui/react'
+import { BorderTitle } from 'starterUiComponents'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'

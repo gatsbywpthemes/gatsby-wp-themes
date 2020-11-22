@@ -32,7 +32,7 @@ module.exports = {
     ],
   },
   plugins: [
-    'gatsby-plugin-chakra-ui',
+    '@chakra-ui/gatsby-plugin',
     {
       resolve: 'gatsby-theme-blog-data',
       options: {
@@ -60,12 +60,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
-        src: path.join(__dirname, 'src'),
-        pages: path.join(__dirname, 'src/pages'),
-        styles: path.join(__dirname, 'src/styles'),
-        components: path.join(__dirname, 'src/components'),
-        uiComponents: path.join(__dirname, 'src/components/ui-components'),
-        utils: path.join(__dirname, 'src/utils'),
+        satrertSrc: path.join(__dirname, 'src'),
+        starterPages: path.join(__dirname, 'src/pages'),
+        starterStyles: path.join(__dirname, 'src/styles'),
+        starterComponents: path.join(__dirname, 'src/components'),
+        starterUiComponents: path.join(
+          __dirname,
+          'src/components/ui-components'
+        ),
+        starterUtils: path.join(__dirname, 'src/utils'),
       },
     },
     {

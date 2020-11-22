@@ -1,7 +1,7 @@
-/** @jsx jsx */
+import React from 'react'
 /* eslint-disable no-useless-escape */
-import { jsx, Text, Heading } from '@chakra-ui/core'
-import { TransparentCard, Textarea, Input } from 'uiComponents'
+import { Text, Heading } from '@chakra-ui/react'
+import { TransparentCard, Textarea, Input } from 'starterUiComponents'
 import { useState, Fragment } from 'react'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'

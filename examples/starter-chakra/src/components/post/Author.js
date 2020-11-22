@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx, Link as ChakraLink } from '@chakra-ui/core'
 import React from 'react'
+import { Link as ChakraLink } from '@chakra-ui/react'
 import { Link } from 'gatsby'
 
 export const Author = ({ post, ...props }) => {
@@ -8,6 +7,7 @@ export const Author = ({ post, ...props }) => {
   return (
     <ChakraLink
       as={Link}
+      _hover={{ textDecoration: 'none', color: 'red.300' }}
       aria-label={`visit ${name} page`}
       to={`/author/${slug}`}
       {...props}

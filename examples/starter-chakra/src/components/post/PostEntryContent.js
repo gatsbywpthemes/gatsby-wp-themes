@@ -1,9 +1,9 @@
-/** @jsx jsx */
-import { jsx, Box } from '@chakra-ui/core'
-import ParsedContent from 'utils/ParsedContent'
-import { gutenbergStyles } from 'styles/gutenbergStyles'
+import React from 'react'
+import { Box } from '@chakra-ui/react'
+import ParsedContent from 'starterUtils/ParsedContent'
+import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 
-import { ActivatePostScripts } from 'utils'
+import { ActivatePostScripts } from 'starterUtils'
 
 export const PostEntryContent = ({ post, location, ...props }) => {
   const content = location === 'single' ? post.content : post.excerpt

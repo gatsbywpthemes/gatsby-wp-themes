@@ -1,10 +1,9 @@
-/** @jsx jsx */
-import { jsx, Heading, Box } from '@chakra-ui/core'
 import React from 'react'
-import { Container } from 'uiComponents'
+import { Heading, Box } from '@chakra-ui/react'
+import { Container } from 'starterUiComponents'
 import { Fragment, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { CommentForm, Comment } from './index'
+import { CommentForm, Comment } from 'starterComponents'
 import Loader from 'react-spinners/BeatLoader'
 
 const GET_COMMENTS = gql`

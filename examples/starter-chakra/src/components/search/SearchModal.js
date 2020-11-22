@@ -1,37 +1,33 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import React from 'react'
 import {
   useDisclosure,
   Drawer,
-  Flex,
-  Box,
   IconButton,
-  Button,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-} from '@chakra-ui/core'
+  useColorModeValue as colorMode,
+} from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
-import { SearchForm } from './SearchForm'
+import { SearchForm } from 'starterComponents'
 
 export const SearchModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
-      <SearchIcon
+      <IconButton
         aria-label="Search"
+        icon={<SearchIcon color={colorMode('gray.600', 'light')} />}
+        variant="unstyled"
         onClick={onOpen}
-        color="primary"
+        size="lg"
+        borderLeftRadius={0}
         boxSize={8}
         cursor="pointer"
         mt={1}
         ml={3}
-        pl={3}
         borderLeft="1px solid"
         borderColor="primary"
       />
@@ -42,7 +38,7 @@ export const SearchModal = () => {
         // width="100%"
       >
         <DrawerOverlay />
-        <DrawerContent bg="background" p={4}>
+        <DrawerContent bg={colorMode('searchBg', 'dark.searchBg')} p={4}>
           <DrawerBody>
             <DrawerCloseButton />
             <SearchForm />

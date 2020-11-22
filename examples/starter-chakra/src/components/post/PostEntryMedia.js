@@ -1,7 +1,7 @@
 import React from 'react'
-import { Box } from '@chakra-ui/core'
+import { Box } from '@chakra-ui/react'
 import { Link } from 'gatsby'
-import { Image } from '../images'
+import { Image } from 'starterComponents'
 
 const WithLink = ({ post, location, children }) =>
   location === 'single' ? (
