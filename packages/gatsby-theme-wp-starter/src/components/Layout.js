@@ -22,9 +22,9 @@ export const Layout = ({ children, page, type = 'page' }) => {
       }}
       className={`${layoutClass}-${type} ${fullWidthClass}`}
     >
-      {/* <Headroom> */}
-      <Header />
-      {/* </Headroom> */}
+      <Headroom>
+        <Header />
+      </Headroom>
       <Box
         as="main"
         py={16}

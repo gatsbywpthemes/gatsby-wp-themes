@@ -1,5 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import {
+  Box,
+  VStack,
+  Heading,
+  Text,
+  chakra,
+  useColorModeValue as colorMode,
+} from '@chakra-ui/react'
 
 const Stats = ({ postType, search }) => (
   <div className="stats">
@@ -9,13 +17,24 @@ const Stats = ({ postType, search }) => (
   </div>
 )
 
-export const SearchResults = ({ type, posts, search, children }) => {
+export const SearchResults = ({ type, posts, search, children, ...props }) => {
   return (
-    <>
-      <header>
-        <h3>{type}</h3>
+    <Box
+      bg={colorMode('ultraLight', 'dark')}
+      overflow="scroll"
+      position="absolute"
+      left={0}
+      top={[65, 65, 88]}
+      w={{ base: '100%', lg: '600px' }}
+      zIndex={2}
+      {...props}
+    >
+      <chakra.header>
+        <Heading as="h3" bg="gray.300" textStyle="h5">
+          {type}
+        </Heading>
         <Stats postType={posts} search={search} />
-      </header>
+      </chakra.header>
       <div className="results">
         {posts.map((post) => {
           return (
@@ -28,6 +47,6 @@ export const SearchResults = ({ type, posts, search, children }) => {
         })}
       </div>
       {children}
-    </>
+    </Box>
   )
 }

@@ -7,8 +7,8 @@ export const styles = {
     return {
       body: {
         fontFamily: 'body',
-        color: mode('text', 'dark.text')(props),
-        bg: mode('bg', 'dark.bg')(props),
+        color: mode('text', 'modes.dark.text')(props),
+        bg: mode('bg', 'modes.dark.bg')(props),
         transition: 'all .4s ease-in-out',
         lineHeight: 'body',
       },

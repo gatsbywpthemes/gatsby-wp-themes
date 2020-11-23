@@ -38,7 +38,7 @@ export const SearchModal = () => {
         // width="100%"
       >
         <DrawerOverlay />
-        <DrawerContent bg={colorMode('searchBg', 'dark.searchBg')} p={4}>
+        <DrawerContent bg={colorMode('searchBg', 'modes.dark.searchBg')} p={4}>
           <DrawerBody>
             <DrawerCloseButton />
             <SearchForm />

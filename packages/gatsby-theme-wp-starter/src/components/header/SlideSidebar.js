@@ -25,7 +25,10 @@ export const SlideSidebar = (props) => {
         aria-label="open menu"
         variant="unstyled"
         icon={
-          <HamburgerIcon boxSize={6} color={colorMode('text', 'dark.text')} />
+          <HamburgerIcon
+            boxSize={6}
+            color={colorMode('text', 'modes.dark.text')}
+          />
         }
         onClick={onOpen}
         size="lg"
@@ -35,9 +38,9 @@ export const SlideSidebar = (props) => {
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent
-          bg={colorMode('mobileMenuBg', 'dark.MobileMenuBg')}
+          bg={colorMode('mobileMenuBg', 'modes.dark.MobileMenuBg')}
           minW={{ base: '100%', md: '420px' }}
-          color={colorMode('mobileMenuColor', 'dark.mobileMenuColor')}
+          color={colorMode('mobileMenuColor', 'modes.dark.mobileMenuColor')}
           shadow="2xl"
           p={4}
         >

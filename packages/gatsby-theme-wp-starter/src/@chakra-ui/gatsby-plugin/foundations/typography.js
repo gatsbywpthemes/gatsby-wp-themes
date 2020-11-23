@@ -38,7 +38,7 @@ export const p = {
   mb: 5,
 }
 export const a = {
-  transition: 'all .4s ease-in-out',
+  transition: 'all .2s',
   color: 'accent',
   fontWeight: 'bold',
   textDecoration: 'none',

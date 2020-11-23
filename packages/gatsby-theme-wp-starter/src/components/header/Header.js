@@ -34,7 +34,7 @@ export const Header = () => {
   return (
     <Box
       as="header"
-      bg={colorMode('headerBg', 'dark.headerBg')}
+      bg={colorMode('headerBg', 'modes.dark.headerBg')}
       py={4}
       className="header"
       boxShadow="md"
