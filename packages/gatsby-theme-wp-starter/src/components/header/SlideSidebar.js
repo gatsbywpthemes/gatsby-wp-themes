@@ -11,20 +11,21 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useColorModeValue as colorMode,
+  Box,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
-export const SlideSidebar = () => {
+export const SlideSidebar = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { menuName } = useThemeOptions()
 
   return (
-    <>
+    <Box {...props}>
       <IconButton
         aria-label="open menu"
         variant="unstyled"
         icon={
-          <HamburgerIcon boxSize={24} color={colorMode('text', 'dark.text')} />
+          <HamburgerIcon boxSize={6} color={colorMode('text', 'dark.text')} />
         }
         onClick={onOpen}
         size="lg"
@@ -46,6 +47,6 @@ export const SlideSidebar = () => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-    </>
+    </Box>
   )
 }

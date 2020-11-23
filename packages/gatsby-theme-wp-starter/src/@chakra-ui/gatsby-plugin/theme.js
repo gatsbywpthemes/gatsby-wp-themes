@@ -1,6 +1,6 @@
 import { extendTheme } from '@chakra-ui/react'
 
-import { colors, breakpoints } from './foundations'
+import { colors } from './foundations'
 import {
   fontSizes,
   fonts,
@@ -19,7 +19,7 @@ const theme = extendTheme({
   fonts,
   lineHeights,
   fontWeights,
-  breakpoints,
+  // breakpoints,
 
   components: {
     CenterContainer,

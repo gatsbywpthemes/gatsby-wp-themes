@@ -45,11 +45,13 @@ export const Header = () => {
           {search && <SearchModal />}
         </Flex>
         <HStack>
-          {isLargerThan960 ? (
-            <Menu menuName={menuName} orientation="H" />
-          ) : (
-            <SlideSidebar />
-          )}
+          <Menu
+            menuName={menuName}
+            orientation="H"
+            display={{ base: 'none', lg: 'block' }}
+          />
+
+          <SlideSidebar display={{ base: 'block', lg: 'none' }} />
 
           <ColorSwitch />
         </HStack>
