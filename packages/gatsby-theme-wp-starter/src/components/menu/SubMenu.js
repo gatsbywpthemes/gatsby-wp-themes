@@ -40,6 +40,7 @@ const SubMenuH = ({ menuItem }) => {
     <Menu key={menuItem.id}>
       <MenuButton
         as={Button}
+        className="menu-item"
         variant="unstyled"
         rightIcon={<ChevronDownIcon />}
       >

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useMenusQuery } from 'gatsby-theme-blog-data/src/hooks'
 
-import { chakra } from '@chakra-ui/react'
+import { chakra, Stack } from '@chakra-ui/react'
 import { MenuItem, SubMenu, flatListToHierarchical } from 'starterComponents'
 
 export const Menu = ({ menuName, orientation, ...props }) => {
@@ -17,7 +17,7 @@ export const Menu = ({ menuName, orientation, ...props }) => {
       fontWeight: 'body',
     },
 
-    li: {
+    '.menu-item,button': {
       listStyle: 'none',
       fontWeight: 'bold',
       textTransform: 'uppercase',
@@ -37,15 +37,19 @@ export const Menu = ({ menuName, orientation, ...props }) => {
         {...props}
       >
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
-        <ul role="menu" className="menuItemGroup">
+        <Stack
+          direction={orientation === 'H' ? 'row' : 'column'}
+          role="menu"
+          className="menuItemGroup"
+        >
           {menuNodes.map((menuItem) => {
             if (menuItem.children.length) {
               return <SubMenu menuItem={menuItem} orientation={orientation} />
             } else {
-              return <MenuItem menuItem={menuItem} />
+              return <MenuItem menuItem={menuItem} orientation={orientation} />
             }
           })}
-        </ul>
+        </Stack>
       </chakra.nav>
     )
   } else {
