@@ -6,10 +6,11 @@ import 'starterStyles/wp-styles/styles.scss'
 
 export const Layout = ({ children, page, type = 'page' }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
-  const pageTemplate = page && page.template ? page.template.__typename : ''
+  const pageTemplate = page?.template
+    ? page.template.templateName.toLowerCase()
+    : ''
 
-  const fullWidthClass =
-    pageTemplate === 'WpFullWidthTemplate' ? 'fullWidth' : ''
+  const fullWidthClass = pageTemplate === 'full width' ? 'fullWidth' : ''
   return (
     <Box
       sx={{

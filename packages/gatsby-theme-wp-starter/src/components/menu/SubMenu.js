@@ -4,7 +4,7 @@ import { Collapse } from 'starterUiComponents'
 import { MenuLink, MenuItem } from 'starterComponents'
 
 export const SubMenu = ({ menuItem, orientation }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
 
   const WithCollapse = ({ orientation, children, menuItem }) =>
     orientation === 'V' ? (
@@ -60,8 +60,9 @@ export const SubMenu = ({ menuItem, orientation }) => {
     <chakra.li
       className="has-subMenu menu-item"
       position="relative"
-      onMouseEnter={orientation === 'H' && onOpen}
-      onMouseLeave={orientation === 'H' && onClose}
+      // onMouseEnter={orientation === 'H' && onOpen}
+      onClickOutside={orientation === 'H' && onClose}
+      onClick={orientation === 'H' && onToggle}
       // _after={orientation === 'H' && { content: "'>'" }}
       key={menuItem.id}
     >
