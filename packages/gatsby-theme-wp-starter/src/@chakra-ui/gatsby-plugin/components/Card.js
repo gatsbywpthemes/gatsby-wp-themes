@@ -1,5 +1,5 @@
 import { mode } from '@chakra-ui/theme-tools'
-export const Card = (props) => {
+const Card = (props) => {
   return {
     baseStyle: {
       borderRadius: 'lg',
@@ -24,3 +24,5 @@ export const Card = (props) => {
     },
   }
 }
+
+export default Card

@@ -1,2 +1,9 @@
-export * from './Container'
-export * from './Card'
+import Card from './Card'
+import CenterContainer from './Container'
+import Menu from './Menu'
+
+export default {
+  Card,
+  CenterContainer,
+  Menu,
+}

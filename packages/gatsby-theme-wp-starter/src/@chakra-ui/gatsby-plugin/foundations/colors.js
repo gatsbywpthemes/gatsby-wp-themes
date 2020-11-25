@@ -36,7 +36,7 @@ const light = gray[100],
   highlight = red[500],
   mutted = gray[200]
 
-export const colors = {
+const colors = {
   light,
   ultraLight,
   dark,
@@ -62,3 +62,5 @@ export const colors = {
     },
   },
 }
+
+export default colors

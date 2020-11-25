@@ -1,4 +1,4 @@
-export const Container = {
+const Container = {
   baseStyle: {
     px: [5, 5, 6, 10],
     mx: 'auto',
@@ -21,3 +21,5 @@ export const Container = {
     size: 'xl',
   },
 }
+
+export default Container
