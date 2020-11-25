@@ -18,14 +18,9 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "@emotion/core": "10.0.35",
-    "@emotion/styled": "^10.0.27",
     "@mdx-js/react": "^1.6.19",
-    "@theme-ui/presets": "^0.3.0",
-    "emotion": "^10.0.27",
     "html-react-parser": "^0.14.0",
-    "react-hook-form": "^6.9.6",
-    "theme-ui": "^0.3.1"
+    "react-hook-form": "^6.9.6"
   },
   "peerDependencies": {
     "gatsby": "^2.24.85",

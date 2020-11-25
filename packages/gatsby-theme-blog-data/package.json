@@ -24,7 +24,9 @@
     "gatsby-plugin-sitemap": "^2.4.17",
     "gatsby-plugin-wordpress-parser": "*",
     "gatsby-source-filesystem": "^2.3.35",
+
     "gatsby-source-wordpress-experimental": "3.0.0",
+
     "gatsby-transformer-sharp": "^2.5.19",
     "isomorphic-fetch": "^3.0.0",
 
