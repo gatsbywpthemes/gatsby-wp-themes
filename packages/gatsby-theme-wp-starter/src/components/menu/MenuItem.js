@@ -12,8 +12,9 @@ export const MenuItem = ({ menuItem, orientation }) => {
         variant="unstyled"
         className={`menu-item ${menuItem.cssClasses}`}
         key={menuItem.id}
+        _hover={{ color: 'primary' }}
       >
-        <MenuLink menuItem={menuItem} />
+        <MenuLink menuItem={menuItem} _hover={{ color: 'primary' }} />
       </Box>
     )
   }

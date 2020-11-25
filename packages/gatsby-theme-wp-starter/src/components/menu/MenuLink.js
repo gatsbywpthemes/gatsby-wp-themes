@@ -5,7 +5,7 @@ import { createLocalLink } from 'starterUtils'
 import { Link } from 'gatsby'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
-export const MenuLink = ({ menuItem }) => {
+export const MenuLink = ({ menuItem, ...props }) => {
   const { wordPressUrl } = useThemeOptions()
   let url = menuItem.url
   const parsedUrl = new URIParser(url)
@@ -15,18 +15,23 @@ export const MenuLink = ({ menuItem }) => {
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : {}
     return (
-      <a href={menuItem.url} {...targetRelAttrs}>
+      <a href={menuItem.url} {...targetRelAttrs} {...props}>
         {menuItem.label}
       </a>
     )
   } else {
     return menuItem.url !== '#' ? (
       menuItem.url === wordPressUrl ? (
-        <Link to="/" dangerouslySetInnerHTML={{ __html: menuItem.label }} />
+        <Link
+          to="/"
+          dangerouslySetInnerHTML={{ __html: menuItem.label }}
+          {...props}
+        />
       ) : (
         <Link
           to={createLocalLink(menuItem.url, slashes(wordPressUrl))}
           dangerouslySetInnerHTML={{ __html: menuItem.label }}
+          {...props}
         />
       )
     ) : (

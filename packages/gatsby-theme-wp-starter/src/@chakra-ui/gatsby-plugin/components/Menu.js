@@ -4,30 +4,52 @@ const parts = ['item', 'command', 'list', 'button', 'groupTitle', 'divider']
 
 function baseStyleList(props) {
   return {
-    bg: mode(`#fff`, `gray.700`)(props),
-    boxShadow: mode(`sm`, `dark-lg`)(props),
-    color: 'inherit',
-    minW: '3xs',
-    py: '2',
+    bg: mode(`subMenuBg`, `modes.dark.subMenuBg`)(props),
+    boxShadow: mode(`lg`, `dark-lg`)(props),
+    color: mode(`subMenucolor`, `modes.dark.subMenuColor`)(props),
+    minW: '200px',
+    width: 'auto',
+    py: 4,
     zIndex: 1,
     borderRadius: 'md',
-    borderWidth: '1px',
+    borderWidth: 'none',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    fontSize: 'xs',
+    letterSpacing: 'wider',
+    '&:before': {
+      content: "''",
+      width: 0,
+      height: 0,
+      borderLeft: '7px solid transparent',
+      borderRight: '7px solid transparent',
+      borderBottom: '7px solid',
+      borderBottomColor: mode(`subMenuBg`, `modes.dark.subMenuBg`)(props),
+      position: 'absolute',
+      top: '-5px',
+      left: 5,
+    },
   }
 }
 
 function baseStyleItem(props) {
   return {
-    py: '0.4rem',
-    px: '0.8rem',
-    transition: 'background 50ms ease-in 0s',
+    py: 1,
+    px: 5,
+    transition: 'color .4s',
     _focus: {
-      bg: mode(`gray.100`, `whiteAlpha.100`)(props),
+      bg: 'transparent',
+      color: mode(`primary`, `primary`)(props),
+    },
+    _hover: {
+      color: mode(`primary`, `primary`)(props),
     },
     _active: {
-      bg: mode(`gray.200`, `whiteAlpha.200`)(props),
+      bg: 'transparent',
+      color: mode(`primary`, `primary`)(props),
     },
     _expanded: {
-      bg: mode(`gray.100`, `whiteAlpha.100`)(props),
+      bg: 'transparent',
     },
     _disabled: {
       opacity: 0.4,

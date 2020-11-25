@@ -34,8 +34,6 @@ const SubMenuV = ({ menuItem }) => {
 }
 
 const SubMenuH = ({ menuItem }) => {
-  console.log('item', menuItem)
-
   return (
     <Menu key={menuItem.id}>
       <MenuButton
@@ -43,6 +41,7 @@ const SubMenuH = ({ menuItem }) => {
         className="menu-item"
         variant="unstyled"
         rightIcon={<ChevronDownIcon />}
+        _hover={{ color: 'primary' }}
       >
         {menuItem.label}
       </MenuButton>
@@ -58,58 +57,6 @@ const SubMenuH = ({ menuItem }) => {
 }
 
 export const SubMenu = ({ menuItem, orientation }) => {
-  const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
-
-  const WithCollapse = ({ orientation, children, menuItem }) =>
-    orientation === 'V' ? (
-      <Collapse menuItem={menuItem}>{children}</Collapse>
-    ) : (
-      children
-    )
-
-  const WithSlideFade = ({ orientation, children, isOpen }) =>
-    orientation === 'H' ? (
-      <SlideFade in={isOpen} offsetY="8px">
-        {children}
-      </SlideFade>
-    ) : (
-      children
-    )
-
-  const subMenuStyles = {
-    position: 'absolute',
-    zIndex: 10,
-    bg: 'black',
-    color: 'white',
-    shadow: 'lg',
-    rounded: 'md',
-    width: 'auto',
-    whiteSpace: 'nowrap',
-    transform: 'translate(-20px, 15px)',
-
-    px: 5,
-    py: 4,
-    '>li': {
-      py: 1,
-      a: {
-        '&:hover': {
-          color: 'primary',
-        },
-      },
-    },
-    '&:before': {
-      content: "''",
-      width: 0,
-      height: 0,
-      borderLeft: '7px solid transparent',
-      borderRight: '7px solid transparent',
-      borderBottom: '7px solid black',
-      position: 'absolute',
-      top: '-5px',
-      left: 5,
-    },
-  }
-
   return orientation === 'H' ? (
     <SubMenuH menuItem={menuItem} />
   ) : (

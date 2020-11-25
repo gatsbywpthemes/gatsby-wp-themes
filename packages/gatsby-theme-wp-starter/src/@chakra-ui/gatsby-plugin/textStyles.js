@@ -7,6 +7,7 @@ const textStyles = {
       textDecoration: 'none',
       color: 'accentLight',
     },
+
     link: {
       '&:after': {
         content: '""',
