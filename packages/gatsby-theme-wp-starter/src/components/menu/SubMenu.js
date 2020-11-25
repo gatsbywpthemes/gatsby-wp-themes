@@ -1,8 +1,7 @@
 import React from 'react'
 import {
-  useDisclosure,
-  SlideFade,
   chakra,
+  Box,
   Menu,
   MenuButton,
   MenuItem as SubMenuItem,
@@ -10,14 +9,13 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
-import { FaChevronDown } from 'react-icons/fa'
 
 import { Collapse } from 'starterUiComponents'
 import { MenuLink, MenuItem } from 'starterComponents'
 
 const SubMenuV = ({ menuItem }) => {
   return (
-    <chakra.li
+    <Box
       className="has-subMenu menu-item"
       position="relative"
       key={menuItem.id}
@@ -29,7 +27,7 @@ const SubMenuV = ({ menuItem }) => {
           ))}
         </chakra.ul>
       </Collapse>
-    </chakra.li>
+    </Box>
   )
 }
 
@@ -47,7 +45,7 @@ const SubMenuH = ({ menuItem }) => {
       </MenuButton>
       <MenuList>
         {menuItem.children.map((item) => (
-          <SubMenuItem as="li" key={item.id}>
+          <SubMenuItem key={item.id}>
             <MenuLink menuItem={item} />
           </SubMenuItem>
         ))}

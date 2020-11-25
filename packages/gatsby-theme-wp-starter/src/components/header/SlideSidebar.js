@@ -38,7 +38,7 @@ export const SlideSidebar = (props) => {
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent
-          bg={colorMode('mobileMenuBg', 'modes.dark.MobileMenuBg')}
+          bg={colorMode('mobileMenuBg', 'modes.dark.mobileMenuBg')}
           minW={{ base: '100%', md: '420px' }}
           color={colorMode('mobileMenuColor', 'modes.dark.mobileMenuColor')}
           shadow="2xl"
