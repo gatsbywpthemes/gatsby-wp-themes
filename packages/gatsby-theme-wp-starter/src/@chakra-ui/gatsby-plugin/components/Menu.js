@@ -35,7 +35,8 @@ function baseStyleList(props) {
 function baseStyleItem(props) {
   return {
     py: 1,
-    px: 5,
+    px: '20px !important',
+
     transition: 'color .4s',
     _focus: {
       bg: 'transparent',
