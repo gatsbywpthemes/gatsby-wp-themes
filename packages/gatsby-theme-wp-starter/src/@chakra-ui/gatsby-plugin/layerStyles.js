@@ -1,4 +1,4 @@
-export const layerStyles = {
+const layerStyles = {
   info: {
     px: 4,
     py: 2,
@@ -10,3 +10,5 @@ export const layerStyles = {
     lineHeight: 'shorter',
   },
 }
+
+export default layerStyles

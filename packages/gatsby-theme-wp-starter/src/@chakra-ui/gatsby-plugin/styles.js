@@ -1,8 +1,81 @@
 import { mode } from '@chakra-ui/theme-tools'
 
-import { base } from './foundations/typography'
+const p = {
+  fontSize: ['md'],
+  lineHeight: 'body',
+  mb: 5,
+}
+const a = {
+  transition: 'all .2s',
+  color: 'accent',
+  fontWeight: 'bold',
+  textDecoration: 'none',
+  '&:hover': {
+    textDecoration: 'none',
+  },
+}
+const heading = {
+  fontFamily: 'heading',
+  lineHeight: 'heading',
+  fontWeight: 'heading',
+  a: {
+    borderBottom: 'none',
+  },
+}
 
-export const styles = {
+const h1 = {
+  ...heading,
+  fontSize: ['3xl', '4xl'],
+  // mt: 1,
+}
+const h2 = {
+  ...heading,
+  fontSize: ['2xl', '3xl'],
+  // mt: 1,
+}
+
+const h3 = {
+  ...heading,
+  fontSize: ['xl', '2xl'],
+  // mt: 2,
+}
+const h4 = {
+  ...heading,
+  fontSize: ['lg', 'xl'],
+}
+
+const h5 = {
+  ...heading,
+  fontSize: 'xm',
+}
+const h6 = {
+  ...heading,
+  fontSize: 'xs',
+}
+const blockquote = {
+  fontStyle: 'italic',
+  px: [5, 12],
+  py: 8,
+  borderLeft: '5px solid',
+  borderColor: 'primary',
+  maxWidth: '800px !important',
+  mx: 'auto',
+  my: 10,
+}
+
+const base = {
+  a,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  blockquote,
+}
+
+const styles = {
   global: (props) => {
     return {
       body: {
@@ -30,3 +103,5 @@ export const styles = {
     }
   },
 }
+
+export default styles

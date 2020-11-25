@@ -1,33 +1,18 @@
 import { extendTheme } from '@chakra-ui/react'
 
-import { colors } from './foundations'
-import {
-  fontSizes,
-  // fonts,
-  lineHeights,
-  fontWeights,
-} from './foundations/typography'
-import components from './components'
-import { layerStyles } from './layerStyles'
-import { textStyles } from './textStyles'
+import foundations from './foundations'
 
-import { styles } from './styles'
+import components from './components'
+import layerStyles from './layerStyles'
+import textStyles from './textStyles'
+
+import styles from './styles'
 
 const theme = extendTheme({
-  colors,
-  fontSizes,
-  // fonts,
-  lineHeights,
-  fontWeights,
-  // breakpoints,
-
+  ...foundations,
   components,
-  textStyles: {
-    ...textStyles,
-  },
-  layerStyles: {
-    ...layerStyles,
-  },
+  ...textStyles,
+  ...layerStyles,
 
   gradients: {
     primary: {
