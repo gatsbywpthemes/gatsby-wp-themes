@@ -60,25 +60,20 @@ export const RecentPosts = (props) => {
                     )}
                   </Link>{' '}
                   <Box>
-                    <ChakraLink
-                      as={Link}
+                    <Box
+                      as="time"
                       display="block"
                       textStyle="special"
+                      fontWeight="bold"
                       className="widget-post-date"
-                      to={uri}
+                      className="entry-date"
+                      dateTime={post.date}
                     >
-                      <Box
-                        as="time"
-                        className="entry-date"
-                        dateTime={post.date}
-                      >
-                        {moment(post.date).format(`MMMM DD, YYYY`)}
-                      </Box>
-                    </ChakraLink>{' '}
+                      {moment(post.date).format(`MMMM DD, YYYY`)}
+                    </Box>{' '}
                     <ChakraLink
                       as={Link}
                       className="widget-post-title"
-                      _hover={{ textDecoration: 'none', color: 'accentLight' }}
                       to={uri}
                     >
                       {post.title}

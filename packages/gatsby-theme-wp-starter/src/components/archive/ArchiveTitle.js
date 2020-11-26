@@ -4,15 +4,14 @@ import { Box, Heading, useColorModeValue as colorMode } from '@chakra-ui/react'
 export const ArchiveTitle = ({ name, text }) => {
   return (
     <Box
-      px={[4, 10]}
-      py={2}
+      px={[4, 6]}
+      py={1}
       mb={10}
-      // borderRadius="lg"
+      borderRadius="lg"
       display="inline-block"
-      bg={colorMode('black', 'primary')}
-      color="white"
+      bg={colorMode('archiveTitleBg', 'modes.dark.archiveTitleBg')}
       className="archive-title"
-      boxShadow="md"
+      boxShadow="lg"
     >
       <Heading fontSize="xl" letterSpacing="wider" textTransform="uppercase">
         {text} {name}

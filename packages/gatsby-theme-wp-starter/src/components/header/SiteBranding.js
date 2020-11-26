@@ -22,7 +22,6 @@ export const SiteBranding = ({ title, ...props }) => {
         >
           <ChakraLink
             as={Link}
-            transition="color .4s ease-in-out"
             _hover={{ textDecoration: 'none', color: 'primary' }}
             to="/"
             rel="home"

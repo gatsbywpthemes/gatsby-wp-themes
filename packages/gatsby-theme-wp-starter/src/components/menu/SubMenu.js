@@ -33,7 +33,7 @@ const SubMenuV = ({ menuItem }) => {
 
 const SubMenuH = ({ menuItem }) => {
   return (
-    <Menu key={menuItem.id}>
+    <Menu key={menuItem.id} autoSelect={false}>
       <MenuButton
         as={Button}
         className="menu-item"

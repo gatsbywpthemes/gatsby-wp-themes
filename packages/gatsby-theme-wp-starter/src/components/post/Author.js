@@ -1,5 +1,8 @@
 import React from 'react'
-import { Link as ChakraLink } from '@chakra-ui/react'
+import {
+  Link as ChakraLink,
+  useColorModeValue as colorMode,
+} from '@chakra-ui/react'
 import { Link } from 'gatsby'
 
 export const Author = ({ post, ...props }) => {
@@ -7,7 +10,8 @@ export const Author = ({ post, ...props }) => {
   return (
     <ChakraLink
       as={Link}
-      _hover={{ textDecoration: 'none', color: 'red.300' }}
+      transition="color 0.4s"
+      _hover={{ textDecoration: 'none', color: colorMode('primary', 'dark') }}
       aria-label={`visit ${name} page`}
       to={`/author/${slug}`}
       {...props}

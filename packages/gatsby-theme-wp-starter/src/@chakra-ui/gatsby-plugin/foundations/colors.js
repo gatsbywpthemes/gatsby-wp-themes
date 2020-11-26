@@ -46,6 +46,7 @@ const colors = {
   nlInputBg: light,
   archiveTitleBg: 'black',
   infoBg: light,
+  archiveTitleBg: gray[100],
 
   modes: {
     dark: {
@@ -62,6 +63,7 @@ const colors = {
       nlInputBg: gray[700],
       archiveTitleBg: primary,
       infoBg: primary,
+      archiveTitleBg: primary,
     },
   },
 }

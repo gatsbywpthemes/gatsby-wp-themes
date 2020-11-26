@@ -1,4 +1,4 @@
-import { Box, Heading } from '@chakra-ui/react'
+import { Heading, Link as ChakraLink } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'gatsby'
 
@@ -16,7 +16,11 @@ export const PostEntryTitle = ({ post, location, ...props }) => {
         />
       ) : (
         <Heading as="h2" className="entry-title" {...props}>
-          <Link to={`${uri}`} dangerouslySetInnerHTML={{ __html: title }} />
+          <ChakraLink
+            as={Link}
+            to={`${uri}`}
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
         </Heading>
       )}
     </>

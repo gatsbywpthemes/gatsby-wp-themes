@@ -40,7 +40,7 @@ function baseStyleItem(props) {
     transition: 'color .4s',
     _focus: {
       bg: 'transparent',
-      color: mode(`primary`, transparentize('white', 0.6))(props),
+      color: mode(`primary`, `black`)(props),
     },
     _hover: {
       color: mode(`primary`, `black`)(props),
