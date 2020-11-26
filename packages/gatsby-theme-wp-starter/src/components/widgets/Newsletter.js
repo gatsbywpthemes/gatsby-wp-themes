@@ -43,7 +43,7 @@ export const Newsletter = (props) => {
           <BorderTitle mb={5} className="widget-title">
             Newsletter
           </BorderTitle>
-          <chakra.form onSubmit={handleSubmit}>
+          <chakra.form maxWidth="400px" mx="auto" onSubmit={handleSubmit}>
             <Flex>
               <Box width={2 / 3}>
                 <Input
