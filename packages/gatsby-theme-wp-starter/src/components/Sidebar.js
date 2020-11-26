@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
 import { Card } from 'starterUiComponents'
-import { Widgets } from 'starterComponents'
+import { Widget } from 'starterComponents'
 
 export const Sidebar = ({ widgets, ...props }) => {
   return (
@@ -10,7 +10,7 @@ export const Sidebar = ({ widgets, ...props }) => {
         <Card p={6} pb={16} className="sidebar" {...props}>
           {widgets.map((widget, i) => (
             <Box key={i} sx={{ '.widget': { my: 10 } }}>
-              <Widgets widget={widget} />
+              <Widget widget={widget} />
             </Box>
           ))}
         </Card>

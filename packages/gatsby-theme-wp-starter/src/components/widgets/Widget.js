@@ -6,8 +6,9 @@ import {
   Newsletter,
   SocialFollows,
 } from 'starterComponents'
+import { DarkMode } from '@chakra-ui/react'
 
-export const Widgets = ({ widget }) => {
+export const Widget = ({ widget, colorBg }) => {
   switch (widget) {
     case 'SocialFollow':
       return (
@@ -23,7 +24,13 @@ export const Widgets = ({ widget }) => {
       return <TagsWidget />
     case 'Newsletter':
       return process.env.GATSBY_MAILCHIMP_ENDPOINT ? (
-        <Newsletter title="subscribe to our newsletter" />
+        colorBg === 'dark' ? (
+          <DarkMode>
+            <Newsletter title="subscribe to our newsletter" />
+          </DarkMode>
+        ) : (
+          <Newsletter title="subscribe to our newsletter" />
+        )
       ) : null
 
     default:

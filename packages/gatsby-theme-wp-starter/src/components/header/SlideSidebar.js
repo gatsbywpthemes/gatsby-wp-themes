@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Widgets } from 'starterComponents'
+import { Menu, Widget } from 'starterComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 import {
@@ -49,7 +49,7 @@ export const SlideSidebar = (props) => {
             <Menu menuName={menuName} orientation="V" mt={7} />
             {widgets.map((widget, i) => (
               <Box key={i} sx={{ '.widget': { my: 10 } }}>
-                <Widgets widget={widget} />
+                <Widget colorBg="dark" widget={widget} />
               </Box>
             ))}
           </DrawerBody>
