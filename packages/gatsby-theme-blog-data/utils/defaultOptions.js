@@ -3,7 +3,7 @@
  */
 
 const DEFAULT_OPTIONS = {
-  wordPressUrl: ``,
+  wordPressUrl: process.env.WP_URL,
   uploadsPath: `wp-content/uploads`,
   pathPrefix: ``,
   paginationPrefix: `page`,

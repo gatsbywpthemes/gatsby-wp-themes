@@ -1,5 +1,4 @@
 const config = {
-  wordPressUrl: "https://starter.gatsby-wp.com/",
   siteUrl: "https://example.com/",
   // uploadsPath: 'wp-content/uploads',
   // paginationPrefix: 'page',
