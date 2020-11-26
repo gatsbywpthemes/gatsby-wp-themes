@@ -5,15 +5,20 @@ import { TaxonomyItem } from 'starterComponents'
 
 export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
   const taxonomies = post[taxName].nodes
-  const bgColor = colorMode('light', 'dark')
+
   return (
     taxonomies.length > 0 && (
       <Flex wrap="wrap" align="center" my={5}>
         <Heading
           as="h3"
-          layerStyle="info"
-          bg={colorMode('light', 'gray.800')}
-          px={5}
+          borderRadius="md"
+          fontSize="sm"
+          fontStyle="italic"
+          fontWeight="normal"
+          lineHeight="shorter"
+          bg={colorMode('infoBg', 'modes.dark.infoBg')}
+          px={4}
+          py={2}
           mr={4}
           mb={[3, 0]}
           textTransform="capitalize"

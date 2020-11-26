@@ -1,4 +1,4 @@
-import { mode } from '@chakra-ui/theme-tools'
+import { mode, darken, transparentize } from '@chakra-ui/theme-tools'
 
 const parts = ['item', 'command', 'list', 'button', 'groupTitle', 'divider']
 
@@ -40,14 +40,14 @@ function baseStyleItem(props) {
     transition: 'color .4s',
     _focus: {
       bg: 'transparent',
-      color: mode(`primary`, `primary`)(props),
+      color: mode(`primary`, transparentize('white', 0.6))(props),
     },
     _hover: {
-      color: mode(`primary`, `primary`)(props),
+      color: mode(`primary`, `black`)(props),
     },
     _active: {
       bg: 'transparent',
-      color: mode(`primary`, `primary`)(props),
+      color: mode(`primary`, `black`)(props),
     },
     _expanded: {
       bg: 'transparent',

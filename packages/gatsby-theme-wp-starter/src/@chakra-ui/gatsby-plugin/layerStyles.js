@@ -1,11 +1,12 @@
 const layerStyles = {
   info: {
     px: 4,
-    py: 2,
+    py: 1,
     fontStyle: 'italic',
     fontWeight: 'normal',
-    fontSize: 'md',
-    borderRadius: 'md',
+    fontSize: 'sm',
+    borderRadius: 0,
+    color: 'white !important',
     display: 'inline-block',
     lineHeight: 'shorter',
   },

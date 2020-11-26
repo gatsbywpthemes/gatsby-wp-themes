@@ -13,26 +13,14 @@ const {
   blue,
 } = theme.colors
 
-const hotPink = {
-  100: '#fffafc',
-  200: '#ffdbe8',
-  300: '#ffb8d2',
-  400: '#ff85b4',
-  500: '#ff1472',
-  600: '#f0005c',
-  700: '#d6004f',
-  800: '#bd0042',
-  900: '#990033',
-}
-
 //Palette
 
 const light = gray[100],
   ultraLight = gray[50],
   dark = gray[800],
   ultraDark = gray[900],
-  primary = red[500],
-  secondary = teal[500],
+  primary = teal[400],
+  secondary = purple[500],
   highlight = red[500],
   mutted = gray[200]
 
@@ -56,6 +44,8 @@ const colors = {
   nlButtonBg: 'black',
   nlButtonColor: 'white',
   nlInputBg: light,
+  archiveTitleBg: 'black',
+  infoBg: light,
 
   modes: {
     dark: {
@@ -65,11 +55,13 @@ const colors = {
       text: ultraLight,
       mobileMenuBg: 'black',
       mobileMenuColor: light,
-      subMenuBg: 'black',
+      subMenuBg: primary,
       subMenucolor: 'white',
       nlButtonBg: primary,
       nlButtonColor: 'white',
       nlInputBg: gray[700],
+      archiveTitleBg: primary,
+      infoBg: primary,
     },
   },
 }

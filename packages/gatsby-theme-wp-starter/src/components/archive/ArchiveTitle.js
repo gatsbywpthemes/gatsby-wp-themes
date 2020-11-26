@@ -7,13 +7,14 @@ export const ArchiveTitle = ({ name, text }) => {
       px={[4, 10]}
       py={2}
       mb={10}
-      borderRadius="lg"
+      // borderRadius="lg"
       display="inline-block"
-      bg={colorMode('light', 'primary')}
+      bg={colorMode('black', 'primary')}
+      color="white"
       className="archive-title"
       boxShadow="md"
     >
-      <Heading fontSize="xl" textTransform="uppercase">
+      <Heading fontSize="xl" letterSpacing="wider" textTransform="uppercase">
         {text} {name}
       </Heading>
     </Box>

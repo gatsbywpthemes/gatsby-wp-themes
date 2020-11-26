@@ -5,13 +5,17 @@ import { Date, Author } from 'starterComponents'
 export const PostEntryInfo = ({ post, ...props }) => {
   return (
     <Box
-      layerStyle="info"
-      bg={colorMode('light', 'primary')}
+      display="inline-block"
+      fontStyle="italic"
+      borderRadius="md"
+      fontSize="sm"
+      px={4}
+      py={1}
+      bg={colorMode('infoBg', 'modes.dark.infoBg')}
       mb={10}
       {...props}
     >
-      <span>Posted on:</span> <Date post={post} /> by{' '}
-      <Author color={colorMode('accentLight', 'accentDark')} post={post} />
+      <span>Posted on:</span> <Date post={post} /> by <Author post={post} />
     </Box>
   )
 }
