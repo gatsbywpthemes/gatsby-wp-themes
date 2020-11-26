@@ -28,7 +28,3 @@ const typography = {
   },
 }
 export default typography
-// export const fonts = {
-//   body: 'IBM Plex Mono',
-//   heading: 'Roboto Slab',
-// }
