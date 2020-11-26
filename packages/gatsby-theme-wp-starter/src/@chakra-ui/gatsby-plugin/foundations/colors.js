@@ -1,17 +1,6 @@
 import { theme } from '@chakra-ui/react'
 
-const {
-  red,
-  orange,
-  yellow,
-  green,
-  teal,
-  cyan,
-  purple,
-  pink,
-  gray,
-  blue,
-} = theme.colors
+const { red, teal, purple, gray } = theme.colors
 
 //Palette
 
