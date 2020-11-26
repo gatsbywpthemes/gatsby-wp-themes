@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, VStack, HStack, Box, Link as ChakraLink } from '@chakra-ui/react'
+import { VStack, HStack, Box, Link as ChakraLink } from '@chakra-ui/react'
 import { BorderTitle } from 'starterUiComponents'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'

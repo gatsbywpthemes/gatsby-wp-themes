@@ -9,6 +9,7 @@ export const BorderTitle = (props) => (
     textTransform="uppercase"
     letterSpacing="2px"
     fontSize="lg"
+    fontWeight="bold"
     sx={{
       ':after, :before': {
         content: '""',

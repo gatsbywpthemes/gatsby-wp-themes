@@ -53,6 +53,10 @@ const colors = {
   mobileMenuColor: light,
   subMenuBg: 'black',
   subMenucolor: 'white',
+  nlButtonBg: 'black',
+  nlButtonColor: 'white',
+  nlInputBg: light,
+
   modes: {
     dark: {
       headerBg: ultraDark,
@@ -63,6 +67,9 @@ const colors = {
       mobileMenuColor: light,
       subMenuBg: 'black',
       subMenucolor: 'white',
+      nlButtonBg: primary,
+      nlButtonColor: 'white',
+      nlInputBg: gray[700],
     },
   },
 }
