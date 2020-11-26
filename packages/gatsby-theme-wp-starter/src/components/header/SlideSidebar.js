@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu } from 'starterComponents'
+import { Menu, Widgets } from 'starterComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 import {
@@ -17,7 +17,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 
 export const SlideSidebar = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { menuName } = useThemeOptions()
+  const { menuName, slideMenuWidgets: widgets } = useThemeOptions()
 
   return (
     <Box {...props}>
@@ -47,6 +47,11 @@ export const SlideSidebar = (props) => {
           <DrawerBody>
             <DrawerCloseButton />
             <Menu menuName={menuName} orientation="V" mt={7} />
+            {widgets.map((widget, i) => (
+              <Box key={i} sx={{ '.widget': { my: 10 } }}>
+                <Widgets widget={widget} />
+              </Box>
+            ))}
           </DrawerBody>
         </DrawerContent>
       </Drawer>
