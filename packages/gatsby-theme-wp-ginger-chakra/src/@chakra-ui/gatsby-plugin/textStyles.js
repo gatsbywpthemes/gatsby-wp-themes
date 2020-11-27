@@ -72,6 +72,23 @@ export const textStyles = {
       transform: `scaleX(1)`,
     },
   },
+  specialLink: {
+    ...special,
+    fontWeight: 'bold',
+
+    d: 'block',
+    position: 'relative',
+    py: 3,
+    '&:after': {
+      content: "''",
+      opacity: 0.2,
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      borderBottomWidth: '1px',
+    },
+  },
   h1Archive: {
     textAlign: 'center',
     my: 10,

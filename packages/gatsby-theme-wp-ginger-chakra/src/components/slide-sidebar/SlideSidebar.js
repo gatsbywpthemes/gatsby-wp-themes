@@ -2,16 +2,12 @@ import React, { useState, useEffect, useRef } from 'react'
 import { FiMenu } from 'react-icons/fi'
 import {
   Button,
-  Flex,
   useColorModeValue,
   Drawer,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  useDisclosure,
 } from '@chakra-ui/react'
 import { Menu, SlideSidebarOverlay, CloseButton } from './../index'
 import { WidgetsList } from './../widgets'
