@@ -6,7 +6,7 @@ module.exports = {
     title,
     description,
     author,
-    wordPressUrl: process.env.WP_URL,
+    wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl: options.siteUrl,
     social,
   },
@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-wpcf7",
       options: {
-        wordPressUrl: process.env.WP_URL,
+        wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
     {
