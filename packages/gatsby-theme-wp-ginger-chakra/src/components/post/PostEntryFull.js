@@ -60,7 +60,7 @@ export const PostEntryFull = ({ ctx, post }) => {
         {post.tags.nodes.length > 0 && <Tags tags={post.tags.nodes} />}
         <PrevNextPostNavigation ctx={ctx} />
       </Box>
-      <Comments />
+      <Comments post={post} />
     </article>
   )
 }

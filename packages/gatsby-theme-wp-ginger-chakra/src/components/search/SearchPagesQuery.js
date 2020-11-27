@@ -1,9 +1,7 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { useState } from 'react'
-import { Button } from 'grommet'
 import { useQuery, gql } from '@apollo/client'
-import { SearchResults } from './index'
+import { SearchResults, LoadMoreButton } from './index'
 
 const GET_PAGES = gql`
   fragment PageFields on Page {
@@ -63,9 +61,7 @@ export const SearchPagesQuery = ({ search }) => {
   return (
     <SearchResults type="Pages" search={search} posts={data.pages.nodes}>
       {clickable && data.pages.pageInfo && data.pages.pageInfo.hasNextPage && (
-        <Button onClick={loadMore} type="button">
-          Load More
-        </Button>
+        <LoadMoreButton loadMore={loadMore} />
       )}
       {!clickable && data.posts.pageInfo && data.pages.pageInfo.hasNextPage && (
         <p>Loading...</p>

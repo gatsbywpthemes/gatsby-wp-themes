@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
 import React from 'react'
 import { Collapsible } from 'grommet'
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi'

@@ -1,7 +1,6 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Fragment, useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
+import { Box, Button, chakra } from '@chakra-ui/react'
 import { CommentForm, Comment } from './index'
 import { commentsStyles } from '../../styles/'
 
@@ -68,11 +67,16 @@ export const CommentsList = ({ post, reloading }) => {
   if (error) return <p>Some errors occur.</p>
   const comments = data.comments
   return (
-    <Fragment>
+    <>
       {comments.nodes.length > 0 ? (
         <section>
-          <h2 sx={{ ...commentsStyles.title }}>Comments</h2>
-          <ul sx={{ ...commentsStyles.list }}>
+          <Box as="h2" textAlign="center" mb="8">
+            Comments
+          </Box>
+          <chakra.ul
+            mb="12"
+            sx={{ ul: { ml: '6' }, li: { listStyle: 'none', mb: '6' } }}
+          >
             {comments.nodes
               .filter((el) => el.parent === null)
               .map((comment) => (
@@ -117,10 +121,10 @@ export const CommentsList = ({ post, reloading }) => {
                   )}
                 </Fragment>
               ))}
-          </ul>
+          </chakra.ul>
         </section>
       ) : (
-        <p sx={{ ...commentsStyles.noComments }}>No comments yet</p>
+        <p>No comments yet</p>
       )}
       {activeComment === 0 && (
         <CommentForm
@@ -129,6 +133,6 @@ export const CommentsList = ({ post, reloading }) => {
           cancelReply={cancelReply}
         />
       )}
-    </Fragment>
+    </>
   )
 }

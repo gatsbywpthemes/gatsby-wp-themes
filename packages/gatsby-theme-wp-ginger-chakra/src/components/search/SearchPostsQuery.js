@@ -1,8 +1,6 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { SearchResults } from './index'
+import { SearchResults, LoadMoreButton } from './index'
 
 const GET_POSTS = gql`
   fragment PostFields on Post {
@@ -12,7 +10,7 @@ const GET_POSTS = gql`
   }
   ##the after variable is the endCursor, we set it up as "", as default value, then it will change if there is next page in the result query, the search in the query value (value in the state)
   query($after: String = "", $search: String!) {
-    posts(first: 10, after: $after, where: { search: $search }) {
+    posts(first: 1, after: $after, where: { search: $search }) {
       pageInfo {
         hasNextPage
         endCursor
@@ -62,9 +60,7 @@ export const SearchPostsQuery = ({ search }) => {
   return (
     <SearchResults type="Posts" search={search} posts={data.posts.nodes}>
       {clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
-        <button onClick={loadMore} type="button">
-          Load More
-        </button>
+        <LoadMoreButton loadMore={loadMore} />
       )}
       {!clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
         <p>Loading...</p>

@@ -1,8 +1,7 @@
 import typo from './components/typo'
 import form from './components/form'
 import buttons from './components/buttons'
-import header from './components/header'
-import footer from './components/footer'
+
 import container from './components/container'
 import layout from './components/layout'
 import main from './components/main'

@@ -1,42 +1,13 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Date } from '../post'
-import { CommentForm } from './index'
-import { commentStyles, replyButtonStyles } from '../../styles/'
-
-const Reply = ({ commentId, actionOnClick }) => {
-  return (
-    <button
-      sx={{ ...replyButtonStyles }}
-      type="button"
-      onClick={() => actionOnClick(commentId)}
-      className="comment-button-reply"
-    >
-      <span>Reply</span>
-    </button>
-  )
-}
-
-const Author = ({ name, url }) => {
-  return (
-    <>
-      {url ? (
-        <a
-          className="comment-author"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {name}
-        </a>
-      ) : (
-        <span className="comment-author">{name}</span>
-      )}
-    </>
-  )
-}
+import {
+  CommentForm,
+  CommentContent,
+  CommentAuthor,
+  ReplyButton,
+  CommentNestingInfo,
+} from './index'
+import { Box, ListItem } from '@chakra-ui/react'
 
 export const Comment = (props) => {
   const {
@@ -49,13 +20,15 @@ export const Comment = (props) => {
     doOnCompleted,
   } = props
   return (
-    <li className="comment" sx={{ ...commentStyles }}>
-      <Author name={comment.author.node.name} url={comment.author.node.url} />
-      <Date date={comment.date} />
-      <div
-        className="comment-content"
-        dangerouslySetInnerHTML={{ __html: comment.content }}
+    <ListItem className="comment" layerStyle="overlay" p="4">
+      <CommentAuthor
+        name={comment.author.node.name}
+        url={comment.author.node.url}
       />
+      <Box fontStyle="italic" fontSize="xs">
+        <Date date={comment.date} />
+      </Box>
+      <CommentContent content={comment.content} />
       {withReply ? (
         activeComment === comment.commentId ? (
           <CommentForm
@@ -65,13 +38,11 @@ export const Comment = (props) => {
             doOnCompleted={doOnCompleted}
           />
         ) : (
-          <Reply commentId={comment.commentId} actionOnClick={addReply} />
+          <ReplyButton commentId={comment.commentId} actionOnClick={addReply} />
         )
       ) : (
-        <p className="comment-nesting-info">
-          Only two levels of nesting is supported.
-        </p>
+        <CommentNestingInfo />
       )}
-    </li>
+    </ListItem>
   )
 }

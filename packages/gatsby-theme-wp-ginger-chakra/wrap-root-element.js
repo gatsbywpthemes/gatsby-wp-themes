@@ -1,5 +1,7 @@
 import React from 'react'
+import SearchWrapper from './context'
 
-export default ({ element }) => {
-  return <>{element}</>
+const WrapRootElement = ({ element }) => {
+  return <SearchWrapper element={element} />
 }
+export default WrapRootElement

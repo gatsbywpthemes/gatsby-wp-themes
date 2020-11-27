@@ -1,18 +1,10 @@
-/** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
+import React from 'react'
 import { SearchPostsQuery, SearchPagesQuery } from './index'
+import { Box } from '@chakra-ui/react'
 
 export const SearchQueries = ({ search }) => {
-  const showResults =
-    search && search.length > 0 ? { display: `block` } : { display: `none` }
   return (
-    <Box
-      className="search-results"
-      sx={{
-        ...showResults,
-        variant: `search.resultsBasic`,
-      }}
-    >
+    <Box className="search-results" mb="6">
       <SearchPostsQuery search={search} />
       <SearchPagesQuery search={search} />
     </Box>

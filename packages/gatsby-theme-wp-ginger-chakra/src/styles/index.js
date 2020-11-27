@@ -1,7 +1,3 @@
-export * from './commentStyles'
 export * from './menuButtonStyles'
-export * from './pageStyles'
-export * from './searchStyles'
-export * from './slideSidebarStyles'
 export * from './widgetStyles'
 export * from './theme-gutenberg'

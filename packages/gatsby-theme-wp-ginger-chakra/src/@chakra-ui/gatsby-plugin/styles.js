@@ -26,6 +26,10 @@ export const styles = {
       blockquote: {
         bg: mode('light', 'dark'),
       },
+
+      '::-webkit-search-cancel-button': {
+        WebkitAppearance: 'none',
+      },
       ...base,
     }
   },

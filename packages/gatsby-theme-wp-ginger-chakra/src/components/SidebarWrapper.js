@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
+import { useDisclosure } from '@chakra-ui/react'
 import { SlideSidebar } from './index'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { SearchContext } from '../../context'
 
 export const SidebarWrapper = (props) => {
   const { children } = props
-  const [open, setOpen] = useState(false)
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { search, fromSearch, setFromSearch } = useContext(SearchContext)
+
+  useEffect(() => {
+    !fromSearch && onClose()
+    setFromSearch(false)
+  }, [children])
 
   return (
     <>
-      <SlideSidebar
-        open={open}
-        setOpen={setOpen}
-        //openClass={openClass}
-        //setOpenClass={setOpenClass}
-      />
+      <SlideSidebar isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       {children}
     </>
   )

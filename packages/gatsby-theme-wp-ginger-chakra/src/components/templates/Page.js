@@ -1,10 +1,10 @@
 import React from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, useColorMode } from '@chakra-ui/react'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
 import { Seo } from 'gatsby-plugin-wp-seo'
-import { pageStyles } from '../../styles/'
+import { gutenberg } from '../../styles/'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 
 const Page = (props) => {
@@ -13,7 +13,8 @@ const Page = (props) => {
   const { content, title, uri, slug } = page
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
-
+  const { colorMode } = useColorMode()
+  console.log(colorMode)
   return (
     <Layout useContainer={false}>
       <Seo
@@ -39,10 +40,23 @@ const Page = (props) => {
             />
           </Box>
         )}
-        <div className="entry-content" sx={pageStyles}>
+        <Box
+          className="entry-content"
+          sx={{
+            ...gutenberg,
+            '.has-background:not(.has-text-color),.wp-block-media-text[style*="background"],.wp-block-table.is-style-stripes tbody tr:nth-of-type(odd)': {
+              backgroundImage: (theme) => {
+                return colorMode === 'dark'
+                  ? `linear-gradient(${theme.colors.modes.dark.overlay}, ${theme.colors.modes.dark.overlay})`
+                  : `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
+              },
+              backgroundBlendMode: 'multiply',
+            },
+          }}
+        >
           <ActivatePageScripts />
           <ParsedContent content={content} />
-        </div>
+        </Box>
       </article>
     </Layout>
   )

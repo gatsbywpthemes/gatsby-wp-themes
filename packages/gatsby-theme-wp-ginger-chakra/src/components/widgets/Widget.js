@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { SocialFollows } from '../social'
 import { CategoriesWidget, TagsWidget, RecentPosts, Newsletter } from './index'
 

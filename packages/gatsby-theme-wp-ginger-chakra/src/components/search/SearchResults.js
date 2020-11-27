@@ -1,7 +1,7 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
-import { resultsStyles } from '../../styles'
+import { chakra, Flex, Box } from '@chakra-ui/react'
+import { SearchContext } from '../../../context'
 
 const Stats = ({ postType, search }) => (
   <div className="stats">
@@ -12,25 +12,29 @@ const Stats = ({ postType, search }) => (
 )
 
 export const SearchResults = ({ type, posts, search, children }) => {
+  const { setFromSearch } = useContext(SearchContext)
   return (
-    <div className="search-results" sx={resultsStyles}>
-      <header>
+    <Box className="search-results" borderBottom="3px solid">
+      <Flex as="header" align="center" justify="space-between" mb="4">
         <h3>{type}</h3>
         <Stats postType={posts} search={search} />
-      </header>
-      <ul className="results">
-        {posts.map(post => {
-          return (
-            <li key={post.slug}>
-              <Link
-                to={post.uri}
-                dangerouslySetInnerHTML={{ __html: post.title }}
-              />
-            </li>
-          )
-        })}
-      </ul>
+      </Flex>
+      {!!posts.length && (
+        <chakra.ul textStyle="listRaw" mb="4">
+          {posts.map((post) => {
+            return (
+              <li key={post.slug}>
+                <Link
+                  onClick={() => setFromSearch(true)}
+                  to={post.uri}
+                  dangerouslySetInnerHTML={{ __html: post.title }}
+                />
+              </li>
+            )
+          })}
+        </chakra.ul>
+      )}
       {children}
-    </div>
+    </Box>
   )
 }

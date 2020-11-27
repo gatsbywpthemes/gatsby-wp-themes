@@ -16,15 +16,10 @@ export const gutenberg = {
     width: '100%',
   },
 
-  '.alignnone,.aligncenter,.alignleft,.alignright,.alignwide': {
+  '.alignnone,.aligncenter,.alignleft,.alignright,.alignwide, .aligncenter > .gatsby-image-wrapper, [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)': {
     mx: 'auto',
   },
-  '.aligncenter > .gatsby-image-wrapper': {
-    mx: 'auto',
-  },
-  '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)': {
-    mx: 'auto',
-  },
+
   /* Full */
   '.alignfull': {
     mx: 'auto',
@@ -65,12 +60,7 @@ export const gutenberg = {
     pt: ['1.5rem', 0, 0],
     px: [0, '8%'],
   },
-  '.dark-color-mode & .has-background:not(.has-text-color),.dark-color-mode & .wp-block-media-text[style*="background"],.dark-color-mode & .wp-block-table.is-style-stripes tbody tr:nth-of-type(odd)': {
-    backgroundImage: (theme) => {
-      return `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
-    },
-    backgroundBlendMode: 'multiply',
-  },
+
   '.wp-block-media-text__media > .gatsby-image-wrapper': {
     width: 'auto!important',
   },
