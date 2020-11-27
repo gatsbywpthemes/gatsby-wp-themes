@@ -37,6 +37,7 @@ const colors = {
   archiveTitleBg: 'black',
   infoBg: light,
   archiveTitleBg: gray[100],
+  cardBg: 'white',
 
   modes: {
     dark: {
@@ -55,6 +56,7 @@ const colors = {
       archiveTitleBg: primary,
       infoBg: primary,
       archiveTitleBg: primary,
+      cardBg: ultraDark,
     },
   },
 }

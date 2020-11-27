@@ -7,7 +7,7 @@ const Card = {
   },
   variants: {
     base: (props) => ({
-      bg: mode('white', 'ultraDark')(props),
+      bg: mode('cardBg', 'modes.dark.cardBg')(props),
     }),
     primary: {
       bg: 'primary',
