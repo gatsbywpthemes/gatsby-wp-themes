@@ -25,6 +25,7 @@ const colors = {
   bg: ultraLight,
   text: ultraDark,
   headerBg: 'white',
+  footerBg: 'white',
   searchBg: 'white',
   mobileMenuBg: 'black',
   mobileMenuColor: light,
@@ -40,6 +41,7 @@ const colors = {
   modes: {
     dark: {
       headerBg: ultraDark,
+      footerBg: 'ultraDark',
       searchBg: ultraDark,
       bg: dark,
       text: ultraLight,

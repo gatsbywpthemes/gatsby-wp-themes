@@ -11,6 +11,7 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
       <Flex wrap="wrap" align="center" my={5}>
         <Heading
           as="h3"
+          fontFamily="body"
           borderRadius="md"
           fontSize="sm"
           fontStyle="italic"

@@ -6,7 +6,12 @@ import { FooterContent } from 'starterComponents'
 import { SocialFollows } from 'starterComponents'
 
 export const Footer = () => (
-  <Box as="footer" py={7} boxShadow="md" bg={colorMode('white', 'ultraDark')}>
+  <Box
+    as="footer"
+    py={7}
+    boxShadow="md"
+    bg={colorMode('footerBg', 'modes.dark.footerBg')}
+  >
     <Container>
       <FooterContent mb={4} />
       <SocialFollows />
