@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { FiMenu } from 'react-icons/fi'
 import {
   Button,
@@ -14,6 +14,7 @@ import { WidgetsList } from './../widgets'
 import { SearchForm } from './../search'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
 import { menuButtonStyles } from '../../styles/'
+import { SearchContext } from '../../../context'
 
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
   const {
@@ -24,7 +25,7 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
     menuName,
   } = useThemeOptions()
   const menuBtn = useRef()
-
+  const { search, setSearch } = useContext(SearchContext)
   const [escInSearch, setEscInSearch] = useState(false)
   return (
     <>
@@ -47,6 +48,8 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
         onEsc={() => {
           if (!escInSearch) {
             onClose()
+          } else {
+            setSearch('')
           }
         }}
       >
@@ -58,7 +61,11 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
             <DrawerCloseButton />
             <DrawerBody px={[8, 12]} py="12">
               {addWordPressSearch && (
-                <SearchForm setEscInSearch={setEscInSearch} />
+                <SearchForm
+                  search={search}
+                  setSearch={setSearch}
+                  setEscInSearch={setEscInSearch}
+                />
               )}
               <Menu menuName={menuName} />
               <WidgetsList widgets={widgets} />
@@ -69,27 +76,3 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
     </>
   )
 }
-/*
-            direction="column"
-            bg={bgColor}
-            color={color}
-            position="fixed"
-            top="0"
-            bottom="0"
-            right="0"
-            zIndex="100"
-            overflowY="scroll"
-            w={(theme) => ['100%', theme.sizes.sidebar]}
-            transform={
-              openClass ? 'translate3d(0%, 0, 0)' : 'translate3d(100%, 0, 0)'
-            }
-            visibility={openClass ? 'visible' : 'hidden'}
-            transition={
-              openClass
-                ? 'transform 1s, visibility 0s 0s'
-                : 'transform 1s, visibility 0s 1s'
-            }
-            boxShadow={['none', '-10px 0 40px rgba(0,0,0,0.3)']}
-            px={[8, 12]}
-            py="12"
-            */

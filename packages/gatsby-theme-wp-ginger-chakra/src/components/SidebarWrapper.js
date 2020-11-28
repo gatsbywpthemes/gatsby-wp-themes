@@ -6,10 +6,10 @@ import { SearchContext } from '../../context'
 export const SidebarWrapper = (props) => {
   const { children } = props
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { search, fromSearch, setFromSearch } = useContext(SearchContext)
+  const { fromSearch, setFromSearch } = useContext(SearchContext)
 
   useEffect(() => {
-    !fromSearch && onClose()
+    ;(!fromSearch || window.innerWidth < 600) && onClose()
     setFromSearch(false)
   }, [children])
 
