@@ -1,8 +1,7 @@
 import React from 'react'
 import { Twitter, Facebook, Pinterest, Linkedin } from './icons'
 import { FiShare2 } from 'react-icons/fi'
-import { shareStyles } from '../../styles'
-import { chakra, Flex, ListItem, useColorModeValue } from '@chakra-ui/react'
+import { Flex, ListItem, useColorModeValue } from '@chakra-ui/react'
 
 export const SocialShare = ({ url, title, media }) => {
   return (

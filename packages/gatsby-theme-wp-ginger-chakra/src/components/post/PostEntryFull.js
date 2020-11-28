@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, Button, chakra } from '@chakra-ui/react'
+import { Flex, Box } from '@chakra-ui/react'
 import {
   PostEntryIntro,
   PostEntryContent,

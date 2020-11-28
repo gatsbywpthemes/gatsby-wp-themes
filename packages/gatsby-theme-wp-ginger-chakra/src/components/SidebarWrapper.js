@@ -9,9 +9,8 @@ export const SidebarWrapper = (props) => {
   const { search, fromSearch, setFromSearch } = useContext(SearchContext)
 
   useEffect(() => {
-    onOpen()
-    //!fromSearch && onClose()
-    //setFromSearch(false)
+    !fromSearch && onClose()
+    setFromSearch(false)
   }, [children])
 
   return (

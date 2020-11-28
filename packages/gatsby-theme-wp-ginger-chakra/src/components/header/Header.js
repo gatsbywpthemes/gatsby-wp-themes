@@ -5,7 +5,7 @@ import {
   useSiteSettings,
 } from 'gatsby-theme-blog-data/src/hooks'
 import { ColorSwitch } from '../index'
-import { Flex, useColorModeValue, Link } from '@chakra-ui/react'
+import { Flex, useColorModeValue } from '@chakra-ui/react'
 
 export const Header = () => {
   const siteSettings = useSiteSettings()
@@ -13,7 +13,6 @@ export const Header = () => {
   return (
     <Flex
       as="header"
-      align="center"
       bg={useColorModeValue('headerBg', 'modes.dark.headerBg')}
       color={useColorModeValue('headerColor', 'modes.dark.headerColor')}
       position={['sticky', 'sticky', 'fixed']}

@@ -9,7 +9,6 @@ export const styles = {
         fontFamily: 'body',
         color: mode('text', 'modes.dark.text')(props),
         bg: mode('bg', 'modes.dark.bg')(props),
-        transition: 'all .4s ease-in-out',
         lineHeight: 'body',
       },
       '*::placeholder': {

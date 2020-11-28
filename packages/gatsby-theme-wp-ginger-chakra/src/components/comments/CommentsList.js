@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { Box, Button, chakra } from '@chakra-ui/react'
+import { Box, chakra } from '@chakra-ui/react'
 import { CommentForm, Comment } from './index'
-import { commentsStyles } from '../../styles/'
 
 const GET_COMMENTS = gql`
   query($postId: ID!) {

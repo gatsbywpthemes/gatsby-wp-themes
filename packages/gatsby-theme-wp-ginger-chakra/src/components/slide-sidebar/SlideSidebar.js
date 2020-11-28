@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { FiMenu } from 'react-icons/fi'
 import {
   Button,
@@ -9,11 +9,11 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from '@chakra-ui/react'
-import { Menu, SlideSidebarOverlay, CloseButton } from './../index'
+import { Menu } from './../index'
 import { WidgetsList } from './../widgets'
 import { SearchForm } from './../search'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { slideMenuStyles, menuButtonStyles } from '../../styles/'
+import { menuButtonStyles } from '../../styles/'
 
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
   const {
@@ -24,14 +24,6 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
     menuName,
   } = useThemeOptions()
   const menuBtn = useRef()
-
-  //const { openMenuThreshold } = useThemeOptions()
-
-  /*useEffect(() => {
-    if (!openMenuThreshold || window.innerWidth < parseInt(openMenuThreshold)) {
-      setOpenClass(false)
-    }
-  }, [openMenuThreshold])*/
 
   const [escInSearch, setEscInSearch] = useState(false)
   return (

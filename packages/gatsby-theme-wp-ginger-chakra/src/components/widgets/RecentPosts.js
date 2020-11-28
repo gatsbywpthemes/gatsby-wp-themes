@@ -4,7 +4,6 @@ import moment from 'moment/moment'
 import Img from 'gatsby-image'
 import { Box, Flex, chakra } from '@chakra-ui/react'
 import { WidgetContainer } from './index'
-import { widgetRecentPostsStyles } from '../../styles'
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, useColorModeValue } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { useSiteSettings } from 'gatsby-theme-blog-data/src/hooks'
 
 export const FooterContent = () => {

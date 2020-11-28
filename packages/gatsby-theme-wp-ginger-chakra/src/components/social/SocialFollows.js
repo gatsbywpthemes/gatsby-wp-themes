@@ -91,8 +91,8 @@ export const SocialFollows = () => {
       <Flex justify="center" mb="12">
         {social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())
-          if (index > -1) {
-            return (
+          return (
+            index > -1 && (
               <Link
                 key={name}
                 href={url}
@@ -112,7 +112,7 @@ export const SocialFollows = () => {
                 {<FontAwesomeIcon icon={components[index]} />}
               </Link>
             )
-          }
+          )
         })}
       </Flex>
     )

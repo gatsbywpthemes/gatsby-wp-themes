@@ -1,6 +1,5 @@
 import React from 'react'
 import { useMenusQuery } from 'gatsby-theme-blog-data/src/hooks'
-import { useCollapse } from '../ui-components/useCollapse'
 import { SubMenu } from './SubMenu'
 import { MenuItem } from './MenuItem'
 import { chakra, Box } from '@chakra-ui/react'
