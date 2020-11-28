@@ -79,7 +79,7 @@ const base = {
 const typographySettings = {
   baseFontSize: "16px",
   fonts: {
-    body: "Roboto",
+    body: "Coda",
     heading: "Baumans",
   },
   fontWeights: {

@@ -25,7 +25,9 @@ const colors = {
   bg: ultraLight,
   text: ultraDark,
   headerBg: 'white',
+  headerColor: ultraDark,
   footerBg: 'white',
+  footerColor: ultraDark,
   searchBg: 'white',
   mobileMenuBg: 'black',
   mobileMenuColor: light,
@@ -42,7 +44,9 @@ const colors = {
   modes: {
     dark: {
       headerBg: ultraDark,
-      footerBg: 'ultraDark',
+      headerColor: ultraLight,
+      footerBg: ultraDark,
+      footerColor: ultraLight,
       searchBg: ultraDark,
       bg: dark,
       text: ultraLight,
@@ -55,7 +59,6 @@ const colors = {
       nlInputBg: gray[700],
       archiveTitleBg: primary,
       infoBg: primary,
-      archiveTitleBg: primary,
       cardBg: ultraDark,
     },
   },

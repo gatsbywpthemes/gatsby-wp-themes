@@ -10,13 +10,11 @@ import {
   Box,
   Flex,
   HStack,
-  useMediaQuery,
   useColorModeValue as colorMode,
 } from '@chakra-ui/react'
 
 export const Header = () => {
   const { search, menuName } = useThemeOptions()
-  const [isLargerThan960] = useMediaQuery('(min-width: 960px)')
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -34,6 +32,7 @@ export const Header = () => {
   return (
     <Box
       as="header"
+      color={colorMode('headerColor', 'modes.dark.headerColor')}
       bg={colorMode('headerBg', 'modes.dark.headerBg')}
       py={4}
       className="header"

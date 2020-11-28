@@ -1,7 +1,7 @@
 import { theme } from "@chakra-ui/react"
 import { darken, lighten } from "polished"
 
-const { red, teal, gray } = theme.colors
+const { gray } = theme.colors
 
 //Palette
 
@@ -10,7 +10,7 @@ const light = "#FBEED9",
   dark = "#082737",
   dark0 = lighten(0.08, "#082737"),
   dark2 = darken(0.04, "#082737"),
-  dark3 = darken(0.1, "#082737"),
+  ultraDark = darken(0.1, "#082737"),
   primary = "tomato",
   secondary = "#4C959B",
   yellow = "#FCB458",
@@ -28,7 +28,9 @@ const colors = {
   bg: light,
   text: dark0,
   headerBg: dark,
+  headerColor: ultraLight,
   footerBg: dark,
+  footerColor: ultraLight,
   searchBg: light,
   mobileMenuBg: "black",
   mobileMenuColor: light,
@@ -44,19 +46,19 @@ const colors = {
 
   modes: {
     dark: {
-      headerBg: dark3,
+      headerBg: ultraDark,
       searchBg: dark2,
       bg: dark,
       text: light,
       mobileMenuBg: dark,
       mobileMenuColor: light,
-      subMenuBg: primary,
+      subMenuBg: secondary,
       subMenucolor: "white",
       nlButtonBg: secondary,
       nlButtonColor: light,
       nlInputBg: lighten(0.05, dark),
       archiveTitleBg: primary,
-      infoBg: primary,
+      infoBg: ultraDark,
       archiveTitleBg: primary,
       highlight: yellow,
       cardBg: dark2,

@@ -50,7 +50,7 @@ const config = {
     },
   ],
   // twitterSummaryCardImage: 'Gatsby_Monogram.png',
-  fonts: ["baumans", "roboto"],
+  fonts: ["baumans", "coda"],
 
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
