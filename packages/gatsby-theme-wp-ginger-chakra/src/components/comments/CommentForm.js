@@ -232,10 +232,10 @@ export const CommentForm = ({
                     />
                   </FormLabel>
                   <FormErrorMessage fontStyle="italic" mt="0">
-                    {errors[el.name] && errors[el.name].type === 'required' && (
+                    {errors[el.name]?.type === 'required' && (
                       <span className="error">Required</span>
                     )}
-                    {errors[el.name] && errors[el.name].type === 'pattern' && (
+                    {errors[el.name]?.type === 'pattern' && (
                       <span className="error">Invalid value</span>
                     )}
                   </FormErrorMessage>

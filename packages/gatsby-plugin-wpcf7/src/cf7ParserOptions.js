@@ -143,14 +143,7 @@ const cf7ParserOptions = ({
                     defaultValue={domNode.attribs.value || ""}
                     defaultChecked={domNode.attribs.checked || ""}
                   />
-                  {errors[domNode.attribs.name] &&
-                    errors[domNode.attribs.name].type === "required" && (
-                      <Error>Required</Error>
-                    )}
-                  {errors[domNode.attribs.name] &&
-                    errors[domNode.attribs.name].type !== "required" && (
-                      <Error>Invalid value</Error>
-                    )}
+                  <Error error={errors[domNode.attribs.name]} />
                 </>
               )
           }
@@ -182,10 +175,7 @@ const cf7ParserOptions = ({
                 rows="6"
                 cols="48"
               />
-              {errors[domNode.attribs.name] &&
-                errors[domNode.attribs.name].type === "required" && (
-                  <Error>Required</Error>
-                )}
+              <Error error={errors[domNode.attribs.name]} />
             </>
           )
         default:
