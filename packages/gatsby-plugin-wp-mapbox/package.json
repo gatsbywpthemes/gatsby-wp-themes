@@ -18,7 +18,6 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "@emotion/core": "^10.0.35",
     "html-react-parser": "^0.14.0",
     "mapbox-gl": "^1.12.0",
     "react-map-gl": "^5.2.8"
