@@ -63,5 +63,6 @@ export const gutenberg = {
 
   '.wp-block-media-text__media > .gatsby-image-wrapper': {
     width: 'auto!important',
+    display: 'block',
   },
 }

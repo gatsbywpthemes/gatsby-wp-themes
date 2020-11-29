@@ -73,5 +73,6 @@ export default {
   },
   '.wp-block-media-text__media > .gatsby-image-wrapper': {
     width: 'auto!important',
+    display: 'block',
   },
 }
