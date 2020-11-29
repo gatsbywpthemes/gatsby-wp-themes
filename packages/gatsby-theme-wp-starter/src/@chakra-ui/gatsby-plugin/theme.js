@@ -11,8 +11,12 @@ import styles from './styles'
 const theme = extendTheme({
   ...foundations,
   components,
-  ...textStyles,
-  ...layerStyles,
+  textStyles: {
+    ...textStyles,
+  },
+  layerStyles: {
+    ...layerStyles,
+  },
 
   styles,
 })

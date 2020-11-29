@@ -22,6 +22,7 @@ const colors = {
   dark,
   primary,
   secondary,
+  ultraDark,
   highlight: purple,
   yellow,
   purple,
