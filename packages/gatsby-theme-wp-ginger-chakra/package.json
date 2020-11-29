@@ -41,12 +41,19 @@
     "react-icons": "^3.11.0",
     "react-intersection-observer": "^8.29.1",
     "react-share": "^4.3.1",
+<<<<<<< HEAD
     "react-typography": "^0.16.19",
     "striptags": "^3.1.1",
     "styled-components": "^5.2.0",
     "typeface-abril-fatface": "^1.1.13",
     "typeface-fira-sans": "^1.1.13",
     "typography": "^0.16.19"
+=======
+    "striptags": "^3.1.1",
+    "styled-components": "^5.2.0",
+    "typeface-abril-fatface": "^1.1.13",
+    "typeface-fira-sans": "^1.1.13"
+>>>>>>> 1876ed35118e2f4ae39e922f34d49bf56d206452
   },
   "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4",
   "devDependencies": {
