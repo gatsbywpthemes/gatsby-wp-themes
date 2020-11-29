@@ -25,7 +25,7 @@
     "gatsby-plugin-wordpress-parser": "*",
     "gatsby-source-filesystem": "^2.3.35",
 
-    "gatsby-source-wordpress-experimental": "3.0.0",
+    "gatsby-source-wordpress-experimental": "3.3.1",
 
     "gatsby-transformer-sharp": "^2.5.19",
     "isomorphic-fetch": "^3.0.0",
