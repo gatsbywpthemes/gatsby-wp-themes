@@ -14,7 +14,7 @@ const Page = (props) => {
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   const { colorMode } = useColorMode()
-  console.log(colorMode)
+
   return (
     <Layout useContainer={false}>
       <Seo

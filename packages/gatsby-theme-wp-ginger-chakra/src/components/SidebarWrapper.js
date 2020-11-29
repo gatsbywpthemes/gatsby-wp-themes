@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useRef } from 'react'
 import { useDisclosure } from '@chakra-ui/react'
 import { SlideSidebar } from './index'
 import { SearchContext } from '../../context'
@@ -7,11 +7,18 @@ export const SidebarWrapper = (props) => {
   const { children } = props
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { fromSearch, setFromSearch } = useContext(SearchContext)
+  const prevFromSearch = useRef(false)
 
   useEffect(() => {
-    ;(!fromSearch || window.innerWidth < 600) && onClose()
+    prevFromSearch.current = fromSearch
+  }, [fromSearch])
+
+  useEffect(() => {
+    if (!prevFromSearch.current || window.innerWidth < 600) {
+      onClose()
+    }
     setFromSearch(false)
-  }, [children])
+  }, [children, setFromSearch, onClose])
 
   return (
     <>

@@ -10,6 +10,8 @@ import {
   Input,
   Button,
 } from '@chakra-ui/react'
+import { CommentStatusFeedback } from './index'
+import { inputFields } from './inputfields'
 const commentSubmitQuery = gql`
   mutation(
     $author: String
@@ -32,42 +34,6 @@ const commentSubmitQuery = gql`
     }
   }
 `
-
-const inputFields = [
-  {
-    tag: 'textarea',
-    name: 'comment',
-    type: null,
-    label: 'Comment*',
-    required: true,
-    placeholder: 'Your comment',
-    pattern: null,
-  },
-  {
-    tag: 'input',
-    name: 'author',
-    type: 'text',
-    label: 'Name*',
-    required: true,
-    pattern: null,
-  },
-  {
-    tag: 'input',
-    name: 'email',
-    type: 'email',
-    label: 'Email*',
-    required: true,
-    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-  },
-  {
-    tag: 'input',
-    name: 'url',
-    type: 'url',
-    label: 'Website',
-    required: false,
-    pattern: /^$|(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/i,
-  },
-]
 
 export const CommentForm = ({
   commentId = 0,
@@ -136,29 +102,9 @@ export const CommentForm = ({
     })
   }
 
-  const CommentStatusFeedback = () => {
-    switch (commentStatus) {
-      case 'success':
-        return (
-          <p>
-            Your comment has been successfully submitted. If it does not appear
-            in a few seconds, it means that it is awaiting moderation.
-          </p>
-        )
-      case 'loading':
-        return <p>Please wait. Your comment is being submitted.</p>
-      case 'error':
-        return (
-          <p>There was an error in your submission. Please try again later.</p>
-        )
-      default:
-        return ''
-    }
-  }
-
   return (
     <>
-      {!!commentStatus && <CommentStatusFeedback />}
+      <CommentStatusFeedback commentStatus={commentStatus} />
       {!commentStatus && (
         <Box>
           {!commentId && (
@@ -214,7 +160,6 @@ export const CommentForm = ({
                     mb="0"
                   >
                     {el.label}
-
                     <Input
                       as={Tag}
                       d="block"
