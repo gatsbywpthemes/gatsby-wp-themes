@@ -1,5 +1,11 @@
 import React from "react"
 
-export const Error = ({ children }) => {
-  return <span className="error">{children}</span>
+export const Error = ({ error }) => {
+  return error ? (
+    error.type === "required" ? (
+      <span className="error">Required</span>
+    ) : (
+      <span className="error">Invalid value</span>
+    )
+  ) : null
 }

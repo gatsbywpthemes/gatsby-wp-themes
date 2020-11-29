@@ -1,6 +1,6 @@
-import React from "react"
+import React, { forwardRef } from "react"
 
-export const Select = React.forwardRef(({ children, ...props }, ref) => {
+export const Select = forwardRef(({ children, ...props }, ref) => {
   return (
     <select {...props} ref={ref}>
       {children}
