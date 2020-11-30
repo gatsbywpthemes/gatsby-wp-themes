@@ -23,9 +23,9 @@ export const Layout = ({ children, page, type = 'page' }) => {
       }}
       className={`${layoutClass}-${type} ${fullWidthClass}`}
     >
-      <Headroom>
+      <Box as={Headroom} zIndex={10000}>
         <Header />
-      </Headroom>
+      </Box>
       <Box
         as="main"
         py={16}

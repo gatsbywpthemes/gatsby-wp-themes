@@ -41,7 +41,7 @@ export const Header = () => {
       <Container display="flex" justifyContent="space-between">
         <Flex>
           <SiteBranding title={title} />
-          {search && <SearchModal />}
+          {/* {search && <SearchModal />} */}
         </Flex>
         <HStack>
           <Menu
