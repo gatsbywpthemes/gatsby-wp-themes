@@ -26,7 +26,6 @@ export const SearchModal = () => {
         borderLeftRadius={0}
         boxSize={8}
         cursor="pointer"
-        mt={1}
         ml={3}
         borderLeft="1px solid"
         borderColor="primary"

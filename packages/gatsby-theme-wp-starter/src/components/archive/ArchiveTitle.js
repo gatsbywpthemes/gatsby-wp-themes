@@ -5,7 +5,7 @@ export const ArchiveTitle = ({ name, text }) => {
   return (
     <Box
       px={[4, 6]}
-      py={1}
+      py={3}
       mb={10}
       borderRadius="lg"
       display="inline-block"
@@ -13,7 +13,14 @@ export const ArchiveTitle = ({ name, text }) => {
       className="archive-title"
       boxShadow="lg"
     >
-      <Heading fontSize="xl" letterSpacing="wider" textTransform="uppercase">
+      <Heading
+        fontSize="xl"
+        letterSpacing="wider"
+        textTransform="uppercase"
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-easing="ease"
+      >
         {text} {name}
       </Heading>
     </Box>

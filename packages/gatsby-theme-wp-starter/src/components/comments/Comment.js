@@ -26,6 +26,7 @@ export const Comment = (props) => {
       p="4"
       shadow="lg"
       borderRadius="md"
+      {...props}
     >
       <CommentAuthor
         name={comment.author.node.name}

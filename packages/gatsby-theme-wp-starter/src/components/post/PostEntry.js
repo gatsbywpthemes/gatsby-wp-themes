@@ -25,7 +25,15 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
     ? post.featuredImage.node.localFile.childImageSharp.fluid.src
     : null
   return (
-    <Box as="article" mb={14} className="entry" {...props}>
+    <Box
+      as="article"
+      mb={14}
+      className="entry"
+      {...props}
+      data-sal="slide-up"
+      data-sal-duration="1000"
+      data-sal-easing="ease"
+    >
       <PostEntryMedia
         location={location}
         post={post}
@@ -44,10 +52,19 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
           fontSize={['2xl', '3xl']}
           mb={5}
           className="entry-title"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-easing="ease"
         />
         <PostEntryInfo className="entry-info" post={post} />
 
-        <PostEntryContent location={location} post={post} />
+        <PostEntryContent
+          location={location}
+          post={post}
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-easing="ease"
+        />
         {location !== 'single' && (
           <Center height={20}>
             <Divider />
@@ -55,8 +72,20 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
         )}
 
         <div className="entry-footer">
-          <PostEntryMeta className="entry-meta" post={post} />
-          <ReadMoreButton location={location} post={post} />
+          <PostEntryMeta
+            className="entry-meta"
+            post={post}
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          />
+          <ReadMoreButton
+            location={location}
+            post={post}
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          />
         </div>
         {location === 'single' && (
           <>

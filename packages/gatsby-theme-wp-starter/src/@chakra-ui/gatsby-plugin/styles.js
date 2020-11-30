@@ -52,16 +52,6 @@ const h6 = {
   ...heading,
   fontSize: 'xs',
 }
-const blockquote = {
-  fontStyle: 'italic',
-  px: [5, 12],
-  py: 8,
-  borderLeft: '5px solid',
-  borderColor: 'primary',
-  maxWidth: '800px !important',
-  mx: 'auto',
-  my: 10,
-}
 
 const base = {
   a,
@@ -72,7 +62,6 @@ const base = {
   h4,
   h5,
   h6,
-  blockquote,
 }
 
 const styles = {
@@ -96,8 +85,17 @@ const styles = {
         outlineStyle: 'dashed',
         outlineWidth: '0.5px',
       },
+
       blockquote: {
-        bg: mode('light', 'dark'),
+        fontStyle: 'italic',
+        px: [5, 12],
+        py: 8,
+        borderLeft: '5px solid',
+        borderColor: 'primary',
+        maxWidth: '800px !important',
+        mx: 'auto',
+        my: 10,
+        bg: mode('light', 'dark')(props),
       },
       ...base,
     }
