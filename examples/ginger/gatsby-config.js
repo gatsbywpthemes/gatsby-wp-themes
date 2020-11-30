@@ -17,7 +17,7 @@ module.exports = {
   pathPrefix: pathPrefix,
   siteMetadata: {
     author,
-    wordPressUrl: options.wordpressUrl,
+    wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl: options.siteUrl,
     social,
   },
@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-wpcf7`,
       options: {
-        wordPressUrl: options.wordPressUrl,
+        wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
   ],
