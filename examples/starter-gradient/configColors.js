@@ -17,6 +17,7 @@ const light = "#FBEED9",
   purple = "#c725A3"
 
 const colors = {
+  /* basic colors*/
   light,
   ultraLight,
   dark,
@@ -28,18 +29,24 @@ const colors = {
   purple,
   bg: light,
   text: dark0,
+  /* header */
   headerBg: dark,
   headerColor: ultraLight,
+  /* footer */
   footerBg: dark,
   footerColor: ultraLight,
+  /* search*/
   searchBg: light,
+  /* menu */
   mobileMenuBg: "black",
   mobileMenuColor: light,
   subMenuBg: "black",
   subMenucolor: "white",
+  /* newsletter */
   nlButtonBg: primary,
   nlButtonColor: "white",
   nlInputBg: light,
+  /* post */
   archiveTitleBg: "black",
   infoBg: darken(0.02, light),
   archiveTitleBg: gray[100],
@@ -47,17 +54,27 @@ const colors = {
 
   modes: {
     dark: {
-      headerBg: ultraDark,
-      searchBg: dark2,
+      /* basic colors */
       bg: dark,
       text: light,
+      /* header */
+      headerBg: ultraDark,
+      headerColor: ultraLight,
+      /* footer */
+      footerBg: ultraDark,
+      footerColor: ultraLight,
+      /* search */
+      searchBg: dark2,
+      /* menu */
       mobileMenuBg: dark,
       mobileMenuColor: light,
       subMenuBg: secondary,
       subMenucolor: "white",
+      /* newsletter */
       nlButtonBg: secondary,
       nlButtonColor: light,
       nlInputBg: lighten(0.05, dark),
+      /* post*/
       archiveTitleBg: primary,
       infoBg: ultraDark,
       archiveTitleBg: primary,
