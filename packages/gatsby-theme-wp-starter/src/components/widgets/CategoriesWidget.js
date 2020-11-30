@@ -28,12 +28,7 @@ export const CategoriesWidget = (props) => {
       <VStack align="flex-start">
         {nonEmptyCategories.length
           ? nonEmptyCategories.map((category) => (
-              <ChakraLink
-                as={Link}
-                textStyle="special"
-                key={category.slug}
-                to={`${category.uri}`}
-              >
+              <ChakraLink as={Link} key={category.slug} to={`${category.uri}`}>
                 {category.name}
               </ChakraLink>
             ))

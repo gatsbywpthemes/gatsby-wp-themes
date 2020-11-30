@@ -19,7 +19,7 @@ export const SocialShare = ({ url, title, media }) => {
       />
 
       <HStack fontWeight="bold" fontSize="sm" mt={4}>
-        <Twitter url={url} title={title}>
+        <Twitter url={url} title={title} textStyle="link">
           Twitter
         </Twitter>
         <span>/</span>

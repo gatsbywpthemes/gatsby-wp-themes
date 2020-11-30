@@ -4,7 +4,8 @@ import { Button } from '@chakra-ui/react'
 export const ReplyButton = ({ commentId, actionOnClick }) => {
   return (
     <Button
-      variant="unstyled"
+      variant="link"
+      textStyle="link"
       display="flex"
       ml="auto"
       color="inherit"

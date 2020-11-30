@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box } from '@chakra-ui/react'
+import { Flex, Box, chakra } from '@chakra-ui/react'
 import { BorderTitle } from 'starterUiComponents'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
@@ -15,6 +15,7 @@ const ALL_TAGS_QUERY = graphql`
   }
 `
 
+const ChakraLink = chakra(Link)
 export const TagsWidget = (props) => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
@@ -26,10 +27,16 @@ export const TagsWidget = (props) => {
         </BorderTitle>
         <Flex justify="center" wrap="wrap">
           {nodes.map((tag, index) => (
-            <Box textStyle="special" pr={4} pb={3} key={tag.slug}>
-              <Link to={`/tag/${tag.slug}`}>
+            <Box textStyle="special" pb={3} key={tag.slug}>
+              <ChakraLink
+                to={`/tag/${tag.slug}`}
+                pr={1}
+                pl={2}
+                d="inline-block"
+                _hover={{ color: 'primary' }}
+              >
                 {tag.name} ({tag.count})
-              </Link>
+              </ChakraLink>
               {index < nodes.length - 1 && ' · '}
             </Box>
           ))}
