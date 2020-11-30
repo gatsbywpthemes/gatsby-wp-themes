@@ -49,7 +49,7 @@ const colors = {
   /* post */
   archiveTitleBg: "black",
   infoBg: darken(0.02, light),
-  archiveTitleBg: gray[100],
+  archiveTitleBg: primary,
   cardBg: ultraLight,
 
   modes: {
