@@ -30,7 +30,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
       mb={14}
       className="entry"
       {...props}
-      data-sal="slide-up"
+      data-sal={location !== 'single' ? 'slide-up' : null}
       data-sal-duration="1000"
       data-sal-easing="ease"
     >
