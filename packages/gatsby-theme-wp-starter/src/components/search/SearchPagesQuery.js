@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Button } from '@chakra-ui/react'
+import { Button, Box, Center } from '@chakra-ui/react'
 import { useQuery, gql } from '@apollo/client'
 import { SearchResults } from 'starterComponents'
 import Loader from 'react-spinners/BeatLoader'
@@ -59,14 +59,14 @@ export const SearchPagesQuery = ({ search }) => {
 
   if (loading)
     return (
-      <div>
-        <Loader color="#798EA3" />
-      </div>
+      <Center h="100px">
+        <Box as={Loader} color="primary" />
+      </Center>
     )
   if (error) return <p>Error - {error.message}</p>
   //loadMore()
   return (
-    <SearchResults type="Pages" query={search} posts={data.pages.nodes}>
+    <SearchResults type="Pages" search={search} posts={data.pages.nodes}>
       {clickable && data.pages.pageInfo && data.pages.pageInfo.hasNextPage && (
         <Button
           onClick={loadMore}

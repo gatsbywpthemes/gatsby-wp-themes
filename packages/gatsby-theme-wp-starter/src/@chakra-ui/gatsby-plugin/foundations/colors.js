@@ -12,7 +12,9 @@ const light = gray[100],
   primary = teal[400],
   secondary = purple[500],
   highlight = red[500],
-  mutted = gray[200]
+  mutted = gray[200],
+  bg = ultraLight,
+  text = ultraDark
 
 const colors = {
   /* basic colors */
@@ -24,8 +26,8 @@ const colors = {
   secondary,
   highlight,
   mutted,
-  bg: ultraLight,
-  text: ultraDark,
+  bg,
+  text,
   /* header */
   headerBg: 'white',
   headerColor: ultraDark,
@@ -34,6 +36,10 @@ const colors = {
   footerColor: ultraDark,
   /* search */
   searchBg: 'white',
+  searchResultsHeaderBg: ultraDark,
+  searchResultsHeaderColor: primary,
+  searchResultsBg: bg,
+  searchResultsColor: text,
   /* menu */
   mobileMenuBg: 'black',
   mobileMenuColor: light,
@@ -62,6 +68,10 @@ const colors = {
       footerColor: ultraLight,
       /* search */
       searchBg: ultraDark,
+      searchResultsHeaderBg: primary,
+      searchResultsHeaderColor: light,
+      searchResultsBg: bg,
+      searchResultsColor: text,
       /* menu*/
       mobileMenuBg: 'black',
       mobileMenuColor: light,
