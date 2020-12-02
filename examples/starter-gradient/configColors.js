@@ -14,7 +14,9 @@ const light = "#FBEED9",
   primary = "tomato",
   secondary = "#4C959B",
   yellow = "#FCB458",
-  purple = "#c725A3"
+  purple = "#c725A3",
+  bg = ultraLight,
+  text = ultraDark
 
 const colors = {
   /* basic colors*/
@@ -37,6 +39,10 @@ const colors = {
   footerColor: ultraLight,
   /* search*/
   searchBg: light,
+  searchResultsHeaderBg: ultraDark,
+  searchResultsHeaderColor: primary,
+  searchResultsBg: bg,
+  searchResultsColor: text,
   /* menu */
   mobileMenuBg: "black",
   mobileMenuColor: light,
@@ -65,6 +71,10 @@ const colors = {
       footerColor: ultraLight,
       /* search */
       searchBg: dark2,
+      searchResultsHeaderBg: primary,
+      searchResultsHeaderColor: light,
+      searchResultsBg: bg,
+      searchResultsColor: text,
       /* menu */
       mobileMenuBg: dark,
       mobileMenuColor: light,
