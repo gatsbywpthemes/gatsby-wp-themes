@@ -1,43 +1,13 @@
 import React from 'react'
-import { Flex } from '@chakra-ui/react'
-import { TransparentCard } from 'starterUiComponents'
-import moment from 'moment'
-import { CommentForm } from 'starterComponents'
-
-const Reply = ({ commentId, actionOnClick }) => {
-  return (
-    <Flex
-      as="button"
-      type="button"
-      mt={4}
-      ml="auto"
-      textStyle="special"
-      onClick={() => actionOnClick(commentId)}
-      className="comment-button-reply"
-    >
-      Reply
-    </Flex>
-  )
-}
-
-const Author = ({ name, url }) => {
-  return (
-    <div>
-      {url ? (
-        <a
-          className="comment-author"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {name}
-        </a>
-      ) : (
-        <span className="comment-author">{name}</span>
-      )}
-    </div>
-  )
-}
+import { Date } from '../post'
+import {
+  CommentForm,
+  CommentContent,
+  CommentAuthor,
+  ReplyButton,
+  CommentNestingInfo,
+} from './index'
+import { Box, ListItem, useColorModeValue as colorMode } from '@chakra-ui/react'
 
 export const Comment = (props) => {
   const {
@@ -50,10 +20,22 @@ export const Comment = (props) => {
     doOnCompleted,
   } = props
   return (
-    <TransparentCard as="li" listStyleType="none" mb={4} className="comment">
-      <Author name={comment.author.name} url={comment.author.url} />
-      {moment(comment.date).format(`MMMM D, YYYY`)}
-      <div dangerouslySetInnerHTML={{ __html: comment.content }} />
+    <ListItem
+      className="comment"
+      bg={colorMode('cardBg', 'modes.dark.cardBg')}
+      p="4"
+      shadow="lg"
+      borderRadius="md"
+      {...props}
+    >
+      <CommentAuthor
+        name={comment.author.node.name}
+        url={comment.author.node.url}
+      />
+      <Box fontStyle="italic" fontSize="xs">
+        <Date date={comment.date} />
+      </Box>
+      <CommentContent content={comment.content} />
       {withReply ? (
         activeComment === comment.commentId ? (
           <CommentForm
@@ -63,15 +45,11 @@ export const Comment = (props) => {
             doOnCompleted={doOnCompleted}
           />
         ) : (
-          <Flex>
-            <Reply commentId={comment.commentId} actionOnClick={addReply} />
-          </Flex>
+          <ReplyButton commentId={comment.commentId} actionOnClick={addReply} />
         )
       ) : (
-        <p className="comment-nesting-info">
-          Only two levels of nesting is supported.
-        </p>
+        <CommentNestingInfo />
       )}
-    </TransparentCard>
+    </ListItem>
   )
 }

@@ -1,17 +1,17 @@
-import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
-import React from 'react'
-import { Date, Author } from 'starterComponents'
+import { Box, useColorModeValue as colorMode } from "@chakra-ui/react"
+import React from "react"
+import { Date, Author } from "starterComponents"
 
 export const PostEntryInfo = ({ post, ...props }) => {
   return (
     <Box
       display="inline-block"
       fontStyle="italic"
-      borderRadius="md"
+      borderRadius="full"
       fontSize="sm"
       px={4}
-      py={2}
-      bg={colorMode('infoBg', 'modes.dark.infoBg')}
+      py={1}
+      bg={colorMode("infoBg", "modes.dark.infoBg")}
       mb={10}
       {...props}
     >

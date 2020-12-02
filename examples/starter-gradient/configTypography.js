@@ -54,16 +54,6 @@ const h6 = {
   ...heading,
   fontSize: "xs",
 }
-const blockquote = {
-  fontStyle: "italic",
-  px: [5, 12],
-  py: 8,
-  borderLeft: "5px solid",
-  borderColor: "primary",
-  maxWidth: "800px !important",
-  mx: "auto",
-  my: 10,
-}
 
 const base = {
   a,
@@ -79,7 +69,7 @@ const base = {
 const typographySettings = {
   baseFontSize: "16px",
   fonts: {
-    body: "Roboto",
+    body: "Coda",
     heading: "Baumans",
   },
   fontWeights: {

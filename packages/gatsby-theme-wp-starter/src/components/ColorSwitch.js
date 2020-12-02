@@ -10,7 +10,7 @@ export const ColorSwitch = (props) => {
       aria-label="Toggle color mode"
       variant="unstyled"
       onClick={toggleColorMode}
-      icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+      icon={colorMode === 'light' ? <MoonIcon mt="-5px" /> : <SunIcon />}
       {...props}
     />
   )

@@ -11,6 +11,7 @@ export const Footer = () => (
     py={7}
     boxShadow="md"
     bg={colorMode('footerBg', 'modes.dark.footerBg')}
+    color={colorMode('footerColor', 'modes.dark.footerColor')}
   >
     <Container>
       <FooterContent mb={4} />

@@ -1,15 +1,16 @@
-import React from 'react'
-import { Box, Heading, useColorModeValue as colorMode } from '@chakra-ui/react'
+import React from "react"
+import { Box, Heading, useColorModeValue as colorMode } from "@chakra-ui/react"
 
 export const ArchiveTitle = ({ name, text }) => {
   return (
     <Box
-      px={[4, 6]}
+      px={[4, 8]}
       py={3}
       mb={10}
-      borderRadius="lg"
+      borderRadius="full"
       display="inline-block"
-      bg={colorMode('archiveTitleBg', 'modes.dark.archiveTitleBg')}
+      color="ultraLight"
+      backgroundImage={`linear-gradient(60deg, tomato, #FCB458)`}
       className="archive-title"
       boxShadow="lg"
     >

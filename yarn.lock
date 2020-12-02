@@ -1264,7 +1264,7 @@
   dependencies:
     "@chakra-ui/utils" "1.0.1"
 
-"@chakra-ui/icons@^1.0.0":
+"@chakra-ui/icons@^1.0.0", "@chakra-ui/icons@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-1.0.1.tgz#834c2aa088c6f372c9d880330a2baa6dfd515bdd"
   integrity sha512-LNUX/NRo/fcpXjJYn7UTeY/bOjrcbpdZ+mDSCVmdKTjD/27Co7fzHZABNHnpnM44WpI5CZqdVgY8Ebdr9gOdgQ==
@@ -9878,7 +9878,7 @@ gatsby-source-filesystem@^2.3.35, gatsby-source-filesystem@^2.3.37:
     valid-url "^1.0.9"
     xstate "^4.13.0"
 
-gatsby-source-wordpress-experimental@^3.3.1:
+gatsby-source-wordpress-experimental@3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/gatsby-source-wordpress-experimental/-/gatsby-source-wordpress-experimental-3.3.1.tgz#f1c84e30e2cbafe74b3cdf04ae694b5e690425d8"
   integrity sha512-Qc0Bhtqz5GrAYzPIuJUf07ES1LShDQ2f4HD+RBOsk0WSxiV2dU2MtLPHUr+4p0pBri/YEbcq32kjUYKz09PqcQ==
@@ -14898,7 +14898,7 @@ polished@^3.4.1:
   dependencies:
     "@babel/runtime" "^7.9.2"
 
-polished@^4.0.3:
+polished@^4.0.3, polished@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/polished/-/polished-4.0.5.tgz#3f91873c8f72dec1723b3f892f57fbb22645b23d"
   integrity sha512-BY2+LVtOHQWBQpGN4GPAKpCdsBePOdSdHTpZegRDRCrvGPkRPTx1DEC+vGjIDPhXS7W2qiBxschnwRWTFdMZag==

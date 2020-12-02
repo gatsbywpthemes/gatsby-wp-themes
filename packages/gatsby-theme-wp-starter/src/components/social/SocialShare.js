@@ -6,7 +6,7 @@ import { FiShare2 } from 'react-icons/fi'
 export const SocialShare = ({ url, title, media }) => {
   return (
     <Center flexDirection="column" mt={10}>
-      <Heading as="h3" fontSize="md" textTransform="uppercase">
+      <Heading as="h3" fontSize="md" textTransform="uppercase" mb={4}>
         Share on social media
       </Heading>
       <IconButton
@@ -19,7 +19,7 @@ export const SocialShare = ({ url, title, media }) => {
       />
 
       <HStack fontWeight="bold" fontSize="sm" mt={4}>
-        <Twitter url={url} title={title}>
+        <Twitter url={url} title={title} textStyle="link">
           Twitter
         </Twitter>
         <span>/</span>

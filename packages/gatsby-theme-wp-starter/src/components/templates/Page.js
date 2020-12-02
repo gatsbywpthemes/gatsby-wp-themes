@@ -25,6 +25,7 @@ const Page = ({ page, ctx }) => {
     sidebarWidgets,
   } = useLayoutStyles('page', templateName.toLowerCase())
   const { skipTitle } = useThemeOptions()
+  console.log('template', templateName)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -55,9 +56,13 @@ const Page = ({ page, ctx }) => {
           <article className="entry">
             <Card
               className="content page-content"
-              p={templateName === 'Full Width' ? 0 : [5, 16]}
-              borderRadius={templateName === 'Full Width' ? 0 : 'lg'}
-              boxShadow={templateName === 'Full Width' ? 0 : 'lg'}
+              sx={
+                templateName === 'Full Width' && {
+                  p: 0,
+                  borderRadius: 0,
+                  boxShadow: 0,
+                }
+              }
               mb={{ base: 14, lg: 0 }}
             >
               {skipTitle &&
