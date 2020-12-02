@@ -86,7 +86,10 @@ const styles = {
         outlineWidth: '0.5px',
       },
       '::-webkit-search-cancel-button': {
-        webkitAppearance: 'none',
+        webkitAppearance: 'none !important',
+      },
+      'input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus,': {
+        backgroundColor: 'transparent !important',
       },
 
       blockquote: {
