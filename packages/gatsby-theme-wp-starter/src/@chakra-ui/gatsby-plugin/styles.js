@@ -85,6 +85,9 @@ const styles = {
         outlineStyle: 'dashed',
         outlineWidth: '0.5px',
       },
+      '::-webkit-search-cancel-button': {
+        webkitAppearance: 'none',
+      },
 
       blockquote: {
         fontStyle: 'italic',

@@ -3,7 +3,7 @@ export const gutenbergStyles = {
     mx: 'auto',
   },
   '& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.entry-content)': {
-    maxWidth: theme => `l`,
+    maxWidth: `4xl`,
     width: [`calc(100% - 3rem)`, `calc(100% - 4rem)`],
   },
 
@@ -12,7 +12,7 @@ export const gutenbergStyles = {
   },
 
   '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
-    maxWidth: theme => `l`,
+    maxWidth: `4xl`,
     width: '100%',
   },
 
@@ -66,7 +66,7 @@ export const gutenbergStyles = {
     px: [0, '8%'],
   },
   '.dark-color-mode & .has-background:not(.has-text-color),.dark-color-mode & .wp-block-media-text[style*="background"],.dark-color-mode & .wp-block-table.is-style-stripes tbody tr:nth-of-type(odd)': {
-    backgroundImage: theme => {
+    backgroundImage: (theme) => {
       return `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
     },
     backgroundBlendMode: 'multiply',

@@ -54,7 +54,7 @@ const useLayoutStyles = (layoutType, templateName) => {
       : pageTemplate === `right sidebar`
       ? { '.entry': { pr: { base: 0, lg: 8 } } }
       : ''
-    : ''
+    : { display: 'block' }
 
   return {
     containerStyles,
