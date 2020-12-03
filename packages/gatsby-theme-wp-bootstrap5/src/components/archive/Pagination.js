@@ -34,13 +34,17 @@ export const Pagination = ({ ctx }) => {
   return (
     <nav className="border-top pt-4" aria-label="Page navigation">
       <ul className="pagination justify-content-between">
-        <li className="page-item">{renderPreviousLink(previousPagePath)}</li>
-        <li className="page-item disabled">
-          <span className="page-link" aria-current="page">
+        <li className="page-item flex-grow-1">
+          {renderPreviousLink(previousPagePath)}
+        </li>
+        <li className="page-item disabled text-center flex-grow-1">
+          <span className="page-link d-inline-block" aria-current="page">
             {humanPageNumber}
           </span>
         </li>
-        <li className="page-item">{renderNextLink(nextPagePath)}</li>
+        <li className="page-item flex-grow-1 text-right">
+          {renderNextLink(nextPagePath)}
+        </li>
       </ul>
     </nav>
   )
