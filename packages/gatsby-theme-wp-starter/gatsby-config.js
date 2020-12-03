@@ -68,6 +68,12 @@ module.exports = (options) => {
         selector: `[data-sal],  .entry p, .entry  blockquote, .entry  h1,.entry  h2,.entry  h3,.entry  h4,.entry  h5,.entry  h6 ,.entry-info, .animate-on-scroll`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-wpcf7',
+      options: {
+        wordPressUrl: process.env.GATSBY_WP_URL,
+      },
+    },
   ]
 
   /**

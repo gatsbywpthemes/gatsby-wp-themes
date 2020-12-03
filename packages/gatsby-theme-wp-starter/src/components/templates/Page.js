@@ -4,6 +4,7 @@ import { Container, Card } from 'starterUiComponents'
 import { Layout, Sidebar } from 'starterComponents'
 import { ActivatePageScripts } from 'starterUtils'
 import { useLayoutStyles } from 'starterUtils/hooks'
+import ParsedContent from 'starterUtils/ParsedContent'
 
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
@@ -74,12 +75,9 @@ const Page = ({ page, ctx }) => {
                   />
                 )}
 
-              <Box className="entry-content">
+              <Box className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />
-                <Box
-                  sx={{ ...gutenbergStyles }}
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
+                <ParsedContent content={content} />
               </Box>
             </Card>
           </article>

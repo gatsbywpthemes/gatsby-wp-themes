@@ -20,12 +20,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-wpcf7",
-      options: {
-        wordPressUrl: process.env.GATSBY_WP_URL,
-      },
-    },
-    {
       resolve: "gatsby-plugin-root-import",
       options: {
         starterSrc: "gatsby-theme-wp-starter/src",
