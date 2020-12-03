@@ -29,7 +29,19 @@ export const SearchForm = (props) => {
 
   return (
     <div {...props}>
-      <HStack>
+      <HStack
+        sx={{
+          'input:-webkit-autofill,input:-webkit-autofill:hover, input:-webkit-autofill:focus,textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus': {
+            boxShadow: (theme) =>
+              colorMode(
+                `0 0 0px 1000px ${theme.colors.searchBg} inset`,
+                `0 0 0px 1000px ${theme.colors.modes.dark.searchBg} inset`
+              ),
+            WebkitTextFillColor: (theme) =>
+              colorMode(theme.colors.text, theme.colors.modes.dark.text),
+          },
+        }}
+      >
         <Input
           value={value}
           className="search-box"

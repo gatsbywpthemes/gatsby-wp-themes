@@ -36,7 +36,9 @@ const styles = {
         my: 10,
         bg: mode("light", "dark")(props),
       },
-
+      "::-webkit-search-cancel-button": {
+        WebkitAppearance: "none",
+      },
       ...typographySettings.base,
     }
   },

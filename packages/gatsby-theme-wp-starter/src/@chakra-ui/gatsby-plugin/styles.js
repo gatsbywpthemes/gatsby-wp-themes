@@ -85,12 +85,6 @@ const styles = {
         outlineStyle: 'dashed',
         outlineWidth: '0.5px',
       },
-      '::-webkit-search-cancel-button': {
-        webkitAppearance: 'none !important',
-      },
-      'input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus,': {
-        backgroundColor: 'transparent !important',
-      },
 
       blockquote: {
         fontStyle: 'italic',
@@ -102,6 +96,9 @@ const styles = {
         mx: 'auto',
         my: 10,
         bg: mode('light', 'dark')(props),
+      },
+      '::-webkit-search-cancel-button': {
+        WebkitAppearance: 'none',
       },
       ...base,
     }
