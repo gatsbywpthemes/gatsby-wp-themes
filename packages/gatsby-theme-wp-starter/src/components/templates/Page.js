@@ -74,10 +74,13 @@ const Page = ({ page, ctx }) => {
                   />
                 )}
 
-              <div className="entry-content" sx={{ ...gutenbergStyles }}>
+              <Box className="entry-content">
                 <ActivatePageScripts />
-                <Box dangerouslySetInnerHTML={{ __html: content }} />
-              </div>
+                <Box
+                  sx={{ ...gutenbergStyles }}
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+              </Box>
             </Card>
           </article>
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
