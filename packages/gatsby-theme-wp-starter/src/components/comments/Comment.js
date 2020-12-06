@@ -7,7 +7,7 @@ import {
   ReplyButton,
   CommentNestingInfo,
 } from './index'
-import { Box, ListItem, useColorModeValue as colorMode } from '@chakra-ui/react'
+import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
 
 export const Comment = (props) => {
   const {
@@ -20,7 +20,8 @@ export const Comment = (props) => {
     doOnCompleted,
   } = props
   return (
-    <ListItem
+    <Box
+      as="li"
       className="comment"
       bg={colorMode('cardBg', 'modes.dark.cardBg')}
       p="4"
@@ -49,6 +50,6 @@ export const Comment = (props) => {
       ) : (
         <CommentNestingInfo />
       )}
-    </ListItem>
+    </Box>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Twitter, Facebook, Pinterest, Linkedin } from './icons'
 import { FiShare2 } from 'react-icons/fi'
-import { Flex, ListItem, useColorModeValue } from '@chakra-ui/react'
+import { Flex, Box, useColorModeValue } from '@chakra-ui/react'
 
 export const SocialShare = ({ url, title, media }) => {
   return (
@@ -37,24 +37,24 @@ export const SocialShare = ({ url, title, media }) => {
           },
         }}
       >
-        <ListItem>
+        <Box as="li">
           <Twitter url={url} title={title}>
             Twitter
           </Twitter>
-        </ListItem>
-        <ListItem>
+        </Box>
+        <Box as="li">
           <Facebook url={url} quote={title}>
             Facebook
           </Facebook>
-        </ListItem>
-        <ListItem>
+        </Box>
+        <Box as="li">
           <Pinterest url={url} media={media}>
             Pinterest
           </Pinterest>
-        </ListItem>
-        <ListItem>
+        </Box>
+        <Box as="li">
           <Linkedin url={url}>Linkedin</Linkedin>
-        </ListItem>
+        </Box>
       </Flex>
     </>
   )

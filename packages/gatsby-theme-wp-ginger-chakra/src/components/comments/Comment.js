@@ -7,7 +7,7 @@ import {
   ReplyButton,
   CommentNestingInfo,
 } from './index'
-import { Box, ListItem } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
 export const Comment = (props) => {
   const {
@@ -20,7 +20,7 @@ export const Comment = (props) => {
     doOnCompleted,
   } = props
   return (
-    <ListItem className="comment" layerStyle="overlay" p="4">
+    <Box as="li" className="comment" layerStyle="overlay" p="4">
       <CommentAuthor
         name={comment.author.node.name}
         url={comment.author.node.url}
@@ -43,6 +43,6 @@ export const Comment = (props) => {
       ) : (
         <CommentNestingInfo />
       )}
-    </ListItem>
+    </Box>
   )
 }
