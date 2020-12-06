@@ -44,9 +44,21 @@ export const Menu = ({ menuName, orientation, ...props }) => {
         >
           {menuNodes.map((menuItem) => {
             if (menuItem.children.length) {
-              return <SubMenu menuItem={menuItem} orientation={orientation} />
+              return (
+                <SubMenu
+                  key={menuItem.id}
+                  menuItem={menuItem}
+                  orientation={orientation}
+                />
+              )
             } else {
-              return <MenuItem menuItem={menuItem} orientation={orientation} />
+              return (
+                <MenuItem
+                  key={menuItem.id}
+                  menuItem={menuItem}
+                  orientation={orientation}
+                />
+              )
             }
           })}
         </Stack>
