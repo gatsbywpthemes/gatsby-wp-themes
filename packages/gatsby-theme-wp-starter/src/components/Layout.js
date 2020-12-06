@@ -23,7 +23,7 @@ export const Layout = ({ children, page, type = 'page' }) => {
       }}
       className={`${layoutClass}-${type} ${fullWidthClass}`}
     >
-      <Box as={Headroom} zIndex={10000}>
+      <Box as={Headroom} sx={{ '&>div': { zIndex: '2!important' } }}>
         <Header />
       </Box>
       <Box
