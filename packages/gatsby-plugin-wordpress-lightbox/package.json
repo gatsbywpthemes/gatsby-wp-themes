@@ -21,8 +21,8 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "html-react-parser": "^0.14.0",
-    "simple-react-lightbox": "^3.3.4-1"
+    "html-react-parser": "^0.14.2",
+    "simple-react-lightbox": "^3.3.4-2"
   },
   "peerDependencies": {
     "gatsby": "^2.28.0",
