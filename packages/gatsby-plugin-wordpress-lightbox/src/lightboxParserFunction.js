@@ -57,6 +57,7 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
   }
   const isSSR = typeof window === "undefined"
   if (
+    !isSSR &&
     node.name &&
     node.attribs &&
     node.attribs.class &&
@@ -65,23 +66,19 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
   ) {
     const Tag = node.name
     return (
-      <>
-        {!isSSR && (
-          <React.Suspense
-            fallback={
-              <Tag className={node.attribs.class}>
-                {domToReact(node.children, parserOptionsInner)}
-              </Tag>
-            }
-          >
-            <ClientSideOnlyLazy>
-              <Tag className={node.attribs.class}>
-                {domToReact(node.children, parserOptionsInner)}
-              </Tag>
-            </ClientSideOnlyLazy>
-          </React.Suspense>
-        )}
-      </>
+      <React.Suspense
+        fallback={
+          <Tag className={node.attribs.class}>
+            {domToReact(node.children, parserOptionsInner)}
+          </Tag>
+        }
+      >
+        <ClientSideOnlyLazy>
+          <Tag className={node.attribs.class}>
+            {domToReact(node.children, parserOptionsInner)}
+          </Tag>
+        </ClientSideOnlyLazy>
+      </React.Suspense>
     )
   }
 }
