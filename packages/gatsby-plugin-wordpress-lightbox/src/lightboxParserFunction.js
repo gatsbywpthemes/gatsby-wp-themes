@@ -1,8 +1,7 @@
 import React from "react"
 import { domToReact, attributesToProps } from "html-react-parser"
-import SimpleReactLightbox from "simple-react-lightbox"
-import LightboxWrapper from "./LightboxWrapper"
 
+const ClientSideOnlyLazy = React.lazy(() => import("./LightboxWrapper"))
 const findInnerA = (node) => {
   let value = null
   if (node && node.name === "a") {
@@ -37,7 +36,6 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
   })
   const parserOptionsInner = {
     replace: (domNode) => {
-      //console.log("inner", domNode)
       if (domNode.name === "a") {
         if (
           domNode.attribs &&
@@ -57,6 +55,7 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
       }
     },
   }
+  const isSSR = typeof window === "undefined"
   if (
     node.name &&
     node.attribs &&
@@ -66,13 +65,17 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
   ) {
     const Tag = node.name
     return (
-      <SimpleReactLightbox>
-        <LightboxWrapper>
-          <Tag className={node.attribs.class}>
-            {domToReact(node.children, parserOptionsInner)}
-          </Tag>
-        </LightboxWrapper>
-      </SimpleReactLightbox>
+      <>
+        {!isSSR && (
+          <React.Suspense fallback={<div />}>
+            <ClientSideOnlyLazy>
+              <Tag className={node.attribs.class}>
+                {domToReact(node.children, parserOptionsInner)}
+              </Tag>
+            </ClientSideOnlyLazy>
+          </React.Suspense>
+        )}
+      </>
     )
   }
 }
