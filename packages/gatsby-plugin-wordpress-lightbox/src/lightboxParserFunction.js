@@ -67,7 +67,13 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
     return (
       <>
         {!isSSR && (
-          <React.Suspense fallback={<div />}>
+          <React.Suspense
+            fallback={
+              <Tag className={node.attribs.class}>
+                {domToReact(node.children, parserOptionsInner)}
+              </Tag>
+            }
+          >
             <ClientSideOnlyLazy>
               <Tag className={node.attribs.class}>
                 {domToReact(node.children, parserOptionsInner)}
