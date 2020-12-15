@@ -1,39 +1,68 @@
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useToken } from '@chakra-ui/react'
 
-const useLayoutStyles = (type, templateName) => {
-  const { sidebarWidgets, layoutWidth } = useThemeOptions()
+const useLayoutWidth = () => {
+  const { layoutWidth } = useThemeOptions()
+  const [xl, lg, md, sm] = useToken('sizes', [
+    'container.xl',
+    'container.lg',
+    'container.md',
+    'container.sm',
+  ])
+
+  function getLayoutWidth(layoutType) {
+    switch (layoutWidth[layoutType]) {
+      case 'xl':
+        return xl
+      case 'md':
+        return md
+      case 'lg':
+        return lg
+      case 'sm':
+        return sm
+      default:
+        return '1280px'
+    }
+  }
+
+  return [getLayoutWidth, xl, lg, md, sm]
+}
+
+const useLayoutStyles = (layoutType, templateName) => {
+  const { sidebarWidgets } = useThemeOptions()
   const pageTemplate = templateName?.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
+  const [getLayoutWidth, xl, md, lg, sm] = useLayoutWidth()
 
   const containerStyles =
     sidebarWidgets && sidebarPage
       ? {
-          maxWidth: 'container',
+          maxWidth: xl,
           '.entry': {
-            width: [`100%`, `100%`, `100%`, `70%`],
+            width: { base: '100%', lg: '67%', xl: '70%' },
           },
-          '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
+          '.sidebar': { width: { base: '100%', lg: '33%', xl: '30%' } },
         }
-      : { maxWidth: layoutWidth[type] }
+      : { maxWidth: getLayoutWidth(layoutType) }
 
   const sidebarSide = sidebarPage
     ? pageTemplate === `left sidebar`
       ? {
           flexDirection: `row-reverse`,
-          '.entry': { pl: [0, 0, 0, layoutWidth[type]] },
+          '.entry': { pl: { base: 0, lg: 8 } },
         }
       : pageTemplate === `right sidebar`
-      ? { '.entry': { pr: [0, 0, 0, layoutWidth[type]] } }
+      ? { '.entry': { pr: { base: 0, lg: 8 } } }
       : ''
-    : ''
+    : { display: 'block' }
 
   return {
     containerStyles,
     sidebarSide,
     sidebarPage,
     sidebarWidgets,
-    layoutWidth,
+    getLayoutWidth,
   }
 }
 
-export { useLayoutStyles }
+export { useLayoutStyles, useLayoutWidth }

@@ -1,13 +1,19 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
+import { Button } from '@chakra-ui/react'
+
 import { Link } from 'gatsby'
 
 export const TaxonomyItem = ({ taxName, item, ...props }) => (
-  <Link
+  <Button
+    as={Link}
+    size="sm"
+    aria-label="visit taxonomy page"
+    mr={3}
+    mb={[3, 0]}
     to={`${item.uri}`}
     aria-label={`visit ${taxName} ${item.name} page`}
-    sx={{ mr: `xxs`, mb: `xs`, variant: `buttons.primary.small` }}
+    {...props}
   >
     {item.name}
-  </Link>
+  </Button>
 )

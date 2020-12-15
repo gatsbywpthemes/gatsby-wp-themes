@@ -1,11 +1,12 @@
 const config = require('./config')
+const path = require('path')
 
 module.exports = {
   siteMetadata: {
     title: 'Gatsby theme WordPress Starter Demo',
     description: 'Gatsby starter site for Gatsby Theme Wordpress Theme.',
     author: '@alexadark',
-    wordPressUrl: config.wordpressUrl,
+    wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl: config.siteUrl,
     social: [
       {
@@ -31,6 +32,8 @@ module.exports = {
     ],
   },
   plugins: [
+    '@chakra-ui/gatsby-plugin',
+
     {
       resolve: 'gatsby-theme-blog-data',
       options: {
@@ -46,28 +49,40 @@ module.exports = {
         pathPrefix: config.pathPrefix,
       },
     },
-    'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-theme-ui',
     'gatsby-plugin-sass',
-
     {
       resolve: 'gatsby-plugin-wpcf7',
       options: {
-        wordPressUrl: config.wordPressUrl,
+        wordPressUrl: process.env.GATSBY_WP_URL,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        satrertSrc: path.join(__dirname, 'src'),
+        starterPages: path.join(__dirname, 'src/pages'),
+        starterStyles: path.join(__dirname, 'src/styles'),
+        starterComponents: path.join(__dirname, 'src/components'),
+        starterUiComponents: path.join(
+          __dirname,
+          'src/components/ui-components'
+        ),
+        starterUtils: path.join(__dirname, 'src/utils'),
+        config: path.join(__dirname, 'config'),
+        contexts: path.join(__dirname, 'src/contexts'),
       },
     },
     {
       resolve: 'gatsby-plugin-wordpress-lightbox',
-      options: {}
+      options: {},
     },
 
-    // {
-    //   resolve: 'gatsby-plugin-mailchimp',
-    //   options: {
-    //     endpoint:process.env.GATSBY_MAILCHIMP_ENDPOINT
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
+      },
+    },
   ],
 }

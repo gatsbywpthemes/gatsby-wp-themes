@@ -1,17 +1,20 @@
-/** @jsx jsx */
-import { jsx, Container } from 'theme-ui'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { SlideSidebar, SiteBranding } from './index'
+import { Menu, SiteBranding, SlideSidebar } from 'starterComponents'
+import { Container } from 'starterUiComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { SearchForm } from '../search'
-import { ColorSwitch } from '../index'
-import { headerStyles } from '../../styles'
+
+import { ColorSwitch } from 'starterComponents'
+import { SearchModal } from 'starterComponents'
+import {
+  Box,
+  Flex,
+  HStack,
+  useColorModeValue as colorMode,
+} from '@chakra-ui/react'
 
 export const Header = () => {
-  const { search } = useThemeOptions()
-  const styles = search
-    ? { justifyContent: [`flex-start`, `flex-start`, `center`] }
-    : { justifyContent: `flex-start` }
+  const { search, menuName } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -27,46 +30,31 @@ export const Header = () => {
   const { title } = data.wp.generalSettings
 
   return (
-    <header className="header" sx={{ ...headerStyles }}>
-      <Container className="container">
-        {search && (
-          <SearchForm
-            sx={{
-              width: [`100%`, `100%`, `33%`],
-              display: `flex`,
-              justifyContent: [`center`, `center`, `flex-start`],
-            }}
+    <Box
+      as="header"
+      color={colorMode('headerColor', 'modes.dark.headerColor')}
+      bg={colorMode('headerBg', 'modes.dark.headerBg')}
+      py={4}
+      className="header"
+      boxShadow="md"
+    >
+      <Container display="flex" justifyContent="space-between">
+        <Flex>
+          <SiteBranding title={title} />
+          {search && <SearchModal />}
+        </Flex>
+        <HStack>
+          <Menu
+            menuName={menuName}
+            orientation="H"
+            display={{ base: 'none', lg: 'block' }}
           />
-        )}
 
-        <SiteBranding
-          title={title}
-          sx={{
-            width: [`50%`, `50%`, `33%`],
-            display: `flex`,
-            ...styles,
-          }}
-        />
+          <SlideSidebar display={{ base: 'block', lg: 'none' }} />
 
-        <SlideSidebar
-          sx={{
-            width: [`50%`, `50%`, `33%`],
-            display: `flex`,
-            justifyContent: `flex-end`,
-          }}
-        />
+          <ColorSwitch />
+        </HStack>
       </Container>
-
-      <ColorSwitch
-        sx={{
-          position: `absolute`,
-          right: [`6%`, `6%`, `2%`],
-          top: [15, 15, 25],
-          '.headroom--pinned &': {
-            top: [10, 10, 15],
-          },
-        }}
-      />
-    </header>
+    </Box>
   )
 }

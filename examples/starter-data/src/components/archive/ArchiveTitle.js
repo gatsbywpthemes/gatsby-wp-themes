@@ -1,17 +1,28 @@
-/** @jsx jsx */
-import { jsx, Flex } from 'theme-ui'
+import React from 'react'
+import { Box, Heading, useColorModeValue as colorMode } from '@chakra-ui/react'
 
 export const ArchiveTitle = ({ name, text }) => {
   return (
-    <Flex className="archive-title" sx={{ justifyContent: `flex-start` }}>
-      <h1
-        sx={{
-          variant: `text.special.archiveTitle`,
-          mt: 0,
-        }}
+    <Box
+      px={[4, 6]}
+      py={3}
+      mb={10}
+      borderRadius="lg"
+      display="inline-block"
+      bg={colorMode('archiveTitleBg', 'modes.dark.archiveTitleBg')}
+      className="archive-title"
+      boxShadow="lg"
+    >
+      <Heading
+        fontSize="xl"
+        letterSpacing="wider"
+        textTransform="uppercase"
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-easing="ease"
       >
         {text} {name}
-      </h1>
-    </Flex>
+      </Heading>
+    </Box>
   )
 }

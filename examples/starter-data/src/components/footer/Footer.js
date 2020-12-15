@@ -1,24 +1,21 @@
-/** @jsx jsx */
-import { Container, jsx, Box } from 'theme-ui'
-import { FooterContent } from './index'
-import { SocialFollows } from '../social'
+import React from 'react'
+import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
+import { Container } from 'starterUiComponents'
 
-import { footerStyles, socialStyles } from '../../styles'
+import { FooterContent } from 'starterComponents'
+import { SocialFollows } from 'starterComponents'
 
 export const Footer = () => (
-  <footer sx={{ ...footerStyles }}>
-    <Container sx={{ py: 0 }}>
-      <FooterContent />
-      <Box className="inverse">
-        <SocialFollows
-          sx={{
-            ...socialStyles.follow,
-            display: 'flex',
-            mt: `xs`,
-            mb: 0,
-          }}
-        />
-      </Box>
+  <Box
+    as="footer"
+    py={7}
+    boxShadow="md"
+    bg={colorMode('footerBg', 'modes.dark.footerBg')}
+    color={colorMode('footerColor', 'modes.dark.footerColor')}
+  >
+    <Container>
+      <FooterContent mb={4} />
+      <SocialFollows />
     </Container>
-  </footer>
+  </Box>
 )

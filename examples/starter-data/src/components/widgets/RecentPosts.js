@@ -1,6 +1,6 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { widgetStyles } from '../../styles'
+import React from 'react'
+import { VStack, HStack, Box, Link as ChakraLink } from '@chakra-ui/react'
+import { BorderTitle } from 'starterUiComponents'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'
@@ -38,18 +38,16 @@ export const RecentPosts = (props) => {
 
   const { nodes } = data.allWpPost
   return (
-    <section
-      sx={{ ...widgetStyles.recentPosts }}
-      className="widget widget-recent-posts"
-      {...props}
-    >
-      <h2 className="widget-title">Recent Posts</h2>
-      <ul>
+    <section className="widget widget-recent-posts" {...props}>
+      <BorderTitle as="h2" mt={2} mb={5} className="widget-title">
+        Recent Posts
+      </BorderTitle>
+      <VStack spacing={5} align="flex-start">
         {nodes.length
           ? nodes.map((post) => {
               const uri = normalize(`${post.uri}`)
               return (
-                <li key={post.id}>
+                <HStack spacing={4} key={post.id}>
                   <Link aria-label={`Read more - ${post.title}`} to={uri}>
                     {post.featuredImage && (
                       <Img
@@ -60,22 +58,32 @@ export const RecentPosts = (props) => {
                         }
                       />
                     )}
-                  </Link>
-                  <div className="textual">
-                    <Link className="widget-post-date" to={uri}>
-                      <time className="entry-date" dateTime={post.date}>
-                        {moment(post.date).format(`MMMM DD, YYYY`)}
-                      </time>
-                    </Link>
-                    <Link className="widget-post-title" to={uri}>
+                  </Link>{' '}
+                  <Box>
+                    <Box
+                      as="time"
+                      display="block"
+                      textStyle="special"
+                      fontWeight="bold"
+                      className="widget-post-date"
+                      className="entry-date"
+                      dateTime={post.date}
+                    >
+                      {moment(post.date).format(`MMMM DD, YYYY`)}
+                    </Box>{' '}
+                    <ChakraLink
+                      as={Link}
+                      className="widget-post-title"
+                      to={uri}
+                    >
                       {post.title}
-                    </Link>
-                  </div>
-                </li>
+                    </ChakraLink>
+                  </Box>
+                </HStack>
               )
             })
           : null}
-      </ul>
+      </VStack>
     </section>
   )
 }

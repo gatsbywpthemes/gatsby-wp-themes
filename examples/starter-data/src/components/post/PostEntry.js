@@ -1,7 +1,11 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
+import {
+  Box,
+  Center,
+  Divider,
+  useColorModeValue as colorMode,
+} from '@chakra-ui/react'
+
 import {
   PostEntryTitle,
   PostEntryMedia,
@@ -10,10 +14,10 @@ import {
   PostEntryInfo,
   ReadMoreButton,
   PrevNextPostNavigation,
-} from './index'
+  SocialShare,
+} from 'starterComponents'
+import { Card } from 'starterUiComponents'
 import normalize from 'normalize-path'
-import { SocialShare } from '../social'
-import { articleStyles } from '../../styles'
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? 'no-img' : ''
@@ -21,32 +25,67 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
     ? post.featuredImage.node.localFile.childImageSharp.fluid.src
     : null
   return (
-    <article
+    <Box
+      as="article"
+      mb={14}
       className="entry"
-      sx={{
-        ...articleStyles,
-        '.entry-content': {
-          pb: `m`,
-          borderBottom: (t) => `1px solid ${t.colors.border}`,
-        },
-      }}
       {...props}
+      data-sal={location !== 'single' ? 'slide-up' : null}
+      data-sal-duration="1000"
+      data-sal-easing="ease"
     >
-      <PostEntryMedia location={location} post={post} className="entry-media" />
+      <PostEntryMedia
+        location={location}
+        post={post}
+        className="entry-media"
+        sx={{ '.gatsby-image-wrapper': { borderTopRadius: 'lg' } }}
+      />
 
-      <div className={`content ${noImgClass}`}>
+      <Card
+        borderTopRadius={media ? 0 : 'lg'}
+        className={`content ${noImgClass}`}
+      >
         <PostEntryTitle
           location={location}
           post={post}
+          textTransform="uppercase"
+          fontSize={['2xl', '3xl']}
+          mb={5}
           className="entry-title"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-easing="ease"
         />
         <PostEntryInfo className="entry-info" post={post} />
 
-        <PostEntryContent location={location} post={post} />
+        <PostEntryContent
+          location={location}
+          post={post}
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-easing="ease"
+        />
+        {location !== 'single' && (
+          <Center height={20}>
+            <Divider />
+          </Center>
+        )}
 
-        <div className="entry-footer" sx={{ mt: `xl` }}>
-          <PostEntryMeta className="entry-meta" post={post} />
-          <ReadMoreButton location={location} post={post} />
+        <div className="entry-footer">
+          <PostEntryMeta
+            className="entry-meta"
+            post={post}
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          />
+          <ReadMoreButton
+            location={location}
+            post={post}
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          />
         </div>
         {location === 'single' && (
           <>
@@ -58,7 +97,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
             <PrevNextPostNavigation ctx={ctx} />
           </>
         )}
-      </div>
-    </article>
+      </Card>
+    </Box>
   )
 }

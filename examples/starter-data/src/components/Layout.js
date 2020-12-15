@@ -1,55 +1,44 @@
-/** @jsx jsx */
-import { jsx, Box, useThemeUI } from 'theme-ui'
-import { Fragment } from 'react'
-import { Header } from './header'
-import { Footer } from './footer'
-import { Global } from '@emotion/core'
-import { Grommet } from 'grommet'
-import { grommetStyles, globalStyles } from '../styles'
+import React from 'react'
+import { Footer, Header } from 'starterComponents'
+import { Box } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
-
-import '../styles/scss/styles.scss'
+import 'starterStyles/wp-styles/styles.scss'
 
 export const Layout = ({ children, page, type = 'page' }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
+  const pageTemplate = page?.template
+    ? page.template.templateName.toLowerCase()
+    : ''
 
-  const { theme } = useThemeUI()
-
-  const pageTemplate = page && page.template ? page.template.__typename : ''
-
-  const fullWidthClass =
-    pageTemplate === 'WpFullWidthTemplate' ? 'fullWidth' : ''
-
+  const fullWidthClass = pageTemplate === 'full width' ? 'fullWidth' : ''
   return (
-    <Grommet theme={grommetStyles}>
-      <Global styles={globalStyles(theme)} />
+    <Box
+      sx={{
+        '&.fullWidth': {
+          '.mainContainer': {
+            maxWidth: `100%`,
+            px: 0,
+          },
+        },
+      }}
+      className={`${layoutClass}-${type} ${fullWidthClass}`}
+    >
+      <Box as={Headroom} sx={{ '&>div': { zIndex: '2!important' } }}>
+        <Header />
+      </Box>
       <Box
+        as="main"
+        py={16}
         sx={{
-          '&.fullWidth': {
-            '.mainContainer': {
-              maxWidth: `100%`,
-              px: 0,
-            },
+          '.fullWidth &': {
+            py: 0,
+            // mt: '-32px',
           },
         }}
-        className={`${layoutClass}-${type} ${fullWidthClass}`}
       >
-        <Headroom>
-          <Header />
-        </Headroom>
-        <main
-          sx={{
-            py: `xxl`,
-            '.fullWidth &': {
-              py: 0,
-              mt: -32,
-            },
-          }}
-        >
-          <Fragment>{children}</Fragment>
-        </main>
-        <Footer />
+        {children}
       </Box>
-    </Grommet>
+      <Footer />
+    </Box>
   )
 }

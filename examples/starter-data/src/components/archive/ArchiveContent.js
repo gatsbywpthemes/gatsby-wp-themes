@@ -1,42 +1,50 @@
-/** @jsx jsx */
-import { jsx, Container, Flex } from 'theme-ui'
+import React from 'react'
+import { Flex } from '@chakra-ui/react'
+import { Container } from 'starterUiComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { Sidebar } from '../index'
-import { ArchiveTitle, PostsList, Pagination } from './index'
+import { Sidebar } from 'starterComponents'
+import { ArchiveTitle, PostsList, Pagination } from 'starterComponents'
+import { useLayoutWidth } from 'starterUtils/hooks'
 
 export const ArchiveContent = ({ posts, ctx, name }) => {
-  const { layoutWidth, archiveSidebar, sidebarWidgets } = useThemeOptions()
+  const { archiveSidebar, sidebarWidgets } = useThemeOptions()
+
+  const [archiveWidth, xl] = useLayoutWidth('archive')
 
   const containerStyles =
     sidebarWidgets && archiveSidebar
       ? {
-          maxWidth: 'container',
+          maxWidth: xl,
           '.posts-list': {
-            width: [`100%`, `100%`, `100%`, `70%`],
+            width: { base: '100%', lg: '67%', xl: '70%' },
           },
-          '.sidebar': { width: [`100%`, `100%`, `100%`, `30%`] },
+          '.sidebar': { width: { base: '100%', lg: '33%', xl: '30%' } },
         }
-      : { maxWidth: layoutWidth.archive }
+      : { maxWidth: archiveWidth() }
 
   const sidebarSide =
     sidebarWidgets && archiveSidebar
       ? archiveSidebar === `left`
         ? {
             flexDirection: `row-reverse`,
-            '.posts-list': { pl: [0, 0, 0, layoutWidth.archive] },
+            '.posts-list': {
+              pl: { base: 0, lg: 8 },
+            },
           }
-        : { '.posts-list': { pr: [0, 0, 0, layoutWidth.archive] } }
+        : {
+            '.posts-list': {
+              pr: { base: 0, lg: 8 },
+            },
+          }
       : ''
+
   return (
-    <Container
-      sx={{ ...containerStyles, maxWidth: 'container' }}
-      className="mainContainer"
-    >
+    <Container className="mainContainer" sx={{ ...containerStyles }}>
       {name && <ArchiveTitle text="Posts from: " name={name} />}
       <Flex
         sx={{
           ...sidebarSide,
-          flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+          flexWrap: { base: `wrap`, lg: `wrap` },
           alignItems: `flex-start`,
         }}
       >

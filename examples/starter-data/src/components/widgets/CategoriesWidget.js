@@ -1,7 +1,7 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
+import { VStack, Link as ChakraLink } from '@chakra-ui/react'
+import { BorderTitle } from 'starterUiComponents'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { widgetStyles } from '../../styles'
 
 const ALL_CATEGORIES_QUERY = graphql`
   query GetCategories {
@@ -21,21 +21,19 @@ export const CategoriesWidget = (props) => {
   const { nodes } = data.allWpCategory
   const nonEmptyCategories = nodes.filter((el) => el.count)
   return (
-    <section
-      sx={{ ...widgetStyles.categories }}
-      className="widget widget-categories"
-      {...props}
-    >
-      <h2 className="widget-title">Categories</h2>
-      <ul>
+    <section className="widget widget-categories" {...props}>
+      <BorderTitle as="h2" className="widget-title" mt={2} mb={5}>
+        Categories
+      </BorderTitle>
+      <VStack align="flex-start">
         {nonEmptyCategories.length
           ? nonEmptyCategories.map((category) => (
-              <li key={category.slug}>
-                <Link to={`${category.uri}`}>{category.name}</Link>
-              </li>
+              <ChakraLink as={Link} key={category.slug} to={`${category.uri}`}>
+                {category.name}
+              </ChakraLink>
             ))
           : null}
-      </ul>
+      </VStack>
     </section>
   )
 }

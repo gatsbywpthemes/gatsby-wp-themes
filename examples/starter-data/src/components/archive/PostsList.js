@@ -1,11 +1,10 @@
-/** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
-import { PostEntry } from '../post'
+import React from 'react'
+import { PostEntry } from 'starterComponents'
 
 export const PostsList = ({ posts, ...props }) => (
-  <Box className="posts-list" {...props}>
-    {posts.map(post => (
+  <div className="posts-list" {...props}>
+    {posts.map((post) => (
       <PostEntry key={post.id} location="archive" post={post} />
     ))}
-  </Box>
+  </div>
 )

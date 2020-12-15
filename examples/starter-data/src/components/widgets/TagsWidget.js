@@ -1,7 +1,7 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
+import { Flex, Box, chakra } from '@chakra-ui/react'
+import { BorderTitle } from 'starterUiComponents'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { widgetStyles } from '../../styles'
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {
@@ -15,27 +15,32 @@ const ALL_TAGS_QUERY = graphql`
   }
 `
 
-export const TagsWidget = props => {
+const ChakraLink = chakra(Link)
+export const TagsWidget = (props) => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
   return (
     nodes.length && (
-      <section
-        sx={{ ...widgetStyles.tags }}
-        className="widget widget-tags"
-        {...props}
-      >
-        <h2 className="widget-title">Tags</h2>
-        <ul>
+      <section className="widget widget-tags" {...props}>
+        <BorderTitle as="h2" mt={2} mb={5} className="widget-title">
+          Tags
+        </BorderTitle>
+        <Flex justify="center" wrap="wrap">
           {nodes.map((tag, index) => (
-            <li key={tag.slug}>
-              <Link to={`/tag/${tag.slug}`}>
+            <Box textStyle="special" pb={3} key={tag.slug}>
+              <ChakraLink
+                to={`/tag/${tag.slug}`}
+                pr={1}
+                pl={2}
+                d="inline-block"
+                _hover={{ color: 'primary' }}
+              >
                 {tag.name} ({tag.count})
-              </Link>
+              </ChakraLink>
               {index < nodes.length - 1 && ' · '}
-            </li>
+            </Box>
           ))}
-        </ul>
+        </Flex>
       </section>
     )
   )

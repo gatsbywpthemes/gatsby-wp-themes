@@ -1,21 +1,25 @@
-/** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { Widgets } from './widgets'
-import { sidebarStyles } from '../styles/sidebarStyles'
+import { Box } from '@chakra-ui/react'
+import { Card } from 'starterUiComponents'
+import { Widget } from 'starterComponents'
 
 export const Sidebar = ({ widgets, ...props }) => {
   return (
     <>
       {widgets && widgets.length > 0 && (
-        <Box className="sidebar" sx={sidebarStyles} {...props}>
+        <Card className="sidebar" sx={{ p: [5, 10], pt: [0, 0] }} {...props}>
           {widgets.map((widget, i) => (
-            <Box sx={{ my: `l` }} key={i}>
-              <Widgets widget={widget} />
+            <Box
+              key={i}
+              sx={{ '.widget': { my: 10 } }}
+              data-sal="slide-up"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
+              <Widget widget={widget} />
             </Box>
           ))}
-        </Box>
+        </Card>
       )}
     </>
   )

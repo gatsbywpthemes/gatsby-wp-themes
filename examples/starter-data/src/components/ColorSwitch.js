@@ -1,29 +1,17 @@
-/** @jsx jsx */
-import { jsx, useColorMode } from 'theme-ui'
-import { Button } from 'grommet'
-import { WiDaySunny, WiMoonAltWaningCrescent4 } from 'react-icons/wi'
+import React from 'react'
+import { useColorMode, IconButton } from '@chakra-ui/react'
+
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 export const ColorSwitch = (props) => {
-  const [colorMode, setColorMode] = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <Button
-      a11yTitle="Toggle dark mode"
-      focusIndicator={false}
-      onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}
+    <IconButton
+      aria-label="Toggle color mode"
+      variant="unstyled"
+      onClick={toggleColorMode}
+      icon={colorMode === 'light' ? <MoonIcon mt="-5px" /> : <SunIcon />}
       {...props}
-    >
-      {colorMode === 'dark' ? (
-        <WiDaySunny sx={{ width: `30px`, height: `30px` }} />
-      ) : (
-        <WiMoonAltWaningCrescent4
-          sx={{
-            width: `25px`,
-            height: `25px`,
-            svg: { stroke: `accent`, fill: `accent` },
-            mt: 3,
-          }}
-        />
-      )}
-    </Button>
+    />
   )
 }

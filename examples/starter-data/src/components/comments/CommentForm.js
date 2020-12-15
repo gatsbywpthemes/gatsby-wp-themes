@@ -1,11 +1,19 @@
-/* eslint-disable no-useless-escape */
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useState, Fragment } from 'react'
+import React, { useState } from 'react'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
-import { commentStyles } from '../../styles'
+import {
+  Box,
+  Flex,
+  FormErrorMessage,
+  FormLabel,
+  FormControl,
+  Input,
+  Button,
+  useColorModeValue as colorMode,
+} from '@chakra-ui/react'
 
+import { CommentStatusFeedback } from './index'
+import { inputFields } from './inputfields'
 const commentSubmitQuery = gql`
   mutation(
     $author: String
@@ -29,51 +37,12 @@ const commentSubmitQuery = gql`
   }
 `
 
-const inputFields = [
-  {
-    tag: 'textarea',
-    name: 'comment',
-    type: null,
-    label: 'Comment*',
-    required: true,
-    placeholder: 'Your comment',
-    pattern: null,
-  },
-  {
-    tag: 'input',
-    name: 'author',
-    type: 'text',
-    label: 'Name*',
-    required: true,
-    pattern: null,
-  },
-  {
-    tag: 'input',
-    name: 'email',
-    type: 'email',
-    label: 'Email*',
-    required: true,
-    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-  },
-  {
-    tag: 'input',
-    name: 'url',
-    type: 'url',
-    label: 'Website',
-    required: false,
-    pattern: /^$|(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/i,
-  },
-]
-
-export const CommentForm = ({
-  commentId = 0,
-  postId,
-  cancelReply,
-  doOnCompleted,
-}) => {
+export const CommentForm = (
+  props,
+  { commentId = 0, postId, cancelReply, doOnCompleted }
+) => {
   const { register, handleSubmit, errors } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
-
   const [addComment] = useMutation(commentSubmitQuery, {
     onCompleted() {
       setCommentStatus('success')
@@ -87,25 +56,36 @@ export const CommentForm = ({
       setCommentStatus('error')
     },
   })
+
   const CommentNotes = () => {
     return (
-      <p className="comment-notes">
+      <Box
+        as="p"
+        textStyle="special"
+        textAlign="center"
+        w="full"
+        className="comment-notes"
+      >
         <span id="email-notes">Your email address will not be published.</span>
         <br />
         Required fields are marked <span className="required">*</span>
-      </p>
+      </Box>
     )
   }
 
   const CommentSubmitButton = () => {
     return (
-      <button
-        className="submit-button"
-        type="submit"
-        disabled={commentStatus === 'loading'}
-      >
-        Post Comment
-      </button>
+      <Box w="full">
+        <Button
+          d="flex"
+          ml="auto"
+          className="submit-button"
+          type="submit"
+          disabled={commentStatus === 'loading'}
+        >
+          Post Comment
+        </Button>
+      </Box>
     )
   }
 
@@ -122,87 +102,96 @@ export const CommentForm = ({
     })
   }
 
-  const CommentStatusFeedback = () => {
-    const successNote =
-      'If it does not appear in a few seconds, it means that it is awaiting moderation.'
-
-    switch (commentStatus) {
-      case 'success':
-        return (
-          <p sx={{ color: 'text' }}>
-            {`Your comment has been successfully submitted. ${successNote} `}
-          </p>
-        )
-      case 'loading':
-        return (
-          <p sx={{ color: 'text' }}>
-            Please wait. Your comment is being submitted.
-          </p>
-        )
-      case 'error':
-        return (
-          <p sx={{ color: 'text' }}>
-            There was an error in your submission. Please try again later.
-          </p>
-        )
-      default:
-        return ''
-    }
-  }
-
   return (
-    <Fragment>
-      {!!commentStatus && <CommentStatusFeedback />}
+    <>
+      <CommentStatusFeedback commentStatus={commentStatus} />
       {!commentStatus && (
-        <div sx={commentStyles.formWrapper}>
-          {!commentId && <h2 sx={commentStyles.title}>Leave a comment</h2>}
+        <Box>
+          {!commentId && (
+            <Box as="h2" textAlign="center" mb={8}>
+              Leave a comment
+            </Box>
+          )}
           {!!commentId && (
-            <button
-              sx={commentStyles.replyButton}
-              type="button"
+            <Button
+              variant="link"
+              display="flex"
+              ml="auto"
+              color="inherit"
               className="comment-button-cancel"
               onClick={cancelReply}
             >
-              Cancel
-            </button>
+              <span>Cancel</span>
+            </Button>
           )}
-          <form
+          <Flex
+            as="form"
+            wrap="wrap"
+            justify="space-between"
+            bg={colorMode('cardBg', 'modes.dark.cardBg')}
+            borderRadius="lg"
+            p={['4', '8']}
             onSubmit={handleSubmit(onSubmit)}
             noValidate
-            sx={commentStyles.form}
           >
             <CommentNotes />
             {inputFields.map((el) => {
               const Tag = el.tag
-              const textarea = Tag === 'textarea' ? { rows: 6, cols: 48 } : {}
+              const pStyles =
+                Tag === 'textarea'
+                  ? {
+                      w: 'full',
+                    }
+                  : {
+                      w: ['full', 'calc(50% - 1rem)'],
+                    }
+              const textarea =
+                Tag === 'textarea' ? { rows: 6, cols: 48, h: 'auto' } : {}
               return (
-                <p key={el.name} className={`comment-form-${el.name}`}>
-                  <label htmlFor={el.name}>{el.label}</label>
-                  <Tag
-                    ref={register({
-                      required: el.required,
-                      pattern: el.pattern,
-                    })}
-                    type={el.type}
-                    id={el.name}
-                    name={el.name}
-                    placeholder={el.placeholder}
-                    aria-required={el.required}
-                    {...textarea}
-                  />
-                  {errors[el.name] && errors[el.name].type === 'required' && (
-                    <span className="error">Required</span>
-                  )}
-                  {errors[el.name] && errors[el.name].type === 'pattern' && (
-                    <span className="error">Invalid value</span>
-                  )}
-                </p>
+                <FormControl
+                  key={el.name}
+                  isInvalid={errors[el.name]}
+                  mb="6"
+                  {...pStyles}
+                >
+                  <FormLabel
+                    textStyle="special"
+                    fontWeight="bold"
+                    htmlFor={el.name}
+                    mb="0"
+                  >
+                    {el.label}
+                    <Input
+                      as={Tag}
+                      d="block"
+                      layerStyle="input"
+                      ref={register({
+                        required: el.required,
+                        pattern: el.pattern,
+                      })}
+                      type={el.type}
+                      id={el.name}
+                      name={el.name}
+                      placeholder={el.placeholder}
+                      aria-required={el.required}
+                      {...textarea}
+                    />
+                  </FormLabel>
+                  <FormErrorMessage fontStyle="italic" mt="0">
+                    {errors[el.name]?.type === 'required' && (
+                      <span className="error">Required</span>
+                    )}
+                    {errors[el.name]?.type === 'pattern' && (
+                      <span className="error">Invalid value</span>
+                    )}
+                  </FormErrorMessage>
+                </FormControl>
               )
             })}
             <CommentSubmitButton />
-          </form>
-        </div>
+          </Flex>
+        </Box>
       )}
-    </Fragment>
+    </>
   )
 }

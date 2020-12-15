@@ -1,10 +1,13 @@
-/** @jsx jsx */
-import { jsx, Flex, Box } from 'theme-ui'
+import React from 'react'
 import { useState } from 'react'
-import { Button } from 'grommet'
-import { Search as SearchIcon, FormClose } from 'grommet-icons'
+import {
+  Input,
+  IconButton,
+  HStack,
+  useColorModeValue as colorMode,
+} from '@chakra-ui/react'
+import { CloseIcon } from '@chakra-ui/icons'
 import { SearchQueries } from './index'
-import { searchStyles } from '../../styles'
 
 export const SearchForm = (props) => {
   const [value, setValue] = useState('')
@@ -25,55 +28,53 @@ export const SearchForm = (props) => {
   }
 
   return (
-    <Box {...props}>
-      <Flex sx={{ ...searchStyles }}>
-        <Button
-          a11yTitle="Search here"
-          focusIndicator={false}
-          icon={<SearchIcon />}
-          sx={{ ...searchStyles.icon }}
+    <div {...props}>
+      <HStack
+        sx={{
+          'input:-webkit-autofill,input:-webkit-autofill:hover, input:-webkit-autofill:focus,textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus': {
+            boxShadow: (theme) =>
+              colorMode(
+                `0 0 0px 1000px ${theme.colors.searchBg} inset`,
+                `0 0 0px 1000px ${theme.colors.modes.dark.searchBg} inset`
+              ),
+            WebkitTextFillColor: (theme) =>
+              colorMode(theme.colors.text, theme.colors.modes.dark.text),
+          },
+        }}
+      >
+        <Input
+          value={value}
+          className="search-box"
+          type="search"
+          variant="unstyled"
+          maxW="80%"
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+          onKeyDown={handleKeyDown}
+          placeholder="search here..."
+          fontSize="3xl"
+          borderLeft="5px solid"
+          borderColor="primary"
+          borderRadius={0}
+          px={5}
+          name="search"
+          aria-label="Search here"
         />
 
-        <Box
-          className="search-box"
-          sx={{
-            ...searchStyles.box,
-            mb: [`20px`, 0],
-          }}
-        >
-          <input
-            value={value}
-            type="search"
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-            onKeyDown={handleKeyDown}
-            placeholder="search here..."
-            name="search"
-            sx={{ mb: [0, 0, `15px`] }}
-            aria-label="Search here"
-          />
-        </Box>
         {value.length > 0 && (
-          <Button
-            a11yTitle="Reset Search"
-            icon={<FormClose />}
-            color="white"
-            sx={{
-              p: 0,
-              svg: {
-                stroke: `searchColor`,
-                ml: `-12px`,
-                mb: [`xxs`, `xs`, `xs`],
-              },
-            }}
+          <IconButton
+            aria-label="Reset Search"
+            variant="ghost"
+            size="sm"
+            icon={<CloseIcon color={colorMode('text', 'modes.dark.text')} />}
             onClick={() => {
               setValue('')
               setSearch('')
             }}
           />
         )}
-      </Flex>
+      </HStack>
       {search && <SearchQueries search={search} />}
-    </Box>
+    </div>
   )
 }
