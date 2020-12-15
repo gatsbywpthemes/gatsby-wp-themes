@@ -1,11 +1,12 @@
 import React from 'react'
+import { Box, Link } from '@chakra-ui/react'
 
-export const FooterContent = () => {
+export const FooterContent = (props) => {
   return (
-    <div>
-      © {new Date().getFullYear()} | Built with{` `}
-      <a href="https://www.wpgraphql.com">WPGraphQL</a> and{` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </div>
+    <Box textAlign="center" {...props}>
+      © {new Date().getFullYear()} | Built with{`   `}
+      <Link href="https://www.wpgraphql.com">WPGraphQL</Link> and{`  `}
+      <Link href="https://www.gatsbyjs.org">Gatsby</Link>
+    </Box>
   )
 }

@@ -1,81 +1,60 @@
-/** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
-
-import { useState } from 'react'
-import { Menu as MenuIcon, Close } from 'grommet-icons'
-import { Layer, Button } from 'grommet'
-import { Menu } from './index'
+import React from 'react'
+import { Menu, Widget } from 'starterComponents'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { Widgets } from '../widgets'
-import { slideSidebarStyles } from '../../styles'
+
+import {
+  useDisclosure,
+  Drawer,
+  IconButton,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useColorModeValue as colorMode,
+  Box,
+} from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 
 export const SlideSidebar = (props) => {
-  const [isMenuOpen, setOpenMenu] = useState(false)
-  const [openClass, setOpenClass] = useState(false)
-  const { slideMenuWidgets, menuName } = useThemeOptions()
-
-  const openMenu = () => {
-    setOpenClass(true)
-    setOpenMenu(true)
-  }
-  const closeMenu = () => {
-    setOpenClass(false)
-    setTimeout(() => setOpenMenu(false), 200)
-  }
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { menuName, slideMenuWidgets: widgets } = useThemeOptions()
 
   return (
     <Box {...props}>
-      <Button
-        icon={<MenuIcon />}
-        a11yTitle="Open navigation menu"
-        onClick={openMenu}
-        focusIndicator={false}
-        className={openClass ? 'btn-menu-opened' : 'btn-menu-closing'}
-        sx={{
-          variant: `buttons.hamburger`,
-        }}
-      />
-      {isMenuOpen && (
-        <Layer
-          position="right"
-          full="vertical"
-          modal
-          responsive={false}
-          onClickOutside={closeMenu}
-          onEsc={closeMenu}
-          sx={slideSidebarStyles}
+      <IconButton
+        aria-label="open menu"
+        variant="unstyled"
+        icon={
+          <HamburgerIcon
+            boxSize={6}
+            color={colorMode('text', 'modes.dark.text')}
+          />
+        }
+        onClick={onOpen}
+        size="lg"
+        boxSize={8}
+        cursor="pointer"
+      />{' '}
+      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent
+          bg={colorMode('mobileMenuBg', 'modes.dark.mobileMenuBg')}
+          minW={{ base: '100%', md: '420px' }}
+          color={colorMode('mobileMenuColor', 'modes.dark.mobileMenuColor')}
+          shadow="2xl"
+          p={4}
         >
-          <Button
-            icon={<Close />}
-            a11yTitle="Close navigation menu"
-            focusIndicator={false}
-            sx={{
-              pointer: `cursor`,
-              svg: {
-                stroke: `headerColor`,
-                width: `15px`,
-                height: `15px`,
-              },
-            }}
-            className="close"
-            onClick={closeMenu}
-          />
-
-          <Menu
-            menuName={menuName}
-            orientation="vertical"
-            closeMenu={closeMenu}
-          />
-
-          {slideMenuWidgets &&
-            slideMenuWidgets.length > 0 &&
-            slideMenuWidgets.map((widget, i) => (
-              <Box className="inverse" sx={{ mb: `l` }} key={i}>
-                <Widgets widget={widget} location="SlideMenu" />
+          <DrawerBody>
+            <DrawerCloseButton />
+            <Menu menuName={menuName} orientation="V" mt={7} />
+            {widgets.map((widget, i) => (
+              <Box key={i} sx={{ '.widget': { my: 10 } }}>
+                <Widget colorBg="dark" widget={widget} />
               </Box>
             ))}
-        </Layer>
-      )}
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   )
 }

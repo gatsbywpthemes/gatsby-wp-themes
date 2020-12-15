@@ -1,42 +1,36 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { Center, Heading, IconButton, HStack } from '@chakra-ui/react'
 import { Twitter, Facebook, Pinterest } from './icons'
 import { FiShare2 } from 'react-icons/fi'
-import { socialStyles } from '../../styles'
 
 export const SocialShare = ({ url, title, media }) => {
   return (
-    <>
-      <span
-        sx={{
-          ...socialStyles.share.icon,
-          mt: `m`,
-          mb: `xs`,
-        }}
-      >
-        <FiShare2 />
-      </span>
+    <Center flexDirection="column" mt={10}>
+      <Heading as="h3" fontSize="md" textTransform="uppercase" mb={4}>
+        Share on social media
+      </Heading>
+      <IconButton
+        isRound={true}
+        variant="outline"
+        colorScheme="gray"
+        size="sm"
+        cursor="auto"
+        icon={<FiShare2 />}
+      />
 
-      <div
-        sx={{
-          ...socialStyles.share.name,
-          mb: `l`,
-        }}
-      >
-        <Twitter url={url} title={title}>
+      <HStack fontWeight="bold" fontSize="sm" mt={4}>
+        <Twitter url={url} title={title} textStyle="link">
           Twitter
         </Twitter>
-        /
+        <span>/</span>
         <Facebook url={url} quote={title}>
           Facebook
         </Facebook>
-        /
+        <span>/</span>
         <Pinterest url={url} media={media}>
           Pinterest
         </Pinterest>
-      </div>
-    </>
+      </HStack>
+    </Center>
   )
 }

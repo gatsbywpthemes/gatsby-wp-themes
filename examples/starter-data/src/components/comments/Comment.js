@@ -1,40 +1,13 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import moment from 'moment'
-import { CommentForm } from './index'
-import { commentStyles } from '../../styles'
-
-const Reply = ({ commentId, actionOnClick }) => {
-  return (
-    <button
-      sx={commentStyles.replyButton}
-      type="button"
-      onClick={() => actionOnClick(commentId)}
-      className="comment-button-reply"
-    >
-      Reply
-    </button>
-  )
-}
-
-const Author = ({ name, url }) => {
-  return (
-    <div>
-      {url ? (
-        <a
-          className="comment-author"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {name}
-        </a>
-      ) : (
-        <span className="comment-author">{name}</span>
-      )}
-    </div>
-  )
-}
+import React from 'react'
+import { Date } from '../post'
+import {
+  CommentForm,
+  CommentContent,
+  CommentAuthor,
+  ReplyButton,
+  CommentNestingInfo,
+} from './index'
+import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
 
 export const Comment = (props) => {
   const {
@@ -47,10 +20,22 @@ export const Comment = (props) => {
     doOnCompleted,
   } = props
   return (
-    <li className="comment" sx={commentStyles.comment}>
-      <Author name={comment.author.name} url={comment.author.url} />
-      {moment(comment.date).format(`MMMM D, YYYY`)}
-      <div dangerouslySetInnerHTML={{ __html: comment.content }} />
+    <Box
+      as="li"
+      className="comment"
+      bg={colorMode('cardBg', 'modes.dark.cardBg')}
+      p="4"
+      shadow="lg"
+      borderRadius="md"
+    >
+      <CommentAuthor
+        name={comment.author.node.name}
+        url={comment.author.node.url}
+      />
+      <Box fontStyle="italic" fontSize="xs">
+        <Date date={comment.date} />
+      </Box>
+      <CommentContent content={comment.content} />
       {withReply ? (
         activeComment === comment.commentId ? (
           <CommentForm
@@ -60,13 +45,11 @@ export const Comment = (props) => {
             doOnCompleted={doOnCompleted}
           />
         ) : (
-          <Reply commentId={comment.commentId} actionOnClick={addReply} />
+          <ReplyButton commentId={comment.commentId} actionOnClick={addReply} />
         )
       ) : (
-        <p className="comment-nesting-info">
-          Only two levels of nesting is supported.
-        </p>
+        <CommentNestingInfo />
       )}
-    </li>
+    </Box>
   )
 }

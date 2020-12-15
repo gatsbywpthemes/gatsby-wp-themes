@@ -1,14 +1,11 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Fragment, useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
+import { Box, chakra } from '@chakra-ui/react'
 import { CommentForm, Comment } from './index'
-import { commentStyles } from '../../styles'
-import Loader from 'react-spinners/BeatLoader'
 
 const GET_COMMENTS = gql`
   query($postId: ID!) {
-    comments(where: { contentId: $postId, order: ASC }) {
+    comments(where: { contentId: $postId, order: ASC }, first: 1000) {
       nodes {
         ...CommentFields
         replies(where: { order: ASC }) {
@@ -46,11 +43,15 @@ const GET_COMMENTS = gql`
   fragment AuthorFields on CommentAuthor {
     name
     url
+    email
   }
 `
 
-export const CommentsList = ({ post }) => {
+export const CommentsList = ({ post, reloading }) => {
   const postId = post.databaseId
+  const { data, loading, error, refetch } = useQuery(GET_COMMENTS, {
+    variables: { postId },
+  })
   const [activeComment, setActiveComment] = useState(0)
   const cancelReply = () => {
     setActiveComment(0)
@@ -58,31 +59,24 @@ export const CommentsList = ({ post }) => {
   const addReply = (id) => {
     setActiveComment(id)
   }
-  const { data, loading, error, refetch } = useQuery(GET_COMMENTS, {
-    variables: { postId },
-  })
-
   const doOnCompleted = () => {
     refetch()
   }
-
-  if (loading)
-    return (
-      <Fragment>
-        <span sx={{ color: 'text' }}>Comments are loading...</span>
-        <Loader size={8} margin={5} />
-      </Fragment>
-    )
-  if (error) return `Error loading comments...`
-
-  const comments = data.comments.nodes
+  if (loading) return <p>Loading comments&hellip;</p>
+  if (error) return <p>Some errors occur.</p>
+  const comments = data.comments
   return (
-    <section>
-      {comments.length > 0 ? (
-        <section sx={commentStyles.section}>
-          <h2 sx={commentStyles.title}>Comments</h2>
-          <ul sx={commentStyles.list}>
-            {comments
+    <>
+      {comments.nodes.length > 0 ? (
+        <section>
+          <Box as="h2" textAlign="center" mb="8">
+            Comments
+          </Box>
+          <chakra.ul
+            mb="12"
+            sx={{ ul: { ml: '6' }, li: { listStyle: 'none', mb: '6' } }}
+          >
+            {comments.nodes
               .filter((el) => el.parent === null)
               .map((comment) => (
                 <Fragment key={comment.id}>
@@ -126,10 +120,10 @@ export const CommentsList = ({ post }) => {
                   )}
                 </Fragment>
               ))}
-          </ul>
+          </chakra.ul>
         </section>
       ) : (
-        <p sx={{ color: 'text' }}>No comments yet</p>
+        <p>No comments yet</p>
       )}
       {activeComment === 0 && (
         <CommentForm
@@ -138,6 +132,6 @@ export const CommentsList = ({ post }) => {
           cancelReply={cancelReply}
         />
       )}
-    </section>
+    </>
   )
 }

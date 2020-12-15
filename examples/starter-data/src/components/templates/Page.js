@@ -1,12 +1,14 @@
-/** @jsx jsx */
-import { jsx, Container, Flex, Box } from 'theme-ui'
-import { Layout } from '../Layout'
-import ParsedContent from '../../utils/ParsedContent'
-import { ActivatePageScripts, useLayoutStyles } from '../../utils/'
+import React from 'react'
+import { Flex, Box } from '@chakra-ui/react'
+import { Container, Card } from 'starterUiComponents'
+import { Layout, Sidebar } from 'starterComponents'
+import { ActivatePageScripts } from 'starterUtils'
+import { useLayoutStyles } from 'starterUtils/hooks'
+import ParsedContent from 'starterUtils/ParsedContent'
+
 import { Seo } from 'gatsby-plugin-wp-seo'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { Sidebar } from '../index'
-import { gutenbergStyles, articleStyles } from '../../styles'
+import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
   const {
@@ -17,15 +19,14 @@ const Page = ({ page, ctx }) => {
     uri,
     template: { templateName },
   } = page
-
-  const { skipTitle } = useThemeOptions()
-
   const {
     containerStyles,
     sidebarSide,
     sidebarPage,
     sidebarWidgets,
-  } = useLayoutStyles('page', templateName)
+  } = useLayoutStyles('page', templateName.toLowerCase())
+  const { skipTitle } = useThemeOptions()
+  console.log('template', templateName)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -45,23 +46,26 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <Container sx={{ ...containerStyles }} className="mainContainer">
+      <Container className="mainContainer" sx={{ ...containerStyles }}>
         <Flex
           sx={{
             ...sidebarSide,
-            flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+            flexWrap: { base: 'wrap', lg: 'nowrap' },
             alignItems: `flex-start`,
           }}
         >
-          <article
-            sx={{
-              ...articleStyles,
-              width: `100%`,
-              borderBottom: `none`,
-            }}
-            className="entry"
-          >
-            <div className="content page-content" sx={{ borderRadius: `s` }}>
+          <article className="entry">
+            <Card
+              className="content page-content"
+              sx={
+                templateName === 'Full Width' && {
+                  p: 0,
+                  borderRadius: 0,
+                  boxShadow: 0,
+                }
+              }
+              mb={{ base: 14, lg: 0 }}
+            >
               {skipTitle &&
                 !skipTitle.includes(slug) &&
                 skipTitle !== 'all' && (
@@ -75,7 +79,7 @@ const Page = ({ page, ctx }) => {
                 <ActivatePageScripts />
                 <ParsedContent content={content} />
               </Box>
-            </div>
+            </Card>
           </article>
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>

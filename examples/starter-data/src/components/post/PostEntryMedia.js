@@ -1,9 +1,7 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { Box } from '@chakra-ui/react'
 import { Link } from 'gatsby'
-import { Image } from '../images'
+import { Image } from 'starterComponents'
 
 const WithLink = ({ post, location, children }) =>
   location === 'single' ? (
@@ -21,9 +19,9 @@ export const PostEntryMedia = ({ post, location, ...props }) => {
     <>
       {img && (
         <WithLink location={location} post={post}>
-          <div className="entry-media" {...props}>
+          <Box className="entry-media" {...props}>
             <Image img={img} />
-          </div>
+          </Box>
         </WithLink>
       )}
     </>

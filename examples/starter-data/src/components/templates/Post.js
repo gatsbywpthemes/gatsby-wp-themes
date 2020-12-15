@@ -1,11 +1,11 @@
-/** @jsx jsx */
-import { jsx, Container, Flex } from 'theme-ui'
-import { Layout } from '../Layout'
+import React from 'react'
+import { Flex } from '@chakra-ui/react'
+import { Container } from 'starterUiComponents'
+import { Layout, PostEntry, CommentsList, Sidebar } from 'starterComponents'
 import { Seo } from 'gatsby-plugin-wp-seo'
-import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { useLayoutStyles } from '../../utils'
+import { useLayoutStyles } from 'starterUtils/hooks'
 
 const Post = ({ post, ctx }) => {
   const {
@@ -15,16 +15,14 @@ const Post = ({ post, ctx }) => {
     template: { templateName },
   } = post
   const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
-
-  const { disqus, addWordPressComments } = useThemeOptions()
-
   const {
     containerStyles,
     sidebarSide,
     sidebarPage,
     sidebarWidgets,
-    layoutWidth,
-  } = useLayoutStyles('post', templateName)
+  } = useLayoutStyles('post', templateName.toLowerCase())
+
+  const { disqus, addWordPressComments } = useThemeOptions()
 
   const disqusConfig = {
     shortname: disqus,
@@ -45,11 +43,11 @@ const Post = ({ post, ctx }) => {
           }
         }
       />
-      <Container sx={{ ...containerStyles }} className="mainContainer">
+      <Container className="mainContainer" sx={{ ...containerStyles }}>
         <Flex
           sx={{
             ...sidebarSide,
-            flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
+            flexWrap: { base: 'wrap', lg: 'nowrap' },
             alignItems: `flex-start`,
           }}
         >
@@ -57,13 +55,13 @@ const Post = ({ post, ctx }) => {
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
         {addWordPressComments && post.commentStatus === 'open' && (
-          <Container sx={{ maxWidth: layoutWidth.post }}>
+          <div>
             {disqus ? (
               <DiscussionEmbed {...disqusConfig} />
             ) : (
               <CommentsList post={post} />
             )}
-          </Container>
+          </div>
         )}
       </Container>
     </Layout>

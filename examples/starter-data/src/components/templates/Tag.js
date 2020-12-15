@@ -1,6 +1,5 @@
 import React from 'react'
-import { Layout } from '../Layout'
-import { ArchiveContent } from '../archive'
+import { Layout, ArchiveContent } from 'starterComponents'
 import { Seo } from 'gatsby-plugin-wp-seo'
 
 const Tag = ({ tag, ctx }) => {

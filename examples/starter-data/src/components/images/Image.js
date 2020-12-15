@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import Img from 'gatsby-image'
 
 export const Image = ({ img, style }) =>
@@ -7,6 +6,5 @@ export const Image = ({ img, style }) =>
     <Img
       fluid={img.node.localFile.childImageSharp.fluid}
       alt={img.node.altText}
-      sx={style}
     />
   )

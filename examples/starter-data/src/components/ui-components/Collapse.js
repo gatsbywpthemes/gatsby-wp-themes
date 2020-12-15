@@ -1,11 +1,14 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useState, Fragment } from 'react'
-import { Button, Collapsible } from 'grommet'
-import { FormNext, FormDown } from 'grommet-icons'
+import React from 'react'
+import {
+  IconButton,
+  useDisclosure,
+  Collapse as Collapsible,
+} from '@chakra-ui/react'
+
+import { ChevronRightIcon, ChevronDownIcon } from '@chakra-ui/icons'
 
 export const Collapse = ({ menuItem, children }) => {
-  const [openMenu, setOpenMenu] = useState(false)
+  const { isOpen, onToggle } = useDisclosure()
   const openStyle =
     menuItem.url === '#'
       ? {
@@ -15,18 +18,17 @@ export const Collapse = ({ menuItem, children }) => {
         }
       : ''
   return (
-    <Fragment>
-      <Button
-        icon={openMenu ? <FormDown /> : <FormNext />}
-        a11yTitle="Open menu item"
-        focusIndicator={false}
-        onClick={() => {
-          const newOpenMenu = !openMenu
-          setOpenMenu(newOpenMenu)
-        }}
+    //TODO: remove focus color on click
+    <>
+      <IconButton
+        icon={isOpen ? <ChevronDownIcon /> : <ChevronRightIcon />}
+        aria-label="Open menu item"
+        variant="unstyled"
+        size="sm"
+        onClick={onToggle}
         sx={{
           position: 'absolute',
-          top: '4px',
+          top: 2,
           right: 0,
           ...openStyle,
           svg: {
@@ -36,7 +38,8 @@ export const Collapse = ({ menuItem, children }) => {
           },
         }}
       />
-      <Collapsible open={openMenu}>{children}</Collapsible>
-    </Fragment>
+      {menuItem.label}
+      <Collapsible in={isOpen}>{children}</Collapsible>
+    </>
   )
 }
