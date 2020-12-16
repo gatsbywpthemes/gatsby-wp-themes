@@ -1,5 +1,5 @@
 import React from 'react'
-import { useMenusQuery } from 'gatsby-theme-blog-data/src/hooks'
+import { useMenusQuery } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 import { chakra } from '@chakra-ui/react'
 import { MenuItem, SubMenu, flatListToHierarchical } from 'starterComponents'

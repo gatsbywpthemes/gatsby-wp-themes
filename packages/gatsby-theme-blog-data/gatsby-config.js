@@ -42,13 +42,12 @@ module.exports = (options) => {
     },
 
     {
-      resolve: `gatsby-plugin-wordpress-parser`,
+      resolve: `@gatsbywpthemes/gatsby-plugin-wordpress-parser`,
       options: {
         processPostTypes: ['WpPage', 'WpPost'],
         debugOutput: parserDebugOutput,
       },
     },
-
   ]
 
   /**

@@ -2,9 +2,9 @@ import React from 'react'
 import { Flex } from '@chakra-ui/react'
 import { Container } from 'starterUiComponents'
 import { Layout, PostEntry, CommentsList, Sidebar } from 'starterComponents'
-import { Seo } from 'gatsby-plugin-wp-seo'
+import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { DiscussionEmbed } from 'disqus-react'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { useLayoutStyles } from 'starterUtils/hooks'
 
 const Post = ({ post, ctx }) => {

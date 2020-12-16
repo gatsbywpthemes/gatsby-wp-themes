@@ -31,7 +31,7 @@ Ginger theme is compatible with Contact Form 7 WordPress plugin. If you want to 
 Ginger theme comes with lightbox galleries (clicking a photo opens a fullscreen-mode slideshow). This feature is optional, enabled by default (you can turn it off here).
 There is also a particular configuration required for the gallery itself, that needs to be set up on your WordPress website.
 
-Edit your WordPress page.  
+Edit your WordPress page.
 Select the gallery blog. In the gallery settings make sure to choose Link to: Media File.
 
 ![Gallery Box setting - choose Link to Media File](https://wptemplates.pehaa.com/docs/gatsby-themes/assets/gallery-settings.png)
@@ -90,25 +90,25 @@ const config = {
 
 ### Options
 
-**wordPressUrl** (required)  
+**wordPressUrl** (required)
 Provide a url to your WordPress source website. Make sure that your WordPress setup meets [our requirements](#wp-requirements).
 
 ---
 
-**uploadsPath** (optional)  
+**uploadsPath** (optional)
 `(default: wp-content/uploads)`
 
-A relative path to your uploads directory. `wp-content/uploads` is default for any WordPress installation.  
+A relative path to your uploads directory. `wp-content/uploads` is default for any WordPress installation.
 Unless you redefined your uploads destination, skip this setting.
 
 ---
 
-**pathPrefix** (optional)  
+**pathPrefix** (optional)
 `(default: "")`
 
 This setting is highly optional, use only if you know what you are doing
 
-Typically, your Gatsby website will be hosted at the root of its domain. In that case, the pathPrefix is an empty string and you can skip this setting.  
+Typically, your Gatsby website will be hosted at the root of its domain. In that case, the pathPrefix is an empty string and you can skip this setting.
 You will need to set the pathPrefix though, if your gatsby website is hosted at something other than the root (/), for example `https://example.com/demo`
 
 Adding the path prefix requires two steps:
@@ -128,17 +128,17 @@ gatsby build --prefix-paths
 
 ---
 
-**paginationPrefix** (optional)  
+**paginationPrefix** (optional)
 `(default: 'page')`
 
 Prefix for paginated content.
 
-What is the url structure of any paginated content on your WordPress website? By default, WordPress uses `page` as the prefix, that means it preceeds page numbers by the `page` keyword (`page/2`, `page/3`, ...).  
+What is the url structure of any paginated content on your WordPress website? By default, WordPress uses `page` as the prefix, that means it preceeds page numbers by the `page` keyword (`page/2`, `page/3`, ...).
 You should skip this setting, unless your changed the pagination url format on your WordPress site.
 
 ---
 
-**addWordPressComments** (optional)  
+**addWordPressComments** (optional)
 `(type: Boolean, default: true)`
 
 Whether WordPress comments should be activated.
@@ -148,7 +148,7 @@ Commenting on your Gatsby site work similarily to commenting on your WordPress s
 
 ---
 
-**disqus** (optional)  
+**disqus** (optional)
 `(type: String, default: "")`
 
 Whether Discqus comments should be activated.
@@ -158,12 +158,12 @@ Typing your Disqus shortname (the unique identifier fo your website on Disqus) w
 
 ---
 
-**menuName** (optional)  
+**menuName** (optional)
 `(type: String, default: "main")`
 
 The WordPress name of the navigation menu that will be used.
 
-Ginger theme comes with one menu location. The navigation menu is displayed in the slide-in sidebar.  
+Ginger theme comes with one menu location. The navigation menu is displayed in the slide-in sidebar.
 You can choose any of the menus that you had created on your WordPress site by passing its name to the **menuName** option.
 
 ![Menu name set to Main Menu on WordPress](https://wptemplates.pehaa.com/docs/gatsby-themes/assets/menuname.png)
@@ -176,7 +176,7 @@ menuName: "Main Menu"
 
 ---
 
-**slideMenuWidgets** (optional)  
+**slideMenuWidgets** (optional)
 `(type: Array, default: ['SocialFollow', 'RecentPosts', 'Categories', 'Tags'])`
 
 Ginger theme comes with one widget area in the slide-in sidebar. Widgets are displayed below the navigation menu.
@@ -198,7 +198,7 @@ menuName: ["Newsletter", "Social Follow", "Tags"]
 
 ---
 
-**siteUrl** (obligatory for a production website)  
+**siteUrl** (obligatory for a production website)
 `(type: Url, default: "https://example.com")`
 
 You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production, you should provide the url of your destination site.
@@ -207,7 +207,7 @@ This is an essential setting for social share buttons (in Posts), SEO open graph
 
 ---
 
-**social** (optional) <a name="social"></a>  
+**social** (optional) <a name="social"></a>
 `(type: Array, default: social: [{name:`twitter`, url:`https:twitter.com/gatsbyjs`}])`
 
 You can list your social profiles here. They will be displayed in the SocialFollows widget.
@@ -241,7 +241,7 @@ social: []
 
 ---
 
-**twitterSummaryCardImage**<a name="twittercard"></a>  
+**twitterSummaryCardImage**<a name="twittercard"></a>
 `(default: Gatsby_Monogram.png)`
 
 When sharing your content on Twitter, articles will use their featured image for the Twitter card.
@@ -252,9 +252,9 @@ Other pages will use a common twitterSummaryCardImage. Make sure to place it in 
 **fonts**<a name="config-fonts"></a>
 `(type: Array, default: ["Abril Fatface", "Fira Sans"])`
 
-Here you decide which fonts should be installed.  
-Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sans** for the body text. Both of them are Google fonts.  
-If you want to use other typefaces, you will have to modify the `fonts` setting in the config.js.  
+Here you decide which fonts should be installed.
+Ginger theme uses two typefaces **Abril Fatface** for headings and **Fira Sans** for the body text. Both of them are Google fonts.
+If you want to use other typefaces, you will have to modify the `fonts` setting in the config.js.
 You will also have to edit the `src/gatsby-plugin-theme-ui/index.js` file to assign your fonts as `heading` or `body`.
 
 examples:
@@ -297,12 +297,12 @@ fontWeights: {
 },
 ```
 
-> Please note that the font family names are case sensitive.  
+> Please note that the font family names are case sensitive.
 > You can also choose font variants that you want to install.
 
 ---
 
-**gaTrackingId** (optional)  
+**gaTrackingId** (optional)
 `(default: 0)`
 
 ---
@@ -311,35 +311,35 @@ Your google analytics UA code. Set to 0 to disable Google Analytics.
 
 ---
 
-**googleTagManagerId** (optional)  
+**googleTagManagerId** (optional)
 `(default: 0)`
 
 Your google Tag Mangager Id. Set to 0 to disable this funcionality.
 
 ---
 
-**addSitemap** (optional)  
+**addSitemap** (optional)
 `(type: boolean, default: false)`
 
 Whether you want to create a site map. If set to `true`, make sure that you provide your production gatsby website url in the SiteUrl option.
 
 ---
 
-**siteMapOptions** (optional)  
+**siteMapOptions** (optional)
 `(type: Object, default: {})`
 
 These options are passed to the [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) options so please refer to [gatsby-plugin-sitemap options](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/#options) for the details.
 
 ---
 
-**addColorModes** (optional, experimental)  
+**addColorModes** (optional, experimental)
 `(default: true)`
 
 If you want to add dark mode switcher.
 
 ---
 
-**skipTitle** (optional)  
+**skipTitle** (optional)
 `(default: [])`
 
 List slugs of the pages when you don't want to display the page title. Useful when you want to start your page with a Gutenberg cover blog and an `h1` heading.
@@ -375,7 +375,7 @@ In order to replace the default Gatsby favicon, you need to create your own favi
 
 ### Overriding Typography Settings
 
-You can override the typography settings in `ginger/configTypography.js`  
+You can override the typography settings in `ginger/configTypography.js`
 Uncomment each line that you wish to modify and set your values.
 
 You can change the fonts settings to any system fonts or any of the Google fonts.
@@ -428,13 +428,13 @@ You can also style your website with css. This can be useful if you have to targ
 
 ### Activating Mapbox support <a name="activate-mapbox"></a>
 
-In order to activate Mapbox you will have to override one of the theme's component.  
+In order to activate Mapbox you will have to override one of the theme's component.
 Go to your project folder. It contains a `gatsby-theme-wp-ginger` directory, create a `utils` folder in it and paste the `ParsedContent.js` file from the theme `packages/gatsby-theme-wp-ginger/src/utils/ParsedContent.js`
 
 Make sure to uncomment the lines:
 
-`import mapboxParserFunction from "gatsby-plugin-wp-mapbox"`  
-and  
+`import mapboxParserFunction from "gatsby-plugin-wp-mapbox"`
+and
 `parserFunctions.push(mapboxParserFunction)`
 
 It should he something like that:
@@ -442,10 +442,10 @@ It should he something like that:
 ```javascript
 /* utils/ParsedContent.js */
 import React from "react"
-import ContentParser from "gatsby-plugin-wordpress-parser"
-import { cf7ParserFunction } from "gatsby-plugin-wpcf7"
-import {lightboxParserFunction}from "gatsby-plugin-wordpress-lightbox"
-import useThemeOptions from "gatsby-theme-blog-data/src/hooks/useThemeOptions"
+import ContentParser from "@gatsbywpthemes/gatsby-plugin-wordpress-parser"
+import { cf7ParserFunction } from "@gatsbywpthemes/gatsby-plugin-wpcf7"
+import { lightboxParserFunction } from "@gatsbywpthemes/gatsby-plugin-wordpress-lightbox"
+import useThemeOptions from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks/useThemeOptions"
 
 const ParsedContent = ({ content }) => {
   const options = useThemeOptions()

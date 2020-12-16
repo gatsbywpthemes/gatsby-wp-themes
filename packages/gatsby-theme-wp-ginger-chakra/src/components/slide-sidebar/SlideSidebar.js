@@ -12,7 +12,7 @@ import {
 import { Menu } from './../index'
 import { WidgetsList } from './../widgets'
 import { SearchForm } from './../search'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { menuButtonStyles } from '../../styles/'
 import { SearchContext } from '../../../context'
 

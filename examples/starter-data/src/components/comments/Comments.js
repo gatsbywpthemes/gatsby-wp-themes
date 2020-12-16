@@ -1,5 +1,5 @@
 import React from 'react'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { CommentsList, DisqusComments } from 'starterComponents'
 import { Box, Container, useColorModeValue } from '@chakra-ui/react'
 

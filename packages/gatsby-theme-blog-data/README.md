@@ -1,4 +1,4 @@
-# gatsby-theme-blog-data
+# @gatsbywpthemes/gatsby-theme-blog-data
 
 ## Description
 
@@ -24,12 +24,12 @@ To use this theme in your Gatsby sites, follow these instructions:
 1.  Install the theme
 
     copy the theme files into `packages`
-    in your json file add `"gatsby-theme-blog-data": "*"`
+    in your json file add `"@gatsbywpthemes/gatsby-theme-blog-data": "*"`
 
 2.  Add the theme to your `gatsby-config.js`:
 
     ```{
-       resolve: `gatsby-theme-blog-data`,
+       resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
        options: {
          wordPressUrl: ``,
          uploadsPath: `wp-content/uploads`,

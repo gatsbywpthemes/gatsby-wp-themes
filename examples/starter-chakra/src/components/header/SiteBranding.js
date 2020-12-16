@@ -1,6 +1,6 @@
 import React from 'react'
 import { withPrefix } from 'gatsby'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { Link } from 'gatsby'
 import { Heading, Link as ChakraLink } from '@chakra-ui/react'
 

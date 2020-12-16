@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from 'theme-ui'
 import { Layout } from '../Layout'
-import { Seo } from 'gatsby-plugin-wp-seo'
+import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { PostEntry, CommentsList, Sidebar } from '../index'
 import { DiscussionEmbed } from 'disqus-react'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { useLayoutStyles } from '../../utils'
 
 const Post = ({ post, ctx }) => {

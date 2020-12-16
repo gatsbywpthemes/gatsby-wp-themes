@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-theme-wp-ginger-chakra`,
+      resolve: `@gatsbywpthemes/gatsby-theme-wp-ginger-chakra`,
       options: {
         disqus:
           addDisqusComments && process.env.GATSBY_DISQUS_NAME
@@ -34,7 +34,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-wpcf7`,
+      resolve: `@gatsbywpthemes/gatsby-plugin-wpcf7`,
       options: {
         wordPressUrl: options.wordPressUrl,
       },

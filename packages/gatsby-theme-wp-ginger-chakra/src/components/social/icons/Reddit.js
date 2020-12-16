@@ -1,7 +1,7 @@
 import React from 'react'
 import { RedditShareButton, RedditIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
-import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
+import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { NoIconShare } from './index'
 
 export const Reddit = ({

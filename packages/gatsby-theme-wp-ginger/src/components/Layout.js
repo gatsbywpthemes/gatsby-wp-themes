@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import {
   useThemeOptions,
   useSiteSettings,
-} from 'gatsby-theme-blog-data/src/hooks'
+} from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { Global } from '@emotion/core'
 import { globalStyles } from '../styles'
 import { Footer } from './footer'

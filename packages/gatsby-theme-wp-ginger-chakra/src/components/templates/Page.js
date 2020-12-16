@@ -3,9 +3,9 @@ import { Box, useColorMode } from '@chakra-ui/react'
 import Layout from '../Layout'
 import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
-import { Seo } from 'gatsby-plugin-wp-seo'
+import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { gutenberg } from '../../styles/'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 const Page = (props) => {
   const { page, ctx } = props

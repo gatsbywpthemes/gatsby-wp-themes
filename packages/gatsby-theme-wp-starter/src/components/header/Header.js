@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Menu, SiteBranding, SlideSidebar } from 'starterComponents'
 import { Container } from 'starterUiComponents'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 import { ColorSwitch } from 'starterComponents'
 import { SearchModal } from 'starterComponents'

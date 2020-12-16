@@ -1,6 +1,6 @@
 import React from 'react'
 import { Menu } from 'starterComponents'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 import {
   useDisclosure,

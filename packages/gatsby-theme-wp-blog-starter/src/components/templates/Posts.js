@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Layout } from '../Layout'
-import { Seo } from 'gatsby-plugin-wp-seo'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { ArchiveContent } from '../archive'
 
 const Posts = ({ posts, ctx }) => {

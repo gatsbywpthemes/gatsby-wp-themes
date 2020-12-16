@@ -3,9 +3,9 @@ import { jsx, Container, Flex, Box } from 'theme-ui'
 import { Layout } from '../Layout'
 
 import { ActivatePageScripts, useLayoutStyles } from '../../utils/'
-import { Seo } from 'gatsby-plugin-wp-seo'
+import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from '../index'
 import { gutenbergStyles, articleStyles } from '../../styles'
 

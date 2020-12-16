@@ -3,7 +3,7 @@ import { Link as GatsbyLink } from 'gatsby'
 import {
   useThemeOptions,
   useSiteSettings,
-} from 'gatsby-theme-blog-data/src/hooks'
+} from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { ColorSwitch } from '../index'
 import { Flex, useColorModeValue } from '@chakra-ui/react'
 

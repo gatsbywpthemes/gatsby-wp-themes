@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-blog-data",
+  "name": "@gatsbywpthemes/gatsby-theme-blog-data",
   "description": "WordPress core source theme for Gastby using WPGraphQL",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
   "version": "1.0.0",
@@ -21,7 +21,7 @@
     "gatsby-plugin-google-tagmanager": "^2.7.0",
     "gatsby-plugin-sharp": "^2.10.0",
     "gatsby-plugin-sitemap": "^2.8.0",
-    "gatsby-plugin-wordpress-parser": "*",
+    "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "*",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-source-wordpress-experimental": "5.0.0",
     "gatsby-transformer-sharp": "^2.8.0",

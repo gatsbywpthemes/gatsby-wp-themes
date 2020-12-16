@@ -1,5 +1,5 @@
 import merge from "deepmerge"
-import theme from "gatsby-theme-wp-ginger-chakra/src/@chakra-ui/gatsby-plugin/theme"
+import theme from "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/@chakra-ui/gatsby-plugin/theme"
 import colorsSettings from "../../../configColors"
 import typographySettings from "../../../configTypography"
 import sizesSettings from "../../../configSizes"

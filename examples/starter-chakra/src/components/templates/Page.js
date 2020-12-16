@@ -5,8 +5,8 @@ import { Layout, Sidebar } from 'starterComponents'
 import { ActivatePageScripts } from 'starterUtils'
 import { useLayoutStyles } from 'starterUtils/hooks'
 
-import { Seo } from 'gatsby-plugin-wp-seo'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {

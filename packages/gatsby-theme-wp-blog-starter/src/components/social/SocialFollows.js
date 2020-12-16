@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui'
-import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
+import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import {
   FaBehance,
   FaCodepen,
@@ -28,7 +28,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa'
 
-export const SocialFollows = props => {
+export const SocialFollows = (props) => {
   const supportedIcons = [
     'behance',
     'codepen',

@@ -72,7 +72,7 @@ yarn-error.log
 .netlify/
 
 #packages
-packages/gatsby-theme-blog-data
+packages/@gatsbywpthemes/gatsby-theme-blog-data
 packages/gatsby-theme-algolia
 
 

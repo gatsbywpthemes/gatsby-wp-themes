@@ -3,7 +3,7 @@ import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import { Link } from 'gatsby'
 import { createLocalLink } from '../../utils'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const LinkItem = ({ menuItem, sub }) => {
   const { wordPressUrl } = useThemeOptions()

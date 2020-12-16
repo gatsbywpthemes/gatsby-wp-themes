@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Layout from './../Layout'
 import { ArchiveContent } from '../archive'
-import { Seo } from 'gatsby-plugin-wp-seo'
+import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
 const User = ({ user, ctx }) => {
   const { name, posts, uri } = user

@@ -10,7 +10,7 @@ import {
 } from './index'
 import { SocialShare } from '../social'
 import { CommentsList } from '../comments'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { Image } from '../images'
 import { DiscussionEmbed } from 'disqus-react'
 import { Sidebar } from '../index'

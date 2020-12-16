@@ -6,7 +6,7 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import { Menu } from './index'
 import { Widgets } from './widgets'
 import { SearchForm } from './search'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { slideMenuStyles, overlayStyles, menuButtonStyles } from '../styles'
 
 export const SlideSidebar = ({ open, updateOpen, openClass, setOpenClass }) => {

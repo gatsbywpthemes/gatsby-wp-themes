@@ -22,7 +22,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-theme-blog-data`,
+      resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: {
         disqus:
           addDisqusComments && process.env.GATSBY_DISQUS_NAME
