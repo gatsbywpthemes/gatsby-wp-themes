@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-wp-starter",
+  "name": "@gatsbywpthemes/gatsby-theme-wp-starter",
   "description": "WordPress basic theme for Gastby using WPGraphQL",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
   "version": "1.0.0",
