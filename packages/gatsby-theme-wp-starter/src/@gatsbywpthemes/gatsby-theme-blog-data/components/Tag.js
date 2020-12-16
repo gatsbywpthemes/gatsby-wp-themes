@@ -1,5 +1,5 @@
 import React from 'react'
-import Tag from '../../components/templates/Tag'
+import Tag from 'starterComponents/templates/Tag'
 
 export default ({ data, pageContext }) => {
   return (
