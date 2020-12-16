@@ -59,7 +59,7 @@ export const RecentPosts = () => {
                 </Link>
                 <small className="textual">
                   <Link
-                    className="widget-post-date text-decoration-none text-secondary"
+                    className="widget-post-date text-decoration-none text-reset"
                     to={post.uri}
                   >
                     <time className="entry-date" dateTime={post.date}>

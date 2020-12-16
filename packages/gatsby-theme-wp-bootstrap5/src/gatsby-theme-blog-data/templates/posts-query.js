@@ -8,7 +8,7 @@ export const pageQuery = graphql`
     altText
     localFile {
       childImageSharp {
-        fluid(maxWidth: 1200, quality: 100) {
+        fluid(maxWidth: 1200, quality: 80) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -18,7 +18,7 @@ export const pageQuery = graphql`
     altText
     localFile {
       childImageSharp {
-        fluid(maxWidth: 600, maxHeight: 400, quality: 80) {
+        fluid(maxWidth: 306, maxHeight: 200, quality: 60) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -31,11 +31,6 @@ export const pageQuery = graphql`
     title
     excerpt
     date
-    # postFormats {
-    #   taxonomyInfo {
-    #     name
-    #   }
-    # }
     featuredImage {
       node {
         ...GatsbyImageQueryArchive
@@ -51,23 +46,6 @@ export const pageQuery = graphql`
     }
     template {
       templateName
-    }
-    author {
-      node {
-        name
-        slug
-        uri
-        avatar {
-          url
-        }
-      }
-    }
-    tags {
-      nodes {
-        name
-        slug
-        uri
-      }
     }
   }
 

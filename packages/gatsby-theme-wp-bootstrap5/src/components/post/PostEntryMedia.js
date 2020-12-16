@@ -13,7 +13,6 @@ const WithLink = ({ uri, children, location }) =>
 
 export const PostEntryMedia = ({
   post: { featuredImage, uri },
-
   location = 'archive',
 }) => {
   return (

@@ -22,8 +22,7 @@ export const Menu = ({ menuName }) => {
         <div className="container">
           <ToggleButton handler={handler} />
           <div className={`collapse navbar-collapse ${showClass}`}>
-            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
-            <ul role="menu" className="navbar-nav">
+            <ul className="navbar-nav">
               {menuNodes.map((menuItem) => {
                 if (menuItem.children.length) {
                   return <SubMenu key={menuItem.id} menuItem={menuItem} />
