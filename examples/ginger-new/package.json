@@ -19,7 +19,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "gatsby": "^2.24.85",
-    "gatsby-theme-wp-ginger-chakra": "*",
+    "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra": "*",
     "lodash.merge": "^4.6.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

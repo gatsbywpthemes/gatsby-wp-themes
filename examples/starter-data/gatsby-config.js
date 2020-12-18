@@ -35,7 +35,7 @@ module.exports = {
     '@chakra-ui/gatsby-plugin',
 
     {
-      resolve: 'gatsby-theme-blog-data',
+      resolve: '@gatsbywpthemes/gatsby-theme-blog-data',
       options: {
         ...config,
         pathPrefix:
@@ -43,7 +43,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-wp-seo',
+      resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
       options: {
         siteUrl: config.siteUrl,
         pathPrefix: config.pathPrefix,
@@ -52,7 +52,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
-      resolve: 'gatsby-plugin-wpcf7',
+      resolve: '@gatsbywpthemes/gatsby-plugin-wpcf7',
       options: {
         wordPressUrl: process.env.GATSBY_WP_URL,
       },
@@ -74,7 +74,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-wordpress-lightbox',
+      resolve: '@gatsbywpthemes/gatsby-plugin-wordpress-lightbox',
       options: {},
     },
 

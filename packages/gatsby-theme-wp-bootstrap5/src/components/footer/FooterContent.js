@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSiteSettings } from 'gatsby-theme-blog-data/src/hooks'
+import { useSiteSettings } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const FooterContent = () => {
   const siteSettings = useSiteSettings()

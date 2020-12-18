@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
-import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
+import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { followStyles } from '../../styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {

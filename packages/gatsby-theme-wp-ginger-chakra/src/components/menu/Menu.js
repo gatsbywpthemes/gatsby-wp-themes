@@ -1,5 +1,5 @@
 import React from 'react'
-import { useMenusQuery } from 'gatsby-theme-blog-data/src/hooks'
+import { useMenusQuery } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { SubMenu } from './SubMenu'
 import { MenuItem } from './MenuItem'
 import { chakra, Box } from '@chakra-ui/react'

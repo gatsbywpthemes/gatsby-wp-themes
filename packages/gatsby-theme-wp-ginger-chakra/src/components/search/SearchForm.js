@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
 import { Box, Flex, Button, chakra } from '@chakra-ui/react'
 import { SearchQueries } from './index'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const SearchForm = ({ setEscInSearch, search, setSearch }) => {
   const { instantWPSearch } = useThemeOptions()

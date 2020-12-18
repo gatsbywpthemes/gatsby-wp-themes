@@ -1,4 +1,4 @@
-# gatsby-plugin-wordpress-parser
+# @gatsbywpthemes/gatsby-plugin-wordpress-parser
 
 ## Description
 
@@ -34,13 +34,13 @@ Also, the `gatsby-plugin-sharp` and `gatsby-transformer-sharp` plugins have to b
 
 ```bash
 cd packages
-git clone git@github.com:pehaa/gatsby-plugin-wordpress-parser.git
+git clone git@github.com:pehaa/@gatsbywpthemes/gatsby-plugin-wordpress-parser.git
 ```
 
 ```javascript
 /* in the theme gatsby-config.js */
 {
-  resolve: 'gatsby-plugin-wordpress-parser',
+  resolve: '@gatsbywpthemes/gatsby-plugin-wordpress-parser',
   options: {
     wordPressUrl: 'https://mydomain.com/',
     uploadsUrl: 'https://mydomain.com/wp-content/uploads/',
@@ -52,7 +52,7 @@ git clone git@github.com:pehaa/gatsby-plugin-wordpress-parser.git
 /* in the theme package.json */
 "dependencies": {
 /* ... */
-  "gatsby-plugin-wordpress-parser": "*",
+  "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "*",
 /* ... */
 },
 ```
@@ -80,7 +80,7 @@ httpHeaders: {
 Wherever you need to display the post content:
 
 ```javascript
-import ContentParser from "gatsby-plugin-wordpress-parser"
+import ContentParser from "@gatsbywpthemes/gatsby-plugin-wordpress-parser"
 ```
 
 replace `<div dangerouslySetInnerHTML={{ __html: content }} />` with this
@@ -93,11 +93,11 @@ replace `<div dangerouslySetInnerHTML={{ __html: content }} />` with this
 
 ## How to Extend for Contact Form 7
 
-Use [`gatsby-plugin-wpcf7`](https://github.com/pehaa/gatsby-plugin-wpcf7)
+Use [`@gatsbywpthemes/gatsby-plugin-wpcf7`](https://github.com/pehaa/@gatsbywpthemes/gatsby-plugin-wpcf7)
 
 ```javascript
-import ContentParser from "gatsby-plugin-wordpress-parser"
-import { cf7ParserFunction } from "gatsby-plugin-wpcf7"
+import ContentParser from "@gatsbywpthemes/gatsby-plugin-wordpress-parser"
+import { cf7ParserFunction } from "@gatsbywpthemes/gatsby-plugin-wpcf7"
 ```
 
 replace `<div dangerouslySetInnerHTML={{ __html: content }} />` with:

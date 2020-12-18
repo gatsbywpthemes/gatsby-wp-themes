@@ -25,11 +25,11 @@ module.exports = (options) => {
   }
   const plugins = [
     {
-      resolve: `gatsby-theme-blog-data`,
+      resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: mergedOptions,
     },
     {
-      resolve: 'gatsby-plugin-wp-seo',
+      resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
       options: {
         siteUrl: options.siteUrl,
         pathPrefix: options.pathPrefix,
@@ -53,7 +53,7 @@ module.exports = (options) => {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-wordpress-lightbox`,
+      resolve: `@gatsbywpthemes/gatsby-plugin-wordpress-lightbox`,
       options: {
         ...(options.lightboxOptions || {}),
       },
@@ -69,7 +69,7 @@ module.exports = (options) => {
       },
     },
     {
-      resolve: 'gatsby-plugin-wpcf7',
+      resolve: '@gatsbywpthemes/gatsby-plugin-wpcf7',
       options: {
         wordPressUrl: process.env.GATSBY_WP_URL,
       },

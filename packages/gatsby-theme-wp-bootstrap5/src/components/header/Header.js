@@ -4,7 +4,7 @@ import { Menu } from '../index'
 import {
   useThemeOptions,
   useSiteSettings,
-} from 'gatsby-theme-blog-data/src/hooks'
+} from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const Header = () => {
   const { title, description } = useSiteSettings()

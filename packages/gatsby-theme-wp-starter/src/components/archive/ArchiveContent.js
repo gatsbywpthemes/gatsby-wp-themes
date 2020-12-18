@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
 import { Container } from 'starterUiComponents'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from 'starterComponents'
 import { ArchiveTitle, PostsList, Pagination } from 'starterComponents'
 import { useLayoutWidth } from 'starterUtils/hooks'

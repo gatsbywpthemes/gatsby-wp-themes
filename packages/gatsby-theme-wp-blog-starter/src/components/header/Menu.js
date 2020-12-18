@@ -6,7 +6,7 @@ import { Collapse } from '../ui-components'
 import {
   useMenusQuery,
   useThemeOptions,
-} from 'gatsby-theme-blog-data/src/hooks'
+} from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 

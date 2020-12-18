@@ -26,7 +26,9 @@ module.exports = async ({ actions, graphql }, options) => {
       return
     }
     if (options.pageCreateDebugOutput) {
-      console.log(`[gatsby-theme-blog-data] create page: ${uri}`)
+      console.log(
+        `[@gatsbywpthemes/gatsby-theme-blog-data] create page: ${uri}`
+      )
     }
     createPage({
       path: uri,

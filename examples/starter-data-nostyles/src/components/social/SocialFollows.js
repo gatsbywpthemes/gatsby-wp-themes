@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
+import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import {
   FaBehance,
   FaCodepen,

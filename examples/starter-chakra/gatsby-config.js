@@ -34,7 +34,7 @@ module.exports = {
   plugins: [
     '@chakra-ui/gatsby-plugin',
     {
-      resolve: 'gatsby-theme-blog-data',
+      resolve: '@gatsbywpthemes/gatsby-theme-blog-data',
       options: {
         ...config,
         pathPrefix:
@@ -42,7 +42,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-wp-seo',
+      resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
       options: {
         siteUrl: config.siteUrl,
         pathPrefix: config.pathPrefix,
@@ -52,7 +52,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
     // {
-    //   resolve: 'gatsby-plugin-wpcf7',
+    //   resolve: '@gatsbywpthemes/gatsby-plugin-wpcf7',
     //   options: {
     //     wordPressUrl: config.wordPressUrl,
     //   },
@@ -72,7 +72,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-wordpress-lightbox',
+      resolve: '@gatsbywpthemes/gatsby-plugin-wordpress-lightbox',
       options: {},
     },
     // {

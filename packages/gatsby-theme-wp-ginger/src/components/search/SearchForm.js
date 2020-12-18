@@ -4,19 +4,19 @@ import { useState, Fragment } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
 import { SearchQueries } from './index'
 import { searchStyles } from '../../styles'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const SearchForm = () => {
   const { instantWPSearch } = useThemeOptions()
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setSearch(value)
   }
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setValue(e.target.value)
     if (instantWPSearch) {
       setSearch(e.target.value)

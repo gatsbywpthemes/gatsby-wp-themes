@@ -1,7 +1,7 @@
 import React from 'react'
 import { PinterestShareButton, PinterestIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
-import { useSiteMetaData } from 'gatsby-theme-blog-data/src/hooks'
+import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const Pinterest = ({
   url,

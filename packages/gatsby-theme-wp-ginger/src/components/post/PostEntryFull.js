@@ -11,7 +11,7 @@ import { CommentsList } from '../comments'
 import { FiChevronsDown } from 'react-icons/fi'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { articleStyles, commentsSectionStyles } from '../../styles/'
-import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { Image } from '../images'
 import { DiscussionEmbed } from 'disqus-react'
 

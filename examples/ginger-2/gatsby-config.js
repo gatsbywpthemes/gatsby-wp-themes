@@ -33,7 +33,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-wpcf7`,
+      resolve: `@gatsbywpthemes/gatsby-plugin-wpcf7`,
       options: {
         wordPressUrl: options.wordPressUrl,
       },

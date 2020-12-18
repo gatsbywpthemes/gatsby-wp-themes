@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-theme-wp-bootstrap5`,
+      resolve: `@gatsbywpthemes/gatsby-theme-wp-bootstrap5`,
       options: {
         disqus:
           addDisqusComments && process.env.GATSBY_DISQUS_NAME
@@ -34,7 +34,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-wpcf7`,
+      resolve: `@gatsbywpthemes/gatsby-plugin-wpcf7`,
       options: {
         wordPressUrl: options.wordPressUrl,
       },
