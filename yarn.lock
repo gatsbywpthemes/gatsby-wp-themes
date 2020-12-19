@@ -106,10 +106,10 @@
     "@algolia/logger-common" "4.8.2"
     "@algolia/requester-common" "4.8.2"
 
-"@apollo/client@^3.3.4":
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.3.4.tgz#fded078222fcd9272d6e3501c7d1d76adb61da79"
-  integrity sha512-PnbkSa2gcFD6Qakn2eJCJ1RMYdCzEIlRlaHZGnUNbH+7AKOYwjDVtSVCC03nDtWeS9yWiJ15A8xGMreMKAboQQ==
+"@apollo/client@^3.3.6":
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.3.6.tgz#f359646308167f38d5bc498dfc2344c888400093"
+  integrity sha512-XSm/STyNS8aHdDigLLACKNMHwI0qaQmEHWHtTP+jHe/E1wZRnn66VZMMgwKLy2V4uHISHfmiZ4KpUKDPeJAKqg==
   dependencies:
     "@graphql-typed-document-node/core" "^3.0.0"
     "@types/zen-observable" "^0.8.0"
@@ -10686,10 +10686,10 @@ gatsby-source-filesystem@^2.7.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-source-wordpress-experimental@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress-experimental/-/gatsby-source-wordpress-experimental-5.0.0.tgz#5acc8fe779827193e5140064de308195f3080294"
-  integrity sha512-G5iJwFXA2A3jIrnZLLzmZWpY6RKCTf8HTxveXbYjl+puzvRM+6vZSyap3T/4sBwbxysXo7DE9inDXpxG8qYesA==
+gatsby-source-wordpress-experimental@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress-experimental/-/gatsby-source-wordpress-experimental-6.0.0.tgz#4d0fd13317e35aae49828492b8a6304b32aa9a05"
+  integrity sha512-rBbN0QEs3Sbw9ihDof6+cwcW0pcxbyzAGl/pj4ofeGMPRApazSKGalynyCP1YE2UPN4MXaSQqyap6JnflgTV6g==
   dependencies:
     "@babel/runtime" "^7.6.3"
     "@rematch/core" "^1.3.0"
