@@ -18,9 +18,9 @@ export const styles = {
         borderColor: mode('gray.200', 'whiteAlpha.300')(props),
         wordWrap: 'break-word',
       },
-      '*:focus': {
-        outlineStyle: 'dashed',
-        outlineWidth: '0.5px',
+      '*:focus:not(:focus-visible), [class]:focus:not(:focus-visible)': {
+        outline: 'none',
+        boxShadow: 'none',
       },
       blockquote: {
         bg: mode('light', 'dark'),
