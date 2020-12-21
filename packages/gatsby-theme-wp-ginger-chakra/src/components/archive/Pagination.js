@@ -35,7 +35,7 @@ export const Pagination = ({ ctx }) => {
     return ''
   }
   return (
-    <Flex as="nav" align="center" justify="space-between">
+    <Flex as="nav" align="center" justify="space-between" overflow="hidden">
       {renderPreviousLink(previousPagePath)}
       <chakra.span
         aria-current="page"
