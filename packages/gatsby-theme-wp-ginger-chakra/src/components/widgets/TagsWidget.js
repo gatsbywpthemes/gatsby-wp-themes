@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { WidgetContainer } from './index'
-import { Flex, ListItem, chakra } from '@chakra-ui/react'
+import { Flex, chakra } from '@chakra-ui/react'
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {
@@ -37,11 +37,11 @@ export const TagsWidget = () => {
       >
         <Flex as="ul" wrap="wrap" textStyle="listRaw">
           {nonEmptyTags.map((tag) => (
-            <ListItem key={tag.slug}>
+            <li key={tag.slug}>
               <ChakraLink textStyle="special" fontWeight="bold" to={tag.uri}>
                 {tag.name} ({tag.count})
               </ChakraLink>
-            </ListItem>
+            </li>
           ))}
         </Flex>
       </WidgetContainer>

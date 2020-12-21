@@ -34,6 +34,22 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        gingerThemeSrc: "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src",
+        gingerThemePages:
+          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/pages",
+        gingerThemeStyles:
+          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/styles",
+        gingerThemeComponents:
+          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/components",
+        gingerThemeUiComponents:
+          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/components/ui-components",
+        gingerThemeUtils:
+          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/utils",
+      },
+    },
+    {
       resolve: `@gatsbywpthemes/gatsby-plugin-wpcf7`,
       options: {
         wordPressUrl: options.wordPressUrl,

@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require('path')
 module.exports = (options) => {
   options.fonts = options.fonts || ['Abril Fatface', 'Fira Sans:300,700']
 
@@ -21,6 +22,20 @@ module.exports = (options) => {
     {
       resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: mergedOptions,
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        gingerThemeSrc: path.join(__dirname, 'src'),
+        gingerThemePages: path.join(__dirname, 'src/pages'),
+        gingerThemeStyles: path.join(__dirname, 'src/styles'),
+        gingerThemeComponents: path.join(__dirname, 'src/components'),
+        gingerThemeUiComponents: path.join(
+          __dirname,
+          'src/components/ui-components'
+        ),
+        gingerThemeUtils: path.join(__dirname, 'src/utils'),
+      },
     },
     '@chakra-ui/gatsby-plugin',
     `gatsby-plugin-react-helmet`,

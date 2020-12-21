@@ -2,11 +2,11 @@ import React from 'react'
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi'
 import { MenuItem } from './MenuItem'
 import { LinkItem } from './LinkItem'
-import { Button, ListItem, Collapse, useDisclosure } from '@chakra-ui/react'
+import { chakra, Button, Collapse, useDisclosure } from '@chakra-ui/react'
 export const SubMenu = ({ menuItem }) => {
   const { isOpen, onToggle } = useDisclosure()
   return (
-    <ListItem position="relative" key={menuItem.id}>
+    <chakra.li position="relative" key={menuItem.id}>
       <LinkItem menuItem={menuItem} />
       <Button
         variant="link"
@@ -27,6 +27,6 @@ export const SubMenu = ({ menuItem }) => {
           ))}
         </ul>
       </Collapse>
-    </ListItem>
+    </chakra.li>
   )
 }
