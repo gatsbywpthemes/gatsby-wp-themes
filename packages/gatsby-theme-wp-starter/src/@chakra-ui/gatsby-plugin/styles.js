@@ -100,6 +100,10 @@ const styles = {
       '::-webkit-search-cancel-button': {
         WebkitAppearance: 'none',
       },
+      '*:focus:not(:focus-visible), [class]:focus:not(:focus-visible)': {
+        outline: 'none',
+        boxShadow: 'none',
+      },
       ...base,
     }
   },
