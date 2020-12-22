@@ -1,7 +1,7 @@
 import React from "react"
-import { Flex } from "@chakra-ui/react"
+import { Flex, chakra } from "@chakra-ui/react"
 
-export const BorderTitle = (props) => (
+export const BorderTitle = ({ children, ...props }) => (
   <Flex
     justify="center"
     align="center"
@@ -10,7 +10,6 @@ export const BorderTitle = (props) => (
     letterSpacing="2px"
     fontSize="lg"
     fontWeight="bold"
-    textStyle="gradientTextPurple"
     sx={{
       ":after, :before": {
         content: '""',
@@ -26,5 +25,7 @@ export const BorderTitle = (props) => (
       },
     }}
     {...props}
-  />
+  >
+    <chakra.span textStyle="gradientTextPurple">{children}</chakra.span>
+  </Flex>
 )
