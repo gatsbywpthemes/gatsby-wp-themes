@@ -13,7 +13,7 @@ export const Menu = ({ menuName }) => {
   if (menuItems) {
     const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
     return (
-      <Box as="nav" mb="8" className="menu" aria-label="main">
+      <Box as="nav" mb="12" className="menu" aria-label="main">
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <chakra.ul role="menu" textStyle="listRaw">
           {menuNodes.map((menuItem) => {

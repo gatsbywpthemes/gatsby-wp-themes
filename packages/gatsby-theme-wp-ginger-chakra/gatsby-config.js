@@ -37,7 +37,10 @@ module.exports = (options) => {
         gingerThemeUtils: path.join(__dirname, 'src/utils'),
       },
     },
-    '@chakra-ui/gatsby-plugin',
+    {
+      resolve: '@chakra-ui/gatsby-plugin',
+      options: {},
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,
@@ -48,6 +51,12 @@ module.exports = (options) => {
       },
     },
     `gatsby-plugin-sass`,
+    {
+      resolve: `@gatsbywpthemes/gatsby-plugin-wpcf7`,
+      options: {
+        wordPressUrl: options.wordPressUrl,
+      },
+    },
     {
       resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
       options: {

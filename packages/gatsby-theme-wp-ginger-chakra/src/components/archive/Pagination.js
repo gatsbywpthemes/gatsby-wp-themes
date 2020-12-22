@@ -2,14 +2,17 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Flex, chakra } from '@chakra-ui/react'
 
-const ChakraLink = chakra(Link)
-
 const renderPreviousLink = (previousPagePath) => {
   if (previousPagePath) {
     return (
-      <ChakraLink textStyle="specialLeft" flex="1" to={previousPagePath}>
+      <chakra.a
+        as={Link}
+        textStyle="specialLeft"
+        flex="1"
+        to={previousPagePath}
+      >
         <span>Previous</span>
-      </ChakraLink>
+      </chakra.a>
     )
   } else {
     return <chakra.span flex="1" />
@@ -19,9 +22,9 @@ const renderPreviousLink = (previousPagePath) => {
 const renderNextLink = (nextPagePath) => {
   if (nextPagePath) {
     return (
-      <ChakraLink textStyle="specialRight" flex="1" to={nextPagePath}>
+      <chakra.a as={Link} textStyle="specialRight" flex="1" to={nextPagePath}>
         <span>Next</span>
-      </ChakraLink>
+      </chakra.a>
     )
   } else {
     return <chakra.span flex="1" />

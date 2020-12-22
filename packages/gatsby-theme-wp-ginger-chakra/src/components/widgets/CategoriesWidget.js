@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
 import { chakra } from '@chakra-ui/react'
 import { WidgetContainer } from './index'
 
@@ -16,8 +16,6 @@ const ALL_CATEGORIES_QUERY = graphql`
   }
 `
 
-const ChakraLink = chakra(Link)
-
 export const CategoriesWidget = () => {
   const {
     allWpCategory: { nodes },
@@ -29,13 +27,14 @@ export const CategoriesWidget = () => {
         <chakra.ul textStyle="listRaw">
           {nonEmptyCategories.map((category) => (
             <li key={category.slug}>
-              <ChakraLink
+              <chakra.a
+                as={GatsbyLink}
                 textStyle="special"
                 fontWeight="bold"
                 to={category.uri}
               >
                 {category.name}
-              </ChakraLink>
+              </chakra.a>
             </li>
           ))}
         </chakra.ul>

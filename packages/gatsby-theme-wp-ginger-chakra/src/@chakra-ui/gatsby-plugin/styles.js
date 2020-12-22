@@ -18,12 +18,9 @@ export const styles = {
         borderColor: mode('gray.200', 'whiteAlpha.300')(props),
         wordWrap: 'break-word',
       },
-      '*:focus:not(:focus-visible), [class]:focus:not(:focus-visible)': {
+      '*:focus:not(:focus-visible), [class]:focus:not(:focus-visible), input:focus': {
         outline: 'none',
         boxShadow: 'none',
-      },
-      blockquote: {
-        bg: mode('light', 'dark'),
       },
 
       '::-webkit-search-cancel-button': {

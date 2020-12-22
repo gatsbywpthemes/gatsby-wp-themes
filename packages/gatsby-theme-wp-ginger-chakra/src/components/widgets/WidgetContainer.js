@@ -8,6 +8,7 @@ export const WidgetContainer = ({ children, title, sx, ...props }) => {
       as="section"
       className="widget"
       {...props}
+      mb={12}
       sx={{
         '[aria-current]': {
           fontStyle: 'italic',

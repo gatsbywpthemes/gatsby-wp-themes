@@ -22,7 +22,7 @@ const theme = extendTheme({
   breakpoints,
   sizes: {
     header: ['4.5rem', '6rem', '6rem'],
-    content: '52.5rem',
+    content: '60rem',
     sidebar: '29.25rem',
   },
   components: {

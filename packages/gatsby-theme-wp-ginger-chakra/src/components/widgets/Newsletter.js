@@ -1,6 +1,15 @@
 import React, { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import { widgetNewsletterStyles } from '../../styles'
+import { WidgetContainer } from './index'
+import {
+  Box,
+  Flex,
+  FormErrorMessage,
+  FormLabel,
+  FormControl,
+  Input,
+  Button,
+} from '@chakra-ui/react'
 
 export const Newsletter = () => {
   const [email, setEmail] = useState('')
@@ -18,28 +27,26 @@ export const Newsletter = () => {
     setEmail(e.target.value)
   }
   return (
-    <>
-      {valid && (
-        <div sx={widgetNewsletterStyles}>
-          <h2 className="widget-title">Newsletter</h2>
-          {msg ? (
-            <p dangerouslySetInnerHTML={{ __html: msg }} />
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <input
-                placeholder="Email address"
-                name="email"
-                type="email"
-                required
-                value={email}
-                onChange={handleChange}
-                aria-label="Subsribe with your email address"
-              />
-              <button type="submit">Subscribe</button>
-            </form>
-          )}
-        </div>
-      )}
-    </>
+    valid && (
+      <WidgetContainer className="widget widget-newsletter" title="Newsletter">
+        {msg ? (
+          <p dangerouslySetInnerHTML={{ __html: msg }} />
+        ) : (
+          <Flex as="form" onSubmit={handleSubmit}>
+            <Input
+              placeholder="Email address"
+              name="email"
+              type="email"
+              required
+              value={email}
+              onChange={handleChange}
+              aria-label="Subsribe with your email address"
+              layerStyle="input"
+            />
+            <button type="submit">Subscribe</button>
+          </Flex>
+        )}
+      </WidgetContainer>
+    )
   )
 }

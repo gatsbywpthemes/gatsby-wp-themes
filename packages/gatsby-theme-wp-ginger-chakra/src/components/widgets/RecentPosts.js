@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'
 import Img from 'gatsby-image'
 import { Box, Flex, chakra } from '@chakra-ui/react'
@@ -31,8 +31,6 @@ const RECENT_POSTS_QUERY = graphql`
   }
 `
 
-const ChakraLink = chakra(Link)
-
 export const RecentPosts = () => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
   const { nodes } = data.allWpPost
@@ -46,7 +44,8 @@ export const RecentPosts = () => {
           {nodes.map((post) => {
             return (
               <Flex key={post.id} as="li" align="center" mb="4">
-                <ChakraLink
+                <Box
+                  as={GatsbyLink}
                   sx={{
                     '&>*': {
                       verticalAlign: 'middle',
@@ -64,9 +63,10 @@ export const RecentPosts = () => {
                       }
                     />
                   )}
-                </ChakraLink>
+                </Box>
                 <Box>
-                  <ChakraLink
+                  <Box
+                    as={GatsbyLink}
                     className="widget-post-date"
                     textStyle="special"
                     d="block"
@@ -75,8 +75,9 @@ export const RecentPosts = () => {
                     <time className="entry-date" dateTime={post.date}>
                       {moment(post.date).format(`MMMM DD, YYYY`)}
                     </time>
-                  </ChakraLink>
-                  <ChakraLink
+                  </Box>
+                  <Box
+                    as={GatsbyLink}
                     className="widget-post-title"
                     fontFamily="heading"
                     fontSize="lg"

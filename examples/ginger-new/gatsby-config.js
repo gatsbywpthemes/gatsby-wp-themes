@@ -17,7 +17,7 @@ module.exports = {
   pathPrefix: pathPrefix,
   siteMetadata: {
     author,
-    wordPressUrl: options.wordpressUrl,
+    wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl: options.siteUrl,
     social,
   },
@@ -30,6 +30,7 @@ module.exports = {
             ? process.env.GATSBY_DISQUS_NAME
             : "",
         ...options,
+        wordPressUrl: process.env.GATSBY_WP_URL,
         pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,
       },
     },
@@ -47,12 +48,6 @@ module.exports = {
           "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/components/ui-components",
         gingerThemeUtils:
           "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/utils",
-      },
-    },
-    {
-      resolve: `@gatsbywpthemes/gatsby-plugin-wpcf7`,
-      options: {
-        wordPressUrl: options.wordPressUrl,
       },
     },
   ],

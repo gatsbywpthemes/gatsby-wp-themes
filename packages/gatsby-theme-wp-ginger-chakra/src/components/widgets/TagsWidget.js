@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
 import { WidgetContainer } from './index'
 import { Flex, chakra } from '@chakra-ui/react'
 
@@ -15,8 +15,6 @@ const ALL_TAGS_QUERY = graphql`
     }
   }
 `
-
-const ChakraLink = chakra(Link)
 
 export const TagsWidget = () => {
   const {
@@ -38,9 +36,14 @@ export const TagsWidget = () => {
         <Flex as="ul" wrap="wrap" textStyle="listRaw">
           {nonEmptyTags.map((tag) => (
             <li key={tag.slug}>
-              <ChakraLink textStyle="special" fontWeight="bold" to={tag.uri}>
+              <chakra.a
+                as={GatsbyLink}
+                textStyle="special"
+                fontWeight="bold"
+                to={tag.uri}
+              >
                 {tag.name} ({tag.count})
-              </ChakraLink>
+              </chakra.a>
             </li>
           ))}
         </Flex>

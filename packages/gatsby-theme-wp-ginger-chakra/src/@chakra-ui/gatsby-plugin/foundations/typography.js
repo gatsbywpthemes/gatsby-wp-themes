@@ -81,13 +81,8 @@ export const h6 = {
 }
 export const blockquote = {
   fontStyle: 'italic',
-  px: [5, 12],
-  py: 8,
-  borderLeft: '5px solid',
-  borderColor: 'primary',
-  maxWidth: '800px !important',
-  mx: 'auto',
-  my: 10,
+  mx: 4,
+  mb: 6,
 }
 
 export const base = {

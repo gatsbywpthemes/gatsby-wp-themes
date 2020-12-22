@@ -65,4 +65,12 @@ export const gutenberg = {
     width: 'auto!important',
     display: 'block',
   },
+
+  hr: {
+    marginBottom: 'calc(1.5rem - 1px)',
+    background: 'currentColor',
+    border: 'none',
+    height: '1px',
+    opacity: 0.15,
+  },
 }
