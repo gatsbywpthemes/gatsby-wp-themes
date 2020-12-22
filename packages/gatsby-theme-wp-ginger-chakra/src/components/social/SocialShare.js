@@ -30,29 +30,23 @@ export const SocialShare = ({ url, title, media }) => {
         textStyle="listRaw"
         fontSize="xs"
         fontWeight="bold"
-        sx={{
-          'li:not(:last-of-type):after': {
-            content: "'/'",
-            mx: 2,
-          },
-        }}
       >
-        <Box as="li">
+        <Box as="li" textStyle="separateWithSlashes">
           <Twitter url={url} title={title}>
             Twitter
           </Twitter>
         </Box>
-        <Box as="li">
+        <Box as="li" textStyle="separateWithSlashes">
           <Facebook url={url} quote={title}>
             Facebook
           </Facebook>
         </Box>
-        <Box as="li">
+        <Box as="li" textStyle="separateWithSlashes">
           <Pinterest url={url} media={media}>
             Pinterest
           </Pinterest>
         </Box>
-        <Box as="li">
+        <Box as="li" textStyle="separateWithSlashes">
           <Linkedin url={url}>Linkedin</Linkedin>
         </Box>
       </Flex>

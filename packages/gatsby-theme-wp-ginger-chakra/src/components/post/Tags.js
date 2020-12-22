@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Box, Flex, chakra } from '@chakra-ui/react'
 
-const ChakraLink = chakra(Link)
-
 export const Tags = ({ tags }) => {
   return (
     <Box
@@ -21,15 +19,16 @@ export const Tags = ({ tags }) => {
       </Box>
       <Flex as="ul" wrap="wrap" textStyle="listRaw">
         {tags.map((tag) => (
-          <li key={tag.slug}>
-            <ChakraLink
+          <chakra.li key={tag.slug} textStyle="separateWithMiddots">
+            <chakra.a
+              as={Link}
               textStyle="specialLinkUnderline"
               fontSize="xs"
               to={tag.uri}
             >
               {tag.name}
-            </ChakraLink>
-          </li>
+            </chakra.a>
+          </chakra.li>
         ))}
       </Flex>
     </Box>

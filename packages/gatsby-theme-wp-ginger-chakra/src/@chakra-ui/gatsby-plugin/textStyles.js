@@ -79,7 +79,7 @@ export const textStyles = {
     d: 'block',
     position: 'relative',
     py: 3,
-    '&:after': {
+    '&:before': {
       content: "''",
       opacity: 0.2,
       position: 'absolute',
@@ -113,6 +113,18 @@ export const textStyles = {
     '&:hover': {
       color: 'inherit',
       opacity: 0.6,
+    },
+  },
+  separateWithMiddots: {
+    '&:not(:last-of-type):after': {
+      content: '"·"',
+      mx: 1,
+    },
+  },
+  separateWithSlashes: {
+    '&:not(:last-of-type):after': {
+      content: '"/"',
+      mx: 1,
     },
   },
 }

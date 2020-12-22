@@ -23,19 +23,10 @@ export const TagsWidget = () => {
   const nonEmptyTags = nodes.filter((el) => el.count)
   return (
     nonEmptyTags.length && (
-      <WidgetContainer
-        className="widget widget-tags"
-        title="Tags"
-        sx={{
-          'li:not(:last-of-type) a:after': {
-            content: '"·"',
-            p: 1,
-          },
-        }}
-      >
+      <WidgetContainer className="widget widget-tags" title="Tags">
         <Flex as="ul" wrap="wrap" textStyle="listRaw">
           {nonEmptyTags.map((tag) => (
-            <li key={tag.slug}>
+            <chakra.li key={tag.slug} textStyle="separateWithMiddots">
               <chakra.a
                 as={GatsbyLink}
                 textStyle="special"
@@ -44,7 +35,7 @@ export const TagsWidget = () => {
               >
                 {tag.name} ({tag.count})
               </chakra.a>
-            </li>
+            </chakra.li>
           ))}
         </Flex>
       </WidgetContainer>
