@@ -15,7 +15,11 @@ export const Menu = ({ menuName }) => {
     return (
       <Box as="nav" mb="12" className="menu" aria-label="main">
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
-        <chakra.ul role="menu" textStyle="listRaw">
+        <chakra.ul
+          role="menu"
+          textStyle="listRaw"
+          sx={{ 'ul a': { px: 8 }, 'ul ul a': { px: 16 } }}
+        >
           {menuNodes.map((menuItem) => {
             if (menuItem.children.length) {
               return <SubMenu key={menuItem.id} menuItem={menuItem} />

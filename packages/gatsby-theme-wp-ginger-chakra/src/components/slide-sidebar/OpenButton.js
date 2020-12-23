@@ -1,17 +1,16 @@
-import React from 'react'
-import { FiSun, FiMoon } from 'react-icons/fi'
-import { Button, useColorMode } from '@chakra-ui/react'
+import React, { forwardRef } from 'react'
+import { FiMenu } from 'react-icons/fi'
+import { chakra, useColorModeValue } from '@chakra-ui/react'
 import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
+import { Button } from 'gingerThemeUiComponents/Button'
+import { menuButtonStyles } from '../../styles/'
 
-export const ColorSwitch = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
+export const OpenButton = forwardRef(({ ...rest }, ref) => {
   return (
     <Button
-      type="button"
-      aria-label="Toggle dark/light mode"
-      onClick={toggleColorMode}
-      className={colorMode === 'light' ? 'default-mode' : 'dark-mode'}
-      variant="circle"
+      ref={ref}
+      aria-label="Open navigation menu"
+      {...rest}
       sx={{
         color: useThemeColorModeValue('menuButtonColor'),
         bg: useThemeColorModeValue('menuButtonBg'),
@@ -19,8 +18,6 @@ export const ColorSwitch = () => {
           color: useThemeColorModeValue('menuButtonBg'),
         },
         position: 'fixed',
-        zIndex: 13,
-        right: '5rem',
         top: (theme) => {
           const header0 = theme.sizes.header[0].split('rem')
           const header1 = theme.sizes.header[1].split('rem')
@@ -30,18 +27,15 @@ export const ColorSwitch = () => {
             '1rem',
           ]
         },
+        right: '1rem',
+        zIndex: 11,
+        '&.btn-menu-opened': {
+          transform: 'translate3d(6rem, 0, 0)',
+        },
       }}
+      variant="circle"
     >
-      {colorMode === 'dark' ? (
-        <FiSun sx={{ width: `1.5rem`, height: `1.5rem` }} />
-      ) : (
-        <FiMoon
-          sx={{
-            width: `1.5rem`,
-            height: `1.5rem`,
-          }}
-        />
-      )}
+      <FiMenu />
     </Button>
   )
-}
+})

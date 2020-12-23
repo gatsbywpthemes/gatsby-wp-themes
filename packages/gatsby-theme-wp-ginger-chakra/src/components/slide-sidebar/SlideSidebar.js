@@ -1,20 +1,18 @@
 import React, { useState, useRef, useContext } from 'react'
-import { FiMenu } from 'react-icons/fi'
 import {
-  Button,
-  useColorModeValue,
   Drawer,
   DrawerBody,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
 } from '@chakra-ui/react'
+import { useThemeColorModeValue as useColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 import { Menu } from './../index'
 import { WidgetsList } from './../widgets'
 import { SearchForm } from './../search'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { menuButtonStyles } from '../../styles/'
 import { SearchContext } from '../../../context'
+import { OpenButton } from './OpenButton'
 
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
   const {
@@ -25,18 +23,12 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
     menuName,
   } = useThemeOptions()
   const menuBtn = useRef()
+
   const { search, setSearch } = useContext(SearchContext)
   const [escInSearch, setEscInSearch] = useState(false)
   return (
     <>
-      <Button
-        ref={menuBtn}
-        aria-label="Open navigation menu"
-        onClick={onOpen}
-        sx={menuButtonStyles}
-      >
-        <FiMenu />
-      </Button>
+      <OpenButton ref={menuBtn} onClick={onOpen} />
 
       <Drawer
         isOpen={isOpen}
@@ -55,10 +47,11 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
       >
         <DrawerOverlay>
           <DrawerContent
-            bg={useColorModeValue('sidebarBg', 'modes.dark.sidebarBg')}
-            color={useColorModeValue('sidebarColor', 'modes.dark.sidebarColor')}
+            bg={useColorModeValue('sidebarBg')}
+            color={useColorModeValue('sidebarColor')}
+            sx={{ boxShadow: 'rgba(0, 0, 0, 0.3) -10px 0px 40px' }}
           >
-            <DrawerCloseButton />
+            <DrawerCloseButton sx={{ right: 6 }} />
             <DrawerBody px={[8, 12]} py="12">
               {addWordPressSearch && (
                 <SearchForm

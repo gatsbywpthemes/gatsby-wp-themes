@@ -7,12 +7,12 @@ import {
   lineHeights,
   fontWeights,
 } from './foundations/typography'
-import { Card } from './components'
+import components from './components'
 import { layerStyles } from './layerStyles'
 import { textStyles } from './textStyles'
 
 import { styles } from './styles'
-
+console.log(components)
 const theme = extendTheme({
   colors,
   fontSizes,
@@ -25,9 +25,7 @@ const theme = extendTheme({
     content: '60rem',
     sidebar: '29.25rem',
   },
-  components: {
-    Card,
-  },
+  components,
   textStyles: {
     ...textStyles,
     // ...base,

@@ -40,10 +40,11 @@ export const Newsletter = () => {
               required
               value={email}
               onChange={handleChange}
-              aria-label="Subsribe with your email address"
+              aria-label="Subscribe with your email address"
               layerStyle="input"
+              height="auto"
             />
-            <button type="submit">Subscribe</button>
+            <Button type="submit">Subscribe</Button>
           </Flex>
         )}
       </WidgetContainer>

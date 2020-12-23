@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@chakra-ui/react'
+import { Button } from 'gingerThemeUiComponents/Button'
 
 export const SubmitButton = ({ disabled, children }) => {
   return (

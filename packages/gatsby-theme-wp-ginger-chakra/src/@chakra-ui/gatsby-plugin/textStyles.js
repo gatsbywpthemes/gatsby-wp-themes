@@ -3,7 +3,7 @@ const beforeAfter = {
   width: '1.5rem',
   height: '1px',
   mx: 1,
-  bg: 'linkHover',
+  bg: 'currentColor',
   display: 'inline-block',
   verticalAlign: 'middle',
   transition: '0.6s',
@@ -75,7 +75,6 @@ export const textStyles = {
   specialLink: {
     ...special,
     fontWeight: 'bold',
-
     d: 'block',
     position: 'relative',
     py: 3,

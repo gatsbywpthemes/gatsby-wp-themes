@@ -1,6 +1,8 @@
 import React from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-import { Button } from '@chakra-ui/react'
+import { Button } from 'gingerThemeUiComponents/Button'
+import { useThemeColorModeValue as useColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
+
 import { FiChevronsDown } from 'react-icons/fi'
 
 export const ScrollToContentButton = () => {
@@ -8,18 +10,18 @@ export const ScrollToContentButton = () => {
     <Button
       sx={{
         display: ['none', 'block'],
-        variant: 'buttons.icon',
         position: 'absolute',
         bottom: '1.5rem',
         right: 0,
         left: 0,
         margin: 'auto',
-        color: 'scrollDownColor',
-        bg: 'scrollDownBg',
+        color: useColorModeValue('text'),
+        bg: useColorModeValue('bg'),
         ':hover svg': {
-          color: 'scrollDownBg',
+          color: useColorModeValue('bg'),
         },
       }}
+      variant="circle"
       aria-label="Scroll to content"
       onClick={() => scrollTo('#content')}
     >

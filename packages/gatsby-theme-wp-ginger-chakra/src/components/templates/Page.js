@@ -31,7 +31,7 @@ const Page = (props) => {
           }
         }
       />
-      <article>
+      <article data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
         {skipTitle.indexOf(slug) === -1 && (
           <Box as="h1" textStyle="h1Archive">
             <span

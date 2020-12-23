@@ -11,6 +11,8 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { CommentStatusFeedback } from './index'
+import { CommentSubmitButton } from './CommentSubmitButton'
+
 import { inputFields } from './inputfields'
 const commentSubmitQuery = gql`
   mutation(
@@ -73,22 +75,6 @@ export const CommentForm = ({
     )
   }
 
-  const CommentSubmitButton = () => {
-    return (
-      <Box w="full">
-        <Button
-          d="flex"
-          ml="auto"
-          className="submit-button"
-          type="submit"
-          disabled={commentStatus === 'loading'}
-        >
-          Post Comment
-        </Button>
-      </Box>
-    )
-  }
-
   const onSubmit = (data) => {
     setCommentStatus('loading')
     addComment({
@@ -130,6 +116,11 @@ export const CommentForm = ({
             justify="space-between"
             boxShadow="0 20px 40px rgba(0,0,0,.4)"
             p={['4', '8']}
+            sx={{
+              '.comment &': {
+                boxShadow: 'none',
+              },
+            }}
             onSubmit={handleSubmit(onSubmit)}
             noValidate
           >
@@ -187,7 +178,7 @@ export const CommentForm = ({
                 </FormControl>
               )
             })}
-            <CommentSubmitButton />
+            <CommentSubmitButton commentStatus={commentStatus} />
           </Flex>
         </Box>
       )}

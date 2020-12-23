@@ -1,5 +1,7 @@
 import React from 'react'
 import { Box, useColorModeValue, useToken } from '@chakra-ui/react'
+import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
+
 import { transparentize } from 'polished'
 import {
   PublicationDate,
@@ -19,12 +21,12 @@ export const PostEntryIntro = ({ ctx, post, variant = 'blog' }) => {
         transparentize(0.15, useToken('colors', 'cardBg')),
         transparentize(0.05, useToken('colors', 'modes.dark.cardBg'))
       )}
-      color={useColorModeValue('cardColor', 'modes.dark.cardColor')}
+      color={useThemeColorModeValue('cardColor')}
       boxShadow={useColorModeValue(
         `0 20px 40px -10px rgba(0,0,0,0.1)`,
         `0 20px 40px -10px rgba(0,0,0,0.3)`
       )}
-      borderColor={useColorModeValue('cardBorder', 'modes.dark.cardBorder')}
+      borderColor={useThemeColorModeValue('cardBorder')}
       w={['calc(100% - 2rem)', 'calc(100% - 4rem)', '45rem']}
     >
       <SocialShare

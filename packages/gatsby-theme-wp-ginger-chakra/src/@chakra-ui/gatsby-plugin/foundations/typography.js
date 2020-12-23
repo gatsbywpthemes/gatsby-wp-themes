@@ -28,13 +28,11 @@ export const fontWeights = {
 
 export const lineHeights = {
   body: 1.8,
-  heading: 1.4,
+  heading: 1.2,
   loose: 2,
 }
 
 export const p = {
-  fontSize: ['md'],
-  lineHeight: 'body',
   mb: 5,
 }
 export const a = {
@@ -52,32 +50,35 @@ const heading = {
 
 export const h1 = {
   ...heading,
-  fontSize: ['2xl', '4xl', '5xl'],
+  fontSize: ['4xl', '5xl', '7xl'],
   // mt: 1,
 }
 export const h2 = {
   ...heading,
-  fontSize: ['xl', '3xl', '4xl'],
-  mb: [4, 6],
+  fontSize: ['3xl', '4xl', '5xl'],
+  mb: [4],
 }
 
 export const h3 = {
   ...heading,
-  fontSize: ['xl', '2xl'],
-  // mt: 2,
+  fontSize: ['2xl', '3xl', '4xl'],
+  mb: 4,
 }
 export const h4 = {
   ...heading,
-  fontSize: ['lg', 'xl'],
+  fontSize: ['xl', '2xl', '3xl'],
+  mb: 4,
 }
 
 export const h5 = {
   ...heading,
-  fontSize: 'xm',
+  fontSize: ['lg', 'xl', '2xl'],
+  mb: 4,
 }
 export const h6 = {
   ...heading,
-  fontSize: 'xs',
+  fontSize: ['md', 'lg', 'xl'],
+  mb: 4,
 }
 export const blockquote = {
   fontStyle: 'italic',

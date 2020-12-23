@@ -12,6 +12,7 @@ export const PostEntryTitle = ({ post, location }) => {
       as="h1"
       className="entry-title"
       mb="4"
+      fontSize="5xl"
       dangerouslySetInnerHTML={{ __html: post.title }}
     />
   )

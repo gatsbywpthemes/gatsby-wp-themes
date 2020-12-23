@@ -10,19 +10,22 @@ export const styles = {
         color: mode('text', 'modes.dark.text')(props),
         bg: mode('bg', 'modes.dark.bg')(props),
         lineHeight: 'body',
+        fontSize: ['md', 'lg'],
       },
       '*::placeholder': {
-        color: mode('gray.400', 'whiteAlpha.400')(props),
+        color: 'currentColor',
+        opacity: 0.6,
       },
       '*, *::before, &::after': {
-        borderColor: mode('gray.200', 'whiteAlpha.300')(props),
         wordWrap: 'break-word',
       },
       '*:focus:not(:focus-visible), [class]:focus:not(:focus-visible), input:focus': {
         outline: 'none',
         boxShadow: 'none',
       },
-
+      '*:focus': {
+        borderColor: 'currentColor!important',
+      },
       '::-webkit-search-cancel-button': {
         WebkitAppearance: 'none',
       },

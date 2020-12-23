@@ -15,7 +15,7 @@ const PreviousLink = ({ ctx: { prev } }) => {
 const NextLink = ({ ctx: { next } }) => {
   return next ? (
     <Link as={GatsbyLink} textStyle="specialRight" to={next}>
-      Up Next
+      <span>Up Next</span>
     </Link>
   ) : (
     <span />

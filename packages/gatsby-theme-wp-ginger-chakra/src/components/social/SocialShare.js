@@ -1,8 +1,8 @@
 import React from 'react'
 import { Twitter, Facebook, Pinterest, Linkedin } from './icons'
 import { FiShare2 } from 'react-icons/fi'
-import { Flex, Box, useColorModeValue } from '@chakra-ui/react'
-
+import { Flex, Box } from '@chakra-ui/react'
+import { useThemeColorModeValue as useColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 export const SocialShare = ({ url, title, media }) => {
   return (
     <>
@@ -13,8 +13,8 @@ export const SocialShare = ({ url, title, media }) => {
         mb="3"
         w="8"
         h="8"
-        bg={useColorModeValue('cardColor', 'modes.dark.cardColor')}
-        color={useColorModeValue('cardBg', 'modes.dark.cardBg')}
+        bg={useColorModeValue('cardColor')}
+        color={useColorModeValue('cardBg')}
         borderRadius="50%"
         fontSize="sm"
         aria-label="Share on social networks"
