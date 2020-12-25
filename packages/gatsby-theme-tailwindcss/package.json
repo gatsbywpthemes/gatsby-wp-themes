@@ -1,0 +1,20 @@
+{
+  "name": "@gatsbywpthemes/gatsby-theme-tailwindcss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "gatsby-plugin-emotion": "^5.1.0",
+    "gatsby-plugin-postcss": "^3.4.0",
+    "postcss": "^8.2.1",
+    "tailwindcss": "^2.0.2",
+    "twin.macro": "^2.0.7"
+  }
+}

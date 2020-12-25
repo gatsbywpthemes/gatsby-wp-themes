@@ -25,9 +25,12 @@ export const ArchiveTitle = ({ name, text }) => {
           {text} {name}
         </Heading>
       </Box>
-      <div className="p-6 mb-6 font-mono text-xl font-extrabold text-center text-blue-900 uppercase rounded-full rounded-r-none bg-modes-dark-mobileMenuBg w-72">
+      <div className="p-6 mb-6 font-mono text-xl font-extrabold text-center text-blue-900 uppercase rounded-full rounded-r-none dark:bg-modes-dark-headerBg bg-primary w-72">
         test
       </div>
+      <Box bg="amber.500" color="primary">
+        chakra
+      </Box>
     </>
   )
 }
