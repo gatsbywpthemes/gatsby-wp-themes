@@ -16,6 +16,9 @@ export const PostEntryContent = ({ post, location, ...props }) => {
         <diV className="p-6 text-2xl font-black text-center text-pink-300 uppercase shadow-xl bg-primary rounded-2xl">
           test
         </diV>
+        <Box bg="amber.400" className="p-4 mt-6 rounded-full">
+          chakra test
+        </Box>
       </Box>
     </Box>
   )
