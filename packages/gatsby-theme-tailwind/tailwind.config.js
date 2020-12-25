@@ -1,11 +1,15 @@
+const config = require('starterThemeConfig')
+
 module.exports = {
   purge: [],
   darkMode: 'class',
+
   theme: {
+    ...config,
+
     extend: {
       colors: {
-        primary: '#10b3b1',
-        secondary: 'tomato',
+        test: '#345679',
       },
     },
   },

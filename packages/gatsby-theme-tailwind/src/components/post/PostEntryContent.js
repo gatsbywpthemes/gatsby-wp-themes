@@ -13,7 +13,7 @@ export const PostEntryContent = ({ post, location, ...props }) => {
       <Box className="entry-content">
         <ActivatePostScripts />
         <ParsedContent content={content} />
-        <diV className="p-6 text-2xl font-black text-center uppercase shadow-xl bg-primary text-secondary rounded-2xl">
+        <diV className="p-6 text-2xl font-black text-center text-pink-300 uppercase shadow-xl bg-primary rounded-2xl">
           test
         </diV>
       </Box>
