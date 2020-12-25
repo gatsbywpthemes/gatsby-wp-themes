@@ -1,4 +1,4 @@
-const config = require("./themeConfig")
+const config = require("@gatsbywpthemes/gatsby-theme-wp-starter/themeConfig")
 
 module.exports = {
   purge: [],
@@ -9,7 +9,7 @@ module.exports = {
 
     extend: {
       colors: {
-        primary: "#345679",
+        test: "#345679",
       },
     },
   },
