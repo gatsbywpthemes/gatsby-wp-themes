@@ -13,6 +13,9 @@ export const PostEntryContent = ({ post, location, ...props }) => {
       <Box className="entry-content">
         <ActivatePostScripts />
         <ParsedContent content={content} />
+        <diV className="p-6 font-black uppercase shadow-xl text-secondary bg-primary rounded-2xl">
+          test
+        </diV>
       </Box>
     </Box>
   )

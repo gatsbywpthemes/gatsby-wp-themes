@@ -30,6 +30,7 @@ module.exports = {
         starterUiComponents:
           "@gatsbywpthemes/gatsby-theme-tailwind/src/components/ui-components",
         starterUtils: "@gatsbywpthemes/gatsby-theme-tailwind/src/utils",
+        starterThemeConfig: "@gatsbywpthemes/gatsby-theme-tailwind/themeConfig",
       },
     },
   ],
