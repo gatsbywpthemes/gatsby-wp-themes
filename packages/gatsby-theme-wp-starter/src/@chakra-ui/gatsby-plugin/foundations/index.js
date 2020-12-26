@@ -1,4 +1,3 @@
-import typography from './typography'
 import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 import config from 'starterThemeConfig'
