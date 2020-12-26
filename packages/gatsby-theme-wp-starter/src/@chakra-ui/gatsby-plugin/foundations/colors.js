@@ -7,7 +7,7 @@ const { red, teal, purple, gray } = theme.colors
 
 const light = gray[100],
   ultraLight = gray[50],
-  dark = lighten(0.02, gray[800]),
+  dark = '#1e2532',
   ultraDark = gray[900],
   primary = teal[400],
   secondary = purple[500],

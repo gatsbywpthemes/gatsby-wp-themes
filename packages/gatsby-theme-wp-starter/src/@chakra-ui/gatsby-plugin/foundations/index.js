@@ -1,4 +1,5 @@
 import typography from './typography'
+import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 import config from 'starterThemeConfig'
 
@@ -18,7 +19,7 @@ const {
 } = config
 
 const foundations = {
-  // breakpoints: [...screens],
+  breakpoints: createBreakpoints(screens),
   colors,
   space: spacing,
   border: borderWidth,
@@ -30,7 +31,11 @@ const foundations = {
   fonts: fontFamily,
   letterSpacings: letterSpacing,
   lineHeights: lineHeight,
-  typography,
+  typography: {
+    fontSizes: fontSize,
+    fontWeights: fontWeight,
+    lineHeights: lineHeight,
+  },
 }
 
 export default foundations
