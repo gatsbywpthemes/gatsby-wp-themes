@@ -16,11 +16,8 @@
   "dependencies": {
     "@gatsbywpthemes/gatsby-theme-wp-starter": "*",
     "gatsby": "^2.29.0",
-    "gatsby-plugin-postcss": "^3.4.0",
     "gatsby-plugin-root-import": "^2.0.5",
-    "lodash.merge": "^4.6.2",
-    "postcss": "^8.2.1",
-    "tailwindcss": "^2.0.2"
+    "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
     "prettier": "^2.2.1"

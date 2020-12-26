@@ -11,7 +11,6 @@ module.exports = {
     social,
   },
   plugins: [
-    `gatsby-plugin-postcss`,
     {
       resolve: `@gatsbywpthemes/gatsby-theme-wp-starter`,
       options: {
