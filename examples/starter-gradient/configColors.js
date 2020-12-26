@@ -1,16 +1,16 @@
-import { theme } from "@chakra-ui/react"
-import { darken, lighten } from "polished"
+const Color = require("color")
 
-const { gray } = theme.colors
+const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
+const darken = (clr, val) => Color(clr).darken(val).rgb().string()
 
 //Palette
 
 const light = "#FBEED9",
-  ultraLight = lighten(0.04, "#FBEED9"),
+  ultraLight = lighten("#FBEED9", 0.04),
   dark = "#082737",
-  dark0 = lighten(0.08, "#082737"),
-  dark2 = darken(0.04, "#082737"),
-  ultraDark = darken(0.1, "#082737"),
+  dark0 = lighten("#082737", 0.08),
+  dark2 = darken("#082737", 0.04),
+  ultraDark = darken("#082737", 0.1),
   primary = "tomato",
   secondary = "#4C959B",
   yellow = "#FCB458",
@@ -54,7 +54,7 @@ const colors = {
   nlInputBg: light,
   /* post */
   archiveTitleBg: "black",
-  infoBg: darken(0.02, light),
+  infoBg: darken(light, 0.02),
   archiveTitleBg: primary,
   cardBg: ultraLight,
 

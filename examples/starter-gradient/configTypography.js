@@ -1,4 +1,3 @@
-import { mode } from "@chakra-ui/theme-tools"
 // eslint-disable-next-line no-unused-vars
 const rem = (px) => px / 16 + "rem"
 
