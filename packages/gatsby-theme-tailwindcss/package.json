@@ -9,9 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@emotion/react": "^11.1.4",
-    "@emotion/styled": "^11.0.0",
-    "gatsby-plugin-emotion": "^5.1.0",
     "gatsby-plugin-postcss": "^3.4.0",
     "postcss": "^8.2.1",
     "tailwindcss": "^2.0.2",
