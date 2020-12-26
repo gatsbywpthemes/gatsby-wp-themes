@@ -18,7 +18,7 @@ const light = "#FBEED9",
   bg = ultraLight,
   text = ultraDark
 
-const colors = {
+module.exports = {
   /* basic colors*/
   light,
   ultraLight,
@@ -93,5 +93,3 @@ const colors = {
     },
   },
 }
-
-export default colors

@@ -1,5 +1,5 @@
-const config = require("@gatsbywpthemes/gatsby-theme-wp-starter/themeConfig")
-// const config = require("./themeConfig")
+// const config = require("@gatsbywpthemes/gatsby-theme-wp-starter/themeConfig")
+const config = require("./themeConfig")
 // const colorsSettings = require("./configColors")
 // const typographySettings = require("./configTypography")
 

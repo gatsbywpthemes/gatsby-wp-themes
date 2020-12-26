@@ -65,7 +65,7 @@ const base = {
   h6,
 }
 
-const typographySettings = {
+module.exports = {
   baseFontSize: "16px",
   fonts: {
     body: "Coda",
@@ -99,5 +99,3 @@ const typographySettings = {
   },
   base,
 }
-
-export default typographySettings
