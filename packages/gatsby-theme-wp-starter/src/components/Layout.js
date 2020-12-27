@@ -4,7 +4,7 @@ import { Box } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
 import 'starterStyles/wp-styles/styles.scss'
 
-export const Layout = ({ children, page, type = 'page' }) => {
+export const Layout = ({ children, page, type = 'page', ...props }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
   const pageTemplate = page?.template
     ? page.template.templateName.toLowerCase()
@@ -22,6 +22,7 @@ export const Layout = ({ children, page, type = 'page' }) => {
         },
       }}
       className={`${layoutClass}-${type} ${fullWidthClass}`}
+      {...props}
     >
       <Box as={Headroom} sx={{ '&>div': { zIndex: '2!important' } }}>
         <Header />
