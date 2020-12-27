@@ -1,6 +1,6 @@
-const Color = require('color')
+// const Color = require('color')
 
-const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
+// const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
 // const darken = (clr, val) => Color(clr).darken(val).rgb().string()
 const colors = require('tailwindcss/colors')
 
@@ -30,14 +30,14 @@ const {
 } = colors
 
 //palette
-const light = gray[100],
-  ultraLight = gray[50],
-  dark = lighten(gray[800], 0.02),
-  ultraDark = gray[900],
+const light = blueGray[100],
+  ultraLight = blueGray[50],
+  dark = blueGray[800],
+  ultraDark = blueGray[900],
   primary = teal[400],
   secondary = purple[500],
   highlight = red[500],
-  mutted = gray[200],
+  mutted = blueGray[200],
   bg = ultraLight,
   text = ultraDark
 
@@ -77,7 +77,7 @@ module.exports = {
   /* post */
   archiveTitleBg: 'black',
   infoBg: light,
-  archiveTitleBg: gray[100],
+  archiveTitleBg: blueGray[100],
   cardBg: 'white',
 
   modes: {
@@ -105,7 +105,7 @@ module.exports = {
       /* newsletter */
       nlButtonBg: primary,
       nlButtonColor: 'white',
-      nlInputBg: gray[700],
+      nlInputBg: blueGray[700],
       /* post*/
       archiveTitleBg: primary,
       infoBg: primary,
