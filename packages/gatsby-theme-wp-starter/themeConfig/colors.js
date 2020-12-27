@@ -1,13 +1,38 @@
-import { theme } from '@chakra-ui/react'
-import { lighten } from 'polished'
+const Color = require('color')
 
-const { red, teal, purple, gray } = theme.colors
+const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
+// const darken = (clr, val) => Color(clr).darken(val).rgb().string()
+const colors = require('tailwindcss/colors')
 
-//Palette
+const {
+  blueGray,
+  coolGray,
+  trueGray,
+  warmGray,
+  red,
+  orange,
+  amber,
+  yellow,
+  lime,
+  green,
+  emerald,
+  teal,
+  cyan,
+  lightBlue,
+  blue,
+  indigo,
+  violet,
+  purple,
+  fuchsia,
+  pink,
+  rose,
+  gray,
+} = colors
 
+//palette
 const light = gray[100],
   ultraLight = gray[50],
-  dark = lighten(0.02, gray[800]),
+  dark = lighten(gray[800], 0.02),
   ultraDark = gray[900],
   primary = teal[400],
   secondary = purple[500],
@@ -16,11 +41,11 @@ const light = gray[100],
   bg = ultraLight,
   text = ultraDark
 
-const colors = {
-  /* basic colors */
+module.exports = {
+  /* header */
+  ...colors,
   light,
   ultraLight,
-  dark,
   ultraDark,
   primary,
   secondary,
@@ -88,5 +113,3 @@ const colors = {
     },
   },
 }
-
-export default colors

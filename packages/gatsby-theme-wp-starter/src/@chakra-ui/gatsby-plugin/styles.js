@@ -1,7 +1,7 @@
 import { mode } from '@chakra-ui/theme-tools'
 
 const p = {
-  fontSize: ['md'],
+  fontSize: ['base'],
   lineHeight: 'body',
   mb: 5,
 }

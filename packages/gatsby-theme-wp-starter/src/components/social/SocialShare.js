@@ -6,7 +6,7 @@ import { FiShare2 } from 'react-icons/fi'
 export const SocialShare = ({ url, title, media }) => {
   return (
     <Center flexDirection="column" mt={10}>
-      <Heading as="h3" fontSize="md" textTransform="uppercase" mb={4}>
+      <Heading as="h3" fontSize="base" textTransform="uppercase" mb={4}>
         Share on social media
       </Heading>
       <IconButton

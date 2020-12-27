@@ -1,7 +1,4 @@
 // eslint-disable-next-line no-unused-vars
-import { rem } from "polished"
-
-// eslint-disable-next-line no-unused-vars
 const heading = {
   fontFamily: "heading",
   lineHeight: "heading",
@@ -11,12 +8,9 @@ const heading = {
     borderBottom: "none",
   },
 }
-const typographySettings = {
+module.exports = {
   baseFontSize: "16px",
-  fonts: {
-    body: "IBM Plex Mono",
-    heading: "Roboto Slab",
-  },
+
   fontWeights: {
     //   body: 400,
     // heading: `bold`,
@@ -83,5 +77,3 @@ const typographySettings = {
     // mb: `xxs`,
   },
 }
-
-export default typographySettings

@@ -24,6 +24,7 @@ module.exports = (options) => {
     ...options,
   }
   const plugins = [
+    `gatsby-plugin-postcss`,
     {
       resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: mergedOptions,
@@ -48,6 +49,7 @@ module.exports = (options) => {
           'src/components/ui-components'
         ),
         starterUtils: path.join(__dirname, 'src/utils'),
+        starterThemeConfig: path.join(__dirname, 'themeConfig'),
       },
     },
     `gatsby-plugin-react-helmet`,
