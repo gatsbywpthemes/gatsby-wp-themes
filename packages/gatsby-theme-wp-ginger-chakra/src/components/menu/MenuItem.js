@@ -1,6 +1,5 @@
 import React from 'react'
-import { SubMenu } from './SubMenu'
-import { LinkItem } from './LinkItem'
+import { SubMenu, LinkItem } from 'gingerThemeComponents'
 
 export const MenuItem = ({ menuItem }) => {
   if (menuItem.children.length) {

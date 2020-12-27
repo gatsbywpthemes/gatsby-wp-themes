@@ -1,6 +1,5 @@
 import React from 'react'
-import Layout from '../Layout.js'
-import { PostEntryFull } from '../post'
+import { PostEntryFull, Layout } from 'gingerThemeComponents'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
 const Post = (props) => {

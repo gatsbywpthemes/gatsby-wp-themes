@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useRef } from 'react'
 import { useDisclosure } from '@chakra-ui/react'
-import { SlideSidebar } from './index'
+import { SlideSidebar } from 'gingerThemeComponents'
 import { SearchContext } from '../../context'
 
 export const SidebarWrapper = (props) => {

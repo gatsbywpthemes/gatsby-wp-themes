@@ -7,12 +7,14 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 import { useThemeColorModeValue as useColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
-import { Menu } from './../index'
-import { WidgetsList } from './../widgets'
-import { SearchForm } from './../search'
+import {
+  Menu,
+  WidgetsList,
+  SearchForm,
+  OpenButton,
+} from 'gingerThemeComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { SearchContext } from '../../../context'
-import { OpenButton } from './OpenButton'
 
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
   const {
@@ -23,13 +25,11 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
     menuName,
   } = useThemeOptions()
   const menuBtn = useRef()
-
   const { search, setSearch } = useContext(SearchContext)
   const [escInSearch, setEscInSearch] = useState(false)
   return (
     <>
       <OpenButton ref={menuBtn} onClick={onOpen} />
-
       <Drawer
         isOpen={isOpen}
         placement="right"

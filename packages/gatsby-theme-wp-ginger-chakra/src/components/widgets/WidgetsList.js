@@ -1,9 +1,9 @@
 import React from 'react'
-import { Widget } from './Widget'
+import { Widget } from 'gingerThemeComponents'
 
 export const WidgetsList = ({ widgets }) => {
   return (
-    !!widgets &&
+    Array.isArray(widgets) &&
     widgets.map((widget) => <Widget key={widget} widget={widget} />)
   )
 }

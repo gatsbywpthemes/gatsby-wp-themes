@@ -1,6 +1,5 @@
 import React from 'react'
-import { PostEntry } from '../post'
-import { Pagination, ArchiveTitle } from './index'
+import { PostEntry, Pagination, ArchiveTitle } from 'gingerThemeComponents'
 
 export const ArchiveContent = ({ posts, ctx, name, text = 'Posts from: ' }) => {
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
 import {
@@ -10,10 +10,14 @@ import {
   Input,
   Button,
 } from '@chakra-ui/react'
-import { CommentStatusFeedback } from './index'
-import { CommentSubmitButton } from './CommentSubmitButton'
-
+import {
+  CommentStatusFeedback,
+  CommentSubmitButton,
+  CommentNotes,
+} from 'gingerThemeComponents'
 import { inputFields } from './inputfields'
+import { CommentsListContext } from './context'
+
 const commentSubmitQuery = gql`
   mutation(
     $author: String
@@ -37,12 +41,8 @@ const commentSubmitQuery = gql`
   }
 `
 
-export const CommentForm = ({
-  commentId = 0,
-  postId,
-  cancelReply,
-  doOnCompleted,
-}) => {
+export const CommentForm = ({ commentId = 0 }) => {
+  const { postId, cancelReply, doOnCompleted } = useContext(CommentsListContext)
   const { register, handleSubmit, errors } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
   const [addComment] = useMutation(commentSubmitQuery, {
@@ -58,22 +58,6 @@ export const CommentForm = ({
       setCommentStatus('error')
     },
   })
-
-  const CommentNotes = () => {
-    return (
-      <Box
-        as="p"
-        textStyle="special"
-        textAlign="center"
-        w="full"
-        className="comment-notes"
-      >
-        <span id="email-notes">Your email address will not be published.</span>
-        <br />
-        Required fields are marked <span className="required">*</span>
-      </Box>
-    )
-  }
 
   const onSubmit = (data) => {
     setCommentStatus('loading')

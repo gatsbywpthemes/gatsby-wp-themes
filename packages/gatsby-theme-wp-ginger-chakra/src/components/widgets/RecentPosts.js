@@ -3,7 +3,7 @@ import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
 import moment from 'moment/moment'
 import Img from 'gatsby-image'
 import { Box, Flex, chakra } from '@chakra-ui/react'
-import { WidgetContainer } from './index'
+import { WidgetContainer } from 'gingerThemeComponents'
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {

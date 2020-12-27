@@ -5,9 +5,9 @@ import {
   PostEntryMedia,
   PrevNextPostNavigation,
   Tags,
-} from './index'
+} from 'gingerThemeComponents'
 
-export const PostEntry = ({ ctx, post, location = 'archive' }) => {
+export const PostEntry = ({ post }) => {
   return (
     <article
       className="entry"
@@ -15,16 +15,8 @@ export const PostEntry = ({ ctx, post, location = 'archive' }) => {
       data-sal-duration="1000"
       data-sal-easing="ease"
     >
-      <PostEntryMedia post={post} location={location} />
-      {location === 'single' ? (
-        <>
-          <PostEntryIntro ctx={ctx} post={post} />
-          <Tags post={post} location={location} />
-          <PrevNextPostNavigation ctx={ctx} />
-        </>
-      ) : (
-        <PostEntryIntroBlog post={post} />
-      )}
+      <PostEntryMedia post={post} />
+      <PostEntryIntroBlog post={post} />
     </article>
   )
 }

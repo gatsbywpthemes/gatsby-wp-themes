@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Flex } from '@chakra-ui/react'
-import Layout from '../components/Layout'
+import { Layout } from 'gingerThemeComponents'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
 const NotFoundPage = ({ location }) => (

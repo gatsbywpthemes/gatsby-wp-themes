@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import { WidgetContainer } from './index'
+import { WidgetContainer } from 'gingerThemeComponents'
 import {
   Box,
   Flex,

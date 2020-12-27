@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { SearchResults, LoadMoreButton } from './index'
+import { SearchResults, LoadMoreButton } from 'gingerThemeComponents'
 
 const GET_PAGES = gql`
   fragment PageFields on Page {

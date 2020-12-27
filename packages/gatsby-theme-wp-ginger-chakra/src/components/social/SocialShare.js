@@ -1,8 +1,9 @@
 import React from 'react'
-import { Twitter, Facebook, Pinterest, Linkedin } from './icons'
 import { FiShare2 } from 'react-icons/fi'
 import { Flex, Box } from '@chakra-ui/react'
+import { Twitter, Facebook, Pinterest, Linkedin } from 'gingerThemeComponents'
 import { useThemeColorModeValue as useColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
+
 export const SocialShare = ({ url, title, media }) => {
   return (
     <>

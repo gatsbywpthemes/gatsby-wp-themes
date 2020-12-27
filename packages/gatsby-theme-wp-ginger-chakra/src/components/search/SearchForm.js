@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
 import { Box, Flex, Button, chakra } from '@chakra-ui/react'
-import { SearchQueries } from './index'
+import { SearchQueries } from 'gingerThemeComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const SearchForm = ({ setEscInSearch, search, setSearch }) => {
@@ -23,7 +23,6 @@ export const SearchForm = ({ setEscInSearch, search, setSearch }) => {
     <>
       <Box position="relative" mb="6">
         <Box as={FiSearch} position="absolute" top="0" bottom="0" my="auto" />
-
         <Flex as="form" onSubmit={handleSubmit}>
           <Box position="relative" w="full">
             <chakra.input
@@ -39,7 +38,6 @@ export const SearchForm = ({ setEscInSearch, search, setSearch }) => {
               placeholder="search here..."
               aria-label="Search here"
             />
-
             {value.length > 0 && (
               <Button
                 variant="ghost"

@@ -1,70 +1,15 @@
-import React, { Fragment, useState } from 'react'
-import { useQuery, gql } from '@apollo/client'
+import React, { Fragment, useContext } from 'react'
 import { Box, chakra } from '@chakra-ui/react'
-import { CommentForm, Comment } from './index'
-
-const GET_COMMENTS = gql`
-  query($postId: ID!) {
-    comments(where: { contentId: $postId, order: ASC }, first: 1000) {
-      nodes {
-        ...CommentFields
-        replies(where: { order: ASC }) {
-          nodes {
-            ...CommentFields
-            replies(where: { order: ASC }) {
-              nodes {
-                ...CommentFields
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  fragment CommentFields on Comment {
-    id
-    date
-    approved
-    content
-    commentId
-    parent {
-      node {
-        id
-        commentId
-      }
-    }
-    author {
-      node {
-        ...AuthorFields
-      }
-    }
-  }
-  fragment AuthorFields on CommentAuthor {
-    name
-    url
-    email
-  }
-`
+import { CommentForm, Comment } from 'gingerThemeComponents'
+import { CommentsListContext } from './context'
 
 export const CommentsList = ({ post, reloading }) => {
   const postId = post.databaseId
-  const { data, loading, error, refetch } = useQuery(GET_COMMENTS, {
-    variables: { postId },
-  })
-  const [activeComment, setActiveComment] = useState(0)
-  const cancelReply = () => {
-    setActiveComment(0)
-  }
-  const addReply = (id) => {
-    setActiveComment(id)
-  }
-  const doOnCompleted = () => {
-    refetch()
-  }
+  const { comments, loading, error, activeComment } = useContext(
+    CommentsListContext
+  )
   if (loading) return <p>Loading comments&hellip;</p>
   if (error) return <p>Some errors occur.</p>
-  const comments = data.comments
   return (
     <>
       {comments.nodes.length > 0 ? (
@@ -83,11 +28,7 @@ export const CommentsList = ({ post, reloading }) => {
                   <Comment
                     withReply={true}
                     postId={postId}
-                    activeComment={activeComment}
                     comment={comment}
-                    addReply={addReply}
-                    cancelReply={cancelReply}
-                    doOnCompleted={doOnCompleted}
                   ></Comment>
                   {comment.replies.nodes.length > 0 && (
                     <ul>
@@ -96,11 +37,7 @@ export const CommentsList = ({ post, reloading }) => {
                           <Comment
                             withReply={true}
                             postId={postId}
-                            activeComment={activeComment}
                             comment={reply}
-                            addReply={addReply}
-                            cancelReply={cancelReply}
-                            doOnCompleted={doOnCompleted}
                           ></Comment>
                           {reply.replies.nodes.length > 0 && (
                             <ul>
@@ -109,7 +46,6 @@ export const CommentsList = ({ post, reloading }) => {
                                   withReply={false}
                                   key={replyRe.id}
                                   comment={replyRe}
-                                  doOnCompleted={doOnCompleted}
                                 />
                               ))}
                             </ul>
@@ -125,13 +61,7 @@ export const CommentsList = ({ post, reloading }) => {
       ) : (
         <p>No comments yet</p>
       )}
-      {activeComment === 0 && (
-        <CommentForm
-          postId={postId}
-          doOnCompleted={doOnCompleted}
-          cancelReply={cancelReply}
-        />
-      )}
+      {activeComment === 0 && <CommentForm postId={postId} />}
     </>
   )
 }

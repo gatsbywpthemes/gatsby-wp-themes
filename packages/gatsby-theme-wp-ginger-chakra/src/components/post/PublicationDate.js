@@ -1,5 +1,5 @@
 import React from 'react'
-import { Date } from './index'
+import { Date } from 'gingerThemeComponents'
 import { Link } from 'gatsby'
 import { chakra } from '@chakra-ui/react'
 

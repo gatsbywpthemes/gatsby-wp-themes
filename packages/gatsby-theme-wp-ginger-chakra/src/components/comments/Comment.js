@@ -1,24 +1,17 @@
-import React from 'react'
-import { Date } from '../post'
+import React, { useContext } from 'react'
 import {
+  Date,
   CommentForm,
   CommentContent,
   CommentAuthor,
   ReplyButton,
   CommentNestingInfo,
-} from './index'
+} from 'gingerThemeComponents'
 import { Box } from '@chakra-ui/react'
+import { CommentsListContext } from './context'
 
-export const Comment = (props) => {
-  const {
-    comment,
-    activeComment,
-    postId,
-    withReply,
-    addReply,
-    cancelReply,
-    doOnCompleted,
-  } = props
+export const Comment = ({ comment, withReply }) => {
+  const { postId, activeComment } = useContext(CommentsListContext)
   return (
     <Box as="li" className="comment" layerStyle="overlay" p="4">
       <CommentAuthor
@@ -31,14 +24,9 @@ export const Comment = (props) => {
       <CommentContent content={comment.content} />
       {withReply ? (
         activeComment === comment.commentId ? (
-          <CommentForm
-            commentId={comment.commentId}
-            postId={postId}
-            cancelReply={cancelReply}
-            doOnCompleted={doOnCompleted}
-          />
+          <CommentForm commentId={comment.commentId} postId={postId} />
         ) : (
-          <ReplyButton commentId={comment.commentId} actionOnClick={addReply} />
+          <ReplyButton commentId={comment.commentId} />
         )
       ) : (
         <CommentNestingInfo />

@@ -1,10 +1,9 @@
 import React from 'react'
 import { Box, useColorMode } from '@chakra-ui/react'
-import Layout from '../Layout'
-import ParsedContent from '../../utils/ParsedContent'
-import { ActivatePageScripts } from '../../utils/'
+import { Layout } from 'gingerThemeComponents'
+import { ParsedContent, ActivatePageScripts } from 'gingerThemeUtils'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
-import { gutenberg } from '../../styles/'
+import { gutenberg } from 'gingerThemeStyles'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 const Page = (props) => {

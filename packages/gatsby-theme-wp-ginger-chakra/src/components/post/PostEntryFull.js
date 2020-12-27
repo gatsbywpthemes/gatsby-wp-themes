@@ -6,10 +6,10 @@ import {
   PrevNextPostNavigation,
   Tags,
   ScrollToContentButton,
-} from './index'
-import { Comments } from '../comments'
-import { gutenberg } from '../../styles/'
-import { Image } from '../images'
+  Comments,
+  Image,
+} from 'gingerThemeComponents'
+import { gutenberg } from 'gingerThemeStyles'
 
 export const PostEntryFull = ({ ctx, post }) => {
   return (
@@ -46,17 +46,12 @@ export const PostEntryFull = ({ ctx, post }) => {
           >
             <Image img={post.featuredImage} />
           </Box>
-          <PostEntryIntro
-            post={post}
-            ctx={ctx}
-            location="single"
-            variant={'full'}
-          />
+          <PostEntryIntro post={post} ctx={ctx} />
           <ScrollToContentButton />
         </Flex>
       </header>
       <Box id="content" py={[8, 8, 16]} sx={gutenberg}>
-        <PostEntryContent ctx={ctx} content={post.content} location="single" />
+        <PostEntryContent ctx={ctx} content={post.content} />
         {post.tags.nodes.length > 0 && <Tags tags={post.tags.nodes} />}
         <PrevNextPostNavigation ctx={ctx} />
       </Box>

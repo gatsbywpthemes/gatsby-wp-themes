@@ -1,8 +1,8 @@
 import React from 'react'
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi'
-import { MenuItem } from './MenuItem'
-import { LinkItem } from './LinkItem'
+import { MenuItem, LinkItem } from 'gingerThemeComponents'
 import { chakra, Button, Collapse, useDisclosure } from '@chakra-ui/react'
+
 export const SubMenu = ({ menuItem }) => {
   const { isOpen, onToggle } = useDisclosure()
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import { WidgetTitle } from './index'
 import { Box } from '@chakra-ui/react'
+import { WidgetTitle } from 'gingerThemeComponents'
 
 export const WidgetContainer = ({ children, title, sx, ...props }) => {
   return (

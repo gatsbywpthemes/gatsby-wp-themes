@@ -1,6 +1,7 @@
 import React from 'react'
-import { Box, useColorModeValue } from '@chakra-ui/react'
-import { FooterContent } from './index'
+import { Box } from '@chakra-ui/react'
+import { FooterContent } from 'gingerThemeComponents'
+import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 
 export const Footer = () => (
   <Box
@@ -25,15 +26,11 @@ export const Footer = () => (
       textAlign: ['center', 'center', 'left'],
     }}
     color={[
-      useColorModeValue('footerColor', 'modes.dark.footerColor'),
+      useThemeColorModeValue('footerColor'),
       null,
-      useColorModeValue('headerColor', 'modes.dark.headerColor'),
+      useThemeColorModeValue('headerColor'),
     ]}
-    bg={[
-      useColorModeValue('footerBg', 'modes.dark.footerBg'),
-      null,
-      'transparent',
-    ]}
+    bg={[useThemeColorModeValue('footerBg'), null, 'transparent']}
   >
     <FooterContent />
   </Box>
