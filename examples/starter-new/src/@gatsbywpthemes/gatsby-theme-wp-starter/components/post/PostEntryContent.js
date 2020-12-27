@@ -13,7 +13,6 @@ export const PostEntryContent = ({ post, location, ...props }) => {
       <Box className="entry-content">
         <ActivatePostScripts />
         <ParsedContent content={content} />
-        <div className="p-6 text-center text-blue-800 bg-primary">test</div>
       </Box>
     </Box>
   )

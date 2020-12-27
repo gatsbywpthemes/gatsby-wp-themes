@@ -26,7 +26,6 @@ export const ArchiveTitle = ({ name, text }) => {
           {text} {name}
         </Heading>
       </Box>
-      <div className="bg-primary">test</div>
     </>
   )
 }

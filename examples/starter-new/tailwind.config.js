@@ -1,7 +1,7 @@
 const config = require("@gatsbywpthemes/gatsby-theme-wp-starter/themeConfig")
 
 module.exports = {
-  purge: [],
+  ppurge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
 
   theme: {

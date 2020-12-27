@@ -4,7 +4,7 @@ const config = require("./themeConfig")
 // const typographySettings = require("./configTypography")
 
 module.exports = {
-  purge: [],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
 
   theme: {
