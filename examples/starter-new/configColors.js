@@ -1,66 +1,114 @@
-/* uncomment darken import if needed */
-// import { darken } from "polished"
-/* Palette */
+// const Color = require('color')
 
-// const dark = `#263238`
-// const dark2 = darken(0.04, "#263238")
-// const dark3 = darken(0.1, "#263238")
-// const light = `#eceff1`
-// const primary = `#607d8b`
-// const secondary = `#455a64`
-// const lightGrey = `#cfd8dc`
-// const grey = `#90a4ae`
-// const accentDark = `#ffab91`
-// const accentLight = `#c2185b`
+// const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
+// const darken = (clr, val) => Color(clr).darken(val).rgb().string()
+// const colors = require('tailwindcss/colors')
 
-const colorSettings = {
-  /* basic colors */
+// const {
+//   blueGray,
+//   coolGray,
+//   trueGray,
+//   warmGray,
+//   red,
+//   orange,
+//   amber,
+//   yellow,
+//   lime,
+//   green,
+//   emerald,
+//   teal,
+//   cyan,
+//   lightBlue,
+//   blue,
+//   indigo,
+//   violet,
+//   purple,
+//   fuchsia,
+//   pink,
+//   rose,
+//   gray,
+// } = colors
+
+// //palette
+// const light = gray[100],
+//   ultraLight = gray[50],
+//   dark = lighten(gray[800], 0.02),
+//   ultraDark = gray[900],
+//   primary = teal[400],
+//   secondary = purple[500],
+//   highlight = red[500],
+//   mutted = gray[200],
+//   bg = ultraLight,
+//   text = ultraDark
+
+module.exports = {
+  //   /* header */
+  //   ...colors,
+  //   light,
+  //   ultraLight,
+  //   ultraDark,
   //   primary,
   //   secondary,
-  //   light,
-  //   dark,
-  //   lightGrey,
-  //   accentDark,
-  //   accent: accentLight,
-  //   background: light,
-  //   bgInverse: dark,
-  //   text: dark,
-  //   textInverse: light,
-  //   white: `white`,
-  //   black: `black`,
-  //   brand: primary,
-  //   mutted: lightGrey,
-  //   grey: grey,
-  //   border: lightGrey,
-  /* header */
-  //   headerBg: dark,
-  //   headerColor: light,
-  //   headerColorHover: accentDark,
-  /* footer */
-  //   footerBg: dark,
-  //   footerColor: light,
-  /* post */
+  //   highlight,
+  //   mutted,
+  //   bg,
+  //   text,
+  //   /* header */
+  //   headerBg: 'white',
+  //   headerColor: ultraDark,
+  //   /* footer */
+  //   footerBg: 'white',
+  //   footerColor: ultraDark,
+  //   /* search */
+  //   searchBg: 'white',
+  //   searchResultsHeaderBg: ultraDark,
+  //   searchResultsHeaderColor: primary,
+  //   searchResultsBg: bg,
+  //   searchResultsColor: text,
+  //   /* menu */
+  //   mobileMenuBg: 'black',
+  //   mobileMenuColor: light,
+  //   subMenuBg: 'black',
+  //   subMenucolor: 'white',
+  //   /* newsletter */
+  //   nlButtonBg: 'black',
+  //   nlButtonColor: 'white',
+  //   nlInputBg: light,
+  //   /* post */
+  //   archiveTitleBg: 'black',
   //   infoBg: light,
-  //   cardBg: `white`,
-  //   archiveTitleBg: grey,
-  /* search */
-  //   searchResultsHeaderBg: grey,
-  //   searchResultsHeaderColor: `white`,
-  //   highlightColor: accentDark,
-  //   searchColor: grey,
-  modes: {
-    dark: {
-      //   text: light,
-      //   background: dark,
-      //   cardBg: dark2,
-      //   headerBg: dark3,
-      //   footerBg: dark3,
-      //   infoBg: dark3,
-      //   archiveTitleBg: secondary,
-      //   searchColor: primary,
-      //   accent: accentDark,
-    },
-  },
+  //   archiveTitleBg: gray[100],
+  //   cardBg: 'white',
+  //   modes: {
+  //     dark: {
+  //       /* basic colors*/
+  //       bg: dark,
+  //       text: ultraLight,
+  //       /* header*/
+  //       headerBg: ultraDark,
+  //       headerColor: ultraLight,
+  //       /* footer*/
+  //       footerBg: ultraDark,
+  //       footerColor: ultraLight,
+  //       /* search */
+  //       searchBg: ultraDark,
+  //       searchResultsHeaderBg: primary,
+  //       searchResultsHeaderColor: light,
+  //       searchResultsBg: bg,
+  //       searchResultsColor: text,
+  //       /* menu*/
+  //       mobileMenuBg: 'black',
+  //       mobileMenuColor: light,
+  //       subMenuBg: primary,
+  //       subMenucolor: 'white',
+  //       /* newsletter */
+  //       nlButtonBg: primary,
+  //       nlButtonColor: 'white',
+  //       nlInputBg: gray[700],
+  //       /* post*/
+  //       archiveTitleBg: primary,
+  //       infoBg: primary,
+  //       cardBg: ultraDark,
+  //     },
+  //   },
 }
-
-export default colorSettings
