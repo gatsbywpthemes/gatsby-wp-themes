@@ -59,12 +59,12 @@ export const SearchPostsQuery = ({ search }) => {
   //loadMore()
   return (
     <SearchResults type="Posts" search={search} posts={data.posts.nodes}>
-      {clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
-        <LoadMoreButton loadMore={loadMore} />
-      )}
-      {!clickable && data.posts.pageInfo && data.posts.pageInfo.hasNextPage && (
-        <p>Loading...</p>
-      )}
+      {data.posts.pageInfo?.hasNextPage &&
+        (clickable ? (
+          <LoadMoreButton loadMore={loadMore} />
+        ) : (
+          <p>Loading...</p>
+        ))}
     </SearchResults>
   )
 }
