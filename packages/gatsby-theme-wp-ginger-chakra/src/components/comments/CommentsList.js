@@ -14,7 +14,7 @@ export const CommentsList = ({ post, reloading }) => {
     <>
       {comments.nodes.length > 0 ? (
         <section>
-          <Box as="h2" textAlign="center" mb="8">
+          <Box as="h2" textAlign="center">
             Comments
           </Box>
           <chakra.ul

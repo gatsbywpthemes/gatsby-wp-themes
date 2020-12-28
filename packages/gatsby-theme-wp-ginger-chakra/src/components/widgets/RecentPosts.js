@@ -79,7 +79,6 @@ export const RecentPosts = () => {
                   <Box
                     as={GatsbyLink}
                     className="widget-post-title"
-                    fontFamily="heading"
                     fontSize="lg"
                     to={post.uri}
                     dangerouslySetInnerHTML={{ __html: post.title }}

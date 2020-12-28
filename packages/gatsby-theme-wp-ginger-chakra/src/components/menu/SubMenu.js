@@ -9,14 +9,22 @@ export const SubMenu = ({ menuItem }) => {
     <chakra.li position="relative" key={menuItem.id}>
       <LinkItem menuItem={menuItem} />
       <Button
-        variant="link"
-        height="12"
-        color="inherit"
         aria-label="Open menu item"
         onClick={onToggle}
+        variant="ghost"
+        height="12"
+        color="inherit"
         position="absolute"
         top="0"
-        right="1"
+        right="0"
+        px="6"
+        borderRadius="0"
+        _hover={{
+          bg: 'rgba(0, 0, 0, 0.1)',
+        }}
+        _active={{
+          bg: 'rgba(0, 0, 0, 0.1)',
+        }}
       >
         {isOpen ? <FiChevronDown /> : <FiChevronRight />}
       </Button>

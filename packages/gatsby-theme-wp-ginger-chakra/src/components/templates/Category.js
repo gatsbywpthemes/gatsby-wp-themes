@@ -2,7 +2,6 @@ import React from 'react'
 import { ArchiveContent, Layout } from 'gingerThemeComponents'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
-console.log(Layout)
 const Category = ({ category, ctx }) => {
   const { name, posts, uri } = category
   const { humanPageNumber, numberOfPages, yoastSeo, seo } = ctx

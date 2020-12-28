@@ -10,10 +10,6 @@ export const WidgetContainer = ({ children, title, sx, ...props }) => {
       {...props}
       mb={12}
       sx={{
-        '[aria-current]': {
-          fontStyle: 'italic',
-          fontWeight: 'body',
-        },
         ...sx,
       }}
     >

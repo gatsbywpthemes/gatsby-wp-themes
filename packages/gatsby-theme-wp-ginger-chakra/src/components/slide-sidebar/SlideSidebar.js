@@ -49,7 +49,13 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
           <DrawerContent
             bg={useColorModeValue('sidebarBg')}
             color={useColorModeValue('sidebarColor')}
-            sx={{ boxShadow: 'rgba(0, 0, 0, 0.3) -10px 0px 40px' }}
+            sx={{
+              boxShadow: 'rgba(0, 0, 0, 0.3) -10px 0px 40px',
+              '[aria-current]': {
+                fontStyle: 'italic',
+                fontWeight: 'body',
+              },
+            }}
           >
             <DrawerCloseButton sx={{ right: 6 }} />
             <DrawerBody px={[8, 12]} py="12">

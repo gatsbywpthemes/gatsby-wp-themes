@@ -2,11 +2,15 @@ export const gutenberg = {
   '& > *': {
     mx: 'auto',
   },
+
   '& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
     maxWidth: (theme) => theme.sizes.content,
     width: [`calc(100% - 3rem)`, `calc(100% - 4rem)`],
   },
 
+  '& > div:not([class])': {
+    maxWidth: '100%!important',
+  },
   '[class*="__inner-container"] > [style*="width: 100vw"], [class*="__inner-container"] > [style*="width:100vw"]': {
     maxWidth: '100%!important',
   },

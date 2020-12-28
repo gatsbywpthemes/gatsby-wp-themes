@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  PostEntryIntro,
-  PostEntryIntroBlog,
-  PostEntryMedia,
-  PrevNextPostNavigation,
-  Tags,
-} from 'gingerThemeComponents'
+import { PostEntryIntroBlog, PostEntryMedia } from 'gingerThemeComponents'
 
 export const PostEntry = ({ post }) => {
   return (
