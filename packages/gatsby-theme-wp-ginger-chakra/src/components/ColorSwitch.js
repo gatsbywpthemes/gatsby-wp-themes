@@ -7,7 +7,6 @@ export const ColorSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Button
-      type="button"
       aria-label="Toggle dark/light mode"
       onClick={toggleColorMode}
       className={colorMode === 'light' ? 'default-mode' : 'dark-mode'}

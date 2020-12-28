@@ -1,6 +1,6 @@
 import React from 'react'
-import { WidgetTitle } from './index'
 import { Box } from '@chakra-ui/react'
+import { WidgetTitle } from 'gingerThemeComponents'
 
 export const WidgetContainer = ({ children, title, sx, ...props }) => {
   return (
@@ -10,10 +10,6 @@ export const WidgetContainer = ({ children, title, sx, ...props }) => {
       {...props}
       mb={12}
       sx={{
-        '[aria-current]': {
-          fontStyle: 'italic',
-          fontWeight: 'body',
-        },
         ...sx,
       }}
     >

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, useColorModeValue, useToken } from '@chakra-ui/react'
 import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
-
 import { transparentize } from 'polished'
 import {
   PublicationDate,
@@ -10,10 +9,10 @@ import {
   Categories,
   Author,
   PrevNextPostNavigation,
-} from './index'
-import { SocialShare } from '../social'
+  SocialShare,
+} from 'gingerThemeComponents'
 
-export const PostEntryIntro = ({ ctx, post, variant = 'blog' }) => {
+export const PostEntryIntro = ({ ctx, post }) => {
   return (
     <Box
       layerStyle="info"
@@ -41,7 +40,7 @@ export const PostEntryIntro = ({ ctx, post, variant = 'blog' }) => {
       <PublicationDate post={post} location="single" />
       <PostEntryTitle post={post} location="single" />
       <PostEntryExcerpt post={post} location="single" />
-      <footer sx={{ variant: 'special' }} className="entry-meta">
+      <footer className="entry-meta">
         <Author post={post} location="single" />{' '}
         {post.categories.nodes.length && (
           <>

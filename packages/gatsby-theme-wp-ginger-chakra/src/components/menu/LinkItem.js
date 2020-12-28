@@ -2,7 +2,7 @@ import React from 'react'
 import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import { Link as GatsbyLink } from 'gatsby'
-import { createLocalLink } from '../../utils'
+import { createLocalLink } from 'gingerThemeUtils'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { Box, chakra } from '@chakra-ui/react'
 

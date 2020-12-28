@@ -1,12 +1,11 @@
 import React from 'react'
-import { Fragment } from 'react'
 import {
   PublicationDate,
   PostEntryTitle,
   PostEntryExcerpt,
   Categories,
   Author,
-} from './index'
+} from 'gingerThemeComponents'
 import { Box, useColorModeValue } from '@chakra-ui/react'
 import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 
@@ -37,9 +36,9 @@ export const PostEntryIntroBlog = ({ post }) => {
       <footer className="entry-meta">
         <Author post={post} />{' '}
         {post.categories.nodes.length && (
-          <Fragment>
+          <>
             / <Categories post={post} />
-          </Fragment>
+          </>
         )}
       </footer>
     </Box>

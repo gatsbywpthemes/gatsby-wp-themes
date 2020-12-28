@@ -2,11 +2,15 @@ export const gutenberg = {
   '& > *': {
     mx: 'auto',
   },
+
   '& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
     maxWidth: (theme) => theme.sizes.content,
     width: [`calc(100% - 3rem)`, `calc(100% - 4rem)`],
   },
 
+  '& > div:not([class])': {
+    maxWidth: '100%!important',
+  },
   '[class*="__inner-container"] > [style*="width: 100vw"], [class*="__inner-container"] > [style*="width:100vw"]': {
     maxWidth: '100%!important',
   },
@@ -50,14 +54,13 @@ export const gutenberg = {
     width: '100%',
   },
   '.wp-block-cover h1, .wp-block-cover h2': {
-    variant: 'title.page',
-    my: '2rem',
+    my: 8,
   },
   '.has-background': {
-    p: '1.5rem',
+    p: 6,
   },
   '.wp-block-media-text .wp-block-media-text__content': {
-    pt: ['1.5rem', 0, 0],
+    pt: [6, 0, 0],
     px: [0, '8%'],
   },
 

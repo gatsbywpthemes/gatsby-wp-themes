@@ -15,14 +15,14 @@ export const fontSizes = {
   '9xl': rem(128),
 }
 
-// export const fonts = {
-//   body: 'IBM Plex Mono',
-//   heading: 'Roboto Slab',
-// }
+export const fonts = {
+  body: 'Trebuchet MS, sans-serif',
+  heading: 'Abril Fatface, serif',
+}
 
 export const fontWeights = {
   body: 400,
-  heading: 'bold',
+  heading: 700,
   bold: 700,
 }
 

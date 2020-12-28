@@ -6,7 +6,7 @@ export const WidgetTitle = ({ children, props }) => {
     <Box
       as="h2"
       sx={{
-        fontSize: 'l',
+        fontSize: '2xl',
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'row',

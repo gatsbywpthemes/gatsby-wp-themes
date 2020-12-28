@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { SearchResults, LoadMoreButton } from './index'
+import { SearchResults, LoadMoreButton } from 'gingerThemeComponents'
 
 const GET_PAGES = gql`
   fragment PageFields on Page {
@@ -57,15 +57,14 @@ export const SearchPagesQuery = ({ search }) => {
 
   if (loading) return <p>Searching pages...</p>
   if (error) return <p>Error - {error.message}</p>
-  //loadMore()
   return (
     <SearchResults type="Pages" search={search} posts={data.pages.nodes}>
-      {clickable && data.pages.pageInfo && data.pages.pageInfo.hasNextPage && (
-        <LoadMoreButton loadMore={loadMore} />
-      )}
-      {!clickable && data.posts.pageInfo && data.pages.pageInfo.hasNextPage && (
-        <p>Loading...</p>
-      )}
+      {data.pages.pageInfo?.hasNextPage &&
+        (clickable ? (
+          <LoadMoreButton loadMore={loadMore} />
+        ) : (
+          <p>Loading...</p>
+        ))}
     </SearchResults>
   )
 }

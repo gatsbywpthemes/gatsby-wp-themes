@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
 import { chakra } from '@chakra-ui/react'
-import { WidgetContainer } from './index'
+import { WidgetContainer } from 'gingerThemeComponents'
 
 const ALL_CATEGORIES_QUERY = graphql`
   query GetCategories {

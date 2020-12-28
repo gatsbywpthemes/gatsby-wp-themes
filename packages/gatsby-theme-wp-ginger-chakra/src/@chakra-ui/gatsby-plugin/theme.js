@@ -12,7 +12,7 @@ import { layerStyles } from './layerStyles'
 import { textStyles } from './textStyles'
 
 import { styles } from './styles'
-console.log(components)
+
 const theme = extendTheme({
   colors,
   fontSizes,

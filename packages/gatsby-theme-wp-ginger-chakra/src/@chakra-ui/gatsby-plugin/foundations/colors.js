@@ -1,4 +1,3 @@
-import { theme } from '@chakra-ui/react'
 import { darken, lighten } from 'polished'
 
 const dark = `#303030`

@@ -1,5 +1,3 @@
-import { mode } from '@chakra-ui/theme-tools'
-
 export const Button = {
   baseStyle: {
     fontWeight: 'bold',
@@ -12,7 +10,7 @@ export const Button = {
     sm: {},
     md: { p: 3, height: 'auto', minWidth: 'auto' },
   },
-  // Two variants: outline and solid
+  // Two variants: outline and circle
   variants: {
     circle: {
       width: '3.25rem',

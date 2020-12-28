@@ -1,5 +1,5 @@
 import React from 'react'
-import { SearchPostsQuery, SearchPagesQuery } from './index'
+import { SearchPostsQuery, SearchPagesQuery } from 'gingerThemeComponents'
 import { Box } from '@chakra-ui/react'
 
 export const SearchQueries = ({ search }) => {

@@ -2,7 +2,7 @@ import React from 'react'
 import { TelegramShareButton, TelegramIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
 import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { NoIconShare } from './index'
+import { NoIconShare } from 'gingerThemeComponents'
 
 export const Telegram = ({
   url,

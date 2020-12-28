@@ -4,9 +4,9 @@ import { Box } from '@chakra-ui/react'
 
 export const PostEntryTitle = ({ post, location }) => {
   return location === 'archive' ? (
-    <h2 className="entry-title">
+    <Box as="h2" className="entry-title" fontSize={['xl', '4xl']}>
       <Link to={post.uri} dangerouslySetInnerHTML={{ __html: post.title }} />
-    </h2>
+    </Box>
   ) : (
     <Box
       as="h1"

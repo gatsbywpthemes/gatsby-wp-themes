@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link as GatsbyLink } from 'gatsby'
+import { Link } from 'gatsby'
 import {
   useThemeOptions,
   useSiteSettings,
 } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { ColorSwitch } from '../index'
-import { Flex, useColorModeValue } from '@chakra-ui/react'
+import { ColorSwitch } from 'gingerThemeComponents'
+import { Flex } from '@chakra-ui/react'
+import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 
 export const Header = () => {
   const siteSettings = useSiteSettings()
@@ -13,8 +14,8 @@ export const Header = () => {
   return (
     <Flex
       as="header"
-      bg={useColorModeValue('headerBg', 'modes.dark.headerBg')}
-      color={useColorModeValue('headerColor', 'modes.dark.headerColor')}
+      bg={useThemeColorModeValue('headerBg')}
+      color={useThemeColorModeValue('headerColor')}
       position={['sticky', 'sticky', 'fixed']}
       zIndex={10}
       top={0}
@@ -24,7 +25,7 @@ export const Header = () => {
       w={(theme) => ['auto', 'auto', theme.sizes.header[2]]}
     >
       <Flex
-        as={GatsbyLink}
+        as={Link}
         align="center"
         to="/"
         sx={{

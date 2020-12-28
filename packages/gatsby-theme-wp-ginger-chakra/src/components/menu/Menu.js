@@ -1,10 +1,9 @@
 import React from 'react'
 import { useMenusQuery } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { SubMenu } from './SubMenu'
-import { MenuItem } from './MenuItem'
+import { SubMenu, MenuItem } from 'gingerThemeComponents'
 import { chakra, Box } from '@chakra-ui/react'
 
-import { flatListToHierarchical } from './index'
+import { flatListToHierarchical } from './flatListToHierarchical'
 
 export const Menu = ({ menuName }) => {
   const menuEdges = useMenusQuery()

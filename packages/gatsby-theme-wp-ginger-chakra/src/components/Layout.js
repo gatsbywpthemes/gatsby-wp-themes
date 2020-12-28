@@ -1,9 +1,8 @@
 import React from 'react'
-import { Header } from './header'
-import { Footer } from './footer'
 import '../styles/blocks.css'
 import '../styles/custom-gutenstyles.css'
 import { Box, Container } from '@chakra-ui/react'
+import { Header, Footer } from 'gingerThemeComponents'
 
 const MaybeWithContainer = ({ useContainer, children }) => {
   return !useContainer ? (
@@ -20,25 +19,16 @@ const MaybeWithContainer = ({ useContainer, children }) => {
   )
 }
 
-const Layout = ({ useContainer = true, children }) => {
+export const Layout = ({ useContainer = true, children }) => {
   return (
     <>
-      <Box sx={{ variant: 'layout' }}>
-        <Header />
-        <Box marginLeft={{ md: '6rem' }}>
-          <MaybeWithContainer useContainer={useContainer}>
-            {children}
-          </MaybeWithContainer>
-        </Box>
-        <Footer />
+      <Header />
+      <Box marginLeft={{ md: '6rem' }}>
+        <MaybeWithContainer useContainer={useContainer}>
+          {children}
+        </MaybeWithContainer>
       </Box>
+      <Footer />
     </>
   )
 }
-
-export default Layout
-
-/*className={
-          colorMode === 'default' ? 'default-color-mode' : 'dark-color-mode'
-        }
-      >*/
