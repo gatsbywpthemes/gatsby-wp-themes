@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react'
-import { useCommentForm } from './useCommentForm'
+import React, { useContext } from 'react'
+import { useCommentForm } from 'gingerThemeComponents/comments/hooks/useCommentForm'
 import {
   Box,
   Flex,

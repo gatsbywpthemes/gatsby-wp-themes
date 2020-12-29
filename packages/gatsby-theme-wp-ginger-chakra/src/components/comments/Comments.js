@@ -2,8 +2,8 @@ import React from 'react'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { CommentsList, DisqusComments } from './index'
 import { Box, Container, useColorModeValue } from '@chakra-ui/react'
-import useCommentsList from './useCommentsList'
-import { CommentsListContext } from './context'
+import useCommentsList from 'gingerThemeComponents/comments/hooks/useCommentsList'
+import { CommentsListContext } from 'gingerThemeComponents/comments/context'
 
 export const Comments = ({ post }) => {
   const { addWordPressComments, disqus } = useThemeOptions()
