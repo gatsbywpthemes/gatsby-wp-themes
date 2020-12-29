@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import moment from 'moment/moment'
+import { format } from 'date-fns'
 import Img from 'gatsby-image'
 import { WidgetContainer } from './index'
 
@@ -63,7 +63,7 @@ export const RecentPosts = () => {
                     to={post.uri}
                   >
                     <time className="entry-date" dateTime={post.date}>
-                      {moment(post.date).format(`MMMM DD, YYYY`)}
+                      {format(new Date(post.date), 'MMMM dd, yyyy')}
                     </time>
                   </Link>
                   <br />
