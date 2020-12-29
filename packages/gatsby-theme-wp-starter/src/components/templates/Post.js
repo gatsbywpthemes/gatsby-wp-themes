@@ -1,7 +1,13 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
 import { Container } from 'starterUiComponents'
-import { Layout, PostEntry, CommentsList, Sidebar } from 'starterComponents'
+import {
+  Layout,
+  PostEntry,
+  CommentsList,
+  Sidebar,
+  Comments,
+} from 'starterComponents'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
@@ -54,15 +60,7 @@ const Post = ({ post, ctx }) => {
           <PostEntry post={post} location="single" ctx={ctx} />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
-        {addWordPressComments && post.commentStatus === 'open' && (
-          <div>
-            {disqus ? (
-              <DiscussionEmbed {...disqusConfig} />
-            ) : (
-              <CommentsList post={post} />
-            )}
-          </div>
-        )}
+        <Comments post={post} />
       </Container>
     </Layout>
   )

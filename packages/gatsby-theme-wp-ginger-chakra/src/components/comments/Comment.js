@@ -8,7 +8,7 @@ import {
   CommentNestingInfo,
 } from 'gingerThemeComponents'
 import { Box } from '@chakra-ui/react'
-import { CommentsListContext } from './context'
+import { CommentsListContext } from 'gingerThemeComponents/comments/context'
 
 export const Comment = ({ comment, withReply }) => {
   const { author, date, content, commentId } = comment

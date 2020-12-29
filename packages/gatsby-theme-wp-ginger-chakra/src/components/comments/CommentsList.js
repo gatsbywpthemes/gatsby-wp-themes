@@ -1,9 +1,9 @@
 import React, { Fragment, useContext } from 'react'
 import { Box, chakra } from '@chakra-ui/react'
 import { CommentForm, Comment } from 'gingerThemeComponents'
-import { CommentsListContext } from './context'
+import { CommentsListContext } from 'gingerThemeComponents/comments/context'
 
-export const CommentsList = ({ post, reloading }) => {
+export const CommentsList = () => {
   const { comments, loading, error, activeComment } = useContext(
     CommentsListContext
   )

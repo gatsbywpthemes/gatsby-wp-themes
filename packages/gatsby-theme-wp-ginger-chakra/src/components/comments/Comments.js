@@ -2,7 +2,7 @@ import React from 'react'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { CommentsList, DisqusComments } from './index'
 import { Box, Container, useColorModeValue } from '@chakra-ui/react'
-import useCommentsList from 'gingerThemeComponents/comments/hooks/useCommentsList'
+import { useCommentsList } from 'gingerThemeComponents/comments/hooks/useCommentsList'
 import { CommentsListContext } from 'gingerThemeComponents/comments/context'
 
 export const Comments = ({ post }) => {
@@ -16,7 +16,7 @@ export const Comments = ({ post }) => {
         <Box as="section" bg={bg} color={color} py={['6', '16']}>
           <Container maxWidth="60rem">
             <CommentsListContext.Provider value={{ ...commentsFromQuery }}>
-              <CommentsList post={post} />
+              <CommentsList />
             </CommentsListContext.Provider>
           </Container>
         </Box>

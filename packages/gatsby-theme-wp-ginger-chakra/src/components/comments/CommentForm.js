@@ -15,7 +15,7 @@ import {
   CommentNotes,
 } from 'gingerThemeComponents'
 import { inputFields } from './inputfields'
-import { CommentsListContext } from './context'
+import { CommentsListContext } from 'gingerThemeComponents/comments/context'
 
 export const CommentForm = () => {
   const { activeComment, cancelReply } = useContext(CommentsListContext)
