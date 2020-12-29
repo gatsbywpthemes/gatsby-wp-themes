@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 
 const GET_COMMENTS = gql`
-  query($postId: ID!) {
-    comments(where: { contentId: $postId, order: ASC }, first: 1000) {
+  query($databaseId: ID!) {
+    comments(where: { contentId: $databaseId, order: ASC }, first: 1000) {
       nodes {
         ...CommentFields
         replies(where: { order: ASC }) {
@@ -45,9 +45,9 @@ const GET_COMMENTS = gql`
   }
 `
 
-const useCommentsList = (postId) => {
+const useCommentsList = ({ databaseId }) => {
   const { data, loading, error, refetch } = useQuery(GET_COMMENTS, {
-    variables: { postId },
+    variables: { databaseId },
   })
   const [activeComment, setActiveComment] = useState(0)
   const cancelReply = () => {
@@ -61,7 +61,7 @@ const useCommentsList = (postId) => {
   }
 
   return {
-    postId,
+    databaseId,
     comments: data?.comments,
     loading,
     error,

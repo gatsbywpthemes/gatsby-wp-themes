@@ -9,7 +9,7 @@ export const Comments = ({ post }) => {
   const { addWordPressComments, disqus } = useThemeOptions()
   const bg = useColorModeValue('commentsBg', 'modes.dark.commentsBg')
   const color = useColorModeValue('commentsColor', 'modes.dark.commentsColor')
-  const commentsFromQuery = useCommentsList(post.databaseId)
+  const commentsFromQuery = useCommentsList(post)
   return (
     <>
       {!!addWordPressComments && post.commentStatus === 'open' && (

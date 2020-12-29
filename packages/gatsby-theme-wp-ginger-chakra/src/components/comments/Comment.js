@@ -11,22 +11,20 @@ import { Box } from '@chakra-ui/react'
 import { CommentsListContext } from './context'
 
 export const Comment = ({ comment, withReply }) => {
-  const { postId, activeComment } = useContext(CommentsListContext)
+  const { author, date, content, commentId } = comment
+  const { activeComment, addReply } = useContext(CommentsListContext)
   return (
     <Box as="li" className="comment" layerStyle="overlay" p="4">
-      <CommentAuthor
-        name={comment.author.node.name}
-        url={comment.author.node.url}
-      />
+      <CommentAuthor name={author.node.name} url={author.node.url} />
       <Box fontStyle="italic" fontSize="xs">
-        <Date date={comment.date} />
+        <Date date={date} />
       </Box>
-      <CommentContent content={comment.content} />
+      <CommentContent content={content} />
       {withReply ? (
-        activeComment === comment.commentId ? (
-          <CommentForm commentId={comment.commentId} postId={postId} />
+        activeComment === commentId ? (
+          <CommentForm />
         ) : (
-          <ReplyButton commentId={comment.commentId} />
+          <ReplyButton onClick={() => addReply(commentId)} />
         )
       ) : (
         <CommentNestingInfo />
