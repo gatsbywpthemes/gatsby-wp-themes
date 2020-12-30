@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
-import { SearchContext } from 'gingerThemeSrc/context'
+import { SearchContext } from 'gingerThemeComponents/search/context'
 
-export const SearchStats = ({ length }) => {
+export const SearchStats = ({ length, hasNextPage }) => {
   const { search } = useContext(SearchContext)
   return (
-    <div className="stats">
-      {length ? `${length} results` : `no results for ${search}`}
-    </div>
+    !hasNextPage && (
+      <div className="stats">
+        {length ? `${length} results` : `no results for ${search}`}
+      </div>
+    )
   )
 }

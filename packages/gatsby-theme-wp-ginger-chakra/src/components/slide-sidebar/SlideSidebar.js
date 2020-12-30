@@ -14,7 +14,7 @@ import {
   OpenButton,
 } from 'gingerThemeComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { SearchContext } from 'gingerThemeSrc/context'
+import { SearchContext } from 'gingerThemeComponents/search/context'
 
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
   const {

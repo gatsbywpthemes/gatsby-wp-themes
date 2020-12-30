@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import { chakra } from '@chakra-ui/react'
-import { SearchContext } from 'gingerThemeSrc/context'
+import { SearchContext } from 'gingerThemeComponents/search/context'
 
 export const SearchResults = ({ posts }) => {
   const { setFromSearch } = useContext(SearchContext)

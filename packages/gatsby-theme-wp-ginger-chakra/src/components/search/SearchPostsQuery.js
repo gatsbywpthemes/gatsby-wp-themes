@@ -24,7 +24,7 @@ export const SearchPostsQuery = () => {
         <chakra.h3 fontSize="xl" mb="0">
           Posts
         </chakra.h3>
-        <SearchStats length={posts.length} />
+        <SearchStats length={posts.length} hasNextPage={hasNextPage} />
       </Flex>
       <SearchResults posts={posts} />
       {hasNextPage && (

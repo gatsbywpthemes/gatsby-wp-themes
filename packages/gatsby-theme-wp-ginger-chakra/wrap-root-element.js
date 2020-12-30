@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchWrapper from 'gingerThemeSrc/context'
+import SearchWrapper from 'gingerThemeComponents/search/context'
 
 const WrapRootElement = ({ element }) => {
   return <SearchWrapper element={element} />

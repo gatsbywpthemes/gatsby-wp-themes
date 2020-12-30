@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { SearchContext } from 'gingerThemeSrc/context'
+import { SearchContext } from 'gingerThemeComponents/search/context'
+import uniqueBy from 'lodash/uniqby'
 
 export const useSearchQuery = (contentType = 'PAGE') => {
   const [clickable, setClickable] = useState(true)
@@ -19,7 +20,7 @@ export const useSearchQuery = (contentType = 'PAGE') => {
       $contentType: [ContentTypeEnum] = PAGE
     ) {
       contentNodes(
-        first: 1
+        first: 10
         after: $after
         where: { contentTypes: $contentType, search: $search }
       ) {
@@ -45,7 +46,6 @@ export const useSearchQuery = (contentType = 'PAGE') => {
         variables: { after: after },
         updateQuery: (previousResult, all) => {
           const { fetchMoreResult } = all
-          console.log(previousResult, fetchMoreResult, all)
           setClickable(true)
           return {
             contentNodes: {
@@ -54,10 +54,13 @@ export const useSearchQuery = (contentType = 'PAGE') => {
                 endCursor: fetchMoreResult.contentNodes.pageInfo.endCursor,
                 __typename: previousResult.contentNodes.pageInfo.__typename,
               },
-              nodes: [
-                ...previousResult.contentNodes.nodes,
-                ...fetchMoreResult.contentNodes.nodes,
-              ],
+              nodes: uniqueBy(
+                [
+                  ...previousResult.contentNodes.nodes,
+                  ...fetchMoreResult.contentNodes.nodes,
+                ],
+                'slug'
+              ),
               __typename: previousResult.contentNodes.__typename,
             },
           }

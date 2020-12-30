@@ -3,7 +3,7 @@ import { FiSearch, FiX } from 'react-icons/fi'
 import { Box, Flex, Button, chakra } from '@chakra-ui/react'
 import { SearchQueries } from 'gingerThemeComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { SearchContext } from 'gingerThemeSrc/context'
+import { SearchContext } from 'gingerThemeComponents/search/context'
 
 export const SearchForm = () => {
   const { instantWPSearch } = useThemeOptions()
