@@ -46,7 +46,11 @@ export const SearchResults = ({ type, posts, search, children, ...props }) => {
               sx={{ '&:last-of-type': { borderBottom: 'none' } }}
             >
               <chakra.h4>
-                <ChakraLink as={Link} _hover="primary" to={post.uri}>
+                <ChakraLink
+                  as={Link}
+                  _hover={{ color: 'primary' }}
+                  to={post.uri}
+                >
                   {post.title}
                 </ChakraLink>
               </chakra.h4>

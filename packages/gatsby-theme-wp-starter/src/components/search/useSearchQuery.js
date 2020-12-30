@@ -1,11 +1,9 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { SearchContext } from 'gingerThemeComponents/search/context'
 import uniqueBy from 'lodash/uniqby'
 
-export const useSearchQuery = (contentType = 'PAGE') => {
+export const useSearchQuery = (search, contentType = 'PAGE') => {
   const [clickable, setClickable] = useState(true)
-  const { search } = useContext(SearchContext)
   const GET_RESULTS = gql`
     fragment PageFields on ${contentType === 'PAGE' ? `Page` : `Post`} {
       title
