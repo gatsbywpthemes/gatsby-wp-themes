@@ -14,10 +14,14 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "gatsby": "^2.29.0",
-    "gatsby-plugin-root-import": "^2.0.5",
     "@gatsbywpthemes/gatsby-theme-wp-starter": "*",
-    "lodash.merge": "^4.6.2"
+    "autoprefixer": "^10.1.0",
+    "gatsby": "^2.29.0",
+    "gatsby-plugin-postcss": "^3.4.0",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "lodash.merge": "^4.6.2",
+    "postcss": "^8.2.2",
+    "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
     "prettier": "^2.2.1"

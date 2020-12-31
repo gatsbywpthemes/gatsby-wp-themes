@@ -15537,6 +15537,15 @@ postcss@^8.1.6, postcss@^8.1.8, postcss@^8.2.1:
     nanoid "^3.1.20"
     source-map "^0.6.1"
 
+postcss@^8.2.2:
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.2.tgz#60613b62297005084fd21024a68637798864fe26"
+  integrity sha512-HM1NDNWLgglJPQQMNwvLxgH2KcrKZklKLi/xXYIOaqQB57p/pDWEJNS83PVICYsn1Dg/9C26TiejNr422/ePaQ==
+  dependencies:
+    colorette "^1.2.1"
+    nanoid "^3.1.20"
+    source-map "^0.6.1"
+
 potpack@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/potpack/-/potpack-1.0.1.tgz#d1b1afd89e4c8f7762865ec30bd112ab767e2ebf"
