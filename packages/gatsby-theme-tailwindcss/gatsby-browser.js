@@ -1,1 +1,1 @@
-import "./src/utils/globals.css"
+import "./src/utils/tailwind.css"

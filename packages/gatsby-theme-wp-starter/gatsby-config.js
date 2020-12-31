@@ -76,13 +76,13 @@ module.exports = (options) => {
         wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-      options: {
-        analyzerMode: 'static',
-        disable: !process.env.ANALYZE_BUNDLE_SIZE,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+    //   options: {
+    //     analyzerMode: 'static',
+    //     disable: !process.env.ANALYZE_BUNDLE_SIZE,
+    //   },
+    // },
   ]
 
   /**
