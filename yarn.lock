@@ -1228,7 +1228,7 @@
   dependencies:
     "@chakra-ui/utils" "1.0.2"
 
-"@chakra-ui/icons@^1.0.0", "@chakra-ui/icons@^1.0.1", "@chakra-ui/icons@^1.0.2":
+"@chakra-ui/icons@^1.0.1", "@chakra-ui/icons@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-1.0.2.tgz#a2bd77348c1ff3b6775ad2a02127bd9f77cafabf"
   integrity sha512-6gPoIi8KHZI8kiWQBlOuxcZOJv6xouYI4sLX23WP2QZdTsplF9qCyZMXhbg8MHTk0YYdb0i2m/t6Y+9OcDjohA==
@@ -1368,7 +1368,7 @@
     "@chakra-ui/utils" "1.0.2"
     "@chakra-ui/visually-hidden" "1.0.2"
 
-"@chakra-ui/react@^1.0.0", "@chakra-ui/react@^1.0.2", "@chakra-ui/react@^1.0.4":
+"@chakra-ui/react@^1.0.2", "@chakra-ui/react@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@chakra-ui/react/-/react-1.0.4.tgz#924dc808940e54923fdc2481d16e0bbf4f33ce13"
   integrity sha512-ZRGrSsuXa8fr7ldTnTCm6JfRSo7dYzsdQvSHLBfBDQu4f8+9IF6pwNkmM8hX/pcVndjpVnvc/oETE9iCiqFrQg==
@@ -1678,7 +1678,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz#2c40f81449a4e554e9fc6396910ed4843ec2be50"
   integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
 
-"@emotion/react@^11.0.0", "@emotion/react@^11.1.1":
+"@emotion/react@^11.1.1":
   version "11.1.4"
   resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.1.4.tgz#ddee4247627ff7dd7d0c6ae52f1cfd6b420357d2"
   integrity sha512-9gkhrW8UjV4IGRnEe4/aGPkUxoGS23aD9Vu6JCGfEDyBYL+nGkkRBoMFGAzCT9qFdyUvQp4UUtErbKWxq/JS4A==

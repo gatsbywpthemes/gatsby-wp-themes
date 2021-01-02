@@ -1,13 +1,13 @@
 const rem = (px) => px / 16 + "rem"
 const typographySettings = {
   fonts: {
-    body: "Trebuchet MS, sans-serif",
-    heading: "Abril Fatface, serif",
+    body: "Open Sans, sans-serif",
+    heading: "Special Elite, serif",
   },
   fontWeights: {
-    // body: 400,
-    // heading: 400,
-    // bold: 700,
+    heading: 400,
+    body: 400,
+    bold: 700,
   },
   lineHeights: {
     // body: 1.8,

@@ -13,7 +13,7 @@ const beforeAfter = {
 const special = {
   textTransform: 'uppercase',
   textDecoration: 'none',
-  letterSpacing: '2px',
+  letterSpacing: 'loose',
   fontSize: 'sm',
   '&:hover': {
     textDecoration: 'none',

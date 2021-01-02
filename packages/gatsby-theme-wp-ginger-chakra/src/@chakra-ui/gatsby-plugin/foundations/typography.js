@@ -22,7 +22,7 @@ export const fonts = {
 
 export const fontWeights = {
   body: 400,
-  heading: 700,
+  heading: 400,
   bold: 700,
 }
 
@@ -32,26 +32,25 @@ export const lineHeights = {
   loose: 2,
 }
 
+export const letterSpacings = {
+  loose: '2px',
+}
+
 export const p = {
   mb: 5,
 }
 export const a = {
-  transition: 'all .4s ease-in-out',
-  color: 'accent',
+  color: 'inherit',
 }
 const heading = {
   fontFamily: 'heading',
   lineHeight: 'heading',
   fontWeight: 'heading',
-  a: {
-    borderBottom: 'none',
-  },
 }
 
 export const h1 = {
   ...heading,
   fontSize: ['4xl', '5xl', '7xl'],
-  // mt: 1,
 }
 export const h2 = {
   ...heading,
