@@ -1,3 +1,7 @@
-import moment from 'moment/moment'
+import { format } from 'date-fns'
 
-export const Date = ({ date }) => moment(date).format(`MMMM D, YYYY`)
+const PostDate = ({ date }) => {
+  return !!date && format(new Date(date), 'MMMM dd, yyyy')
+}
+
+export { PostDate as Date }

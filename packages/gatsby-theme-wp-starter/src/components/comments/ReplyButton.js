@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@chakra-ui/react'
 
-export const ReplyButton = ({ commentId, actionOnClick }) => {
+export const ReplyButton = (props) => {
   return (
     <Button
       variant="link"
@@ -10,9 +10,9 @@ export const ReplyButton = ({ commentId, actionOnClick }) => {
       ml="auto"
       color="inherit"
       type="button"
-      onClick={() => actionOnClick(commentId)}
       className="comment-button-reply"
       _hover={{ color: 'primary' }}
+      {...props}
     >
       <span>Reply</span>
     </Button>

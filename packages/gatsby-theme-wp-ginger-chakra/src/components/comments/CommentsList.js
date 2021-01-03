@@ -1,10 +1,9 @@
 import React, { Fragment, useContext } from 'react'
 import { Box, chakra } from '@chakra-ui/react'
 import { CommentForm, Comment } from 'gingerThemeComponents'
-import { CommentsListContext } from './context'
+import { CommentsListContext } from 'gingerThemeComponents/comments/context'
 
-export const CommentsList = ({ post, reloading }) => {
-  const postId = post.databaseId
+export const CommentsList = () => {
   const { comments, loading, error, activeComment } = useContext(
     CommentsListContext
   )
@@ -25,20 +24,12 @@ export const CommentsList = ({ post, reloading }) => {
               .filter((el) => el.parent === null)
               .map((comment) => (
                 <Fragment key={comment.id}>
-                  <Comment
-                    withReply={true}
-                    postId={postId}
-                    comment={comment}
-                  ></Comment>
+                  <Comment withReply={true} comment={comment}></Comment>
                   {comment.replies.nodes.length > 0 && (
                     <ul>
                       {comment.replies.nodes.map((reply) => (
                         <Fragment key={reply.id}>
-                          <Comment
-                            withReply={true}
-                            postId={postId}
-                            comment={reply}
-                          ></Comment>
+                          <Comment withReply={true} comment={reply}></Comment>
                           {reply.replies.nodes.length > 0 && (
                             <ul>
                               {reply.replies.nodes.map((replyRe) => (
@@ -61,7 +52,7 @@ export const CommentsList = ({ post, reloading }) => {
       ) : (
         <p>No comments yet</p>
       )}
-      {activeComment === 0 && <CommentForm postId={postId} />}
+      {activeComment === 0 && <CommentForm />}
     </>
   )
 }

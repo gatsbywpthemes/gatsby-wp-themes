@@ -1,11 +1,13 @@
 import React from 'react'
-import moment from 'moment/moment'
-export const Date = ({ date }) => {
+import { format } from 'date-fns'
+const PostDate = ({ date }) => {
   return (
     <>
       <time className="entry-date published updated" dateTime={date}>
-        {moment(date).format(`MMMM DD, YYYY`)}
+        {format(new Date(date), 'MMMM dd, yyyy')}
       </time>
     </>
   )
 }
+
+export { PostDate as Date }

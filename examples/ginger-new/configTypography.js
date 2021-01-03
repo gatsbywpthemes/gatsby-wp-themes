@@ -1,47 +1,85 @@
+const rem = (px) => px / 16 + "rem"
 const typographySettings = {
-  baseFontSize: "18px",
   fonts: {
     body: "Trebuchet MS, sans-serif",
     heading: "Abril Fatface, serif",
   },
   fontWeights: {
-    heading: 400,
-    //bold: 700,
+    // body: 400,
+    // heading: 400,
+    // bold: 700,
   },
   lineHeights: {
-    //body: 1.5,
+    // body: 1.8,
+    // heading: 1.2,
+    // loose: 2,
   },
   letterSpacings: {
-    //loose: "2px",
+    // loose: "2px",
   },
   fontSizes: {
-    //xxs: ".75rem",
-    //xs: ".875rem",
-    //s: "1rem",
-    //m: "1.125rem",
-    //l: "1.5rem",
-    //xl: "2rem",
-    //xxl: "3rem",
-    //Big: "4rem",
-    //Bigger: "4.5rem",
+    // xs: rem(13),
+    // sm: rem(14),
+    // md: rem(16),
+    // lg: rem(18),
+    // xl: rem(20),
+    // "2xl": rem(24),
+    // "3xl": rem(28),
+    // "4xl": rem(36),
+    // "5xl": rem(48),
+    // "6xl": rem(64),
+    // "7xl": rem(72),
+    // "8xl": rem(96),
+    // "9xl": rem(128),
   },
-  h1: {
-    //fontSize: ["xl", "xxl", "Big"],
-  },
-  h2: {
-    //fontSize: ["l", "xl", "xxl"],
-  },
-  h3: {
-    //fontSize: ["m", "x", "xl"],
-  },
-  h4: {
-    //fontSize: ["s", "m", "l"],
-  },
-  h5: {
-    //fontSize: ["xs", "s", "m"],
-  },
-  h6: {
-    //fontSize: ["xxs", "xs", "s"],
+  base: {
+    a: {
+      //color: 'inherit'
+    },
+    p: {
+      //mb: 5,
+    },
+    h1: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['4xl', '5xl', '7xl'],
+    },
+    h2: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['3xl', '4xl', '5xl'],
+      // mb: 4,
+    },
+    h3: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['2xl', '3xl', '4xl'],
+      // mb: 4,
+    },
+    h4: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['xl', '2xl', '3xl'],
+      // mb: 4,
+    },
+    h5: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['lg', 'xl', '2xl'],
+      // mb: 4,
+    },
+    h6: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['md', 'lg', 'xl'],
+      // mb: 4,
+    },
   },
 }
 

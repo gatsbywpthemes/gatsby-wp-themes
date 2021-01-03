@@ -15,7 +15,8 @@ export const PostEntryInfo = ({ post, ...props }) => {
       mb={10}
       {...props}
     >
-      <span>Posted on:</span> <Date post={post} /> by <Author post={post} />
+      <span>Posted on:</span> <Date date={post.date} /> by{' '}
+      <Author post={post} />
     </Box>
   )
 }

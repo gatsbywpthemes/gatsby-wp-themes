@@ -66,7 +66,7 @@ export const SearchForm = (props) => {
             aria-label="Reset Search"
             variant="ghost"
             size="sm"
-            icon={<CloseIcon color={colorMode('text', 'modes.dark.text')} />}
+            icon={<CloseIcon color="inherit" />}
             onClick={() => {
               setValue('')
               setSearch('')
