@@ -10,6 +10,7 @@ export const pageQuery = graphql`
       content
       uri
       slug
+      databaseId
       isFrontPage
       featuredImage {
         node {
