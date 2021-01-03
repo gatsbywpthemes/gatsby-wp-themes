@@ -5,21 +5,18 @@ import { Layout, Sidebar } from 'starterComponents'
 import { ActivatePageScripts } from 'starterUtils'
 import { useLayoutStyles } from 'starterUtils/hooks'
 import ParsedContent from 'starterUtils/ParsedContent'
-import { getElementorCssLinksData } from 'starterUtils/elementor'
-import { Helmet } from 'react-helmet'
+
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
-  console.log('page', page, 'context', ctx)
   const {
     title,
     isFrontPage,
     content,
     slug,
     uri,
-    databaseId,
     template: { templateName },
   } = page
   const {
@@ -30,7 +27,6 @@ const Page = ({ page, ctx }) => {
   } = useLayoutStyles('page', templateName.toLowerCase())
   const { skipTitle } = useThemeOptions()
   console.log('template', templateName)
-  const elementorCssLinksData = getElementorCssLinksData(databaseId)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -50,18 +46,6 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <Helmet>
-        {elementorCssLinksData.length &&
-          elementorCssLinksData.map((linkData) => (
-            <link
-              key={linkData?.id}
-              rel="stylesheet"
-              id={linkData?.id}
-              href={linkData?.link}
-              media="all"
-            />
-          ))}
-      </Helmet>
       <Container className="mainContainer" sx={{ ...containerStyles }}>
         <Flex
           sx={{
