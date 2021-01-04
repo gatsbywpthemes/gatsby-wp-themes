@@ -65,8 +65,7 @@ export const RecentPosts = (props) => {
                       display="block"
                       textStyle="special"
                       fontWeight="bold"
-                      className="widget-post-date"
-                      className="entry-date"
+                      className="widget-post-date entry-date"
                       dateTime={post.date}
                     >
                       {format(new Date(post.date), 'MMMM dd, yyyy')}
