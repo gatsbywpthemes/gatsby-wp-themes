@@ -2,7 +2,6 @@ const config = {
   siteUrl: 'https://example.com',
   pathPrefix: '/demo',
 
-  // uploadsPath: 'wp-content/uploads',
   // paginationPrefix: 'page',
 
   // disqus: process.env.GATSBY_DISQUS_NAME,

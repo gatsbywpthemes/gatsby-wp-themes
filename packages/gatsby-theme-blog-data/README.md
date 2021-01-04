@@ -32,7 +32,6 @@ To use this theme in your Gatsby sites, follow these instructions:
        resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
        options: {
          wordPressUrl: ``,
-         uploadsPath: `wp-content/uploads`,
          paginationPrefix: `page`,
          postsPerPage: 10,
          disqus: ``,
@@ -67,7 +66,6 @@ To use this theme in your Gatsby sites, follow these instructions:
 ## Options
 
 `wordPressUrl` - source site. mandatory
-`uploadsPath` - path to uploads if it's different from `wp-content/uploads`
 
 `paginationPrefix` - the prefix of the pages
 

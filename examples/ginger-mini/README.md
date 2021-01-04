@@ -59,7 +59,6 @@ The default options for the Ginger theme are listed below. We discuss each one i
 ```javascript
 const config = {
   wordPressUrl: ``,
-  uploadsPath: `wp-content/uploads`,
   pathPrefix: "",
   paginationPrefix: `page`,
   addWordPressComments: true,
@@ -92,14 +91,6 @@ const config = {
 
 **wordPressUrl** (required)
 Provide a url to your WordPress source website. Make sure that your WordPress setup meets [our requirements](#wp-requirements).
-
----
-
-**uploadsPath** (optional)
-`(default: wp-content/uploads)`
-
-A relative path to your uploads directory. `wp-content/uploads` is default for any WordPress installation.
-Unless you redefined your uploads destination, skip this setting.
 
 ---
 

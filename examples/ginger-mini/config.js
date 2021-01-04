@@ -1,5 +1,4 @@
 const config = {
-  // uploadsPath: `wp-content/uploads`,
   //pathPrefix: "",
   // paginationPrefix: `page`,
   // addWordPressComments: true,

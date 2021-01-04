@@ -4,7 +4,6 @@
 
 const DEFAULT_OPTIONS = {
   wordPressUrl: process.env.GATSBY_WP_URL,
-  uploadsPath: `wp-content/uploads`,
   pathPrefix: ``,
   paginationPrefix: `page`,
   menuName: `main`,

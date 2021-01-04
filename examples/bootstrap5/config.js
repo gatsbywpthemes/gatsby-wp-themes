@@ -1,6 +1,5 @@
 const config = {
   wordPressUrl: `https://wp-pehaa.xyz/five-boots`,
-  // uploadsPath: `wp-content/uploads`,
   //pathPrefix: "",
   // paginationPrefix: `page`,
   // addWordPressComments: true,

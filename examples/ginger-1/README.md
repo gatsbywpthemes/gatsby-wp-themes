@@ -35,7 +35,6 @@ The default options are as follows:
 ```javascript
 const config = {
   wordPressUrl: ``,
-  uploadsPath: `wp-content/uploads`,
   pathPrefix: "",
   paginationPrefix: `page`,
   postsPerPage: 10,
@@ -66,13 +65,6 @@ const config = {
 
 **wordPressUrl** (required)  
 Provide a url to your WordPress website.
-
----
-
-**uploadsPath** (optional)  
-`(default: wp-content/uploads)`
-
-A relative path to your uploads directory. `wp-content/uploads` is default for any WordPress installation. So unless you redefined the `UPLOADS` constant on your WordPress site, you don't have to change it.
 
 ---
 
