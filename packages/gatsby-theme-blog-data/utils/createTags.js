@@ -1,4 +1,5 @@
 const { paginate } = require(`gatsby-awesome-pagination`)
+const normalize = require('normalize-path')
 const taxonomySeoFromWP = require(`./seo/taxonomySeoFromWP.js`)
 
 module.exports = async ({ actions, graphql }, options) => {
@@ -40,7 +41,9 @@ module.exports = async ({ actions, graphql }, options) => {
     ) {
       const items = postsByQuery.data.allWpPost.nodes
       const pathPrefix = ({ pageNumber }) =>
-        pageNumber === 0 ? tag.uri : `${tag.uri}page`
+        pageNumber === 0
+          ? tag.uri
+          : normalize(`${tag.uri}${options.paginationPrefix}`)
       paginate({
         createPage,
         pathPrefix,

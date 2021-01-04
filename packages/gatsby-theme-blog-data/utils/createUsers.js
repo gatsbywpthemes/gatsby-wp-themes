@@ -1,4 +1,5 @@
 const { paginate } = require(`gatsby-awesome-pagination`)
+const normalize = require('normalize-path')
 const authorSeoFromWP = require(`./seo/authorSeoFromWP.js`)
 
 const GET_USERS = `
@@ -39,7 +40,9 @@ module.exports = async ({ actions, graphql }, options) => {
     if (postsByQuery.data.wpUser.posts.nodes.length) {
       const items = postsByQuery.data.wpUser.posts.nodes
       const pathPrefix = ({ pageNumber }) =>
-        pageNumber === 0 ? user.uri : `${user.uri}page`
+        pageNumber === 0
+          ? user.uri
+          : normalize(`${user.uri}${options.paginationPrefix}`)
       paginate({
         createPage,
         pathPrefix,
