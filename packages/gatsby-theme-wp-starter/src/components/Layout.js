@@ -1,6 +1,6 @@
 import React from 'react'
 import { Footer, Header } from 'starterComponents'
-import { Box } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
 import 'starterStyles/wp-styles/styles.scss'
 
@@ -12,7 +12,10 @@ export const Layout = ({ children, page, type = 'page', ...props }) => {
 
   const fullWidthClass = pageTemplate === 'full width' ? 'fullWidth' : ''
   return (
-    <Box
+    <Flex
+      minHeight="100vh"
+      flexDirection="column"
+      alignIten
       sx={{
         '&.fullWidth': {
           '.mainContainer': {
@@ -29,6 +32,7 @@ export const Layout = ({ children, page, type = 'page', ...props }) => {
       </Box>
       <Box
         as="main"
+        flex={1}
         py={16}
         sx={{
           '.fullWidth &': {
@@ -40,6 +44,6 @@ export const Layout = ({ children, page, type = 'page', ...props }) => {
         {children}
       </Box>
       <Footer />
-    </Box>
+    </Flex>
   )
 }
