@@ -1,5 +1,4 @@
 import { mode } from '@chakra-ui/theme-tools'
-
 import { base } from './foundations/typography'
 
 export const styles = {
@@ -17,6 +16,7 @@ export const styles = {
         opacity: 0.6,
       },
       '*, *::before, &::after': {
+        borderColor: 'currentColor',
         wordWrap: 'break-word',
       },
       '*:focus:not(:focus-visible), [class]:focus:not(:focus-visible), input:focus': {

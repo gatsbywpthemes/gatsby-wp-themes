@@ -20,6 +20,12 @@ export const gutenberg = {
     width: '100%',
   },
 
+  'div:not([class]) > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide), [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
+    maxWidth: (theme) => theme.sizes.content,
+    width: '100%',
+    mx: 'auto',
+  },
+
   '.alignnone,.aligncenter,.alignleft,.alignright,.alignwide, .aligncenter > .gatsby-image-wrapper, [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)': {
     mx: 'auto',
   },
