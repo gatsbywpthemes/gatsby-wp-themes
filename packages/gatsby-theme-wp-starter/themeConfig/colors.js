@@ -1,33 +1,6 @@
-// const Color = require('color')
-
-// const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
-// const darken = (clr, val) => Color(clr).darken(val).rgb().string()
 const colors = require('tailwindcss/colors')
 
-const {
-  blueGray,
-  coolGray,
-  trueGray,
-  warmGray,
-  red,
-  orange,
-  amber,
-  yellow,
-  lime,
-  green,
-  emerald,
-  teal,
-  cyan,
-  lightBlue,
-  blue,
-  indigo,
-  violet,
-  purple,
-  fuchsia,
-  pink,
-  rose,
-  gray,
-} = colors
+const { blueGray, red, teal, purple } = colors
 
 //palette
 const light = blueGray[100],
@@ -75,7 +48,6 @@ module.exports = {
   nlButtonColor: 'white',
   nlInputBg: light,
   /* post */
-  archiveTitleBg: 'black',
   infoBg: light,
   archiveTitleBg: blueGray[100],
   cardBg: 'white',

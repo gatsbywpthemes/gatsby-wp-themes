@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  Box,
-  Center,
-  Divider,
-  useColorModeValue as colorMode,
-} from '@chakra-ui/react'
+import { Box, Center, Divider } from '@chakra-ui/react'
 
 import {
   PostEntryTitle,
