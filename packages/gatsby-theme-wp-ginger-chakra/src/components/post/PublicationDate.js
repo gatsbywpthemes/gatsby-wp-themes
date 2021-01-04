@@ -22,8 +22,13 @@ export const PublicationDate = ({ post, location = 'archive' }) => {
   ) : (
     <>
       {post.date && (
-        <chakra.span textStyle="special" mb="4" className="meta-data">
-          / <Date date={post.date} /> /
+        <chakra.span
+          textStyle="special"
+          d="inline-block"
+          mb="4"
+          className="meta-data"
+        >
+          <Date date={post.date} />
         </chakra.span>
       )}
     </>

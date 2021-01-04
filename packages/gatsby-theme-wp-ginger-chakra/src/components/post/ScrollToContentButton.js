@@ -1,7 +1,7 @@
 import React from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { Button } from 'gingerThemeUiComponents/Button'
-import { useThemeColorModeValue as useColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
+import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 
 import { FiChevronsDown } from 'react-icons/fi'
 
@@ -15,10 +15,10 @@ export const ScrollToContentButton = () => {
         right: 0,
         left: 0,
         margin: 'auto',
-        color: useColorModeValue('text'),
-        bg: useColorModeValue('bg'),
+        color: useThemeColorModeValue('scrollDownColor'),
+        bg: useThemeColorModeValue('scrollDownBg'),
         ':hover svg': {
-          color: useColorModeValue('bg'),
+          color: useThemeColorModeValue('scrollDownBg'),
         },
       }}
       variant="circle"

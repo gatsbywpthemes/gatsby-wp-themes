@@ -1,52 +1,43 @@
-import { darken, lighten } from 'polished'
-
-const dark = '#303030'
-const dark1 = lighten(0.04, '#303030')
-const dark2 = darken(0.04, '#303030')
-const dark3 = darken(0.065, '#303030')
-const dark4 = darken(0.1, '#303030')
-const light = `#f5f5f5`
+const dark0 = '#3a3a3a'
+const dark1 = '#303030'
+const dark2 = '#262626'
+const dark3 = '#1f1f1f'
+const dark4 = '#161616'
+const light = '#f5f5f5'
 const primary = '#076666'
-const primaryForDark = '#79b2b2'
 const white = '#ffffff'
-const accentDark = '#6d00ff'
-const accentLight = '#c98afa'
 
 export const colors = {
   /* basic colors */
-  text: dark,
+  text: dark1,
   bg: white,
-  linkHover: primary,
-  focusOutline: accentDark,
   /* header */
-  headerColor: dark,
+  headerColor: dark1,
   headerBg: light,
   /* footer */
-  footerColor: dark,
+  footerColor: dark1,
   footerBg: light,
   /* sidebar */
   sidebarColor: white,
   sidebarBg: primary,
   menuButtonColor: white,
-  menuButtonBg: dark,
+  menuButtonBg: dark1,
   /* post */
   splashBg: primary,
-  scrollDownColor: dark,
+  scrollDownColor: dark1,
   scrollDownBg: white,
-  cardColor: dark,
+  cardColor: dark1,
   cardBg: light,
   cardBorder: white,
   commentsColor: white,
-  commentsBg: dark,
+  commentsBg: dark1,
   overlay: 'transparent',
 
   modes: {
     dark: {
       /* basic colors */
       text: light,
-      bg: dark,
-      linkHover: primaryForDark,
-      focusOutline: accentLight,
+      bg: dark1,
       /* header */
       headerColor: light,
       headerBg: dark2,
@@ -56,15 +47,15 @@ export const colors = {
       /* sidebar */
       sidebarColor: light,
       sidebarBg: dark4,
-      menuButtonColor: dark,
+      menuButtonColor: dark1,
       menuButtonBg: light,
       /* post */
       splashBg: dark3,
       scrollDownColor: white,
-      scrollDownBg: dark,
+      scrollDownBg: dark1,
       cardColor: light,
-      cardBg: dark,
-      cardBorder: dark1,
+      cardBg: dark1,
+      cardBorder: dark0,
       commentsColor: light,
       commentsBg: dark3,
       overlay: 'rgba(0,0,0,.6)',

@@ -1,15 +1,7 @@
 import React, { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { WidgetContainer } from 'gingerThemeComponents'
-import {
-  Box,
-  Flex,
-  FormErrorMessage,
-  FormLabel,
-  FormControl,
-  Input,
-  Button,
-} from '@chakra-ui/react'
+import { Flex, Input, Button } from '@chakra-ui/react'
 
 export const Newsletter = () => {
   const [email, setEmail] = useState('')

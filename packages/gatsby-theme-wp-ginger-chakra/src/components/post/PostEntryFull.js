@@ -10,6 +10,7 @@ import {
   Image,
 } from 'gingerThemeComponents'
 import { gutenberg } from 'gingerThemeStyles'
+import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 
 export const PostEntryFull = ({ ctx, post }) => {
   return (
@@ -29,7 +30,7 @@ export const PostEntryFull = ({ ctx, post }) => {
               '100vh',
             ],
             py: [24, 0],
-            backgroundColor: 'splashBg',
+            backgroundColor: useThemeColorModeValue('splashBg'),
             boxShadow: ['none', 'none', '0 20px 60px -10px rgba(0,0,0,0.2)'],
           }}
         >

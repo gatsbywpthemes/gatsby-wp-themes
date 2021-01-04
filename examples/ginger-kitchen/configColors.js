@@ -1,56 +1,53 @@
-const color = "#483262"
 const colorSettings = {
   /* basic colors */
-
   text: "#483262",
-  //bg: "#ffffff",
-  linkHover: "#b05b42",
-  //focusOutline: "#c98afa",
-
+  // bg: "#ffffff",
   /* header */
-  headerColor: "white",
+  headerColor: "#fff",
   headerBg: "#1a0c2a",
-
   /* footer */
-  footerColor: "white",
+  footerColor: "#fff",
   footerBg: "#b05b42",
-
   /* sidebar */
-  sidebarColor: "white",
+  // sidebarColor: "#ffffff",
   sidebarBg: "#a06351",
-  //menuButtonColor: "#ffffff",
-  menuButtonBg: color,
-
+  // menuButtonColor: "#ffffff",
+  menuButtonBg: "#483262",
   /* post */
-  //splashBg: "#076666",
-  scrollDownColor: color,
-  //scrollDownBg: "#ffffff",
+  // splashBg: "#076666",
+  scrollDownColor: "#483262",
+  // scrollDownBg: "#ffffff",
   cardColor: "#483262",
   cardBg: "#f0e7e4",
-  cardBorder: "#fff",
-  commentsColor: color,
+  // cardBorder: "#ffffff",
+  commentsColor: "#483262",
   commentsBg: "#e7f0eb",
+  // overlay: "transparent",
+
   modes: {
     dark: {
-      //text: "#f5f5f5",
+      /* basic colors */
+      // text: "#f5f5f5",
       bg: "#271d33",
-      linkHover: "#b05b42",
-      //focusOutline: "#c98afa",
-      //headerColor: "#f5f5f5",
+      /* header */
+      // headerColor: "#f5f5f5",
       headerBg: "#1a0c2a",
-      //footerColor: "#f5f5f5",
+      /* footer */
+      // footerColor: "#f5f5f5",
       footerBg: "#1a0c2a",
-      //sidebarColor: "#f5f5f5",
+      /* sidebar */
+      // sidebarColor: "#f5f5f5",
       sidebarBg: "#1a0c2a",
       menuButtonColor: "#1a0c2a",
-      //menuButtonBg: "#f5f5f5",
-      //splashBg: "#1f1f1f",
-      //scrollDownColor: "#ffffff",
+      // menuButtonBg: "#f5f5f5",
+      /* post */
+      // splashBg: "#1f1f1f",
+      // scrollDownColor: "#ffffff",
       scrollDownBg: "#1a0c2a",
-      //cardColor: "#f5f5f5",
-      cardBg: "#271d33",
-      cardBorder: "#271d33",
-      //commentsColor: "#f5f5f5",
+      // cardColor: "#f5f5f5",
+      // cardBg: "#303030",
+      // cardBorder: "#3a3a3a",
+      // commentsColor: "#f5f5f5",
       commentsBg: "#22172d",
       overlay: "#271d33e8",
     },
