@@ -1,8 +1,8 @@
-const config = require("./themeConfig")
+const config = require('./themeConfig')
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "class",
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class',
 
   theme: {
     ...config,
@@ -13,4 +13,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+    preflight: false,
+  },
 }
