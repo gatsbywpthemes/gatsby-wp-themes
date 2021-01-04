@@ -11,7 +11,7 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   // animation: false,
-  skipTitle: ["home", "contact"],
+  // skipTitle: "all",
   layoutWidth: {
     page: "lg",
     post: "lg",

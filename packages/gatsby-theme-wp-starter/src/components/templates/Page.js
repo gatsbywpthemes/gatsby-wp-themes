@@ -26,7 +26,6 @@ const Page = ({ page, ctx }) => {
     sidebarWidgets,
   } = useLayoutStyles('page', templateName.toLowerCase())
   const { skipTitle } = useThemeOptions()
-  console.log('template', templateName)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -68,9 +67,10 @@ const Page = ({ page, ctx }) => {
             >
               {skipTitle &&
                 !skipTitle.includes(slug) &&
-                skipTitle !== 'all' && (
+                skipTitle !== 'all' &&
+                templateName !== 'Full Width' && (
                   <h1
-                    className="page-title"
+                    className="mb-10 text-3xl font-semibold tracking-widest text-center uppercase page-title"
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                 )}
