@@ -10,8 +10,8 @@ const config = {
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
-
-  skipTitle: "all",
+  // animation: false,
+  skipTitle: ["home", "contact"],
   layoutWidth: {
     page: "lg",
     post: "lg",

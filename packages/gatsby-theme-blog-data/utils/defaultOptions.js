@@ -23,7 +23,6 @@ const DEFAULT_OPTIONS = {
   displayDownloadInfo: false,
   logoFileName: false,
   seoWithYoast: false,
-  animation: true,
 }
 
 module.exports = DEFAULT_OPTIONS

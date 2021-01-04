@@ -99,7 +99,7 @@ module.exports = (options) => {
       },
     })
   }
-  if (mergedOptions.animation === true) {
+  if (mergedOptions.animation) {
     plugins.push({
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
