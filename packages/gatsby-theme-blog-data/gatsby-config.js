@@ -8,14 +8,11 @@ module.exports = (options) => {
   }
   const {
     wordPressUrl,
-    uploadsPath,
     gaTrackingId,
     googleTagManagerId,
     addSiteMap,
     siteMapOptions,
-    pathPrefix,
     parserDebugOutput,
-    displayDownloadInfo,
   } = mergedOptions
 
   const url = slashes(wordPressUrl)

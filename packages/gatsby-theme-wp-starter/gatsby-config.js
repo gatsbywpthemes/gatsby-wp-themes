@@ -14,6 +14,7 @@ module.exports = (options) => {
   const mergedOptions = {
     addColorModes: true,
     skipTitle: [],
+    animation: true,
 
     layoutWidth: {
       page: `l`,
@@ -60,16 +61,7 @@ module.exports = (options) => {
         ...(options.lightboxOptions || {}),
       },
     },
-    {
-      resolve: `gatsby-plugin-scroll-reveal`,
-      options: {
-        threshold: 0.1,
-        once: true,
-        rootMargin: '0% 50%',
-        animateClassName: 'sal-animate',
-        selector: `[data-sal],  .entry p, .entry  blockquote, .entry  h1,.entry  h2,.entry  h3,.entry  h4,.entry  h5,.entry  h6 ,.entry-info, .animate-on-scroll`,
-      },
-    },
+
     {
       resolve: '@gatsbywpthemes/gatsby-plugin-wpcf7',
       options: {
@@ -86,7 +78,7 @@ module.exports = (options) => {
   ]
 
   /**
-   * Conditionally add google fonts plugin
+   * Conditionally add  plugin
    * to avoid errors on build
    */
   if (mergedOptions.customFonts.length) {
@@ -104,6 +96,18 @@ module.exports = (options) => {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
         endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
+      },
+    })
+  }
+  if (mergedOptions.animation === true) {
+    plugins.push({
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.1,
+        once: true,
+        rootMargin: '0% 50%',
+        animateClassName: 'sal-animate',
+        selector: `[data-sal]`,
       },
     })
   }
