@@ -69,7 +69,6 @@ module.exports = async ({ actions, graphql }, options) => {
   }
 
   const pathPrefix = ({ pageNumber }) => {
-    /* will be replaced by postsPage from settings once availble */
     return pageNumber === 0
       ? postsPath
       : normalize(`${postsPath}${paginationPrefix}`)
