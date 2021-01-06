@@ -75,7 +75,6 @@ const config = {
       url: `https:twitter.com/gatsbyjs`,
     },
   ],
-  twitterSummaryCardImage: `Gatsby_Monogram.png`,
   fonts: ["Abril Fatface", "Fira Sans"],
   gaTrackingId: 0,
   googleTagManagerId: 0,
@@ -229,14 +228,6 @@ And if you have no social profiles:
 ```javascript
 social: []
 ```
-
----
-
-**twitterSummaryCardImage**<a name="twittercard"></a>
-`(default: Gatsby_Monogram.png)`
-
-When sharing your content on Twitter, articles will use their featured image for the Twitter card.
-Other pages will use a common twitterSummaryCardImage. Make sure to place it in the `/static` folder. Your image should be square and at least 144px x 144px.
 
 ---
 

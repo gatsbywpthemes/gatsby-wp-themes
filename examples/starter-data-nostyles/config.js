@@ -29,7 +29,6 @@ const config = {
   slideMenuWidgets: ['Categories', 'RecentPosts', 'SocialFollow', 'Newsletter'],
   archiveSidebar: 'right',
 
-  // twitterSummaryCardImage: 'Gatsby_Monogram.png',
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,

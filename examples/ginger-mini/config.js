@@ -23,7 +23,6 @@ const config = {
       url: `https://gatsby.dev/discord`,
     },
   ],
-  twitterSummaryCardImage: `Gatsby_Monogram.png`,
   fonts: ["Special+Elite", "Open+Sans:400,400i,700,700i"],
   // gaTrackingId: 0,
   // googleTagManagerId: 0,

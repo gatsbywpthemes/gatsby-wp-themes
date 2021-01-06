@@ -48,7 +48,6 @@ const config = {
       url: "#",
     },
   ],
-  // twitterSummaryCardImage: 'Gatsby_Monogram.png',
   fonts: ["baumans", "coda"],
 
   // gaTrackingId: 0,

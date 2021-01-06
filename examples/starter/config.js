@@ -49,7 +49,6 @@ const config = {
       url: "#",
     },
   ],
-  // twitterSummaryCardImage: 'Gatsby_Monogram.png',
   // fonts: ["abril fatface", "fira sans"],
   // gaTrackingId: 0,
   // googleTagManagerId: 0,

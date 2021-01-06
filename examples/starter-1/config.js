@@ -50,7 +50,6 @@ const config = {
       url: "#",
     },
   ],
-  // twitterSummaryCardImage: 'Gatsby_Monogram.png',
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
   // addSiteMap: false,

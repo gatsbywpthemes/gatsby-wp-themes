@@ -29,7 +29,6 @@ const config = {
       url: "https://gatsby.dev/discord",
     },
   ],
-  twitterSummaryCardImage: "Gatsby_Monogram.png",
   fonts: ["Abril Fatface", "Fira Sans:300,700"],
   // gaTrackingId: 0,
   // googleTagManagerId: 0,
