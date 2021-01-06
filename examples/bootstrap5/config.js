@@ -28,7 +28,7 @@ const config = {
     },
   ],
   fonts: ["Prata", "Fira Sans:300,700"],
-  gaTrackingId: "G-KWLJB6Q6NY",
+  gaTrackingId: "UA-186757931-1",
   gaOptions: {
     head: true,
   },

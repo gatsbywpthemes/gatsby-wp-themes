@@ -82,9 +82,7 @@ module.exports = (options) => {
   }
 
   return {
-    siteMetadata: {
-      author: `@pehaa`,
-    },
+    siteMetadata: {},
     plugins,
   }
 }
