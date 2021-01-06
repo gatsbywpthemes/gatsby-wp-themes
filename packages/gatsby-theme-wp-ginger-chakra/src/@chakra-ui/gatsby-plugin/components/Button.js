@@ -22,9 +22,8 @@ export const Button = {
       boxShadow: 'inset 0 0 0 0 transparent',
       transition: 'box-shadow .6s, background .6s',
       svg: {
-        verticalAlign: 'middle',
         width: '1.5rem',
-        height: '1.5rem',
+        height: '100%',
         m: 'auto',
       },
       ':hover': {

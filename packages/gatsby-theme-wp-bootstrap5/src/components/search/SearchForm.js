@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
 import { SearchQueries } from './index'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { SearchContext } from './context'
 
 export const SearchForm = () => {
   const { instantWPSearch } = useThemeOptions()
   const [value, setValue] = useState('')
-  const [search, setSearch] = useState('')
+  const { search, setSearch } = useContext(SearchContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()

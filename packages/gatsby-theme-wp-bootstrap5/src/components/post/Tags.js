@@ -12,7 +12,7 @@ export const Tags = ({ tags }) => {
       <h2 className="h5">Tags:</h2>
       <ul className="d-flex flex-wrap p-0">
         {tags.map((tag, index) => (
-          <li className="mr-1" key={tag.slug}>
+          <li className="me-1" key={tag.slug}>
             <Link
               className="btn btn-sm btn-secondary mb-1 py-0 text-uppercase"
               to={tag.uri}

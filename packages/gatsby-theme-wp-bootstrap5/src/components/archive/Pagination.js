@@ -33,7 +33,7 @@ export const Pagination = ({ ctx }) => {
   }
   return (
     <nav className="border-top pt-4" aria-label="Page navigation">
-      <ul className="pagination justify-content-between">
+      <ul className="pagination archive-pagination justify-content-between">
         <li className="page-item flex-grow-1">
           {renderPreviousLink(previousPagePath)}
         </li>
@@ -42,7 +42,7 @@ export const Pagination = ({ ctx }) => {
             {humanPageNumber}
           </span>
         </li>
-        <li className="page-item flex-grow-1 text-right">
+        <li className="page-item flex-grow-1 text-end">
           {renderNextLink(nextPagePath)}
         </li>
       </ul>

@@ -1,14 +1,11 @@
 import React from 'react'
 import { SearchPostsQuery, SearchPagesQuery } from './index'
 
-export const SearchQueries = ({ search }) => {
+export const SearchQueries = () => {
   return (
-    search &&
-    search.length > 0 && (
-      <div className="search-results">
-        <SearchPostsQuery search={search} />
-        <SearchPagesQuery search={search} />
-      </div>
-    )
+    <div className="search-results">
+      <SearchPostsQuery />
+      <SearchPagesQuery />
+    </div>
   )
 }

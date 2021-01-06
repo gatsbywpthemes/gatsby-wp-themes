@@ -19,7 +19,7 @@ export const PostEntryIntro = ({ ctx, post, location = 'archive' }) => {
       <div className="mt-auto mx-3 mb-3">
         <Link
           to={post.uri}
-          className="btn btn-sm btn-outline-dark text-uppercase ml-auto"
+          className="btn btn-sm btn-outline-dark text-uppercase ms-auto"
         >
           Read more&hellip;
         </Link>

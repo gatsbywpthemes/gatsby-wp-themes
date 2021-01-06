@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider } from '@emotion/react'
+import SearchContextProvider from './src/components/search/context'
 import variables from './src/styles/variables.scss'
 const theme = {
   sizes: {
@@ -11,5 +12,9 @@ const theme = {
 }
 
 export default ({ element }) => {
-  return <ThemeProvider theme={theme}>{element}</ThemeProvider>
+  return (
+    <ThemeProvider theme={theme}>
+      <SearchContextProvider>{element}</SearchContextProvider>
+    </ThemeProvider>
+  )
 }

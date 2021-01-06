@@ -44,7 +44,7 @@ export const RecentPosts = () => {
                 key={post.id}
               >
                 <Link
-                  className="mr-3"
+                  className="me-3"
                   aria-label={`Read more - ${post.title}`}
                   to={post.uri}
                 >

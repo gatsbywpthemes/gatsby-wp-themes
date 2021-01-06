@@ -15,7 +15,7 @@ export const SubMenu = ({ menuItem, sub }) => {
         type="button"
         aria-label="Open menu item"
         onClick={handler}
-        className="btn btn-sm pl-0 border-none lh-1 ml-auto "
+        className="btn btn-sm ps-0 border-none lh-1 ms-auto "
       >
         {showClass ? <FiChevronDown /> : <FiChevronRight />}
       </button>
