@@ -9,7 +9,6 @@ const {
   social,
   pathPrefix,
   addDisqusComments,
-  twitterSummaryCardImage,
   ...options
 } = require("./config")
 
