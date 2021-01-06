@@ -19,7 +19,7 @@ export const useSearchQuery = (contentType = 'PAGE') => {
       $contentType: [ContentTypeEnum] = PAGE
     ) {
       contentNodes(
-        first: 10
+        first: 3
         after: $after
         where: { contentTypes: $contentType, search: $search }
       ) {
@@ -37,6 +37,7 @@ export const useSearchQuery = (contentType = 'PAGE') => {
   const { data, loading, error, fetchMore } = useQuery(GET_RESULTS, {
     variables: { search, contentType },
   })
+
   const loadMore = () => {
     setClickable(false)
     if (data.contentNodes.pageInfo?.hasNextPage) {

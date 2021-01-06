@@ -6,8 +6,8 @@ import { SearchContext } from './context'
 
 export const SearchForm = () => {
   const { instantWPSearch } = useThemeOptions()
-  const [value, setValue] = useState('')
   const { search, setSearch } = useContext(SearchContext)
+  const [value, setValue] = useState(search)
 
   const handleSubmit = (e) => {
     e.preventDefault()

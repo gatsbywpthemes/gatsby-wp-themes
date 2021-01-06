@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useSearchQuery } from './useSearchQuery'
 import { SearchResults, SearchStats, LoadMoreButton } from './index'
+import { SearchContext } from './context'
 
 export const SearchPostsQuery = () => {
   const {
@@ -11,7 +12,7 @@ export const SearchPostsQuery = () => {
     loadMore,
     posts,
   } = useSearchQuery('POST')
-
+  const { postResults } = useContext(SearchContext)
   if (loading) return <p>Searching posts...</p>
   if (error) return <p>Error - {error.message}</p>
   return (

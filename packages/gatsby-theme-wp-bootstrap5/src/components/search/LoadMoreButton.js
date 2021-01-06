@@ -1,11 +1,13 @@
 import React from 'react'
-import { Button } from '@chakra-ui/react'
 
 export const LoadMoreButton = ({ clickable, loadMore }) => {
   return clickable ? (
-    <Button size="sm" variant="link" color="inherit" onClick={loadMore}>
+    <button
+      className="btn btn-sm btn-dark ms-auto d-flex mb-1"
+      onClick={loadMore}
+    >
       Load More
-    </Button>
+    </button>
   ) : (
     <p>Loading...</p>
   )
