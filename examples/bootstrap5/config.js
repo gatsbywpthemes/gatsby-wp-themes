@@ -12,7 +12,7 @@ const config = {
     `Tags`,
     "Newsletter",
   ],
-  siteUrl: "http://localhost:9001",
+  siteUrl: "https://gatsby-wp-b5.netlify.app/",
   // title: `Blog Title Placeholder`,
   // author: `Name Placeholder`,
   // description: `Description placeholder`,

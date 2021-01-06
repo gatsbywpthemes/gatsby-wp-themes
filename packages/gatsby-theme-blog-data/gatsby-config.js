@@ -81,7 +81,6 @@ module.exports = (options) => {
 
   return {
     siteMetadata: {
-      author: `Name Placeholder`,
       siteUrl: `http://example.com`,
       social: [
         {
