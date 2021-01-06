@@ -66,9 +66,6 @@ const config = {
   menuName: "main",
   slideMenuWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
-  title: `Blog Title Placeholder`,
-  author: `Name Placeholder`,
-  description: `Description placeholder`,
   social: [
     {
       name: `twitter`,
