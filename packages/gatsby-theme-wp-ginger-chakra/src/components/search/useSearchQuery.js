@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import { SearchContext } from 'gingerThemeComponents/search/context'
-import uniqueBy from 'lodash/uniqby'
+import uniqueBy from 'lodash.uniqby'
 
 export const useSearchQuery = (contentType = 'PAGE') => {
   const [clickable, setClickable] = useState(true)

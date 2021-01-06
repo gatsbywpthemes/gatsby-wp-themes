@@ -34,6 +34,7 @@
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sass": "^2.8.0",
     "gatsby-plugin-scroll-reveal": "^0.0.7",
+    "lodash.uniqby": "^4.7.0",
     "normalize.css": "^8.0.1",
     "polished": "^4.0.5",
     "postcss": "^8.2.1",

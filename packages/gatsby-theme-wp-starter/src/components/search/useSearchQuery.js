@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import uniqueBy from 'lodash/uniqby'
+import uniqueBy from 'lodash.uniqby'
 
 export const useSearchQuery = (search, contentType = 'PAGE') => {
   const [clickable, setClickable] = useState(true)
