@@ -10,6 +10,7 @@ const DEFAULT_OPTIONS = {
   disqus: process.env.GATSBY_DISQUS_NAME,
   addWordPressComments: true,
   gaTrackingId: 0,
+  gaOptions: {},
   googleTagManagerId: 0,
   addSiteMap: false,
   siteMapOptions: {},

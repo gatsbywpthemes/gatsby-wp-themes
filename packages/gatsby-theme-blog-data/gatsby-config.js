@@ -9,6 +9,7 @@ module.exports = (options) => {
   const {
     wordPressUrl,
     gaTrackingId,
+    gaOptions,
     googleTagManagerId,
     addSiteMap,
     siteMapOptions,
@@ -63,11 +64,12 @@ module.exports = (options) => {
     })
   }
 
-  if (gaTrackingId) {
+  if (gaTrackingId || gaOptions.gaTrackingId) {
     plugins.push({
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: gaTrackingId,
+        ...gaOptions,
       },
     })
   }

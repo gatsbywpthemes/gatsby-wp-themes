@@ -5,7 +5,6 @@
  */
 require("dotenv").config()
 const {
-  author,
   social,
   pathPrefix,
   addDisqusComments,
@@ -15,7 +14,6 @@ const {
 module.exports = {
   pathPrefix: pathPrefix,
   siteMetadata: {
-    author,
     wordPressUrl: options.wordpressUrl,
     siteUrl: options.siteUrl,
     social,
