@@ -13,9 +13,6 @@ const config = {
     "Newsletter",
   ],
   siteUrl: "https://gatsby-wp-b5.netlify.app/",
-  // title: `Blog Title Placeholder`,
-  // author: `Name Placeholder`,
-  // description: `Description placeholder`,
   social: [
     {
       name: `twitter`,

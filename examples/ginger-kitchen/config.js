@@ -12,9 +12,6 @@ const config = {
     "Newsletter",
   ],
   siteUrl: "http://localhost:9001",
-  // title: `Blog Title Placeholder`,
-  // author: `Name Placeholder`,
-  // description: `Description placeholder`,
   social: [
     {
       name: `twitter`,
