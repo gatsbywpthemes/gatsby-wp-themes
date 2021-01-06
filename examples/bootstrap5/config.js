@@ -28,7 +28,7 @@ const config = {
     },
   ],
   fonts: ["Prata", "Fira Sans:300,700"],
-  // gaTrackingId: 0,
+  gaTrackingId: "G-KWLJB6Q6NY",
   // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
