@@ -28,9 +28,16 @@ const config = {
     },
   ],
   fonts: ["Prata", "Fira Sans:300,700"],
-  gaTrackingId: "UA-186757931-1",
-  gaOptions: {
+  //universalGATrackingId: "UA-186757931-1",
+  universalGAOptions: {
     head: true,
+  },
+  GTagGATrackingId: "G-V63SJWDYCJ",
+  GTagOptions: {
+    pluginConfig: {
+      // Puts tracking script in the head instead of the body
+      head: true,
+    },
   },
   // googleTagManagerId: 0,
   // addSiteMap: false,

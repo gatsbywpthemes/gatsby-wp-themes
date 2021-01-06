@@ -8,8 +8,10 @@ module.exports = (options) => {
   }
   const {
     wordPressUrl,
-    gaTrackingId,
-    gaOptions,
+    universalGATrackingId,
+    universalGAOptions,
+    GTagGATrackingId,
+    GTagOptions,
     googleTagManagerId,
     addSiteMap,
     siteMapOptions,
@@ -64,12 +66,22 @@ module.exports = (options) => {
     })
   }
 
-  if (gaTrackingId || gaOptions.gaTrackingId) {
+  if (universalGATrackingId || universalGAOptions.gaTrackingId) {
     plugins.push({
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: gaTrackingId,
         ...gaOptions,
+      },
+    })
+  }
+
+  if (GTagGATrackingId || GTagOptions.trackingIds) {
+    plugins.push({
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [GTagGATrackingId],
+        ...GTagOptions,
       },
     })
   }
