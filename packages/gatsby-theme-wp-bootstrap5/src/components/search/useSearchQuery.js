@@ -19,7 +19,7 @@ export const useSearchQuery = (contentType = 'PAGE') => {
       $contentType: [ContentTypeEnum] = PAGE
     ) {
       contentNodes(
-        first: 3
+        first: 10
         after: $after
         where: { contentTypes: $contentType, search: $search }
       ) {
