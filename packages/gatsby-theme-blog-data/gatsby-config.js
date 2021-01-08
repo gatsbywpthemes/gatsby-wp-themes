@@ -19,6 +19,7 @@ module.exports = (options) => {
     siteMapOptions,
     parserDebugOutput,
     favicon,
+    manifestOptions,
   } = mergedOptions
 
   const url = slashes(wordPressUrl)
@@ -53,6 +54,7 @@ module.exports = (options) => {
           favicon && fs.existsSync(favicon)
             ? favicon
             : `${__dirname}/src/images/gatsby-icon.png`,
+        ...manifestOptions,
       },
     },
     {

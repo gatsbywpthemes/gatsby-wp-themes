@@ -12,6 +12,7 @@ const DEFAULT_OPTIONS = {
   gaUniversalOptions: {},
   ga4Options: {},
   googleTagManagerOptions: {},
+  manifestOptions: {},
   addSiteMap: false,
   siteMapOptions: {},
   search: 'basic',
