@@ -5,8 +5,6 @@ const config = {
 
   // menuName: "main",
 
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   // animation: false,
@@ -50,8 +48,6 @@ const config = {
   ],
   // fonts: ["abril fatface", "fira sans"],
 
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,

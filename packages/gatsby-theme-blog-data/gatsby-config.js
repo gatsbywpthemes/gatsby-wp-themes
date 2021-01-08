@@ -1,5 +1,6 @@
 const defaultOptions = require(`./utils/defaultOptions`)
 const slashes = require('remove-trailing-slash')
+const fs = require('fs')
 
 module.exports = (options) => {
   const mergedOptions = {
@@ -8,14 +9,16 @@ module.exports = (options) => {
   }
   const {
     wordPressUrl,
-    universalGATrackingId,
-    universalGAOptions,
-    GTagGATrackingId,
-    GTagOptions,
+    gaUniversalTrackingId,
+    gaUniversalOptions,
+    ga4TrackingId,
+    ga4Options,
     googleTagManagerId,
+    googleTagManagerOptions,
     addSiteMap,
     siteMapOptions,
     parserDebugOutput,
+    favicon,
   } = mergedOptions
 
   const url = slashes(wordPressUrl)
@@ -43,7 +46,15 @@ module.exports = (options) => {
         path: `${__dirname}/src/images`,
       },
     },
-
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon:
+          favicon && fs.existsSync(favicon)
+            ? favicon
+            : `${__dirname}/src/images/gatsby-icon.png`,
+      },
+    },
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-wordpress-parser`,
       options: {
@@ -57,31 +68,32 @@ module.exports = (options) => {
    * Conditionally add plugins based on theme config
    * to avoid errors while Gatsby boots.
    */
-  if (googleTagManagerId) {
+  if (googleTagManagerId || googleTagManagerOptions.id) {
     plugins.push({
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
         id: googleTagManagerId,
+        ...googleTagManagerOptions,
       },
     })
   }
 
-  if (universalGATrackingId || universalGAOptions.gaTrackingId) {
+  if (gaUniversalTrackingId || gaUniversalOptions.gaTrackingId) {
     plugins.push({
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: gaTrackingId,
-        ...gaOptions,
+        trackingId: gaUniversalTrackingId,
+        ...gaUniversalOptions,
       },
     })
   }
 
-  if (GTagGATrackingId || GTagOptions.trackingIds) {
+  if (ga4TrackingId || ga4Options.trackingIds) {
     plugins.push({
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [GTagGATrackingId],
-        ...GTagOptions,
+        trackingIds: [ga4TrackingId],
+        ...ga4Options,
       },
     })
   }

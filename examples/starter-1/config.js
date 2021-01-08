@@ -6,8 +6,6 @@ const config = {
   // disqus: 'webstantly',
   menuName: "main",
   // addWordPressComments: 1,
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -50,8 +48,6 @@ const config = {
       url: "#",
     },
   ],
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,

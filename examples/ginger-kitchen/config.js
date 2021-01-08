@@ -27,8 +27,6 @@ const config = {
     },
   ],
   fonts: ["Abril Fatface", "Lora:400,400i,700,700i"],
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   addWordPressSearch: true,

@@ -5,9 +5,6 @@ const config = {
   // addWordPressComments: 1,
 
   // menuName: "main",
-
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -50,8 +47,6 @@ const config = {
     },
   ],
   // fonts: ["abril fatface", "fira sans"],
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,

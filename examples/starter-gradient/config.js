@@ -5,8 +5,6 @@ const config = {
 
   // menuName: "main",
 
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -49,9 +47,6 @@ const config = {
     },
   ],
   fonts: ["baumans", "coda"],
-
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,

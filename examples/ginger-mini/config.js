@@ -21,8 +21,6 @@ const config = {
     },
   ],
   fonts: ["Special+Elite", "Open+Sans:400,400i,700,700i"],
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   addWordPressSearch: true,

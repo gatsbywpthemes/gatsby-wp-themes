@@ -30,15 +30,14 @@ const config = {
     },
   ],
   fonts: ["Abril Fatface", "Fira Sans:300,700"],
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
-  // addSiteMap: false,
-  // siteMapOptions: {},
+  addSiteMap: true,
+  //siteMapOptions: {},
   addWordPressSearch: true,
   // instantWPSearch: false,
   // addColorModes: false,
   skipTitle: ["home"],
   seoWithYoast: true,
   lightboxSettings: {},
+  favicon: "static/favicon.svg",
 }
 module.exports = config

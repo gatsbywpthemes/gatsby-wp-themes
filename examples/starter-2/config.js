@@ -4,8 +4,6 @@ const config = {
 
   menuName: "main",
   // addWordPressComments: 1,
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   disqus: process.env.GATSBY_DISQUS_NAME,
@@ -49,8 +47,6 @@ const config = {
     },
   ],
   fonts: ["baumans", "coda", "roboto"],
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,

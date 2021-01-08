@@ -28,12 +28,12 @@ const config = {
     },
   ],
   fonts: ["Prata", "Fira Sans:300,700"],
-  //universalGATrackingId: "UA-186757931-1",
-  universalGAOptions: {
+  //gaUniversalTrackingId: "UA-186757931-1",
+  gaUniversalOptions: {
     head: true,
   },
-  GTagGATrackingId: "G-V63SJWDYCJ",
-  GTagOptions: {
+  ga4TrackingId: "G-V63SJWDYCJ",
+  ga4Options: {
     pluginConfig: {
       // Puts tracking script in the head instead of the body
       head: true,
