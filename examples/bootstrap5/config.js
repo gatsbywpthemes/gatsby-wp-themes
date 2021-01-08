@@ -32,14 +32,19 @@ const config = {
   gaUniversalOptions: {
     head: true,
   },
+<<<<<<< HEAD
   ga4TrackingId: "G-V63SJWDYCJ",
   ga4Options: {
+=======
+  //GTagGATrackingId: "G-V63SJWDYCJ",
+  GTagOptions: {
+>>>>>>> b5
     pluginConfig: {
       // Puts tracking script in the head instead of the body
       head: true,
     },
   },
-  // googleTagManagerId: 0,
+  googleTagManagerId: "GTM-K3CF7RK",
   // addSiteMap: false,
   // siteMapOptions: {},
   addWordPressSearch: true,
