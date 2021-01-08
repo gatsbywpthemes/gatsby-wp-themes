@@ -61,7 +61,6 @@ module.exports = (options) => {
       resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
       options: {
         siteUrl: options.siteUrl,
-        pathPrefix: options.pathPrefix,
       },
     },
 

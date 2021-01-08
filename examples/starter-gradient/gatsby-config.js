@@ -1,7 +1,15 @@
 require("dotenv").config()
-const { title, author, description, social, ...options } = require("./config")
+const {
+  title,
+  author,
+  description,
+  social,
+  pathPrefix,
+  ...options
+} = require("./config")
 
 module.exports = {
+  pathPrefix,
   siteMetadata: {
     title,
     description,
@@ -15,8 +23,6 @@ module.exports = {
       resolve: `@gatsbywpthemes/gatsby-theme-wp-starter`,
       options: {
         ...options,
-        pathPrefix:
-          process.env.NODE_ENV === "development" ? "" : options.pathPrefix,
       },
     },
     {

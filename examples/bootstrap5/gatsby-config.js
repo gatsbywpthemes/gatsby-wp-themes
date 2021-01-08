@@ -12,7 +12,7 @@ const {
 } = require("./config")
 
 module.exports = {
-  pathPrefix: pathPrefix,
+  pathPrefix,
   siteMetadata: {
     wordPressUrl: options.wordpressUrl,
     siteUrl: options.siteUrl,
@@ -27,7 +27,6 @@ module.exports = {
             ? process.env.GATSBY_DISQUS_NAME
             : "",
         ...options,
-        pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,
       },
     },
     {

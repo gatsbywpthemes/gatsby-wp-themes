@@ -1,7 +1,6 @@
 import React from 'react'
-import { withPrefix } from 'gatsby'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 import { Heading, Flex, Link as ChakraLink } from '@chakra-ui/react'
 
 export const SiteBranding = ({ title, ...props }) => {
@@ -17,7 +16,6 @@ export const SiteBranding = ({ title, ...props }) => {
           as="h1"
           textTransform="uppercase"
           fontSize="2xl"
-          // lineHeight={0}
           mb={0}
           letterSpacing="wider"
           {...props}

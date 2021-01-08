@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { withPrefix } from "gatsby"
 import { Helmet } from "react-helmet"
 import slashes from "remove-trailing-slash"
 import { SeoSiteSettingsContext } from "./../context"
@@ -8,9 +9,9 @@ import { addPageNumber, absolutePath } from "./../helpers"
 export const SeoOg = (props) => {
   const { seo, uri, humanPageNumber, numberOfPages, featuredImage } = props
   const { language, title } = useContext(SeoSiteSettingsContext)
-  const { siteUrl, pathPrefix } = useContext(SeoOptionsContext)
+  const { siteUrl } = useContext(SeoOptionsContext)
   const isFrontPage = slashes(props.uri) === ""
-  const absoluteOgUrl = absolutePath(siteUrl, uri)
+  const absoluteOgUrl = absolutePath(siteUrl, withPrefix(uri))
   const ogType = isFrontPage ? "website" : seo.page?.opengraphType
   const ogTitle = addPageNumber(
     seo.page?.opengraphTitle ||
@@ -44,7 +45,7 @@ export const SeoOg = (props) => {
       {ogImage?.src && (
         <meta
           property="og:image"
-          content={absolutePath(siteUrl, ogImage.src, pathPrefix)}
+          content={absolutePath(siteUrl, ogImage.src)}
         />
       )}
       {ogImage?.width && (

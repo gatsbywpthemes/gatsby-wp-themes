@@ -38,6 +38,6 @@ const config = {
   skipTitle: ["home"],
   seoWithYoast: true,
   lightboxSettings: {},
-  favicon: "static/favicon.svg",
+  favicon: "static/icon.svg",
 }
 module.exports = config

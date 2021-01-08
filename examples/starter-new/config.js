@@ -1,5 +1,6 @@
 const config = {
   siteUrl: "https://example.com/",
+  //pathPrefix: "",
   // paginationPrefix: 'page',
   // addWordPressComments: 1,
 

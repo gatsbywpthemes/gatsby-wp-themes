@@ -13,7 +13,7 @@ const {
 } = require("./config")
 
 module.exports = {
-  pathPrefix: pathPrefix,
+  pathPrefix,
   siteMetadata: {
     author,
     wordPressUrl: process.env.GATSBY_WP_URL,
@@ -30,7 +30,6 @@ module.exports = {
             : "",
         ...options,
         wordPressUrl: process.env.GATSBY_WP_URL,
-        pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,
       },
     },
     {
