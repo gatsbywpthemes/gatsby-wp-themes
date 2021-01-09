@@ -8,8 +8,8 @@ export const SiteBranding = ({ title, ...props }) => {
   return (
     <Flex align="center" height="100%">
       {logoFileName ? (
-        <Link to="/" rel="home">
-          <img src={`${withPrefix('/')}${logoFileName}`} alt="logo" />
+        <Link className="logo" to="/" rel="home">
+          <img className="logo-img" src={withPrefix(logoFileName)} alt="logo" />
         </Link>
       ) : (
         <Heading
