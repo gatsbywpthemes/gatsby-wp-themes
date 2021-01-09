@@ -2,6 +2,8 @@ const config = {
   //pathPrefix: "",
   //paginationPrefix: "page",
   // addWordPressComments: true,
+  logo: "icon.svg",
+  darkModeLogo: "icon1.svg",
   addDisqusComments: true,
   menuName: "main",
   slideMenuWidgets: [

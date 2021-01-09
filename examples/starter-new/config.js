@@ -1,5 +1,7 @@
 const config = {
   siteUrl: "https://example.com/",
+  // logo: "",
+  // darkModeLogo: "",
   //pathPrefix: "",
   // paginationPrefix: 'page',
   // addWordPressComments: 1,
