@@ -39,7 +39,7 @@ export const Header = () => {
       boxShadow="md"
     >
       <Container display="flex" justifyContent="space-between">
-        <Flex>
+        <Flex alignItems="center">
           <SiteBranding title={title} />
           {search && <SearchModal />}
         </Flex>
