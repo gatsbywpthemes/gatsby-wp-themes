@@ -10,6 +10,7 @@ export const styles = {
         bg: mode('bg', 'modes.dark.bg')(props),
         lineHeight: 'body',
         fontSize: ['md', 'lg'],
+        transition: 'none',
       },
       '*::placeholder': {
         color: 'currentColor',
