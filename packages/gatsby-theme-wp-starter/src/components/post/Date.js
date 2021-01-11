@@ -1,7 +1,8 @@
 import { format } from 'date-fns'
 
 const PostDate = ({ date }) => {
-  return !!date && format(new Date(date), 'MMMM dd, yyyy')
+  const formatDate = !!date && date.split(' ').join('T')
+  return !!date && format(new Date(formatDate), 'MMMM dd, yyyy')
 }
 
 export { PostDate as Date }

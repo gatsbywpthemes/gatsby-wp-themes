@@ -2,9 +2,9 @@ const config = {
   //pathPrefix: "",
   //paginationPrefix: "page",
   // addWordPressComments: true,
+  // addDisqusComments: false,
   logo: "icon.svg",
   darkModeLogo: "icon1.svg",
-  addDisqusComments: true,
   menuName: "main",
   slideMenuWidgets: [
     "SocialFollow",
