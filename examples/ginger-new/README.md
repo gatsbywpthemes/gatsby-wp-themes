@@ -79,7 +79,6 @@ const config = {
   siteMapOptions: {},
   addColorModes: true,
   skipTitle: [],
-  mailchimpEndpoint: "",
 }
 ```
 
@@ -327,19 +326,6 @@ example:
 
 ```javascript
 skipTitle: ["home", "about-us"],
-```
-
-**mailchimpEndpoint** <a name="mailchimp"></a>
-
-The mailchimEndpoint used in the Newsletter widget.
-
-Ginger theme uses [`gatsby-mailchimp-plugin`](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp) for the MailChimp subscriptions.
-Check [the plugin documentation](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/#mailchimp-endpoint) for more information on how to locate your Mailchimp endpoint.
-
-example:
-
-```javascript
-mailchimpEndpoint: "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
 ```
 
 ---

@@ -19,7 +19,6 @@ module.exports = (options) => {
       post: `l`,
       archive: `l`,
     },
-    mailchimpEndpoint: false,
     ...options,
   }
   const plugins = [
