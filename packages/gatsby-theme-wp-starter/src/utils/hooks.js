@@ -32,7 +32,7 @@ const useLayoutStyles = (layoutType, templateName) => {
   const { sidebarWidgets } = useThemeOptions()
   const pageTemplate = templateName?.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
-  const [getLayoutWidth, xl, md, lg, sm] = useLayoutWidth()
+  const [getLayoutWidth, xl] = useLayoutWidth()
 
   const containerStyles =
     sidebarWidgets && sidebarPage
