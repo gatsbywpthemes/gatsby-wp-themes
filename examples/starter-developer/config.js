@@ -1,6 +1,7 @@
 const config = {
   siteUrl: 'https://example.com',
-  wordPressUrl: 'http://localhost:10003/',
+  // wordPressUrl: 'http://localhost:10003/',
+  wordPressUrl: process.env.GATSBY_WP_URL,
   // pathPrefix: '/demo',
 
   // paginationPrefix: 'page',
