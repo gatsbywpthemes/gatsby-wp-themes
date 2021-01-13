@@ -23,6 +23,8 @@ const DEFAULT_OPTIONS = {
   archiveSidebar: false,
   pageCreateDebugOutput: false,
   seoWithYoast: false,
+  logo: null,
+  darkModeLogo: null,
 }
 
 module.exports = DEFAULT_OPTIONS
