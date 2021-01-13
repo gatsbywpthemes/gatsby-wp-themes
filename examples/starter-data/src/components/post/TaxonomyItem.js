@@ -7,7 +7,6 @@ export const TaxonomyItem = ({ taxName, item, ...props }) => (
   <Button
     as={Link}
     size="sm"
-    aria-label="visit taxonomy page"
     mr={3}
     mb={[3, 0]}
     to={`${item.uri}`}

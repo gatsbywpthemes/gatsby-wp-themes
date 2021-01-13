@@ -1,10 +1,10 @@
 import React from 'react'
 import { Footer, Header } from 'starterComponents'
-import { Box } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
 import 'starterStyles/wp-styles/styles.scss'
 
-export const Layout = ({ children, page, type = 'page' }) => {
+export const Layout = ({ children, page, type = 'page', ...props }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
   const pageTemplate = page?.template
     ? page.template.templateName.toLowerCase()
@@ -12,7 +12,9 @@ export const Layout = ({ children, page, type = 'page' }) => {
 
   const fullWidthClass = pageTemplate === 'full width' ? 'fullWidth' : ''
   return (
-    <Box
+    <Flex
+      minHeight="100vh"
+      flexDirection="column"
       sx={{
         '&.fullWidth': {
           '.mainContainer': {
@@ -22,12 +24,14 @@ export const Layout = ({ children, page, type = 'page' }) => {
         },
       }}
       className={`${layoutClass}-${type} ${fullWidthClass}`}
+      {...props}
     >
       <Box as={Headroom} sx={{ '&>div': { zIndex: '2!important' } }}>
         <Header />
       </Box>
       <Box
         as="main"
+        flex={1}
         py={16}
         sx={{
           '.fullWidth &': {
@@ -39,6 +43,6 @@ export const Layout = ({ children, page, type = 'page' }) => {
         {children}
       </Box>
       <Footer />
-    </Box>
+    </Flex>
   )
 }

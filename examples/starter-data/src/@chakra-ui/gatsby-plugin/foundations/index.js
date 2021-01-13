@@ -1,11 +1,40 @@
-import colors from './colors'
-import typography from './typography'
-import shadows from './shadows'
+import { createBreakpoints } from '@chakra-ui/theme-tools'
+
+import config from 'starterThemeConfig'
+
+const {
+  colors,
+  screens,
+  spacing,
+  borderRadius,
+  borderWidth,
+  boxShadow,
+  widths,
+  letterSpacing,
+  lineHeight,
+  fontWeight,
+  fontFamily,
+  fontSize,
+} = config
 
 const foundations = {
+  breakpoints: createBreakpoints(screens),
   colors,
-  typography,
-  shadows,
+  space: spacing,
+  border: borderWidth,
+  radii: borderRadius,
+  shadows: boxShadow,
+  sizes: widths,
+  fontSizes: fontSize[0],
+  fontWeights: fontWeight,
+  fonts: fontFamily,
+  letterSpacings: letterSpacing,
+  lineHeights: lineHeight,
+  typography: {
+    fontSizes: fontSize[0],
+    fontWeights: fontWeight,
+    lineHeights: lineHeight,
+  },
 }
 
 export default foundations

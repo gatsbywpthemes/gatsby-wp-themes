@@ -1,24 +1,18 @@
-import React from 'react'
-import { Date } from '../post'
+import React, { useContext } from 'react'
 import {
+  Date,
   CommentForm,
   CommentContent,
   CommentAuthor,
   ReplyButton,
   CommentNestingInfo,
-} from './index'
+} from 'starterComponents'
 import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
+import { CommentsListContext } from 'starterComponents/comments/context'
 
-export const Comment = (props) => {
-  const {
-    comment,
-    activeComment,
-    postId,
-    withReply,
-    addReply,
-    cancelReply,
-    doOnCompleted,
-  } = props
+export const Comment = ({ comment, withReply }) => {
+  const { author, date, content, commentId } = comment
+  const { activeComment, addReply } = useContext(CommentsListContext)
   return (
     <Box
       as="li"
@@ -28,24 +22,16 @@ export const Comment = (props) => {
       shadow="lg"
       borderRadius="md"
     >
-      <CommentAuthor
-        name={comment.author.node.name}
-        url={comment.author.node.url}
-      />
+      <CommentAuthor name={author.node.name} url={author.node.url} />
       <Box fontStyle="italic" fontSize="xs">
-        <Date date={comment.date} />
+        <Date date={date} />
       </Box>
-      <CommentContent content={comment.content} />
+      <CommentContent content={content} />
       {withReply ? (
         activeComment === comment.commentId ? (
-          <CommentForm
-            commentId={comment.commentId}
-            postId={postId}
-            cancelReply={cancelReply}
-            doOnCompleted={doOnCompleted}
-          />
+          <CommentForm />
         ) : (
-          <ReplyButton commentId={comment.commentId} actionOnClick={addReply} />
+          <ReplyButton onClick={() => addReply(commentId)} />
         )
       ) : (
         <CommentNestingInfo />

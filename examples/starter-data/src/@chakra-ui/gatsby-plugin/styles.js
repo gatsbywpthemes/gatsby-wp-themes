@@ -1,7 +1,7 @@
 import { mode } from '@chakra-ui/theme-tools'
 
 const p = {
-  fontSize: ['md'],
+  fontSize: ['base'],
   lineHeight: 'body',
   mb: 5,
 }
@@ -99,6 +99,10 @@ const styles = {
       },
       '::-webkit-search-cancel-button': {
         WebkitAppearance: 'none',
+      },
+      '*:focus:not(:focus-visible), [class]:focus:not(:focus-visible)': {
+        outline: 'none',
+        boxShadow: 'none',
       },
       ...base,
     }

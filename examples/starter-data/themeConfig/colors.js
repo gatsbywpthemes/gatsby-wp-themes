@@ -1,26 +1,24 @@
-import { theme } from '@chakra-ui/react'
-import { lighten } from 'polished'
+const colors = require('tailwindcss/colors')
 
-const { red, teal, purple, gray } = theme.colors
+const { blueGray, red, teal, purple } = colors
 
-//Palette
-
-const light = gray[100],
-  ultraLight = gray[50],
-  dark = lighten(0.02, gray[800]),
-  ultraDark = gray[900],
+//palette
+const light = blueGray[100],
+  ultraLight = blueGray[50],
+  dark = blueGray[800],
+  ultraDark = blueGray[900],
   primary = teal[400],
   secondary = purple[500],
   highlight = red[500],
-  mutted = gray[200],
+  mutted = blueGray[200],
   bg = ultraLight,
   text = ultraDark
 
-const colors = {
-  /* basic colors */
+module.exports = {
+  /* header */
+  ...colors,
   light,
   ultraLight,
-  dark,
   ultraDark,
   primary,
   secondary,
@@ -50,9 +48,8 @@ const colors = {
   nlButtonColor: 'white',
   nlInputBg: light,
   /* post */
-  archiveTitleBg: 'black',
   infoBg: light,
-  archiveTitleBg: gray[100],
+  archiveTitleBg: blueGray[100],
   cardBg: 'white',
 
   modes: {
@@ -80,7 +77,7 @@ const colors = {
       /* newsletter */
       nlButtonBg: primary,
       nlButtonColor: 'white',
-      nlInputBg: gray[700],
+      nlInputBg: blueGray[700],
       /* post*/
       archiveTitleBg: primary,
       infoBg: primary,
@@ -88,5 +85,3 @@ const colors = {
     },
   },
 }
-
-export default colors

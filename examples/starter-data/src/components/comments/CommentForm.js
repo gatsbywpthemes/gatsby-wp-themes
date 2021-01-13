@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-import { useMutation, gql } from '@apollo/client'
-import { useForm } from 'react-hook-form'
+import React, { useContext } from 'react'
 import {
   Box,
   Flex,
@@ -14,48 +12,12 @@ import {
 
 import { CommentStatusFeedback } from './index'
 import { inputFields } from './inputfields'
-const commentSubmitQuery = gql`
-  mutation(
-    $author: String
-    $commentOn: Int
-    $content: String
-    $authorEmail: String
-    $parent: ID
-  ) {
-    createComment(
-      input: {
-        clientMutationId: "CreateComment"
-        author: $author
-        commentOn: $commentOn
-        content: $content
-        authorEmail: $authorEmail
-        parent: $parent
-      }
-    ) {
-      success
-    }
-  }
-`
+import { CommentsListContext } from 'starterComponents/comments/context'
+import { useCommentForm } from 'starterComponents/comments/hooks/useCommentForm'
 
-export const CommentForm = (
-  props,
-  { commentId = 0, postId, cancelReply, doOnCompleted }
-) => {
-  const { register, handleSubmit, errors } = useForm()
-  const [commentStatus, setCommentStatus] = useState(false)
-  const [addComment] = useMutation(commentSubmitQuery, {
-    onCompleted() {
-      setCommentStatus('success')
-      doOnCompleted()
-      setTimeout(function () {
-        setCommentStatus('')
-        cancelReply()
-      }, 5000)
-    },
-    onError() {
-      setCommentStatus('error')
-    },
-  })
+export const CommentForm = () => {
+  const { activeComment, cancelReply } = useContext(CommentsListContext)
+  const { register, errors, commentStatus, onSubmit } = useCommentForm()
 
   const CommentNotes = () => {
     return (
@@ -89,30 +51,16 @@ export const CommentForm = (
     )
   }
 
-  const onSubmit = (data) => {
-    setCommentStatus('loading')
-    addComment({
-      variables: {
-        author: data.author,
-        commentOn: postId,
-        content: data.comment,
-        authorEmail: data.email,
-        parent: commentId,
-      },
-    })
-  }
-
   return (
     <>
       <CommentStatusFeedback commentStatus={commentStatus} />
       {!commentStatus && (
         <Box>
-          {!commentId && (
+          {activeComment === 0 ? (
             <Box as="h2" textAlign="center" mb={8}>
               Leave a comment
             </Box>
-          )}
-          {!!commentId && (
+          ) : (
             <Button
               variant="link"
               display="flex"
@@ -131,7 +79,7 @@ export const CommentForm = (
             bg={colorMode('cardBg', 'modes.dark.cardBg')}
             borderRadius="lg"
             p={['4', '8']}
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={onSubmit}
             noValidate
           >
             <CommentNotes />
@@ -188,7 +136,7 @@ export const CommentForm = (
                 </FormControl>
               )
             })}
-            <CommentSubmitButton />
+            <CommentSubmitButton commentStatus={commentStatus} />
           </Flex>
         </Box>
       )}

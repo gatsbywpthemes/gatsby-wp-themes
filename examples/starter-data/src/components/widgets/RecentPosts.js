@@ -3,7 +3,7 @@ import { VStack, HStack, Box, Link as ChakraLink } from '@chakra-ui/react'
 import { BorderTitle } from 'starterUiComponents'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import moment from 'moment/moment'
+import { format } from 'date-fns'
 import Img from 'gatsby-image'
 import normalize from 'normalize-path'
 
@@ -65,11 +65,10 @@ export const RecentPosts = (props) => {
                       display="block"
                       textStyle="special"
                       fontWeight="bold"
-                      className="widget-post-date"
-                      className="entry-date"
+                      className="widget-post-date entry-date"
                       dateTime={post.date}
                     >
-                      {moment(post.date).format(`MMMM DD, YYYY`)}
+                      {format(new Date(post.date), 'MMMM dd, yyyy')}
                     </Box>{' '}
                     <ChakraLink
                       as={Link}
