@@ -1,3 +1,4 @@
+require('dotenv').config()
 const config = require('./config')
 const path = require('path')
 
@@ -33,6 +34,7 @@ module.exports = {
   },
   plugins: [
     '@chakra-ui/gatsby-plugin',
+    'gatsby-plugin-postcss',
 
     {
       resolve: '@gatsbywpthemes/gatsby-theme-blog-data',
@@ -71,6 +73,7 @@ module.exports = {
         starterUtils: path.join(__dirname, 'src/utils'),
         config: path.join(__dirname, 'config'),
         contexts: path.join(__dirname, 'src/contexts'),
+        starterThemeConfig: path.join(__dirname, 'themeConfig'),
       },
     },
     {

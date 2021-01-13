@@ -1,6 +1,7 @@
 const config = {
   siteUrl: 'https://example.com',
-  pathPrefix: '/demo',
+  wordPressUrl: 'http://localhost:10003/',
+  // pathPrefix: '/demo',
 
   // paginationPrefix: 'page',
 
