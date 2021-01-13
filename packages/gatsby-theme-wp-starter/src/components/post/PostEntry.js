@@ -15,7 +15,7 @@ import { Card } from 'starterUiComponents'
 import normalize from 'normalize-path'
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
-  const noImgClass = !post.featuredImage ? 'no-img' : ''
+  const withImgClass = post.featuredImage ? 'withImg' : ''
   const media = post.featuredImage
     ? post.featuredImage.node.localFile.childImageSharp.fluid.src
     : null
@@ -38,7 +38,13 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
 
       <Card
         borderTopRadius={media ? 0 : 'lg'}
-        className={`content ${noImgClass}`}
+        className={`content ${withImgClass}`}
+        sx={{
+          '&.withImg': {
+            borderTopLeftRadius: 0,
+            borderTopRightRadius: 0,
+          },
+        }}
       >
         <PostEntryTitle
           location={location}
