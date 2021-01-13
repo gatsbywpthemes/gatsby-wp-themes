@@ -36,7 +36,6 @@ module.exports = (options) => {
       resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
       options: {
         siteUrl: options.siteUrl,
-        pathPrefix: options.pathPrefix,
       },
     },
 
@@ -82,9 +81,7 @@ module.exports = (options) => {
   }
 
   return {
-    siteMetadata: {
-      author: `@pehaa`,
-    },
+    siteMetadata: {},
     plugins,
   }
 }

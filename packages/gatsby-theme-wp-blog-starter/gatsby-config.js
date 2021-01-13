@@ -19,7 +19,6 @@ module.exports = (options) => {
       post: `l`,
       archive: `l`,
     },
-    mailchimpEndpoint: false,
     ...options,
   }
   const plugins = [
@@ -31,7 +30,6 @@ module.exports = (options) => {
       resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
       options: {
         siteUrl: options.siteUrl,
-        pathPrefix: options.pathPrefix,
       },
     },
     `gatsby-plugin-theme-ui`,

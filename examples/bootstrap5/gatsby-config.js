@@ -5,18 +5,15 @@
  */
 require("dotenv").config()
 const {
-  author,
   social,
   pathPrefix,
   addDisqusComments,
-  twitterSummaryCardImage,
   ...options
 } = require("./config")
 
 module.exports = {
-  pathPrefix: pathPrefix,
+  pathPrefix,
   siteMetadata: {
-    author,
     wordPressUrl: options.wordpressUrl,
     siteUrl: options.siteUrl,
     social,
@@ -30,7 +27,6 @@ module.exports = {
             ? process.env.GATSBY_DISQUS_NAME
             : "",
         ...options,
-        pathPrefix: process.env.NODE_ENV === "development" ? "" : pathPrefix,
       },
     },
     {

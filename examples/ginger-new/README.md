@@ -66,16 +66,12 @@ const config = {
   menuName: "main",
   slideMenuWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
-  title: `Blog Title Placeholder`,
-  author: `Name Placeholder`,
-  description: `Description placeholder`,
   social: [
     {
       name: `twitter`,
       url: `https:twitter.com/gatsbyjs`,
     },
   ],
-  twitterSummaryCardImage: `Gatsby_Monogram.png`,
   fonts: ["Abril Fatface", "Fira Sans"],
   gaTrackingId: 0,
   googleTagManagerId: 0,
@@ -83,7 +79,6 @@ const config = {
   siteMapOptions: {},
   addColorModes: true,
   skipTitle: [],
-  mailchimpEndpoint: "",
 }
 ```
 
@@ -232,14 +227,6 @@ social: []
 
 ---
 
-**twitterSummaryCardImage**<a name="twittercard"></a>
-`(default: Gatsby_Monogram.png)`
-
-When sharing your content on Twitter, articles will use their featured image for the Twitter card.
-Other pages will use a common twitterSummaryCardImage. Make sure to place it in the `/static` folder. Your image should be square and at least 144px x 144px.
-
----
-
 **fonts**<a name="config-fonts"></a>
 `(type: Array, default: ["Abril Fatface", "Fira Sans"])`
 
@@ -339,19 +326,6 @@ example:
 
 ```javascript
 skipTitle: ["home", "about-us"],
-```
-
-**mailchimpEndpoint** <a name="mailchimp"></a>
-
-The mailchimEndpoint used in the Newsletter widget.
-
-Ginger theme uses [`gatsby-mailchimp-plugin`](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp) for the MailChimp subscriptions.
-Check [the plugin documentation](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/#mailchimp-endpoint) for more information on how to locate your Mailchimp endpoint.
-
-example:
-
-```javascript
-mailchimpEndpoint: "https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19",
 ```
 
 ---

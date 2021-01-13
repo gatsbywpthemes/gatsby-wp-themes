@@ -8,8 +8,6 @@ const config = {
   // disqus: process.env.GATSBY_DISQUS_NAME,
   menuName: 'main',
   // addWordPressComments: 1,
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -29,9 +27,6 @@ const config = {
   slideMenuWidgets: ['Categories', 'RecentPosts', 'SocialFollow', 'Newsletter'],
   archiveSidebar: 'right',
 
-  // twitterSummaryCardImage: 'Gatsby_Monogram.png',
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,

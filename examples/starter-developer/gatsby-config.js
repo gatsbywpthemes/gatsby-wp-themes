@@ -5,6 +5,7 @@ const config = require('./config')
 const path = require('path')
 
 module.exports = {
+  pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: 'Gatsby theme WordPress Starter Demo',
     description: 'Gatsby starter site for Gatsby Theme Wordpress Theme.',
@@ -42,8 +43,6 @@ module.exports = {
       resolve: '@gatsbywpthemes/gatsby-theme-blog-data',
       options: {
         ...config,
-        pathPrefix:
-          process.env.NODE_ENV === 'development' ? '' : config.pathPrefix,
       },
     },
     {

@@ -12,9 +12,6 @@ const config = {
     "Newsletter",
   ],
   siteUrl: "http://localhost:9001",
-  // title: `Blog Title Placeholder`,
-  // author: `Name Placeholder`,
-  // description: `Description placeholder`,
   social: [
     {
       name: `twitter`,
@@ -29,10 +26,7 @@ const config = {
       url: `https://gatsby.dev/discord`,
     },
   ],
-  twitterSummaryCardImage: `Gatsby_Monogram.png`,
   fonts: ["Abril Fatface", "Lora:400,400i,700,700i"],
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   addWordPressSearch: true,

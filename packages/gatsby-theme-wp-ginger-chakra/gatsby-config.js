@@ -1,7 +1,7 @@
 require('dotenv').config()
 const path = require('path')
 module.exports = (options) => {
-  options.fonts = options.fonts || ['Abril Fatface', 'Fira Sans:300,700']
+  options.fonts = options.fonts || ['Abril Fatface']
 
   const widgets =
     typeof options.slideMenuWidgets === 'undefined'
@@ -61,7 +61,6 @@ module.exports = (options) => {
       resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
       options: {
         siteUrl: options.siteUrl,
-        pathPrefix: options.pathPrefix,
       },
     },
 

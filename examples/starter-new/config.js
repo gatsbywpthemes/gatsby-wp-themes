@@ -1,12 +1,13 @@
 const config = {
   siteUrl: "https://example.com/",
+  // logo: "",
+  // darkModeLogo: "",
+  //pathPrefix: "",
   // paginationPrefix: 'page',
   // addWordPressComments: 1,
 
   // menuName: "main",
 
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   // animation: false,
@@ -48,11 +49,8 @@ const config = {
       url: "#",
     },
   ],
-  // twitterSummaryCardImage: 'Gatsby_Monogram.png',
   // fonts: ["abril fatface", "fira sans"],
 
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,

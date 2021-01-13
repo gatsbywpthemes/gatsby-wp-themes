@@ -19,7 +19,6 @@
     "@gatsbywpthemes/gatsby-plugin-wp-seo": "*",
     "@gatsbywpthemes/gatsby-plugin-wpcf7": "*",
     "@gatsbywpthemes/gatsby-theme-blog-data": "*",
-    "abril-fatface": "^1.0.1",
     "babel-plugin-prismjs": "^2.0.1",
     "date-fns": "^2.16.1",
     "framer-motion": "^3.1.1",
@@ -44,9 +43,7 @@
     "react-share": "^4.3.1",
     "sass": "^1.30.0",
     "striptags": "^3.1.1",
-    "styled-components": "^5.2.1",
-    "typeface-abril-fatface": "^1.1.13",
-    "typeface-fira-sans": "^1.1.13"
+    "styled-components": "^5.2.1"
   },
   "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4",
   "devDependencies": {

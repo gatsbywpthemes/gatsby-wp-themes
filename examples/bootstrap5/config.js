@@ -12,10 +12,7 @@ const config = {
     `Tags`,
     "Newsletter",
   ],
-  siteUrl: "http://localhost:9001",
-  // title: `Blog Title Placeholder`,
-  // author: `Name Placeholder`,
-  // description: `Description placeholder`,
+  siteUrl: "https://gatsby-wp-b5.netlify.app/",
   social: [
     {
       name: `twitter`,
@@ -30,10 +27,19 @@ const config = {
       url: `https://gatsby.dev/discord`,
     },
   ],
-  twitterSummaryCardImage: `Gatsby_Monogram.png`,
   fonts: ["Prata", "Fira Sans:300,700"],
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
+  //gaUniversalTrackingId: "UA-186757931-1",
+  gaUniversalOptions: {
+    head: true,
+  },
+  GTagGATrackingId: "G-V63SJWDYCJ",
+  GTagOptions: {
+    pluginConfig: {
+      // Puts tracking script in the head instead of the body
+      head: true,
+    },
+  },
+  //googleTagManagerId: "GTM-K3CF7RK",
   // addSiteMap: false,
   // siteMapOptions: {},
   addWordPressSearch: true,
@@ -42,6 +48,10 @@ const config = {
   skipTitle: ["home", "contact"],
   seoWithYoast: true,
   lightboxSettings: {},
+  favicon: "static/icon.svg",
+  manifestOptions: {
+    background_color: `#ffffff`,
+  },
 }
 
 module.exports = config

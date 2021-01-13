@@ -6,8 +6,6 @@ const config = {
   // disqus: 'webstantly',
   menuName: "main",
   // addWordPressComments: 1,
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -50,9 +48,6 @@ const config = {
       url: "#",
     },
   ],
-  // twitterSummaryCardImage: 'Gatsby_Monogram.png',
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,

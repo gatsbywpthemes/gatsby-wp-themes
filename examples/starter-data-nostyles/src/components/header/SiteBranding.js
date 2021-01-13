@@ -1,7 +1,6 @@
 import React from 'react'
-import { withPrefix } from 'gatsby'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 
 export const SiteBranding = ({ title, ...props }) => {
   const { logoFileName } = useThemeOptions()

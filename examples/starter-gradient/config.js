@@ -5,8 +5,6 @@ const config = {
 
   // menuName: "main",
 
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -48,11 +46,7 @@ const config = {
       url: "#",
     },
   ],
-  // twitterSummaryCardImage: 'Gatsby_Monogram.png',
   fonts: ["baumans", "coda"],
-
-  // gaTrackingId: 0,
-  // googleTagManagerId: 0,
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,
