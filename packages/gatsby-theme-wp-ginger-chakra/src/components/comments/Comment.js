@@ -14,7 +14,7 @@ export const Comment = ({ comment, withReply }) => {
   const { author, date, content, commentId } = comment
   const { activeComment, addReply } = useContext(CommentsListContext)
   return (
-    <Box as="li" className="comment" layerStyle="overlay" p="4">
+    <Box className="comment" layerStyle="overlay" p="4" mb={6}>
       <CommentAuthor name={author.node.name} url={author.node.url} />
       <Box fontStyle="italic" fontSize="xs">
         <Date date={date} />

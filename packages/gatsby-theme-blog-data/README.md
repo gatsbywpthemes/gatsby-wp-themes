@@ -34,7 +34,6 @@ To use this theme in your Gatsby sites, follow these instructions:
          wordPressUrl: ``,
          paginationPrefix: `page`,
          postsPerPage: 10,
-         disqus: ``,
          addWordPressComments: 1,
          gaTrackingId: 0,
          googleTagManagerId: 0,

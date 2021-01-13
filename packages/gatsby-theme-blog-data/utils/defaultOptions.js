@@ -7,7 +7,7 @@ const DEFAULT_OPTIONS = {
   pathPrefix: ``,
   paginationPrefix: `page`,
   menuName: `main`,
-  disqus: process.env.GATSBY_DISQUS_NAME,
+  disqus: false, //process.env.GATSBY_DISQUS_NAME,
   addWordPressComments: true,
   gaUniversalOptions: {},
   ga4Options: {},

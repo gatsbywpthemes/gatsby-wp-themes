@@ -4,7 +4,6 @@ const config = {
 
   // paginationPrefix: 'page',
 
-  // disqus: process.env.GATSBY_DISQUS_NAME,
   menuName: 'main',
   // addWordPressComments: 1,
   // addSiteMap: false,
