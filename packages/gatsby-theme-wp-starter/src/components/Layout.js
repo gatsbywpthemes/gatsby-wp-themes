@@ -15,7 +15,6 @@ export const Layout = ({ children, page, type = 'page', ...props }) => {
     <Flex
       minHeight="100vh"
       flexDirection="column"
-      alignIten
       sx={{
         '&.fullWidth': {
           '.mainContainer': {
