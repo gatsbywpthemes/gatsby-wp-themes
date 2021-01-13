@@ -14,14 +14,19 @@ const NotFoundPage = () => (
         mb={10}
         border="10px double"
         borderColor="primary"
-        className="inline-block px-10 py-6 mb-10 border-8 border-double border-primary"
       >
         404
       </chakra.h1>
-      <div className="text-sm font-bold tracking-wider uppercase entry-content">
+      <Box
+        fontSize="sm"
+        fontWeight="bold"
+        letterSpacing="wider"
+        textTransform="uppercase"
+        className="entry-content"
+      >
         <p>That page can't be found.</p>
         <p>It looks like nothing was found at this location.</p>
-      </div>
+      </Box>
     </chakra.article>
   </Layout>
 )

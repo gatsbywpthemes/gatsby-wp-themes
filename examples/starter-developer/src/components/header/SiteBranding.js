@@ -2,21 +2,19 @@ import React from 'react'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { Link, withPrefix } from 'gatsby'
 import { Heading, Flex, Link as ChakraLink } from '@chakra-ui/react'
+import { Logo } from 'starterComponents'
 
 export const SiteBranding = ({ title, ...props }) => {
-  const { logoFileName } = useThemeOptions()
+  const { logo } = useThemeOptions()
   return (
     <Flex align="center" height="100%">
-      {logoFileName ? (
-        <Link to="/" rel="home">
-          <img src={`${withPrefix('/')}${logoFileName}`} alt="logo" />
-        </Link>
+      {logo ? (
+        <Logo />
       ) : (
         <Heading
           as="h1"
           textTransform="uppercase"
           fontSize="2xl"
-          // lineHeight={0}
           mb={0}
           letterSpacing="wider"
           {...props}
