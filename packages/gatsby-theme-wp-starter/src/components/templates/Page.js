@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box } from '@chakra-ui/react'
+import { Flex, Box, Heading } from '@chakra-ui/react'
 import { Container, Card } from 'starterUiComponents'
 import { Layout, Sidebar } from 'starterComponents'
 import { ActivatePageScripts } from 'starterUtils'
@@ -20,6 +20,7 @@ const Page = ({ page, ctx }) => {
     sidebarWidgets,
   } = useLayoutStyles('page', templateName.toLowerCase())
   const { skipTitle } = useThemeOptions()
+  console.log('template', templateName)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -63,8 +64,13 @@ const Page = ({ page, ctx }) => {
                 !skipTitle.includes(slug) &&
                 skipTitle !== 'all' &&
                 templateName !== 'Full Width' && (
-                  <h1
-                    className="mb-10 text-3xl font-semibold tracking-widest text-center uppercase page-title"
+                  <Heading
+                    as="h1"
+                    marginBottom={10}
+                    textTransform="uppercase"
+                    fontSize="3xl"
+                    textAlign="center"
+                    className="page-title"
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                 )}
