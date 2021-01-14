@@ -1,6 +1,6 @@
 import React from 'react'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { Link, withPrefix } from 'gatsby'
+import { Link } from 'gatsby'
 import { Heading, Flex, Link as ChakraLink } from '@chakra-ui/react'
 import { Logo } from 'starterComponents'
 

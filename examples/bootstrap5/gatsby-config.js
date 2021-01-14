@@ -4,12 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 require("dotenv").config()
-const {
-  social,
-  pathPrefix,
-  addDisqusComments,
-  ...options
-} = require("./config")
+const { social, pathPrefix, ...options } = require("./config")
 
 module.exports = {
   pathPrefix,
@@ -22,10 +17,6 @@ module.exports = {
     {
       resolve: `@gatsbywpthemes/gatsby-theme-wp-bootstrap5`,
       options: {
-        disqus:
-          addDisqusComments && process.env.GATSBY_DISQUS_NAME
-            ? process.env.GATSBY_DISQUS_NAME
-            : "",
         ...options,
       },
     },

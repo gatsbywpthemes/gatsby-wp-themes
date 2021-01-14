@@ -4,13 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 require("dotenv").config()
-const {
-  author,
-  social,
-  pathPrefix,
-  addDisqusComments,
-  ...options
-} = require("./config")
+const { author, social, pathPrefix, ...options } = require("./config")
 
 module.exports = {
   pathPrefix,
@@ -24,10 +18,6 @@ module.exports = {
     {
       resolve: `@gatsbywpthemes/gatsby-theme-wp-ginger-chakra`,
       options: {
-        disqus:
-          addDisqusComments && process.env.GATSBY_DISQUS_NAME
-            ? process.env.GATSBY_DISQUS_NAME
-            : "",
         ...options,
         wordPressUrl: process.env.GATSBY_WP_URL,
       },

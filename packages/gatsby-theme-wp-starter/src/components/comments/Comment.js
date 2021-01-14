@@ -15,12 +15,12 @@ export const Comment = ({ comment, withReply }) => {
   const { activeComment, addReply } = useContext(CommentsListContext)
   return (
     <Box
-      as="li"
       className="comment"
       bg={colorMode('cardBg', 'modes.dark.cardBg')}
       p="4"
       shadow="lg"
       borderRadius="md"
+      mb={6}
     >
       <CommentAuthor name={author.node.name} url={author.node.url} />
       <Box fontStyle="italic" fontSize="xs">

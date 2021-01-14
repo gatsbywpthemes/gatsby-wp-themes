@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require('path')
 module.exports = (options) => {
   options.fonts = options.fonts || ['Abril Fatface', 'Fira Sans:300,700']
 
@@ -38,7 +39,20 @@ module.exports = (options) => {
         siteUrl: options.siteUrl,
       },
     },
-
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        bootstrap5ThemeSrc: path.join(__dirname, 'src'),
+        bootstrap5ThemePages: path.join(__dirname, 'src/pages'),
+        bootstrap5ThemeStyles: path.join(__dirname, 'src/styles'),
+        bootstrap5ThemeComponents: path.join(__dirname, 'src/components'),
+        bootstrap5ThemeUiComponents: path.join(
+          __dirname,
+          'src/components/ui-components'
+        ),
+        bootstrap5ThemeUtils: path.join(__dirname, 'src/utils'),
+      },
+    },
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {

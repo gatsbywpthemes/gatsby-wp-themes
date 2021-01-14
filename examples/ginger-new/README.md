@@ -62,7 +62,6 @@ const config = {
   pathPrefix: "",
   paginationPrefix: `page`,
   addWordPressComments: true,
-  addDisqusComments: false,
   menuName: "main",
   slideMenuWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
@@ -131,16 +130,6 @@ Whether WordPress comments should be activated.
 
 If left `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".
 Commenting on your Gatsby site work similarily to commenting on your WordPress site. The main difference is that **we only support two levels of comments nesting.** Under the hood, comments are fetched from WordPress and updated on WordPress (and refetched if necessary) with Apollo Client. Consequently, some of your WordPress Discussion settings applies to your Gatsby comments, in particular: email notifications, moderation and blocking rules.
-
----
-
-**disqus** (optional)
-`(type: String, default: "")`
-
-Whether Discqus comments should be activated.
-
-Alternatively to comments powered natively by WordPress, Ginger theme supports [Disqus comments.](https://disqus.com/)
-Typing your Disqus shortname (the unique identifier fo your website on Disqus) will activate Disqus comments for all posts.
 
 ---
 

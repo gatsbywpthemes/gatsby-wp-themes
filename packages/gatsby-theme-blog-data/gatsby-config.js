@@ -17,12 +17,19 @@ module.exports = (options) => {
     googleTagManagerOptions,
     addSiteMap,
     siteMapOptions,
-    parserDebugOutput,
     favicon,
     manifestOptions,
   } = mergedOptions
 
   const url = slashes(wordPressUrl)
+
+  const resolveFavicon = (favicon) => {
+    return (
+      (fs.existsSync(favicon) && favicon) ||
+      (fs.existsSync(`static/${favicon}`) && `static/${favicon}`) ||
+      `${__dirname}/src/images/gatsby-icon.png`
+    )
+  }
 
   const plugins = [
     `gatsby-plugin-sharp`,
@@ -50,20 +57,11 @@ module.exports = (options) => {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon:
-          favicon && fs.existsSync(favicon)
-            ? favicon
-            : `${__dirname}/src/images/gatsby-icon.png`,
+        icon: resolveFavicon(favicon),
         ...manifestOptions,
       },
     },
-    {
-      resolve: `@gatsbywpthemes/gatsby-plugin-wordpress-parser`,
-      options: {
-        processPostTypes: ['WpPage', 'WpPost'],
-        debugOutput: parserDebugOutput,
-      },
-    },
+    '@gatsbywpthemes/gatsby-plugin-wordpress-parser',
   ]
 
   /**

@@ -2,7 +2,6 @@ const config = {
   //pathPrefix: "",
   // paginationPrefix: `page`,
   // addWordPressComments: true,
-  addDisqusComments: true,
   menuName: "main",
   slideMenuWidgets: [
     `SocialFollow`,

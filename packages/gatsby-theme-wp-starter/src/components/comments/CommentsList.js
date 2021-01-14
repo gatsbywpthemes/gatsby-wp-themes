@@ -23,29 +23,30 @@ export const CommentsList = () => {
             {comments.nodes
               .filter((el) => el.parent === null)
               .map((comment) => (
-                <Fragment key={comment.id}>
+                <li key={comment.id}>
                   <Comment withReply={true} comment={comment}></Comment>
                   {comment.replies.nodes.length > 0 && (
                     <ul>
                       {comment.replies.nodes.map((reply) => (
-                        <Fragment key={reply.id}>
+                        <li key={reply.id}>
                           <Comment withReply={true} comment={reply} />
                           {reply.replies.nodes.length > 0 && (
                             <ul>
                               {reply.replies.nodes.map((replyRe) => (
-                                <Comment
-                                  withReply={false}
-                                  key={replyRe.id}
-                                  comment={replyRe}
-                                />
+                                <li key={replyRe.id}>
+                                  <Comment
+                                    withReply={false}
+                                    comment={replyRe}
+                                  />
+                                </li>
                               ))}
                             </ul>
                           )}
-                        </Fragment>
+                        </li>
                       ))}
                     </ul>
                   )}
-                </Fragment>
+                </li>
               ))}
           </chakra.ul>
         </section>
