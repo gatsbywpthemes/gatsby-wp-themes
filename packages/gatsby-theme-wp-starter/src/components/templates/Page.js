@@ -11,14 +11,8 @@ import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hook
 import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
-  const {
-    title,
-    isFrontPage,
-    content,
-    slug,
-    uri,
-    template: { templateName },
-  } = page
+  const { title, isFrontPage, content, slug, uri, template } = page
+  const templateName = template?.name
   const {
     containerStyles,
     sidebarSide,

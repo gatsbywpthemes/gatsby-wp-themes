@@ -25,6 +25,7 @@ const DEFAULT_OPTIONS = {
   seoWithYoast: false,
   logo: null,
   darkModeLogo: null,
+  skipTitle: [],
 }
 
 module.exports = DEFAULT_OPTIONS
