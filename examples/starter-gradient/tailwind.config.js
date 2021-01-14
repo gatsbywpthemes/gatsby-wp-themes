@@ -1,7 +1,10 @@
 const config = require("./themeConfig")
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  purge: [
+    "./node_modules/@gatsbywpthemes/gatsby-theme-wp-starter/src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   darkMode: "class",
 
   theme: {
