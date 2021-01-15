@@ -3,7 +3,7 @@ import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hook
 import { Sidebar } from '../index'
 import { ArchiveTitle, PostsList, Pagination } from './index'
 
-export const ArchiveContent = ({ posts, ctx, paginationPrefix, name }) => {
+export const ArchiveContent = ({ posts, ctx, name }) => {
   const { archiveSidebar, sidebarWidgets } = useThemeOptions()
 
   return (
