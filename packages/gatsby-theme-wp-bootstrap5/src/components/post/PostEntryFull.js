@@ -36,7 +36,7 @@ export const PostEntryFull = ({ ctx, post }) => {
           title={post.title}
           media={
             post.featuredImage
-              ? post.featuredImage.node.localFile.childImageSharp.fluid.src
+              ? post.featuredImage.node.localFile.childImageSharp.gatsbyImageData.src
               : null
           }
         />
@@ -50,5 +50,5 @@ export const PostEntryFull = ({ ctx, post }) => {
       </div>
       <Sidebar />
     </article>
-  )
+  );
 }

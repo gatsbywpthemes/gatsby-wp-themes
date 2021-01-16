@@ -1,10 +1,14 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-export const Image = ({ img }) => {
+export const Image = ({ img, loading = 'lazy' }) => {
   return (
     !!img && (
-      <Img fluid={img.node.localFile.childImageSharp.fluid} alt={img.altText} />
+      <GatsbyImage
+        loading={loading}
+        image={img.node.localFile.childImageSharp.gatsbyImageData}
+        alt={img.altText}
+      />
     )
   )
 }

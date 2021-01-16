@@ -66,6 +66,9 @@ module.exports = (options) => {
         ...(options.lightboxOptions || {}),
       },
     },
+    {
+      resolve: 'gatsby-plugin-image',
+    },
   ]
   /**
    * Conditionally add google fonts plugin

@@ -40,7 +40,7 @@ const Post = ({ post, ctx }) => {
       />
       <div className="mainContainer">
         <div>
-          <PostEntry post={post} location="single" ctx={ctx} />
+          <PostEntry post={post} location="single" ctx={ctx} isFirst={true} />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </div>
         {addWordPressComments && post.commentStatus === 'open' && (

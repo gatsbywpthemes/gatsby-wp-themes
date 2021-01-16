@@ -8,22 +8,25 @@ export const pageQuery = graphql`
     altText
     localFile {
       childImageSharp {
-        fluid(maxWidth: 1200, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(maxWidth: 1200, quality: 80, layout: CONSTRAINED)
       }
     }
   }
+
   fragment GatsbyImageQueryArchive on WpMediaItem {
     altText
     localFile {
       childImageSharp {
-        fluid(maxWidth: 306, maxHeight: 200, quality: 60) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          maxWidth: 306
+          maxHeight: 200
+          quality: 60
+          layout: FLUID
+        )
       }
     }
   }
+
   fragment PostTemplateFragmentArchive on WpPost {
     id
     uri
