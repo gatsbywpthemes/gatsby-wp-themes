@@ -2,8 +2,25 @@ import React from 'react'
 import { Layout } from '../Layout'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { PostEntry, CommentsList, Sidebar } from '../index'
-import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+
+const DiscussionEmbed = React.lazy(() =>
+  import(/* webpackChunkName: "disqus-react" */ 'disqus-react').then(
+    (mod) => mod.DiscussionEmbed
+  )
+)
+
+const DisqusComments = (props) => {
+  if (typeof window === 'undefined') {
+    return null
+  }
+
+  return (
+    <Suspense fallback={<></>}>
+      <DiscussionEmbed {...props} />
+    </Suspense>
+  )
+}
 
 const Post = ({ post, ctx }) => {
   const {
@@ -46,7 +63,7 @@ const Post = ({ post, ctx }) => {
         {addWordPressComments && post.commentStatus === 'open' && (
           <div>
             {disqus ? (
-              <DiscussionEmbed {...disqusConfig} />
+              <DisqusComments {...disqusConfig} />
             ) : (
               <CommentsList post={post} />
             )}
