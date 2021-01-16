@@ -55,12 +55,11 @@ const ContactForm7 = ({ formObject }) => {
     })
     setIsSubmitting(true)
 
-    axios
-      .post(url, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
       .then((response) => {
         setAlertState({
           visible: true,
