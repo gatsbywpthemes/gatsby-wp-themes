@@ -1,5 +1,4 @@
 import React from 'react'
-import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import { Link } from 'gatsby'
 import { createLocalLink } from '../../utils'
@@ -9,8 +8,8 @@ export const LinkItem = ({ menuItem, sub }) => {
   const { wordPressUrl } = useThemeOptions()
   const itemClass = sub ? 'nav-link text-reset p-2' : 'text-reset nav-link'
   let url = menuItem.url
-  const parsedUrl = new URIParser(url)
-  if (parsedUrl.is('absolute')) {
+
+  if (url.startsWith('https://') || url.startsWith('http://')) {
     const targetRelAttrs =
       menuItem.target === '_blank'
         ? { target: '_blank', rel: 'noopener noreferrer' }
