@@ -30,7 +30,6 @@ export const PostEntryFull = ({ ctx, post }) => {
       </header>
       <div id="content" className="col-lg-9">
         <Image img={post.featuredImage} />
-
         <SocialShare
           url={post.uri}
           title={post.title}
