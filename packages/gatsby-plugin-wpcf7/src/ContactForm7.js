@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
-import axios from "axios"
 import { domToReact } from "html-react-parser"
 import useWordPressSettings from "./hooks/useWordPressSettings"
 import cf7ParserOptions from "./cf7ParserOptions"
@@ -42,8 +41,6 @@ const ContactForm7 = ({ formObject }) => {
     const url = `${wordPressUrl}/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback`
     const formData = new FormData()
 
-    console.log("sending data", data)
-
     Object.keys(data).forEach((el) => {
       if (
         typeof data[el] === "object" &&
@@ -59,13 +56,17 @@ const ContactForm7 = ({ formObject }) => {
       method: "POST",
       body: formData,
     })
-      .then((response) => response.json())
       .then((response) => {
+        if (!response.ok) {
+          throw new Error("We're sorry byt the network response was not ok.")
+        }
+        return response.json()
+      })
+      .then((data) => {
         setAlertState({
           visible: true,
-          message: response.data.message,
-          className:
-            response.data.status === "validation_failed" ? "danger" : "success",
+          message: data.message,
+          className: data.status === "validation_failed" ? "danger" : "success",
         })
         e.target.reset()
         setIsSubmitting(false)
@@ -74,7 +75,7 @@ const ContactForm7 = ({ formObject }) => {
         console.error(err)
         setAlertState({
           visible: true,
-          message: err.data.message,
+          message: err.message,
           className: "danger",
         })
       })
