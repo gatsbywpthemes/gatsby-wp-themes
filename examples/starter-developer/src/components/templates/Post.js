@@ -12,7 +12,8 @@ const Post = ({ post, ctx }) => {
     uri,
     template: { templateName },
   } = post
-  const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
+  const featuredImage =
+    post.featuredImage?.node.localFile.childImageSharp.original
   const {
     containerStyles,
     sidebarSide,

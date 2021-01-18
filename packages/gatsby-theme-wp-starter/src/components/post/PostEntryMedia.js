@@ -12,7 +12,12 @@ const WithLink = ({ post, location, children }) =>
     </Link>
   )
 
-export const PostEntryMedia = ({ post, location, ...props }) => {
+export const PostEntryMedia = ({
+  imageLoading = 'lazy',
+  post,
+  location,
+  ...props
+}) => {
   const img = post.featuredImage
 
   return (
@@ -20,7 +25,7 @@ export const PostEntryMedia = ({ post, location, ...props }) => {
       {img && (
         <WithLink location={location} post={post}>
           <Box className="entry-media" {...props}>
-            <Image img={img} />
+            <Image img={img} loading={imageLoading} />
           </Box>
         </WithLink>
       )}

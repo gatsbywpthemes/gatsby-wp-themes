@@ -14,11 +14,18 @@ import {
 import { Card } from 'starterUiComponents'
 import normalize from 'normalize-path'
 
-export const PostEntry = ({ post, ctx, location, ...props }) => {
+export const PostEntry = ({
+  isFirst = false,
+  post,
+  ctx,
+  location,
+  ...props
+}) => {
   const withImgClass = post.featuredImage ? 'withImg' : ''
   const media = post.featuredImage
-    ? post.featuredImage.node.localFile.childImageSharp.fluid.src
+    ? post.featuredImage.node.localFile.childImageSharp.original.src
     : null
+
   return (
     <Box
       as="article"
@@ -33,6 +40,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
         location={location}
         post={post}
         className="entry-media"
+        imageLoading={isFirst ? 'eager' : 'lazy'}
         sx={{ '.gatsby-image-wrapper': { borderTopRadius: 'lg' } }}
       />
 

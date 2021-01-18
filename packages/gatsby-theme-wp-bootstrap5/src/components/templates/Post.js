@@ -5,7 +5,8 @@ import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
 const Post = (props) => {
   const { post, ctx } = props
-  const featuredImage = post.featuredImage?.node.localFile.childImageSharp?.gatsbyImageData
+  const featuredImage =
+    post.featuredImage?.node.localFile.childImageSharp.original
   return (
     <Layout>
       <Seo

@@ -8,8 +8,11 @@ export const pageQuery = graphql`
     altText
     localFile {
       childImageSharp {
-        fluid(maxWidth: 1200, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+        gatsbyImageData(maxWidth: 1200, quality: 80, layout: CONSTRAINED)
+        original {
+          height
+          width
+          src
         }
       }
     }
@@ -18,9 +21,12 @@ export const pageQuery = graphql`
     altText
     localFile {
       childImageSharp {
-        fluid(maxWidth: 1200, maxHeight: 400, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          maxWidth: 1200
+          maxHeight: 400
+          quality: 80
+          layout: FLUID
+        )
       }
     }
   }
