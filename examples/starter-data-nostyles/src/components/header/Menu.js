@@ -5,7 +5,6 @@ import {
   useMenusQuery,
   useThemeOptions,
 } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 
 const flatListToHierarchical = (
@@ -28,8 +27,8 @@ const flatListToHierarchical = (
 
 const renderLink = (menuItem, wordPressUrl) => {
   let url = menuItem.url
-  const parsedUrl = new URIParser(url)
-  if (parsedUrl.is('absolute')) {
+
+  if (url.startsWith('https://') || url.startsWith('http://')) {
     const targetRelAttrs =
       menuItem.target === '_blank'
         ? { target: '_blank', rel: 'noopener noreferrer' }

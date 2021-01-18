@@ -24,8 +24,7 @@
     "gatsby-source-filesystem": "^2.8.0",
     "gatsby-transformer-sharp": "^2.9.0",
     "html-react-parser": "^1.0.0",
-    "normalize-path": "^3.0.0",
-    "urijs": "^1.19.2"
+    "normalize-path": "^3.0.0"
   },
   "peerDependencies": {
     "gatsby": "^2.29.1",

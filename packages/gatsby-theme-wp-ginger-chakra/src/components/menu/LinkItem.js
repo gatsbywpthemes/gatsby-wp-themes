@@ -1,5 +1,4 @@
 import React from 'react'
-import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import { Link as GatsbyLink } from 'gatsby'
 import { createLocalLink } from 'gingerThemeUtils'
@@ -9,8 +8,8 @@ import { Box, chakra } from '@chakra-ui/react'
 export const LinkItem = ({ menuItem }) => {
   const { wordPressUrl } = useThemeOptions()
   let url = menuItem.url
-  const parsedUrl = new URIParser(url)
-  if (parsedUrl.is('absolute')) {
+
+  if (url.startsWith('https://') || url.startsWith('http://')) {
     const targetRelAttrs =
       menuItem.target === '_blank'
         ? { target: '_blank', rel: 'noopener noreferrer' }
