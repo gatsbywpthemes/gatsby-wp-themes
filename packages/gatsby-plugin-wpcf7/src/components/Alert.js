@@ -2,16 +2,16 @@ import React, { useEffect, useRef } from "react"
 
 export const Alert = ({ alertState, setAlertState }) => {
   const { visible, message, className } = alertState
-  const timeOutRef = useRef(null)
+  const timeoutRef = useRef(null)
 
   useEffect(() => {
     if (visible) {
-      timeOutRef.current = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setAlertState({ visible: false })
       }, 6000)
     }
     return () => {
-      clearTimeout(timeOutRef.current)
+      clearTimeout(timeoutRef.current)
     }
   }, [visible, setAlertState])
 
