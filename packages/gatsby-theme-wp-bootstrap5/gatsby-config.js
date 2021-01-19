@@ -72,10 +72,24 @@ module.exports = (options) => {
    * to avoid errors on build
    */
   if (options.fonts.length) {
+    const googleFonts = []
+    options.fonts.forEach((font) => {
+      const [googleFont, variantsString] = font.split(':')
+
+      googleFonts.push({
+        family: googleFont,
+        variants: variantsString ? variantsString.split(',') : undefined,
+      })
+    })
+
     plugins.push({
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: options.fonts,
+        fonts: {
+          google: googleFonts,
+        },
+        formats: ['woff2', 'woff'],
+        useMinify: true,
         display: 'swap',
       },
     })
