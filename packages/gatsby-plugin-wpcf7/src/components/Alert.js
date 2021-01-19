@@ -1,12 +1,20 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 
 export const Alert = ({ alertState, setAlertState }) => {
   const { visible, message, className } = alertState
-  if (visible) {
-    setTimeout(() => {
-      setAlertState({ visible: false })
-    }, 6000)
-  }
+  const timeOutRef = useRef(null)
+
+  useEffect(() => {
+    if (visible) {
+      timeOutRef.current = setTimeout(() => {
+        setAlertState({ visible: false })
+      }, 6000)
+    }
+    return () => {
+      clearTimeout(timeOutRef.current)
+    }
+  }, [visible, setAlertState])
+
   return (
     <div className={className}>
       <p className="sal-disabled">{message}</p>
