@@ -18,8 +18,8 @@ export const ArchiveContent = ({
           <div className="col-md-6 col-lg-9">
             <div className="row">
               {posts.nodes &&
-                posts.nodes.map((post) => (
-                  <PostEntry key={post.id} post={post} />
+                posts.nodes.map((post, index) => (
+                  <PostEntry key={post.id} post={post} isFirst={index === 0} />
                 ))}
             </div>
             <Pagination ctx={ctx} />

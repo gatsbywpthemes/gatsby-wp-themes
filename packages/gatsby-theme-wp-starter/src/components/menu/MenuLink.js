@@ -1,5 +1,4 @@
 import React from 'react'
-import URIParser from 'urijs'
 import slashes from 'remove-trailing-slash'
 import { createLocalLink } from 'starterUtils'
 import { Link } from 'gatsby'
@@ -8,8 +7,8 @@ import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hook
 export const MenuLink = ({ menuItem, ...props }) => {
   const { wordPressUrl } = useThemeOptions()
   let url = menuItem.url
-  const parsedUrl = new URIParser(url)
-  if (parsedUrl.is('absolute')) {
+
+  if (url.startsWith('https://') || url.startsWith('http://')) {
     const targetRelAttrs =
       menuItem.target === '_blank'
         ? { target: '_blank', rel: 'noopener noreferrer' }

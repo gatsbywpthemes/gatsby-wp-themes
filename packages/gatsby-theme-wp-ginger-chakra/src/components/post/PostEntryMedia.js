@@ -3,7 +3,10 @@ import { Link as GatsbyLink } from 'gatsby'
 import { Image } from 'gingerThemeComponents'
 import { Link } from '@chakra-ui/react'
 
-export const PostEntryMedia = ({ post: { featuredImage, uri } }) => {
+export const PostEntryMedia = ({
+  imageLoading = 'lazy',
+  post: { featuredImage, uri },
+}) => {
   return (
     !!featuredImage && (
       <Link
@@ -20,7 +23,7 @@ export const PostEntryMedia = ({ post: { featuredImage, uri } }) => {
           },
         }}
       >
-        <Image img={featuredImage} />
+        <Image img={featuredImage} loading={imageLoading} />
       </Link>
     )
   )

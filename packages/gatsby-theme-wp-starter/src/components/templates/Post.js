@@ -12,7 +12,8 @@ const Post = ({ post, ctx }) => {
     uri,
     template: { templateName },
   } = post
-  const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
+  const featuredImage =
+    post.featuredImage?.node.localFile.childImageSharp.original
   const {
     containerStyles,
     sidebarSide,
@@ -43,7 +44,7 @@ const Post = ({ post, ctx }) => {
             alignItems: `flex-start`,
           }}
         >
-          <PostEntry post={post} location="single" ctx={ctx} />
+          <PostEntry post={post} location="single" ctx={ctx} isFirst={true} />
           {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
         </Flex>
         <Comments post={post} />

@@ -35,7 +35,9 @@ module.exports = (options) => {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-anchor-links`,
-
+    {
+      resolve: 'gatsby-plugin-image',
+    },
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {

@@ -75,8 +75,8 @@ export const CommentForm = ({
   const [addComment] = useMutation(commentSubmitQuery, {
     onCompleted() {
       setCommentStatus('success')
-      doOnCompleted()
       setTimeout(function () {
+        doOnCompleted()
         setCommentStatus('')
         cancelReply()
       }, 5000)
