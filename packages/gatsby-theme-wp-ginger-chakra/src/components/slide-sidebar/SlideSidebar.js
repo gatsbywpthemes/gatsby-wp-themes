@@ -13,17 +13,16 @@ import {
   SearchForm,
   OpenButton,
 } from 'gingerThemeComponents'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import {
+  useThemeOptions,
+  useGatsbyWPSettings,
+} from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { SearchContext } from 'gingerThemeComponents/search/context'
 
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
-  const {
-    widgetAreas: {
-      slideMenu: { widgets },
-    },
-    addWordPressSearch,
-    menuName,
-  } = useThemeOptions()
+  const { addWordPressSearch, menuName } = useThemeOptions()
+  const { slideMenuWidgets } = useGatsbyWPSettings()
+  const widgets = slideMenuWidgets ? slideMenuWidgets.split(',') : []
   const menuBtn = useRef()
   const { setSearch, escInSearch } = useContext(SearchContext)
 
