@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect, useRef } from 'react'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
 import { CommentsListContext } from 'starterComponents/comments/context'
@@ -26,16 +26,26 @@ const commentSubmitQuery = gql`
   }
 `
 export const useCommentForm = () => {
+  const timeoutRef = useRef(null)
   const { databaseId, activeComment, cancelReply, doOnCompleted } = useContext(
     CommentsListContext
   )
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+        doOnCompleted()
+      }
+    }
+  }, [doOnCompleted])
   const { register, handleSubmit, errors } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
   const [addComment] = useMutation(commentSubmitQuery, {
     onCompleted() {
       setCommentStatus('success')
-      doOnCompleted()
-      setTimeout(function () {
+      timeoutRef.current = setTimeout(function () {
+        doOnCompleted()
         setCommentStatus('')
         cancelReply()
       }, 5000)

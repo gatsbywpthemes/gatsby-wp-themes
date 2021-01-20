@@ -30,13 +30,12 @@ export const PostEntryFull = ({ ctx, post }) => {
       </header>
       <div id="content" className="col-lg-9">
         <Image img={post.featuredImage} />
-
         <SocialShare
           url={post.uri}
           title={post.title}
           media={
             post.featuredImage
-              ? post.featuredImage.node.localFile.childImageSharp.fluid.src
+              ? post.featuredImage.node.localFile.childImageSharp.original.src
               : null
           }
         />

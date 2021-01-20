@@ -12,6 +12,7 @@ const WithLink = ({ uri, children, location }) =>
   )
 
 export const PostEntryMedia = ({
+  imageLoading = 'lazy',
   post: { featuredImage, uri },
   location = 'archive',
 }) => {
@@ -19,7 +20,7 @@ export const PostEntryMedia = ({
     <>
       {!!featuredImage && (
         <WithLink location={location} uri={uri}>
-          <Image img={featuredImage} />
+          <Image img={featuredImage} loading={imageLoading} />
         </WithLink>
       )}
     </>

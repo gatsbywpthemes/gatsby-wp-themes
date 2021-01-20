@@ -33,7 +33,7 @@ export const PostEntryIntro = ({ ctx, post }) => {
         title={post.title}
         media={
           post.featuredImage
-            ? post.featuredImage.node.localFile.childImageSharp.fluid.src
+            ? post.featuredImage.node.localFile.childImageSharp.original.src
             : null
         }
       />

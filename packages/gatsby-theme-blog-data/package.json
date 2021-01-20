@@ -28,6 +28,7 @@
     "gatsby-plugin-sitemap": "^2.9.0",
     "gatsby-source-filesystem": "^2.8.0",
     "gatsby-source-wordpress-experimental": "6.0.0",
+    "gatsby-plugin-image": "^0.5.1",
     "gatsby-transformer-sharp": "^2.9.0",
     "isomorphic-fetch": "^3.0.0",
     "normalize-path": "^3.0.0",

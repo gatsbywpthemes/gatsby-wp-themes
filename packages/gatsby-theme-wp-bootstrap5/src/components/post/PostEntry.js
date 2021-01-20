@@ -7,7 +7,12 @@ import {
   Tags,
 } from './index'
 
-export const PostEntry = ({ ctx, post, location = 'archive' }) => {
+export const PostEntry = ({
+  ctx,
+  post,
+  isFirst = false,
+  location = 'archive',
+}) => {
   return (
     <article
       className="entry col-lg-4 mb-4"
@@ -16,7 +21,11 @@ export const PostEntry = ({ ctx, post, location = 'archive' }) => {
       data-sal-easing="ease"
     >
       <div className="shadow h-100 d-flex flex-column">
-        <PostEntryMedia post={post} location={location} />
+        <PostEntryMedia
+          post={post}
+          location={location}
+          imageLoading={isFirst ? 'eager' : 'lazy'}
+        />
         <PostEntryIntro ctx={ctx} post={post} location={location} />
         {location === 'single' && (
           <>

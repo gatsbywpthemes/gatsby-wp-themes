@@ -1,16 +1,6 @@
 require('dotenv').config()
 const path = require('path')
 module.exports = (options) => {
-  options.fonts = options.fonts || ['IBM Plex Mono', 'Roboto Slab']
-  options.customFonts = []
-  if (options.fonts) {
-    options.customFonts = options.fonts.filter(
-      (el) =>
-        el.toLowerCase().indexOf(`IBM Plex Mono`) === -1 &&
-        el.toLowerCase().indexOf(`Roboto Slab`) === -1
-    )
-  }
-
   const mergedOptions = {
     addColorModes: true,
     skipTitle: [],
@@ -79,11 +69,25 @@ module.exports = (options) => {
    * Conditionally add  plugin
    * to avoid errors on build
    */
-  if (mergedOptions.customFonts.length) {
+  if (options.fonts.length) {
+    const googleFonts = []
+    options.fonts.forEach((font) => {
+      const [googleFont, variantsString] = font.split(':')
+
+      googleFonts.push({
+        family: googleFont,
+        variants: variantsString ? variantsString.split(',') : undefined,
+      })
+    })
+
     plugins.push({
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: mergedOptions.customFonts,
+        fonts: {
+          google: googleFonts,
+        },
+        formats: ['woff2', 'woff'],
+        useMinify: true,
         display: 'swap',
       },
     })

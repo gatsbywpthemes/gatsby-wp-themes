@@ -49,8 +49,16 @@ export const fragments = graphql`
     sourceUrl
     localFile {
       childImageSharp {
-        fluid(maxWidth: 1200, maxHeight: 600, quality: 80) {
-          ...GatsbyImageSharpFluid
+        gatsbyImageData(
+          maxWidth: 1200
+          maxHeight: 600
+          quality: 80
+          layout: FLUID
+        )
+        original {
+          height
+          width
+          src
         }
       }
     }

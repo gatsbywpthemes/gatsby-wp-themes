@@ -46,7 +46,7 @@ const config = {
       url: "#",
     },
   ],
-  fonts: ["baumans", "coda"],
+  fonts: ["Baumans", "Coda"],
   // addSiteMap: false,
   // siteMapOptions: {},
   seoWithYoast: true,

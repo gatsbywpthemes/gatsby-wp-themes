@@ -4,7 +4,7 @@ import { BorderTitle } from 'starterUiComponents'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { format } from 'date-fns'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import normalize from 'normalize-path'
 
 const RECENT_POSTS_QUERY = graphql`
@@ -21,9 +21,12 @@ const RECENT_POSTS_QUERY = graphql`
             sourceUrl
             localFile {
               childImageSharp {
-                fixed(width: 72, height: 48, quality: 80) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(
+                  width: 72
+                  height: 48
+                  quality: 80
+                  layout: FIXED
+                )
               }
             }
           }
@@ -50,12 +53,12 @@ export const RecentPosts = (props) => {
                 <HStack spacing={4} key={post.id}>
                   <Link aria-label={`Read more - ${post.title}`} to={uri}>
                     {post.featuredImage && (
-                      <Img
-                        alt={post.featuredImage.node.altText}
-                        fixed={
+                      <GatsbyImage
+                        image={
                           post.featuredImage.node.localFile.childImageSharp
-                            .fixed
+                            .gatsbyImageData
                         }
+                        alt={post.featuredImage.node.altText}
                       />
                     )}
                   </Link>{' '}

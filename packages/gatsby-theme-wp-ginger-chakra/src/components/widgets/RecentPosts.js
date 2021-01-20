@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
 import { format } from 'date-fns'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Box, Flex, chakra } from '@chakra-ui/react'
 import { WidgetContainer } from 'gingerThemeComponents'
 
@@ -19,9 +19,12 @@ const RECENT_POSTS_QUERY = graphql`
             altText
             localFile {
               childImageSharp {
-                fixed(width: 72, height: 48, quality: 80) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(
+                  width: 72
+                  height: 48
+                  quality: 80
+                  layout: FIXED
+                )
               }
             }
           }
@@ -56,11 +59,12 @@ export const RecentPosts = () => {
                   to={post.uri}
                 >
                   {post.featuredImage && (
-                    <Img
-                      alt={post.featuredImage.node.altText}
-                      fixed={
-                        post.featuredImage.node.localFile.childImageSharp.fixed
+                    <GatsbyImage
+                      image={
+                        post.featuredImage.node.localFile.childImageSharp
+                          .gatsbyImageData
                       }
+                      alt={post.featuredImage.node.altText}
                     />
                   )}
                 </Box>

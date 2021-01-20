@@ -1,7 +1,7 @@
 import React from 'react'
 import { PostEntryIntroBlog, PostEntryMedia } from 'gingerThemeComponents'
 
-export const PostEntry = ({ post }) => {
+export const PostEntry = ({ isFirst = false, post }) => {
   return (
     <article
       className="entry"
@@ -9,7 +9,7 @@ export const PostEntry = ({ post }) => {
       data-sal-duration="1000"
       data-sal-easing="ease"
     >
-      <PostEntryMedia post={post} />
+      <PostEntryMedia post={post} imageLoading={isFirst ? 'eager' : 'lazy'} />
       <PostEntryIntroBlog post={post} />
     </article>
   )
