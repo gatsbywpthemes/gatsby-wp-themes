@@ -16,26 +16,29 @@ export const SeoTwitter = ({ seo }) => {
           content={seo.page?.twitterDescription}
         />
       )}
-      {seo.general.social.twitter?.username && (
+      {seo.general?.social?.twitter?.username && (
         <meta
           name="twitter:creator"
-          content={`@${seo.general?.social.twitter.username}`}
+          content={`@${seo.general?.social?.twitter?.username}`}
         />
       )}
-      {seo.general.social.twitter?.username && (
+      {seo.general?.social?.twitter?.username && (
         <meta
           name="twitter:site"
           content={`@${seo.general?.social.twitter.username}`}
         />
       )}
-      <meta name="twitter:card" content={seo.general.social.twitter.cardType} />
+      <meta
+        name="twitter:card"
+        content={seo?.general?.social?.twitter?.cardType}
+      />
 
       {seo.page?.twitterImage?.localFile?.childImageSharp && (
         <meta
           name="twitter:image"
           content={absolutePath(
             siteUrl,
-            seo.page.twitterImage.localFile.childImageSharp.original.src
+            seo.page?.twitterImage?.localFile?.childImageSharp?.original?.src
           )}
         />
       )}
