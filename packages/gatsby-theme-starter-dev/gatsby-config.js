@@ -38,6 +38,12 @@ module.exports = (options) => {
         wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        dataComponents: '@gatsbywpthemes/gatsby-theme-blog-data/src/components',
+      },
+    },
   ]
 
   /**

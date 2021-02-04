@@ -1,5 +1,5 @@
-import React from 'react'
-import User from 'starterComponents/templates/User'
+import React from "react"
+import User from "starterComponents/templates/User"
 
 export default ({ data, pageContext }) => {
   return (
