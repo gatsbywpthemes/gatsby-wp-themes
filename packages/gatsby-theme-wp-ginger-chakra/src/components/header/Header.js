@@ -24,7 +24,7 @@ export const Header = () => {
       px={[3, 3, 0]}
       w={(theme) => ['auto', 'auto', theme.sizes.header[2]]}
     >
-      {logo ? (
+      {false ? (
         <Logo />
       ) : (
         <Flex

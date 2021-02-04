@@ -84,6 +84,40 @@ exports.createPages = async (
   await createTags({ actions, graphql }, mergedOptions)
   await createUsers({ actions, graphql }, mergedOptions)
 
+  const state = store.getState()
+  const plugin = state.flattenedPlugins.find(
+    (plugin) => plugin.name === 'gatsby-plugin-webfonts'
+  )
+  if (plugin) {
+    console.log('!!!!!!FOUND YOU')
+    const favicon = await graphql(`
+      query {
+        wp {
+          gatsbywpthemes {
+            favicon {
+              localFile {
+                childImageSharp {
+                  fixed {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `)
+    console.log(plugin.pluginOptions.fonts.google)
+    plugin.pluginOptions.fonts.google = [
+      { family: 'Arbutus', variants: undefined },
+    ]
+
+    plugin.pluginOptions = {
+      ...plugin.pluginOptions,
+    }
+    console.log(plugin.pluginOptions.fonts.google)
+  }
+
   /*const state = store.getState()
   const plugin = state.flattenedPlugins.find(
     (plugin) => plugin.name === 'gatsby-plugin-manifest'
@@ -132,10 +166,32 @@ exports.createSchemaCustomization = ({ actions }) => {
       logo: WpMediaItem
       darkModeLogo: WpMediaItem
       favicon: WpMediaItem
-      slideMenuWidgets: String
-      sidebarWidgets: String
+      slideMenuWidgets: [String]
+      sidebarWidgets: [String]
       addWordPressComments: Boolean
       addWordPressSearch: Boolean
+      cssTheme: GatsbyWPThemesCSSTheme
+      socialFollowLinks: [GatsbyWPThemesSocial]
+    }
+
+    type GatsbyWPThemesSocial {
+      name: String
+      url: String
+    }
+
+    type GatsbyWPThemesCSSTheme {
+      colors: [GatsbyWPThemesColor]
+      modes: [GatsbyWPThemesColorModes]
+    }
+
+    type GatsbyWPThemesColor {
+      hexValue: String
+      name: String
+    }
+
+    type GatsbyWPThemesColorModes {
+      colors: [GatsbyWPThemesColor]
+      name: String
     }
   `)
 }

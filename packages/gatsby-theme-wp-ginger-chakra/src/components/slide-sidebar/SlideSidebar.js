@@ -22,7 +22,7 @@ import { SearchContext } from 'gingerThemeComponents/search/context'
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
   const { addWordPressSearch, menuName } = useThemeOptions()
   const { slideMenuWidgets } = useGatsbyWPSettings()
-  const widgets = slideMenuWidgets ? slideMenuWidgets.split(',') : []
+  const widgets = slideMenuWidgets || []
   const menuBtn = useRef()
   const { setSearch, escInSearch } = useContext(SearchContext)
 

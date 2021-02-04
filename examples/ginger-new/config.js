@@ -30,7 +30,7 @@ const config = {
       url: "https://gatsby.dev/discord",
     },
   ],
-  fonts: ["Abril Fatface"],
+  fonts: ["Modak"],
   addSiteMap: true,
   //siteMapOptions: {},
   addWordPressSearch: true,

@@ -25,8 +25,8 @@ export const Logo = () => {
         className="logo-img"
         src={
           colorMode === 'dark' && darkModeLogo
-            ? darkModeLogo.localFile.childImageSharp.fixed.src
-            : logo.localFile.childImageSharp.fixed.src
+            ? darkModeLogo.localFile.childImageSharp.original.src
+            : logo.localFile.childImageSharp.original.src
         }
         alt="logo"
       />
