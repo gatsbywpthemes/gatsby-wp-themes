@@ -49,7 +49,6 @@ const config = {
   fonts: ["Baumans", "Coda"],
   // addSiteMap: false,
   // siteMapOptions: {},
-  seoWithYoast: true,
 }
 
 module.exports = config

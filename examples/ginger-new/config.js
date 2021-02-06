@@ -37,7 +37,6 @@ const config = {
   // instantWPSearch: false,
   // addColorModes: false,
   skipTitle: ["home"],
-  seoWithYoast: true,
   lightboxSettings: {},
   favicon: "static/icon.svg",
 }

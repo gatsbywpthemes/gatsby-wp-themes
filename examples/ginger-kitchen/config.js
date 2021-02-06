@@ -32,7 +32,6 @@ const config = {
   // instantWPSearch: false,
   // addColorModes: false,
   skipTitle: ["home"],
-  seoWithYoast: true,
   lightboxSettings: {},
 }
 module.exports = config

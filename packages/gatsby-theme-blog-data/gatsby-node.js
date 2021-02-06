@@ -21,14 +21,17 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       __type(name: "Wp") {
         fields {
           name
+          type {
+            name
+          }
         }
       }
     }
   `)
 
-  const seoFromWP =
-    options.seoWithYoast &&
-    queryTypes.data.__type.fields.map((el) => el.name).includes('seo')
+  const seoFromWP = !!queryTypes.data.__type.fields.find(
+    (el) => el.name === 'seo' && el.type.name === 'WpSEOConfig'
+  )
 
   const conditionalSeoQuery = seoFromWP ? generalSeoFromWP : ``
 
