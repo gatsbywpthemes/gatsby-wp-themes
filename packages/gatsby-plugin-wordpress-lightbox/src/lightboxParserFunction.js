@@ -22,18 +22,28 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
         const { srcSet, style } = props
         const { srcset, ...attribs } = domNode.attribs
         return (
-          <a
-            aria-label="Open image in a lightbox gallery"
-            data-attribute="SRL"
-            href={href}
-            style={{ position: "static" }}
-          >
+          <a aria-label="Open image in a lightbox gallery" href={href}>
             <img alt="" {...attribs} style={style} srcSet={srcSet} />
           </a>
         )
       }
     },
   })
+  const parserPlainGalleryOptions = {
+    replace: (domNode) => {
+      if (
+        (domNode.name === "ul" ||
+          domNode.name === "li" ||
+          domNode.name === "figure") &&
+        domNode.children
+      ) {
+        return <>{domToReact(domNode.children, parserPlainGalleryOptions)}</>
+      }
+      if (domNode.name === "figcaption") {
+        return <></>
+      }
+    },
+  }
   const parserOptionsInner = {
     replace: (domNode) => {
       if (domNode.name === "a") {
@@ -52,6 +62,10 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
         } else {
           return <>{domToReact(domNode.children, parserOptions)}</>
         }
+      } else if (domNode.name === "figcaption") {
+        return <></>
+      } else if (domNode.children) {
+        return <>{domToReact(domNode.children, parserOptionsInner)}</>
       }
     },
   }
@@ -61,24 +75,30 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
     node.name &&
     node.attribs &&
     node.attribs.class &&
-    node.attribs.class.indexOf("wp-block-gallery") > -1 &&
-    findInnerA(node)
+    node.attribs.class.indexOf("wp-block-gallery") > -1
   ) {
-    const Tag = node.name
-    return (
-      <React.Suspense
-        fallback={
-          <Tag className={node.attribs.class}>
-            {domToReact(node.children, parserOptionsInner)}
-          </Tag>
-        }
-      >
-        <ClientSideOnlyLazy>
-          <Tag className={node.attribs.class}>
-            {domToReact(node.children, parserOptionsInner)}
-          </Tag>
-        </ClientSideOnlyLazy>
-      </React.Suspense>
-    )
+    if (findInnerA(node)) {
+      return (
+        <React.Suspense
+          fallback={
+            <div data-parsed-gallery className={node.attribs.class}>
+              {domToReact(node.children, parserOptionsInner)}
+            </div>
+          }
+        >
+          <ClientSideOnlyLazy>
+            <div data-parsed-gallery className={node.attribs.class}>
+              {domToReact(node.children, parserOptionsInner)}
+            </div>
+          </ClientSideOnlyLazy>
+        </React.Suspense>
+      )
+    } else {
+      return (
+        <div data-parsed-gallery className={node.attribs.class}>
+          {domToReact(node.children, parserPlainGalleryOptions)}
+        </div>
+      )
+    }
   }
 }

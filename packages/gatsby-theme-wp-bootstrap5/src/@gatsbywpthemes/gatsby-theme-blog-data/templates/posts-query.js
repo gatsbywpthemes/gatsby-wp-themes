@@ -23,10 +23,10 @@ export const pageQuery = graphql`
     localFile {
       childImageSharp {
         gatsbyImageData(
-          maxWidth: 306
-          maxHeight: 200
+          width: 306
+          height: 200
           quality: 60
-          layout: FLUID
+          layout: CONSTRAINED
         )
       }
     }

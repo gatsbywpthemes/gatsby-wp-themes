@@ -18,7 +18,7 @@ figure,
   position: relative;
 }
 .wp-block-embed__wrapper:before {
-  content: '';
+  content: "";
   display: block;
   padding-top: 50%;
 }
@@ -63,11 +63,7 @@ figure,
   padding: 1.5rem;
 }
 
-.wp-block-gallery:not(.is-cropped) .blocks-gallery-grid {
-  align-items: flex-end;
-}
-
-*[class*='_inner-container'] > *:last-child {
+*[class*="_inner-container"] > *:last-child {
   margin-bottom: 0;
 }
 
@@ -93,7 +89,7 @@ figure,
 // }
 
 .dark-color-mode .has-background:not(.has-text-color),
-.dark-color-mode .wp-block-media-text[style*='background'],
+.dark-color-mode .wp-block-media-text[style*="background"],
 .dark-color-mode .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
   /* background-color: transparent !important; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
@@ -107,7 +103,7 @@ figure,
 .blocks-gallery-item {
   overflow: hidden;
 }
-.entry-content .wp-block-gallery .blocks-gallery-item a {
+.entry-content .wp-block-gallery a {
   transition: 1s;
 }
 .blocks-gallery-item a:hover {
