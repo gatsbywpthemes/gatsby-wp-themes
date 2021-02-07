@@ -1,7 +1,9 @@
 import React from "react"
 import { domToReact, attributesToProps } from "html-react-parser"
 
-const ClientSideOnlyLazy = React.lazy(() => import("./LightboxWrapper"))
+const ClientSideOnlyLazy = React.lazy(() =>
+  import(/* webpackChunkName: "LightboxWrapper" */ "./LightboxWrapper")
+)
 const findInnerA = (node) => {
   let value = null
   if (node && node.name === "a") {
