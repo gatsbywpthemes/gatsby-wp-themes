@@ -24,6 +24,7 @@ const DEFAULT_OPTIONS = {
   pageCreateDebugOutput: false,
   logo: null,
   darkModeLogo: null,
+  developLimit: null,
 }
 
 module.exports = DEFAULT_OPTIONS
