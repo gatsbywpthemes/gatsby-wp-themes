@@ -68,7 +68,7 @@ export const gutenbergStyles = {
   },
   '.dark-color-mode & .has-background:not(.has-text-color),.dark-color-mode & .wp-block-media-text[style*="background"],.dark-color-mode & .wp-block-table.is-style-stripes tbody tr:nth-of-type(odd)': {
     backgroundImage: (theme) => {
-      return `linear-gradient(${theme.colors?.overlay}, ${theme.colors?.overlay})`
+      return `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
     },
     backgroundBlendMode: 'multiply',
   },

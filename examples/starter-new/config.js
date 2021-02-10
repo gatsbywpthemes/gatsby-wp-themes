@@ -53,7 +53,7 @@ const config = {
 
   // addSiteMap: false,
   // siteMapOptions: {},
-  developLimit: 2,
+  developLimit: 4,
 }
 
 module.exports = config
