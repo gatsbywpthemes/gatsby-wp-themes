@@ -22,7 +22,7 @@ export const Header = () => {
           />
         )}
       </header>
-      <Menu menuName={menuName} />
+      <Menu />
     </>
   )
 }

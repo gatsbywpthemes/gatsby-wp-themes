@@ -4,9 +4,9 @@ import { useMenusQuery } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { chakra, Stack } from '@chakra-ui/react'
 import { MenuItem, SubMenu, flatListToHierarchical } from 'starterComponents'
 
-export const Menu = ({ menuName, orientation, ...props }) => {
+export const Menu = ({ location = 'PRIMARY', orientation, ...props }) => {
   const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find((n) => menuName === n.name)
+  const menuEdge = menuEdges.find((n) => n.locations.includes(location))
   const menuItems = menuEdge ? menuEdge.menuItems : null
 
   const styleVariant = orientation === 'V' ? menuVStyles : menuHStyles
