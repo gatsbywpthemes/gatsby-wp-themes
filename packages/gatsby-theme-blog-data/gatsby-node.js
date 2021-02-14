@@ -7,10 +7,7 @@ const createUsers = require(`./utils/createUsers`)
 const generalSeoFromWP = require(`./utils/seo/generalSeoFromWP`)
 const themeSettingsFromQuery = require(`./utils/themeSettingsFromQuery`)
 
-exports.createPages = async (
-  { store, actions, graphql, reporter },
-  options
-) => {
+exports.createPages = async ({ actions, graphql, reporter }, options) => {
   /**
    * Merged default theme settings and user settings.
    */
@@ -86,40 +83,6 @@ exports.createPages = async (
   await createCategories({ actions, graphql }, mergedOptions)
   await createTags({ actions, graphql }, mergedOptions)
   await createUsers({ actions, graphql }, mergedOptions)
-
-  const state = store.getState()
-  const plugin = state.flattenedPlugins.find(
-    (plugin) => plugin.name === 'gatsby-plugin-webfonts'
-  )
-  if (plugin) {
-    console.log('!!!!!!FOUND YOU')
-    const favicon = await graphql(`
-      query {
-        wp {
-          gatsbywpthemes {
-            favicon {
-              localFile {
-                childImageSharp {
-                  fixed {
-                    src
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `)
-    console.log(plugin.pluginOptions.fonts.google)
-    plugin.pluginOptions.fonts.google = [
-      { family: 'Arbutus', variants: undefined },
-    ]
-
-    plugin.pluginOptions = {
-      ...plugin.pluginOptions,
-    }
-    console.log(plugin.pluginOptions.fonts.google)
-  }
 
   /*const state = store.getState()
   const plugin = state.flattenedPlugins.find(
