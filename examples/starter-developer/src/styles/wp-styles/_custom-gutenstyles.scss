@@ -11,9 +11,6 @@ figure,
   width: 100%;
   height: 100%;
 }
-.wp-block-gallery {
-  margin-left: 0;
-}
 .wp-block-embed__wrapper {
   position: relative;
 }
@@ -63,10 +60,6 @@ figure,
   padding: 1.5rem;
 }
 
-.wp-block-gallery:not(.is-cropped) .blocks-gallery-grid {
-  align-items: flex-end;
-}
-
 *[class*='_inner-container'] > *:last-child {
   margin-bottom: 0;
 }
@@ -107,7 +100,7 @@ figure,
 .blocks-gallery-item {
   overflow: hidden;
 }
-.entry-content .wp-block-gallery .blocks-gallery-item a {
+.entry-content div .blocks-gallery-item a {
   transition: 1s;
 }
 .blocks-gallery-item a:hover {

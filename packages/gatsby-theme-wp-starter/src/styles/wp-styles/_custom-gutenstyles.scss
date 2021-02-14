@@ -63,10 +63,6 @@ figure,
   padding: 1.5rem;
 }
 
-.wp-block-gallery:not(.is-cropped) .blocks-gallery-grid {
-  align-items: flex-end;
-}
-
 *[class*='_inner-container'] > *:last-child {
   margin-bottom: 0;
 }
@@ -107,7 +103,7 @@ figure,
 .blocks-gallery-item {
   overflow: hidden;
 }
-.entry-content .wp-block-gallery .blocks-gallery-item a {
+.entry-content .wp-block-gallery a {
   transition: 1s;
 }
 .blocks-gallery-item a:hover {

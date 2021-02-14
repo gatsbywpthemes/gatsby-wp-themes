@@ -22,7 +22,6 @@ const DEFAULT_OPTIONS = {
   slideMenuWidgets: [],
   archiveSidebar: false,
   pageCreateDebugOutput: false,
-  seoWithYoast: false,
   logo: null,
   darkModeLogo: null,
   skipTitle: [],

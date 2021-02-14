@@ -16,7 +16,7 @@ export const SeoOg = (props) => {
   const ogTitle = addPageNumber(
     seo.page?.opengraphTitle ||
       seo.page?.title ||
-      (isFrontPage && seo.general.openGraph.frontPage.title),
+      (isFrontPage && seo?.general?.openGraph?.frontPage?.title),
     humanPageNumber,
     numberOfPages
   )
@@ -24,13 +24,13 @@ export const SeoOg = (props) => {
     seo.page?.opengraphImage?.localFile?.childImageSharp.original ||
     featuredImage ||
     (isFrontPage &&
-      seo.general.openGraph.frontPage.image?.localFile?.childImageSharp
+      seo?.general?.openGraph?.frontPage?.image?.localFile?.childImageSharp
         .original) ||
-    seo.general.openGraph.defaultImage?.localFile?.childImageSharp.original
+    seo?.general?.openGraph?.defaultImage?.localFile?.childImageSharp.original
 
   const ogDescription =
     seo.page?.opengraphDescription ||
-    (isFrontPage && seo.general.openGraph.frontPage.description)
+    (isFrontPage && seo?.general?.openGraph?.frontPage?.description)
 
   return (
     <Helmet>

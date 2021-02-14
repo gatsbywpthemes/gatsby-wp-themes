@@ -1,3 +1,4 @@
+import { galleryStyles } from '@gatsbywpthemes/gatsby-plugin-wordpress-lightbox'
 export const gutenbergStyles = {
   '& > *': {
     mx: 'auto',
@@ -81,4 +82,5 @@ export const gutenbergStyles = {
   '&.entry-content': {
     borderBottom: `1px solid transparent`,
   },
+  ...galleryStyles,
 }

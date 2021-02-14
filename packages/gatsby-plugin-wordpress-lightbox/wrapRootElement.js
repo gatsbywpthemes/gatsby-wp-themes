@@ -9,7 +9,7 @@ export const Root = ({ element }, options) => {
       // download button is not supported and needs to be deactivated
       showDownloadButton: false,
     },
-    ...rest
+    ...rest,
   }
   return (
     <LightboxContext.Provider value={lightBoxOptions}>

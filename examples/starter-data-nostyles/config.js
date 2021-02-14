@@ -29,7 +29,6 @@ const config = {
 
   // addSiteMap: false,
   // siteMapOptions: {},
-  seoWithYoast: true,
 }
 
 module.exports = config

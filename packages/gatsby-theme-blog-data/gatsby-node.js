@@ -25,14 +25,17 @@ exports.createPages = async (
       __type(name: "Wp") {
         fields {
           name
+          type {
+            name
+          }
         }
       }
     }
   `)
 
-  const seoFromWP =
-    options.seoWithYoast &&
-    queryTypes.data.__type.fields.map((el) => el.name).includes('seo')
+  const seoFromWP = !!queryTypes.data.__type.fields.find(
+    (el) => el.name === 'seo' && el.type.name === 'WpSEOConfig'
+  )
 
   const settingsFromWP = queryTypes.data.__type.fields
     .map((el) => el.name)

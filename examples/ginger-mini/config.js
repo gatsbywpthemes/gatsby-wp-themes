@@ -26,7 +26,6 @@ const config = {
   // instantWPSearch: false,
   // addColorModes: false,
   skipTitle: ["home-vcard", "contact"],
-  seoWithYoast: true,
   lightboxSettings: {},
 }
 module.exports = config
