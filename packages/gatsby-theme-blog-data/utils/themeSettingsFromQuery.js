@@ -1,4 +1,5 @@
-const themeSettingsFromQuery = `gatsbywpthemes {
+const themeSettingsFromQuery = `
+headlesswp {
   paginationPrefix
   logo {
     localFile {

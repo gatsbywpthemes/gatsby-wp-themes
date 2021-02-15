@@ -36,7 +36,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
   const settingsFromWP = queryTypes.data.__type.fields
     .map((el) => el.name)
-    .includes('gatsbywpthemes')
+    .includes('headlesswp')
 
   const conditionalSeoQuery = seoFromWP ? generalSeoFromWP : ``
 
@@ -73,8 +73,8 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     seoFromWP,
     generalSeoSettings: data.wp.seo,
     postsPath,
-    paginationPrefix: data.wp.gatsbywpthemes
-      ? data.wp.gatsbywpthemes.paginationPrefix
+    paginationPrefix: data.wp.headlesswp
+      ? data.wp.headlesswp.paginationPrefix
       : 'page',
   })
 
@@ -83,40 +83,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   await createCategories({ actions, graphql }, mergedOptions)
   await createTags({ actions, graphql }, mergedOptions)
   await createUsers({ actions, graphql }, mergedOptions)
-
-  /*const state = store.getState()
-  const plugin = state.flattenedPlugins.find(
-    (plugin) => plugin.name === 'gatsby-plugin-manifest'
-  )
-  if (plugin) {
-    console.log('!!!!!!FOUND YOU')
-    const favicon = await graphql(`
-      query {
-        wp {
-          gatsbywpthemes {
-            favicon {
-              localFile {
-                childImageSharp {
-                  fixed {
-                    src
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `)
-    console.log(
-      favicon.data.wp.gatsbywpthemes.favicon.localFile.childImageSharp.fixed.src
-    )
-
-    plugin.pluginOptions = {
-      ...plugin.pluginOptions,
-      icon: `./public${favicon.data.wp.gatsbywpthemes.favicon.localFile.childImageSharp.fixed.src}`,
-    }
-  }
-  */
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -124,39 +90,44 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   createTypes(`
     type Wp {
-      gatsbywpthemes: WpGatsbyWPThemesConfig
+      headlesswp: HeadlessWPConfig
     }
     
-    type WpGatsbyWPThemesConfig {
+    type HeadlessWPConfig {
       paginationPrefix: String
       logo: WpMediaItem
       darkModeLogo: WpMediaItem
       favicon: WpMediaItem
-      slideMenuWidgets: [String]
-      sidebarWidgets: [String]
+      widgetAreas: [HeadlessWPWidgetAreas]
+      archiveSidebarPosition: String
       addWordPressComments: Boolean
       addWordPressSearch: Boolean
-      cssTheme: GatsbyWPThemesCSSTheme
-      socialFollowLinks: [GatsbyWPThemesSocial]
+      socialFollowLinks: [HeadlessWPSocial]
+      cssTheme: HeadlessWPCSSTheme
     }
 
-    type GatsbyWPThemesSocial {
+    type HeadlessWPWidgetAreas {
+      name: String
+      widgets: [String]
+    }
+
+    type HeadlessWPSocial {
       name: String
       url: String
     }
 
-    type GatsbyWPThemesCSSTheme {
-      colors: [GatsbyWPThemesColor]
-      modes: [GatsbyWPThemesColorModes]
+    type HeadlessWPCSSTheme {
+      colors: [HeadlessWPColor]
+      modes: [HeadlessWPColorModes]
     }
 
-    type GatsbyWPThemesColor {
+    type HeadlessWPColor {
       hexValue: String
       name: String
     }
 
-    type GatsbyWPThemesColorModes {
-      colors: [GatsbyWPThemesColor]
+    type HeadlessWPColorModes {
+      colors: [HeadlessWPColor]
       name: String
     }
   `)

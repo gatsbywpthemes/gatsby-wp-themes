@@ -22,7 +22,6 @@ const config = {
     'SocialFollow',
     'Newsletter',
   ],
-  slideMenuWidgets: ['Categories', 'RecentPosts', 'SocialFollow', 'Newsletter'],
   archiveSidebar: 'right',
 
   // addSiteMap: false,

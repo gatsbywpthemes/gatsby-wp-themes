@@ -17,7 +17,8 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 
 export const SlideSidebar = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { slideMenuWidgets: widgets } = useThemeOptions()
+  const { widgetAreas } = useThemeOptions()
+  const widgets = widgetAreas.slideMenuWidgets || []
 
   return (
     <Box {...props}>

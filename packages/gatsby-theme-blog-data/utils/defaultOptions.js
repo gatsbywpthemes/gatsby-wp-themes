@@ -17,7 +17,10 @@ const DEFAULT_OPTIONS = {
   manifestOptions: {},
   addSiteMap: false,
   siteMapOptions: {},
-  sidebarWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
+  widgetAreas: {
+    slideMenuWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
+    sidebarWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
+  },
   slideMenuWidgets: [],
   archiveSidebar: false,
   pageCreateDebugOutput: false,

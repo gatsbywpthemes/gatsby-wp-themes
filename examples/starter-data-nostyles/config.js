@@ -6,7 +6,6 @@ const config = {
 
   // paginationPrefix: 'page',
 
-  menuName: 'main',
   // addWordPressComments: 1,
   // addSiteMap: false,
   // siteMapOptions: {},
@@ -17,14 +16,6 @@ const config = {
     post: 'l',
     archive: 'l',
   },
-  sidebarWidgets: [
-    'Categories',
-    'RecentPosts',
-    'Tags',
-    'SocialFollow',
-    'Newsletter',
-  ],
-  slideMenuWidgets: ['Categories', 'RecentPosts', 'SocialFollow', 'Newsletter'],
   archiveSidebar: 'right',
 
   // addSiteMap: false,

@@ -3,19 +3,9 @@ const path = require('path')
 module.exports = (options) => {
   options.fonts = options.fonts || ['Abril Fatface']
 
-  const widgets =
-    typeof options.slideMenuWidgets === 'undefined'
-      ? [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`]
-      : options.slideMenuWidgets
-
   const mergedOptions = {
     addColorModes: true,
     skipTitle: [],
-    widgetAreas: {
-      slideMenu: {
-        widgets,
-      },
-    },
     ...options,
   }
   const plugins = [

@@ -3,13 +3,6 @@ const config = {
   //pathPrefix: "",
   // paginationPrefix: `page`,
   // addWordPressComments: true,
-  slideMenuWidgets: [
-    `SocialFollow`,
-    `RecentPosts`,
-    `Categories`,
-    `Tags`,
-    "Newsletter",
-  ],
   siteUrl: "https://gatsby-wp-b5.netlify.app/",
   social: [
     {

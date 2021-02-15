@@ -4,7 +4,21 @@ import { createClient } from './src/apollo/client'
 import { themeOptions } from './context'
 import defaultOptions from './utils/defaultOptions'
 import slashes from 'remove-trailing-slash'
+import { useHeadlessWPOptions } from './src/hooks/useHeadlessWPOptions'
 
+const ThemeOptionsProvider = ({ children, options }) => {
+  const headlessWPOptions = useHeadlessWPOptions()
+  const mergedOptions = {
+    ...defaultOptions,
+    ...headlessWPOptions,
+    ...options,
+  }
+  return (
+    <themeOptions.Provider value={mergedOptions}>
+      {children}
+    </themeOptions.Provider>
+  )
+}
 export const Root = ({ element }, options) => {
   const mergedOptions = {
     ...defaultOptions,
@@ -14,9 +28,7 @@ export const Root = ({ element }, options) => {
 
   return (
     <ApolloProvider client={client}>
-      <themeOptions.Provider value={mergedOptions}>
-        {element}
-      </themeOptions.Provider>
+      <ThemeOptionsProvider options={options}>{element}</ThemeOptionsProvider>
     </ApolloProvider>
   )
 }

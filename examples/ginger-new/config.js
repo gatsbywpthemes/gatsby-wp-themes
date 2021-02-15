@@ -4,17 +4,13 @@ const config = {
   // addWordPressComments: true,
   logo: "icon.svg",
   darkModeLogo: "icon1.svg",
-  slideMenuWidgets: [
-    "SocialFollow",
-    "RecentPosts",
-    "Categories",
-    "Tags",
-    "Newsletter",
-  ],
   siteUrl: "http://localhost:9001",
   // title: "Blog Title Placeholder",
   // author: "Name Placeholder",
   // description: "Description placeholder",
+  widgetAreas: {
+    slideMenuWidgets: ["RecentPosts"],
+  },
   social: [
     {
       name: "twitter",

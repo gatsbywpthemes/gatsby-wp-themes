@@ -2,10 +2,10 @@ import React from 'react'
 import { Link, withPrefix } from 'gatsby'
 import Img from 'gatsby-image'
 import { chakra, useColorMode } from '@chakra-ui/react'
-import { useGatsbyWPSettings } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { useHeadlessWPOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const Logo = () => {
-  const { logo = false, darkModeLogo = false } = useGatsbyWPSettings()
+  const { logo = false, darkModeLogo = false } = useHeadlessWPOptions()
   const { colorMode } = useColorMode()
 
   return (

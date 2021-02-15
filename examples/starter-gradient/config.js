@@ -3,8 +3,6 @@ const config = {
   // paginationPrefix: 'page',
   // addWordPressComments: 1,
 
-  // menuName: "main",
-
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -14,14 +12,6 @@ const config = {
     post: "lg",
     archive: "lg",
   },
-  sidebarWidgets: [
-    "Categories",
-    "RecentPosts",
-    "Tags",
-    "SocialFollow",
-    "Newsletter",
-  ],
-  slideMenuWidgets: ["Categories", "RecentPosts", "SocialFollow", "Newsletter"],
   archiveSidebar: "right",
 
   // siteUrl: "https://example.com",

@@ -62,7 +62,6 @@ const config = {
   pathPrefix: "",
   paginationPrefix: `page`,
   addWordPressComments: true,
-  slideMenuWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
   social: [
     {
@@ -129,28 +128,6 @@ Whether WordPress comments should be activated.
 
 If left `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".
 Commenting on your Gatsby site work similarily to commenting on your WordPress site. The main difference is that **we only support two levels of comments nesting.** Under the hood, comments are fetched from WordPress and updated on WordPress (and refetched if necessary) with Apollo Client. Consequently, some of your WordPress Discussion settings applies to your Gatsby comments, in particular: email notifications, moderation and blocking rules.
-
----
-
-**slideMenuWidgets** (optional)
-`(type: Array, default: ['SocialFollow', 'RecentPosts', 'Categories', 'Tags'])`
-
-Ginger theme comes with one widget area in the slide-in sidebar. Widgets are displayed below the navigation menu.
-There are 4 widgets available: **SocialFollow**, **RecentPosts**, **Categories**, **Tags** and **Newsletter**.
-
-- The **SocialFollow** widget displays links to your social profiles (see [`social setting`](#social))
-- The **RecentPosts** widget lists links to 5 most recent posts (thumbnail, title and are displayed).
-- The **Categories** widget lists links to first-level post categories.
-- The **Tags** widget lists links to post tags. They are ordered alphabetically and include the number of posts per tag.
-- The **Newsletter** widget adds a subscription form to your MailChimp profile, (see [`MailChimp Profile`](#mailchimp))
-
-You can easily reorder the widgets. They will be displayed as specified in the **slideMenuWidgets** order.
-
-example:
-
-```javascript
-slideMenuWidgets: ["Newsletter", "Social Follow", "Tags"]
-```
 
 ---
 
