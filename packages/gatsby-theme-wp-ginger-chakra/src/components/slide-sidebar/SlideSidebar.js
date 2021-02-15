@@ -20,9 +20,10 @@ import {
 import { SearchContext } from 'gingerThemeComponents/search/context'
 
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
-  const { addWordPressSearch, menuName } = useThemeOptions()
+  const { addWordPressSearch } = useThemeOptions()
   const { slideMenuWidgets } = useGatsbyWPSettings()
   const widgets = slideMenuWidgets || []
+
   const menuBtn = useRef()
   const { setSearch, escInSearch } = useContext(SearchContext)
 
@@ -59,7 +60,7 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
             <DrawerCloseButton sx={{ right: 6 }} />
             <DrawerBody px={[8, 12]} py="12">
               {addWordPressSearch && <SearchForm />}
-              <Menu menuName={menuName} />
+              <Menu />
               <WidgetsList widgets={widgets} />
             </DrawerBody>
           </DrawerContent>

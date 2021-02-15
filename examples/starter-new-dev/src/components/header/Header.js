@@ -1,20 +1,20 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Menu, SiteBranding, SlideSidebar } from 'starterComponents'
-import { Container } from 'starterUiComponents'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { Menu, SiteBranding, SlideSidebar } from "starterComponents"
+import { Container } from "starterUiComponents"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
-import { ColorSwitch } from 'starterComponents'
-import { SearchModal } from 'starterComponents'
+import { ColorSwitch } from "starterComponents"
+import { SearchModal } from "starterComponents"
 import {
   Box,
   Flex,
   HStack,
   useColorModeValue as colorMode,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react"
 
 export const Header = () => {
-  const { search, menuName } = useThemeOptions()
+  const { search } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -32,8 +32,8 @@ export const Header = () => {
   return (
     <Box
       as="header"
-      color={colorMode('headerColor', 'modes.dark.headerColor')}
-      bg={colorMode('headerBg', 'modes.dark.headerBg')}
+      color={colorMode("headerColor", "modes.dark.headerColor")}
+      bg={colorMode("headerBg", "modes.dark.headerBg")}
       py={4}
       className="header"
       boxShadow="md"
@@ -44,13 +44,9 @@ export const Header = () => {
           {search && <SearchModal />}
         </Flex>
         <HStack>
-          <Menu
-            menuName={menuName}
-            orientation="H"
-            display={{ base: 'none', lg: 'block' }}
-          />
+          <Menu orientation="H" display={{ base: "none", lg: "block" }} />
 
-          <SlideSidebar display={{ base: 'block', lg: 'none' }} />
+          <SlideSidebar display={{ base: "block", lg: "none" }} />
 
           <ColorSwitch />
         </HStack>

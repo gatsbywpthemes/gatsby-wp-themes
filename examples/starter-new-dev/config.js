@@ -6,8 +6,6 @@ const config = {
   // paginationPrefix: 'page',
   // addWordPressComments: 1,
 
-  // menuName: "main",
-
   // addSiteMap: false,
   // siteMapOptions: {},
   // animation: false,
