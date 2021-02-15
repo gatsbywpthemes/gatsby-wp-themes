@@ -1,7 +1,5 @@
 const config = {
   siteUrl: "https://example.com/",
-  // paginationPrefix: 'page',
-
   // addSiteMap: false,
   // siteMapOptions: {},
 

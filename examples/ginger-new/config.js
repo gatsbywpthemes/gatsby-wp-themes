@@ -1,6 +1,5 @@
 const config = {
   //pathPrefix: "",
-  //paginationPrefix: "page",
   logo: "icon.svg",
   darkModeLogo: "icon1.svg",
   siteUrl: "http://localhost:9001",

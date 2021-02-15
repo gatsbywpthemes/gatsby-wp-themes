@@ -32,7 +32,6 @@ To use this theme in your Gatsby sites, follow these instructions:
        resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
        options: {
          wordPressUrl: ``,
-         paginationPrefix: `page`,
          postsPerPage: 10,
          gaTrackingId: 0,
          googleTagManagerId: 0,
@@ -64,8 +63,6 @@ To use this theme in your Gatsby sites, follow these instructions:
 ## Options
 
 `wordPressUrl` - source site. mandatory
-
-`paginationPrefix` - the prefix of the pages
 
 `postsPerPage`
 

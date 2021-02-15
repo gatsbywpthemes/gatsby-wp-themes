@@ -12,11 +12,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
    * Merged default theme settings and user settings.
    */
 
-  const mergedOptions = {
-    ...defaultOptions,
-    ...options,
-  }
-
   const queryTypes = await graphql(`
     query {
       __type(name: "Wp") {
@@ -33,10 +28,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   const seoFromWP = !!queryTypes.data.__type.fields.find(
     (el) => el.name === 'seo' && el.type.name === 'WpSEOConfig'
   )
-
-  const settingsFromWP = queryTypes.data.__type.fields
-    .map((el) => el.name)
-    .includes('headlesswp')
 
   const conditionalSeoQuery = seoFromWP ? generalSeoFromWP : ``
 
@@ -68,15 +59,18 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     ? false
     : '/'
 
-  Object.assign(mergedOptions, {
+  const mergedOptions = {
+    ...defaultOptions,
     postsPerPage: data.wp.allSettings.readingSettingsPostsPerPage,
     seoFromWP,
     generalSeoSettings: data.wp.seo,
     postsPath,
-    paginationPrefix: data.wp.headlesswp
-      ? data.wp.headlesswp.paginationPrefix
-      : 'page',
-  })
+    ...(data.wp.headlesswp &&
+      data.wp.headlesswp.paginationPrefix && {
+        paginationPrefix: data.wp.headlesswp.paginationPrefix,
+      }),
+    ...options,
+  }
 
   await createPosts({ actions, graphql }, mergedOptions)
   await createSitePages({ actions, graphql }, mergedOptions)

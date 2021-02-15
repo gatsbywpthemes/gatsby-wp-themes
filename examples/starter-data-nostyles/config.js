@@ -3,9 +3,6 @@ const config = {
   siteUrl: 'https://example.com',
   wordPressUrl: process.env.GATSBY_WP_URL,
   //pathPrefix: '/demo',
-
-  // paginationPrefix: 'page',
-
   // addSiteMap: false,
   // siteMapOptions: {},
 

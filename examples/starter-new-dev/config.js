@@ -3,8 +3,6 @@ const config = {
   // logo: "",
   // darkModeLogo: "",
   //pathPrefix: "",
-  // paginationPrefix: 'page',
-
   // addSiteMap: false,
   // siteMapOptions: {},
   // animation: false,

@@ -60,7 +60,6 @@ The default options for the Ginger theme are listed below. We discuss each one i
 const config = {
   wordPressUrl: ``,
   pathPrefix: "",
-  paginationPrefix: `page`,
   siteUrl: "https://example.com",
   social: [
     {
@@ -107,16 +106,6 @@ pathPrefix: "/demo"
 ```bash
 gatsby build --prefix-paths
 ```
-
----
-
-**paginationPrefix** (optional)
-`(default: 'page')`
-
-Prefix for paginated content.
-
-What is the url structure of any paginated content on your WordPress website? By default, WordPress uses `page` as the prefix, that means it preceeds page numbers by the `page` keyword (`page/2`, `page/3`, ...).
-You should skip this setting, unless your changed the pagination url format on your WordPress site.
 
 ---
 

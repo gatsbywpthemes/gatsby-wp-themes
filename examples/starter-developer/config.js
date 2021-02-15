@@ -3,8 +3,6 @@ const config = {
   // wordPressUrl: 'http://localhost:10003/',
   wordPressUrl: process.env.GATSBY_WP_URL,
   // pathPrefix: '/demo',
-
-  // paginationPrefix: 'page',
   // addSiteMap: false,
   // siteMapOptions: {},
 

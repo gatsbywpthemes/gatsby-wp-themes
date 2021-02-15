@@ -1,6 +1,6 @@
 const config = {
   //pathPrefix: "",
-  // paginationPrefix: `page`,
+
   siteUrl: "http://localhost:9001",
   social: [
     {
