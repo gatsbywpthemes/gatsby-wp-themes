@@ -19,7 +19,6 @@ const config = {
   fonts: ["Special+Elite", "Open+Sans:400,400i,700,700i"],
   // addSiteMap: false,
   // siteMapOptions: {},
-  addWordPressSearch: true,
   // instantWPSearch: false,
   // addColorModes: false,
   skipTitle: ["home-vcard", "contact"],

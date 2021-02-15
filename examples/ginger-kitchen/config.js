@@ -19,7 +19,6 @@ const config = {
   fonts: ["Abril Fatface", "Lora:400,400i,700,700i"],
   // addSiteMap: false,
   // siteMapOptions: {},
-  addWordPressSearch: true,
   // instantWPSearch: false,
   // addColorModes: false,
   skipTitle: ["home"],
