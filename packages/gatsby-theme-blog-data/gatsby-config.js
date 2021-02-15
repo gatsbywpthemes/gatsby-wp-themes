@@ -110,12 +110,6 @@ module.exports = (options) => {
   return {
     siteMetadata: {
       siteUrl: `http://example.com`,
-      social: [
-        {
-          name: `twitter`,
-          url: `https://twitter.com/gatsbyjs`,
-        },
-      ],
     },
     plugins,
   }

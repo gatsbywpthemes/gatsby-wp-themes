@@ -18,24 +18,6 @@ const config = {
   // title: 'Blog Title Placeholder',
   // author: 'Name Placeholder',
   // description: 'Description placeholder',
-  social: [
-    {
-      name: "twitter",
-      url: "https://twitter.com/gatsbyjs",
-    },
-    {
-      name: "facebook",
-      url: "#",
-    },
-    {
-      name: "linkedin",
-      url: "#",
-    },
-    {
-      name: "instagram",
-      url: "#",
-    },
-  ],
   // fonts: ["abril fatface", "fira sans"],
 
   // addSiteMap: false,

@@ -6,23 +6,6 @@ const config = {
   // title: "Blog Title Placeholder",
   // author: "Name Placeholder",
   // description: "Description placeholder",
-  widgetAreas: {
-    slideMenuWidgets: ["RecentPosts"],
-  },
-  social: [
-    {
-      name: "twitter",
-      url: "https://twitter.com/gatsbyjs",
-    },
-    {
-      name: "GitHub",
-      url: "https://github.com/gatsbyjs",
-    },
-    {
-      name: "Discord",
-      url: "https://gatsby.dev/discord",
-    },
-  ],
   addSiteMap: true,
   //siteMapOptions: {},
   // instantWPSearch: false,

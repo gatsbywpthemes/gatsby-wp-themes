@@ -30,6 +30,10 @@ export const useHeadlessWPOptions = () => {
               }
             }
           }
+          socialFollowLinks {
+            name
+            url
+          }
         }
       }
     }

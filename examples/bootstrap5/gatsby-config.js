@@ -4,14 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 require("dotenv").config()
-const { social, pathPrefix, ...options } = require("./config")
+const { pathPrefix, ...options } = require("./config")
 
 module.exports = {
   pathPrefix,
   siteMetadata: {
     wordPressUrl: options.wordpressUrl,
     siteUrl: options.siteUrl,
-    social,
   },
   plugins: [
     {

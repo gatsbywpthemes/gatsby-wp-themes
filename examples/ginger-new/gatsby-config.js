@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 require("dotenv").config()
-const { author, social, pathPrefix, ...options } = require("./config")
+const { author, pathPrefix, ...options } = require("./config")
 
 module.exports = {
   pathPrefix,
@@ -12,7 +12,6 @@ module.exports = {
     author,
     wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl: options.siteUrl,
-    social,
   },
   plugins: [
     {

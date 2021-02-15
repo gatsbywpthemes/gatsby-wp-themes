@@ -61,12 +61,6 @@ const config = {
   wordPressUrl: ``,
   pathPrefix: "",
   siteUrl: "https://example.com",
-  social: [
-    {
-      name: `twitter`,
-      url: `https:twitter.com/gatsbyjs`,
-    },
-  ],
   fonts: ["Abril Fatface", "Fira Sans"],
   gaTrackingId: 0,
   googleTagManagerId: 0,
@@ -115,40 +109,6 @@ gatsby build --prefix-paths
 You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production, you should provide the url of your destination site.
 
 This is an essential setting for social share buttons (in Posts), SEO open graph data, and twitter card image ([see **twitterSummaryCard**](#twittercard)). It's also necessary if you opt for an xml sitemap.
-
----
-
-**social** (optional) <a name="social"></a>
-`(type: Array, default: social: [{name:`twitter`, url:`https:twitter.com/gatsbyjs`}])`
-
-You can list your social profiles here. They will be displayed in the SocialFollows widget.
-
-The supported profiles are: Behance, Codepen, Dev, Discord, Dribbble, Facebook, Github, GitLab, Instagram, Linkedin, Mastodon, Medium, Pinterest, Reddit, Slack, Slideshare, Snapchat, Soundcloud, StackOverflow, Telegram, Tumblr, Twitter, Vimeo, Youtube.
-
-example:
-
-```javascript
-social: [
-  {
-    name: `twitter`,
-    url: `https://twitter.com/gatsbyjs`,
-  },
-  {
-    name: `GitHub`,
-    url: `https://github.com/gatsbyjs`,
-  },
-  {
-    name: `Discord`,
-    url: `https://gatsby.dev/discord`
-  }
-],
-```
-
-And if you have no social profiles:
-
-```javascript
-social: []
-```
 
 ---
 
