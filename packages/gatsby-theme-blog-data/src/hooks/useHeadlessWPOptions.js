@@ -6,6 +6,7 @@ export const useHeadlessWPOptions = () => {
       wp {
         headlesswp {
           addWordPressComments
+          addWordPressSearch
           widgetAreas {
             name
             widgets

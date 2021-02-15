@@ -26,7 +26,6 @@ const config = {
   ],
   addSiteMap: true,
   //siteMapOptions: {},
-  addWordPressSearch: true,
   // instantWPSearch: false,
   // addColorModes: false,
   skipTitle: ["home"],

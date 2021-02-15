@@ -8,6 +8,7 @@ const DEFAULT_OPTIONS = {
   paginationPrefix: `page`,
   disqus: false, //process.env.GATSBY_DISQUS_NAME,
   addWordPressComments: true,
+  addWordPressSearch: false,
   gaUniversalTrackingId: null,
   gaUniversalOptions: {},
   ga4TrackingId: null,
