@@ -22,7 +22,6 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
       slideMenu: { widgets },
     },
     addWordPressSearch,
-    menuName,
   } = useThemeOptions()
   const menuBtn = useRef()
   const { setSearch, escInSearch } = useContext(SearchContext)

@@ -62,7 +62,6 @@ const config = {
   pathPrefix: "",
   paginationPrefix: `page`,
   addWordPressComments: true,
-  menuName: "main",
   slideMenuWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
   social: [
@@ -133,24 +132,6 @@ Commenting on your Gatsby site work similarily to commenting on your WordPress s
 
 ---
 
-**menuName** (optional)
-`(type: String, default: "main")`
-
-The WordPress name of the navigation menu that will be used.
-
-Ginger theme comes with one menu location. The navigation menu is displayed in the slide-in sidebar.
-You can choose any of the menus that you had created on your WordPress site by passing its name to the **menuName** option.
-
-![Menu name set to Main Menu on WordPress](https://wptemplates.pehaa.com/docs/gatsby-themes/assets/menuname.png)
-
-example:
-
-```javascript
-menuName: "Main Menu"
-```
-
----
-
 **slideMenuWidgets** (optional)
 `(type: Array, default: ['SocialFollow', 'RecentPosts', 'Categories', 'Tags'])`
 
@@ -168,7 +149,7 @@ You can easily reorder the widgets. They will be displayed as specified in the *
 example:
 
 ```javascript
-menuName: ["Newsletter", "Social Follow", "Tags"]
+slideMenuWidgets: ["Newsletter", "Social Follow", "Tags"]
 ```
 
 ---

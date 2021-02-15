@@ -5,8 +5,6 @@ const config = {
   // pathPrefix: '/demo',
 
   // paginationPrefix: 'page',
-
-  menuName: 'main',
   // addWordPressComments: 1,
   // addSiteMap: false,
   // siteMapOptions: {},

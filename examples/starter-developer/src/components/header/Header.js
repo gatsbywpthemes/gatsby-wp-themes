@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 
 export const Header = () => {
-  const { search, menuName } = useThemeOptions()
+  const { search } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -45,9 +45,7 @@ export const Header = () => {
         </Flex>
         <HStack>
           <Menu orientation="H" display={{ base: 'none', lg: 'block' }} />
-
           <SlideSidebar display={{ base: 'block', lg: 'none' }} />
-
           <ColorSwitch />
         </HStack>
       </Container>

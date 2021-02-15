@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 
 export const Header = () => {
-  const { search, menuName } = useThemeOptions()
+  const { search } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

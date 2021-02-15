@@ -1,6 +1,6 @@
-import React from 'react'
-import { Menu, Widget } from 'starterComponents'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import React from "react"
+import { Menu, Widget } from "starterComponents"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
 import {
   useDisclosure,
@@ -12,12 +12,12 @@ import {
   DrawerCloseButton,
   useColorModeValue as colorMode,
   Box,
-} from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+} from "@chakra-ui/react"
+import { HamburgerIcon } from "@chakra-ui/icons"
 
 export const SlideSidebar = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { menuName, slideMenuWidgets: widgets } = useThemeOptions()
+  const { slideMenuWidgets: widgets } = useThemeOptions()
 
   return (
     <Box {...props}>
@@ -27,28 +27,28 @@ export const SlideSidebar = (props) => {
         icon={
           <HamburgerIcon
             boxSize={6}
-            color={colorMode('text', 'modes.dark.text')}
+            color={colorMode("text", "modes.dark.text")}
           />
         }
         onClick={onOpen}
         size="lg"
         boxSize={8}
         cursor="pointer"
-      />{' '}
+      />{" "}
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent
-          bg={colorMode('mobileMenuBg', 'modes.dark.mobileMenuBg')}
-          minW={{ base: '100%', md: '420px' }}
-          color={colorMode('mobileMenuColor', 'modes.dark.mobileMenuColor')}
+          bg={colorMode("mobileMenuBg", "modes.dark.mobileMenuBg")}
+          minW={{ base: "100%", md: "420px" }}
+          color={colorMode("mobileMenuColor", "modes.dark.mobileMenuColor")}
           shadow="2xl"
           p={4}
         >
           <DrawerBody>
             <DrawerCloseButton />
-            <Menu menuName={menuName} orientation="V" mt={7} />
+            <Menu orientation="V" mt={7} />
             {widgets.map((widget, i) => (
-              <Box key={i} sx={{ '.widget': { my: 10 } }}>
+              <Box key={i} sx={{ ".widget": { my: 10 } }}>
                 <Widget colorBg="dark" widget={widget} />
               </Box>
             ))}

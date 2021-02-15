@@ -4,7 +4,6 @@ const config = {
   // addWordPressComments: true,
   logo: "icon.svg",
   darkModeLogo: "icon1.svg",
-  menuName: "main",
   slideMenuWidgets: [
     "SocialFollow",
     "RecentPosts",
