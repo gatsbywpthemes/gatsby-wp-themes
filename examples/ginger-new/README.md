@@ -61,7 +61,6 @@ const config = {
   wordPressUrl: ``,
   pathPrefix: "",
   paginationPrefix: `page`,
-  addWordPressComments: true,
   siteUrl: "https://example.com",
   social: [
     {
@@ -118,16 +117,6 @@ Prefix for paginated content.
 
 What is the url structure of any paginated content on your WordPress website? By default, WordPress uses `page` as the prefix, that means it preceeds page numbers by the `page` keyword (`page/2`, `page/3`, ...).
 You should skip this setting, unless your changed the pagination url format on your WordPress site.
-
----
-
-**addWordPressComments** (optional)
-`(type: Boolean, default: true)`
-
-Whether WordPress comments should be activated.
-
-If left `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".
-Commenting on your Gatsby site work similarily to commenting on your WordPress site. The main difference is that **we only support two levels of comments nesting.** Under the hood, comments are fetched from WordPress and updated on WordPress (and refetched if necessary) with Apollo Client. Consequently, some of your WordPress Discussion settings applies to your Gatsby comments, in particular: email notifications, moderation and blocking rules.
 
 ---
 

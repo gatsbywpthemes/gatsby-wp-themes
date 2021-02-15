@@ -1,7 +1,6 @@
 const config = {
   siteUrl: "https://example.com/",
   // paginationPrefix: 'page',
-  // addWordPressComments: 1,
 
   // addSiteMap: false,
   // siteMapOptions: {},

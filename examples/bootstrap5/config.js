@@ -2,7 +2,6 @@ const config = {
   wordPressUrl: `https://wp-pehaa.xyz/five-boots`,
   //pathPrefix: "",
   // paginationPrefix: `page`,
-  // addWordPressComments: true,
   siteUrl: "https://gatsby-wp-b5.netlify.app/",
   social: [
     {

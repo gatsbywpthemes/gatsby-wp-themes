@@ -1,7 +1,6 @@
 const config = {
   //pathPrefix: "",
   // paginationPrefix: `page`,
-  // addWordPressComments: true,
   siteUrl: "http://localhost:9001",
   social: [
     {

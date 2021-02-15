@@ -4,7 +4,6 @@ const config = {
   // darkModeLogo: "",
   //pathPrefix: "",
   // paginationPrefix: 'page',
-  // addWordPressComments: 1,
 
   // addSiteMap: false,
   // siteMapOptions: {},
