@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 
 export const Header = () => {
-  const { search } = useThemeOptions()
+  const { addWordPressSearch: search } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
