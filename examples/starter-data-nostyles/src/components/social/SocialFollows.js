@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import {
   FaBehance,
   FaCodepen,
@@ -47,7 +47,7 @@ export const SocialFollows = (props) => {
     'slideshare',
     'snapchat',
     'soundcloud',
-    'stackoverflow',
+    'stack-overflow',
     'telegram',
     'tumblr',
     'twitter',
@@ -81,7 +81,7 @@ export const SocialFollows = (props) => {
     FaYoutube,
   ]
 
-  const { social } = useSiteMetaData()
+  const { socialFollowLinks: social } = useThemeOptions()
 
   return (
     <div className="widget widget-socialFollow" {...props}>

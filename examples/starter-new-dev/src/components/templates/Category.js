@@ -1,6 +1,6 @@
-import React from 'react'
-import { Layout, ArchiveContent } from 'starterComponents'
-import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import React from "react"
+import { Layout, ArchiveContent } from "starterComponents"
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Category = ({ category, ctx }) => {
   const { name, posts, uri } = category
@@ -16,12 +16,7 @@ const Category = ({ category, ctx }) => {
         seo={seo}
         uri={uri}
       />
-      <ArchiveContent
-        posts={posts.nodes}
-        ctx={ctx}
-        paginationPrefix={uri}
-        name={name}
-      />
+      <ArchiveContent posts={posts.nodes} ctx={ctx} name={name} />
     </Layout>
   )
 }

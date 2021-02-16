@@ -17,13 +17,10 @@ import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hook
 import { SearchContext } from 'gingerThemeComponents/search/context'
 
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
-  const {
-    widgetAreas: {
-      slideMenu: { widgets },
-    },
-    addWordPressSearch,
-    menuName,
-  } = useThemeOptions()
+  const { addWordPressSearch, widgetAreas } = useThemeOptions()
+
+  const widgets = widgetAreas.slideMenuWidgets || []
+
   const menuBtn = useRef()
   const { setSearch, escInSearch } = useContext(SearchContext)
 
@@ -60,7 +57,7 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
             <DrawerCloseButton sx={{ right: 6 }} />
             <DrawerBody px={[8, 12]} py="12">
               {addWordPressSearch && <SearchForm />}
-              <Menu menuName={menuName} />
+              <Menu />
               <WidgetsList widgets={widgets} />
             </DrawerBody>
           </DrawerContent>

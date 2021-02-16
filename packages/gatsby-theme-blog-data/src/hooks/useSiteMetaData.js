@@ -6,10 +6,6 @@ export const useSiteMetaData = () => {
       site {
         siteMetadata {
           siteUrl
-          social {
-            name
-            url
-          }
         }
       }
     }

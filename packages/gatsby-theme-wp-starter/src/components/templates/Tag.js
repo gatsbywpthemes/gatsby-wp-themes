@@ -17,12 +17,7 @@ const Tag = ({ tag, ctx }) => {
         seo={seo}
       />
 
-      <ArchiveContent
-        posts={posts.nodes}
-        ctx={ctx}
-        paginationPrefix={uri}
-        name={name}
-      />
+      <ArchiveContent posts={posts.nodes} ctx={ctx} name={name} />
     </Layout>
   )
 }

@@ -60,17 +60,7 @@ The default options for the Ginger theme are listed below. We discuss each one i
 const config = {
   wordPressUrl: ``,
   pathPrefix: "",
-  paginationPrefix: `page`,
-  addWordPressComments: true,
-  menuName: "main",
-  slideMenuWidgets: [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`],
   siteUrl: "https://example.com",
-  social: [
-    {
-      name: `twitter`,
-      url: `https:twitter.com/gatsbyjs`,
-    },
-  ],
   fonts: ["Abril Fatface", "Fira Sans"],
   gaTrackingId: 0,
   googleTagManagerId: 0,
@@ -113,106 +103,12 @@ gatsby build --prefix-paths
 
 ---
 
-**paginationPrefix** (optional)
-`(default: 'page')`
-
-Prefix for paginated content.
-
-What is the url structure of any paginated content on your WordPress website? By default, WordPress uses `page` as the prefix, that means it preceeds page numbers by the `page` keyword (`page/2`, `page/3`, ...).
-You should skip this setting, unless your changed the pagination url format on your WordPress site.
-
----
-
-**addWordPressComments** (optional)
-`(type: Boolean, default: true)`
-
-Whether WordPress comments should be activated.
-
-If left `true`, the comments will be displayed for posts that have comments status set to "Allow Comments".
-Commenting on your Gatsby site work similarily to commenting on your WordPress site. The main difference is that **we only support two levels of comments nesting.** Under the hood, comments are fetched from WordPress and updated on WordPress (and refetched if necessary) with Apollo Client. Consequently, some of your WordPress Discussion settings applies to your Gatsby comments, in particular: email notifications, moderation and blocking rules.
-
----
-
-**menuName** (optional)
-`(type: String, default: "main")`
-
-The WordPress name of the navigation menu that will be used.
-
-Ginger theme comes with one menu location. The navigation menu is displayed in the slide-in sidebar.
-You can choose any of the menus that you had created on your WordPress site by passing its name to the **menuName** option.
-
-![Menu name set to Main Menu on WordPress](https://wptemplates.pehaa.com/docs/gatsby-themes/assets/menuname.png)
-
-example:
-
-```javascript
-menuName: "Main Menu"
-```
-
----
-
-**slideMenuWidgets** (optional)
-`(type: Array, default: ['SocialFollow', 'RecentPosts', 'Categories', 'Tags'])`
-
-Ginger theme comes with one widget area in the slide-in sidebar. Widgets are displayed below the navigation menu.
-There are 4 widgets available: **SocialFollow**, **RecentPosts**, **Categories**, **Tags** and **Newsletter**.
-
-- The **SocialFollow** widget displays links to your social profiles (see [`social setting`](#social))
-- The **RecentPosts** widget lists links to 5 most recent posts (thumbnail, title and are displayed).
-- The **Categories** widget lists links to first-level post categories.
-- The **Tags** widget lists links to post tags. They are ordered alphabetically and include the number of posts per tag.
-- The **Newsletter** widget adds a subscription form to your MailChimp profile, (see [`MailChimp Profile`](#mailchimp))
-
-You can easily reorder the widgets. They will be displayed as specified in the **slideMenuWidgets** order.
-
-example:
-
-```javascript
-menuName: ["Newsletter", "Social Follow", "Tags"]
-```
-
----
-
 **siteUrl** (obligatory for a production website)
 `(type: Url, default: "https://example.com")`
 
 You can use the placeholder value `https://example.com` in the developement phase but once your site is built for production, you should provide the url of your destination site.
 
 This is an essential setting for social share buttons (in Posts), SEO open graph data, and twitter card image ([see **twitterSummaryCard**](#twittercard)). It's also necessary if you opt for an xml sitemap.
-
----
-
-**social** (optional) <a name="social"></a>
-`(type: Array, default: social: [{name:`twitter`, url:`https:twitter.com/gatsbyjs`}])`
-
-You can list your social profiles here. They will be displayed in the SocialFollows widget.
-
-The supported profiles are: Behance, Codepen, Dev, Discord, Dribbble, Facebook, Github, GitLab, Instagram, Linkedin, Mastodon, Medium, Pinterest, Reddit, Slack, Slideshare, Snapchat, Soundcloud, StackOverflow, Telegram, Tumblr, Twitter, Vimeo, Youtube.
-
-example:
-
-```javascript
-social: [
-  {
-    name: `twitter`,
-    url: `https://twitter.com/gatsbyjs`,
-  },
-  {
-    name: `GitHub`,
-    url: `https://github.com/gatsbyjs`,
-  },
-  {
-    name: `Discord`,
-    url: `https://gatsby.dev/discord`
-  }
-],
-```
-
-And if you have no social profiles:
-
-```javascript
-social: []
-```
 
 ---
 

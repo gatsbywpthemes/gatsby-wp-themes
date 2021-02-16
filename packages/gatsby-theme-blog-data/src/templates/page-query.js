@@ -24,8 +24,9 @@ export const pageQuery = graphql`
           }
         }
       }
-      template {
-        templateName
+      headlesswp {
+        pageTemplate
+        skipTitle
       }
     }
   }

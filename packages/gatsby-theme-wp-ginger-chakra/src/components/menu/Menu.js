@@ -5,9 +5,9 @@ import { chakra, Box } from '@chakra-ui/react'
 
 import { flatListToHierarchical } from './flatListToHierarchical'
 
-export const Menu = ({ menuName }) => {
+export const Menu = ({ location = 'PRIMARY' }) => {
   const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find((n) => menuName === n.name)
+  const menuEdge = menuEdges.find((n) => n.locations.includes(location))
   const menuItems = menuEdge ? menuEdge.menuItems : null
   if (menuItems) {
     const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })

@@ -70,13 +70,13 @@ module.exports = (options) => {
         path: `${__dirname}/src/images`,
       },
     },
-    {
+    /*{
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: resolveFavicon(favicon),
         ...manifestOptions,
       },
-    },
+    },*/
     '@gatsbywpthemes/gatsby-plugin-wordpress-parser',
   ]
 
@@ -124,12 +124,6 @@ module.exports = (options) => {
   return {
     siteMetadata: {
       siteUrl: `http://example.com`,
-      social: [
-        {
-          name: `twitter`,
-          url: `https://twitter.com/gatsbyjs`,
-        },
-      ],
     },
     plugins,
   }
