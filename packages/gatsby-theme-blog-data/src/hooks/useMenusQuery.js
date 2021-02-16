@@ -18,7 +18,6 @@ export const useMenusQuery = () => {
           name
           slug
           count
-          locations
           menuItems {
             nodes {
               ...MenuFields

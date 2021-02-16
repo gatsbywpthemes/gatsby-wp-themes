@@ -1,6 +1,6 @@
 import React from 'react'
 import { HStack } from '@chakra-ui/react'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import {
   FaBehance,
   FaCodepen,
@@ -48,7 +48,7 @@ export const SocialFollows = (props) => {
     'slideshare',
     'snapchat',
     'soundcloud',
-    'stack-overflow',
+    'stackoverflow',
     'telegram',
     'tumblr',
     'twitter',
@@ -82,7 +82,7 @@ export const SocialFollows = (props) => {
     FaYoutube,
   ]
 
-  const { socialFollowLinks: social } = useThemeOptions()
+  const { social } = useSiteMetaData()
 
   return (
     <HStack

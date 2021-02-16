@@ -4,6 +4,7 @@ const {
   title,
   author,
   description,
+  social,
   pathPrefix,
   ...options
 } = require("./config")
@@ -16,6 +17,7 @@ module.exports = {
     author,
     wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl: options.siteUrl,
+    social,
   },
   plugins: [
     `gatsby-plugin-postcss`,

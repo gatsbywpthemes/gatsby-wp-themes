@@ -21,6 +21,7 @@ const Tag = ({ tag, ctx }) => {
         name={name}
         text={'Posts tagged as:'}
         posts={posts}
+        paginationPrefix={uri}
         ctx={ctx}
       />
     </Layout>

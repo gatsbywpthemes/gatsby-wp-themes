@@ -7,9 +7,9 @@ import { ToggleButton } from './ToggleButton'
 
 import { flatListToHierarchical } from './index'
 
-export const Menu = ({ location = 'PRIMARY' }) => {
+export const Menu = ({ menuName }) => {
   const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find((n) => n.locations.includes(location))
+  const menuEdge = menuEdges.find((n) => menuName === n.name)
   const menuItems = menuEdge ? menuEdge.menuItems : null
   const [showClass, handler] = useCollapse()
   if (menuItems) {

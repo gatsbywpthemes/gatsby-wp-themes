@@ -11,6 +11,28 @@ module.exports = {
     author: '@alexadark',
     wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl: config.siteUrl,
+    social: [
+      {
+        name: 'twitter',
+        url: 'https://twitter.com/gatsbyjs',
+      },
+      {
+        name: 'GitHub',
+        url: 'https://github.com/gatsbyjs',
+      },
+      {
+        name: 'CodePen',
+        url: 'https://codepen.io/pehaa',
+      },
+      {
+        name: 'Instagram',
+        url: '#',
+      },
+      {
+        name: 'Linkedin',
+        url: '#',
+      },
+    ],
   },
   plugins: [
     {

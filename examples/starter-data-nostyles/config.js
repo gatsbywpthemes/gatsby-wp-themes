@@ -3,6 +3,11 @@ const config = {
   siteUrl: 'https://example.com',
   wordPressUrl: process.env.GATSBY_WP_URL,
   //pathPrefix: '/demo',
+
+  // paginationPrefix: 'page',
+
+  menuName: 'main',
+  // addWordPressComments: 1,
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -12,6 +17,14 @@ const config = {
     post: 'l',
     archive: 'l',
   },
+  sidebarWidgets: [
+    'Categories',
+    'RecentPosts',
+    'Tags',
+    'SocialFollow',
+    'Newsletter',
+  ],
+  slideMenuWidgets: ['Categories', 'RecentPosts', 'SocialFollow', 'Newsletter'],
   archiveSidebar: 'right',
 
   // addSiteMap: false,

@@ -1,6 +1,6 @@
-import React from "react"
-import { HStack } from "@chakra-ui/react"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import React from 'react'
+import { HStack } from '@chakra-ui/react'
+import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import {
   FaBehance,
   FaCodepen,
@@ -26,34 +26,34 @@ import {
   FaTwitter,
   FaVimeo,
   FaYoutube,
-} from "react-icons/fa"
+} from 'react-icons/fa'
 
 export const SocialFollows = (props) => {
   const supportedIcons = [
-    "behance",
-    "codepen",
-    "dev",
-    "discord",
-    "dribbble",
-    "facebook",
-    "github",
-    "gitlab",
-    "instagram",
-    "linkedin",
-    "mastodon",
-    "medium",
-    "pinterest",
-    "reddit",
-    "slack",
-    "slideshare",
-    "snapchat",
-    "soundcloud",
-    "stack-overflow",
-    "telegram",
-    "tumblr",
-    "twitter",
-    "vimeo",
-    "youtube",
+    'behance',
+    'codepen',
+    'dev',
+    'discord',
+    'dribbble',
+    'facebook',
+    'github',
+    'gitlab',
+    'instagram',
+    'linkedin',
+    'mastodon',
+    'medium',
+    'pinterest',
+    'reddit',
+    'slack',
+    'slideshare',
+    'snapchat',
+    'soundcloud',
+    'stackoverflow',
+    'telegram',
+    'tumblr',
+    'twitter',
+    'vimeo',
+    'youtube',
   ]
   const components = [
     FaBehance,
@@ -82,7 +82,7 @@ export const SocialFollows = (props) => {
     FaYoutube,
   ]
 
-  const { socialFollowLinks: social } = useThemeOptions()
+  const { social } = useSiteMetaData()
 
   return (
     <HStack

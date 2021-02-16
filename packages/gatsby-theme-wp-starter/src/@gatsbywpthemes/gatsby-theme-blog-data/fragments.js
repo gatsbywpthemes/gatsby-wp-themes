@@ -22,9 +22,8 @@ export const fragments = graphql`
         uri
       }
     }
-    headlesswp {
-      pageTemplate
-      skipTitle
+    template {
+      templateName
     }
     author {
       node {

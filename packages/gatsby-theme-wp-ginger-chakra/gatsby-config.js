@@ -3,9 +3,19 @@ const path = require('path')
 module.exports = (options) => {
   options.fonts = options.fonts || ['Abril Fatface']
 
+  const widgets =
+    typeof options.slideMenuWidgets === 'undefined'
+      ? [`SocialFollow`, `RecentPosts`, `Categories`, `Tags`]
+      : options.slideMenuWidgets
+
   const mergedOptions = {
     addColorModes: true,
     skipTitle: [],
+    widgetAreas: {
+      slideMenu: {
+        widgets,
+      },
+    },
     ...options,
   }
   const plugins = [
@@ -27,10 +37,10 @@ module.exports = (options) => {
         gingerThemeUtils: path.join(__dirname, 'src/utils'),
       },
     },
-    /*{
+    {
       resolve: '@chakra-ui/gatsby-plugin',
       options: {},
-    },*/
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,

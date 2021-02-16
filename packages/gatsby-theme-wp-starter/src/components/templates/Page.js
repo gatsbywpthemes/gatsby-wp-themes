@@ -7,27 +7,26 @@ import { useLayoutStyles } from 'starterUtils/hooks'
 import ParsedContent from 'starterUtils/ParsedContent'
 
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
-  console.log(page)
   const {
     title,
     isFrontPage,
     content,
     slug,
     uri,
-    headlesswp: { pageTemplate, skipTitle },
+    template: { templateName },
   } = page
-
   const {
     containerStyles,
     sidebarSide,
     sidebarPage,
     sidebarWidgets,
-  } = useLayoutStyles('page', pageTemplate)
-
-  console.log(useLayoutStyles('page', pageTemplate))
+  } = useLayoutStyles('page', templateName.toLowerCase())
+  const { skipTitle } = useThemeOptions()
+  console.log('template', templateName)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -59,7 +58,7 @@ const Page = ({ page, ctx }) => {
             <Card
               className="content page-content"
               sx={
-                pageTemplate === 'full width' && {
+                templateName === 'Full Width' && {
                   p: 0,
                   borderRadius: 0,
                   boxShadow: 0,
@@ -67,17 +66,20 @@ const Page = ({ page, ctx }) => {
               }
               mb={{ base: 14, lg: 0 }}
             >
-              {!skipTitle && (
-                <Heading
-                  as="h1"
-                  marginBottom={10}
-                  textTransform="uppercase"
-                  fontSize="3xl"
-                  textAlign="center"
-                  className="page-title"
-                  dangerouslySetInnerHTML={{ __html: title }}
-                />
-              )}
+              {skipTitle &&
+                !skipTitle.includes(slug) &&
+                skipTitle !== 'all' &&
+                templateName !== 'Full Width' && (
+                  <Heading
+                    as="h1"
+                    marginBottom={10}
+                    textTransform="uppercase"
+                    fontSize="3xl"
+                    textAlign="center"
+                    className="page-title"
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  />
+                )}
 
               <Box className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />

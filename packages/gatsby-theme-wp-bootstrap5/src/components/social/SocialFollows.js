@@ -1,5 +1,5 @@
 import React from 'react'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBehance,
@@ -48,7 +48,7 @@ export const SocialFollows = () => {
     'slideshare',
     'snapchat',
     'soundcloud',
-    'stack-overflow',
+    'stackoverflow',
     'telegram',
     'tumblr',
     'twitter',
@@ -82,7 +82,7 @@ export const SocialFollows = () => {
     faYoutube,
   ]
 
-  const { socialFollowLinks: social } = useThemeOptions()
+  const { social } = useSiteMetaData()
 
   return (
     <div className="d-flex justify-content-center mb-4">
