@@ -5,16 +5,6 @@ module.exports = (options) => {
   return {
     siteMetadata: {
       url: `http://exemple.com`,
-      social: [
-        {
-          name: `twitter`,
-          url: `https://twitter.com/gatsbyjs`,
-        },
-        {
-          name: `GitHub`,
-          url: `https://github.com/gatsbyjs`,
-        },
-      ],
     },
     plugins: [
       {

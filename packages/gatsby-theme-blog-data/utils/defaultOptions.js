@@ -4,11 +4,11 @@
 
 const DEFAULT_OPTIONS = {
   wordPressUrl: process.env.GATSBY_WP_URL,
-  pathPrefix: ``,
-  paginationPrefix: `page`,
-  menuName: `main`,
+  pathPrefix: '',
+  paginationPrefix: 'page',
   disqus: false, //process.env.GATSBY_DISQUS_NAME,
   addWordPressComments: true,
+  addWordPressSearch: false,
   gaUniversalTrackingId: null,
   gaUniversalOptions: {},
   ga4TrackingId: null,
@@ -18,13 +18,17 @@ const DEFAULT_OPTIONS = {
   manifestOptions: {},
   addSiteMap: false,
   siteMapOptions: {},
-  sidebarWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
+  widgetAreas: {
+    slideMenuWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
+    sidebarWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
+  },
   slideMenuWidgets: [],
-  archiveSidebar: false,
+  archiveSidebarPosition: 'right',
   pageCreateDebugOutput: false,
   logo: null,
   darkModeLogo: null,
   developLimit: null,
+  SocialFollowLinks: [],
 }
 
 module.exports = DEFAULT_OPTIONS

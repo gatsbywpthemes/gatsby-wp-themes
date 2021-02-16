@@ -3,11 +3,6 @@ const config = {
   // wordPressUrl: 'http://localhost:10003/',
   wordPressUrl: process.env.GATSBY_WP_URL,
   // pathPrefix: '/demo',
-
-  // paginationPrefix: 'page',
-
-  menuName: 'main',
-  // addWordPressComments: 1,
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -24,7 +19,6 @@ const config = {
     'SocialFollow',
     'Newsletter',
   ],
-  slideMenuWidgets: ['Categories', 'RecentPosts', 'SocialFollow', 'Newsletter'],
   archiveSidebar: 'right',
 
   // addSiteMap: false,

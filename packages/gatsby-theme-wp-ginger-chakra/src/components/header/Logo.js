@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link, withPrefix } from 'gatsby'
+import Img from 'gatsby-image'
 import { chakra, useColorMode } from '@chakra-ui/react'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { useHeadlessWPOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const Logo = () => {
-  const { logo, darkModeLogo } = useThemeOptions()
+  const { logo = false, darkModeLogo = false } = useHeadlessWPOptions()
   const { colorMode } = useColorMode()
+
   return (
     <chakra.a
       as={Link}
@@ -19,11 +21,12 @@ export const Logo = () => {
     >
       <chakra.img
         maxHeight="100%"
+        width="100%"
         className="logo-img"
         src={
           colorMode === 'dark' && darkModeLogo
-            ? withPrefix(darkModeLogo)
-            : withPrefix(logo)
+            ? darkModeLogo.localFile.childImageSharp.original.src
+            : logo.localFile.childImageSharp.original.src
         }
         alt="logo"
       />

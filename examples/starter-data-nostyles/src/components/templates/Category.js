@@ -17,12 +17,7 @@ const Category = ({ category, ctx }) => {
         seo={seo}
         uri={uri}
       />
-      <ArchiveContent
-        posts={posts.nodes}
-        ctx={ctx}
-        paginationPrefix={uri}
-        name={name}
-      />
+      <ArchiveContent posts={posts.nodes} ctx={ctx} name={name} />
     </Layout>
   )
 }

@@ -31,7 +31,7 @@ const Page = (props) => {
         }
       />
       <article>
-        {skipTitle.indexOf(slug) === -1 && (
+        {!skipTitle.includes(slug) && skipTitle !== 'all' && (
           <h1 className="text-center display-3 py-3 py-lg-5">
             <span
               className="page-title-value"

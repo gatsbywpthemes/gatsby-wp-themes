@@ -77,9 +77,9 @@ const renderSubMenu = (menuItem, wordPressUrl) => {
   )
 }
 
-export const Menu = ({ menuName, ...props }) => {
+export const Menu = ({ ...props }) => {
   const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find((n) => menuName === n.name)
+  const menuEdge = menuEdges.find((n) => n.locations.includes(location))
   const menuItems = menuEdge ? menuEdge.menuItems : null
 
   const { wordPressUrl } = useThemeOptions()

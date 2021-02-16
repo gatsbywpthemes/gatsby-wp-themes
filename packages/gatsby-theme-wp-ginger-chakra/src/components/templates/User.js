@@ -16,13 +16,7 @@ const User = ({ user, ctx }) => {
         yoastSeo={yoastSeo}
         seo={seo}
       />
-      <ArchiveContent
-        name={name}
-        text={'Posts by:'}
-        posts={posts}
-        paginationPrefix={uri}
-        ctx={ctx}
-      />
+      <ArchiveContent name={name} text={'Posts by:'} posts={posts} ctx={ctx} />
     </Layout>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Flex, Link } from '@chakra-ui/react'
 
@@ -50,7 +50,7 @@ export const SocialFollows = () => {
     'slideshare',
     'snapchat',
     'soundcloud',
-    'stackoverflow',
+    'stack-overflow',
     'telegram',
     'tumblr',
     'twitter',
@@ -84,7 +84,7 @@ export const SocialFollows = () => {
     faYoutube,
   ]
 
-  const { social } = useSiteMetaData()
+  const { socialFollowLinks: social } = useThemeOptions()
 
   return (
     social && (
