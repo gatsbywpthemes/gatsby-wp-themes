@@ -23,11 +23,10 @@ const DEFAULT_OPTIONS = {
     sidebarWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
   },
   slideMenuWidgets: [],
-  archiveSidebar: false,
+  archiveSidebarPosition: 'right',
   pageCreateDebugOutput: false,
   logo: null,
   darkModeLogo: null,
-  skipTitle: [],
   SocialFollowLinks: [],
 }
 

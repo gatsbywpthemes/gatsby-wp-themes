@@ -56,13 +56,13 @@ module.exports = (options) => {
         path: `${__dirname}/src/images`,
       },
     },
-    {
+    /*{
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: resolveFavicon(favicon),
         ...manifestOptions,
       },
-    },
+    },*/
     '@gatsbywpthemes/gatsby-plugin-wordpress-parser',
   ]
 

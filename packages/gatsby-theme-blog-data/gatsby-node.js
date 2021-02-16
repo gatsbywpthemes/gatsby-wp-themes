@@ -81,7 +81,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
-
+  return
   createTypes(`
     type Wp {
       headlesswp: HeadlessWPConfig

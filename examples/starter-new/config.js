@@ -6,13 +6,11 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   // animation: false,
-  // skipTitle: "all",
   layoutWidth: {
     page: "lg",
     post: "lg",
-    archive: "lg",
+    archive: "md",
   },
-  archiveSidebar: "right",
 
   // siteUrl: "https://example.com",
   // title: 'Blog Title Placeholder',
