@@ -1,3 +1,7 @@
+/* 
+If you're editing this file, instead of modifying colors via WordPress Customizer, make sure to set overrideWPColors: true in the config.js file.
+*/
+
 const colorSettings = {
   /* basic colors */
   text: "#483262",

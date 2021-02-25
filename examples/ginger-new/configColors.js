@@ -1,3 +1,7 @@
+/* 
+If you're editing this file, instead of modifying colors via WordPress Customizer, make sure to set overrideWPColors: true in the config.js file.
+*/
+
 const colorSettings = {
   /* basic colors */
   // text: "#303030",
@@ -10,7 +14,7 @@ const colorSettings = {
   // footerBg: "#f5f5f5",
   /* sidebar */
   // sidebarColor: "#ffffff",
-  // sidebarBg: "#076666",
+  sidebarBg: "#ff00ff",
   // menuButtonColor: "#ffffff",
   // menuButtonBg: "#303030",
   /* post */

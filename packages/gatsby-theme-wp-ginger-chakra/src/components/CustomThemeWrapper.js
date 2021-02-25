@@ -1,9 +1,10 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { ChakraProvider } from '@chakra-ui/react'
-import { extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import customTheme from 'gingerThemeSrc/chakra/theme'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 export const CustomThemeWrapper = ({ children }) => {
+  const { overrideWPColors } = useThemeOptions()
   const data = useStaticQuery(graphql`
     {
       wp {
@@ -26,7 +27,7 @@ export const CustomThemeWrapper = ({ children }) => {
     }
   `)
 
-  const colors = data.wp.headlesswp?.cssTheme?.colors.reduce((acc, c) => {
+  const wpColors = data.wp.headlesswp?.cssTheme?.colors.reduce((acc, c) => {
     acc[c.name] = c.hexValue
     return acc
   }, {})
@@ -39,19 +40,30 @@ export const CustomThemeWrapper = ({ children }) => {
     return acc
   }, {})
 
+  const colors = overrideWPColors
+    ? {
+        ...wpColors,
+        ...customTheme.colors,
+        modes: {
+          dark: {
+            ...modes?.dark,
+            ...customTheme.colors.modes.dark,
+          },
+        },
+      }
+    : {
+        ...customTheme.colors,
+        ...wpColors,
+        modes: {
+          dark: {
+            ...customTheme.colors.modes.dark,
+            ...modes?.dark,
+          },
+        },
+      }
   const theme = extendTheme({
     ...customTheme,
-    colors: {
-      ...customTheme.colors,
-      ...colors,
-      modes: {
-        dark: {
-          ...customTheme.colors.modes.dark,
-          ...modes?.dark,
-        },
-      },
-    },
+    colors,
   })
-  console.log(modes, theme)
   return <ChakraProvider theme={theme}>{children}</ChakraProvider>
 }

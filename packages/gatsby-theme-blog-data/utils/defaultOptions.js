@@ -28,6 +28,7 @@ const DEFAULT_OPTIONS = {
   logo: null,
   darkModeLogo: null,
   SocialFollowLinks: [],
+  overrideWPColors: false,
 }
 
 module.exports = DEFAULT_OPTIONS
