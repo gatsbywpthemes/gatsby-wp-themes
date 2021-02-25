@@ -1,8 +1,8 @@
 import merge from "deepmerge"
-import theme from "gingerThemeSrc/@chakra-ui/gatsby-plugin/theme"
-import colorsSettings from "../../../configColors"
-import typographySettings from "../../../configTypography"
-import sizesSettings from "../../../configSizes"
+import theme from "gingerThemeSrc/chakra/theme"
+import colorsSettings from "../../../../configColors"
+import typographySettings from "../../../../configTypography"
+import sizesSettings from "../../../../configSizes"
 
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray
 

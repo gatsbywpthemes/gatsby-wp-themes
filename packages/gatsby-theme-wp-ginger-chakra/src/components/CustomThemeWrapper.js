@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
-import customTheme from 'gingerThemeSrc/c/gatsby-plugin/theme'
+import customTheme from 'gingerThemeSrc/chakra/theme'
 export const CustomThemeWrapper = ({ children }) => {
   const data = useStaticQuery(graphql`
     {

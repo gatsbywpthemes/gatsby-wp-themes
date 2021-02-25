@@ -15,16 +15,30 @@ export const Logo = () => {
       px={[0, null, 3]}
       pt={[3, null, 6]}
       pb={[3, null, 6]}
-      height={['100%', null, 'auto']}
       className="logo"
       to="/"
       rel="home"
     >
       {logo && (
-        <GatsbyImage
-          image={img.localFile.childImageSharp.gatsbyImageData}
-          alt="logo"
-        />
+        <>
+          {img.localFile ? (
+            <GatsbyImage
+              image={img.localFile.childImageSharp.gatsbyImageData}
+              alt="logo"
+            />
+          ) : (
+            <chakra.img
+              maxHeight={['3rem', null, '100%']}
+              className="logo-img"
+              src={
+                colorMode === 'dark' && darkModeLogo
+                  ? withPrefix(darkModeLogo)
+                  : withPrefix(logo)
+              }
+              alt="logo"
+            />
+          )}
+        </>
       )}
     </chakra.a>
   )
