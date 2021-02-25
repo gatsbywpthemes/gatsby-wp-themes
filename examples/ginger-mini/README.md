@@ -67,7 +67,6 @@ const config = {
   addSiteMap: false,
   siteMapOptions: {},
   addColorModes: true,
-  skipTitle: [],
 }
 ```
 
@@ -199,19 +198,6 @@ These options are passed to the [gatsby-plugin-sitemap](https://www.gatsbyjs.org
 `(default: true)`
 
 If you want to add dark mode switcher.
-
----
-
-**skipTitle** (optional)
-`(default: [])`
-
-List slugs of the pages when you don't want to display the page title. Useful when you want to start your page with a Gutenberg cover blog and an `h1` heading.
-
-example:
-
-```javascript
-skipTitle: ["home", "about-us"],
-```
 
 ---
 

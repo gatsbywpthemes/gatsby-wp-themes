@@ -5,7 +5,6 @@ module.exports = (options) => {
 
   const mergedOptions = {
     addColorModes: true,
-    skipTitle: [],
     ...options,
   }
   const plugins = [

@@ -7,7 +7,6 @@ const config = {
   // siteMapOptions: {},
   // instantWPSearch: false,
   // addColorModes: false,
-  skipTitle: ["home"],
   lightboxSettings: {},
 }
 module.exports = config

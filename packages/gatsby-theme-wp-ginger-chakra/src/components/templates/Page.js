@@ -4,12 +4,15 @@ import { Layout } from 'gingerThemeComponents'
 import { ParsedContent, ActivatePageScripts } from 'gingerThemeUtils'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { gutenberg } from 'gingerThemeStyles'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 const Page = (props) => {
   const { page, ctx } = props
-  const { skipTitle } = useThemeOptions()
-  const { content, title, uri, slug } = page
+  const {
+    content,
+    title,
+    uri,
+    headlesswp: { skipTitle },
+  } = page
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   const { colorMode } = useColorMode()
@@ -31,7 +34,7 @@ const Page = (props) => {
         }
       />
       <article data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
-        {!skipTitle.includes(slug) && !skipTitle === 'all' && (
+        {!skipTitle && (
           <Box as="h1" textStyle="h1Archive">
             <span
               className="page-title-value"
