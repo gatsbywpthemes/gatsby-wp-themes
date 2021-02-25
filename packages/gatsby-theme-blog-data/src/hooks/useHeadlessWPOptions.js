@@ -15,14 +15,30 @@ export const useHeadlessWPOptions = () => {
           logo {
             localFile {
               childImageSharp {
-                gatsbyImageData(height: 72, quality: 80, layout: CONSTRAINED)
+                original {
+                  src
+                }
+                gatsbyImageData(
+                  height: 72
+                  quality: 80
+                  layout: FIXED
+                  placeholder: TRACED_SVG
+                )
               }
             }
           }
           darkModeLogo {
             localFile {
               childImageSharp {
-                gatsbyImageData(height: 72, quality: 80, layout: CONSTRAINED)
+                original {
+                  src
+                }
+                gatsbyImageData(
+                  height: 72
+                  quality: 80
+                  layout: FIXED
+                  placeholder: TRACED_SVG
+                )
               }
             }
           }
