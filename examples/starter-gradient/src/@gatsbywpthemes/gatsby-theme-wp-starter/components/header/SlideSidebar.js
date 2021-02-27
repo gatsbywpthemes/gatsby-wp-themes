@@ -24,12 +24,7 @@ export const SlideSidebar = (props) => {
       <IconButton
         aria-label="open menu"
         variant="unstyled"
-        icon={
-          <HamburgerIcon
-            boxSize={6}
-            color={colorMode("text", "modes.dark.text")}
-          />
-        }
+        icon={<HamburgerIcon boxSize={6} color="modes.dark.text" />}
         onClick={onOpen}
         size="lg"
         boxSize={8}

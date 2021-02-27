@@ -7,7 +7,7 @@ import { useLayoutStyles } from 'starterUtils/hooks'
 import ParsedContent from 'starterUtils/ParsedContent'
 
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+
 import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
@@ -17,7 +17,7 @@ const Page = ({ page, ctx }) => {
     content,
     slug,
     uri,
-    headlesswp: { pageTemplate },
+    headlesswp: { pageTemplate, skipTitle },
   } = page
   const {
     containerStyles,
@@ -25,7 +25,7 @@ const Page = ({ page, ctx }) => {
     sidebarPage,
     sidebarWidgets,
   } = useLayoutStyles('page', pageTemplate.toLowerCase())
-  const { skipTitle } = useThemeOptions()
+
   console.log('template', pageTemplate)
 
   const featuredImage =
@@ -66,20 +66,12 @@ const Page = ({ page, ctx }) => {
               }
               mb={{ base: 14, lg: 0 }}
             >
-              {skipTitle &&
-                !skipTitle.includes(slug) &&
-                skipTitle !== 'all' &&
-                pageTemplate !== 'full width' && (
-                  <Heading
-                    as="h1"
-                    marginBottom={10}
-                    textTransform="uppercase"
-                    fontSize="3xl"
-                    textAlign="center"
-                    className="page-title"
-                    dangerouslySetInnerHTML={{ __html: title }}
-                  />
-                )}
+              {!skipTitle && pageTemplate !== 'full width' && (
+                <h1
+                  className="mb-10 text-3xl font-bold text-center uppercase page-title"
+                  dangerouslySetInnerHTML={{ __html: title }}
+                />
+              )}
 
               <Box className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />
