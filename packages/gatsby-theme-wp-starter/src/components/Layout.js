@@ -1,14 +1,12 @@
 import React from 'react'
 import { Footer, Header } from 'starterComponents'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, useColorModeValue as colorMode } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
 import 'starterStyles/wp-styles/styles.scss'
 
 export const Layout = ({ children, page, type = 'page', ...props }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
-  const pageTemplate = page?.template
-    ? page.template.templateName.toLowerCase()
-    : ''
+  const pageTemplate = page?.headlesswp?.pageTemplate
 
   const fullWidthClass = pageTemplate === 'full width' ? 'fullWidth' : ''
   return (
@@ -19,6 +17,9 @@ export const Layout = ({ children, page, type = 'page', ...props }) => {
         '&.fullWidth': {
           '.mainContainer': {
             maxWidth: `100%`,
+            form: {
+              mb: 10,
+            },
             px: 0,
           },
         },

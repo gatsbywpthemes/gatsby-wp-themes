@@ -8,6 +8,10 @@ export const fragments = graphql`
     title
     excerpt
     date
+    headlesswp {
+      pageTemplate
+      skipTitle
+    }
 
     featuredImage {
       node {
@@ -22,9 +26,7 @@ export const fragments = graphql`
         uri
       }
     }
-    template {
-      templateName
-    }
+
     author {
       node {
         name

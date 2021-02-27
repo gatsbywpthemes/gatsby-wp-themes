@@ -67,7 +67,7 @@ const Page = ({ page, ctx }) => {
               }
               mb={{ base: 14, lg: 0 }}
             >
-              {!skipTitle && (
+              {!skipTitle && pageTemplate !== 'full width' && (
                 <Heading
                   as="h1"
                   marginBottom={10}

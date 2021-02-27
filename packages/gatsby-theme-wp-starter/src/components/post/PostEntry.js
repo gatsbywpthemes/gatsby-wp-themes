@@ -22,6 +22,7 @@ export const PostEntry = ({
   ...props
 }) => {
   const withImgClass = post.featuredImage ? 'withImg' : ''
+  const { pageTemplate } = post.headlesswp
   const media = post.featuredImage
     ? post.featuredImage.node.localFile.childImageSharp.original.src
     : null
@@ -41,7 +42,14 @@ export const PostEntry = ({
         post={post}
         className="entry-media"
         imageLoading={isFirst ? 'eager' : 'lazy'}
-        sx={{ '.gatsby-image-wrapper': { borderTopRadius: 'lg' } }}
+        sx={{
+          '.gatsby-image-wrapper':
+            pageTemplate === 'full width'
+              ? { height: 500 }
+              : {
+                  borderTopRadius: 'lg',
+                },
+        }}
       />
 
       <Card
