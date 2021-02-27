@@ -25,6 +25,7 @@ const DEFAULT_OPTIONS = {
   logo: null,
   darkModeLogo: null,
   developLimit: null,
+  SocialFollowLinks: [],
 }
 
 module.exports = DEFAULT_OPTIONS
