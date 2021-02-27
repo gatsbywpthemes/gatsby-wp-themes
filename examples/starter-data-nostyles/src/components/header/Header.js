@@ -5,7 +5,7 @@ import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hook
 import { SearchForm } from '../search'
 
 export const Header = () => {
-  const { search } = useThemeOptions()
+  const { search, menuName } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -27,7 +27,7 @@ export const Header = () => {
 
         <SiteBranding title={title} />
 
-        <Menu />
+        <Menu menuName={menuName} />
       </div>
     </header>
   )

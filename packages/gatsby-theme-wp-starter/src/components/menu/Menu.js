@@ -6,6 +6,7 @@ import { MenuItem, SubMenu, flatListToHierarchical } from 'starterComponents'
 
 export const Menu = ({ location = 'PRIMARY', orientation, ...props }) => {
   const menuEdges = useMenusQuery()
+  console.log('menuEdges', menuEdges)
   const menuEdge = menuEdges.find((n) => n.locations.includes(location))
   const menuItems = menuEdge ? menuEdge.menuItems : null
 

@@ -22,6 +22,7 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
       slideMenu: { widgets },
     },
     addWordPressSearch,
+    menuName,
   } = useThemeOptions()
   const menuBtn = useRef()
   const { setSearch, escInSearch } = useContext(SearchContext)
@@ -59,7 +60,7 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
             <DrawerCloseButton sx={{ right: 6 }} />
             <DrawerBody px={[8, 12]} py="12">
               {addWordPressSearch && <SearchForm />}
-              <Menu />
+              <Menu menuName={menuName} />
               <WidgetsList widgets={widgets} />
             </DrawerBody>
           </DrawerContent>

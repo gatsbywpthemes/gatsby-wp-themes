@@ -6,6 +6,8 @@ const config = {
   // paginationPrefix: 'page',
   // addWordPressComments: 1,
 
+  // menuName: "main",
+
   // addSiteMap: false,
   // siteMapOptions: {},
   // animation: false,
@@ -51,6 +53,7 @@ const config = {
 
   // addSiteMap: false,
   // siteMapOptions: {},
+  // developLimit: 4,
 }
 
 module.exports = config
