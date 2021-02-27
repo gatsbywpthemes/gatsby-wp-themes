@@ -19,6 +19,7 @@ module.exports = (options) => {
     siteMapOptions,
     favicon,
     manifestOptions,
+    developLimit,
   } = mergedOptions
 
   const url = slashes(wordPressUrl)
@@ -39,7 +40,7 @@ module.exports = (options) => {
       resolve: 'gatsby-plugin-image',
     },
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
         url: `${url}/graphql`,
         verbose: true,
@@ -47,6 +48,19 @@ module.exports = (options) => {
         html: {
           imageQuality: 60,
         },
+        presets: [
+          {
+            presetName: `DEVELOP`,
+            useIf: () => process.env.NODE_ENV === `development`,
+            options: {
+              type: {
+                __all: {
+                  limit: developLimit,
+                },
+              },
+            },
+          },
+        ],
       },
     },
     {
