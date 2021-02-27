@@ -7,8 +7,10 @@ import { ArchiveTitle, PostsList, Pagination } from 'starterComponents'
 import { useLayoutWidth } from 'starterUtils/hooks'
 
 export const ArchiveContent = ({ posts, ctx, name }) => {
-  const { archiveSidebar, sidebarWidgets } = useThemeOptions()
-
+  const {
+    archiveSidebarPosition: archiveSidebar,
+    widgetAreas: { sidebarWidgets },
+  } = useThemeOptions()
   const [archiveWidth, xl] = useLayoutWidth('archive')
 
   const containerStyles =

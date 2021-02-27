@@ -1,32 +1,32 @@
-import React from 'react'
-import { Flex, Box, Heading } from '@chakra-ui/react'
-import { Container, Card } from 'starterUiComponents'
-import { Layout, Sidebar } from 'starterComponents'
-import { ActivatePageScripts } from 'starterUtils'
-import { useLayoutStyles } from 'starterUtils/hooks'
-import ParsedContent from 'starterUtils/ParsedContent'
+import React from "react"
+import { Flex, Box, Heading } from "@chakra-ui/react"
+import { Container, Card } from "starterUiComponents"
+import { Layout, Sidebar } from "starterComponents"
+import { ActivatePageScripts } from "starterUtils"
+import { useLayoutStyles } from "starterUtils/hooks"
+import ParsedContent from "starterUtils/ParsedContent"
 
-import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { gutenbergStyles } from 'starterStyles/gutenbergStyles'
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
+import { gutenbergStyles } from "starterStyles/gutenbergStyles"
 
 const Page = ({ page, ctx }) => {
   const {
     title,
     isFrontPage,
     content,
-    slug,
     uri,
-    template: { templateName },
+    headlesswp: { pageTemplate, skipTitle },
   } = page
+
   const {
     containerStyles,
     sidebarSide,
     sidebarPage,
     sidebarWidgets,
-  } = useLayoutStyles('page', templateName.toLowerCase())
-  const { skipTitle } = useThemeOptions()
-  console.log('template', templateName)
+  } = useLayoutStyles("page", pageTemplate)
+
+  console.log(useLayoutStyles("page", pageTemplate))
+  console.log("template", pageTemplate)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -50,7 +50,7 @@ const Page = ({ page, ctx }) => {
         <Flex
           sx={{
             ...sidebarSide,
-            flexWrap: { base: 'wrap', lg: 'nowrap' },
+            flexWrap: { base: "wrap", lg: "nowrap" },
             alignItems: `flex-start`,
           }}
         >
@@ -58,7 +58,7 @@ const Page = ({ page, ctx }) => {
             <Card
               className="content page-content"
               sx={
-                templateName === 'Full Width' && {
+                pageTemplate === "full width" && {
                   p: 0,
                   borderRadius: 0,
                   boxShadow: 0,
@@ -66,20 +66,17 @@ const Page = ({ page, ctx }) => {
               }
               mb={{ base: 14, lg: 0 }}
             >
-              {skipTitle &&
-                !skipTitle.includes(slug) &&
-                skipTitle !== 'all' &&
-                templateName !== 'Full Width' && (
-                  <Heading
-                    as="h1"
-                    marginBottom={10}
-                    textTransform="uppercase"
-                    fontSize="3xl"
-                    textAlign="center"
-                    className="page-title"
-                    dangerouslySetInnerHTML={{ __html: title }}
-                  />
-                )}
+              {!skipTitle && pageTemplate !== "full width" && (
+                <Heading
+                  as="h1"
+                  marginBottom={10}
+                  textTransform="uppercase"
+                  fontSize="3xl"
+                  textAlign="center"
+                  className="page-title"
+                  dangerouslySetInnerHTML={{ __html: title }}
+                />
+              )}
 
               <Box className="entry-content" sx={{ ...gutenbergStyles }}>
                 <ActivatePageScripts />
