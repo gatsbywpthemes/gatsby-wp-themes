@@ -67,8 +67,13 @@ const Page = ({ page, ctx }) => {
               mb={{ base: 14, lg: 0 }}
             >
               {!skipTitle && pageTemplate !== 'full width' && (
-                <h1
-                  className="mb-10 text-3xl font-bold text-center uppercase page-title"
+                <Heading
+                  as="h1"
+                  marginBottom={10}
+                  textTransform="uppercase"
+                  fontSize="3xl"
+                  textAlign="center"
+                  className="page-title"
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               )}
