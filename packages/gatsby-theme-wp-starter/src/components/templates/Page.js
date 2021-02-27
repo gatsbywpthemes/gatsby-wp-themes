@@ -17,16 +17,16 @@ const Page = ({ page, ctx }) => {
     content,
     slug,
     uri,
-    template: { templateName },
+    headlesswp: { pageTemplate },
   } = page
   const {
     containerStyles,
     sidebarSide,
     sidebarPage,
     sidebarWidgets,
-  } = useLayoutStyles('page', templateName.toLowerCase())
+  } = useLayoutStyles('page', pageTemplate.toLowerCase())
   const { skipTitle } = useThemeOptions()
-  console.log('template', templateName)
+  console.log('template', pageTemplate)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -58,7 +58,7 @@ const Page = ({ page, ctx }) => {
             <Card
               className="content page-content"
               sx={
-                templateName === 'Full Width' && {
+                pageTemplate === 'full width' && {
                   p: 0,
                   borderRadius: 0,
                   boxShadow: 0,
@@ -69,7 +69,7 @@ const Page = ({ page, ctx }) => {
               {skipTitle &&
                 !skipTitle.includes(slug) &&
                 skipTitle !== 'all' &&
-                templateName !== 'Full Width' && (
+                pageTemplate !== 'full width' && (
                   <Heading
                     as="h1"
                     marginBottom={10}
