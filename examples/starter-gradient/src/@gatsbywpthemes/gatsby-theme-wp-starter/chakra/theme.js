@@ -1,8 +1,8 @@
 import { extendTheme } from "@chakra-ui/react"
 
-import themeBase from "@gatsbywpthemes/gatsby-theme-wp-starter/src/@chakra-ui/gatsby-plugin/theme"
-import colorsSettings from "../../../configColors"
-import typographySettings from "../../../configTypography"
+import themeBase from "@gatsbywpthemes/gatsby-theme-wp-starter/src/chakra/theme"
+import colorsSettings from "../../../../configColors"
+import typographySettings from "../../../../configTypography"
 import components from "./components"
 import textStyles from "./textStyles"
 import layerStyles from "./layerStyles"

@@ -1,4 +1,4 @@
-import themeTextStyles from "@gatsbywpthemes/gatsby-theme-wp-starter/src/@chakra-ui/gatsby-plugin/textStyles"
+import themeTextStyles from "@gatsbywpthemes/gatsby-theme-wp-starter/src/chakra/textStyles"
 
 const textStyles = {
   ...themeTextStyles,

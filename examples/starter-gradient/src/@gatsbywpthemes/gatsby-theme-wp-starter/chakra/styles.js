@@ -1,5 +1,5 @@
 import { mode } from "@chakra-ui/theme-tools"
-import typographySettings from "../../../configTypography"
+import typographySettings from "../../../../configTypography"
 
 const styles = {
   global: (props) => {
