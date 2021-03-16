@@ -18,9 +18,9 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "html-react-parser": "^0.14.0",
-    "mapbox-gl": "^1.12.0",
-    "react-map-gl": "^5.2.8"
+    "html-react-parser": "^1.2.4",
+    "mapbox-gl": "^2.1.1",
+    "react-map-gl": "^6.1.10"
   },
   "peerDependencies": {
     "gatsby": "^2.24.63",

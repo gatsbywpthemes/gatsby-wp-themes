@@ -13,7 +13,7 @@
     "theme-ui": "^0.3.1"
   },
   "dependencies": {
-    "algoliasearch": "^4.5.1",
+    "algoliasearch": "^4.8.6",
     "gatsby-plugin-algolia": "^0.17.0",
     "normalize-path": "^3.0.0",
     "react-instantsearch-dom": "^6.7.0",

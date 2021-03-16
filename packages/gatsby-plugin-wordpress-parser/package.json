@@ -18,7 +18,7 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "@babel/runtime": "^7.12.13",
+    "@babel/runtime": "^7.13.10",
     "cheerio": "^1.0.0-rc.5",
     "gatsby-plugin-sharp": "^3.0.1",
     "gatsby-source-filesystem": "^3.0.0",
