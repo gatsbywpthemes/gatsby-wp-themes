@@ -25,7 +25,7 @@
     "simple-react-lightbox": "3.6.1"
   },
   "peerDependencies": {
-    "gatsby": "^2.32.0",
+    "gatsby": "^3.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.32.0",
+    "gatsby": "^3.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -14,11 +14,11 @@
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "*",
     "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "*",
     "autoprefixer": "^10.2.4",
-    "gatsby-plugin-postcss": "^3.7.0",
+    "gatsby-plugin-postcss": "^4.0.0",
     "postcss": "^8.2.6",
     "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.20"
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.21"
   }
 }

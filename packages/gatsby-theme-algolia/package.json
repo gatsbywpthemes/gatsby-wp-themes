@@ -6,15 +6,15 @@
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.24.63",
     "@gatsbywpthemes/gatsby-theme-blog-data": "*",
+    "gatsby": "^2.24.63",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "theme-ui": "^0.3.1"
   },
   "dependencies": {
     "algoliasearch": "^4.5.1",
-    "gatsby-plugin-algolia": "^0.12.1",
+    "gatsby-plugin-algolia": "^0.17.0",
     "normalize-path": "^3.0.0",
     "react-instantsearch-dom": "^6.7.0",
     "striptags": "^3.1.1"
