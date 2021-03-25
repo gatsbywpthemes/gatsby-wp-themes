@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import Category from 'dataComponents/Category'
+import Category from '../../../components/Category'
 
 export default Category
 

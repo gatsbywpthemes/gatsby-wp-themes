@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import SinglePost from 'dataComponents/Post'
+import SinglePost from '../../../components/Post'
 
 export default SinglePost
 
