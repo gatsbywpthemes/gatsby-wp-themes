@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
-import User from 'dataComponents/User'
+import User from '../../../components/User'
+
 export default User
 
 export const pageQuery = graphql`

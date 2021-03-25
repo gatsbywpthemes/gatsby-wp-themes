@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import Blog from 'dataComponents/Posts'
+import Blog from '../../../components/Posts'
 
 export default Blog
 
