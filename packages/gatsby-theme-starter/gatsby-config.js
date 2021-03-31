@@ -1,5 +1,5 @@
-require('dotenv').config()
-const path = require('path')
+require("dotenv").config()
+const path = require("path")
 module.exports = (options) => {
   const mergedOptions = {
     addColorModes: true,
@@ -16,29 +16,29 @@ module.exports = (options) => {
   const plugins = [
     `gatsby-plugin-postcss`,
     {
-      resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
+      resolve: `@gatsbywpthemes/gatsby-theme-starter-dev`,
       options: mergedOptions,
     },
     {
-      resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
+      resolve: "@gatsbywpthemes/gatsby-plugin-wp-seo",
       options: {
         siteUrl: options.siteUrl,
       },
     },
-    '@chakra-ui/gatsby-plugin',
+    "@chakra-ui/gatsby-plugin",
     {
-      resolve: 'gatsby-plugin-root-import',
+      resolve: "gatsby-plugin-root-import",
       options: {
-        starterSrc: path.join(__dirname, 'src'),
-        starterPages: path.join(__dirname, 'src/pages'),
-        starterStyles: path.join(__dirname, 'src/styles'),
-        starterComponents: path.join(__dirname, 'src/components'),
+        starterSrc: path.join(__dirname, "src"),
+        starterPages: path.join(__dirname, "src/pages"),
+        starterStyles: path.join(__dirname, "src/styles"),
+        starterComponents: path.join(__dirname, "src/components"),
         starterUiComponents: path.join(
           __dirname,
-          'src/components/ui-components'
+          "src/components/ui-components"
         ),
-        starterUtils: path.join(__dirname, 'src/utils'),
-        starterThemeConfig: path.join(__dirname, 'themeConfig'),
+        starterUtils: path.join(__dirname, "src/utils"),
+        starterThemeConfig: path.join(__dirname, "themeConfig"),
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -51,7 +51,7 @@ module.exports = (options) => {
     },
 
     {
-      resolve: '@gatsbywpthemes/gatsby-plugin-wpcf7',
+      resolve: "@gatsbywpthemes/gatsby-plugin-wpcf7",
       options: {
         wordPressUrl: process.env.GATSBY_WP_URL,
       },
@@ -72,11 +72,11 @@ module.exports = (options) => {
   if (options.fonts?.length) {
     const googleFonts = []
     options.fonts.forEach((font) => {
-      const [googleFont, variantsString] = font.split(':')
+      const [googleFont, variantsString] = font.split(":")
 
       googleFonts.push({
         family: googleFont,
-        variants: variantsString ? variantsString.split(',') : undefined,
+        variants: variantsString ? variantsString.split(",") : undefined,
       })
     })
 
@@ -86,16 +86,16 @@ module.exports = (options) => {
         fonts: {
           google: googleFonts,
         },
-        formats: ['woff2', 'woff'],
+        formats: ["woff2", "woff"],
         useMinify: true,
-        display: 'swap',
+        display: "swap",
       },
     })
   }
 
   if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
     plugins.push({
-      resolve: 'gatsby-plugin-mailchimp',
+      resolve: "gatsby-plugin-mailchimp",
       options: {
         endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
       },
@@ -107,8 +107,8 @@ module.exports = (options) => {
       options: {
         threshold: 0.1,
         once: true,
-        rootMargin: '0% 50%',
-        animateClassName: 'sal-animate',
+        rootMargin: "0% 50%",
+        animateClassName: "sal-animate",
         selector: `[data-sal]`,
       },
     })

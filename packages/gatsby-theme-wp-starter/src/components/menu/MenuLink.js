@@ -8,7 +8,10 @@ export const MenuLink = ({ menuItem, ...props }) => {
   const { wordPressUrl } = useThemeOptions()
   let url = menuItem.url
 
-  if (url.startsWith('https://') || url.startsWith('http://')) {
+  if (
+    !url.includes(wordPressUrl) &&
+    (url.startsWith('https://') || url.startsWith('http://'))
+  ) {
     const targetRelAttrs =
       menuItem.target === '_blank'
         ? { target: '_blank', rel: 'noopener noreferrer' }
