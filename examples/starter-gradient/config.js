@@ -18,6 +18,7 @@ const config = {
   fonts: ["Baumans", "Coda"],
   // addSiteMap: false,
   // siteMapOptions: {},
+  overrideWPColors: true,
 }
 
 module.exports = config
