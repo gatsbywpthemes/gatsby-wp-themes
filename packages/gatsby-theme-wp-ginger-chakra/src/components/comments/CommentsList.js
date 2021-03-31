@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Box, chakra } from '@chakra-ui/react'
 import { CommentForm, Comment } from 'gingerThemeComponents'
 import { CommentsListContext } from 'gingerThemeComponents/comments/context'
