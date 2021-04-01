@@ -1,12 +1,14 @@
-import React, { Fragment, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Box, chakra } from '@chakra-ui/react'
 import { CommentForm, Comment } from 'gingerThemeComponents'
-import { CommentsListContext } from 'gingerThemeComponents/comments/context'
+import {
+  CommentsListContext,
+  ActiveCommentContext,
+} from 'gingerThemeComponents/comments/context'
 
 export const CommentsList = () => {
-  const { comments, loading, error, activeComment } = useContext(
-    CommentsListContext
-  )
+  const { comments, loading, error } = useContext(CommentsListContext)
+  const activeComment = useContext(ActiveCommentContext)
   if (loading) return <p>Loading comments&hellip;</p>
   if (error) return <p>Some errors occur.</p>
   return (
@@ -24,17 +26,26 @@ export const CommentsList = () => {
               .filter((el) => el.parent === null)
               .map((comment) => (
                 <li key={comment.id}>
-                  <Comment withReply={true} comment={comment}></Comment>
+                  <Comment
+                    activeComment={activeComment}
+                    withReply={true}
+                    comment={comment}
+                  ></Comment>
                   {comment.replies.nodes.length > 0 && (
                     <ul>
                       {comment.replies.nodes.map((reply) => (
                         <li key={reply.id}>
-                          <Comment withReply={true} comment={reply}></Comment>
+                          <Comment
+                            activeComment={activeComment}
+                            withReply={true}
+                            comment={reply}
+                          ></Comment>
                           {reply.replies.nodes.length > 0 && (
                             <ul>
                               {reply.replies.nodes.map((replyRe) => (
                                 <Box as="li" key={replyRe.id}>
                                   <Comment
+                                    activeComment={activeComment}
                                     withReply={false}
                                     comment={replyRe}
                                   />

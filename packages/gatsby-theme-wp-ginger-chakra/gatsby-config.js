@@ -26,10 +26,6 @@ module.exports = (options) => {
         gingerThemeUtils: path.join(__dirname, 'src/utils'),
       },
     },
-    /*{
-      resolve: '@chakra-ui/gatsby-plugin',
-      options: {},
-    },*/
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,

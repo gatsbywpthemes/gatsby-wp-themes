@@ -15,10 +15,14 @@ import {
   CommentNotes,
 } from 'gingerThemeComponents'
 import { inputFields } from './inputfields'
-import { CommentsListContext } from 'gingerThemeComponents/comments/context'
+import {
+  ActiveCommentContext,
+  SetActiveCommentContext,
+} from 'gingerThemeComponents/comments/context'
 
 export const CommentForm = () => {
-  const { activeComment, cancelReply } = useContext(CommentsListContext)
+  const activeComment = useContext(ActiveCommentContext)
+  const setActiveComment = useContext(SetActiveCommentContext)
   const { register, errors, commentStatus, onSubmit } = useCommentForm()
 
   return (
@@ -37,7 +41,7 @@ export const CommentForm = () => {
               ml="auto"
               color="inherit"
               className="comment-button-cancel"
-              onClick={cancelReply}
+              onClick={() => setActiveComment(0)}
             >
               <span>Cancel</span>
             </Button>
