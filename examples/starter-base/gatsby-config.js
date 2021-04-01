@@ -26,14 +26,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-root-import",
       options: {
-        starterSrc: "@gatsbywpthemes/gatsby-theme-wp-base/src",
-        starterPages: "@gatsbywpthemes/gatsby-theme-wp-base/src/pages",
-        starterStyles: "@gatsbywpthemes/gatsby-theme-wp-base/src/styles",
-        starterComponents:
-          "@gatsbywpthemes/gatsby-theme-wp-base/src/components",
-        starterUiComponents:
+        baseSrc: "@gatsbywpthemes/gatsby-theme-wp-base/src",
+        basePages: "@gatsbywpthemes/gatsby-theme-wp-base/src/pages",
+        baseStyles: "@gatsbywpthemes/gatsby-theme-wp-base/src/styles",
+        baseComponents: "@gatsbywpthemes/gatsby-theme-wp-base/src/components",
+        baseUiComponents:
           "@gatsbywpthemes/gatsby-theme-wp-base/src/components/ui-components",
-        starterUtils: "@gatsbywpthemes/gatsby-theme-wp-base/src/utils",
+        baseUtils: "@gatsbywpthemes/gatsby-theme-wp-base/src/utils",
       },
     },
   ],

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
-import { Container } from 'starterUiComponents'
-import { Layout, PostEntry, Sidebar, Comments } from 'starterComponents'
+import { Container } from 'baseUiComponents'
+import { Layout, PostEntry, Sidebar, Comments } from 'baseComponents'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
-import { useLayoutStyles } from 'starterUtils/hooks'
+import { useLayoutStyles } from 'baseUtils/hooks'
 
 const Post = ({ post, ctx }) => {
   const {

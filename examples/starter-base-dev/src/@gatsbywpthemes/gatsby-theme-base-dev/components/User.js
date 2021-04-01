@@ -1,6 +1,6 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 import React from "react"
-import User from "starterComponents/templates/User"
+import User from "baseComponents/templates/User"
 
 export default ({ data, pageContext }) => {
   return (

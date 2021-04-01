@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { BorderTitle } from 'starterUiComponents'
+import { BorderTitle } from 'baseUiComponents'
 import {
   Input,
   Button,

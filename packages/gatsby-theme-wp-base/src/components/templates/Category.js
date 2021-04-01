@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, ArchiveContent } from 'starterComponents'
+import { Layout, ArchiveContent } from 'baseComponents'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
 const Category = ({ category, ctx }) => {

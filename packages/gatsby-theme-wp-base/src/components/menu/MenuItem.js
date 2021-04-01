@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Box } from '@chakra-ui/react'
-import { SubMenu, MenuLink } from 'starterComponents'
+import { SubMenu, MenuLink } from 'baseComponents'
 
 export const MenuItem = ({ menuItem, orientation }) => {
   if (menuItem.children.length) {

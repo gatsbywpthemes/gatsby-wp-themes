@@ -1,7 +1,7 @@
-import React from 'react'
-import { Heading, Flex, useColorModeValue as colorMode } from '@chakra-ui/react'
+import React from "react"
+import { Heading, Flex, useColorModeValue as colorMode } from "@chakra-ui/react"
 
-import { TaxonomyItem } from 'starterComponents'
+import { TaxonomyItem } from "baseComponents"
 
 export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
   const taxonomies = post[taxName].nodes
@@ -17,7 +17,7 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
           fontStyle="italic"
           fontWeight="normal"
           lineHeight="shorter"
-          bg={colorMode('infoBg', 'modes.dark.infoBg')}
+          bg={colorMode("infoBg", "modes.dark.infoBg")}
           px={4}
           py={2}
           mr={4}

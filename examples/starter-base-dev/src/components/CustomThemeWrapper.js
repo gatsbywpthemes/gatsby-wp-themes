@@ -1,8 +1,8 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import customTheme from 'starterSrc/chakra/theme'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import customTheme from "baseSrc/chakra/theme"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
 export const CustomThemeWrapper = ({ children }) => {
   const { overrideWPColors } = useThemeOptions()

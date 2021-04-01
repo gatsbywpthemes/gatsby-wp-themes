@@ -1,6 +1,6 @@
 import React from 'react'
 import { VStack, Link as ChakraLink } from '@chakra-ui/react'
-import { BorderTitle } from 'starterUiComponents'
+import { BorderTitle } from 'baseUiComponents'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 const ALL_CATEGORIES_QUERY = graphql`

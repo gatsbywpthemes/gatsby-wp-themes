@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react'
 import { Box, chakra } from '@chakra-ui/react'
-import { CommentForm, Comment } from 'starterComponents'
-import { CommentsListContext } from 'starterComponents/comments/context'
+import { CommentForm, Comment } from 'baseComponents'
+import { CommentsListContext } from 'baseComponents/comments/context'
 
 export const CommentsList = () => {
   const { comments, loading, error, activeComment } = useContext(

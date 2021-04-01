@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Widget } from 'starterComponents'
+import { Menu, Widget } from 'baseComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 import {

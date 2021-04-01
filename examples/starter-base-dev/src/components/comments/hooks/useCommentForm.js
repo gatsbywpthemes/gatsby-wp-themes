@@ -1,7 +1,7 @@
-import { useState, useContext, useEffect, useRef } from 'react'
-import { useMutation, gql } from '@apollo/client'
-import { useForm } from 'react-hook-form'
-import { CommentsListContext } from 'starterComponents/comments/context'
+import { useState, useContext, useEffect, useRef } from "react"
+import { useMutation, gql } from "@apollo/client"
+import { useForm } from "react-hook-form"
+import { CommentsListContext } from "baseComponents/comments/context"
 
 const commentSubmitQuery = gql`
   mutation(
@@ -43,20 +43,20 @@ export const useCommentForm = () => {
   const [commentStatus, setCommentStatus] = useState(false)
   const [addComment] = useMutation(commentSubmitQuery, {
     onCompleted() {
-      setCommentStatus('success')
+      setCommentStatus("success")
       timeoutRef.current = setTimeout(function () {
         doOnCompleted()
-        setCommentStatus('')
+        setCommentStatus("")
         cancelReply()
       }, 5000)
     },
     onError() {
-      setCommentStatus('error')
+      setCommentStatus("error")
     },
   })
 
   const onSubmit = (data) => {
-    setCommentStatus('loading')
+    setCommentStatus("loading")
     addComment({
       variables: {
         author: data.author,

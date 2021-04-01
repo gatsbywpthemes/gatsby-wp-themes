@@ -1,11 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Menu, SiteBranding, SlideSidebar } from 'starterComponents'
-import { Container } from 'starterUiComponents'
+import { Menu, SiteBranding, SlideSidebar } from 'baseComponents'
+import { Container } from 'baseUiComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
-import { ColorSwitch } from 'starterComponents'
-import { SearchModal } from 'starterComponents'
+import { ColorSwitch } from 'baseComponents'
+import { SearchModal } from 'baseComponents'
 import {
   Box,
   Flex,

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
-import { Container } from 'starterUiComponents'
+import { Container } from 'baseUiComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { Sidebar } from 'starterComponents'
-import { ArchiveTitle, PostsList, Pagination } from 'starterComponents'
-import { useLayoutWidth } from 'starterUtils/hooks'
+import { Sidebar } from 'baseComponents'
+import { ArchiveTitle, PostsList, Pagination } from 'baseComponents'
+import { useLayoutWidth } from 'baseUtils/hooks'
 
 export const ArchiveContent = ({ posts, ctx, name }) => {
   const {

@@ -6,9 +6,9 @@ import {
   CommentAuthor,
   ReplyButton,
   CommentNestingInfo,
-} from 'starterComponents'
+} from 'baseComponents'
 import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
-import { CommentsListContext } from 'starterComponents/comments/context'
+import { CommentsListContext } from 'baseComponents/comments/context'
 
 export const Comment = ({ comment, withReply }) => {
   const { author, date, content, commentId } = comment

@@ -1,5 +1,5 @@
 import React from 'react'
-import { SearchPostsQuery, SearchPagesQuery } from 'starterComponents'
+import { SearchPostsQuery, SearchPagesQuery } from 'baseComponents'
 import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
 
 export const SearchQueries = ({ search, ...props }) => {

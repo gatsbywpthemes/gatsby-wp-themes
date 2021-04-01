@@ -10,7 +10,7 @@ import {
   useColorModeValue as colorMode,
 } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
-import { SearchForm } from 'starterComponents'
+import { SearchForm } from 'baseComponents'
 
 export const SearchModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()

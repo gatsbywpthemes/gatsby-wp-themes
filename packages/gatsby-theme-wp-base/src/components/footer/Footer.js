@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
-import { Container } from 'starterUiComponents'
+import { Container } from 'baseUiComponents'
 
-import { FooterContent } from 'starterComponents'
-import { SocialFollows } from 'starterComponents'
+import { FooterContent } from 'baseComponents'
+import { SocialFollows } from 'baseComponents'
 
 export const Footer = () => (
   <Box

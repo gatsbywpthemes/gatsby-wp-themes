@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
-import { Card } from 'starterUiComponents'
-import { Widget } from 'starterComponents'
+import { Card } from 'baseUiComponents'
+import { Widget } from 'baseComponents'
 
 export const Sidebar = ({ widgets, ...props }) => {
   return (

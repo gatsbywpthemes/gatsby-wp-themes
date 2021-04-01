@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect, useRef } from 'react'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
-import { CommentsListContext } from 'starterComponents/comments/context'
+import { CommentsListContext } from 'baseComponents/comments/context'
 
 const commentSubmitQuery = gql`
   mutation(

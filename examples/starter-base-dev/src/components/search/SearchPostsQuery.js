@@ -1,8 +1,8 @@
-import React from 'react'
-import { Center, Button, Box } from '@chakra-ui/react'
-import { SearchResults } from 'starterComponents'
-import Loader from 'react-spinners/BeatLoader'
-import { useSearchQuery } from './useSearchQuery'
+import React from "react"
+import { Center, Button, Box } from "@chakra-ui/react"
+import { SearchResults } from "baseComponents"
+import Loader from "react-spinners/BeatLoader"
+import { useSearchQuery } from "./useSearchQuery"
 
 export const SearchPostsQuery = ({ search }) => {
   const {
@@ -12,7 +12,7 @@ export const SearchPostsQuery = ({ search }) => {
     clickable,
     loadMore,
     posts,
-  } = useSearchQuery(search, 'POST')
+  } = useSearchQuery(search, "POST")
   if (loading)
     return (
       <Center height="100px">

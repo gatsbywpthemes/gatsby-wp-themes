@@ -10,8 +10,8 @@ import {
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
-import { Collapse } from 'starterUiComponents'
-import { MenuLink, MenuItem } from 'starterComponents'
+import { Collapse } from 'baseUiComponents'
+import { MenuLink, MenuItem } from 'baseComponents'
 
 const SubMenuV = ({ menuItem }) => {
   return (

@@ -12,8 +12,8 @@ import {
 
 import { CommentStatusFeedback } from './index'
 import { inputFields } from './inputfields'
-import { CommentsListContext } from 'starterComponents/comments/context'
-import { useCommentForm } from 'starterComponents/comments/hooks/useCommentForm'
+import { CommentsListContext } from 'baseComponents/comments/context'
+import { useCommentForm } from 'baseComponents/comments/hooks/useCommentForm'
 
 export const CommentForm = () => {
   const { activeComment, cancelReply } = useContext(CommentsListContext)

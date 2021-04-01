@@ -1,6 +1,6 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 import React from "react"
-import Tag from "starterComponents/templates/Tag"
+import Tag from "baseComponents/templates/Tag"
 
 export default ({ data, pageContext }) => {
   return (

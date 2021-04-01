@@ -2,7 +2,7 @@ import React from 'react'
 import { useMenusQuery } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 import { chakra, Stack } from '@chakra-ui/react'
-import { MenuItem, SubMenu, flatListToHierarchical } from 'starterComponents'
+import { MenuItem, SubMenu, flatListToHierarchical } from 'baseComponents'
 
 export const Menu = ({ location = 'PRIMARY', orientation, ...props }) => {
   const menuEdges = useMenusQuery()

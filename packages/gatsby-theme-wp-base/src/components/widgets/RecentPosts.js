@@ -1,6 +1,6 @@
 import React from 'react'
 import { VStack, HStack, Box, Link as ChakraLink } from '@chakra-ui/react'
-import { BorderTitle } from 'starterUiComponents'
+import { BorderTitle } from 'baseUiComponents'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { format } from 'date-fns'

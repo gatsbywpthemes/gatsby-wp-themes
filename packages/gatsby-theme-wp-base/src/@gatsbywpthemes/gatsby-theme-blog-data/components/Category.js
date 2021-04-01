@@ -1,5 +1,5 @@
 import React from 'react'
-import Category from 'starterComponents/templates/Category'
+import Category from 'baseComponents/templates/Category'
 
 export default ({ data, pageContext }) => {
   return (

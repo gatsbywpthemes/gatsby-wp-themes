@@ -1,7 +1,7 @@
 import React from 'react'
 import { Heading, Flex, useColorModeValue as colorMode } from '@chakra-ui/react'
 
-import { TaxonomyItem } from 'starterComponents'
+import { TaxonomyItem } from 'baseComponents'
 
 export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
   const taxonomies = post[taxName].nodes

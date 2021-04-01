@@ -1,7 +1,7 @@
-import React, { Fragment, useContext } from 'react'
-import { Box, chakra } from '@chakra-ui/react'
-import { CommentForm, Comment } from 'starterComponents'
-import { CommentsListContext } from 'starterComponents/comments/context'
+import React, { Fragment, useContext } from "react"
+import { Box, chakra } from "@chakra-ui/react"
+import { CommentForm, Comment } from "baseComponents"
+import { CommentsListContext } from "baseComponents/comments/context"
 
 export const CommentsList = () => {
   const { comments, loading, error, activeComment } = useContext(
@@ -18,7 +18,7 @@ export const CommentsList = () => {
           </Box>
           <chakra.ul
             mb="12"
-            sx={{ ul: { ml: '6' }, li: { listStyle: 'none', mb: '6' } }}
+            sx={{ ul: { ml: "6" }, li: { listStyle: "none", mb: "6" } }}
           >
             {comments.nodes
               .filter((el) => el.parent === null)

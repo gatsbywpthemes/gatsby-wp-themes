@@ -1,7 +1,7 @@
-import React from 'react'
-import { Box } from '@chakra-ui/react'
-import { Card } from 'starterUiComponents'
-import { Widget } from 'starterComponents'
+import React from "react"
+import { Box } from "@chakra-ui/react"
+import { Card } from "baseUiComponents"
+import { Widget } from "baseComponents"
 
 export const Sidebar = ({ widgets, ...props }) => {
   return (
@@ -11,7 +11,7 @@ export const Sidebar = ({ widgets, ...props }) => {
           {widgets.map((widget, i) => (
             <Box
               key={i}
-              sx={{ '.widget': { my: 10 } }}
+              sx={{ ".widget": { my: 10 } }}
               data-sal="slide-up"
               data-sal-duration="1000"
               data-sal-easing="ease"

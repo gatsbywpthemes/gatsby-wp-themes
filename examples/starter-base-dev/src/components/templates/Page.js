@@ -1,13 +1,13 @@
 import React from "react"
 import { Flex, Box, Heading } from "@chakra-ui/react"
-import { Container, Card } from "starterUiComponents"
-import { Layout, Sidebar } from "starterComponents"
-import { ActivatePageScripts } from "starterUtils"
-import { useLayoutStyles } from "starterUtils/hooks"
-import ParsedContent from "starterUtils/ParsedContent"
+import { Container, Card } from "baseUiComponents"
+import { Layout, Sidebar } from "baseComponents"
+import { ActivatePageScripts } from "baseUtils"
+import { useLayoutStyles } from "baseUtils/hooks"
+import ParsedContent from "baseUtils/ParsedContent"
 
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
-import { gutenbergStyles } from "starterStyles/gutenbergStyles"
+import { gutenbergStyles } from "baseStyles/gutenbergStyles"
 
 const Page = ({ page, ctx }) => {
   const {

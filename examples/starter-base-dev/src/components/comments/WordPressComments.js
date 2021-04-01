@@ -1,8 +1,8 @@
-import React from 'react'
-import { CommentsList } from 'starterComponents'
-import { Box, Container } from '@chakra-ui/react'
-import { useCommentsList } from 'starterComponents/comments/hooks/useCommentsList'
-import { CommentsListContext } from 'starterComponents/comments/context'
+import React from "react"
+import { CommentsList } from "baseComponents"
+import { Box, Container } from "@chakra-ui/react"
+import { useCommentsList } from "baseComponents/comments/hooks/useCommentsList"
+import { CommentsListContext } from "baseComponents/comments/context"
 
 export const WordPressComments = ({ post }) => {
   const commentsFromQuery = useCommentsList(post)

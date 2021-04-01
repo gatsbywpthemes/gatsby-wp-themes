@@ -5,7 +5,7 @@ import {
   RecentPosts,
   Newsletter,
   SocialFollows,
-} from 'starterComponents'
+} from 'baseComponents'
 import { DarkMode } from '@chakra-ui/react'
 
 export const Widget = ({ widget, colorBg }) => {

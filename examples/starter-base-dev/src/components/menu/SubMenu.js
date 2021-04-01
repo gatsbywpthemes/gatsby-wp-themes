@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   chakra,
   Box,
@@ -7,11 +7,11 @@ import {
   MenuItem as SubMenuItem,
   MenuList,
   Button,
-} from '@chakra-ui/react'
-import { ChevronDownIcon } from '@chakra-ui/icons'
+} from "@chakra-ui/react"
+import { ChevronDownIcon } from "@chakra-ui/icons"
 
-import { Collapse } from 'starterUiComponents'
-import { MenuLink, MenuItem } from 'starterComponents'
+import { Collapse } from "baseUiComponents"
+import { MenuLink, MenuItem } from "baseComponents"
 
 const SubMenuV = ({ menuItem }) => {
   return (
@@ -39,7 +39,7 @@ const SubMenuH = ({ menuItem }) => {
         className="menu-item"
         variant="unstyled"
         rightIcon={<ChevronDownIcon />}
-        _hover={{ color: 'primary' }}
+        _hover={{ color: "primary" }}
       >
         {menuItem.label}
       </MenuButton>
@@ -55,7 +55,7 @@ const SubMenuH = ({ menuItem }) => {
 }
 
 export const SubMenu = ({ menuItem, orientation }) => {
-  return orientation === 'H' ? (
+  return orientation === "H" ? (
     <SubMenuH menuItem={menuItem} />
   ) : (
     <SubMenuV menuItem={menuItem} />

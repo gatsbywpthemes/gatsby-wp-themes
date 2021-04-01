@@ -10,8 +10,8 @@ import {
   ReadMoreButton,
   PrevNextPostNavigation,
   SocialShare,
-} from 'starterComponents'
-import { Card } from 'starterUiComponents'
+} from 'baseComponents'
+import { Card } from 'baseUiComponents'
 import normalize from 'normalize-path'
 
 export const PostEntry = ({

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Center, Button, Box } from '@chakra-ui/react'
-import { SearchResults } from 'starterComponents'
+import { SearchResults } from 'baseComponents'
 import Loader from 'react-spinners/BeatLoader'
 import { useSearchQuery } from './useSearchQuery'
 

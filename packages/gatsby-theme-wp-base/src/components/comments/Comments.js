@@ -1,6 +1,6 @@
 import React from 'react'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { WordPressComments, DisqusComments } from 'starterComponents'
+import { WordPressComments, DisqusComments } from 'baseComponents'
 
 export const Comments = ({ post }) => {
   const { addWordPressComments, disqus } = useThemeOptions()

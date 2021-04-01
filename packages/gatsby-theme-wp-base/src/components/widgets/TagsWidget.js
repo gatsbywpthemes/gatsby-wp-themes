@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Box, chakra } from '@chakra-ui/react'
-import { BorderTitle } from 'starterUiComponents'
+import { BorderTitle } from 'baseUiComponents'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 const ALL_TAGS_QUERY = graphql`

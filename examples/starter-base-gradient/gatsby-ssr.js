@@ -1,6 +1,6 @@
 // import React from 'react'
 
-// import { CustomThemeWrapper } from 'starterComponents/CustomThemeWrapper'
+// import { CustomThemeWrapper } from 'baseComponents/CustomThemeWrapper'
 // console.log(CustomThemeWrapper)
 // export const wrapPageElement = ({ element }) => (
 //   <CustomThemeWrapper>{element}</CustomThemeWrapper>

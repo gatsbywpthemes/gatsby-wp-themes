@@ -29,16 +29,13 @@ module.exports = (options) => {
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
-        starterSrc: path.join(__dirname, 'src'),
-        starterPages: path.join(__dirname, 'src/pages'),
-        starterStyles: path.join(__dirname, 'src/styles'),
-        starterComponents: path.join(__dirname, 'src/components'),
-        starterUiComponents: path.join(
-          __dirname,
-          'src/components/ui-components'
-        ),
-        starterUtils: path.join(__dirname, 'src/utils'),
-        starterThemeConfig: path.join(__dirname, 'themeConfig'),
+        baseSrc: path.join(__dirname, 'src'),
+        basePages: path.join(__dirname, 'src/pages'),
+        baseStyles: path.join(__dirname, 'src/styles'),
+        baseComponents: path.join(__dirname, 'src/components'),
+        baseUiComponents: path.join(__dirname, 'src/components/ui-components'),
+        baseUtils: path.join(__dirname, 'src/utils'),
+        baseThemeConfig: path.join(__dirname, 'themeConfig'),
       },
     },
     `gatsby-plugin-react-helmet`,

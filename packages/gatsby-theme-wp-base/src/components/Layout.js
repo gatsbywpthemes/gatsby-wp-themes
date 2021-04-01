@@ -1,8 +1,8 @@
 import React from 'react'
-import { Footer, Header } from 'starterComponents'
+import { Footer, Header } from 'baseComponents'
 import { Box, Flex, useColorModeValue as colorMode } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
-import 'starterStyles/wp-styles/styles.scss'
+import 'baseStyles/wp-styles/styles.scss'
 
 export const Layout = ({ children, page, type = 'page', ...props }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''

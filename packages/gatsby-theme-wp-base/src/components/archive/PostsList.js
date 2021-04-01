@@ -1,5 +1,5 @@
 import React from 'react'
-import { PostEntry } from 'starterComponents'
+import { PostEntry } from 'baseComponents'
 
 export const PostsList = ({ posts, ...props }) => (
   <div className="posts-list" {...props}>
