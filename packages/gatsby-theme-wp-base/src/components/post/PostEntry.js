@@ -42,6 +42,7 @@ export const PostEntry = ({
         post={post}
         className="entry-media"
         imageLoading={isFirst ? 'eager' : 'lazy'}
+        mb={-2}
         sx={{
           '.gatsby-image-wrapper':
             pageTemplate === 'full width'

@@ -53,8 +53,9 @@ export const Newsletter = (props) => {
                   value={email}
                   border="none"
                   bg={colorMode('nlInputBg', 'modes.dark.nlInputBg')}
+                  color={colorMode('nlcolor', 'modes.dark.nlColor')}
                   onChange={handleChange}
-                  aria-label="Add your Email address to subsribe"
+                  aria-label="Add your Email address to subscribe"
                 />
               </Box>
               <Box width={1 / 3}>

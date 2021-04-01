@@ -47,6 +47,7 @@ module.exports = {
   nlButtonBg: 'black',
   nlButtonColor: 'white',
   nlInputBg: light,
+  nlColor: text,
   /* post */
   infoBg: light,
   archiveTitleBg: blueGray[100],
@@ -57,6 +58,7 @@ module.exports = {
       /* basic colors*/
       bg: dark,
       text: ultraLight,
+      text2: teal[900],
       /* header*/
       headerBg: ultraDark,
       headerColor: ultraLight,
@@ -73,11 +75,12 @@ module.exports = {
       mobileMenuBg: 'black',
       mobileMenuColor: light,
       subMenuBg: primary,
-      subMenucolor: 'white',
+      subMenucolor: teal[900],
       /* newsletter */
       nlButtonBg: primary,
       nlButtonColor: 'white',
       nlInputBg: blueGray[700],
+      nlColor: teal[900],
       /* post*/
       archiveTitleBg: primary,
       infoBg: primary,
