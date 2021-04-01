@@ -10,8 +10,8 @@ export const LinkItem = ({ menuItem }) => {
   let url = menuItem.url
 
   if (
-    (!url.includes(wordPressUrl) && url.startsWith('https://')) ||
-    url.startsWith('http://')
+    !url.includes(wordPressUrl) &&
+    (url.startsWith('https://') || url.startsWith('http://'))
   ) {
     const targetRelAttrs =
       menuItem.target === '_blank'
