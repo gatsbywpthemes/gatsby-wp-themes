@@ -25,7 +25,7 @@ module.exports = (options) => {
         siteUrl: options.siteUrl,
       },
     },
-    '@chakra-ui/gatsby-plugin',
+
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
