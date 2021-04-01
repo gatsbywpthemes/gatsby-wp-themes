@@ -2,7 +2,7 @@ const config = {
   //pathPrefix: "",
   //logo: "icon.svg",
   //darkModeLogo: "icon1.svg",
-  siteUrl: "http://localhost:9001",
+  siteUrl: "https://gatsby-wp-ginger.netlify.app",
   // title: "Blog Title Placeholder",
   // author: "Name Placeholder",
   // description: "Description placeholder",
