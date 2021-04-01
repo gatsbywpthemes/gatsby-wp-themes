@@ -1,4 +1,4 @@
-import themeLayerStyles from "@gatsbywpthemes/gatsby-theme-wp-starter/src/chakra/layerStyles"
+import themeLayerStyles from "@gatsbywpthemes/gatsby-theme-wp-base/src/chakra/layerStyles"
 
 const layerStyles = {
   ...themeLayerStyles,

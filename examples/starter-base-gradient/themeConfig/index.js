@@ -1,5 +1,5 @@
 const merge = require("deepmerge")
-const defaultConfig = require("@gatsbywpthemes/gatsby-theme-wp-starter/themeConfig")
+const defaultConfig = require("@gatsbywpthemes/gatsby-theme-wp-base/themeConfig")
 const colorSettings = require("../configColors")
 const typoSettings = require("../configTypography")
 

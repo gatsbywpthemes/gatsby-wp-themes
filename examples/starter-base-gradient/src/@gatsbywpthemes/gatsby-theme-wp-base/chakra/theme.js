@@ -1,5 +1,5 @@
 import { extendTheme } from "@chakra-ui/react"
-import themeBase from "@gatsbywpthemes/gatsby-theme-wp-starter/src/chakra/theme"
+import themeBase from "@gatsbywpthemes/gatsby-theme-wp-base/src/chakra/theme"
 import colorsSettings from "../../../../configColors"
 import typographySettings from "../../../../configTypography"
 import components from "./shadow/components"
