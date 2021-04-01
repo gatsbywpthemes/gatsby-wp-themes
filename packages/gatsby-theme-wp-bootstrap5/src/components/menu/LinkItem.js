@@ -9,7 +9,10 @@ export const LinkItem = ({ menuItem, sub }) => {
   const itemClass = sub ? 'nav-link text-reset p-2' : 'text-reset nav-link'
   let url = menuItem.url
 
-  if (url.startsWith('https://') || url.startsWith('http://')) {
+  if (
+    !url.includes(wordPressUrl) &&
+    (url.startsWith('https://') || url.startsWith('http://'))
+  ) {
     const targetRelAttrs =
       menuItem.target === '_blank'
         ? { target: '_blank', rel: 'noopener noreferrer' }
