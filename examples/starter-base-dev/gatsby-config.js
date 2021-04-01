@@ -24,7 +24,7 @@ module.exports = {
     `gatsby-plugin-sass`,
 
     {
-      resolve: `@gatsbywpthemes/gatsby-theme-starter-dev`,
+      resolve: `@gatsbywpthemes/gatsby-theme-base-dev`,
       options: {
         ...options,
       },

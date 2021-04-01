@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "starter-new-dev",
+  "name": "starter-base-dev",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,7 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@gatsbywpthemes/gatsby-theme-starter-dev": "*",
+    "@gatsbywpthemes/gatsby-theme-base-dev": "*",
     "autoprefixer": "^10.2.5",
     "gatsby": "^3.0.4",
     "gatsby-plugin-postcss": "^4.0.0",
