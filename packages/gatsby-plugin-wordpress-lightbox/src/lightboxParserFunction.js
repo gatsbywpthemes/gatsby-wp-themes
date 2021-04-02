@@ -1,9 +1,7 @@
 import React from "react"
 import { domToReact, attributesToProps } from "html-react-parser"
+import LightboxWrapper from "./LightboxWrapper"
 
-const ClientSideOnlyLazy = React.lazy(() =>
-  import(/* webpackChunkName: "LightboxWrapper" */ "./LightboxWrapper")
-)
 const findInnerA = (node) => {
   let value = null
   if (node && node.name === "a") {
@@ -71,9 +69,7 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
       }
     },
   }
-  const isSSR = typeof window === "undefined"
   if (
-    !isSSR &&
     node.name &&
     node.attribs &&
     node.attribs.class &&
@@ -81,19 +77,11 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
   ) {
     if (findInnerA(node)) {
       return (
-        <React.Suspense
-          fallback={
-            <div data-parsed-gallery className={node.attribs.class}>
-              {domToReact(node.children, parserOptionsInner)}
-            </div>
-          }
-        >
-          <ClientSideOnlyLazy>
-            <div data-parsed-gallery className={node.attribs.class}>
-              {domToReact(node.children, parserOptionsInner)}
-            </div>
-          </ClientSideOnlyLazy>
-        </React.Suspense>
+        <LightboxWrapper>
+          <div data-parsed-gallery className={node.attribs.class}>
+            {domToReact(node.children, parserOptionsInner)}
+          </div>
+        </LightboxWrapper>
       )
     } else {
       return (
