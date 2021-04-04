@@ -30,6 +30,9 @@ export const styles = {
       '::-webkit-search-cancel-button': {
         WebkitAppearance: 'none',
       },
+      iframe: {
+        maxWidth: '100%',
+      },
       ...base,
     }
   },
