@@ -9,6 +9,7 @@ export const SidebarWrapper = (props) => {
   const { fromSearch, setFromSearch } = useContext(SearchContext)
   const prevFromSearch = useRef(false)
   const opened = useRef()
+
   useEffect(() => {
     prevFromSearch.current = fromSearch
   }, [fromSearch])
