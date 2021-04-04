@@ -8,7 +8,7 @@ export const SidebarWrapper = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { fromSearch, setFromSearch } = useContext(SearchContext)
   const prevFromSearch = useRef(false)
-  const opened = useRef()
+  const opened = useRef(false)
 
   useEffect(() => {
     prevFromSearch.current = fromSearch
@@ -16,13 +16,16 @@ export const SidebarWrapper = (props) => {
 
   useEffect(() => {
     opened.current = isOpen
+    console.log('opened.current = isOpen', opened.current)
   }, [isOpen])
 
   useEffect(() => {
+    console.log('useEffect', opened)
     if (
       opened.current &&
       (!prevFromSearch.current || window.innerWidth < 600)
     ) {
+      console.log(opened.current, isOpen, 'close')
       onClose()
     }
 
