@@ -8,5 +8,6 @@ const config = {
   // instantWPSearch: false,
   // addColorModes: false,
   lightboxSettings: {},
+  overrideWPColors: true,
 }
 module.exports = config
