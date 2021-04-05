@@ -29,7 +29,6 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
       <OpenButton
         ref={menuBtn}
         onClick={() => {
-          console.log('clicked', onOpen)
           onOpen()
         }}
       />
