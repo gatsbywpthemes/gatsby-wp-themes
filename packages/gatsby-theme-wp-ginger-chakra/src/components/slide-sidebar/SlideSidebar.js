@@ -26,7 +26,12 @@ export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
 
   return (
     <>
-      <OpenButton ref={menuBtn} onClick={onOpen} />
+      <OpenButton
+        ref={menuBtn}
+        onClick={() => {
+          onOpen()
+        }}
+      />
       <Drawer
         isOpen={isOpen}
         placement="right"

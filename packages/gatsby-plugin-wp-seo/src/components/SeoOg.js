@@ -21,7 +21,7 @@ export const SeoOg = (props) => {
     numberOfPages
   )
   const ogImage =
-    seo.page?.opengraphImage?.localFile?.childImageSharp.original ||
+    seo.page?.opengraphImage?.localFile?.childImageSharp?.original ||
     featuredImage ||
     (isFrontPage &&
       seo?.general?.openGraph?.frontPage?.image?.localFile?.childImageSharp
