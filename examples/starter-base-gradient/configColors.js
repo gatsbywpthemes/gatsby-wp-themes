@@ -83,7 +83,7 @@ module.exports = {
       /* newsletter */
       nlButtonBg: secondary,
       nlButtonColor: light,
-      nlInputBg: lighten(0.05, dark),
+      nlInputBg: lighten(dark, 0.05),
       /* post*/
       archiveTitleBg: primary,
       infoBg: ultraDark,
