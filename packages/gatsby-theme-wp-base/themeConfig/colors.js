@@ -42,7 +42,7 @@ module.exports = {
   mobileMenuBg: 'black',
   mobileMenuColor: light,
   subMenuBg: 'black',
-  subMenucolor: 'white',
+  subMenuColor: 'white',
   /* newsletter */
   nlButtonBg: 'black',
   nlButtonColor: 'white',
@@ -51,6 +51,7 @@ module.exports = {
   /* post */
   infoBg: light,
   archiveTitleBg: blueGray[100],
+  archiveTitleColor: text,
   cardBg: 'white',
 
   modes: {
@@ -75,14 +76,15 @@ module.exports = {
       mobileMenuBg: 'black',
       mobileMenuColor: light,
       subMenuBg: primary,
-      subMenucolor: teal[900],
+      subMenuColor: teal[900],
       /* newsletter */
       nlButtonBg: primary,
-      nlButtonColor: 'white',
+      nlButtonColor: teal[900],
       nlInputBg: blueGray[700],
       nlColor: teal[900],
       /* post*/
       archiveTitleBg: primary,
+      archiveTitleColor: teal[900],
       infoBg: primary,
       cardBg: ultraDark,
     },

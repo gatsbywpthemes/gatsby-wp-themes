@@ -67,7 +67,7 @@ export const Newsletter = (props) => {
                   _hover={{
                     bg: buttonBgHoverColor,
                   }}
-                  color="white"
+                  color={colorMode('nlButtonColor', 'modes.dark.nlButtonColor')}
                   textTransform="uppercase"
                   fontSize="xs"
                   fontWeight="bold"
