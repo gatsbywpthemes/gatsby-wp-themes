@@ -23,7 +23,7 @@ export const Layout = ({ useContainer = true, children }) => {
   return (
     <>
       <Header />
-      <Box marginLeft={{ md: '6rem' }}>
+      <Box marginLeft={{ md: (theme) => theme.sizes.header }}>
         <MaybeWithContainer useContainer={useContainer}>
           {children}
         </MaybeWithContainer>
