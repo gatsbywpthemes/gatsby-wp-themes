@@ -45,7 +45,7 @@ export const PostEntry = ({
         mb={-2}
         sx={{
           '.gatsby-image-wrapper':
-            pageTemplate === 'full width'
+            pageTemplate === 'full width' && location === 'single'
               ? { height: 500 }
               : {
                   borderTopRadius: 'lg',
