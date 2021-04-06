@@ -21,6 +21,7 @@ module.exports = async ({ actions, graphql }, options) => {
         }
         node {
           uri
+          id
           ${includeYoast ? PageSeoFromWP : ``}
         }
         next {
@@ -52,6 +53,7 @@ module.exports = async ({ actions, graphql }, options) => {
       path: post.node.uri,
       component: postTemplate,
       context: {
+        id: post.node.id,
         uri: post.node.uri,
         prev: post.previous ? post.previous.uri : null,
         next: post.next ? post.next.uri : null,
