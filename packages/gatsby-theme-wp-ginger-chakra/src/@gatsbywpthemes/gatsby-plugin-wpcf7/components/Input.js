@@ -5,7 +5,7 @@ export const Input = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <ChakraInput
       layerStyle="input"
-      className={`${className}`}
+      className={className}
       {...props}
       sx={{
         '&[type="file"]': {

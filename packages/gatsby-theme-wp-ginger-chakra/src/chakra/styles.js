@@ -30,6 +30,13 @@ export const styles = {
       '::-webkit-search-cancel-button': {
         WebkitAppearance: 'none',
       },
+      'textarea:nth-child(n)': {
+        borderRadius: 0,
+      },
+      'input:nth-child(n)': {
+        borderRadius: 0,
+        WebkitAppearance: 'none',
+      },
       iframe: {
         maxWidth: '100%',
       },
