@@ -90,13 +90,12 @@ export const CommentForm = () => {
                     <Input
                       as={Tag}
                       d="block"
-                      ref={register({
+                      {...register(el.name, {
                         required: el.required,
                         pattern: el.pattern,
                       })}
                       type={el.type}
                       id={el.name}
-                      name={el.name}
                       placeholder={el.placeholder}
                       aria-required={el.required}
                       {...textarea}

@@ -41,13 +41,12 @@ export const CommentForm = () => {
                 >
                   <Tag
                     className="form-control"
-                    ref={register({
+                    {...register(el.name, {
                       required: el.required,
                       pattern: el.pattern,
                     })}
                     type={el.type}
                     id={el.name}
-                    name={el.name}
                     placeholder={el.placeholder}
                     aria-required={el.required}
                     style={{ ...style }}

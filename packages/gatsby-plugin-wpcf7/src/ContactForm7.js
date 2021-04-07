@@ -19,7 +19,11 @@ const findId = (node) => {
 const ContactForm7 = ({ formObject }) => {
   const { wordPressUrl } = useWordPressSettings()
   const formId = findId(formObject)
-  const { register, handleSubmit, errors } = useForm()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [alertState, setAlertState] = useState({
     visible: false,

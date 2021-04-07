@@ -69,7 +69,11 @@ export const CommentForm = ({
   cancelReply,
   doOnCompleted,
 }) => {
-  const { register, handleSubmit, errors } = useForm()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
 
   const [addComment] = useMutation(commentSubmitQuery, {
@@ -166,13 +170,12 @@ export const CommentForm = ({
                 <p key={el.name} className={`comment-form-${el.name}`}>
                   <label htmlFor={el.name}>{el.label}</label>
                   <Tag
-                    ref={register({
+                    {...register(el.name, {
                       required: el.required,
                       pattern: el.pattern,
                     })}
                     type={el.type}
                     id={el.name}
-                    name={el.name}
                     placeholder={el.placeholder}
                     aria-required={el.required}
                     {...textarea}

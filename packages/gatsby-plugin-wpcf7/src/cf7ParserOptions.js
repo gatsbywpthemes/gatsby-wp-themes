@@ -130,16 +130,18 @@ const cf7ParserOptions = ({
                     id={domNode.attribs.newName || domNode.attribs.name}
                     className={domNode.attribs.class}
                     type={domNode.attribs.type}
-                    name={domNode.attribs.newName || domNode.attribs.name}
                     placeholder={domNode.attribs.placeholder}
                     min={domNode.attribs.min}
                     max={domNode.attribs.max}
-                    ref={register({
-                      required: !!domNode.attribs["aria-required"],
-                      pattern: pattern(domNode),
-                      min: domNode.attribs.min,
-                      max: domNode.attribs.max,
-                    })}
+                    {...register(
+                      domNode.attribs.newName || domNode.attribs.name,
+                      {
+                        required: !!domNode.attribs["aria-required"],
+                        pattern: pattern(domNode),
+                        min: domNode.attribs.min,
+                        max: domNode.attribs.max,
+                      }
+                    )}
                     defaultValue={domNode.attribs.value || ""}
                     defaultChecked={domNode.attribs.checked || ""}
                   />
@@ -150,9 +152,8 @@ const cf7ParserOptions = ({
         case "select":
           return (
             <Select
-              name={domNode.attribs.name}
               id={domNode.attribs.name}
-              ref={register({
+              {...register(domNode.attribs.name, {
                 required: !!domNode.attribs["aria-required"],
               })}
             >
@@ -169,9 +170,10 @@ const cf7ParserOptions = ({
           return (
             <>
               <Textarea
-                name={domNode.attribs.name}
                 id={domNode.attribs.name}
-                ref={register({ required: !!domNode.attribs["aria-required"] })}
+                {...register(domNode.attribs.name, {
+                  required: !!domNode.attribs["aria-required"],
+                })}
                 rows="6"
                 cols="48"
               />

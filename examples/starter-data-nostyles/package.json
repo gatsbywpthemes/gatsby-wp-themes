@@ -48,7 +48,7 @@
     "react-dom": "^17.0.1",
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^6.15.4",
+    "react-hook-form": "^7.0.4",
     "react-icons": "^4.2.0",
     "react-share": "^4.4.0",
     "react-spinners": "^0.10.6",

@@ -20,7 +20,7 @@
   "dependencies": {
     "@mdx-js/react": "^1.6.22",
     "html-react-parser": "^1.2.4",
-    "react-hook-form": "^6.15.4"
+    "react-hook-form": "^7.0.4"
   },
   "peerDependencies": {
     "gatsby": "^3.0.4",
