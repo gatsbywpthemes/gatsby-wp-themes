@@ -21,7 +21,9 @@ const Post = (props) => {
         yoastSeo={ctx.yoastSeo}
         seo={ctx.seo}
       />
-      <PostEntryFull {...props} />
+      <main>
+        <PostEntryFull {...props} />
+      </main>
     </Layout>
   )
 }

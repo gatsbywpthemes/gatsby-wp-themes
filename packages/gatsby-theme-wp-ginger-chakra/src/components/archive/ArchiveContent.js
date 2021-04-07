@@ -3,7 +3,7 @@ import { PostEntry, Pagination, ArchiveTitle } from 'gingerThemeComponents'
 
 export const ArchiveContent = ({ posts, ctx, name, text = 'Posts from: ' }) => {
   return (
-    <>
+    <main>
       <section>
         {name && <ArchiveTitle text={text} name={name} />}
         {posts.nodes &&
@@ -12,6 +12,6 @@ export const ArchiveContent = ({ posts, ctx, name, text = 'Posts from: ' }) => {
           ))}
       </section>
       <Pagination ctx={ctx} />
-    </>
+    </main>
   )
 }

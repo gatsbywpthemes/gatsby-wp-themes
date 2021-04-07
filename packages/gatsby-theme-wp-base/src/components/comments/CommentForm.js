@@ -112,7 +112,6 @@ export const CommentForm = () => {
                     <Input
                       as={Tag}
                       d="block"
-                      layerStyle="input"
                       ref={register({
                         required: el.required,
                         pattern: el.pattern,

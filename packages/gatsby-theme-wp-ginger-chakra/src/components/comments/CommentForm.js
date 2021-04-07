@@ -6,9 +6,9 @@ import {
   FormErrorMessage,
   FormLabel,
   FormControl,
-  Input,
   Button,
 } from '@chakra-ui/react'
+import { Input } from 'gingerThemeUiComponents/Input'
 import {
   CommentStatusFeedback,
   CommentSubmitButton,
@@ -90,7 +90,6 @@ export const CommentForm = () => {
                     <Input
                       as={Tag}
                       d="block"
-                      layerStyle="input"
                       ref={register({
                         required: el.required,
                         pattern: el.pattern,

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
-import { Textarea as ChakraTextarea } from '@chakra-ui/react'
+import { Textarea as ChakraTextarea } from 'gingerThemeUiComponents/Textarea'
 
 export const Textarea = forwardRef(({ ...props }, ref) => {
-  return <ChakraTextarea layerStyle="input" {...props} ref={ref} />
+  return <ChakraTextarea {...props} ref={ref} />
 })

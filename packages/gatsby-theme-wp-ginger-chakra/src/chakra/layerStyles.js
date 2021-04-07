@@ -4,17 +4,6 @@ export const layerStyles = {
     p: [4, 8],
     borderWidth: ['0.5rem', `0.75rem`],
   },
-  input: {
-    background: 'transparent',
-    borderWidth: 0,
-    borderBottomWidth: '1px',
-    boxShadow: 'currentcolor 0px 0px 0px inset',
-    transition: '0.6s',
-    px: 0,
-    '&:focus': {
-      boxShadow: 'currentcolor 0px -3px 0px inset',
-    },
-  },
   overlay: {
     position: 'relative',
     zIndex: 0,

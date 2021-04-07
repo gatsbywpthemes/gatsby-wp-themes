@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { WidgetContainer } from 'gingerThemeComponents'
-import { Flex, Input, Button } from '@chakra-ui/react'
+import { Flex, Button } from '@chakra-ui/react'
+import { Input } from 'gingerThemeUiComponents/Input'
 
 export const Newsletter = () => {
   const [email, setEmail] = useState('')
@@ -33,7 +34,6 @@ export const Newsletter = () => {
               value={email}
               onChange={handleChange}
               aria-label="Subscribe with your email address"
-              layerStyle="input"
               height="auto"
             />
             <Button type="submit">Subscribe</Button>
