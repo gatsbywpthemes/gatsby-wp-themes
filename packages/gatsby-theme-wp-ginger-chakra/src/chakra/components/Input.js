@@ -6,7 +6,7 @@ export const Input = {
     boxShadow: 'currentcolor 0px 0px 0px inset',
     transition: '0.6s',
     px: 0,
-    minHeight: '100%',
+
     borderRadius: 0,
     WebkitAppearance: 'none',
     '&:focus': {

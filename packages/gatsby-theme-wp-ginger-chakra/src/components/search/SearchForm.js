@@ -33,6 +33,7 @@ export const SearchForm = () => {
               w="full"
               py="2"
               pl="8"
+              h="100%"
               value={value}
               type="search"
               onChange={handleChange}
