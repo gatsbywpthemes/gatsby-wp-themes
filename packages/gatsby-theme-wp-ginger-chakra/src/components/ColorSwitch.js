@@ -9,7 +9,6 @@ export const ColorSwitch = () => {
     <Button
       aria-label="Toggle dark/light mode"
       onClick={toggleColorMode}
-      className={colorMode === 'light' ? 'default-mode' : 'dark-mode'}
       variant="circle"
       sx={{
         color: useThemeColorModeValue('menuButtonColor'),
@@ -31,16 +30,7 @@ export const ColorSwitch = () => {
         },
       }}
     >
-      {colorMode === 'dark' ? (
-        <FiSun sx={{ width: `1.5rem`, height: `1.5rem` }} />
-      ) : (
-        <FiMoon
-          sx={{
-            width: `1.5rem`,
-            height: `1.5rem`,
-          }}
-        />
-      )}
+      {colorMode === 'dark' ? <FiSun /> : <FiMoon />}
     </Button>
   )
 }
