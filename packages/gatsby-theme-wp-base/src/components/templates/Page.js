@@ -10,7 +10,6 @@ import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { gutenbergStyles } from 'baseStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
-  console.log(page)
   const {
     title,
     isFrontPage,
@@ -26,8 +25,6 @@ const Page = ({ page, ctx }) => {
     sidebarPage,
     sidebarWidgets,
   } = useLayoutStyles('page', pageTemplate)
-
-  console.log(useLayoutStyles('page', pageTemplate))
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original

@@ -25,9 +25,6 @@ const Page = ({ page, ctx }) => {
     sidebarWidgets,
   } = useLayoutStyles("page", pageTemplate)
 
-  console.log(useLayoutStyles("page", pageTemplate))
-  console.log("template", pageTemplate)
-
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   return (

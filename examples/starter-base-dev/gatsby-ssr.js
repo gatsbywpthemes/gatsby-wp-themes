@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 
-import { CustomThemeWrapper } from './src/components/CustomThemeWrapper'
-console.log(CustomThemeWrapper)
+import { CustomThemeWrapper } from "./src/components/CustomThemeWrapper"
+c
 export const wrapPageElement = ({ element }) => (
   <CustomThemeWrapper>{element}</CustomThemeWrapper>
 )

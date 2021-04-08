@@ -20,7 +20,6 @@ const Post = ({ post, ctx }) => {
     sidebarPage,
     sidebarWidgets,
   } = useLayoutStyles("post", pageTemplate)
-  console.log(useLayoutStyles("post", pageTemplate))
   return (
     <Layout page={post} type="post">
       <Seo

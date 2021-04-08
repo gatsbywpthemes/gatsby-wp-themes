@@ -1,5 +1,4 @@
 import { galleryStyles } from '@gatsbywpthemes/gatsby-plugin-wordpress-lightbox'
-console.log(galleryStyles)
 export default function (theme) {
   return {
     '& > *': {

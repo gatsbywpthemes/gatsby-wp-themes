@@ -19,7 +19,6 @@ const Page = ({ page, ctx }) => {
   const { skipTitle, sidebarWidgets } = useThemeOptions()
 
   const sidebarPage = pageTemplate?.includes('sidebar')
-  console.log(sidebarPage)
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   return (
