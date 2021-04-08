@@ -1,6 +1,5 @@
 const config = {
   // wordPressUrl: 'https://starter.gatsby-wp.com/',
-  siteUrl: 'https://example.com',
   wordPressUrl: process.env.GATSBY_WP_URL,
   //pathPrefix: '/demo',
   // addSiteMap: false,

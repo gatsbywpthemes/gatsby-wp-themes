@@ -1,5 +1,4 @@
 const config = {
-  siteUrl: "https://example.com/",
   // addSiteMap: false,
   // siteMapOptions: {},
 
@@ -10,8 +9,6 @@ const config = {
     archive: "lg",
   },
   archiveSidebar: "right",
-
-  // siteUrl: "https://example.com",
   // title: 'Blog Title Placeholder',
   // author: 'Name Placeholder',
   // description: 'Description placeholder',

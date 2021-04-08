@@ -5,13 +5,14 @@
  */
 require("dotenv").config()
 const { author, pathPrefix, ...options } = require("./config")
+const siteUrl = process.env.GATSBY_SITE_URL || options.siteUrl
 
 module.exports = {
   pathPrefix,
   siteMetadata: {
     author,
     wordPressUrl: process.env.GATSBY_WP_URL,
-    siteUrl: options.siteUrl,
+    siteUrl,
   },
   plugins: [
     {

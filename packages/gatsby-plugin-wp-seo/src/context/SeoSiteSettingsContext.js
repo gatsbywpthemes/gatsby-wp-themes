@@ -13,11 +13,18 @@ export const SeoSiteSettingsContextProvider = ({ children }) => {
           language
         }
       }
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
     }
   `)
 
   return (
-    <SeoSiteSettingsContext.Provider value={{ ...data.wp.generalSettings }}>
+    <SeoSiteSettingsContext.Provider
+      value={{ ...data.wp.generalSettings, ...data.site.siteMetadata }}
+    >
       {children}
     </SeoSiteSettingsContext.Provider>
   )

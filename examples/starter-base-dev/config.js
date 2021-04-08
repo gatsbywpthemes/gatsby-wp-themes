@@ -1,5 +1,4 @@
 const config = {
-  siteUrl: "https://example.com/",
   // logo: "",
   // darkModeLogo: "",
   //pathPrefix: "",
@@ -14,7 +13,6 @@ const config = {
   },
   archiveSidebar: "right",
 
-  // siteUrl: "https://example.com",
   // title: 'Blog Title Placeholder',
   // author: 'Name Placeholder',
   // description: 'Description placeholder',

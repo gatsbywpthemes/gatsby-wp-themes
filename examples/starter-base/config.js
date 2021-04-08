@@ -1,5 +1,4 @@
 const config = {
-  siteUrl: "https://example.com/",
   // logo: "",
   // darkModeLogo: "",
   //pathPrefix: "",

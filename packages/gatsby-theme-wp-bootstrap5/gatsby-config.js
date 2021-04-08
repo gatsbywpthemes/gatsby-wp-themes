@@ -25,9 +25,6 @@ module.exports = (options) => {
     `gatsby-plugin-sass`,
     {
       resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
-      options: {
-        siteUrl: options.siteUrl,
-      },
     },
     {
       resolve: 'gatsby-plugin-root-import',
