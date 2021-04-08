@@ -1,5 +1,6 @@
-import normalize from "normalize-path"
+import slashes from "remove-trailing-slash"
 
 export const absolutePath = (siteUrl, path) => {
-  return normalize(`${siteUrl}/${path}`)
+  console.log(siteUrl, path)
+  return `${slashes(siteUrl)}${path}`
 }
