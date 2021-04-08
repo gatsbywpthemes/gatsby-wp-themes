@@ -58,6 +58,7 @@ export const Pagination = ({ ctx }) => {
         '.page-numbers.current': { color: colorMode('dark', 'light') },
       }}
       mt={10}
+      overflow="hidden"
       sx={{ '>*': { flex: 1 } }}
     >
       {renderPreviousLink(previousPagePath)}
