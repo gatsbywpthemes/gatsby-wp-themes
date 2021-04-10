@@ -63,7 +63,7 @@ module.exports = (options) => {
    * Conditionally add  plugin
    * to avoid errors on build
    */
-  if (options.fonts?.length) {
+  if (options.fonts && options.fonts.length) {
     const googleFonts = []
     options.fonts.forEach((font) => {
       const [googleFont, variantsString] = font.split(':')
