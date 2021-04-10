@@ -22,7 +22,6 @@ const DEFAULT_OPTIONS = {
     slideMenuWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
     sidebarWidgets: ['Categories', 'RecentPosts', 'Tags', 'SocialFollow'],
   },
-  slideMenuWidgets: [],
   archiveSidebarPosition: 'right',
   pageCreateDebugOutput: false,
   logo: null,
