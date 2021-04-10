@@ -26,7 +26,7 @@ const DEFAULT_OPTIONS = {
   pageCreateDebugOutput: false,
   logo: null,
   darkModeLogo: null,
-  SocialFollowLinks: [],
+  socialFollowLinks: [],
   overrideWPColors: false,
   developLimit: null,
 }
