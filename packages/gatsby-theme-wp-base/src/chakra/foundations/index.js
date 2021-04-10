@@ -16,6 +16,12 @@ const {
   fontFamily,
   fontSize,
 } = config
+const fromTailwindToChakra = (fonts) => {
+  return Object.entries(fonts).reduce((acc, [key, value]) => {
+    acc[key] = value[0]
+    return acc
+  }, {})
+}
 
 const foundations = {
   breakpoints: createBreakpoints(screens),
@@ -25,13 +31,13 @@ const foundations = {
   radii: borderRadius,
   shadows: boxShadow,
   sizes: widths,
-  fontSizes: fontSize[0],
+  fontSizes: fromTailwindToChakra(fontSize),
   fontWeights: fontWeight,
   fonts: fontFamily,
   letterSpacings: letterSpacing,
   lineHeights: lineHeight,
   typography: {
-    fontSizes: fontSize[0],
+    fontSizes: fromTailwindToChakra(fontSize),
     fontWeights: fontWeight,
     lineHeights: lineHeight,
   },
