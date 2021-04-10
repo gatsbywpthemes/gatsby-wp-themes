@@ -78,3 +78,62 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   await createTags({ actions, graphql }, mergedOptions)
   await createUsers({ actions, graphql }, mergedOptions)
 }
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type Wp {
+      headlesswp: WpHeadlessWPConfig
+    }
+    type WpPost {
+      headlesswp: WpHeadlessWPPageConfig
+    }
+
+    type WpPage {
+      headlesswp: WpHeadlessWPPageConfig
+    }
+
+    type WpHeadlessWPPageConfig {
+      pageTemplate: String
+      skipTitle: Boolean
+    }
+
+    type WpHeadlessWPConfig {
+      paginationPrefix: String
+      logo: WpMediaItem
+      darkModeLogo: WpMediaItem
+      favicon: WpMediaItem
+      widgetAreas: [WpHeadlessWPWidgetAreas]
+      archiveSidebarPosition: String
+      addWordPressComments: Boolean
+      addWordPressSearch: Boolean
+      socialFollowLinks: [WpHeadlessWPSocial]
+      cssTheme: WpHeadlessWPCSSTheme
+    }
+
+    type WpHeadlessWPWidgetAreas {
+      name: String
+      widgets: [String]
+    }
+
+    type WpHeadlessWPSocial {
+      name: String
+      url: String
+    }
+
+    type WpHeadlessWPCSSTheme {
+      colors: [WpHeadlessWPColor]
+      modes: [WpHeadlessWPColorModes]
+    }
+
+    type WpHeadlessWPColor {
+      hexValue: String
+      name: String
+    }
+
+    type WpHeadlessWPColorModes {
+      colors: [WpHeadlessWPColor]
+      name: String
+    }
+  `)
+}

@@ -10,15 +10,9 @@ import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { gutenbergStyles } from 'baseStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
-  const {
-    title,
-    isFrontPage,
-    content,
-    slug,
-    uri,
-    headlesswp: { pageTemplate, skipTitle },
-  } = page
-
+  const { title, isFrontPage, content, slug, uri, headlesswp } = page
+  const pageTemplate = headlesswp?.pageTemplate || 'default'
+  const skipTitle = headlesswp?.skipTitle || false
   const {
     containerStyles,
     sidebarSide,

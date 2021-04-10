@@ -7,12 +7,8 @@ import { gutenberg } from 'gingerThemeStyles'
 
 const Page = (props) => {
   const { page, ctx } = props
-  const {
-    content,
-    title,
-    uri,
-    headlesswp: { skipTitle },
-  } = page
+  const { content, title, uri, headlesswp } = page
+  const skipTitle = headlesswp?.skipTitle || false
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   const { colorMode } = useColorMode()

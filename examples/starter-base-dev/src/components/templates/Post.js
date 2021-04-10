@@ -7,11 +7,9 @@ import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useLayoutStyles } from "baseUtils/hooks"
 
 const Post = ({ post, ctx }) => {
-  const {
-    title,
-    uri,
-    headlesswp: { pageTemplate },
-  } = post
+  const { title, uri, headlesswp } = post
+
+  const pageTemplate = headlesswp?.pageTemplate || "default"
   const featuredImage =
     post.featuredImage?.node.localFile.childImageSharp.original
   const {
