@@ -25,7 +25,6 @@ const theme = {
     header: ['4.5rem', '6rem', '6rem'],
     content: '60rem',
   },
-  components,
   textStyles: {
     ...textStyles,
   },
@@ -33,6 +32,7 @@ const theme = {
     ...layerStyles,
   },
   styles,
+  components,
 }
 
 export default theme

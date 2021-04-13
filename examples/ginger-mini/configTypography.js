@@ -2,7 +2,7 @@
 const rem = (px) => px / 16 + "rem"
 const typographySettings = {
   fonts: {
-    body: "Open Sans, sans-serif",
+    body: "Lexend, sans-serif",
     heading: "Special Elite, serif",
   },
   fontWeights: {

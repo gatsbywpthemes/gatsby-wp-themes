@@ -1,11 +1,10 @@
 import React from 'react'
-import { Input as ChakraInput } from '@chakra-ui/react'
+import { Input as ChakraInput } from 'gingerThemeUiComponents/Input'
 
 export const Input = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <ChakraInput
-      layerStyle="input"
-      className={`${className}`}
+      className={className}
       {...props}
       sx={{
         '&[type="file"]': {

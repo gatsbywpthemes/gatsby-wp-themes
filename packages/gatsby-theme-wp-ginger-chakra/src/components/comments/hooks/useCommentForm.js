@@ -1,7 +1,11 @@
 import { useState, useContext, useEffect, useRef } from 'react'
 import { useMutation, gql } from '@apollo/client'
 import { useForm } from 'react-hook-form'
-import { CommentsListContext } from 'gingerThemeComponents/comments/context'
+import {
+  CommentsListContext,
+  ActiveCommentContext,
+  SetActiveCommentContext,
+} from 'gingerThemeComponents/comments/context'
 
 const commentSubmitQuery = gql`
   mutation(
@@ -27,9 +31,9 @@ const commentSubmitQuery = gql`
 `
 export const useCommentForm = () => {
   const timeoutRef = useRef(null)
-  const { databaseId, activeComment, cancelReply, doOnCompleted } = useContext(
-    CommentsListContext
-  )
+  const { databaseId, doOnCompleted } = useContext(CommentsListContext)
+  const activeComment = useContext(ActiveCommentContext)
+  const setActiveComment = useContext(SetActiveCommentContext)
 
   useEffect(() => {
     return () => {
@@ -39,7 +43,11 @@ export const useCommentForm = () => {
       }
     }
   }, [doOnCompleted])
-  const { register, handleSubmit, errors } = useForm()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
   const [commentStatus, setCommentStatus] = useState(false)
   const [addComment] = useMutation(commentSubmitQuery, {
     onCompleted() {
@@ -47,7 +55,7 @@ export const useCommentForm = () => {
       timeoutRef.current = setTimeout(function () {
         doOnCompleted()
         setCommentStatus('')
-        cancelReply()
+        setActiveComment(0)
       }, 5000)
     },
     onError() {

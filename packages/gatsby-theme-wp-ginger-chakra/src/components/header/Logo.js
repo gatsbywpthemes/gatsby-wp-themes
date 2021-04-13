@@ -6,7 +6,6 @@ import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hook
 
 export const Logo = () => {
   const { logo, darkModeLogo } = useThemeOptions()
-  console.log(logo, darkModeLogo)
   const { colorMode } = useColorMode()
   const img = colorMode === 'dark' && darkModeLogo ? darkModeLogo : logo
   return (

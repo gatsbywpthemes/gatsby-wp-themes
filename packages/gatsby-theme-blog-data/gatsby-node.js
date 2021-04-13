@@ -81,47 +81,58 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
-  return
   createTypes(`
     type Wp {
-      headlesswp: HeadlessWPConfig
+      headlesswp: WpHeadlessWPConfig
     }
-    
-    type HeadlessWPConfig {
+    type WpPost {
+      headlesswp: WpHeadlessWPPageConfig
+    }
+
+    type WpPage {
+      headlesswp: WpHeadlessWPPageConfig
+    }
+
+    type WpHeadlessWPPageConfig {
+      pageTemplate: String
+      skipTitle: Boolean
+    }
+
+    type WpHeadlessWPConfig {
       paginationPrefix: String
       logo: WpMediaItem
       darkModeLogo: WpMediaItem
       favicon: WpMediaItem
-      widgetAreas: [HeadlessWPWidgetAreas]
+      widgetAreas: [WpHeadlessWPWidgetAreas]
       archiveSidebarPosition: String
       addWordPressComments: Boolean
       addWordPressSearch: Boolean
-      socialFollowLinks: [HeadlessWPSocial]
-      cssTheme: HeadlessWPCSSTheme
+      socialFollowLinks: [WpHeadlessWPSocial]
+      cssTheme: WpHeadlessWPCSSTheme
     }
 
-    type HeadlessWPWidgetAreas {
+    type WpHeadlessWPWidgetAreas {
       name: String
       widgets: [String]
     }
 
-    type HeadlessWPSocial {
+    type WpHeadlessWPSocial {
       name: String
       url: String
     }
 
-    type HeadlessWPCSSTheme {
-      colors: [HeadlessWPColor]
-      modes: [HeadlessWPColorModes]
+    type WpHeadlessWPCSSTheme {
+      colors: [WpHeadlessWPColor]
+      modes: [WpHeadlessWPColorModes]
     }
 
-    type HeadlessWPColor {
+    type WpHeadlessWPColor {
       hexValue: String
       name: String
     }
 
-    type HeadlessWPColorModes {
-      colors: [HeadlessWPColor]
+    type WpHeadlessWPColorModes {
+      colors: [WpHeadlessWPColor]
       name: String
     }
   `)

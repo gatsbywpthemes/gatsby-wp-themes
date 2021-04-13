@@ -4,14 +4,7 @@ import { Box, Flex, chakra, Link } from '@chakra-ui/react'
 
 export const Tags = ({ tags }) => {
   return (
-    <Box
-      as="section"
-      className="entry-taxonomy entry-tags"
-      data-sal="slide-up"
-      data-sal-duration="1000"
-      data-sal-easing="ease"
-      mb="12"
-    >
+    <Box as="section" className="entry-taxonomy entry-tags" mb="12">
       <Box as="h2" mb="0">
         Tags:
       </Box>

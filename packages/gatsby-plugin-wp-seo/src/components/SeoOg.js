@@ -3,15 +3,12 @@ import { withPrefix } from "gatsby"
 import { Helmet } from "react-helmet"
 import slashes from "remove-trailing-slash"
 import { SeoSiteSettingsContext } from "./../context"
-import { SeoOptionsContext } from "./../context"
 import { addPageNumber, absolutePath } from "./../helpers"
 
 export const SeoOg = (props) => {
   const { seo, uri, humanPageNumber, numberOfPages, featuredImage } = props
-  const { language, title } = useContext(SeoSiteSettingsContext)
-  const { siteUrl } = useContext(SeoOptionsContext)
+  const { language, title, siteUrl } = useContext(SeoSiteSettingsContext)
   const isFrontPage = slashes(props.uri) === ""
-  const absoluteOgUrl = absolutePath(siteUrl, withPrefix(uri))
   const ogType = isFrontPage ? "website" : seo.page?.opengraphType
   const ogTitle = addPageNumber(
     seo.page?.opengraphTitle ||
@@ -21,7 +18,7 @@ export const SeoOg = (props) => {
     numberOfPages
   )
   const ogImage =
-    seo.page?.opengraphImage?.localFile?.childImageSharp.original ||
+    seo.page?.opengraphImage?.localFile?.childImageSharp?.original ||
     featuredImage ||
     (isFrontPage &&
       seo?.general?.openGraph?.frontPage?.image?.localFile?.childImageSharp
@@ -37,12 +34,17 @@ export const SeoOg = (props) => {
       <meta property="og:locale" content={language} />
       <meta property="og:site_name" content={title} />
       {ogType && <meta property="og:type" content={ogType} />}
-      {uri && <meta property="og:url" content={absoluteOgUrl} />}
+      {uri && siteUrl && (
+        <meta
+          property="og:url"
+          content={absolutePath(siteUrl, withPrefix(uri))}
+        />
+      )}
       {ogTitle && <meta property="og:title" content={ogTitle} />}
       {ogDescription && (
         <meta property="og:description" content={ogDescription} />
       )}
-      {ogImage?.src && (
+      {siteUrl && ogImage?.src && (
         <meta
           property="og:image"
           content={absolutePath(siteUrl, ogImage.src)}

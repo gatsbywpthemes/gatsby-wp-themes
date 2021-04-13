@@ -2,6 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 const config = require('./config')
+const siteUrl = process.env.GATSBY_SITE_URL || options.siteUrl
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -10,7 +11,7 @@ module.exports = {
     description: 'Gatsby starter site for Gatsby Theme Wordpress Theme.',
     author: '@alexadark',
     wordPressUrl: process.env.GATSBY_WP_URL,
-    siteUrl: config.siteUrl,
+    siteUrl,
   },
   plugins: [
     {

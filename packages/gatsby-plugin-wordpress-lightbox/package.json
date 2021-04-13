@@ -22,10 +22,10 @@
   "license": "LicenseRef-LICENSE",
   "dependencies": {
     "html-react-parser": "^1.2.4",
-    "simple-react-lightbox": "3.6.1"
+    "simple-react-lightbox": "3.6.4"
   },
   "peerDependencies": {
-    "gatsby": "^2.32.0",
+    "gatsby": "^3.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

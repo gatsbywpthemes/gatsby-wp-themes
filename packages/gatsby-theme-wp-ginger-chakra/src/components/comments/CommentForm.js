@@ -6,19 +6,23 @@ import {
   FormErrorMessage,
   FormLabel,
   FormControl,
-  Input,
   Button,
 } from '@chakra-ui/react'
+import { Input } from 'gingerThemeUiComponents/Input'
 import {
   CommentStatusFeedback,
   CommentSubmitButton,
   CommentNotes,
 } from 'gingerThemeComponents'
 import { inputFields } from './inputfields'
-import { CommentsListContext } from 'gingerThemeComponents/comments/context'
+import {
+  ActiveCommentContext,
+  SetActiveCommentContext,
+} from 'gingerThemeComponents/comments/context'
 
 export const CommentForm = () => {
-  const { activeComment, cancelReply } = useContext(CommentsListContext)
+  const activeComment = useContext(ActiveCommentContext)
+  const setActiveComment = useContext(SetActiveCommentContext)
   const { register, errors, commentStatus, onSubmit } = useCommentForm()
 
   return (
@@ -37,7 +41,7 @@ export const CommentForm = () => {
               ml="auto"
               color="inherit"
               className="comment-button-cancel"
-              onClick={cancelReply}
+              onClick={() => setActiveComment(0)}
             >
               <span>Cancel</span>
             </Button>
@@ -86,14 +90,12 @@ export const CommentForm = () => {
                     <Input
                       as={Tag}
                       d="block"
-                      layerStyle="input"
-                      ref={register({
+                      {...register(el.name, {
                         required: el.required,
                         pattern: el.pattern,
                       })}
                       type={el.type}
                       id={el.name}
-                      name={el.name}
                       placeholder={el.placeholder}
                       aria-required={el.required}
                       {...textarea}

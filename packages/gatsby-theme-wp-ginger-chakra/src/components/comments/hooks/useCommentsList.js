@@ -49,13 +49,6 @@ export const useCommentsList = ({ databaseId }) => {
   const { data, loading, error, refetch } = useQuery(GET_COMMENTS, {
     variables: { databaseId },
   })
-  const [activeComment, setActiveComment] = useState(0)
-  const cancelReply = () => {
-    setActiveComment(0)
-  }
-  const addReply = (id) => {
-    setActiveComment(id)
-  }
   const doOnCompleted = () => {
     refetch()
   }
@@ -65,9 +58,6 @@ export const useCommentsList = ({ databaseId }) => {
     comments: data?.comments,
     loading,
     error,
-    activeComment,
-    cancelReply,
-    addReply,
     doOnCompleted,
   }
 }

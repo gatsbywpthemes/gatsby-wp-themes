@@ -1,0 +1,17 @@
+{
+  "name": "@gatsbywpthemes/gatsby-theme-base-dev",
+  "description": "WordPress basic theme for Gastby using WPGraphQL",
+  "author": "Alexandra Spalato <alexaspalato@gmail.com>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^3.0.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "dependencies": {
+    "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "*",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "*"
+  }
+}

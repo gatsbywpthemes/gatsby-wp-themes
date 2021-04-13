@@ -4,6 +4,7 @@ import { Box, Flex, Button, chakra } from '@chakra-ui/react'
 import { SearchQueries } from 'gingerThemeComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { SearchContext } from 'gingerThemeComponents/search/context'
+import { Input } from 'gingerThemeUiComponents/Input'
 
 export const SearchForm = () => {
   const { instantWPSearch } = useThemeOptions()
@@ -28,11 +29,11 @@ export const SearchForm = () => {
         <Box as={FiSearch} position="absolute" top="0" bottom="0" my="auto" />
         <Flex as="form" onSubmit={handleSubmit}>
           <Box position="relative" w="full">
-            <chakra.input
-              layerStyle="input"
+            <Input
               w="full"
               py="2"
               pl="8"
+              h="100%"
               value={value}
               type="search"
               onChange={handleChange}

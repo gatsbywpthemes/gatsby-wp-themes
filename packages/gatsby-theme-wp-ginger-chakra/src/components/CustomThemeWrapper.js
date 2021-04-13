@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import customTheme from 'gingerThemeSrc/chakra/theme'
+import customTheme from './../chakra/theme'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 export const CustomThemeWrapper = ({ children }) => {
   const { overrideWPColors } = useThemeOptions()

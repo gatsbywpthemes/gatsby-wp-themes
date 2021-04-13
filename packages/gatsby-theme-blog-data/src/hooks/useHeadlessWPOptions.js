@@ -52,6 +52,7 @@ export const useHeadlessWPOptions = () => {
   `)
 
   // sidebars as object with sidebar areas as keys
+
   const widgetAreas = data.wp.headlesswp?.widgetAreas
     ? data.wp.headlesswp.widgetAreas.reduce(
         (ac, c) => ({ ...ac, [c.name]: c.widgets }),
@@ -73,7 +74,7 @@ export const useHeadlessWPOptions = () => {
   return (
     {
       ...data.wp.headlesswp,
-      widgetAreas,
+      ...(data.wp.headlesswp && { ...widgetAreas }),
       archiveSidebarPosition,
     } || {}
   )

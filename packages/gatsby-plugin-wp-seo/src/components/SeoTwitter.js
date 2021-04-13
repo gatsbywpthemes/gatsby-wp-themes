@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import { Helmet } from "react-helmet"
-import { SeoOptionsContext } from "./../context"
+import { SeoSiteSettingsContext } from "./../context"
 import { absolutePath } from "./../helpers"
 
 export const SeoTwitter = ({ seo }) => {
-  const { siteUrl } = useContext(SeoOptionsContext)
+  const { siteUrl } = useContext(SeoSiteSettingsContext)
   return (
     <Helmet>
       {seo.page?.twitterTitle && (
@@ -33,7 +33,7 @@ export const SeoTwitter = ({ seo }) => {
         content={seo?.general?.social?.twitter?.cardType}
       />
 
-      {seo.page?.twitterImage?.localFile?.childImageSharp && (
+      {siteUrl && seo.page?.twitterImage?.localFile?.childImageSharp && (
         <meta
           name="twitter:image"
           content={absolutePath(

@@ -24,7 +24,7 @@ const NextLink = ({ ctx: { next } }) => {
 
 export const PrevNextPostNavigation = ({ ctx }) => {
   return (
-    <Flex as="nav" justify="space-between" mt="8">
+    <Flex as="nav" justify="space-between" mt="8" overflow="hidden">
       <PreviousLink ctx={ctx} />
       <NextLink ctx={ctx} />
     </Flex>
