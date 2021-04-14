@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { FiMenu } from 'react-icons/fi'
 import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
-import { Button } from 'gingerThemeUiComponents/Button'
+import { Button } from '@chakra-ui/react'
 
 export const OpenButton = forwardRef(({ ...rest }, ref) => {
   return (

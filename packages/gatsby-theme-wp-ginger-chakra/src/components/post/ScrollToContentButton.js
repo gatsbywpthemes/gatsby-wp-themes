@@ -1,6 +1,6 @@
 import React from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-import { Button } from 'gingerThemeUiComponents/Button'
+import { Button } from '@chakra-ui/react'
 import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 
 import { FiChevronsDown } from 'react-icons/fi'

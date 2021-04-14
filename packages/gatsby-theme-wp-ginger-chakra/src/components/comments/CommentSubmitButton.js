@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
-import { Button } from 'gingerThemeUiComponents/Button'
+import { Button } from '@chakra-ui/react'
 
 export const CommentSubmitButton = ({ commentStatus }) => {
   return (
