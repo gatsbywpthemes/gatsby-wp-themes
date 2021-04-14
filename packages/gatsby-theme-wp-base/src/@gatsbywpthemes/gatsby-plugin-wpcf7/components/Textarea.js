@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
-import { Textarea as ChakraTextarea } from '@chakra-ui/react'
+import { Input as ChakraTextarea } from 'baseUiComponents'
 
 export const Textarea = forwardRef(({ ...props }, ref) => {
-  return <ChakraTextarea layerStyle="input" {...props} ref={ref} />
+  return <ChakraTextarea as="textarea" height="auto" {...props} ref={ref} />
 })
