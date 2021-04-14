@@ -2,6 +2,7 @@ import React from 'react'
 import { Footer, Header } from 'baseComponents'
 import { Box, Flex, useColorModeValue as colorMode } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
+
 import 'baseStyles/wp-styles/styles.scss'
 
 export const Layout = ({ children, page, type = 'page', ...props }) => {

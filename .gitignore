@@ -80,3 +80,6 @@ yarn-error.log
 #bit
 .bitmap
 .bit/
+
+#vscode
+wp-base.code-workspace
