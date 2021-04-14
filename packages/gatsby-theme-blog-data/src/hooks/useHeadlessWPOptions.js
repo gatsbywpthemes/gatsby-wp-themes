@@ -59,6 +59,7 @@ export const useHeadlessWPOptions = () => {
         {}
       )
     : {}
+
   /* 
  // ex. usage
   const { widgetAreas } = useThemeOptions()
@@ -71,11 +72,11 @@ export const useHeadlessWPOptions = () => {
       : data.wp.headlesswp.archiveSidebarPosition
     : null
 
-  return (
-    {
-      ...data.wp.headlesswp,
-      ...(data.wp.headlesswp && { ...widgetAreas }),
-      archiveSidebarPosition,
-    } || {}
-  )
+  return {
+    ...data.wp.headlesswp,
+    // only add wigetAreas if queried
+    ...(data.wp.headlesswp && { widgetAreas: { ...widgetAreas } }),
+    // only add archiveSidebarPosition if queried
+    ...(data.wp.headlesswp && { archiveSidebarPosition }),
+  }
 }
