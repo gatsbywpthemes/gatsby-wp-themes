@@ -4,7 +4,6 @@ import { Input as ChakraInput } from "baseUiComponents"
 export const Input = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <ChakraInput
-      layerStyle="input"
       className={`${className}`}
       {...props}
       sx={{
