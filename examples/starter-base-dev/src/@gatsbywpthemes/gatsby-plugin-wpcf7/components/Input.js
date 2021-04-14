@@ -1,5 +1,5 @@
-import React from 'react'
-import { Input as ChakraInput } from '@chakra-ui/react'
+import React from "react"
+import { Input as ChakraInput } from "baseUiComponents"
 
 export const Input = React.forwardRef(({ className, ...props }, ref) => {
   return (
@@ -20,7 +20,7 @@ export const Input = React.forwardRef(({ className, ...props }, ref) => {
           my: 3,
         },
         '&[type="number"]': {
-          width: 'auto',
+          width: "auto",
           minWidth: 0,
         },
       }}

@@ -5,11 +5,10 @@ import {
   FormErrorMessage,
   FormLabel,
   FormControl,
-  Input,
   Button,
   useColorModeValue as colorMode,
 } from "@chakra-ui/react"
-
+import { Input } from "baseUiComponents"
 import { CommentStatusFeedback } from "./index"
 import { inputFields } from "./inputfields"
 import { CommentsListContext } from "baseComponents/comments/context"
