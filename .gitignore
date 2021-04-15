@@ -54,7 +54,7 @@ typings/
 *.tgz
 
 # dotenv environment variables file
-
+.env
 .env.developement
 .env.production
 
@@ -83,3 +83,4 @@ yarn-error.log
 
 #vscode
 wp-base.code-workspace
+.vscode

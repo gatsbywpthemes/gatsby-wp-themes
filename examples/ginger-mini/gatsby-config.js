@@ -3,7 +3,13 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-require("dotenv").config()
+const fs = require("fs")
+require("dotenv").config({
+  path:
+    (fs.existsSync(`.env.${process.env.NODE_ENV}`) &&
+      `.env.${process.env.NODE_ENV}`) ||
+    ".env",
+})
 const { author, pathPrefix, ...options } = require("./config")
 const siteUrl = process.env.GATSBY_SITE_URL || options.siteUrl
 

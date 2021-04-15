@@ -54,6 +54,8 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.developement
+.env.production
 .zshrc
 .bashrc
 

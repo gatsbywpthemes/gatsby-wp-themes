@@ -1,4 +1,10 @@
-require('dotenv').config()
+const fs = require('fs')
+require('dotenv').config({
+  path:
+    (fs.existsSync(`.env.${process.env.NODE_ENV}`) &&
+      `.env.${process.env.NODE_ENV}`) ||
+    '.env',
+})
 const path = require('path')
 module.exports = (options) => {
   const mergedOptions = {
