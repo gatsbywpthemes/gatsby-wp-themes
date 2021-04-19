@@ -19,8 +19,9 @@ export const CommentsList = () => {
             Comments
           </Box>
           <chakra.ul
-            mb="12"
-            sx={{ ul: { ml: '6' }, li: { listStyle: 'none', mb: '6' } }}
+            mb={12}
+            p={0}
+            sx={{ ul: { ml: 6, p: 0 }, li: { listStyle: 'none', mb: 6 } }}
           >
             {comments.nodes
               .filter((el) => el.parent === null)

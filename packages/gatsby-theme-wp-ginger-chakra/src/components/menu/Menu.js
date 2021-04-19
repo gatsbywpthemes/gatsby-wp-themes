@@ -17,6 +17,8 @@ export const Menu = ({ location = 'PRIMARY' }) => {
         <chakra.ul
           role="menu"
           textStyle="listRaw"
+          m={0}
+          p={0}
           sx={{ 'ul a': { px: 8 }, 'ul ul a': { px: 16 } }}
         >
           {menuNodes.map((menuItem) => {

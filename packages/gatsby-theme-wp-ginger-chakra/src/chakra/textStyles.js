@@ -105,6 +105,8 @@ export const textStyles = {
   },
   listRaw: {
     listStyle: 'none',
+    m: 0,
+    p: 0,
   },
   linkHoverOpacity: {
     color: 'inherit',
