@@ -3,6 +3,34 @@ import { useStaticQuery, graphql } from 'gatsby'
 export const useHeadlessWPOptions = () => {
   const data = useStaticQuery(graphql`
     {
+      file(relativePath: { eq: "gatsby-icon.png" }) {
+        childImageSharp {
+          s32: gatsbyImageData(
+            height: 32
+            width: 32
+            quality: 100
+            layout: FIXED
+          )
+          s192: gatsbyImageData(
+            height: 192
+            width: 192
+            quality: 100
+            layout: FIXED
+          )
+          s180: gatsbyImageData(
+            height: 180
+            width: 180
+            quality: 100
+            layout: FIXED
+          )
+          s270: gatsbyImageData(
+            height: 270
+            width: 270
+            quality: 80
+            layout: FIXED
+          )
+        }
+      }
       wp {
         headlesswp {
           addWordPressComments
@@ -42,6 +70,37 @@ export const useHeadlessWPOptions = () => {
               }
             }
           }
+
+          favicon {
+            localFile {
+              childImageSharp {
+                s32: gatsbyImageData(
+                  height: 32
+                  width: 32
+                  quality: 100
+                  layout: FIXED
+                )
+                s192: gatsbyImageData(
+                  height: 192
+                  width: 192
+                  quality: 100
+                  layout: FIXED
+                )
+                s180: gatsbyImageData(
+                  height: 180
+                  width: 180
+                  quality: 100
+                  layout: FIXED
+                )
+                s270: gatsbyImageData(
+                  height: 270
+                  width: 270
+                  quality: 80
+                  layout: FIXED
+                )
+              }
+            }
+          }
           socialFollowLinks {
             name
             url
@@ -50,9 +109,8 @@ export const useHeadlessWPOptions = () => {
       }
     }
   `)
-
   // sidebars as object with sidebar areas as keys
-
+  console.log(data)
   const widgetAreas = data.wp.headlesswp?.widgetAreas
     ? data.wp.headlesswp.widgetAreas.reduce(
         (ac, c) => ({ ...ac, [c.name]: c.widgets }),
@@ -74,6 +132,10 @@ export const useHeadlessWPOptions = () => {
 
   return {
     ...data.wp.headlesswp,
+    ...(data.wp.headlesswp &&
+      data.wp.headlesswp.favicon && {
+        faviconFile: data.wp.headlesswp.favicon.localFile,
+      }),
     // only add wigetAreas if queried
     ...(data.wp.headlesswp && { widgetAreas: { ...widgetAreas } }),
     // only add archiveSidebarPosition if queried

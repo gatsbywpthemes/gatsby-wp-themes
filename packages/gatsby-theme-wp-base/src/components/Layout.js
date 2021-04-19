@@ -2,8 +2,8 @@ import React from 'react'
 import { Footer, Header } from 'baseComponents'
 import { Box, Flex, useColorModeValue as colorMode } from '@chakra-ui/react'
 import Headroom from 'react-headroom'
-
 import 'baseStyles/wp-styles/styles.scss'
+import { HelmetForFavicon } from './HelmetForFavicon'
 
 export const Layout = ({ children, page, type = 'page', ...props }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
@@ -11,40 +11,43 @@ export const Layout = ({ children, page, type = 'page', ...props }) => {
 
   const fullWidthClass = pageTemplate === 'full width' ? 'fullWidth' : ''
   return (
-    <Flex
-      minHeight="100vh"
-      flexDirection="column"
-      sx={{
-        '&.fullWidth': {
-          '.mainContainer': {
-            maxWidth: `100%`,
-            form: {
-              mb: 10,
-            },
-            px: 0,
-          },
-        },
-      }}
-      className={`${layoutClass}-${type} ${fullWidthClass}`}
-      {...props}
-    >
-      <Box as={Headroom} sx={{ '&>div': { zIndex: '2!important' } }}>
-        <Header />
-      </Box>
-      <Box
-        as="main"
-        flex={1}
-        py={16}
+    <>
+      <HelmetForFavicon />
+      <Flex
+        minHeight="100vh"
+        flexDirection="column"
         sx={{
-          '.fullWidth &': {
-            py: 0,
-            // mt: '-32px',
+          '&.fullWidth': {
+            '.mainContainer': {
+              maxWidth: `100%`,
+              form: {
+                mb: 10,
+              },
+              px: 0,
+            },
           },
         }}
+        className={`${layoutClass}-${type} ${fullWidthClass}`}
+        {...props}
       >
-        {children}
-      </Box>
-      <Footer />
-    </Flex>
+        <Box as={Headroom} sx={{ '&>div': { zIndex: '2!important' } }}>
+          <Header />
+        </Box>
+        <Box
+          as="main"
+          flex={1}
+          py={16}
+          sx={{
+            '.fullWidth &': {
+              py: 0,
+              // mt: '-32px',
+            },
+          }}
+        >
+          {children}
+        </Box>
+        <Footer />
+      </Flex>
+    </>
   )
 }

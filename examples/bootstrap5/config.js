@@ -23,10 +23,6 @@ const config = {
   // addColorModes: false,
   skipTitle: ["home", "contact"],
   lightboxSettings: {},
-  favicon: "static/icon.svg",
-  manifestOptions: {
-    background_color: `#ffffff`,
-  },
 }
 
 module.exports = config

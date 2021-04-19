@@ -11,7 +11,6 @@ const config = {
   // instantWPSearch: false,
   // addColorModes: false,
   lightboxSettings: {},
-  favicon: "static/icon.svg",
   // overrideWPColors: false,
 }
 module.exports = config

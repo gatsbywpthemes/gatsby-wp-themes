@@ -17,20 +17,10 @@ module.exports = (options) => {
     googleTagManagerOptions,
     addSiteMap,
     siteMapOptions,
-    favicon,
-    manifestOptions,
     developLimit,
   } = mergedOptions
 
   const url = slashes(wordPressUrl)
-
-  const resolveFavicon = (favicon) => {
-    return (
-      (fs.existsSync(favicon) && favicon) ||
-      (fs.existsSync(`static/${favicon}`) && `static/${favicon}`) ||
-      `${__dirname}/src/images/gatsby-icon.png`
-    )
-  }
 
   const plugins = [
     `gatsby-plugin-sharp`,
@@ -70,13 +60,6 @@ module.exports = (options) => {
         path: `${__dirname}/src/images`,
       },
     },
-    /*{
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        icon: resolveFavicon(favicon),
-        ...manifestOptions,
-      },
-    },*/
     '@gatsbywpthemes/gatsby-plugin-wordpress-parser',
   ]
 

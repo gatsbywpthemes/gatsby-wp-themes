@@ -22,7 +22,6 @@
     "gatsby-plugin-google-gtag": "^3.0.0",
     "gatsby-plugin-google-tagmanager": "^3.0.0",
     "gatsby-plugin-image": "^1.0.1",
-    "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-sharp": "^3.0.1",
     "gatsby-plugin-sitemap": "^3.0.0",
     "gatsby-source-filesystem": "^3.0.0",

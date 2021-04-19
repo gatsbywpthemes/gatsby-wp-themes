@@ -44,5 +44,12 @@ module.exports = {
           "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/utils",
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `static`,
+        path: `${__dirname}/static/`,
+      },
+    },
   ],
 }

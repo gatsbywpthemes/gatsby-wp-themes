@@ -3,6 +3,7 @@ import '../styles/blocks.css'
 import '../styles/custom-gutenstyles.css'
 import { Box, Container } from '@chakra-ui/react'
 import { Header, Footer } from 'gingerThemeComponents'
+import { HelmetForFavicon } from './HelmetForFavicon'
 
 const MaybeWithContainer = ({ useContainer, children }) => {
   return !useContainer ? (
@@ -22,6 +23,7 @@ const MaybeWithContainer = ({ useContainer, children }) => {
 export const Layout = ({ useContainer = true, children }) => {
   return (
     <>
+      <HelmetForFavicon />
       <Header />
       <Box marginLeft={{ md: (theme) => theme.sizes.header }}>
         <MaybeWithContainer useContainer={useContainer}>

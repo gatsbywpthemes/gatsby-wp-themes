@@ -15,7 +15,6 @@ const DEFAULT_OPTIONS = {
   ga4Options: {},
   googleTagManagerId: null,
   googleTagManagerOptions: {},
-  manifestOptions: {},
   addSiteMap: false,
   siteMapOptions: {},
   widgetAreas: {
