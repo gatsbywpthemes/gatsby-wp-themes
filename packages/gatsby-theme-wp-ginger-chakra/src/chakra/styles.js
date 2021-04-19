@@ -36,6 +36,31 @@ export const styles = {
       iframe: {
         maxWidth: '100%',
       },
+      'ol, ul': {
+        marginBottom: 6,
+        paddingLeft: 6,
+      },
+      'ul ul, ul ol, ol ul, ol ol': {
+        marginBottom: 0,
+      },
+      dl: {
+        marginBottom: 6,
+      },
+      dt: {
+        fontWeight: 'bold',
+      },
+      dd: {
+        marginBottom: 3,
+      },
+      'table td, table th': {
+        borderWidth: '1px',
+        padding: 2,
+      },
+      figcaption: {
+        textAlign: 'center',
+        opacity: 0.7,
+        fontSize: 'sm',
+      },
       ...base,
     }
   },
