@@ -12,8 +12,7 @@ export const Logo = () => {
     <chakra.a
       as={Link}
       px={[0, null, 3]}
-      pt={[3, null, 6]}
-      pb={[3, null, 6]}
+      py={3}
       className="logo"
       to="/"
       rel="home"

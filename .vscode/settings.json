@@ -17,8 +17,9 @@
     },
     "peacock.color": "#42b883",
     "cSpell.ignoreWords": [
-        "e",
-        "g",
         "mailchimp"
-    ]
+    ],
+    "grammarly.severity": {
+    
+    }
 }

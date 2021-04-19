@@ -20,7 +20,7 @@ export const Header = () => {
       zIndex={10}
       top={0}
       h={(theme) => [theme.sizes.header[0], theme.sizes.header[1], '100vh']}
-      align={['center', 'center', 'initial']}
+      align={['center', 'center', 'flex-start']}
       px={[3, 3, 0]}
       w={(theme) => ['auto', 'auto', theme.sizes.header[2]]}
     >
