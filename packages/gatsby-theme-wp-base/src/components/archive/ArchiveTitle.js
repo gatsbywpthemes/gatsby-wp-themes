@@ -3,7 +3,7 @@ import { Box, Heading, useColorModeValue as colorMode } from '@chakra-ui/react'
 
 export const ArchiveTitle = ({ name, text }) => {
   return (
-    <div data-sal="slide-up" data-sal-duration="1000" data-sal-easing="ease">
+    <div>
       <Box
         px={[4, 6]}
         py={3}

@@ -10,7 +10,6 @@ module.exports = (options) => {
   const mergedOptions = {
     addColorModes: true,
     skipTitle: [],
-    animation: true,
 
     layoutWidth: {
       page: `l`,
@@ -101,18 +100,7 @@ module.exports = (options) => {
       },
     })
   }
-  if (mergedOptions.animation) {
-    plugins.push({
-      resolve: `gatsby-plugin-scroll-reveal`,
-      options: {
-        threshold: 0.1,
-        once: true,
-        rootMargin: '0% 50%',
-        animateClassName: 'sal-animate',
-        selector: `[data-sal]`,
-      },
-    })
-  }
+
   return {
     siteMetadata: {
       title: `Gatsby theme WordPress Starter Demo`,
