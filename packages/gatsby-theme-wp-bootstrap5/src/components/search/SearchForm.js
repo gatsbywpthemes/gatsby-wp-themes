@@ -5,7 +5,6 @@ import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hook
 import { SearchContext } from './context'
 
 export const SearchForm = () => {
-  const { instantWPSearch } = useThemeOptions()
   const { search, setSearch } = useContext(SearchContext)
   const [value, setValue] = useState(search)
 
@@ -16,9 +15,6 @@ export const SearchForm = () => {
 
   const handleChange = (e) => {
     setValue(e.target.value)
-    if (instantWPSearch) {
-      setSearch(e.target.value)
-    }
   }
 
   return (
@@ -48,15 +44,13 @@ export const SearchForm = () => {
                 <FiX />
               </button>
             )}
-            {!instantWPSearch && (
-              <button
-                type="submit"
-                className="btn btn-secondary"
-                aria-label="Search"
-              >
-                <FiSearch />
-              </button>
-            )}
+            <button
+              type="submit"
+              className="btn btn-secondary"
+              aria-label="Search"
+            >
+              <FiSearch />
+            </button>
           </div>
         </form>
       </div>

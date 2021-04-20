@@ -19,7 +19,6 @@ const config = {
   //googleTagManagerId: "GTM-K3CF7RK",
   // addSiteMap: false,
   // siteMapOptions: {},
-  // instantWPSearch: false,
   // addColorModes: false,
   skipTitle: ["home", "contact"],
   lightboxSettings: {},

@@ -7,7 +7,6 @@ import { SearchContext } from 'gingerThemeComponents/search/context'
 import { Input } from 'gingerThemeUiComponents/Input'
 
 export const SearchForm = () => {
-  const { instantWPSearch } = useThemeOptions()
   const { search, setSearch, setEscInSearch } = useContext(SearchContext)
   const [value, setValue] = useState(search)
 
@@ -18,9 +17,6 @@ export const SearchForm = () => {
 
   const handleChange = (e) => {
     setValue(e.target.value)
-    if (instantWPSearch) {
-      setSearch(e.target.value)
-    }
   }
 
   return (
@@ -60,11 +56,9 @@ export const SearchForm = () => {
               </Button>
             )}
           </Box>
-          {!instantWPSearch && (
-            <Button type="submit" height="auto">
-              Search
-            </Button>
-          )}
+          <Button type="submit" height="auto">
+            Search
+          </Button>
         </Flex>
       </Box>
       {/* value && search so that results are reset on Escape */}
