@@ -28,15 +28,7 @@ export const PostEntry = ({
     : null
 
   return (
-    <Box
-      as="article"
-      mb={14}
-      className="entry"
-      {...props}
-      data-sal={location !== 'single' ? 'slide-up' : null}
-      data-sal-duration="1000"
-      data-sal-easing="ease"
-    >
+    <Box as="article" mb={14} className="entry" {...props}>
       <PostEntryMedia
         location={location}
         post={post}
@@ -70,19 +62,10 @@ export const PostEntry = ({
           fontSize={['2xl', '3xl']}
           mb={5}
           className="entry-title"
-          data-sal="slide-up"
-          data-sal-duration="1000"
-          data-sal-easing="ease"
         />
         <PostEntryInfo className="entry-info" post={post} />
 
-        <PostEntryContent
-          location={location}
-          post={post}
-          data-sal="slide-up"
-          data-sal-duration="1000"
-          data-sal-easing="ease"
-        />
+        <PostEntryContent location={location} post={post} />
         {location !== 'single' && (
           <Center height={20}>
             <Divider />
@@ -90,20 +73,8 @@ export const PostEntry = ({
         )}
 
         <div className="entry-footer">
-          <PostEntryMeta
-            className="entry-meta"
-            post={post}
-            data-sal="slide-up"
-            data-sal-duration="1000"
-            data-sal-easing="ease"
-          />
-          <ReadMoreButton
-            location={location}
-            post={post}
-            data-sal="slide-up"
-            data-sal-duration="1000"
-            data-sal-easing="ease"
-          />
+          <PostEntryMeta className="entry-meta" post={post} />
+          <ReadMoreButton location={location} post={post} />
         </div>
         {location === 'single' && (
           <>

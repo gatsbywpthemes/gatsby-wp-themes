@@ -15,14 +15,7 @@ export const ArchiveTitle = ({ name, text }) => {
         className="archive-title"
         boxShadow="lg"
       >
-        <Heading
-          fontSize="xl"
-          letterSpacing="wider"
-          textTransform="uppercase"
-          data-sal="slide-up"
-          data-sal-duration="1000"
-          data-sal-easing="ease"
-        >
+        <Heading fontSize="xl" letterSpacing="wider" textTransform="uppercase">
           {text} {name}
         </Heading>
       </Box>
