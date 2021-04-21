@@ -35,6 +35,7 @@ export const useHeadlessWPOptions = () => {
         headlesswp {
           addWordPressComments
           addWordPressSearch
+          addColorModes
           widgetAreas {
             name
             widgets
@@ -110,7 +111,6 @@ export const useHeadlessWPOptions = () => {
     }
   `)
   // sidebars as object with sidebar areas as keys
-  console.log(data)
   const widgetAreas = data.wp.headlesswp?.widgetAreas
     ? data.wp.headlesswp.widgetAreas.reduce(
         (ac, c) => ({ ...ac, [c.name]: c.widgets }),
@@ -129,7 +129,6 @@ export const useHeadlessWPOptions = () => {
       ? false
       : data.wp.headlesswp.archiveSidebarPosition
     : null
-
   return {
     ...data.wp.headlesswp,
     ...(data.wp.headlesswp &&

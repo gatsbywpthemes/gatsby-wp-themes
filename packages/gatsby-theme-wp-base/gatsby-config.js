@@ -8,9 +8,6 @@ require('dotenv').config({
 const path = require('path')
 module.exports = (options) => {
   const mergedOptions = {
-    addColorModes: true,
-    skipTitle: [],
-
     layoutWidth: {
       page: `l`,
       post: `l`,

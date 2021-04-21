@@ -28,6 +28,7 @@ const DEFAULT_OPTIONS = {
   socialFollowLinks: [],
   overrideWPColors: false,
   developLimit: null,
+  addColorModes: true,
 }
 
 module.exports = DEFAULT_OPTIONS

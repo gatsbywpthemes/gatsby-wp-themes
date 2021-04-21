@@ -107,6 +107,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       archiveSidebarPosition: String
       addWordPressComments: Boolean
       addWordPressSearch: Boolean
+      addColorModes: Boolean
       socialFollowLinks: [WpHeadlessWPSocial]
       cssTheme: WpHeadlessWPCSSTheme
     }

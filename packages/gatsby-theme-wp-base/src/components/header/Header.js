@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 
 export const Header = () => {
-  const { addWordPressSearch: search } = useThemeOptions()
+  const { addWordPressSearch: search, addColorModes } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -48,7 +48,7 @@ export const Header = () => {
 
           <SlideSidebar display={{ base: 'block', lg: 'none' }} />
 
-          <ColorSwitch />
+          {addColorModes && <ColorSwitch />}
         </HStack>
       </Container>
     </Box>

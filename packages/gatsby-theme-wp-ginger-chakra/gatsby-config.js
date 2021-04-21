@@ -7,10 +7,9 @@ require('dotenv').config({
 })
 const path = require('path')
 module.exports = (options) => {
-  options.fonts = options.fonts || ['Abril Fatface']
+  options.fonts = options.googleFonts || []
 
   const mergedOptions = {
-    addColorModes: true,
     ...options,
   }
   const plugins = [
