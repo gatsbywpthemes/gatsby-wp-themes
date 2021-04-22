@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Box } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { SubMenu, MenuLink } from 'baseComponents'
 
 export const MenuItem = ({ menuItem, orientation }) => {
@@ -7,15 +7,15 @@ export const MenuItem = ({ menuItem, orientation }) => {
     return <SubMenu menuItem={menuItem} />
   } else {
     return (
-      <Box
-        as={orientation === 'H' && Button}
-        variant="unstyled"
+      <Flex
+        as="div"
+        alignItems="center"
         className={`menu-item ${menuItem.cssClasses}`}
         key={menuItem.id}
         _hover={{ color: 'primary' }}
       >
         <MenuLink menuItem={menuItem} _hover={{ color: 'primary' }} />
-      </Box>
+      </Flex>
     )
   }
 }

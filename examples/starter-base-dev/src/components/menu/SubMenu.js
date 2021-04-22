@@ -43,13 +43,15 @@ const SubMenuH = ({ menuItem }) => {
       >
         {menuItem.label}
       </MenuButton>
-      <MenuList>
-        {menuItem.children.map((item) => (
-          <SubMenuItem key={item.id}>
-            <MenuLink menuItem={item} />
-          </SubMenuItem>
-        ))}
-      </MenuList>
+      <Box position="absolute">
+        <MenuList>
+          {menuItem.children.map((item) => (
+            <SubMenuItem key={item.id}>
+              <MenuLink menuItem={item} />
+            </SubMenuItem>
+          ))}
+        </MenuList>
+      </Box>
     </Menu>
   )
 }
