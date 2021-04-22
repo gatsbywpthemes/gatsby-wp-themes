@@ -50,7 +50,7 @@ export const useHeadlessWPOptions = () => {
                 gatsbyImageData(
                   height: 72
                   quality: 80
-                  layout: FIXED
+                  layout: CONSTRAINED
                   placeholder: TRACED_SVG
                 )
               }
@@ -65,7 +65,7 @@ export const useHeadlessWPOptions = () => {
                 gatsbyImageData(
                   height: 72
                   quality: 80
-                  layout: FIXED
+                  layout: CONSTRAINED
                   placeholder: TRACED_SVG
                 )
               }

@@ -11,6 +11,7 @@ export const Logo = () => {
   return (
     <chakra.a
       as={Link}
+      maxWidth="100%"
       px={[0, null, 3]}
       py={3}
       className="logo"

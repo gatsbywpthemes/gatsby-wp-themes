@@ -15,7 +15,6 @@
     "@babel/core": "^7.13.10",
     "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "*",
     "babel-preset-gatsby": "^1.0.0",
-    "disqus-react": "^1.0.11",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-google-analytics": "^3.0.0",

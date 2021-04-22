@@ -6,7 +6,6 @@ const DEFAULT_OPTIONS = {
   wordPressUrl: process.env.GATSBY_WP_URL,
   pathPrefix: '',
   paginationPrefix: 'page',
-  disqus: false, //process.env.GATSBY_DISQUS_NAME,
   addWordPressComments: true,
   addWordPressSearch: false,
   gaUniversalTrackingId: null,

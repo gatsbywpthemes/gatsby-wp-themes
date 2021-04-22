@@ -2,7 +2,6 @@ import React from 'react'
 import { Layout } from '../Layout'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { PostEntry, CommentsList, Sidebar } from '../index'
-import { DiscussionEmbed } from 'disqus-react'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 const Post = ({ post, ctx }) => {
@@ -14,15 +13,11 @@ const Post = ({ post, ctx }) => {
   } = post
   const featuredImage = post.featuredImage?.node.localFile.childImageSharp.fluid
 
-  const { disqus, addWordPressComments, sidebarWidgets } = useThemeOptions()
+  const { addWordPressComments, sidebarWidgets } = useThemeOptions()
 
   const pageTemplate = templateName.toLowerCase()
   const sidebarPage = pageTemplate.includes('sidebar')
 
-  const disqusConfig = {
-    shortname: disqus,
-    config: { identifier: slug, title },
-  }
   return (
     <Layout page={post} type="post">
       <Seo
@@ -45,11 +40,7 @@ const Post = ({ post, ctx }) => {
         </div>
         {addWordPressComments && post.commentStatus === 'open' && (
           <div>
-            {disqus ? (
-              <DiscussionEmbed {...disqusConfig} />
-            ) : (
-              <CommentsList post={post} />
-            )}
+            <CommentsList post={post} />
           </div>
         )}
       </div>
