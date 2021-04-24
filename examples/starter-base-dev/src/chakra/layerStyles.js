@@ -1,15 +1,15 @@
 const layerStyles = {
   overlay: {
-    position: "relative",
+    position: 'relative',
     zIndex: 0,
-    "&:before": {
+    '&:before': {
       content: '""',
-      position: "absolute",
+      position: 'absolute',
       top: 0,
       bottom: 0,
       left: 0,
       right: 0,
-      bg: "currentColor",
+      bg: 'currentColor',
       opacity: 0.03,
       zIndex: -1,
     },
@@ -17,13 +17,13 @@ const layerStyles = {
   info: {
     px: 4,
     py: 1,
-    fontStyle: "italic",
-    fontWeight: "normal",
-    fontSize: "sm",
+    fontStyle: 'italic',
+    fontWeight: 'normal',
+    fontSize: 'sm',
     borderRadius: 0,
-    color: "white !important",
-    display: "inline-block",
-    lineHeight: "shorter",
+    color: 'white !important',
+    display: 'inline-block',
+    lineHeight: 'shorter',
   },
 }
 

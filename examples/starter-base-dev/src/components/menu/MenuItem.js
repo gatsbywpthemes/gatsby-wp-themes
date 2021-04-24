@@ -1,6 +1,6 @@
-import React from "react"
-import { Flex } from "@chakra-ui/react"
-import { SubMenu, MenuLink } from "baseComponents"
+import React from 'react'
+import { Flex } from '@chakra-ui/react'
+import { SubMenu, MenuLink } from 'baseComponents'
 
 export const MenuItem = ({ menuItem, orientation }) => {
   if (menuItem.children.length) {
@@ -12,9 +12,9 @@ export const MenuItem = ({ menuItem, orientation }) => {
         alignItems="center"
         className={`menu-item ${menuItem.cssClasses}`}
         key={menuItem.id}
-        _hover={{ color: "primary" }}
+        _hover={{ color: 'primary' }}
       >
-        <MenuLink menuItem={menuItem} _hover={{ color: "primary" }} />
+        <MenuLink menuItem={menuItem} _hover={{ color: 'primary' }} />
       </Flex>
     )
   }

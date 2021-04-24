@@ -1,27 +1,27 @@
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
-import { useToken } from "@chakra-ui/react"
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { useToken } from '@chakra-ui/react'
 
 const useLayoutWidth = () => {
   const { layoutWidth } = useThemeOptions()
-  const [xl, lg, md, sm] = useToken("sizes", [
-    "container.xl",
-    "container.lg",
-    "container.md",
-    "container.sm",
+  const [xl, lg, md, sm] = useToken('sizes', [
+    'container.xl',
+    'container.lg',
+    'container.md',
+    'container.sm',
   ])
 
   function getLayoutWidth(layoutType) {
     switch (layoutWidth[layoutType]) {
-      case "xl":
+      case 'xl':
         return xl
-      case "md":
+      case 'md':
         return md
-      case "lg":
+      case 'lg':
         return lg
-      case "sm":
+      case 'sm':
         return sm
       default:
-        return "1280px"
+        return '1280px'
     }
   }
 
@@ -33,17 +33,17 @@ const useLayoutStyles = (layoutType, templateName) => {
     widgetAreas: { sidebarWidgets },
   } = useThemeOptions()
   const pageTemplate = templateName?.toLowerCase()
-  const sidebarPage = pageTemplate.includes("sidebar")
+  const sidebarPage = pageTemplate.includes('sidebar')
   const [getLayoutWidth, xl] = useLayoutWidth()
 
   const containerStyles =
     sidebarWidgets && sidebarPage
       ? {
           maxWidth: xl,
-          ".entry": {
-            width: { base: "100%", lg: "67%", xl: "70%" },
+          '.entry': {
+            width: { base: '100%', lg: '67%', xl: '70%' },
           },
-          ".sidebar": { width: { base: "100%", lg: "33%", xl: "30%" } },
+          '.sidebar': { width: { base: '100%', lg: '33%', xl: '30%' } },
         }
       : { maxWidth: getLayoutWidth(layoutType) }
 
@@ -51,12 +51,12 @@ const useLayoutStyles = (layoutType, templateName) => {
     ? pageTemplate === `left sidebar`
       ? {
           flexDirection: `row-reverse`,
-          ".entry": { pl: { base: 0, lg: 8 } },
+          '.entry': { pl: { base: 0, lg: 8 } },
         }
       : pageTemplate === `right sidebar`
-      ? { ".entry": { pr: { base: 0, lg: 8 } } }
-      : ""
-    : { display: "block" }
+      ? { '.entry': { pr: { base: 0, lg: 8 } } }
+      : ''
+    : { display: 'block' }
 
   return {
     containerStyles,

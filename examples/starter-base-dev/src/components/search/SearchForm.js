@@ -56,7 +56,8 @@ export const SearchForm = (props) => {
           borderLeft="5px solid"
           borderColor="primary"
           borderRadius={0}
-          px={5}
+          pr={5}
+          pl={5}
           name="search"
           aria-label="Search here"
         />

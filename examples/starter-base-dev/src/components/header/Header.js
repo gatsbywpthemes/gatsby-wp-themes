@@ -1,17 +1,17 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Menu, SiteBranding, SlideSidebar } from "baseComponents"
-import { Container } from "baseUiComponents"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { Menu, SiteBranding, SlideSidebar } from 'baseComponents'
+import { Container } from 'baseUiComponents'
+import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
-import { ColorSwitch } from "baseComponents"
-import { SearchModal } from "baseComponents"
+import { ColorSwitch } from 'baseComponents'
+import { SearchModal } from 'baseComponents'
 import {
   Box,
   Flex,
   HStack,
   useColorModeValue as colorMode,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 
 export const Header = () => {
   const { addWordPressSearch: search, addColorModes } = useThemeOptions()
@@ -32,8 +32,8 @@ export const Header = () => {
   return (
     <Box
       as="header"
-      color={colorMode("headerColor", "modes.dark.headerColor")}
-      bg={colorMode("headerBg", "modes.dark.headerBg")}
+      color={colorMode('headerColor', 'modes.dark.headerColor')}
+      bg={colorMode('headerBg', 'modes.dark.headerBg')}
       py={4}
       className="header"
       boxShadow="md"
@@ -44,9 +44,9 @@ export const Header = () => {
           {search && <SearchModal />}
         </Flex>
         <HStack>
-          <Menu orientation="H" display={{ base: "none", lg: "block" }} />
+          <Menu orientation="H" display={{ base: 'none', lg: 'block' }} />
 
-          <SlideSidebar display={{ base: "block", lg: "none" }} />
+          <SlideSidebar display={{ base: 'block', lg: 'none' }} />
 
           {addColorModes && <ColorSwitch />}
         </HStack>
