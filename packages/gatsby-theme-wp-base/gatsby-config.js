@@ -22,9 +22,9 @@ module.exports = (options) => {
       options: mergedOptions,
     },
     {
-      resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
+      resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
+      options: mergedOptions,
     },
-
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
@@ -37,67 +37,7 @@ module.exports = (options) => {
         baseThemeConfig: path.join(__dirname, 'themeConfig'),
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    {
-      resolve: `@gatsbywpthemes/gatsby-plugin-wordpress-lightbox`,
-      options: {
-        ...(options.lightboxOptions || {}),
-      },
-    },
-
-    {
-      resolve: '@gatsbywpthemes/gatsby-plugin-wpcf7',
-      options: {
-        wordPressUrl: process.env.GATSBY_WP_URL,
-      },
-    },
-    // {
-    //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-    //   options: {
-    //     analyzerMode: 'static',
-    //     disable: !process.env.ANALYZE_BUNDLE_SIZE,
-    //   },
-    // },
   ]
-
-  /**
-   * Conditionally add  plugin
-   * to avoid errors on build
-   */
-  if (options.fonts && options.fonts.length) {
-    const googleFonts = []
-    options.fonts.forEach((font) => {
-      const [googleFont, variantsString] = font.split(':')
-
-      googleFonts.push({
-        family: googleFont,
-        variants: variantsString ? variantsString.split(',') : undefined,
-      })
-    })
-
-    plugins.push({
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: googleFonts,
-        },
-        formats: ['woff2', 'woff'],
-        useMinify: true,
-        display: 'swap',
-      },
-    })
-  }
-
-  if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
-    plugins.push({
-      resolve: 'gatsby-plugin-mailchimp',
-      options: {
-        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
-      },
-    })
-  }
-
   return {
     siteMetadata: {
       title: `Gatsby theme WordPress Starter Demo`,

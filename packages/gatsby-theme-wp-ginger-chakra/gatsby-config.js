@@ -18,6 +18,10 @@ module.exports = (options) => {
       options: mergedOptions,
     },
     {
+      resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
+      options: mergedOptions,
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         gingerThemeSrc: path.join(__dirname, 'src'),
@@ -31,7 +35,6 @@ module.exports = (options) => {
         gingerThemeUtils: path.join(__dirname, 'src/utils'),
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
@@ -40,71 +43,7 @@ module.exports = (options) => {
         selector: `[data-sal], .entry-content .animate-on-scroll`,
       },
     },
-    `gatsby-plugin-sass`,
-    {
-      resolve: `@gatsbywpthemes/gatsby-plugin-wpcf7`,
-      options: {
-        wordPressUrl: options.wordPressUrl,
-      },
-    },
-    {
-      resolve: '@gatsbywpthemes/gatsby-plugin-wp-seo',
-    },
-
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-      options: {
-        analyzerMode: 'static',
-        disable: !process.env.ANALYZE_BUNDLE_SIZE,
-      },
-    },
-    {
-      resolve: `@gatsbywpthemes/gatsby-plugin-wordpress-lightbox`,
-      options: {
-        ...(options.lightboxOptions || {}),
-      },
-    },
   ]
-  /**
-   * Conditionally add google fonts plugin
-   * to avoid errors on build
-   */
-  if (options.fonts.length) {
-    const googleFonts = []
-    options.fonts.forEach((font) => {
-      const [googleFont, variantsString] = font.split(':')
-
-      googleFonts.push({
-        family: googleFont,
-        variants: variantsString ? variantsString.split(',') : undefined,
-      })
-    })
-
-    plugins.push({
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: googleFonts,
-        },
-        formats: ['woff2', 'woff'],
-        useMinify: true,
-        display: 'swap',
-      },
-    })
-  }
-
-  /**
-   * Conditionally add mailchimp subscription plugin
-   */
-
-  if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
-    plugins.push({
-      resolve: 'gatsby-plugin-mailchimp',
-      options: {
-        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
-      },
-    })
-  }
 
   return {
     siteMetadata: {

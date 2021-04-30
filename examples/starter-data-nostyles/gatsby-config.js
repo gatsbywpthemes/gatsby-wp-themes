@@ -18,6 +18,7 @@ module.exports = {
       resolve: '@gatsbywpthemes/gatsby-theme-blog-data',
       options: {
         ...config,
+        wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
     {

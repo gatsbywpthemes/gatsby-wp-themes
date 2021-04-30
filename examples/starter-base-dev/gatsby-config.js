@@ -32,6 +32,7 @@ module.exports = {
       resolve: `@gatsbywpthemes/gatsby-theme-base-dev`,
       options: {
         ...options,
+        wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
     {
