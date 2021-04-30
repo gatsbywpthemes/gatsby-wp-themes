@@ -1,10 +1,10 @@
-import React from "react"
-import { Box } from "@chakra-ui/react"
-import { Link } from "gatsby"
-import { Image } from "baseComponents"
+import React from 'react'
+import { Box } from '@chakra-ui/react'
+import { Link } from 'gatsby'
+import { Image } from 'baseComponents'
 
 const WithLink = ({ post, location, children }) =>
-  location === "single" ? (
+  location === 'single' ? (
     children
   ) : (
     <Link to={`${post.uri}`} aria-label="View the entire post">
@@ -13,7 +13,7 @@ const WithLink = ({ post, location, children }) =>
   )
 
 export const PostEntryMedia = ({
-  imageLoading = "lazy",
+  imageLoading = 'lazy',
   post,
   location,
   ...props

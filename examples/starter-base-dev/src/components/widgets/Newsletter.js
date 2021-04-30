@@ -1,6 +1,6 @@
-import React from "react"
-import { useState } from "react"
-import { BorderTitle } from "baseUiComponents"
+import React from 'react'
+import { useState } from 'react'
+import { BorderTitle } from 'baseUiComponents'
 import {
   Input,
   Button,
@@ -8,26 +8,26 @@ import {
   Box,
   Flex,
   useColorModeValue as colorMode,
-} from "@chakra-ui/react"
-import { transparentize } from "@chakra-ui/theme-tools"
+} from '@chakra-ui/react'
+import { transparentize } from '@chakra-ui/theme-tools'
 
-import addToMailchimp from "gatsby-plugin-mailchimp"
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 export const Newsletter = (props) => {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState('')
   const [msg, setMsg] = useState()
   const handleSubmit = (e) => {
     e.preventDefault()
     addToMailchimp(email).then((data) => {
-      return data.result === "success"
+      return data.result === 'success'
         ? setMsg(data.msg)
-        : setMsg("This email has already subscribed, try with another one")
+        : setMsg('This email has already subscribed, try with another one')
     })
   }
   const handleChange = (e) => {
     setEmail(e.target.value)
   }
-  const buttonBgColor = colorMode("nlButtonBg", "modes.dark.nlButtonBg")
+  const buttonBgColor = colorMode('nlButtonBg', 'modes.dark.nlButtonBg')
   const buttonBgHoverColor = colorMode(
     transparentize(`nlButtonBg`, 0.7),
     transparentize(`modes.dark.nlButtonBg`, 0.8)
@@ -52,9 +52,10 @@ export const Newsletter = (props) => {
                   required
                   value={email}
                   border="none"
-                  bg={colorMode("nlInputBg", "modes.dark.nlInputBg")}
+                  bg={colorMode('nlInputBg', 'modes.dark.nlInputBg')}
+                  color={colorMode('nlcolor', 'modes.dark.nlColor')}
                   onChange={handleChange}
-                  aria-label="Add your Email address to subsribe"
+                  aria-label="Add your Email address to subscribe"
                 />
               </Box>
               <Box width={1 / 3}>
@@ -66,7 +67,7 @@ export const Newsletter = (props) => {
                   _hover={{
                     bg: buttonBgHoverColor,
                   }}
-                  color="white"
+                  color={colorMode('nlButtonColor', 'modes.dark.nlButtonColor')}
                   textTransform="uppercase"
                   fontSize="xs"
                   fontWeight="bold"

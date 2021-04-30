@@ -1,15 +1,15 @@
-import React from "react"
-import { Footer, Header } from "baseComponents"
-import { Box, Flex } from "@chakra-ui/react"
-import Headroom from "react-headroom"
-import "baseStyles/wp-styles/styles.scss"
-import { HelmetForFavicon } from "./HelmetForFavicon"
+import React from 'react'
+import { Footer, Header } from 'baseComponents'
+import { Box, Flex, useColorModeValue as colorMode } from '@chakra-ui/react'
+import Headroom from 'react-headroom'
+import 'baseStyles/wp-styles/styles.scss'
+import { HelmetForFavicon } from './HelmetForFavicon'
 
-export const Layout = ({ children, page, type = "page", ...props }) => {
-  const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ""
+export const Layout = ({ children, page, type = 'page', ...props }) => {
+  const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
   const pageTemplate = page?.headlesswp?.pageTemplate
 
-  const fullWidthClass = pageTemplate === "full width" ? "fullWidth" : ""
+  const fullWidthClass = pageTemplate === 'full width' ? 'fullWidth' : ''
   return (
     <>
       <HelmetForFavicon />
@@ -17,8 +17,8 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
         minHeight="100vh"
         flexDirection="column"
         sx={{
-          "&.fullWidth": {
-            ".mainContainer": {
+          '&.fullWidth': {
+            '.mainContainer': {
               maxWidth: `100%`,
               form: {
                 mb: 10,
@@ -30,7 +30,7 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
         className={`${layoutClass}-${type} ${fullWidthClass}`}
         {...props}
       >
-        <Box as={Headroom} sx={{ "&>div": { zIndex: "2!important" } }}>
+        <Box as={Headroom} sx={{ '&>div': { zIndex: '2!important' } }}>
           <Header />
         </Box>
         <Box
@@ -38,7 +38,7 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
           flex={1}
           py={16}
           sx={{
-            ".fullWidth &": {
+            '.fullWidth &': {
               py: 0,
               // mt: '-32px',
             },

@@ -1,5 +1,5 @@
-import React from "react"
-import { Taxonomies } from "baseComponents"
+import React from 'react'
+import { Taxonomies } from 'baseComponents'
 
 export const PostEntryMeta = ({ post, ...props }) => {
   return (

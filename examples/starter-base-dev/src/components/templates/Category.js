@@ -1,6 +1,6 @@
-import React from "react"
-import { Layout, ArchiveContent } from "baseComponents"
-import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
+import React from 'react'
+import { Layout, ArchiveContent } from 'baseComponents'
+import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
 const Category = ({ category, ctx }) => {
   const { name, posts, uri } = category

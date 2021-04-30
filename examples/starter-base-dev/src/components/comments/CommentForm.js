@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext } from 'react'
 import {
   Box,
   Flex,
@@ -7,12 +7,12 @@ import {
   FormControl,
   Button,
   useColorModeValue as colorMode,
-} from "@chakra-ui/react"
-import { Input } from "baseUiComponents"
-import { CommentStatusFeedback } from "./index"
-import { inputFields } from "./inputfields"
-import { CommentsListContext } from "baseComponents/comments/context"
-import { useCommentForm } from "baseComponents/comments/hooks/useCommentForm"
+} from '@chakra-ui/react'
+import { Input } from 'baseUiComponents'
+import { CommentStatusFeedback } from './index'
+import { inputFields } from './inputfields'
+import { CommentsListContext } from 'baseComponents/comments/context'
+import { useCommentForm } from 'baseComponents/comments/hooks/useCommentForm'
 
 export const CommentForm = () => {
   const { activeComment, cancelReply } = useContext(CommentsListContext)
@@ -42,7 +42,7 @@ export const CommentForm = () => {
           ml="auto"
           className="submit-button"
           type="submit"
-          disabled={commentStatus === "loading"}
+          disabled={commentStatus === 'loading'}
         >
           Post Comment
         </Button>
@@ -75,9 +75,9 @@ export const CommentForm = () => {
             as="form"
             wrap="wrap"
             justify="space-between"
-            bg={colorMode("cardBg", "modes.dark.cardBg")}
+            bg={colorMode('cardBg', 'modes.dark.cardBg')}
             borderRadius="lg"
-            p={["4", "8"]}
+            p={['4', '8']}
             onSubmit={onSubmit}
             noValidate
           >
@@ -85,15 +85,15 @@ export const CommentForm = () => {
             {inputFields.map((el) => {
               const Tag = el.tag
               const pStyles =
-                Tag === "textarea"
+                Tag === 'textarea'
                   ? {
-                      w: "full",
+                      w: 'full',
                     }
                   : {
-                      w: ["full", "calc(50% - 1rem)"],
+                      w: ['full', 'calc(50% - 1rem)'],
                     }
               const textarea =
-                Tag === "textarea" ? { rows: 6, cols: 48, h: "auto" } : {}
+                Tag === 'textarea' ? { rows: 6, cols: 48, h: 'auto' } : {}
               return (
                 <FormControl
                   key={el.name}
@@ -111,7 +111,6 @@ export const CommentForm = () => {
                     <Input
                       as={Tag}
                       d="block"
-                      layerStyle="input"
                       {...register(el.name, {
                         required: el.required,
                         pattern: el.pattern,
@@ -124,10 +123,10 @@ export const CommentForm = () => {
                     />
                   </FormLabel>
                   <FormErrorMessage fontStyle="italic" mt="0">
-                    {errors[el.name]?.type === "required" && (
+                    {errors[el.name]?.type === 'required' && (
                       <span className="error">Required</span>
                     )}
-                    {errors[el.name]?.type === "pattern" && (
+                    {errors[el.name]?.type === 'pattern' && (
                       <span className="error">Invalid value</span>
                     )}
                   </FormErrorMessage>
