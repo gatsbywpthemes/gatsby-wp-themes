@@ -21,5 +21,6 @@
     ],
     "grammarly.severity": {
     
-    }
+    },
+    "editor.formatOnSave": true
 }

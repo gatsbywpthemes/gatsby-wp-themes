@@ -83,4 +83,4 @@ yarn-error.log
 
 #vscode
 wp-base.code-workspace
-.vscode/settings.json
+.vscode/
