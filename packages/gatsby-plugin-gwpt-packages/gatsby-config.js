@@ -7,7 +7,7 @@ require("dotenv").config({
 })
 const path = require("path")
 module.exports = (options) => {
-  options.fonts = options.googleFonts || []
+  options.fonts = options.fonts || []
 
   const mergedOptions = {
     ...options,
