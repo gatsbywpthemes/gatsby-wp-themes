@@ -38,7 +38,7 @@ export const RecentPosts = () => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
   const { nodes } = data.allWpPost
   return (
-    nodes.length && (
+    !!nodes.length && (
       <WidgetContainer
         className="widget widget-recent-posts"
         title="Recent Posts"

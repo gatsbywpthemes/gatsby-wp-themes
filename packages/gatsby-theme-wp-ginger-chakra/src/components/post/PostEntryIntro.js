@@ -42,7 +42,7 @@ export const PostEntryIntro = ({ ctx, post }) => {
       <PostEntryExcerpt post={post} location="single" />
       <footer className="entry-meta">
         <Author post={post} location="single" />{' '}
-        {post.categories.nodes.length && (
+        {!!post.categories.nodes.length && (
           <>
             / <Categories {...{ post }} />
           </>

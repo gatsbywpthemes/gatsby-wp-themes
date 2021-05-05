@@ -22,7 +22,7 @@ export const CategoriesWidget = () => {
   } = useStaticQuery(ALL_CATEGORIES_QUERY)
   const nonEmptyCategories = nodes.filter((el) => el.count)
   return (
-    nonEmptyCategories.length && (
+    !!nonEmptyCategories.length && (
       <WidgetContainer title="Categories" className="widget widget-categories">
         <chakra.ul textStyle="listRaw">
           {nonEmptyCategories.map((category) => (

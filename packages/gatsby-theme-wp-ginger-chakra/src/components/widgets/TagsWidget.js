@@ -22,7 +22,7 @@ export const TagsWidget = () => {
   } = useStaticQuery(ALL_TAGS_QUERY)
   const nonEmptyTags = nodes.filter((el) => el.count)
   return (
-    nonEmptyTags.length && (
+    !!nonEmptyTags.length && (
       <WidgetContainer className="widget widget-tags" title="Tags">
         <Flex as="ul" wrap="wrap" textStyle="listRaw">
           {nonEmptyTags.map((tag) => (

@@ -19,7 +19,7 @@ export const TagsWidget = () => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
   return (
-    nodes.length && (
+    !!nodes.length && (
       <WidgetContainer className="widget-tags">
         <h2 className="widget-title h4">Tags</h2>
         <ul className="d-flex flex-wrap p-0" style={{ listStyle: 'none' }}>

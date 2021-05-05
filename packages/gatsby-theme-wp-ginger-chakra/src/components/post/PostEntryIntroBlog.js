@@ -35,7 +35,7 @@ export const PostEntryIntroBlog = ({ post }) => {
       <PostEntryExcerpt post={post} location="archive" />
       <footer className="entry-meta">
         <Author post={post} />{' '}
-        {post.categories.nodes.length && (
+        {!!post.categories.nodes.length && (
           <>
             / <Categories post={post} />
           </>

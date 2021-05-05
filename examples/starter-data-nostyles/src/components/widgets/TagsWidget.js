@@ -17,7 +17,7 @@ export const TagsWidget = (props) => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
   return (
-    nodes.length && (
+    !!nodes.length && (
       <section className="widget widget-tags" {...props}>
         <h2 className="widget-title">Tags</h2>
         <ul>

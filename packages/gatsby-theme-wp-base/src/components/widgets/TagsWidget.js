@@ -20,7 +20,7 @@ export const TagsWidget = (props) => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
   return (
-    nodes.length && (
+    !!nodes.length && (
       <section className="widget widget-tags" {...props}>
         <BorderTitle as="h2" mt={2} mb={5} className="widget-title">
           Tags
