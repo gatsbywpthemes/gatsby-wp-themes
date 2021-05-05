@@ -1,6 +1,13 @@
 const config = {
   //pathPrefix: "",
-  fonts: ["Special+Elite", "Lexend:400,400i,700,700i"],
+  webfontsOptions: {
+    fonts: {
+      google: [
+        { family: "Special Elite" },
+        { family: "Lexend", variants: ["400", "400i", "700", "700i"] },
+      ],
+    },
+  },
   // addSiteMap: false,
   // siteMapOptions: {},
   // addColorModes: false,

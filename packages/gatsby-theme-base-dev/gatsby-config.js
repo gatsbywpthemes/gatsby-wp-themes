@@ -1,3 +1,4 @@
+const DEFAULT_OPTIONS = require('@gatsbywpthemes/gatsby-theme-blog-data/utils/defaultOptions')
 const fs = require('fs')
 require('dotenv').config({
   path:
@@ -5,9 +6,10 @@ require('dotenv').config({
       `.env.${process.env.NODE_ENV}`) ||
     '.env',
 })
-const path = require('path')
+
 module.exports = (options) => {
   const mergedOptions = {
+    ...DEFAULT_OPTIONS,
     animation: true,
     layoutWidth: {
       page: `l`,

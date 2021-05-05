@@ -28,6 +28,7 @@ const DEFAULT_OPTIONS = {
   overrideWPColors: false,
   developLimit: null,
   addColorModes: true,
+  webfontsOptions: {},
 }
 
 module.exports = DEFAULT_OPTIONS

@@ -12,7 +12,11 @@ const config = {
   // title: 'Blog Title Placeholder',
   // author: 'Name Placeholder',
   // description: 'Description placeholder',
-  fonts: ["Baumans", "Coda"],
+  webfontsOptions: {
+    fonts: {
+      google: [{ family: "Baumans" }, { family: "Coda" }],
+    },
+  },
   // addSiteMap: false,
   // siteMapOptions: {},
   overrideWPColors: true,

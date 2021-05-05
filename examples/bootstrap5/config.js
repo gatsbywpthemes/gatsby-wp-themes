@@ -3,7 +3,19 @@ const config = {
   //pathPrefix: "",
 
   siteUrl: "https://gatsby-wp-b5.netlify.app/",
-  fonts: ["Prata", "Fira Sans:300,700"],
+  webfontsOptions: {
+    fonts: {
+      google: [
+        {
+          family: "Prata",
+        },
+        {
+          family: "Fira Sans",
+          variants: ["300", "300i", "700"],
+        },
+      ],
+    },
+  },
   //gaUniversalTrackingId: "UA-186757931-1",
   gaUniversalOptions: {
     head: true,

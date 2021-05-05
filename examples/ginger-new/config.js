@@ -1,7 +1,6 @@
 const config = {
   //pathPrefix: "",
   addSiteMap: true,
-  fonts: [],
   //siteMapOptions: {},
   // addColorModes: false,
   lightboxSettings: {},

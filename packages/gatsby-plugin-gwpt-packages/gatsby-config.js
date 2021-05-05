@@ -42,26 +42,18 @@ module.exports = (options) => {
    * Conditionally add google fonts plugin
    * to avoid errors on build
    */
-  if (options.fonts.length) {
-    const googleFonts = []
-    options.fonts.forEach((font) => {
-      const [googleFont, variantsString] = font.split(":")
-
-      googleFonts.push({
-        family: googleFont,
-        variants: variantsString ? variantsString.split(",") : undefined,
-      })
-    })
-
+  if (
+    options.webfontsOptions.fonts &&
+    (options.webfontsOptions.fonts.google ||
+      options.webfontsOptions.fonts.google2)
+  ) {
     plugins.push({
       resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: {
-          google: googleFonts,
-        },
         formats: ["woff2", "woff"],
         useMinify: true,
         display: "swap",
+        ...options.webfontsOptions,
       },
     })
   }

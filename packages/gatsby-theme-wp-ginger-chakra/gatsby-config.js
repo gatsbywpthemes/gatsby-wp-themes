@@ -1,3 +1,4 @@
+const DEFAULT_OPTIONS = require('@gatsbywpthemes/gatsby-theme-blog-data/utils/defaultOptions')
 const fs = require('fs')
 require('dotenv').config({
   path:
@@ -5,21 +6,20 @@ require('dotenv').config({
       `.env.${process.env.NODE_ENV}`) ||
     '.env',
 })
+
 const path = require('path')
 module.exports = (options) => {
-  options.fonts = options.googleFonts || []
-
-  const mergedOptions = {
-    ...options,
-  }
   const plugins = [
     {
       resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
-      options: mergedOptions,
+      options: options,
     },
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
-      options: mergedOptions,
+      options: {
+        ...DEFAULT_OPTIONS,
+        ...options,
+      },
     },
     {
       resolve: 'gatsby-plugin-root-import',

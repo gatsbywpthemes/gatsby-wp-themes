@@ -16,8 +16,7 @@ const config = {
   // title: 'Blog Title Placeholder',
   // author: 'Name Placeholder',
   // description: 'Description placeholder',
-  // fonts: ["abril fatface", "fira sans"],
-
+  //webfontsOptions: {},
   // addSiteMap: false,
   // siteMapOptions: {},
 }

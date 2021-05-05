@@ -1,3 +1,4 @@
+const DEFAULT_OPTIONS = require('@gatsbywpthemes/gatsby-theme-blog-data/utils/defaultOptions')
 const fs = require('fs')
 require('dotenv').config({
   path:
@@ -8,6 +9,7 @@ require('dotenv').config({
 const path = require('path')
 module.exports = (options) => {
   const mergedOptions = {
+    ...DEFAULT_OPTIONS,
     layoutWidth: {
       page: `l`,
       post: `l`,
