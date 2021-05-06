@@ -24,7 +24,6 @@ module.exports = {
     siteUrl,
   },
   plugins: [
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
 
