@@ -1,16 +1,16 @@
-const Color = require("color")
+import { theme } from "@chakra-ui/react"
+import { darken, lighten } from "polished"
 
-const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
-const darken = (clr, val) => Color(clr).darken(val).rgb().string()
+const { gray } = theme.colors
 
 //Palette
 
 const light = "#FBEED9",
-  ultraLight = lighten("#FBEED9", 0.04),
+  ultraLight = lighten(0.04, "#FBEED9"),
   dark = "#082737",
-  dark0 = lighten("#082737", 0.08),
-  dark2 = darken("#082737", 0.3),
-  ultraDark = darken("#082737", 0.6),
+  dark0 = lighten(0.08, "#082737"),
+  dark2 = darken(0.04, "#082737"),
+  ultraDark = darken(0.1, "#082737"),
   primary = "tomato",
   secondary = "#4C959B",
   yellow = "#FCB458",
@@ -18,7 +18,7 @@ const light = "#FBEED9",
   bg = ultraLight,
   text = ultraDark
 
-module.exports = {
+const colors = {
   /* basic colors*/
   light,
   ultraLight,
@@ -54,7 +54,7 @@ module.exports = {
   nlInputBg: light,
   /* post */
   archiveTitleBg: "black",
-  infoBg: darken(light, 0.02),
+  infoBg: darken(0.02, light),
   archiveTitleBg: primary,
   cardBg: ultraLight,
 
@@ -83,7 +83,7 @@ module.exports = {
       /* newsletter */
       nlButtonBg: secondary,
       nlButtonColor: light,
-      nlInputBg: lighten(dark, 0.05),
+      nlInputBg: lighten(0.05, dark),
       /* post*/
       archiveTitleBg: primary,
       infoBg: ultraDark,
@@ -93,3 +93,5 @@ module.exports = {
     },
   },
 }
+
+export default colors
