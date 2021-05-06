@@ -12,11 +12,7 @@
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "*",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "*",
-    "autoprefixer": "^10.2.5",
-    "gatsby-plugin-postcss": "^4.0.0",
-    "postcss": "^8.2.8",
-    "tailwindcss": "^2.0.3"
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "*"
   },
   "devDependencies": {
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.21"

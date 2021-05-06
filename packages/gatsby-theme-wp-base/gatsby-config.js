@@ -18,7 +18,6 @@ module.exports = (options) => {
     ...options,
   }
   const plugins = [
-    `gatsby-plugin-postcss`,
     {
       resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: mergedOptions,

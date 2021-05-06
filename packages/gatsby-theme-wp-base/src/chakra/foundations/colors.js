@@ -1,24 +1,26 @@
-const colors = require('tailwindcss/colors')
+import { theme } from '@chakra-ui/react'
+import { lighten } from 'polished'
 
-const { blueGray, red, teal, purple } = colors
+const { red, teal, purple, gray } = theme.colors
 
-//palette
-const light = blueGray[100],
-  ultraLight = blueGray[50],
-  dark = blueGray[800],
-  ultraDark = blueGray[900],
+//Palette
+
+const light = gray[100],
+  ultraLight = gray[50],
+  dark = lighten(0.02, gray[800]),
+  ultraDark = gray[900],
   primary = teal[400],
   secondary = purple[500],
   highlight = red[500],
-  mutted = blueGray[200],
+  mutted = gray[200],
   bg = ultraLight,
   text = ultraDark
 
-module.exports = {
-  /* header */
-  ...colors,
+const colors = {
+  /* basic colors */
   light,
   ultraLight,
+  dark,
   ultraDark,
   primary,
   secondary,
@@ -42,7 +44,7 @@ module.exports = {
   mobileMenuBg: 'black',
   mobileMenuColor: light,
   subMenuBg: 'black',
-  subMenuColor: 'white',
+  subMenucolor: 'white',
   /* newsletter */
   nlButtonBg: 'black',
   nlButtonColor: 'white',
@@ -50,8 +52,7 @@ module.exports = {
   nlColor: text,
   /* post */
   infoBg: light,
-  archiveTitleBg: blueGray[100],
-  archiveTitleColor: text,
+  archiveTitleBg: gray[100],
   cardBg: 'white',
 
   modes: {
@@ -80,7 +81,7 @@ module.exports = {
       /* newsletter */
       nlButtonBg: primary,
       nlButtonColor: teal[900],
-      nlInputBg: blueGray[700],
+      nlInputBg: gray[700],
       nlColor: teal[900],
       /* post*/
       archiveTitleBg: primary,
@@ -90,3 +91,5 @@ module.exports = {
     },
   },
 }
+
+export default colors
