@@ -8,7 +8,7 @@ const { fonts, lineHeights, fontWeights, fontSizes } = typoSettings
 module.exports = merge(defaultConfig, {
   colors: colorSettings,
   fontFamily: fonts,
-  fontEeight: fontWeights,
+  fontWeight: fontWeights,
   lineHeight: lineHeights,
   fontSize: fontSizes,
 })
