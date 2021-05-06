@@ -9,7 +9,6 @@ require('dotenv').config({
 const path = require('path')
 module.exports = (options) => {
   const mergedOptions = {
-    ...DEFAULT_OPTIONS,
     layoutWidth: {
       page: `l`,
       post: `l`,
@@ -24,7 +23,10 @@ module.exports = (options) => {
     },
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
-      options: mergedOptions,
+      options: {
+        ...DEFAULT_OPTIONS,
+        ...mergedOptions,
+      },
     },
     {
       resolve: 'gatsby-plugin-root-import',
