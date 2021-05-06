@@ -7,9 +7,10 @@ import layerStyles from './layerStyles'
 import textStyles from './textStyles'
 
 import styles from './styles'
-
+const { typography, ...rest } = foundations
 const theme = extendTheme({
-  ...foundations,
+  ...rest,
+  ...typography,
   components,
   textStyles: {
     ...textStyles,
@@ -20,5 +21,4 @@ const theme = extendTheme({
 
   styles,
 })
-
 export default theme
