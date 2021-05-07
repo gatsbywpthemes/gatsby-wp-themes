@@ -7,7 +7,7 @@ const typographySettings = {
   },
   fontWeights: {
     // body: 400,
-    heading: 700,
+    // heading: "bold",
     // bold: 700,
   },
   lineHeights: {
@@ -35,7 +35,14 @@ const typographySettings = {
   },
   base: {
     a: {
-      //color: 'inherit'
+      //color: 'inherit',
+      // textDecoration: 'undeline',
+      _hover: {
+        //textDecoration: 'none',
+      },
+    },
+    body: {
+      //fontSize: ["md", "lg"],
     },
     p: {
       //mb: 5,

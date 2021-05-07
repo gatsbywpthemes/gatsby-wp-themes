@@ -1,104 +1,88 @@
-import { mode } from "@chakra-ui/theme-tools"
 // eslint-disable-next-line no-unused-vars
 const rem = (px) => px / 16 + "rem"
-
-const p = {
-  fontSize: ["md"],
-  lineHeight: "body",
-  mb: 5,
-}
-const a = {
-  transition: "all .2s",
-  color: "accent",
-  fontWeight: "bold",
-  textDecoration: "none",
-  "&:hover": {
-    textDecoration: "none",
-  },
-}
-const heading = {
-  fontFamily: "heading",
-  lineHeight: "heading",
-  fontWeight: "heading",
-  a: {
-    borderBottom: "none",
-  },
-}
-
-const h1 = {
-  ...heading,
-  fontSize: ["3xl", "4xl"],
-  // mt: 1,
-}
-const h2 = {
-  ...heading,
-  fontSize: ["2xl", "3xl"],
-  // mt: 1,
-}
-
-const h3 = {
-  ...heading,
-  fontSize: ["xl", "2xl"],
-  // mt: 2,
-}
-const h4 = {
-  ...heading,
-  fontSize: ["lg", "xl"],
-}
-
-const h5 = {
-  ...heading,
-  fontSize: "xm",
-}
-const h6 = {
-  ...heading,
-  fontSize: "xs",
-}
-
-const base = {
-  a,
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-}
-
 const typographySettings = {
-  baseFontSize: "16px",
   fonts: {
-    body: "Coda",
-    heading: "Baumans",
+    body: "Coda, sans-serif",
+    heading: "Baumans, sans-serif",
+    // mono: 'SFMono-Regular, Menlo,Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
   },
   fontWeights: {
-    //   body: 400,
-    // heading: `bold`,
+    // body: 400,
+    heading: 400,
     // bold: 700,
   },
   lineHeights: {
     // body: 1.8,
-    // heading: 1.4,
+    // heading: 1.1,
     // loose: 2,
   },
-
   fontSizes: {
     // xs: rem(12),
     // sm: rem(14),
     // md: rem(16),
     // lg: rem(18),
     // xl: rem(20),
-    // '2xl': rem(24),
-    // '3xl': rem(28),
-    // '4xl': rem(36),
-    // '5xl': rem(48),
-    // '6xl': rem(64),
-    // '7xl': rem(72),
-    // '8xl': rem(96),
-    // '9xl': rem(128),
+    // "2xl": rem(24),
+    // "3xl": rem(28),
+    // "4xl": rem(36),
+    // "5xl": rem(48),
+    // "6xl": rem(64),
+    // "7xl": rem(72),
+    // "8xl": rem(96),
+    // "9xl": rem(128),
   },
-  base,
+  base: {
+    a: {
+      //transition: "all .2s",
+      //fontWeight: "bold",
+      //textDecoration: "none",
+      _hover: {
+        //textDecoration: "none",
+      },
+    },
+    body: {
+      //fontSize: ["md"],
+    },
+    p: {
+      //mb: 5,
+    },
+    h1: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ["3xl", "4xl"],
+    },
+    h2: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['2xl', '3xl',],
+    },
+    h3: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['xl', '2xl'],
+    },
+    h4: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['lg', 'xl'],
+    },
+    h5: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['sm'],
+    },
+    h6: {
+      // fontFamily: 'heading',
+      // lineHeight: 'heading',
+      // fontWeight: 'heading',
+      // fontSize: ['xs'],
+    },
+  },
 }
 
-export default typographySettings
+module.exports = typographySettings

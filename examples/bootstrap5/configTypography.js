@@ -1,5 +1,4 @@
 const typographySettings = {
-  baseFontSize: "18px",
   fonts: {
     //body: "Trebuchet MS, sans-serif",
     heading: "Prata, serif",

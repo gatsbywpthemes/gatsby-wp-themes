@@ -1,26 +1,18 @@
 import { extendTheme } from "@chakra-ui/react"
-import themeBase from "@gatsbywpthemes/gatsby-theme-wp-base/src/chakra/theme"
+import theme from "baseSrc/chakra/theme"
 import colorsSettings from "../../../../configColors"
 import typographySettings from "../../../../configTypography"
-import components from "./shadow/components"
-import textStyles from "./textStyles"
-import layerStyles from "./layerStyles"
-import styles from "./styles"
 
-const theme = extendTheme({
-  ...themeBase,
-  components: {
-    ...themeBase.components,
-    ...components,
+const extendedTheme = extendTheme(
+  {
+    colors: colorsSettings,
+    ...typographySettings,
+    styles: {
+      global: {
+        ...typographySettings.base,
+      },
+    },
   },
-  colors: colorsSettings,
-  textStyles: {
-    ...textStyles,
-  },
-  layerStyles: {
-    ...layerStyles,
-  },
-  ...typographySettings,
-  styles,
-})
-export default theme
+  theme
+)
+export default extendedTheme

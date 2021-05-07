@@ -1,28 +1,22 @@
-import merge from "deepmerge"
+import { extendTheme } from "@chakra-ui/react"
 import theme from "gingerThemeSrc/chakra/theme"
 import colorsSettings from "../../../../configColors"
 import typographySettings from "../../../../configTypography"
 import sizesSettings from "../../../../configSizes"
 
-const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray
-
-export default merge(
-  theme,
+const extendedTheme = extendTheme(
   {
     colors: colorsSettings,
+    ...typographySettings,
     breakpoints: sizesSettings.breakpoints || theme.breakpoints,
     sizes: sizesSettings.sizes,
-    baseFontSize: typographySettings.baseFontSize,
-    fonts: typographySettings.fonts,
-    fontWeights: typographySettings.fontWeights,
-    lineHeights: typographySettings.lineHeights,
-    letterSpacings: typographySettings.letterSpacings,
-    fontSizes: typographySettings.fontSizes,
     styles: {
-      global: (props) => {
-        return merge(theme.styles.global(props), { ...typographySettings.base })
+      global: {
+        ...typographySettings.base,
       },
     },
   },
-  { arrayMerge: overwriteMerge }
+  theme
 )
+
+export default extendedTheme

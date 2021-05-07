@@ -6,9 +6,10 @@ export const styles = {
     return {
       body: {
         fontFamily: 'body',
+        lineHeight: 'body',
+        fontWeight: 'body',
         color: mode('text', 'modes.dark.text')(props),
         bg: mode('bg', 'modes.dark.bg')(props),
-        lineHeight: 'body',
         fontSize: ['md', 'lg'],
         transition: 'none',
       },

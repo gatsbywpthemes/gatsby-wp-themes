@@ -117,12 +117,16 @@ export const textStyles = {
     },
   },
   separateWithMiddots: {
+    display: 'flex',
+    alignItems: 'center',
     '&:not(:last-of-type):after': {
       content: '"·"',
       mx: 1,
     },
   },
   separateWithSlashes: {
+    display: 'flex',
+    alignItems: 'center',
     '&:not(:last-of-type):after': {
       content: '"/"',
       mx: 1,

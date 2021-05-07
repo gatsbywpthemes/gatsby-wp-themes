@@ -22,7 +22,7 @@ export const fonts = {
 
 export const fontWeights = {
   body: 400,
-  heading: 400,
+  heading: 'bold',
   bold: 700,
 }
 
@@ -41,6 +41,10 @@ export const p = {
 }
 export const a = {
   color: 'inherit',
+  textDecoration: 'underline',
+  _hover: {
+    textDecoration: 'none',
+  },
 }
 const heading = {
   fontFamily: 'heading',

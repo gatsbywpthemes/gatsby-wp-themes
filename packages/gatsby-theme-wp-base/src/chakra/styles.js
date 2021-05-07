@@ -1,8 +1,6 @@
 import { mode } from '@chakra-ui/theme-tools'
 
 const p = {
-  fontSize: ['md'],
-  lineHeight: 'body',
   mb: 5,
 }
 const a = {
@@ -18,26 +16,20 @@ const heading = {
   fontFamily: 'heading',
   lineHeight: 'heading',
   fontWeight: 'heading',
-  a: {
-    borderBottom: 'none',
-  },
 }
 
 const h1 = {
   ...heading,
   fontSize: ['3xl', '4xl'],
-  // mt: 1,
 }
 const h2 = {
   ...heading,
   fontSize: ['2xl', '3xl'],
-  // mt: 1,
 }
 
 const h3 = {
   ...heading,
   fontSize: ['xl', '2xl'],
-  // mt: 2,
 }
 const h4 = {
   ...heading,
@@ -46,7 +38,7 @@ const h4 = {
 
 const h5 = {
   ...heading,
-  fontSize: 'xm',
+  fontSize: 'sm',
 }
 const h6 = {
   ...heading,
@@ -73,6 +65,8 @@ const styles = {
         bg: mode('bg', 'modes.dark.bg')(props),
         transition: 'all .4s ease-in-out',
         lineHeight: 'body',
+        fontWeight: 'body',
+        fontSize: ['md'],
       },
       '*::placeholder': {
         color: mode('gray.400', 'whiteAlpha.400')(props),

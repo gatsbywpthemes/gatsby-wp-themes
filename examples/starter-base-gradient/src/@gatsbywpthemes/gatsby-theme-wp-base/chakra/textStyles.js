@@ -12,7 +12,6 @@ const textStyles = {
     WebkitBackgroundClip: "text",
     backgroundImage: `linear-gradient(60deg, tomato, #c725A3)`,
   },
-  // : { color: "purple" },
 }
 
 export default textStyles
