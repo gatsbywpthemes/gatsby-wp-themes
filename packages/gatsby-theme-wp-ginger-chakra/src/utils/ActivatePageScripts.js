@@ -1,3 +1,8 @@
 import React from 'react'
+import { ActivatePrism } from './ActivatePrism'
 
-export const ActivatePageScripts = () => <></>
+export const ActivatePageScripts = () => (
+  <>
+    <ActivatePrism />
+  </>
+)

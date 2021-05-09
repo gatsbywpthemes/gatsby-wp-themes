@@ -1,10 +1,8 @@
-import { useEffect } from "react"
-import Prism from "prismjs"
+import React from 'react'
+import { ActivatePrism } from './ActivatePrism'
 
-export const ActivatePageScripts = () => {
-  useEffect(() => {
-    // call the highlightAll() function to style our code blocks
-    Prism.highlightAll()
-  }, [])
-  return null
-}
+export const ActivatePageScripts = () => (
+  <>
+    <ActivatePrism />
+  </>
+)
