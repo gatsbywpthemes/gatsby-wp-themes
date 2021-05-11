@@ -48,23 +48,25 @@ module.exports = async ({ actions, graphql }, options) => {
 
   const posts = postsQuery.data.allWpPost.edges
 
-  posts.map((post) => {
-    createPage({
-      path: post.node.uri,
-      component: postTemplate,
-      context: {
-        id: post.node.id,
-        uri: post.node.uri,
-        prev: post.previous ? post.previous.uri : null,
-        next: post.next ? post.next.uri : null,
-        yoastSeo: includeYoast,
-        seo: {
-          page: post.node.seo,
-          general: options.generalSeoSettings,
+  return Promise.all(
+    posts.map((post) => {
+      createPage({
+        path: post.node.uri,
+        component: postTemplate,
+        context: {
+          id: post.node.id,
+          uri: post.node.uri,
+          prev: post.previous ? post.previous.uri : null,
+          next: post.next ? post.next.uri : null,
+          yoastSeo: includeYoast,
+          seo: {
+            page: post.node.seo,
+            general: options.generalSeoSettings,
+          },
         },
-      },
+      })
     })
-  })
+  )
 
   if (!postsPath) {
     return

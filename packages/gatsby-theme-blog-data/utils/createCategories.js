@@ -12,55 +12,44 @@ module.exports = async ({ actions, graphql }, options) => {
       nodes {
         slug
         uri
+        count
+        posts {
+          nodes {
+            id
+          }
+        }
         ${includeYoast ? taxonomySeoFromWP : ``}
       }
     }
   }
   `
 
-  const GET_POSTS_BY_CATEGORY = `
-query GET_POSTS_BY_CATEGORY($slug: String!) {
-  allWpPost(filter: {categories: {nodes: {elemMatch: {slug: {eq: $slug}}}}}) {
-    nodes {
-      title
-    }
-  }
-}
-  `
   const { createPage } = actions
   const categoriesQuery = await graphql(GET_CATEGORIES)
   const categories = categoriesQuery.data.allWpCategory.nodes
-  for (const category of categories) {
-    const postsByQuery = await graphql(GET_POSTS_BY_CATEGORY, {
-      slug: category.slug,
-    })
-    if (
-      postsByQuery &&
-      postsByQuery.data &&
-      postsByQuery.data.allWpPost &&
-      postsByQuery.data.allWpPost.nodes &&
-      postsByQuery.data.allWpPost.nodes.length
-    ) {
-      const items = postsByQuery.data.allWpPost.nodes
-      const pathPrefix = ({ pageNumber }) =>
-        pageNumber === 0
-          ? category.uri
-          : normalize(`${category.uri}${options.paginationPrefix}`)
-      paginate({
-        createPage,
-        pathPrefix,
-        component: template,
-        items,
-        itemsPerPage: options.postsPerPage,
-        context: {
-          slug: category.slug,
-          yoastSeo: includeYoast,
-          seo: {
-            page: category.seo,
-            general: options.generalSeoSettings,
+
+  returnPromise.all(
+    categories
+      .filter((category) => category.count)
+      .map((category) =>
+        paginate({
+          createPage,
+          pathPrefix: ({ pageNumber }) =>
+            pageNumber === 0
+              ? category.uri
+              : normalize(`${category.uri}${options.paginationPrefix}`),
+          component: template,
+          items: category.posts.nodes,
+          itemsPerPage: options.postsPerPage,
+          context: {
+            slug: category.slug,
+            yoastSeo: includeYoast,
+            seo: {
+              page: category.seo,
+              general: options.generalSeoSettings,
+            },
           },
-        },
-      })
-    }
-  }
+        })
+      )
+  )
 }

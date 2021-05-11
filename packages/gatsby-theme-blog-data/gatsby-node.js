@@ -49,7 +49,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
         nodes {
           uri
         }
-      }    
+      }
     }
   `)
 
@@ -71,12 +71,13 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       }),
     ...options,
   }
-
-  await createPosts({ actions, graphql }, mergedOptions)
-  await createSitePages({ actions, graphql }, mergedOptions)
-  await createCategories({ actions, graphql }, mergedOptions)
-  await createTags({ actions, graphql }, mergedOptions)
-  await createUsers({ actions, graphql }, mergedOptions)
+  await Promise.all([
+    createPosts({ actions, graphql }, mergedOptions),
+    createSitePages({ actions, graphql }, mergedOptions),
+    createCategories({ actions, graphql }, mergedOptions),
+    createTags({ actions, graphql }, mergedOptions),
+    createUsers({ actions, graphql }, mergedOptions),
+  ])
 }
 
 exports.createSchemaCustomization = ({ actions }) => {

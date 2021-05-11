@@ -21,28 +21,30 @@ module.exports = async ({ actions, graphql }, options) => {
   const pagesQuery = await graphql(GET_PAGES)
   const pages = pagesQuery.data.allWpPage.nodes
 
-  pages.map(({ uri, isPostsPage, seo, id }) => {
-    /* don't create page for postsPath */
-    if (isPostsPage) {
-      return
-    }
-    if (options.pageCreateDebugOutput) {
-      console.log(
-        `[@gatsbywpthemes/gatsby-theme-blog-data] create page: ${uri}`
-      )
-    }
-    createPage({
-      path: uri,
-      component: pageTemplate,
-      context: {
-        id,
-        uri,
-        yoastSeo: includeYoast,
-        seo: {
-          page: seo,
-          general: options.generalSeoSettings,
+  return Promise.all(
+    pages.map(({ uri, isPostsPage, seo, id }) => {
+      /* don't create page for postsPath */
+      if (isPostsPage) {
+        return
+      }
+      if (options.pageCreateDebugOutput) {
+        console.log(
+          `[@gatsbywpthemes/gatsby-theme-blog-data] create page: ${uri}`
+        )
+      }
+      createPage({
+        path: uri,
+        component: pageTemplate,
+        context: {
+          id,
+          uri,
+          yoastSeo: includeYoast,
+          seo: {
+            page: seo,
+            general: options.generalSeoSettings,
+          },
         },
-      },
+      })
     })
-  })
+  )
 }
