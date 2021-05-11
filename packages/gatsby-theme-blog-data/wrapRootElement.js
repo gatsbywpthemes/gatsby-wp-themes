@@ -48,7 +48,6 @@ const ThemeOptionsProvider = ({ children, options }) => {
     ...headlessWPOptions,
     ...options,
   }
-  console.log(mergedOptions)
   return (
     <themeOptions.Provider value={mergedOptions}>
       {children}
