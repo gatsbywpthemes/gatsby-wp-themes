@@ -5,7 +5,7 @@ import uniqueBy from 'lodash.uniqby'
 
 export const useSearchQuery = (contentType = 'PAGE') => {
   const [clickable, setClickable] = useState(true)
-  const { search } = useContext(SearchContext)
+  const search = useContext(SearchContext)
   const GET_RESULTS = gql`
     fragment PageFields on ${contentType === 'PAGE' ? `Page` : `Post`} {
       title

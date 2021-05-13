@@ -1,20 +1,15 @@
 import React from 'react'
-import { useMenusQuery } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { useMenuItems } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { useCollapse } from '../ui-components/useCollapse'
 import { SubMenu } from './SubMenu'
 import { MenuItem } from './MenuItem'
 import { ToggleButton } from './ToggleButton'
 
-import { flatListToHierarchical } from './index'
-
 export const Menu = ({ location = 'PRIMARY' }) => {
-  const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find((n) => n.locations.includes(location))
-  const menuItems = menuEdge ? menuEdge.menuItems : null
+  const menuItems = useMenuItems(location)
   const [showClass, handler] = useCollapse()
-  if (menuItems) {
-    const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
-    return (
+  return (
+    menuItems && (
       <nav
         className="navbar navbar-expand-lg text-left text-uppercase border sticky-top bg-light"
         aria-label="main"
@@ -23,7 +18,7 @@ export const Menu = ({ location = 'PRIMARY' }) => {
           <ToggleButton handler={handler} />
           <div className={`collapse navbar-collapse ${showClass}`}>
             <ul className="navbar-nav">
-              {menuNodes.map((menuItem) => {
+              {menuItems.map((menuItem) => {
                 if (menuItem.children.length) {
                   return <SubMenu key={menuItem.id} menuItem={menuItem} />
                 } else {
@@ -35,7 +30,5 @@ export const Menu = ({ location = 'PRIMARY' }) => {
         </div>
       </nav>
     )
-  } else {
-    return null
-  }
+  )
 }

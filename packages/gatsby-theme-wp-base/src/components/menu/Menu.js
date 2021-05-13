@@ -1,14 +1,10 @@
 import React from 'react'
-import { useMenusQuery } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-
+import { useMenuItems } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { chakra, Stack } from '@chakra-ui/react'
-import { MenuItem, SubMenu, flatListToHierarchical } from 'baseComponents'
+import { MenuItem, SubMenu } from 'baseComponents'
 
 export const Menu = ({ location = 'PRIMARY', orientation, ...props }) => {
-  const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find((n) => n.locations.includes(location))
-  const menuItems = menuEdge ? menuEdge.menuItems : null
-
+  const menuItems = useMenuItems(location)
   const styleVariant = orientation === 'V' ? menuVStyles : menuHStyles
   const style = {
     ...styleVariant,
@@ -27,9 +23,8 @@ export const Menu = ({ location = 'PRIMARY', orientation, ...props }) => {
     },
   }
 
-  if (menuItems) {
-    const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
-    return (
+  return (
+    menuItems && (
       <chakra.nav
         className="menu"
         sx={{ ...style }}
@@ -42,7 +37,7 @@ export const Menu = ({ location = 'PRIMARY', orientation, ...props }) => {
           role="menu"
           className="menuItemGroup"
         >
-          {menuNodes.map((menuItem) => {
+          {menuItems.map((menuItem) => {
             if (menuItem.children.length) {
               return (
                 <SubMenu
@@ -64,9 +59,7 @@ export const Menu = ({ location = 'PRIMARY', orientation, ...props }) => {
         </Stack>
       </chakra.nav>
     )
-  } else {
-    return null
-  }
+  )
 }
 
 export const menuHStyles = {

@@ -1,5 +1,4 @@
-import React, { useRef, useContext } from 'react'
-
+import React from 'react'
 import {
   Menu,
   WidgetsList,
@@ -7,11 +6,9 @@ import {
   SlideSidebarWrapper,
 } from 'gingerThemeComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { SearchContext } from 'gingerThemeComponents/search/context'
 
 export const SlideSidebar = ({ isOpen, onOpen, onClose }) => {
-  const { addWordPressSearch, widgetAreas } = useThemeOptions()
-
+  const { addWordPressSearch } = useThemeOptions()
   return (
     <SlideSidebarWrapper isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
       {addWordPressSearch && <SearchForm />}

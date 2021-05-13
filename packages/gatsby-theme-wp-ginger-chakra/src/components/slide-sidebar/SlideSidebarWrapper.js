@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from 'react'
+import React, { useRef, useContext, useCallback } from 'react'
 import {
   Drawer,
   DrawerBody,
@@ -8,11 +8,22 @@ import {
 } from '@chakra-ui/react'
 import { useThemeColorModeValue as useColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 import { OpenButton } from 'gingerThemeComponents'
-import { SearchContext } from 'gingerThemeComponents/search/context'
+import {
+  DispatchSearchContext,
+  EscapeInSearchContext,
+} from 'gingerThemeComponents/search/context'
 
 export const SlideSidebarWrapper = ({ isOpen, onOpen, onClose, children }) => {
   const menuBtn = useRef()
-  const { setSearch, escInSearch } = useContext(SearchContext)
+  const dispatch = useContext(DispatchSearchContext)
+  const escInSearch = useContext(EscapeInSearchContext)
+  const onEscape = useCallback(() => {
+    if (!escInSearch) {
+      onClose()
+    } else {
+      dispatch({ search: '' })
+    }
+  }, [escInSearch])
 
   return (
     <>
@@ -29,13 +40,7 @@ export const SlideSidebarWrapper = ({ isOpen, onOpen, onClose, children }) => {
         finalFocusRef={menuBtn}
         size="md"
         closeOnEsc={false}
-        onEsc={() => {
-          if (!escInSearch) {
-            onClose()
-          } else {
-            setSearch('')
-          }
-        }}
+        onEsc={onEscape}
       >
         <DrawerOverlay>
           <DrawerContent

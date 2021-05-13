@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import { chakra } from '@chakra-ui/react'
-import { SearchContext } from 'gingerThemeComponents/search/context'
+import { DispatchSearchContext } from 'gingerThemeComponents/search/context'
 
 export const SearchResults = ({ posts }) => {
-  const { setFromSearch } = useContext(SearchContext)
+  const dispatch = useContext(DispatchSearchContext)
   return (
     !!posts.length && (
       <chakra.ul textStyle="listRaw" mb="4" letterSpacing=".5px" fontSize="md">
@@ -12,7 +12,7 @@ export const SearchResults = ({ posts }) => {
           return (
             <chakra.li key={post.slug} mb="2">
               <Link
-                onClick={() => setFromSearch(true)}
+                onClick={() => dispatch({ fromSearch: true })}
                 to={post.uri}
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />

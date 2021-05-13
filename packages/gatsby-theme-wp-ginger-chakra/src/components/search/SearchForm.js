@@ -3,16 +3,19 @@ import { FiSearch, FiX } from 'react-icons/fi'
 import { Box, Flex, Button, chakra } from '@chakra-ui/react'
 import { SearchQueries } from 'gingerThemeComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { SearchContext } from 'gingerThemeComponents/search/context'
+import {
+  SearchContext,
+  DispatchSearchContext,
+} from 'gingerThemeComponents/search/context'
 import { Input } from 'gingerThemeUiComponents/Input'
 
 export const SearchForm = () => {
-  const { search, setSearch, setEscInSearch } = useContext(SearchContext)
+  const search = useContext(SearchContext)
   const [value, setValue] = useState(search)
-
+  const dispatch = useContext(DispatchSearchContext)
   const handleSubmit = (e) => {
     e.preventDefault()
-    setSearch(value)
+    dispatch({ search: value })
   }
 
   const handleChange = (e) => {
@@ -33,8 +36,8 @@ export const SearchForm = () => {
               value={value}
               type="search"
               onChange={handleChange}
-              onFocus={() => setEscInSearch(true)}
-              onBlur={() => setEscInSearch(false)}
+              onFocus={() => dispatch({ escInSearch: true })}
+              onBlur={() => dispatch({ escInSearch: false })}
               placeholder="search here..."
               aria-label="Search here"
             />
@@ -49,7 +52,7 @@ export const SearchForm = () => {
                 aria-label="Reset Search"
                 onClick={() => {
                   setValue('')
-                  setSearch('')
+                  dispatch({ search: '' })
                 }}
               >
                 <FiX />

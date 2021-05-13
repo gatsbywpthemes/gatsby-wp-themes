@@ -1,4 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby'
+import { flatListToHierarchical } from './flatListToHierarchical'
 
 export const useMenusQuery = () => {
   const data = useStaticQuery(graphql`
@@ -34,5 +35,8 @@ export const useMenusQuery = () => {
 export const useMenuItems = (location) => {
   const menuEdges = useMenusQuery()
   const menuEdge = menuEdges.find((n) => n.locations.includes(location))
-  return menuEdge ? menuEdge.menuItems : null
+  const menuItems = menuEdge ? menuEdge.menuItems : null
+  return menuItems
+    ? flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
+    : null
 }
