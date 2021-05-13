@@ -33,10 +33,10 @@ module.exports = async ({ actions, graphql }, options) => {
   `
   const GET_POSTS_PAGE = `
   query GET_PAGE($uri: String) {
-      wpPage(uri: { eq: $uri }) {
-        title
-        ${includeYoast ? PageSeoFromWP : ``}
-      }
+    wpPage(uri: { eq: $uri }) {
+      title
+      ${includeYoast ? PageSeoFromWP : ``}
+    }
     }
   `
 
@@ -48,7 +48,7 @@ module.exports = async ({ actions, graphql }, options) => {
 
   const posts = postsQuery.data.allWpPost.edges
 
-  return Promise.all(
+  await Promise.all(
     posts.map((post) => {
       createPage({
         path: post.node.uri,

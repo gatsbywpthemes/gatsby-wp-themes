@@ -28,7 +28,7 @@ module.exports = async ({ actions, graphql }, options) => {
   const categoriesQuery = await graphql(GET_CATEGORIES)
   const categories = categoriesQuery.data.allWpCategory.nodes
 
-  returnPromise.all(
+  return Promise.all(
     categories
       .filter((category) => category.count)
       .map((category) =>
