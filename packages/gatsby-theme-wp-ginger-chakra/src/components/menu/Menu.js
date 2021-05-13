@@ -1,14 +1,12 @@
 import React from 'react'
-import { useMenusQuery } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import { useMenuItems } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { SubMenu, MenuItem } from 'gingerThemeComponents'
 import { chakra, Box } from '@chakra-ui/react'
 
 import { flatListToHierarchical } from './flatListToHierarchical'
 
 export const Menu = ({ location = 'PRIMARY' }) => {
-  const menuEdges = useMenusQuery()
-  const menuEdge = menuEdges.find((n) => n.locations.includes(location))
-  const menuItems = menuEdge ? menuEdge.menuItems : null
+  const menuItems = useMenuItems(location)
   if (menuItems) {
     const menuNodes = flatListToHierarchical(menuItems.nodes, { idKey: 'id' })
     return (

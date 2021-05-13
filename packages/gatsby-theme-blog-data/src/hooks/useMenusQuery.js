@@ -30,3 +30,9 @@ export const useMenusQuery = () => {
   `)
   return data.allWpMenu.nodes
 }
+
+export const useMenuItems = (location) => {
+  const menuEdges = useMenusQuery()
+  const menuEdge = menuEdges.find((n) => n.locations.includes(location))
+  return menuEdge ? menuEdge.menuItems : null
+}
