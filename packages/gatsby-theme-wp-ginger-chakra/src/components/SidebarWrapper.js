@@ -25,7 +25,6 @@ export const SidebarWrapper = (props) => {
     ) {
       onClose()
     }
-
     setFromSearch(false)
   }, [opened, children, setFromSearch, onClose])
 

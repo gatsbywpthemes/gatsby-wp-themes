@@ -107,6 +107,11 @@ export const textStyles = {
     listStyle: 'none',
     m: 0,
     p: 0,
+    ul: {
+      listStyle: 'none',
+      m: 0,
+      p: 0,
+    },
   },
   linkHoverOpacity: {
     color: 'inherit',
