@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef, useCallback } from 'react'
+import React, { useEffect, useContext, useRef } from 'react'
 import { useDisclosure } from '@chakra-ui/react'
 import { SlideSidebar } from 'gingerThemeComponents'
 import {
@@ -7,7 +7,7 @@ import {
 } from 'gingerThemeComponents/search/context'
 
 export const SidebarWrapper = (props) => {
-  const { children } = props
+  const { children, location } = props
   const { isOpen, onOpen, onClose } = useDisclosure()
   const fromSearch = useContext(NavigateFromSearchContext)
   const dispatch = useContext(DispatchSearchContext)
@@ -30,18 +30,11 @@ export const SidebarWrapper = (props) => {
       onClose()
     }
     dispatch({ fromSearch: false })
-  }, [opened, children, onClose, dispatch])
-
-  const onOpenCallback = useCallback(onOpen, [])
-  const onCloseCallback = useCallback(onClose, [])
+  }, [opened, location, onClose, dispatch])
 
   return (
     <>
-      <SlideSidebar
-        isOpen={isOpen}
-        onOpen={onOpenCallback}
-        onClose={onCloseCallback}
-      />
+      <SlideSidebar isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       {children}
     </>
   )

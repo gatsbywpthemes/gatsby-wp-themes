@@ -3,7 +3,7 @@ import { useMenuItems } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { SubMenu, MenuItem } from 'gingerThemeComponents'
 import { chakra, Box } from '@chakra-ui/react'
 
-export const Menu = React.memo(({ location = 'PRIMARY' }) => {
+export const Menu = ({ location = 'PRIMARY' }) => {
   const menuItems = useMenuItems(location)
   return (
     menuItems && (
@@ -27,4 +27,4 @@ export const Menu = React.memo(({ location = 'PRIMARY' }) => {
       </Box>
     )
   )
-})
+}
