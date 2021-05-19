@@ -58,7 +58,7 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
         ) {
           const caption =
             domNode.next?.name === "figcaption"
-              ? domNode.next.children[0].data
+              ? domNode.next.children[0]?.data
               : ""
           return (
             <>
