@@ -1,5 +1,3 @@
-import { galleryStyles } from '@gatsbywpthemes/gatsby-plugin-wordpress-lightbox'
-
 export const gutenberg = {
   '& > *': {
     mx: 'auto',
@@ -84,5 +82,4 @@ export const gutenberg = {
     height: '1px',
     opacity: 0.15,
   },
-  ...galleryStyles,
 }

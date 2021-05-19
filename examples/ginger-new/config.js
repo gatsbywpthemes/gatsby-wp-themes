@@ -3,7 +3,6 @@ const config = {
   addSiteMap: true,
   //siteMapOptions: {},
   // addColorModes: false,
-  lightboxSettings: {},
   // overrideWPColors: false,
 }
 module.exports = config

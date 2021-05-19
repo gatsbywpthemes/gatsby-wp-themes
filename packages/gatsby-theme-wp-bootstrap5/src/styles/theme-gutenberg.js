@@ -1,4 +1,3 @@
-import { galleryStyles } from '@gatsbywpthemes/gatsby-plugin-wordpress-lightbox'
 export default function (theme) {
   return {
     '& > *': {
@@ -80,6 +79,5 @@ export default function (theme) {
     '.wp-block-media-text__media > .gatsby-image-wrapper': {
       width: 'auto!important',
     },
-    ...galleryStyles,
   }
 }

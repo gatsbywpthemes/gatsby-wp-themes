@@ -15,7 +15,7 @@ const findInnerA = (node) => {
 }
 
 export const lightboxParserFunction = (node, { parserOptions }) => {
-  const parserOptionsInA = (href) => ({
+  const parserOptionsInA = (href, caption = "") => ({
     replace: (domNode) => {
       if (domNode.name === "img" && !domNode.attribs["aria-hidden"]) {
         const props = attributesToProps(domNode.attribs)
@@ -23,7 +23,12 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
         const { srcset, ...attribs } = domNode.attribs
         return (
           <a aria-label="Open image in a lightbox gallery" href={href}>
-            <img alt="" {...attribs} style={style} srcSet={srcSet} />
+            <img
+              {...attribs}
+              alt={caption || attribs.alt || ""}
+              style={style}
+              srcSet={srcSet}
+            />
           </a>
         )
       }
@@ -51,11 +56,15 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
           domNode.attribs &&
           /\.(jpg|jpeg|gif|png|svg)$/.test(domNode.attribs.href)
         ) {
+          const caption =
+            domNode.next?.name === "figcaption"
+              ? domNode.next.children[0].data
+              : ""
           return (
             <>
               {domToReact(
                 domNode.children,
-                parserOptionsInA(domNode.attribs.href)
+                parserOptionsInA(domNode.attribs.href, caption)
               )}
             </>
           )

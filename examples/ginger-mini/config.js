@@ -11,7 +11,6 @@ const config = {
   // addSiteMap: false,
   // siteMapOptions: {},
   // addColorModes: false,
-  lightboxSettings: {},
   overrideWPColors: true,
 }
 module.exports = config

@@ -33,7 +33,6 @@ const config = {
   // siteMapOptions: {},
   // addColorModes: false,
   skipTitle: ["home", "contact"],
-  lightboxSettings: {},
 }
 
 module.exports = config
