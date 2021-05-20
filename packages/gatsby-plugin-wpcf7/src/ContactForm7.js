@@ -55,14 +55,14 @@ const ContactForm7 = ({ formObject }) => {
       formData.append(el, data[el])
     })
     setIsSubmitting(true)
-
+    console.log(data)
     fetch(url, {
       method: "POST",
       body: formData,
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("We're sorry byt the network response was not ok.")
+          throw new Error("We're sorry but the network response was not ok.")
         }
         return response.json()
       })
