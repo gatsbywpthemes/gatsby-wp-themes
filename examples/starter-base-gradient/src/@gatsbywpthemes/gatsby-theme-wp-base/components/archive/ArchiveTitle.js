@@ -11,7 +11,7 @@ export const ArchiveTitle = ({ name, text }) => {
         borderRadius="full"
         display="inline-block"
         color="ultraLight"
-        backgroundImage={`linear-gradient(60deg, tomato, #FCB458)`}
+        bgGradient={`linear-gradient(60deg, tomato, #FCB458)`}
         className="archive-title"
         boxShadow="lg"
       >

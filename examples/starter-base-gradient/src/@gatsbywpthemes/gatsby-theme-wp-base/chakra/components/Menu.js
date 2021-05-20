@@ -5,7 +5,7 @@ const parts = ["item", "command", "list", "button", "groupTitle", "divider"]
 function baseStyleList(props) {
   return {
     bg: mode(`subMenuBg`, `black`)(props),
-    backgroundImage: mode("", `linear-gradient(70deg,tomato, #d93a85)`)(props),
+    bgGradient: mode("", `linear-gradient(70deg,tomato, #d93a85)`)(props),
     boxShadow: mode(`lg`, `dark-lg`)(props),
     color: mode(`subMenucolor`, `modes.dark.subMenuColor`)(props),
     minW: "200px",

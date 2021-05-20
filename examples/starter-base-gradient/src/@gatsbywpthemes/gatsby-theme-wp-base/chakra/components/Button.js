@@ -15,11 +15,11 @@ const gradientButtonStyle = {
 const Button = {
   variants: {
     gradientYellow: {
-      backgroundImage: `linear-gradient(60deg, tomato, #FCB458)`,
+      bgGradient: `linear-gradient(60deg, tomato, #FCB458)`,
       ...gradientButtonStyle,
     },
     gradientPurple: {
-      backgroundImage: `linear-gradient(60deg, tomato, #c725A3)`,
+      bgGradient: `linear-gradient(60deg, tomato, #c725A3)`,
       ...gradientButtonStyle,
     },
   },

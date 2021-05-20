@@ -44,7 +44,7 @@ const Page = (props) => {
             sx={{
               ...gutenberg,
               '.has-background:not(.has-text-color),.wp-block-media-text[style*="background"],.wp-block-table.is-style-stripes tbody tr:nth-of-type(odd)': {
-                backgroundImage: (theme) => {
+                bgGradient: (theme) => {
                   return colorMode === 'dark'
                     ? `linear-gradient(${theme.colors.modes.dark.overlay}, ${theme.colors.modes.dark.overlay})`
                     : `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
