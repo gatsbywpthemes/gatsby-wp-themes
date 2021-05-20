@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "LicenseRef-LICENSE",
   "peerDependencies": {
-    "gatsby": "^3.0.4",
+    "gatsby": "^3.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ginger-new",
+  "name": "starter-data",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -14,13 +14,8 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.11",
-    "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra": "*",
+    "@gatsbywpthemes/gatsby-theme-blog-data": "*",
     "gatsby": "^3.5.1",
-    "gatsby-plugin-root-import": "^2.0.5",
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {

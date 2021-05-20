@@ -15,10 +15,10 @@
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-theme-base-dev": "*",
-    "gatsby": "^3.0.4",
+    "gatsby": "^3.5.1",
     "prismjs": "^1.22.0"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "prettier": "^2.3.0"
   }
 }

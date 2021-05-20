@@ -21,11 +21,11 @@
   },
   "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "html-react-parser": "^1.2.4",
+    "html-react-parser": "^1.2.6",
     "simple-react-lightbox": "3.6.6"
   },
   "peerDependencies": {
-    "gatsby": "^3.0.4",
+    "gatsby": "^3.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

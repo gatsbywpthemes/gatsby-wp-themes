@@ -38,19 +38,6 @@ module.exports = (options) => {
         html: {
           imageQuality: 60,
         },
-        presets: [
-          {
-            presetName: `DEVELOP`,
-            useIf: () => process.env.NODE_ENV === `development`,
-            options: {
-              type: {
-                __all: {
-                  limit: developLimit,
-                },
-              },
-            },
-          },
-        ],
       },
     },
     {
