@@ -1,12 +1,10 @@
 import React from 'react'
-import { Flex, useColorModeValue } from '@chakra-ui/react'
+import { Box, useColorModeValue } from '@chakra-ui/react'
 
 export const Form = ({ children, ...props }) => {
   return (
-    <Flex
+    <Box
       as="form"
-      wrap="wrap"
-      justify="space-between"
       className="contact-form"
       {...props}
       boxShadow={useColorModeValue(
@@ -18,6 +16,6 @@ export const Form = ({ children, ...props }) => {
       px="8"
     >
       {children}
-    </Flex>
+    </Box>
   )
 }

@@ -1,11 +1,22 @@
 import React from "react"
 
 export const Error = ({ error }) => {
-  return error ? (
-    error.type === "required" ? (
-      <span className="error">Required</span>
-    ) : (
-      <span className="error">Invalid value</span>
-    )
-  ) : null
+  if (error) {
+    switch (error.type) {
+      case "required":
+        return <span className="error">{error.message || "Required"}</span>
+      case "filesize":
+        return (
+          <span className="error">{error.message || "Invalid filesize"}</span>
+        )
+      case "accept":
+        return (
+          <span className="error">{error.message || "Invalid file type"}</span>
+        )
+      default:
+        return <span className="error">{error.message || "Invalid value"}</span>
+    }
+  } else {
+    return null
+  }
 }

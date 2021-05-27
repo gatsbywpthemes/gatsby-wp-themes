@@ -1,5 +1,6 @@
 const Input = {
   baseStyle: {
+    fontSize: 'md',
     background: 'transparent',
     borderWidth: 0,
     borderBottomWidth: '1px',

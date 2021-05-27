@@ -22,24 +22,36 @@ const ContactForm7 = ({ formObject }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    setError,
+    clearErrors,
+    formState: { errors, isSubmitSuccessful },
   } = useForm()
+  console.log(errors)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [alertState, setAlertState] = useState({
     visible: false,
     message: "",
     className: "",
   })
-  const registeredCheckboxes = []
+  const [key, setKey] = useState(1)
   const registeredFileInputs = []
 
   const parserOptions = cf7ParserOptions({
     register,
     errors,
-    registeredCheckboxes,
     registeredFileInputs,
     isSubmitting,
+    setError,
+    clearErrors,
   })
+
+  React.useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset()
+      setKey((k) => -k)
+    }
+  }, [isSubmitSuccessful, reset])
 
   const onSubmit = (data, e) => {
     const url = `${wordPressUrl}/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback`
@@ -51,6 +63,8 @@ const ContactForm7 = ({ formObject }) => {
         registeredFileInputs.indexOf(el) > -1
       ) {
         data[el] = data[el][0]
+      } else {
+        data[el] = data[el] ?? ""
       }
       formData.append(el, data[el])
     })
@@ -72,7 +86,6 @@ const ContactForm7 = ({ formObject }) => {
           message: data.message,
           className: data.status === "validation_failed" ? "danger" : "success",
         })
-        e.target.reset()
         setIsSubmitting(false)
       })
       .catch((err) => {
@@ -89,7 +102,7 @@ const ContactForm7 = ({ formObject }) => {
       {!!findId && (
         <>
           <Alert alertState={alertState} setAlertState={setAlertState} />
-          <Form onSubmit={handleSubmit(onSubmit)} noValidate>
+          <Form key={key} onSubmit={handleSubmit(onSubmit)}>
             {domToReact(formObject.children, parserOptions)}
           </Form>
         </>

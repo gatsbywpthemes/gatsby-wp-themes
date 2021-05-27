@@ -6,15 +6,15 @@ export const Label = ({ className, children, ...props }) => {
     <Box
       as="label"
       textStyle="special"
+      letterSpacing="normal"
       className={className}
-      {...props}
       sx={{
-        '.form-field-radio &': {
-          py: 1,
-          display: 'inline-block',
-          mr: 3,
+        '.form-field-checkbox &, .form-field-radio &': {
+          d: 'flex',
+          alignItems: 'center',
         },
       }}
+      {...props}
     >
       {children}
     </Box>
