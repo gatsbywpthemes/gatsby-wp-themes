@@ -98,6 +98,13 @@ const styles = {
         outline: 'none',
         boxShadow: 'none',
       },
+      '.content ul, .content ol': {
+        mb: 6,
+        pl: 6,
+      },
+      table: {
+        mb: 6,
+      },
       ...base,
     }
   },

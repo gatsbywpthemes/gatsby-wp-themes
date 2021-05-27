@@ -88,3 +88,7 @@ figure,
 .blocks-gallery-item a:hover {
   transform: scale(1.1);
 }
+.wp-block-cover__image-background.gatsby-image-wrapper {
+  width: 100% !important;
+  position: absolute !important;
+}

@@ -2,19 +2,22 @@ export const gutenbergStyles = {
   "& > *": {
     mx: "auto",
   },
-  "& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.entry-content)": {
-    maxWidth: `4xl`,
-    width: [`calc(100% - 3rem)`, `calc(100% - 4rem)`],
-  },
+  "& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.entry-content)":
+    {
+      maxWidth: `4xl`,
+      width: [`calc(100% - 3rem)`, `calc(100% - 4rem)`],
+    },
 
-  '[class*="__inner-container"] > [style*="width: 100vw"], [class*="__inner-container"] > [style*="width:100vw"]': {
-    maxWidth: "100%!important",
-  },
+  '[class*="__inner-container"] > [style*="width: 100vw"], [class*="__inner-container"] > [style*="width:100vw"]':
+    {
+      maxWidth: "100%!important",
+    },
 
-  '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)': {
-    maxWidth: `4xl`,
-    width: "100%",
-  },
+  '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide)':
+    {
+      maxWidth: `4xl`,
+      width: "100%",
+    },
 
   ".alignnone,.aligncenter,.alignleft,.alignright,.alignwide": {
     mx: "auto",
@@ -22,9 +25,10 @@ export const gutenbergStyles = {
   ".aligncenter > .gatsby-image-wrapper": {
     mx: "auto",
   },
-  '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)': {
-    mx: "auto",
-  },
+  '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)':
+    {
+      mx: "auto",
+    },
   /* Full */
   ".alignfull": {
     mx: "auto",
@@ -65,15 +69,15 @@ export const gutenbergStyles = {
     pt: ["1.5rem", 0, 0],
     px: [0, "8%"],
   },
-  '.dark-color-mode & .has-background:not(.has-text-color),.dark-color-mode & .wp-block-media-text[style*="background"],.dark-color-mode & .wp-block-table.is-style-stripes tbody tr:nth-of-type(odd)': {
-    bgGradient: (theme) => {
-      return `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
+  '.dark-color-mode & .has-background:not(.has-text-color),.dark-color-mode & .wp-block-media-text[style*="background"],.dark-color-mode & .wp-block-table.is-style-stripes tbody tr:nth-of-type(odd)':
+    {
+      bgGradient: (theme) => {
+        return `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
+      },
+      backgroundBlendMode: "multiply",
     },
-    backgroundBlendMode: "multiply",
-  },
   '[class^="wp-block"]': {
     ".gatsby-image-wrapper": {
-      maxHeight: 400,
       boxShadow: `none`,
       borderRadius: 0,
     },
