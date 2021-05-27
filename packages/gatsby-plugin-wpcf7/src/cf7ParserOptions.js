@@ -57,7 +57,7 @@ const cf7ParserOptions = ({
   register,
   errors,
   registeredFileInputs,
-  isSubmitting,
+  isSubmited,
 }) => {
   const validatesAsRequiredOptions = {
     replace: (domNode) => {
@@ -181,9 +181,7 @@ const cf7ParserOptions = ({
           }
           switch (domNode.attribs.type) {
             case "submit":
-              return (
-                <SubmitButton disabled={isSubmitting}>{value}</SubmitButton>
-              )
+              return <SubmitButton disabled={isSubmited}>{value}</SubmitButton>
             case "file": {
               const required = !!domNode.attribs["aria-required"]
               const acceptPattern = pattern(domNode)

@@ -1,23 +1,26 @@
 import React, { useEffect, useRef } from "react"
 
-export const Alert = ({ alertState, setAlertState }) => {
-  const { visible, message, className } = alertState
+export const Alert = ({ alertMessages, setAlertMessages }) => {
   const timeoutRef = useRef(null)
 
   useEffect(() => {
-    if (visible) {
-      timeoutRef.current = setTimeout(() => {
-        setAlertState({ visible: false })
-      }, 6000)
-    }
+    timeoutRef.current = setTimeout(() => {
+      setAlertMessages([])
+    }, 8000)
+
     return () => {
       clearTimeout(timeoutRef.current)
     }
-  }, [visible, setAlertState])
+  }, [setAlertMessages])
 
   return (
-    <div className={className}>
-      <p className="sal-disabled">{message}</p>
+    <div className="danger">
+      <p className="sal-disabled">{alertMessages[0]}</p>
+      <ul>
+        {alertMessages.slice(1).map((el, index) => (
+          <li key={index}>{el}</li>
+        ))}
+      </ul>
     </div>
   )
 }

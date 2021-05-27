@@ -3,7 +3,7 @@ import { Button, Box } from '@chakra-ui/react'
 
 export const SubmitButton = ({ disabled, children }) => {
   return (
-    <Box maxWidth="30rem" mb="4" mx="auto">
+    <Box maxWidth="35rem" mb="4" mx="auto">
       <Button
         d="flex"
         ml="auto"

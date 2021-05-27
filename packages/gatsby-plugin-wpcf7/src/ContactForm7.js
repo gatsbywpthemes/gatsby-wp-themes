@@ -4,6 +4,7 @@ import { domToReact } from "html-react-parser"
 import useWordPressSettings from "./hooks/useWordPressSettings"
 import cf7ParserOptions from "./cf7ParserOptions"
 import { Form, Alert } from "./components"
+import { ThankYou } from "./components/ThankYou"
 
 const findId = (node) => {
   let value = null
@@ -19,41 +20,22 @@ const findId = (node) => {
 const ContactForm7 = ({ formObject }) => {
   const { wordPressUrl } = useWordPressSettings()
   const formId = findId(formObject)
-  const {
-    register,
-    handleSubmit,
-    reset,
-    setError,
-    clearErrors,
-    formState: { errors, isSubmitSuccessful },
-  } = useForm()
-  console.log(errors)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [alertState, setAlertState] = useState({
-    visible: false,
-    message: "",
-    className: "",
-  })
-  const [key, setKey] = useState(1)
+  const { register, handleSubmit, setError, clearErrors, formState } = useForm()
+  const { errors, isSubmitSuccessful, isSubmited } = formState
+  const [feedBackSuccessMessage, setFeedBackSuccessMessage] = useState("")
+  const [alertMessages, setAlertMessages] = useState([])
   const registeredFileInputs = []
 
   const parserOptions = cf7ParserOptions({
     register,
     errors,
     registeredFileInputs,
-    isSubmitting,
+    isSubmited,
     setError,
     clearErrors,
   })
 
-  React.useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset()
-      setKey((k) => -k)
-    }
-  }, [isSubmitSuccessful, reset])
-
-  const onSubmit = (data, e) => {
+  const onSubmit = (data) => {
     const url = `${wordPressUrl}/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback`
     const formData = new FormData()
 
@@ -68,8 +50,6 @@ const ContactForm7 = ({ formObject }) => {
       }
       formData.append(el, data[el])
     })
-    setIsSubmitting(true)
-    console.log(data)
     fetch(url, {
       method: "POST",
       body: formData,
@@ -81,30 +61,37 @@ const ContactForm7 = ({ formObject }) => {
         return response.json()
       })
       .then((data) => {
-        setAlertState({
-          visible: true,
-          message: data.message,
-          className: data.status === "validation_failed" ? "danger" : "success",
-        })
-        setIsSubmitting(false)
+        if (data.status === "mail_sent") {
+          setFeedBackSuccessMessage(data.message)
+          setAlertMessages([])
+        } else {
+          const fieldsMessages =
+            data.invalid_fields?.map((el) => el.message) || []
+          setAlertMessages([data.message, ...fieldsMessages])
+        }
       })
       .catch((err) => {
         console.error(err)
-        setAlertState({
-          visible: true,
-          message: err.message,
-          className: "danger",
-        })
+        setAlertMessages([err.message])
       })
   }
   return (
     <>
       {!!findId && (
         <>
-          <Alert alertState={alertState} setAlertState={setAlertState} />
-          <Form key={key} onSubmit={handleSubmit(onSubmit)}>
-            {domToReact(formObject.children, parserOptions)}
-          </Form>
+          {isSubmitSuccessful && feedBackSuccessMessage ? (
+            <ThankYou message={feedBackSuccessMessage} />
+          ) : (
+            <Form onSubmit={handleSubmit(onSubmit)}>
+              {domToReact(formObject.children, parserOptions)}
+              {alertMessages.length > 0 && (
+                <Alert
+                  alertMessages={alertMessages}
+                  setAlertMessages={setAlertMessages}
+                />
+              )}
+            </Form>
+          )}
         </>
       )}
     </>

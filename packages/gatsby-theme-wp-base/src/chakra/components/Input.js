@@ -13,6 +13,10 @@ const Input = {
     '&:focus': {
       boxShadow: 'currentcolor 0px -3px 0px inset',
     },
+    '&[type="number"]::-webkit-inner-spin-button, &[type="number"]::-webkit-outer-spin-button':
+      {
+        WebkitAppearance: 'auto!important',
+      },
   },
 }
 
