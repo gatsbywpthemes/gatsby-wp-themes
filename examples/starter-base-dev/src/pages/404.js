@@ -1,7 +1,7 @@
-import React from 'react'
-import { Layout } from '../components'
-import { Box, Flex, chakra, Heading } from '@chakra-ui/react'
-import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import React from "react"
+import { Layout } from "../components"
+import { Box, chakra, Heading } from "@chakra-ui/react"
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const NotFoundPage = () => (
   <Layout location="page" page="404">

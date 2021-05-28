@@ -1,24 +1,20 @@
-import React from 'react'
-import { Flex, Box, Heading } from '@chakra-ui/react'
-import { Container, Card } from 'baseUiComponents'
-import { Layout, Sidebar } from 'baseComponents'
-import { ActivatePageScripts } from 'baseUtils'
-import { useLayoutStyles } from 'baseUtils/hooks'
-import ParsedContent from 'baseUtils/ParsedContent'
+import React from "react"
+import { Flex, Box, Heading } from "@chakra-ui/react"
+import { Container, Card } from "baseUiComponents"
+import { Layout, Sidebar } from "baseComponents"
+import { ActivatePageScripts } from "baseUtils"
+import { useLayoutStyles } from "baseUtils/hooks"
+import ParsedContent from "baseUtils/ParsedContent"
 
-import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
-import { gutenbergStyles } from 'baseStyles/gutenbergStyles'
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
+import { gutenbergStyles } from "baseStyles/gutenbergStyles"
 
 const Page = ({ page, ctx }) => {
-  const { title, isFrontPage, content, slug, uri, headlesswp } = page
-  const pageTemplate = headlesswp?.pageTemplate || 'default'
+  const { title, isFrontPage, content, uri, headlesswp } = page
+  const pageTemplate = headlesswp?.pageTemplate || "default"
   const skipTitle = headlesswp?.skipTitle || false
-  const {
-    containerStyles,
-    sidebarSide,
-    sidebarPage,
-    sidebarWidgets,
-  } = useLayoutStyles('page', pageTemplate)
+  const { containerStyles, sidebarSide, sidebarPage, sidebarWidgets } =
+    useLayoutStyles("page", pageTemplate)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -42,7 +38,7 @@ const Page = ({ page, ctx }) => {
         <Flex
           sx={{
             ...sidebarSide,
-            flexWrap: { base: 'wrap', lg: 'nowrap' },
+            flexWrap: { base: "wrap", lg: "nowrap" },
             alignItems: `flex-start`,
           }}
         >
@@ -50,7 +46,7 @@ const Page = ({ page, ctx }) => {
             <Card
               className="content page-content"
               sx={
-                pageTemplate === 'full width' && {
+                pageTemplate === "full width" && {
                   p: 0,
                   borderRadius: 0,
                   boxShadow: 0,
@@ -58,7 +54,7 @@ const Page = ({ page, ctx }) => {
               }
               mb={{ base: 14, lg: 0 }}
             >
-              {!skipTitle && pageTemplate !== 'full width' && (
+              {!skipTitle && pageTemplate !== "full width" && (
                 <Heading
                   as="h1"
                   marginBottom={10}

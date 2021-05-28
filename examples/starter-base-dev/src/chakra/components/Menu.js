@@ -1,32 +1,33 @@
-import { mode } from '@chakra-ui/theme-tools'
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
+import { mode } from "@chakra-ui/theme-tools"
 
-const parts = ['item', 'command', 'list', 'button', 'groupTitle', 'divider']
+const parts = ["item", "command", "list", "button", "groupTitle", "divider"]
 
 function baseStyleList(props) {
   return {
     bg: mode(`subMenuBg`, `modes.dark.subMenuBg`)(props),
     boxShadow: mode(`lg`, `dark-lg`)(props),
     color: mode(`subMenucolor`, `modes.dark.subMenuColor`)(props),
-    minW: '200px',
-    width: 'auto',
+    minW: "200px",
+    width: "auto",
     py: 4,
     zIndex: 1,
-    borderRadius: 'md',
-    borderWidth: 'none',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    fontSize: 'xs',
-    letterSpacing: 'wider',
-    '&:before': {
+    borderRadius: "md",
+    borderWidth: "none",
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    fontSize: "xs",
+    letterSpacing: "wider",
+    "&:before": {
       content: "''",
       width: 0,
       height: 0,
-      borderLeft: '7px solid transparent',
-      borderRight: '7px solid transparent',
-      borderBottom: '7px solid',
+      borderLeft: "7px solid transparent",
+      borderRight: "7px solid transparent",
+      borderBottom: "7px solid",
       borderBottomColor: mode(`subMenuBg`, `modes.dark.subMenuBg`)(props),
-      position: 'absolute',
-      top: '-5px',
+      position: "absolute",
+      top: "-5px",
       left: 5,
     },
   }
@@ -35,26 +36,26 @@ function baseStyleList(props) {
 function baseStyleItem(props) {
   return {
     py: 1,
-    px: '20px !important',
+    px: "20px !important",
 
-    transition: 'color .4s',
+    transition: "color .4s",
     _focus: {
-      bg: 'transparent',
+      bg: "transparent",
       color: mode(`primary`, `black`)(props),
     },
     _hover: {
       color: mode(`primary`, `black`)(props),
     },
     _active: {
-      bg: 'transparent',
+      bg: "transparent",
       color: mode(`primary`, `black`)(props),
     },
     _expanded: {
-      bg: 'transparent',
+      bg: "transparent",
     },
     _disabled: {
       opacity: 0.4,
-      cursor: 'not-allowed',
+      cursor: "not-allowed",
     },
   }
 }
@@ -62,8 +63,8 @@ function baseStyleItem(props) {
 const baseStyleGroupTitle = {
   mx: 4,
   my: 2,
-  fontWeight: 'semibold',
-  fontSize: 'sm',
+  fontWeight: "semibold",
+  fontSize: "sm",
 }
 
 const baseStyleCommand = {
@@ -72,9 +73,9 @@ const baseStyleCommand = {
 
 const baseStyleDivider = {
   border: 0,
-  borderBottom: '1px solid',
-  borderColor: 'inherit',
-  my: '0.5rem',
+  borderBottom: "1px solid",
+  borderColor: "inherit",
+  my: "0.5rem",
   opacity: 0.6,
 }
 

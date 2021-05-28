@@ -10,15 +10,11 @@ import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { gutenbergStyles } from 'baseStyles/gutenbergStyles'
 
 const Page = ({ page, ctx }) => {
-  const { title, isFrontPage, content, slug, uri, headlesswp } = page
+  const { title, isFrontPage, content, uri, headlesswp } = page
   const pageTemplate = headlesswp?.pageTemplate || 'default'
   const skipTitle = headlesswp?.skipTitle || false
-  const {
-    containerStyles,
-    sidebarSide,
-    sidebarPage,
-    sidebarWidgets,
-  } = useLayoutStyles('page', pageTemplate)
+  const { containerStyles, sidebarSide, sidebarPage, sidebarWidgets } =
+    useLayoutStyles('page', pageTemplate)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
