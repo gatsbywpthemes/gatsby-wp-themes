@@ -1,16 +1,17 @@
-import { mode } from '@chakra-ui/theme-tools'
+import { mode, transparentize } from '@chakra-ui/theme-tools'
 
 const p = {
   mb: 5,
 }
-const a = {
-  transition: 'all .2s',
-  color: 'accent',
-  fontWeight: 'bold',
-  textDecoration: 'none',
-  '&:hover': {
+const a = (props) => {
+  return {
+    transition: 'all .2s',
+    fontWeight: 'bold',
     textDecoration: 'none',
-  },
+    '&:hover': {
+      textDecoration: 'none',
+    },
+  }
 }
 const heading = {
   fontFamily: 'heading',
@@ -79,17 +80,19 @@ const styles = {
         outlineStyle: 'dashed',
         outlineWidth: '0.5px',
       },
-
       blockquote: {
         fontStyle: 'italic',
         px: [5, 12],
         py: 8,
         borderLeft: '5px solid',
-        borderColor: 'primary',
+        borderColor: mode('accent', 'modes.dark.accent')(props),
         maxWidth: '800px !important',
         mx: 'auto',
         my: 10,
-        bg: mode('light', 'dark')(props),
+        bg: mode(
+          transparentize('accent', 0.2),
+          transparentize('modes.dark.accent', 0.2)
+        )(props),
       },
       '::-webkit-search-cancel-button': {
         WebkitAppearance: 'none',

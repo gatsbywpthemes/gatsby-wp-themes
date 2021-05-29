@@ -29,7 +29,7 @@ export const SearchModal = () => {
         mt={1}
         ml={3}
         borderLeft="1px solid"
-        borderColor="primary"
+        borderColor={colorMode('accent', 'modes.dark.accent')}
       />
       <Drawer
         isOpen={isOpen}

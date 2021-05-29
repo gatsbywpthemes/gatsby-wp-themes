@@ -28,6 +28,7 @@ const colors = {
   mutted,
   bg,
   text,
+  accentColor: primary,
   /* header */
   headerBg: 'white',
   headerColor: ultraDark,
@@ -52,15 +53,17 @@ const colors = {
   nlColor: text,
   /* post */
   infoBg: light,
+  infoColor: text,
   archiveTitleBg: gray[100],
+  archiveTitleColor: text,
   cardBg: 'white',
 
   modes: {
     dark: {
+      accentColor: primary,
       /* basic colors*/
       bg: dark,
       text: ultraLight,
-      text2: teal[900],
       /* header*/
       headerBg: ultraDark,
       headerColor: ultraLight,
@@ -87,6 +90,7 @@ const colors = {
       archiveTitleBg: primary,
       archiveTitleColor: teal[900],
       infoBg: primary,
+      infoColor: teal[900],
       cardBg: ultraDark,
     },
   },

@@ -4,7 +4,6 @@ const special = {
   fontSize: 'xs',
   '&:hover': {
     textDecoration: 'none',
-    color: 'accentLight',
   },
 }
 const textStyles = {

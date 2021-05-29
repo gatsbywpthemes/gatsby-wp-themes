@@ -12,7 +12,7 @@ export const PostEntryInfo = ({ post, ...props }) => {
       px={4}
       py={2}
       bg={colorMode('infoBg', 'modes.dark.infoBg')}
-      color={colorMode('text', 'modes.dark.text2')}
+      color={colorMode('text', 'modes.dark.infoColor')}
       mb={10}
       {...props}
     >

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, chakra } from '@chakra-ui/react'
+import { Flex, Box, chakra, useColorModeValue } from '@chakra-ui/react'
 import { BorderTitle } from 'baseUiComponents'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
@@ -19,6 +19,7 @@ const ChakraLink = chakra(Link)
 export const TagsWidget = (props) => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
+  const color = useColorModeValue('accentColor', 'modes.dark.accentColor')
   return (
     !!nodes.length && (
       <section className="widget widget-tags" {...props}>
@@ -33,7 +34,9 @@ export const TagsWidget = (props) => {
                 pr={1}
                 pl={2}
                 d="inline-block"
-                _hover={{ color: 'primary' }}
+                _hover={{
+                  color,
+                }}
               >
                 {tag.name} ({tag.count})
               </ChakraLink>

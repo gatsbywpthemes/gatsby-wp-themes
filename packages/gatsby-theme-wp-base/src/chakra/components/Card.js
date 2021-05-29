@@ -9,10 +9,10 @@ const Card = {
     base: (props) => ({
       bg: mode('cardBg', 'modes.dark.cardBg')(props),
     }),
-    primary: {
-      bg: 'primary',
+    primary: (props) => ({
+      bg: mode('accent', 'modes.dark.accent')(props),
       color: 'white',
-    },
+    }),
   },
   defaultProps: {
     variant: 'base',

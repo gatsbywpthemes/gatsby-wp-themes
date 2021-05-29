@@ -48,7 +48,9 @@ export const SearchResults = ({ type, posts, search, children, ...props }) => {
               <chakra.h4>
                 <ChakraLink
                   as={Link}
-                  _hover={{ color: 'primary' }}
+                  _hover={{
+                    color: colorMode('accent', 'modes.dark.accent'),
+                  }}
                   to={post.uri}
                 >
                   {post.title}

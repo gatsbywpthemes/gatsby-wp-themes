@@ -1,10 +1,9 @@
 const special = {
-  textTransform: 'uppercase',
-  letterSpacing: '2px',
-  fontSize: 'xs',
-  '&:hover': {
-    textDecoration: 'none',
-    color: 'accentLight',
+  textTransform: "uppercase",
+  letterSpacing: "2px",
+  fontSize: "xs",
+  "&:hover": {
+    textDecoration: "none",
   },
 }
 const textStyles = {
@@ -12,21 +11,21 @@ const textStyles = {
   link: {
     ...special,
 
-    '&:after': {
+    "&:after": {
       content: '""',
-      position: 'absolute',
+      position: "absolute",
       left: 0,
       right: 0,
       bottom: -1,
-      height: '1px',
-      background: 'currentColor',
-      transition: '.6s',
+      height: "1px",
+      background: "currentColor",
+      transition: ".6s",
       opacity: 0,
-      transform: 'scaleX(0)',
+      transform: "scaleX(0)",
     },
-    '&:hover:after': {
+    "&:hover:after": {
       opacity: 1,
-      transform: 'scaleX(1)',
+      transform: "scaleX(1)",
     },
   },
 }

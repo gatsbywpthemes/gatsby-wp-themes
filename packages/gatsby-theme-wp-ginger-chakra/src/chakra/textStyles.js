@@ -17,7 +17,6 @@ const special = {
   fontSize: 'sm',
   '&:hover': {
     textDecoration: 'none',
-    color: 'accentLight',
   },
 }
 

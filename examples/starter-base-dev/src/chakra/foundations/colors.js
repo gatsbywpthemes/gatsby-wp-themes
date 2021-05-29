@@ -1,5 +1,5 @@
-import { theme } from '@chakra-ui/react'
-import { lighten } from 'polished'
+import { theme } from "@chakra-ui/react"
+import { lighten } from "polished"
 
 const { red, teal, purple, gray } = theme.colors
 
@@ -28,39 +28,41 @@ const colors = {
   mutted,
   bg,
   text,
+  accent: primary,
   /* header */
-  headerBg: 'white',
+  headerBg: "white",
   headerColor: ultraDark,
   /* footer */
-  footerBg: 'white',
+  footerBg: "white",
   footerColor: ultraDark,
   /* search */
-  searchBg: 'white',
+  searchBg: "white",
   searchResultsHeaderBg: ultraDark,
   searchResultsHeaderColor: primary,
   searchResultsBg: bg,
   searchResultsColor: text,
   /* menu */
-  mobileMenuBg: 'black',
+  mobileMenuBg: "black",
   mobileMenuColor: light,
-  subMenuBg: 'black',
-  subMenucolor: 'white',
+  subMenuBg: "black",
+  subMenucolor: "white",
   /* newsletter */
-  nlButtonBg: 'black',
-  nlButtonColor: 'white',
+  nlButtonBg: "black",
+  nlButtonColor: "white",
   nlInputBg: light,
   nlColor: text,
   /* post */
   infoBg: light,
+  infoColor: text,
   archiveTitleBg: gray[100],
-  cardBg: 'white',
+  cardBg: "white",
 
   modes: {
     dark: {
+      accent: primary,
       /* basic colors*/
       bg: dark,
       text: ultraLight,
-      text2: teal[900],
       /* header*/
       headerBg: ultraDark,
       headerColor: ultraLight,
@@ -74,7 +76,7 @@ const colors = {
       searchResultsBg: bg,
       searchResultsColor: text,
       /* menu*/
-      mobileMenuBg: 'black',
+      mobileMenuBg: "black",
       mobileMenuColor: light,
       subMenuBg: primary,
       subMenuColor: teal[900],
@@ -87,6 +89,7 @@ const colors = {
       archiveTitleBg: primary,
       archiveTitleColor: teal[900],
       infoBg: primary,
+      infoColor: teal[900],
       cardBg: ultraDark,
     },
   },

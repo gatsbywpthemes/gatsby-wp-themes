@@ -37,17 +37,18 @@ function baseStyleItem(props) {
     py: 1,
     px: '20px !important',
 
-    transition: 'color .4s',
+    transition: 'opacity .4s',
     _focus: {
       bg: 'transparent',
-      color: mode(`primary`, `black`)(props),
+      opacity: 0.7,
     },
     _hover: {
-      color: mode(`primary`, `black`)(props),
+      color: 'inherit',
+      opacity: 0.7,
     },
     _active: {
       bg: 'transparent',
-      color: mode(`primary`, `black`)(props),
+      opacity: 0.7,
     },
     _expanded: {
       bg: 'transparent',

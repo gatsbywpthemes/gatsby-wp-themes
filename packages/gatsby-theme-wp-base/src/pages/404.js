@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from '../components'
-import { Box, chakra, Heading } from '@chakra-ui/react'
+import { Box, chakra, Heading, useColorModeValue } from '@chakra-ui/react'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
 const NotFoundPage = () => (
@@ -14,7 +14,7 @@ const NotFoundPage = () => (
         py={6}
         mb={10}
         border="8px double"
-        borderColor="primary"
+        borderColor={useColorModeValue('accent', 'modes.dark.accent')}
       >
         404
       </Heading>

@@ -44,6 +44,7 @@ export const SlideSidebar = (props) => {
           color={colorMode('mobileMenuColor', 'modes.dark.mobileMenuColor')}
           shadow="2xl"
           p={4}
+          sx={{ 'a:hover': { color: 'inherit' } }}
         >
           <DrawerBody>
             <DrawerCloseButton />

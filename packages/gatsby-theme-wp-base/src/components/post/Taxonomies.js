@@ -18,7 +18,7 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
           fontWeight="normal"
           lineHeight="shorter"
           bg={colorMode('infoBg', 'modes.dark.infoBg')}
-          color={colorMode('text', 'modes.dark.text2')}
+          color={colorMode('text', 'modes.dark.infoColor')}
           px={4}
           py={2}
           mr={4}

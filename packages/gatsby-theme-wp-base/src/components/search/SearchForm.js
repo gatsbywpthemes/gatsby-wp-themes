@@ -31,15 +31,16 @@ export const SearchForm = (props) => {
     <div {...props}>
       <HStack
         sx={{
-          'input:-webkit-autofill,input:-webkit-autofill:hover, input:-webkit-autofill:focus,textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus': {
-            boxShadow: (theme) =>
-              colorMode(
-                `0 0 0px 1000px ${theme.colors.searchBg} inset`,
-                `0 0 0px 1000px ${theme.colors.modes.dark.searchBg} inset`
-              ),
-            WebkitTextFillColor: (theme) =>
-              colorMode(theme.colors.text, theme.colors.modes.dark.text),
-          },
+          'input:-webkit-autofill,input:-webkit-autofill:hover, input:-webkit-autofill:focus,textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus':
+            {
+              boxShadow: (theme) =>
+                colorMode(
+                  `0 0 0px 1000px ${theme.colors.searchBg} inset`,
+                  `0 0 0px 1000px ${theme.colors.modes.dark.searchBg} inset`
+                ),
+              WebkitTextFillColor: (theme) =>
+                colorMode(theme.colors.text, theme.colors.modes.dark.text),
+            },
         }}
       >
         <Input
@@ -54,7 +55,7 @@ export const SearchForm = (props) => {
           placeholder="search here..."
           fontSize="3xl"
           borderLeft="5px solid"
-          borderColor="primary"
+          borderColor={colorMode('accent', 'modes.dark.accent')}
           borderRadius={0}
           pr={5}
           pl={5}

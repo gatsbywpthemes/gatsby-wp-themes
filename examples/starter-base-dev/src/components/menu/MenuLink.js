@@ -1,9 +1,9 @@
-import React from 'react'
-import slashes from 'remove-trailing-slash'
-import { createLocalLink } from 'baseUtils'
-import { Link as GatsbyLink } from 'gatsby'
-import { Box, chakra } from '@chakra-ui/react'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import React from "react"
+import slashes from "remove-trailing-slash"
+import { createLocalLink } from "baseUtils"
+import { Link as GatsbyLink } from "gatsby"
+import { Box, chakra } from "@chakra-ui/react"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
 export const MenuLink = ({ menuItem, ...props }) => {
   const { wordPressUrl } = useThemeOptions()
@@ -11,11 +11,11 @@ export const MenuLink = ({ menuItem, ...props }) => {
 
   if (
     !url.includes(wordPressUrl) &&
-    (url.startsWith('https://') || url.startsWith('http://'))
+    (url.startsWith("https://") || url.startsWith("http://"))
   ) {
     const targetRelAttrs =
-      menuItem.target === '_blank'
-        ? { target: '_blank', rel: 'noopener noreferrer' }
+      menuItem.target === "_blank"
+        ? { target: "_blank", rel: "noopener noreferrer" }
         : {}
     return (
       <chakra.a href={menuItem.url} {...targetRelAttrs} {...props}>
@@ -23,7 +23,7 @@ export const MenuLink = ({ menuItem, ...props }) => {
       </chakra.a>
     )
   } else {
-    return menuItem.url !== '#' ? (
+    return menuItem.url !== "#" ? (
       menuItem.url === wordPressUrl ? (
         <Box
           as={GatsbyLink}

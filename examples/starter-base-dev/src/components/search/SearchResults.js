@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
 import {
   Box,
   Heading,
   chakra,
   Link as ChakraLink,
   useColorModeValue as colorMode,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react"
 
 const Stats = ({ postType, search }) => (
   <Box className="stats" fontStyle="italic" fontSize="sm" color="ultraLight">
@@ -22,12 +22,12 @@ export const SearchResults = ({ type, posts, search, children, ...props }) => {
       <chakra.header
         py={3}
         bg={colorMode(
-          'searchResultsHeaderBg',
-          'modes.dark.searchResultsHeaderBg'
+          "searchResultsHeaderBg",
+          "modes.dark.searchResultsHeaderBg"
         )}
         color={colorMode(
-          'searchResultsHeaderColor',
-          'modes.dark.searchResultsHeaderColor'
+          "searchResultsHeaderColor",
+          "modes.dark.searchResultsHeaderColor"
         )}
       >
         <Heading as="h3" fontSize="xl">
@@ -43,12 +43,14 @@ export const SearchResults = ({ type, posts, search, children, ...props }) => {
               py={3}
               borderBottom="1px dashed"
               borderColor="gray.500"
-              sx={{ '&:last-of-type': { borderBottom: 'none' } }}
+              sx={{ "&:last-of-type": { borderBottom: "none" } }}
             >
               <chakra.h4>
                 <ChakraLink
                   as={Link}
-                  _hover={{ color: 'primary' }}
+                  _hover={{
+                    color: colorMode("accentColor", "modes.dark.accentColor"),
+                  }}
                   to={post.uri}
                 >
                   {post.title}

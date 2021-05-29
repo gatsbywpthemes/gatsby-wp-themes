@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button } from '@chakra-ui/react'
+import React from "react"
+import { Button, useColorModeValue } from "@chakra-ui/react"
 
 export const ReplyButton = (props) => {
   return (
@@ -11,7 +11,9 @@ export const ReplyButton = (props) => {
       color="inherit"
       type="button"
       className="comment-button-reply"
-      _hover={{ color: 'primary' }}
+      _hover={{
+        color: useColorModeValue("accent", "modes.dark.accent"),
+      }}
       {...props}
     >
       <span>Reply</span>

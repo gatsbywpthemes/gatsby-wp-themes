@@ -1,8 +1,9 @@
 import React from 'react'
-import { Flex } from '@chakra-ui/react'
+import { Flex, useColorModeValue } from '@chakra-ui/react'
 import { SubMenu, MenuLink } from 'baseComponents'
 
 export const MenuItem = ({ menuItem, orientation }) => {
+  const color = useColorModeValue('accent', 'modes.dark.accent')
   if (menuItem.children.length) {
     return <SubMenu menuItem={menuItem} />
   } else {
@@ -12,9 +13,13 @@ export const MenuItem = ({ menuItem, orientation }) => {
         alignItems="center"
         className={`menu-item ${menuItem.cssClasses}`}
         key={menuItem.id}
-        _hover={{ color: 'primary' }}
       >
-        <MenuLink menuItem={menuItem} _hover={{ color: 'primary' }} />
+        <MenuLink
+          menuItem={menuItem}
+          _hover={{
+            color,
+          }}
+        />
       </Flex>
     )
   }

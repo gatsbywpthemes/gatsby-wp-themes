@@ -7,6 +7,7 @@ import {
   MenuItem as SubMenuItem,
   MenuList,
   Button,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
@@ -39,7 +40,9 @@ const SubMenuH = ({ menuItem }) => {
         className="menu-item"
         variant="unstyled"
         rightIcon={<ChevronDownIcon />}
-        _hover={{ color: 'primary' }}
+        _hover={{
+          color: useColorModeValue('accent', 'modes.dark.accent'),
+        }}
       >
         {menuItem.label}
       </MenuButton>
