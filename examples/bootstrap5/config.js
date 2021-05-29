@@ -1,7 +1,4 @@
 const config = {
-  wordPressUrl: `https://wp-pehaa.xyz/five-boots`,
-  //pathPrefix: "",
-
   siteUrl: "https://gatsby-wp-b5.netlify.app/",
   webfontsOptions: {
     fonts: {
@@ -27,12 +24,6 @@ const config = {
       head: true,
     },
   },
-  addWordPressSearch: true,
-  //googleTagManagerId: "GTM-K3CF7RK",
-  // addSiteMap: false,
-  // siteMapOptions: {},
-  // addColorModes: false,
-  skipTitle: ["home", "contact"],
 }
 
 module.exports = config
