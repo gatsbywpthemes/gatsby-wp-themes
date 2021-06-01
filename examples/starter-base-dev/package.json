@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-theme-base-dev": "*",
-    "gatsby": "^3.5.1",
+    "gatsby": "^3.6.1",
     "prismjs": "^1.22.0"
   },
   "devDependencies": {

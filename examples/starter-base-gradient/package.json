@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-theme-wp-base": "*",
-    "autoprefixer": "^10.2.5",
-    "gatsby": "^3.5.1",
+    "autoprefixer": "^10.2.6",
+    "gatsby": "^3.6.1",
     "gatsby-plugin-root-import": "^2.0.5",
     "lodash.merge": "^4.6.2"
   },

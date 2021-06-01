@@ -20,9 +20,9 @@
   "dependencies": {
     "@babel/runtime": "^7.14.0",
     "cheerio": "^1.0.0-rc.9",
-    "gatsby-plugin-sharp": "^3.5.0",
-    "gatsby-source-filesystem": "^3.5.0",
-    "gatsby-transformer-sharp": "^3.5.0",
+    "gatsby-plugin-sharp": "^3.6.0",
+    "gatsby-source-filesystem": "^3.6.0",
+    "gatsby-transformer-sharp": "^3.6.0",
     "html-react-parser": "^1.2.6",
     "normalize-path": "^3.0.0"
   },
