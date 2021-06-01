@@ -5,12 +5,11 @@ import { WidgetContainer } from 'gingerThemeComponents'
 
 const ALL_CATEGORIES_QUERY = graphql`
   query GetCategories {
-    allWpCategory(limit: 100) {
+    allWpCategory(filter: { count: { gt: 0 } }, limit: 100) {
       nodes {
         name
         slug
         uri
-        count
       }
     }
   }
@@ -20,12 +19,11 @@ export const CategoriesWidget = () => {
   const {
     allWpCategory: { nodes },
   } = useStaticQuery(ALL_CATEGORIES_QUERY)
-  const nonEmptyCategories = nodes.filter((el) => el.count)
   return (
-    !!nonEmptyCategories.length && (
+    !!nodes.length && (
       <WidgetContainer title="Categories" className="widget widget-categories">
         <chakra.ul textStyle="listRaw">
-          {nonEmptyCategories.map((category) => (
+          {nodes.map((category) => (
             <li key={category.slug}>
               <chakra.a
                 as={GatsbyLink}
