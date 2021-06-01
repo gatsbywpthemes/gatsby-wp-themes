@@ -1,7 +1,4 @@
-/** @jsx jsx */
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
-import { jsx } from 'theme-ui'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { WidgetContainer } from './index'
 

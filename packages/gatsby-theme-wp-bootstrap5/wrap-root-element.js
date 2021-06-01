@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider } from '@emotion/react'
 import SearchContextProvider from './src/components/search/context'
-import variables from './src/styles/variables.scss'
+import * as variables from './src/styles/_variables.module.scss'
+
 const theme = {
   sizes: {
     content: variables.width,

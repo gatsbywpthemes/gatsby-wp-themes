@@ -24,6 +24,7 @@ const config = {
       head: true,
     },
   },
+  addWordPressSearch: true,
 }
 
 module.exports = config

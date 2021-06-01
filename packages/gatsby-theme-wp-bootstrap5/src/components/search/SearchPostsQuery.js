@@ -4,15 +4,9 @@ import { SearchResults, SearchStats, LoadMoreButton } from './index'
 import { SearchContext } from './context'
 
 export const SearchPostsQuery = () => {
-  const {
-    loading,
-    error,
-    hasNextPage,
-    clickable,
-    loadMore,
-    posts,
-  } = useSearchQuery('POST')
-  const { postResults } = useContext(SearchContext)
+  const { loading, error, hasNextPage, clickable, loadMore, posts } =
+    useSearchQuery('POST')
+
   if (loading) return <p>Searching posts...</p>
   if (error) return <p>Error - {error.message}</p>
   return (

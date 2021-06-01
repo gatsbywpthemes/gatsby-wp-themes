@@ -25,6 +25,7 @@ module.exports = {
       resolve: `@gatsbywpthemes/gatsby-theme-wp-bootstrap5`,
       options: {
         ...options,
+        wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
     {

@@ -5,12 +5,11 @@ import ParsedContent from '../../utils/ParsedContent'
 import { ActivatePageScripts } from '../../utils/'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 import { pageStyles } from '../../styles/'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 const Page = (props) => {
   const { page, ctx } = props
-  const { skipTitle } = useThemeOptions()
-  const { content, title, uri, slug } = page
+  const { content, title, uri, headlesswp } = page
+  const skipTitle = headlesswp?.skipTitle || false
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
 
@@ -31,7 +30,7 @@ const Page = (props) => {
         }
       />
       <article>
-        {!skipTitle.includes(slug) && skipTitle !== 'all' && (
+        {!skipTitle && (
           <h1 className="text-center display-3 py-3 py-lg-5">
             <span
               className="page-title-value"
