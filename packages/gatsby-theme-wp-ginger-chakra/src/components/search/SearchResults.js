@@ -7,7 +7,13 @@ export const SearchResults = ({ posts }) => {
   const dispatch = useContext(DispatchSearchContext)
   return (
     !!posts.length && (
-      <chakra.ul textStyle="listRaw" mb="4" letterSpacing=".5px" fontSize="md">
+      <chakra.ul
+        textStyle="listRaw"
+        mb="4"
+        letterSpacing=".5px"
+        fontSize="md"
+        sx={{ a: { textDecoration: 'none' } }}
+      >
         {posts.map((post) => {
           return (
             <chakra.li key={post.slug} mb="2">

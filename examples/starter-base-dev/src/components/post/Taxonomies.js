@@ -8,7 +8,7 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
 
   return (
     taxonomies.length > 0 && (
-      <Flex wrap="wrap" align="center" my={5}>
+      <Flex wrap="wrap" my={5} {...props}>
         <Heading
           as="h3"
           fontFamily="body"
@@ -22,16 +22,15 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
           px={4}
           py={2}
           mr={4}
-          mb={[3, 0]}
+          mb={3}
           textTransform="capitalize"
         >
           {taxonomies.length > 1 ? `${taxName} : ` : `${singularName} : `}
         </Heading>
-        <Flex wrap="wrap" {...props}>
-          {taxonomies.map((cat) => (
-            <TaxonomyItem key={cat.slug} taxName="category" item={cat} />
-          ))}
-        </Flex>
+
+        {taxonomies.map((cat) => (
+          <TaxonomyItem key={cat.slug} taxName="category" item={cat} />
+        ))}
       </Flex>
     )
   )

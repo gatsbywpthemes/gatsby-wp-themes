@@ -21,10 +21,11 @@ export const styles = {
         borderColor: 'currentColor',
         wordWrap: 'break-word',
       },
-      '*:focus:not(:focus-visible), [class]:focus:not(:focus-visible), input:focus': {
-        outline: 'none',
-        boxShadow: 'none',
-      },
+      '*:focus:not(:focus-visible), [class]:focus:not(:focus-visible), input:focus':
+        {
+          outline: 'none',
+          boxShadow: 'none',
+        },
       '*:focus': {
         borderColor: 'currentColor!important',
       },
@@ -43,6 +44,9 @@ export const styles = {
       },
       'ul ul, ul ol, ol ul, ol ol': {
         marginBottom: 0,
+      },
+      table: {
+        marginBottom: 6,
       },
       dl: {
         marginBottom: 6,

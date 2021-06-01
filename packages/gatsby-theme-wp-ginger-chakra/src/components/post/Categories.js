@@ -6,7 +6,7 @@ export const Categories = ({ post }) => {
   return (
     <>
       <chakra.span textStyle="special">in </chakra.span>
-      <Box as="ul" d="inline-flex" textStyle="listRaw">
+      <Box as="ul" d="inline-flex" flexWrap="wrap" textStyle="listRaw">
         {post.categories.nodes.map((category) => (
           <chakra.li key={category.name} textStyle="separateWithMiddots">
             <Link

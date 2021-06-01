@@ -116,3 +116,12 @@ figure,
 [data-sal='slide-up'] {
   transform: translateY(2rem);
 }
+
+.wp-block-audio,
+.wp-block-table {
+  margin-bottom: 1.5rem;
+}
+
+pre {
+  overflow: auto;
+}
