@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {
-    allWpTag(limit: 100) {
+    allWpTag(filter: { count: { gt: 0 } }, limit: 100) {
       nodes {
         name
         slug

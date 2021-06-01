@@ -5,7 +5,7 @@ import { WidgetContainer } from 'gingerThemeComponents'
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {
-    allWpTag(limit: 100) {
+    allWpTag(filter: { count: { gt: 0 } }, limit: 100) {
       nodes {
         name
         slug
@@ -20,12 +20,11 @@ export const TagsWidget = () => {
   const {
     allWpTag: { nodes },
   } = useStaticQuery(ALL_TAGS_QUERY)
-  const nonEmptyTags = nodes.filter((el) => el.count)
   return (
-    !!nonEmptyTags.length && (
+    !!nodes.length && (
       <WidgetContainer className="widget widget-tags" title="Tags">
         <Flex as="ul" wrap="wrap" textStyle="listRaw">
-          {nonEmptyTags.map((tag) => (
+          {nodes.map((tag) => (
             <chakra.li key={tag.slug} textStyle="separateWithMiddots">
               <chakra.a
                 as={GatsbyLink}
