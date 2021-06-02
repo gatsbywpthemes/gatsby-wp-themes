@@ -66,7 +66,17 @@ const Page = ({ page, ctx }) => {
                 />
               )}
 
-              <Box className="entry-content" sx={{ ...gutenbergStyles }}>
+              <Box
+                className="entry-content"
+                sx={{
+                  ...gutenbergStyles,
+                  '&:after': {
+                    clear: 'both',
+                    content: "''",
+                    display: 'block',
+                  },
+                }}
+              >
                 <ActivatePageScripts />
                 <ParsedContent content={content} />
               </Box>

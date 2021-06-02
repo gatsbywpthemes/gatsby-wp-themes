@@ -10,7 +10,16 @@ export const PostEntryContent = ({ post, location, ...props }) => {
   const attributes = location === 'single' ? { id: 'content' } : {}
   return (
     <Box {...attributes} {...props} sx={{ ...gutenbergStyles }}>
-      <Box className="entry-content">
+      <Box
+        className="entry-content"
+        sx={{
+          '&:after': {
+            clear: 'both',
+            content: "''",
+            display: 'block',
+          },
+        }}
+      >
         <ActivatePostScripts />
         <ParsedContent content={content} />
       </Box>
