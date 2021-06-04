@@ -1,6 +1,4 @@
 import React from 'react'
-import '../styles/blocks.css'
-import '../styles/custom-gutenstyles.css'
 import { Box, Container } from '@chakra-ui/react'
 import { Header, Footer } from 'gingerThemeComponents'
 import { HelmetForFavicon } from './HelmetForFavicon'
