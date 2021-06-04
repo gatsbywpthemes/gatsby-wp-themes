@@ -19,7 +19,7 @@ const ChakraLink = chakra(Link)
 export const TagsWidget = (props) => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
-  const color = useColorModeValue('accentColor', 'modes.dark.accentColor')
+  const color = useColorModeValue('accent', 'modes.dark.accent')
   return (
     !!nodes.length && (
       <section className="widget widget-tags" {...props}>

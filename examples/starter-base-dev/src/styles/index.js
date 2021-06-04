@@ -1,1 +1,2 @@
-// export * from './gutenberStyles'
+export * from './gutenbergStyles'
+export * from './entryContentStyles'

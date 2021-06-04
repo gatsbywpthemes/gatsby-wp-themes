@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, Box, Heading } from "@chakra-ui/react"
+import { Flex, Box, Heading, useColorMode } from "@chakra-ui/react"
 import { Container, Card } from "baseUiComponents"
 import { Layout, Sidebar } from "baseComponents"
 import { ActivatePageScripts } from "baseUtils"
@@ -7,7 +7,7 @@ import { useLayoutStyles } from "baseUtils/hooks"
 import ParsedContent from "baseUtils/ParsedContent"
 
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
-import { gutenbergStyles } from "baseStyles/gutenbergStyles"
+import { gutenbergStyles, entryContentStyles } from "baseStyles"
 
 const Page = ({ page, ctx }) => {
   const { title, isFrontPage, content, uri, headlesswp } = page
@@ -15,7 +15,7 @@ const Page = ({ page, ctx }) => {
   const skipTitle = headlesswp?.skipTitle || false
   const { containerStyles, sidebarSide, sidebarPage, sidebarWidgets } =
     useLayoutStyles("page", pageTemplate)
-
+  const { colorMode } = useColorMode()
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   return (
@@ -70,11 +70,7 @@ const Page = ({ page, ctx }) => {
                 className="entry-content"
                 sx={{
                   ...gutenbergStyles,
-                  "&:after": {
-                    clear: "both",
-                    content: "''",
-                    display: "block",
-                  },
+                  ...entryContentStyles(colorMode),
                 }}
               >
                 <ActivatePageScripts />

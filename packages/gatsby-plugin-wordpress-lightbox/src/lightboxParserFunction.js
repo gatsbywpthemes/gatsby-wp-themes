@@ -84,13 +84,20 @@ export const lightboxParserFunction = (node, { parserOptions }) => {
     node.attribs.class &&
     node.attribs.class.indexOf("wp-block-gallery") > -1
   ) {
+    const outerClass =
+      node.attribs.class.includes("alignwide") ||
+      node.attribs.class.includes("alignfull")
+        ? "lightbox-outer-wrapper-full"
+        : "lightbox-outer-wrapper"
     if (findInnerA(node)) {
       return (
-        <LightboxWrapper>
-          <div data-parsed-gallery className={node.attribs.class}>
-            {domToReact(node.children, parserOptionsInner)}
-          </div>
-        </LightboxWrapper>
+        <div className={outerClass}>
+          <LightboxWrapper>
+            <div data-parsed-gallery className={node.attribs.class}>
+              {domToReact(node.children, parserOptionsInner)}
+            </div>
+          </LightboxWrapper>
+        </div>
       )
     } else {
       return (

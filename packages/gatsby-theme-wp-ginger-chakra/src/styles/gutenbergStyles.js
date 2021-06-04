@@ -3,10 +3,9 @@ export const gutenbergStyles = {
     mx: 'auto',
   },
 
-  '& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.entry-content)':
-    {
-      maxWidth: (theme) => `min(${theme.sizes['4xl']}, calc(100% - 3rem))`,
-    },
+  '& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)': {
+    maxWidth: (theme) => `min(${theme.sizes.content}, calc(100% - 3rem))`,
+  },
 
   '[class*="__inner-container"] > [style*="width: 100vw"], [class*="__inner-container"] > [style*="width:100vw"]':
     {
@@ -15,7 +14,12 @@ export const gutenbergStyles = {
 
   '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright) ':
     {
-      maxWidth: '4xl',
+      maxWidth: (theme) => theme.sizes.content,
+    },
+
+  '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)':
+    {
+      maxWidth: (theme) => theme.sizes.content,
       mx: 'auto',
     },
 

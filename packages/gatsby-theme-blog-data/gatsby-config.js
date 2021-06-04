@@ -23,22 +23,19 @@ module.exports = (options) => {
   const url = slashes(wordPressUrl)
 
   const plugins = [
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-anchor-links`,
-    {
-      resolve: 'gatsby-plugin-image',
-    },
     {
       resolve: `gatsby-source-wordpress`,
       options: {
         url: `${url}/graphql`,
         verbose: true,
         excludeFieldNames: [`blocksJSON`, `saveContent`],
-        html: {
-          imageQuality: 60,
-        },
       },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-image',
     },
     {
       resolve: `gatsby-source-filesystem`,

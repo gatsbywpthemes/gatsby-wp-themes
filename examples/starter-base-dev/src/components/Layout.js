@@ -2,7 +2,6 @@ import React from "react"
 import { Footer, Header } from "baseComponents"
 import { Box, Flex } from "@chakra-ui/react"
 import Headroom from "react-headroom"
-import "baseStyles/wp-styles/styles.scss"
 import { HelmetForFavicon } from "./HelmetForFavicon"
 
 export const Layout = ({ children, page, type = "page", ...props }) => {
@@ -40,7 +39,6 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
           sx={{
             ".fullWidth &": {
               py: 0,
-              // mt: '-32px',
             },
           }}
         >
