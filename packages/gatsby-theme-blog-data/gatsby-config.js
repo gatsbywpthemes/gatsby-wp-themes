@@ -35,9 +35,6 @@ module.exports = (options) => {
         url: `${url}/graphql`,
         verbose: true,
         excludeFieldNames: [`blocksJSON`, `saveContent`],
-        html: {
-          imageQuality: 60,
-        },
       },
     },
     {

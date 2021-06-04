@@ -28,7 +28,7 @@ const colors = {
   mutted,
   bg,
   text,
-  accentColor: primary,
+  accent: primary,
   /* header */
   headerBg: 'white',
   headerColor: ultraDark,
@@ -60,7 +60,7 @@ const colors = {
 
   modes: {
     dark: {
-      accentColor: primary,
+      accent: primary,
       /* basic colors*/
       bg: dark,
       text: ultraLight,

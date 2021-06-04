@@ -49,7 +49,7 @@ export const SearchResults = ({ type, posts, search, children, ...props }) => {
                 <ChakraLink
                   as={Link}
                   _hover={{
-                    color: colorMode("accentColor", "modes.dark.accentColor"),
+                    color: colorMode("accent", "modes.dark.accent"),
                   }}
                   to={post.uri}
                 >
