@@ -72,3 +72,8 @@
 [data-parsed-gallery]:not(.is-cropped) a img {
   height: auto !important;
 }
+
+.lightbox-outer-wrapper-full,
+.lightbox-outer-wrapper > div {
+  max-width: 100% !important;
+}

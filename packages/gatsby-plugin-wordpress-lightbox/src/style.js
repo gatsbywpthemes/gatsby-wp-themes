@@ -71,4 +71,7 @@ export const galleryStyles = {
   "[data-parsed-gallery]:not(.is-cropped) a img": {
     height: "auto!important",
   },
+  ".lightbox-outer-wrapper-full, .lightbox-outer-wrapper > div": {
+    maxWidth: "100% !important",
+  },
 }
