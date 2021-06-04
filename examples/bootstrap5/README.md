@@ -235,13 +235,13 @@ You can override any of the colors used by the theme in `configColors.js.` You c
 
 You can modify the breakpoints values as well as the `header`, `content` and `sidebar` sizes in `configSizes.js`
 The breakpoints works in combination with the css properties represented as an array.
-That means that the header size is 4.5rem for screen not larger than 40em, and 6rem for screen not larger than 64em.
+That means that the header size is 4.5rem for screen not larger than 37.5em, and 6rem for screen not larger than 64em.
 If you add a third value in the header array, it will be applied for screens larger than 64em.
 
 ```javascript
 /* configSizes.js */
 const sizesSettings = {
-  //breakpoints: ["40em", "64em"],
+  //breakpoints: ["37.5em", "64em"],
   sizes: {
     //header: ['4.5rem', '6rem'],
     //content: '52.5rem',
@@ -255,7 +255,7 @@ example:
 ```javascript
 /* configSizes.js */
 const sizesSettings = {
-  //breakpoints: ["40em", "64em"],
+  //breakpoints: ["37.5em", "64em"],
   sizes: {
     header: ["4.5rem", "6rem", "4.5rem"],
     //content: '52.5rem',

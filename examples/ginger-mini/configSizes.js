@@ -1,7 +1,7 @@
 const sizesSettings = {
   /*
   breakpoints: {
-    sm: "40em",
+    sm: "37.5em",
     md: "64em",
     lg: "72em",
   },
