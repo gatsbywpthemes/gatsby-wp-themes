@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, Box, Heading } from "@chakra-ui/react"
+import { Flex, Box, Heading, useColorMode } from "@chakra-ui/react"
 import { Container, Card } from "baseUiComponents"
 import { Layout, Sidebar } from "baseComponents"
 import { ActivatePageScripts } from "baseUtils"
@@ -15,9 +15,10 @@ const Page = ({ page, ctx }) => {
   const skipTitle = headlesswp?.skipTitle || false
   const { containerStyles, sidebarSide, sidebarPage, sidebarWidgets } =
     useLayoutStyles("page", pageTemplate)
-
+  const { colorMode } = useColorMode()
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
+
   return (
     <Layout page={page} type="page">
       <Seo
@@ -69,12 +70,7 @@ const Page = ({ page, ctx }) => {
               <Box
                 className="entry-content"
                 sx={{
-                  ...gutenbergStyles,
-                  "&:after": {
-                    clear: "both",
-                    content: "''",
-                    display: "block",
-                  },
+                  ...gutenbergStyles({ colorMode }),
                 }}
               >
                 <ActivatePageScripts />
