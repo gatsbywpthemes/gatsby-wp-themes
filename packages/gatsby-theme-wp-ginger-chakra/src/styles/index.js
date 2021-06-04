@@ -1,1 +1,1 @@
-export * from './theme-gutenberg'
+export * from './gutenbergStyles'

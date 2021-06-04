@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box } from '@chakra-ui/react'
+import { Flex, Box, useColorMode } from '@chakra-ui/react'
 import {
   PostEntryIntro,
   PostEntryContent,
@@ -9,10 +9,11 @@ import {
   Comments,
   Image,
 } from 'gingerThemeComponents'
-import { gutenberg } from 'gingerThemeStyles'
+import { gutenbergStyles } from 'gingerThemeStyles'
 import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 
 export const PostEntryFull = ({ ctx, post }) => {
+  const { colorMode } = useColorMode()
   return (
     <article>
       <header data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
@@ -43,6 +44,10 @@ export const PostEntryFull = ({ ctx, post }) => {
               right: 0,
               top: 0,
               bottom: 0,
+              '.gatsby-image-wrapper': {
+                width: '100%',
+                height: '100%',
+              },
             }}
           >
             <Image img={post.featuredImage} />
@@ -51,7 +56,7 @@ export const PostEntryFull = ({ ctx, post }) => {
           <ScrollToContentButton />
         </Flex>
       </header>
-      <Box id="content" py={[8, 8, 16]} sx={gutenberg}>
+      <Box id="content" py={[8, 8, 16]} sx={gutenbergStyles({ colorMode })}>
         <PostEntryContent ctx={ctx} content={post.content} />
         {post.tags.nodes.length > 0 && <Tags tags={post.tags.nodes} />}
         <PrevNextPostNavigation ctx={ctx} />

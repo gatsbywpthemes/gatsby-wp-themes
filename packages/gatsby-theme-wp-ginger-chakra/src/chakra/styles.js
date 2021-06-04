@@ -66,6 +66,9 @@ export const styles = {
         opacity: 0.7,
         fontSize: 'sm',
       },
+      pre: {
+        overflow: 'auto',
+      },
       ...base,
     }
   },

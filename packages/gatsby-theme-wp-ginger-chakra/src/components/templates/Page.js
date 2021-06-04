@@ -3,7 +3,7 @@ import { Box, useColorMode } from '@chakra-ui/react'
 import { Layout } from 'gingerThemeComponents'
 import { ParsedContent, ActivatePageScripts } from 'gingerThemeUtils'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
-import { gutenberg } from 'gingerThemeStyles'
+import { gutenbergStyles } from 'gingerThemeStyles'
 
 const Page = (props) => {
   const { page, ctx } = props
@@ -39,20 +39,7 @@ const Page = (props) => {
               />
             </Box>
           )}
-          <Box
-            className="entry-content"
-            sx={{
-              ...gutenberg,
-              '.has-background:not(.has-text-color),.wp-block-media-text[style*="background"],.wp-block-table.is-style-stripes tbody tr:nth-of-type(odd)': {
-                bgGradient: (theme) => {
-                  return colorMode === 'dark'
-                    ? `linear-gradient(${theme.colors.modes.dark.overlay}, ${theme.colors.modes.dark.overlay})`
-                    : `linear-gradient(${theme.colors.overlay}, ${theme.colors.overlay})`
-                },
-                backgroundBlendMode: 'multiply',
-              },
-            }}
-          >
+          <Box className="entry-content" sx={gutenbergStyles({ colorMode })}>
             <ActivatePageScripts />
             <ParsedContent content={content} />
           </Box>

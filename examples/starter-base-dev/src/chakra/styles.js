@@ -108,6 +108,9 @@ const styles = {
       table: {
         mb: 6,
       },
+      pre: {
+        overflow: "auto",
+      },
       ...base,
     }
   },
