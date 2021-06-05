@@ -34,22 +34,20 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
         }}
         {...props}
       >
-        <Box as={Headroom} sx={{ "&>div": { zIndex: "2!important" } }}>
+        <Headroom css={{ "&>div": { zIndex: "2!important" } }}>
           <Header />
-        </Box>
-        <Box
-          as="main"
-          flex={1}
-          py={16}
-          sx={{
+        </Headroom>
+        <main
+          className="flex-1 py-16"
+          css={{
             ".fullWidth &": {
-              py: 0,
-              // mt: '-32px',
+              paddingTop: 0,
+              paddingBottom: 0,
             },
           }}
         >
           {children}
-        </Box>
+        </main>
         <Footer />
       </div>
     </>
