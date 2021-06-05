@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors")
+const rem = (px) => px / 16 + "rem"
 
 const { blueGray, red, teal, purple } = colors
 //palette
@@ -19,6 +20,13 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      maxWidth: {
+        containerLg: rem(1024),
+        containerMd: rem(768),
+        containerSm: rem(640),
+        containerXl: rem(1280),
+        big: "1280px",
+      },
       colors: {
         /* header */
         ...colors,
