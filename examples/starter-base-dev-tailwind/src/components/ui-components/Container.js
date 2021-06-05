@@ -10,8 +10,8 @@
 import tw, { styled } from "twin.macro"
 
 export const Container = styled.div(({ sm, md, lg }) => [
-  tw`px-5 mx-auto md:px-6 lg:px-10 max-w-containerXl`,
-  sm && tw`max-w-4xl`,
-  md && tw`max-w-containerMd`,
-  lg && tw`max-w-containerLg`,
+  tw`max-w-xl px-5 mx-auto md:px-6 lg:px-10`,
+  sm && tw`max-w-sm`,
+  md && tw`max-w-md`,
+  lg && tw`max-w-lg`,
 ])

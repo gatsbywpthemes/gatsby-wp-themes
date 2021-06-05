@@ -1,8 +1,9 @@
-import React from 'react'
-import { PostEntry } from 'baseComponents'
+import React from "react"
+import { PostEntry } from "baseComponents"
+import clsx from "clsx"
 
-export const PostsList = ({ posts, ...props }) => (
-  <div className="posts-list" {...props}>
+export const PostsList = ({ posts, className, ...props }) => (
+  <div className={clsx("posts-list", className)} {...props}>
     {posts.map((post, index) => (
       <PostEntry
         key={post.id}

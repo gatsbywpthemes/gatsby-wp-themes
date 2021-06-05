@@ -21,11 +21,10 @@ module.exports = {
   theme: {
     extend: {
       maxWidth: {
-        containerLg: rem(1024),
-        containerMd: rem(768),
-        containerSm: rem(640),
-        containerXl: rem(1280),
-        big: "1280px",
+        lg: rem(1024),
+        md: rem(768),
+        sm: rem(640),
+        xl: rem(1280),
       },
       colors: {
         /* header */
