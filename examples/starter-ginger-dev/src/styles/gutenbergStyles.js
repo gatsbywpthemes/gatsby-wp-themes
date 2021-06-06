@@ -25,11 +25,6 @@ export const gutenbergStyles = ({ colorMode }) => {
         mx: 'auto',
       },
 
-    '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)':
-      {
-        mx: 'auto',
-      },
-
     /* Full */
     '.alignfull': {
       position: 'relative',
