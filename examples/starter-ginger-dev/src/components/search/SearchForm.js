@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
-import { Box, Flex, Button, chakra } from '@chakra-ui/react'
+import { Box, Flex, Button } from '@chakra-ui/react'
 import { SearchQueries } from 'gingerThemeComponents'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+
 import {
   SearchContext,
   DispatchSearchContext,
