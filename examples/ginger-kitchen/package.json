@@ -19,11 +19,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra": "*",
-    "gatsby": "^3.6.1",
+    "gatsby": "^3.6.2",
     "gatsby-plugin-root-import": "^2.0.5",
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"
+    "prettier": "^2.3.1"
   }
 }
