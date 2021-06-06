@@ -2,6 +2,7 @@ import React from "react"
 import { useMenuItems } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import { chakra, Stack } from "@chakra-ui/react"
 import { MenuItem, SubMenu } from "baseComponents"
+import clsx from "clsx"
 
 export const Menu = ({ location = "PRIMARY", orientation, ...props }) => {
   const menuItems = useMenuItems(location)
@@ -32,8 +33,11 @@ export const Menu = ({ location = "PRIMARY", orientation, ...props }) => {
         {...props}
       >
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
-        <Stack
+        <div
           direction={orientation === "H" ? "row" : "column"}
+          className={clsx("flex", {
+            "flex-col": orientation === "V",
+          })}
           role="menu"
           className="menuItemGroup"
         >
@@ -56,7 +60,7 @@ export const Menu = ({ location = "PRIMARY", orientation, ...props }) => {
               )
             }
           })}
-        </Stack>
+        </div>
       </chakra.nav>
     )
   )

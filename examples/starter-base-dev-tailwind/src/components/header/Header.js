@@ -26,7 +26,7 @@ export const Header = () => {
   return (
     <header className="py-4 shadow-md dark:text-dark-headerColor text-headerColor bg-headerBg dark:bg-dark-headerBg">
       <Container className="flex justify-between">
-        <div className="flex items-cemter">
+        <div className="flex items-center">
           <SiteBranding title={title} />
           {search && <SearchModal />}
         </div>

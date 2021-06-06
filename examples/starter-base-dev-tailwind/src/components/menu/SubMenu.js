@@ -22,11 +22,11 @@ const SubMenuV = ({ menuItem }) => {
       key={menuItem.id}
     >
       <Collapse menuItem={menuItem}>
-        <chakra.ul className="menuItemGroup sub-menu">
+        <ul className="flex menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
             <MenuItem key={item.id} menuItem={item} />
           ))}
-        </chakra.ul>
+        </ul>
       </Collapse>
     </Box>
   )
