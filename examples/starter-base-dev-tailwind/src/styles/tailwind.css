@@ -6,6 +6,9 @@
   #___gatsby {
     @apply text-base text-text dark:text-dark-text bg-bg dark:bg-dark-bg;
   }
+  a {
+    @apply transition duration-300;
+  }
 
   h1 {
     @apply text-3xl font-heading leading-heading sm:text-4xl;

@@ -6,7 +6,6 @@ import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hook
 
 import { ColorSwitch } from "baseComponents"
 import { SearchModal } from "baseComponents"
-import { Flex, HStack, useColorModeValue as colorMode } from "@chakra-ui/react"
 
 export const Header = () => {
   const { addWordPressSearch: search, addColorModes } = useThemeOptions()
@@ -27,17 +26,17 @@ export const Header = () => {
   return (
     <header className="py-4 shadow-md dark:text-dark-headerColor text-headerColor bg-headerBg dark:bg-dark-headerBg">
       <Container className="flex justify-between">
-        <Flex alignItems="center">
+        <div className="flex items-cemter">
           <SiteBranding title={title} />
           {search && <SearchModal />}
-        </Flex>
-        <HStack>
-          <Menu orientation="H" display={{ base: "none", lg: "block" }} />
+        </div>
+        <div className="flex">
+          <Menu orientation="H" className="hidden lg:block" />
 
-          <SlideSidebar display={{ base: "block", lg: "none" }} />
+          <SlideSidebar className="lg:hidden" />
 
           {addColorModes && <ColorSwitch />}
-        </HStack>
+        </div>
       </Container>
     </header>
   )
