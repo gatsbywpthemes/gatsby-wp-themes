@@ -1,3 +1,4 @@
+import { transparentize } from '@chakra-ui/theme-tools'
 export const gutenbergStyles = ({ colorMode }) => {
   return {
     '& > *': {
