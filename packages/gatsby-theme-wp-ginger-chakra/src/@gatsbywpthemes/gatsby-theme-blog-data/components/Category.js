@@ -1,7 +1,7 @@
 import React from 'react'
 import Category from 'gingerThemeComponents/templates/Category'
 
-export default ({ data, pageContext }) => {
+const CategoryComponent = ({ data, pageContext }) => {
   return (
     <Category
       category={{ ...data.wpCategory, posts: data.allWpPost }}
@@ -9,3 +9,5 @@ export default ({ data, pageContext }) => {
     />
   )
 }
+
+export default CategoryComponent
