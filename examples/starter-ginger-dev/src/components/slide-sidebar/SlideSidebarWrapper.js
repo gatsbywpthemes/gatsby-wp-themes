@@ -23,7 +23,7 @@ export const SlideSidebarWrapper = ({ isOpen, onOpen, onClose, children }) => {
     } else {
       dispatch({ search: '' })
     }
-  }, [escInSearch])
+  }, [escInSearch, onClose, dispatch])
 
   return (
     <>
