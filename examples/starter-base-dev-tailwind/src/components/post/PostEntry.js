@@ -34,7 +34,6 @@ export const PostEntry = ({
         post={post}
         className="entry-media"
         imageLoading={isFirst ? "eager" : "lazy"}
-        // mb={-2}
         css={{
           ".gatsby-image-wrapper":
             pageTemplate === "full width" && location === "single"
@@ -45,23 +44,11 @@ export const PostEntry = ({
         }}
       />
 
-      <Card
-        borderTopRadius={media ? 0 : "lg"}
-        className={`content ${withImgClass}`}
-        sx={{
-          "&.withImg": {
-            borderTopLeftRadius: 0,
-            borderTopRightRadius: 0,
-          },
-        }}
-      >
+      <Card className={`content ${media && "rounded-t-lg"}`}>
         <PostEntryTitle
           location={location}
           post={post}
-          textTransform="uppercase"
-          fontSize={["2xl", "3xl"]}
-          mb={5}
-          className="entry-title"
+          className="mb-5 text-2xl uppercase entry-title sm:text-3xl"
         />
         <PostEntryInfo className="entry-info" post={post} />
 
