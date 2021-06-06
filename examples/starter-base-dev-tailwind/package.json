@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "starter-base-dev-tailwind",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rm -rf .cache && gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
+  },
+  "dependencies": {
+    "@gatsbywpthemes/gatsby-theme-base-dev": "*",
+    "clsx": "^1.1.1",
+    "gatsby": "^3.6.1",
+    "gatsby-plugin-dark-mode": "^1.1.2",
+    "prismjs": "^1.22.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "gatsby-plugin-postcss": "^4.6.0",
+    "postcss": "^8.3.0",
+    "prettier": "^2.3.0",
+    "tailwindcss": "^2.1.4"
+  }
+}
