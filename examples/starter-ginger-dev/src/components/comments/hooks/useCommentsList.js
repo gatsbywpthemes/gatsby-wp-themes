@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 
 const GET_COMMENTS = gql`
-  query($databaseId: ID!) {
+  query ($databaseId: ID!) {
     comments(where: { contentId: $databaseId, order: ASC }, first: 1000) {
       nodes {
         ...CommentFields
