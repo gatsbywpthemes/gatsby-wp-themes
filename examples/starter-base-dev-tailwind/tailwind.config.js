@@ -26,6 +26,17 @@ module.exports = {
         sm: rem(640),
         xl: rem(1280),
       },
+      fontWeight: {
+        body: 400,
+        heading: "bold",
+        bold: 700,
+      },
+      lineHeight: {
+        body: 1.8,
+        heading: 1.4,
+        loose: 2,
+      },
+
       colors: {
         /* header */
         ...colors,
