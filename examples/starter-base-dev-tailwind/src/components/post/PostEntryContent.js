@@ -1,5 +1,4 @@
 import React from "react"
-import { Box } from "@chakra-ui/react"
 import ParsedContent from "baseUtils/ParsedContent"
 import { gutenbergStyles } from "baseStyles/gutenbergStyles"
 
@@ -9,9 +8,9 @@ export const PostEntryContent = ({ post, location, ...props }) => {
   const content = location === "single" ? post.content : post.excerpt
   const attributes = location === "single" ? { id: "content" } : {}
   return (
-    <Box {...attributes} {...props} sx={{ ...gutenbergStyles }}>
-      <Box
-        sx={{
+    <div {...attributes} {...props} css={{ ...gutenbergStyles }}>
+      <div
+        css={{
           "&:after": {
             clear: "both",
             content: "''",
@@ -21,7 +20,7 @@ export const PostEntryContent = ({ post, location, ...props }) => {
       >
         <ActivatePostScripts />
         <ParsedContent content={content} />
-      </Box>
-    </Box>
+      </div>
+    </div>
   )
 }

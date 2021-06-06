@@ -43,13 +43,13 @@ export const PostEntry = ({
         }}
       />
 
-      <Card className={`content ${media && "rounded-t-lg"}`}>
+      <Card className={`content space-y-5 ${media && "rounded-t-lg"}`}>
         <PostEntryTitle
           location={location}
           post={post}
-          className="mb-5 text-2xl uppercase entry-title sm:text-3xl"
+          className="text-2xl uppercase  entry-title sm:text-3xl"
         />
-        <PostEntryInfo className="entry-info" post={post} />
+        <PostEntryInfo className=" entry-info" post={post} />
 
         <PostEntryContent location={location} post={post} />
         {location !== "single" && (
