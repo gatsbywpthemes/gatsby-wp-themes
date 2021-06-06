@@ -1,6 +1,7 @@
 import React from 'react'
 import Posts from 'gingerThemeComponents/templates/Posts'
 
-export default ({ data, pageContext }) => {
+const Blog = ({ data, pageContext }) => {
   return <Posts posts={data.allWpPost} ctx={pageContext} />
 }
+export default Blog

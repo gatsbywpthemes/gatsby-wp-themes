@@ -1,8 +1,9 @@
 import { Button } from './Button'
 import { Input } from './Input'
 import { Textarea } from './Textarea'
-export default {
+const CustomComponents = {
   Button,
   Input,
   Textarea,
 }
+export default CustomComponents
