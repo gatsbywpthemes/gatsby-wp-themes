@@ -1,8 +1,7 @@
-import React from 'react'
-import { useStyleConfig, Box } from '@chakra-ui/react'
+import tw, { styled } from "twin.macro"
 
-export const Card = ({ variant, sx, ...rest }) => {
-  const styles = useStyleConfig('Card', { variant })
-  const customStyles = sx
-  return <Box sx={{ ...styles, ...customStyles }} {...rest} />
-}
+export const Card = styled.div(({ primary }) => [
+  tw`p-5 rounded-lg shadow-lg sm:p-12`,
+  tw`bg-cardBg dark:bg-dark-cardBg`,
+  primary && tw`text-white bg-accentColor`,
+])
