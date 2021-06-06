@@ -1,23 +1,21 @@
-import { Box, useColorModeValue as colorMode } from "@chakra-ui/react"
 import React from "react"
 import { Date, Author } from "baseComponents"
+import clsx from "clsx"
 
-export const PostEntryInfo = ({ post, ...props }) => {
+export const PostEntryInfo = ({ post, className, ...props }) => {
   return (
-    <Box
-      display="inline-block"
-      fontStyle="italic"
-      borderRadius="md"
-      fontSize="sm"
-      px={4}
-      py={2}
-      bg={colorMode("infoBg", "modes.dark.infoBg")}
-      color={colorMode("text", "modes.dark.infoColor")}
-      mb={10}
+    <div
+      className={clsx(
+        "inline-block",
+        "italic text-sm text-text dark:text-teal-900",
+        "rounded-md bg-infoBg dark:bg-dark-infoBg",
+        "px-4 py-2",
+        className
+      )}
       {...props}
     >
       <span>Posted on:</span> <Date date={post.date} /> by{" "}
       <Author post={post} />
-    </Box>
+    </div>
   )
 }
