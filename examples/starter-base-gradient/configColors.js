@@ -1,7 +1,4 @@
-import { theme } from "@chakra-ui/react"
 import { darken, lighten } from "polished"
-
-const { gray } = theme.colors
 
 //Palette
 
@@ -53,7 +50,6 @@ const colors = {
   nlButtonColor: "white",
   nlInputBg: light,
   /* post */
-  archiveTitleBg: "black",
   infoBg: darken(0.02, light),
   archiveTitleBg: primary,
   cardBg: ultraLight,
@@ -85,7 +81,6 @@ const colors = {
       nlButtonColor: light,
       nlInputBg: lighten(0.05, dark),
       /* post*/
-      archiveTitleBg: primary,
       infoBg: ultraDark,
       archiveTitleBg: primary,
       highlight: yellow,

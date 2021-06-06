@@ -6,12 +6,10 @@ import {
   Button,
   chakra,
   Box,
-  Wrap,
   Flex,
-  WrapItem,
   useColorModeValue as colorMode,
 } from "@chakra-ui/react"
-import { lighten, transparentize } from "@chakra-ui/theme-tools"
+import { transparentize } from "@chakra-ui/theme-tools"
 
 import addToMailchimp from "gatsby-plugin-mailchimp"
 

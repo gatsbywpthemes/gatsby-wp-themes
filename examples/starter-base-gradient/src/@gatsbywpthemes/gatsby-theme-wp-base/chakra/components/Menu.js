@@ -1,4 +1,4 @@
-import { mode, darken, transparentize } from "@chakra-ui/theme-tools"
+import { mode } from "@chakra-ui/theme-tools"
 
 const parts = ["item", "command", "list", "button", "groupTitle", "divider"]
 
@@ -89,7 +89,9 @@ const baseStyle = (props) => {
   }
 }
 
-export default {
+const styles = {
   parts,
   baseStyle,
 }
+
+export default styles
