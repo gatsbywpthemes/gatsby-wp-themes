@@ -1,12 +1,24 @@
-import React from 'react'
-import { Box, Link } from '@chakra-ui/react'
+import React from "react"
 
-export const FooterContent = (props) => {
+export const FooterContent = ({ className }, props) => {
   return (
-    <Box textAlign="center" {...props}>
+    <div className={`text-center ${className ? className : ""}`} {...props}>
       © {new Date().getFullYear()} | Built with{`   `}
-      <Link href="https://www.wpgraphql.com">WPGraphQL</Link> and{`  `}
-      <Link href="https://www.gatsbyjs.org">Gatsby</Link>
-    </Box>
+      <a
+        href="https://www.wpgraphql.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WPGraphQL
+      </a>{" "}
+      and{`  `}
+      <a
+        href="https://www.gatsbyjs.org"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Gatsby
+      </a>
+    </div>
   )
 }

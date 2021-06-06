@@ -1,6 +1,5 @@
-import React from 'react'
-import { HStack } from '@chakra-ui/react'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import React from "react"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import {
   FaBehance,
   FaCodepen,
@@ -26,34 +25,34 @@ import {
   FaTwitter,
   FaVimeo,
   FaYoutube,
-} from 'react-icons/fa'
+} from "react-icons/fa"
 
 export const SocialFollows = (props) => {
   const supportedIcons = [
-    'behance',
-    'codepen',
-    'dev',
-    'discord',
-    'dribbble',
-    'facebook',
-    'github',
-    'gitlab',
-    'instagram',
-    'linkedin',
-    'mastodon',
-    'medium',
-    'pinterest',
-    'reddit',
-    'slack',
-    'slideshare',
-    'snapchat',
-    'soundcloud',
-    'stack-overflow',
-    'telegram',
-    'tumblr',
-    'twitter',
-    'vimeo',
-    'youtube',
+    "behance",
+    "codepen",
+    "dev",
+    "discord",
+    "dribbble",
+    "facebook",
+    "github",
+    "gitlab",
+    "instagram",
+    "linkedin",
+    "mastodon",
+    "medium",
+    "pinterest",
+    "reddit",
+    "slack",
+    "slideshare",
+    "snapchat",
+    "soundcloud",
+    "stack-overflow",
+    "telegram",
+    "tumblr",
+    "twitter",
+    "vimeo",
+    "youtube",
   ]
   const components = [
     FaBehance,
@@ -85,10 +84,8 @@ export const SocialFollows = (props) => {
   const { socialFollowLinks: social } = useThemeOptions()
 
   return (
-    <HStack
-      spacing={5}
-      justify="center"
-      className="widget widget-socialFollow"
+    <div
+      className="flex justify-center space-x-5 widget widget-socialFollow"
       {...props}
     >
       {social &&
@@ -111,6 +108,6 @@ export const SocialFollows = (props) => {
             return null
           }
         })}
-    </HStack>
+    </div>
   )
 }
