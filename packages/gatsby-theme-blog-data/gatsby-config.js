@@ -33,8 +33,20 @@ module.exports = (options) => {
       resolve: `gatsby-source-wordpress`,
       options: {
         url: `${url}/graphql`,
-        verbose: true,
         excludeFieldNames: [`blocksJSON`, `saveContent`],
+        presets: [
+          {
+            presetName: `DEVELOP`,
+            useIf: () => process.env.NODE_ENV === `development` && developLimit,
+            options: {
+              type: {
+                __all: {
+                  limit: developLimit,
+                },
+              },
+            },
+          },
+        ],
       },
     },
     {
