@@ -26,7 +26,6 @@ const colorSettings = {
   // cardBorder: "#ffffff",
   commentsColor: "#483262",
   commentsBg: "#e7f0eb",
-  // overlay: "transparent",
 
   modes: {
     dark: {
@@ -53,7 +52,6 @@ const colorSettings = {
       cardBorder: "#261e32",
       // commentsColor: "#f5f5f5",
       commentsBg: "#22172d",
-      overlay: "#271d33e8",
     },
   },
 }

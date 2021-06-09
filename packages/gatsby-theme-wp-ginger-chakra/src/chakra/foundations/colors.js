@@ -31,7 +31,6 @@ export const colors = {
   cardBorder: white,
   commentsColor: white,
   commentsBg: dark1,
-  overlay: 'transparent',
 
   modes: {
     dark: {
@@ -58,7 +57,6 @@ export const colors = {
       cardBorder: dark0,
       commentsColor: light,
       commentsBg: dark3,
-      overlay: 'rgba(0,0,0,.6)',
     },
   },
 }

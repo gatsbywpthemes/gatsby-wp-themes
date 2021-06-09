@@ -14,7 +14,7 @@ const colorSettings = {
   // footerBg: "#f5f5f5",
   /* sidebar */
   // sidebarColor: "#ffffff",
-  sidebarBg: "#ff00ff",
+  // sidebarBg: "#076666",
   // menuButtonColor: "#ffffff",
   // menuButtonBg: "#303030",
   /* post */
@@ -26,7 +26,6 @@ const colorSettings = {
   // cardBorder: "#ffffff",
   // commentsColor: "#ffffff",
   // commentsBg: "#303030",
-  // overlay: "transparent",
 
   modes: {
     dark: {
@@ -53,7 +52,6 @@ const colorSettings = {
       // cardBorder: "#3a3a3a",
       // commentsColor: "#f5f5f5",
       // commentsBg: "#1f1f1f",
-      // overlay: "rgba(0,0,0,.6)",
     },
   },
 }
