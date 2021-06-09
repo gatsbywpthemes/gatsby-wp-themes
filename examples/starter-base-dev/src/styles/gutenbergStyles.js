@@ -93,5 +93,11 @@ export const gutenbergStyles = ({ colorMode }) => {
         },
         backgroundBlendMode: "multiply",
       },
+    ".wp-block-quote": {
+      "p:last-of-type": {
+        mb: 0,
+      },
+      borderColor: "accent",
+    },
   }
 }
