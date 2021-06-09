@@ -8,9 +8,6 @@ const config = {
       ],
     },
   },
-  // addSiteMap: false,
-  // siteMapOptions: {},
-  // addColorModes: false,
   overrideWPColors: true,
 }
 module.exports = config
