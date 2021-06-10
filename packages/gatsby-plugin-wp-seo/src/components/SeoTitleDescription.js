@@ -13,7 +13,7 @@ export const SeoTitleDescription = (props) => {
     numberOfPages
   )
 
-  const pageDescription = seo?.page?.metaDesc
+  const pageDescription = seo?.page ? seo.page.metaDesc : ctx.description
 
   return (
     <Helmet
