@@ -83,6 +83,6 @@ yarn-error.log
 
 #vscode
 wp-base.code-workspace
-starter-tailwing.code-workspace
+starter-tailwind.code-workspace
 .vscode/
 .history
