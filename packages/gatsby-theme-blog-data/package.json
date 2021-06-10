@@ -6,15 +6,13 @@
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^3.5.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "gatsby": "^3.7.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
     "@apollo/client": "^3.3.20",
-    "@babel/core": "^7.14.5",
     "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "*",
-    "babel-preset-gatsby": "^1.7.0",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-google-analytics": "^3.7.0",

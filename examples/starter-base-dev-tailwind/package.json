@@ -16,15 +16,16 @@
   "dependencies": {
     "@gatsbywpthemes/gatsby-theme-base-dev": "*",
     "clsx": "^1.1.1",
-    "gatsby": "^3.6.1",
+    "gatsby": "^3.7.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
-    "prismjs": "^1.22.0"
+    "gatsby-plugin-root-import": "^2.0.5",
+    "lodash.merge": "^4.6.2",
+    "prismjs": "^1.22.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "gatsby-plugin-postcss": "^4.7.0",
-    "postcss": "^8.3.1",
-    "prettier": "^2.3.0",
-    "tailwindcss": "^2.1.4"
+    "babel-preset-gatsby": "^1.7.0",
+    "prettier": "^2.3.1"
   }
 }
