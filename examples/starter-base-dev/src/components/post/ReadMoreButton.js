@@ -1,19 +1,13 @@
-import React from 'react'
-import { Flex, Button } from '@chakra-ui/react'
-
-import { Link } from 'gatsby'
+import React from "react"
+import { Flex, Button, VisuallyHidden } from "@chakra-ui/react"
+import { Link } from "gatsby"
 
 export const ReadMoreButton = ({ location, post, ...props }) => (
   <>
-    {location !== 'single' && (
+    {location !== "single" && (
       <Flex justify="flex-end" {...props}>
-        <Button
-          as={Link}
-          to={post.uri}
-          className="read-more"
-          aria-label="Read More from this post"
-        >
-          Read More
+        <Button as={Link} to={post.uri} className="read-more">
+          Read More <VisuallyHidden>{post.title}</VisuallyHidden>
         </Button>
       </Flex>
     )}
