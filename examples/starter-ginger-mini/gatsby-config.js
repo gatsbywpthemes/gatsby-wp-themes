@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `@gatsbywpthemes/gatsby-theme-wp-ginger-chakra`,
+      resolve: `@gatsbywpthemes/gatsby-theme-wp-ginger`,
       options: {
         ...options,
         wordPressUrl: process.env.GATSBY_WP_URL,
@@ -32,17 +32,14 @@ module.exports = {
     {
       resolve: "gatsby-plugin-root-import",
       options: {
-        gingerThemeSrc: "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src",
-        gingerThemePages:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/pages",
-        gingerThemeStyles:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/styles",
+        gingerThemeSrc: "@gatsbywpthemes/gatsby-theme-wp-ginger/src",
+        gingerThemePages: "@gatsbywpthemes/gatsby-theme-wp-ginger/src/pages",
+        gingerThemeStyles: "@gatsbywpthemes/gatsby-theme-wp-ginger/src/styles",
         gingerThemeComponents:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/components",
+          "@gatsbywpthemes/gatsby-theme-wp-ginger/src/components",
         gingerThemeUiComponents:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/components/ui-components",
-        gingerThemeUtils:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-chakra/src/utils",
+          "@gatsbywpthemes/gatsby-theme-wp-ginger/src/components/ui-components",
+        gingerThemeUtils: "@gatsbywpthemes/gatsby-theme-wp-ginger/src/utils",
       },
     },
   ],
