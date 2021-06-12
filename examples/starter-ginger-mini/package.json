@@ -18,7 +18,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@gatsbywpthemes/gatsby-theme-wp-ginger": "*",
+    "@gatsbywpthemes/gatsby-theme-wp-ginger-pro": "*",
     "gatsby": "^3.7.0",
     "gatsby-plugin-root-import": "^2.0.5",
     "lodash.merge": "^4.6.2",

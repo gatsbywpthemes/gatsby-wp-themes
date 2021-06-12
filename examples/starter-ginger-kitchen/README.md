@@ -250,7 +250,7 @@ You can also style your website with css. This can be useful if you have to targ
 ### Activating Mapbox support <a name="activate-mapbox"></a>
 
 In order to activate Mapbox you will have to override one of the theme's component.
-Go to your project folder. It contains a `gatsby-theme-wp-ginger` directory, create a `utils` folder in it and paste the `ParsedContent.js` file from the theme `packages/gatsby-theme-wp-ginger/src/utils/ParsedContent.js`
+Go to your project folder. It contains a `gatsby-theme-wp-ginger-pro` directory, create a `utils` folder in it and paste the `ParsedContent.js` file from the theme `packages/gatsby-theme-wp-ginger-pro/src/utils/ParsedContent.js`
 
 Make sure to uncomment the lines:
 
