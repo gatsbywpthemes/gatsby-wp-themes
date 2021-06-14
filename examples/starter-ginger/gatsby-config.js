@@ -22,7 +22,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `@gatsbywpthemes/gatsby-theme-wp-ginger-pro-pro`,
+      resolve: `@gatsbywpthemes/gatsby-theme-wp-ginger-pro`,
       options: {
         ...options,
         wordPressUrl: process.env.GATSBY_WP_URL,

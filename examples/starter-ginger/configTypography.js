@@ -2,8 +2,8 @@
 const rem = (px) => px / 16 + "rem"
 const typographySettings = {
   fonts: {
-    body: "Trebuchet MS, sans-serif",
-    heading: "Trebuchet MS, sans-serif",
+    //body: "Trebuchet MS, sans-serif",
+    //heading: "Trebuchet MS, sans-serif",
   },
   fontWeights: {
     // body: 400,
