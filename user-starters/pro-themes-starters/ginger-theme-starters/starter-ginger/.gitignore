@@ -4,7 +4,7 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+yarn.lock
 
 # Runtime data
 pids
@@ -42,7 +42,6 @@ typings/
 
 # Optional npm cache directory
 .npm
-.npmrc
 
 # Optional eslint cache
 .eslintcache
@@ -73,16 +72,12 @@ yarn-error.log
 .yarn-integrity
 
 .netlify/
-.npmrc
-__MACOSX
+
+#packages
+packages/@gatsbywpthemes/gatsby-theme-blog-data
+packages/gatsby-theme-algolia
 
 
 #bit
 .bitmap
 .bit/
-
-#vscode
-wp-base.code-workspace
-starter-tailwind.code-workspace
-.vscode/
-.history
