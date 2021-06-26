@@ -15,7 +15,6 @@
     "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "*",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-plugin-anchor-links": "^1.2.1",
-    "gatsby-plugin-google-analytics": "^3.7.0",
     "gatsby-plugin-google-gtag": "^3.7.0",
     "gatsby-plugin-google-tagmanager": "^3.7.0",
     "gatsby-plugin-image": "^1.7.0",

@@ -9452,14 +9452,6 @@ gatsby-plugin-dark-mode@^1.1.2:
   dependencies:
     prop-types "^15.5.7"
 
-gatsby-plugin-google-analytics@^3.7.0:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-3.7.1.tgz#c54821e609d10ca6f4843b60054bf0b243302cb4"
-  integrity sha512-50NT0Fvv/f+pSxohheVixYxrRHf2mE/XtGOyGMVl9Qxbry8evaqSLMYaoLP6JCcm/pzEoHQk04Cyrlo173JBMQ==
-  dependencies:
-    "@babel/runtime" "^7.14.0"
-    minimatch "3.0.4"
-
 gatsby-plugin-google-fonts@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.1.tgz#d71054f7bf207b9a8da227380369e18e6f4e0201"
