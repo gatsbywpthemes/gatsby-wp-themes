@@ -82,6 +82,7 @@ __MACOSX
 .bit/
 
 #vscode
+*.code-workspace
 wp-base.code-workspace
 starter-tailwind.code-workspace
 .vscode/
