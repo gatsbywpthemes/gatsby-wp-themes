@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/pehaa/@gatsbywpthemes/gatsby-plugin-wordpress-parser.git"
   },
-  "license": "LicenseRef-LICENSE",
+  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "@babel/runtime": "^7.14.5",
     "gatsby-plugin-sharp": "^3.7.0",

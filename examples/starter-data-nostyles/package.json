@@ -1,7 +1,7 @@
 {
   "name": "starter-data-nostyles",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "private": true,
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",

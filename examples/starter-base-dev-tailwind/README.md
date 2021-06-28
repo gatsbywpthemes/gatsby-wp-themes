@@ -1,4 +1,4 @@
-# Starter Ginger
+# Starter Base Dev Tailwind
 
 [📖 Documentation](https://doc.gatsbywpthemes.com/)
 

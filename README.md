@@ -1,1 +1,1 @@
-[documentation](https://gwpt-doc.netlify.app/)
+[documentation](https://doc.gatsbywpthemes/)
