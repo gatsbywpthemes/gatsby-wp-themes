@@ -3,10 +3,15 @@ import { Flex } from '@chakra-ui/react'
 import { Container } from 'baseUiComponents'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { Sidebar } from 'baseComponents'
-import { ArchiveTitle, PostsList, Pagination } from 'baseComponents'
+import {
+  ArchiveTitle,
+  PostsList,
+  Pagination,
+  Description,
+} from 'baseComponents'
 import { useLayoutWidth } from 'baseUtils/hooks'
 
-export const ArchiveContent = ({ posts, ctx, name }) => {
+export const ArchiveContent = ({ posts, ctx, name, description }) => {
   const {
     archiveSidebarPosition: archiveSidebar,
     widgetAreas: { sidebarWidgets },
@@ -43,6 +48,8 @@ export const ArchiveContent = ({ posts, ctx, name }) => {
   return (
     <Container className="mainContainer" sx={{ ...containerStyles }}>
       {name && <ArchiveTitle text="Posts from: " name={name} />}
+
+      {description && <Description description={description} />}
       <Flex
         sx={{
           ...sidebarSide,

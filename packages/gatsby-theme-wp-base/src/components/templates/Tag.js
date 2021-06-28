@@ -3,7 +3,7 @@ import { Layout, ArchiveContent } from 'baseComponents'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
 const Tag = ({ tag, ctx }) => {
-  const { name, posts, uri } = tag
+  const { name, posts, uri, description } = tag
   const { humanPageNumber, numberOfPages, yoastSeo, seo } = ctx
 
   return (
@@ -17,7 +17,12 @@ const Tag = ({ tag, ctx }) => {
         seo={seo}
       />
 
-      <ArchiveContent posts={posts.nodes} ctx={ctx} name={name} />
+      <ArchiveContent
+        posts={posts.nodes}
+        ctx={ctx}
+        name={name}
+        description={description}
+      />
     </Layout>
   )
 }
