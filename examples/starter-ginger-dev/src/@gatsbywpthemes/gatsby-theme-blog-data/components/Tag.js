@@ -6,5 +6,4 @@ const TagComponent = ({ data, pageContext }) => {
     <Tag tag={{ ...data.wpTag, posts: data.allWpPost }} ctx={pageContext} />
   )
 }
-
 export default TagComponent

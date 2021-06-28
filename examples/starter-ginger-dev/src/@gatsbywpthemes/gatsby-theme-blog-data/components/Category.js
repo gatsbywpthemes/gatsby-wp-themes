@@ -9,4 +9,5 @@ const CategoryComponent = ({ data, pageContext }) => {
     />
   )
 }
+
 export default CategoryComponent
