@@ -11,8 +11,8 @@ module.exports = (options) => {
     wordPressUrl,
     gaUniversalTrackingId,
     gaUniversalOptions,
-    ga4TrackingId,
-    ga4Options,
+    gaTrackingId,
+    gaOptions,
     googleTagManagerId,
     googleTagManagerOptions,
     addSiteMap,
@@ -33,8 +33,20 @@ module.exports = (options) => {
       resolve: `gatsby-source-wordpress`,
       options: {
         url: `${url}/graphql`,
-        verbose: true,
         excludeFieldNames: [`blocksJSON`, `saveContent`],
+        presets: [
+          {
+            presetName: `DEVELOP`,
+            useIf: () => process.env.NODE_ENV === `development` && developLimit,
+            options: {
+              type: {
+                __all: {
+                  limit: developLimit,
+                },
+              },
+            },
+          },
+        ],
       },
     },
     {
@@ -61,22 +73,12 @@ module.exports = (options) => {
     })
   }
 
-  if (gaUniversalTrackingId || gaUniversalOptions.gaTrackingId) {
-    plugins.push({
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: gaUniversalTrackingId,
-        ...gaUniversalOptions,
-      },
-    })
-  }
-
-  if (ga4TrackingId || ga4Options.trackingIds) {
+  if (gaTrackingId || gaOptions.trackingIds) {
     plugins.push({
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [ga4TrackingId],
-        ...ga4Options,
+        trackingIds: [gaTrackingId],
+        ...gaOptions,
       },
     })
   }

@@ -74,7 +74,7 @@ yarn-error.log
 
 .netlify/
 .npmrc
-*.zip
+__MACOSX
 
 
 #bit
@@ -83,4 +83,6 @@ yarn-error.log
 
 #vscode
 wp-base.code-workspace
+starter-tailwind.code-workspace
 .vscode/
+.history

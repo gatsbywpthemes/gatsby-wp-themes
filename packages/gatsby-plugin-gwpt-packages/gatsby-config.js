@@ -25,13 +25,6 @@ module.exports = (options) => {
       resolve: "@gatsbywpthemes/gatsby-plugin-wp-seo",
     },
     {
-      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-      options: {
-        analyzerMode: "static",
-        disable: !process.env.ANALYZE_BUNDLE_SIZE,
-      },
-    },
-    {
       resolve: `@gatsbywpthemes/gatsby-plugin-wordpress-lightbox`,
       options: {
         ...(options.lightboxOptions || {}),
