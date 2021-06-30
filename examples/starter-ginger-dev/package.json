@@ -6,6 +6,10 @@
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "*",
     "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "*",
     "gatsby-plugin-smoothscroll": "^1.2.0",
