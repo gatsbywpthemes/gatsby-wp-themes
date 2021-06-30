@@ -13,10 +13,6 @@ const config = {
       ],
     },
   },
-  //gaUniversalTrackingId: "UA-186757931-1",
-  gaUniversalOptions: {
-    head: true,
-  },
   GTagGATrackingId: "G-V63SJWDYCJ",
   GTagOptions: {
     pluginConfig: {

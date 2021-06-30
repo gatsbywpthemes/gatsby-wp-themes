@@ -9,8 +9,6 @@ module.exports = (options) => {
   }
   const {
     wordPressUrl,
-    gaUniversalTrackingId,
-    gaUniversalOptions,
     gaTrackingId,
     gaOptions,
     googleTagManagerId,

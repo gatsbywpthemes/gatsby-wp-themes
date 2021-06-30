@@ -8,8 +8,6 @@ const DEFAULT_OPTIONS = {
   paginationPrefix: 'page',
   addWordPressComments: true,
   addWordPressSearch: false,
-  gaUniversalTrackingId: null,
-  gaUniversalOptions: {},
   gaTrackingId: null,
   gaOptions: {},
   googleTagManagerId: null,
