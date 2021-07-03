@@ -1,8 +1,8 @@
 import React from "react"
 import slashes from "remove-trailing-slash"
 import { createLocalLink } from "baseUtils"
-import { Link as GatsbyLink } from "gatsby"
-import { Box, chakra } from "@chakra-ui/react"
+import { Link } from "gatsby"
+
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
 export const MenuLink = ({ menuItem, ...props }) => {
@@ -18,22 +18,20 @@ export const MenuLink = ({ menuItem, ...props }) => {
         ? { target: "_blank", rel: "noopener noreferrer" }
         : {}
     return (
-      <chakra.a href={menuItem.url} {...targetRelAttrs} {...props}>
+      <a href={menuItem.url} {...targetRelAttrs} {...props}>
         {menuItem.label}
-      </chakra.a>
+      </a>
     )
   } else {
     return menuItem.url !== "#" ? (
       menuItem.url === wordPressUrl ? (
-        <Box
-          as={GatsbyLink}
+        <Link
           to="/"
           dangerouslySetInnerHTML={{ __html: menuItem.label }}
           {...props}
         />
       ) : (
-        <Box
-          as={GatsbyLink}
+        <Link
           to={createLocalLink(menuItem.url, slashes(wordPressUrl))}
           dangerouslySetInnerHTML={{ __html: menuItem.label }}
           {...props}

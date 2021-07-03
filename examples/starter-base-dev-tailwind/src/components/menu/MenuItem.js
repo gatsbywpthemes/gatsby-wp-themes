@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, useColorModeValue } from "@chakra-ui/react"
+import { useColorModeValue } from "@chakra-ui/react"
 import { SubMenu, MenuLink } from "baseComponents"
 
 export const MenuItem = ({ menuItem, orientation }) => {
@@ -8,10 +8,8 @@ export const MenuItem = ({ menuItem, orientation }) => {
     return <SubMenu menuItem={menuItem} />
   } else {
     return (
-      <Flex
-        as="div"
-        alignItems="center"
-        className={`menu-item ${menuItem.cssClasses}`}
+      <div
+        className={`menu-item flex items-center ${menuItem.cssClasses}`}
         key={menuItem.id}
       >
         <MenuLink
@@ -20,7 +18,7 @@ export const MenuItem = ({ menuItem, orientation }) => {
             color,
           }}
         />
-      </Flex>
+      </div>
     )
   }
 }
