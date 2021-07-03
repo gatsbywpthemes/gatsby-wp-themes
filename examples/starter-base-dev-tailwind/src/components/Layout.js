@@ -1,7 +1,7 @@
 import React from "react"
 import { Footer, Header } from "baseComponents"
 import Headroom from "react-headroom"
-import "baseStyles/wp-styles/styles.scss"
+// import "baseStyles/wp-styles/styles.scss"
 import { HelmetForFavicon } from "./HelmetForFavicon"
 import clsx from "clsx"
 

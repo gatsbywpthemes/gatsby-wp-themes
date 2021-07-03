@@ -15,14 +15,19 @@
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-theme-base-dev": "*",
+    "autoprefixer": "^10.2.6",
     "clsx": "^1.1.1",
     "gatsby": "^3.7.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
+    "gatsby-plugin-emotion": "^6.8.0",
+    "gatsby-plugin-postcss": "^4.8.0",
     "gatsby-plugin-root-import": "^2.0.5",
     "lodash.merge": "^4.6.2",
+    "postcss": "^8.3.5",
     "prismjs": "^1.22.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "tailwindcss": "^2.2.4"
   },
   "devDependencies": {
     "babel-preset-gatsby": "^1.7.0",
