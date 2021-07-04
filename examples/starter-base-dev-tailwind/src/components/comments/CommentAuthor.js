@@ -1,18 +1,17 @@
-import React from 'react'
-import { chakra, Link } from '@chakra-ui/react'
+import React from "react"
+import { TextSpecial } from "baseUiComponents"
 
 export const CommentAuthor = ({ name, url }) => {
   return url ? (
-    <Link
-      textStyle="specialLinkUnderline"
+    <a
       className="comment-author"
       href={url}
       target="_blank"
       rel="noopener noreferrer"
     >
       {name}
-    </Link>
+    </a>
   ) : (
-    <chakra.span textStyle="special">{name}</chakra.span>
+    <TextSpecial as="span">{name}</TextSpecial>
   )
 }
