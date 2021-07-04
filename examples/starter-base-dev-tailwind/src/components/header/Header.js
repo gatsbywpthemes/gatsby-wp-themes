@@ -33,9 +33,8 @@ export const Header = () => {
         <div className="flex">
           <Menu orientation="H" className="hidden lg:block" />
 
-          <SlideSidebar className="lg:hidden" />
-
           {addColorModes && <ColorSwitch />}
+          <SlideSidebar className="lg:hidden" />
         </div>
       </Container>
     </header>
