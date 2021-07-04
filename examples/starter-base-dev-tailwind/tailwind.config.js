@@ -36,6 +36,17 @@ module.exports = {
         heading: 1.4,
         loose: 2,
       },
+      boxShadow: {
+        input: "currentcolor 0px 0px 0px inset",
+        inputFocus: "currentcolor 0px -3px 0px inset",
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {},
+          },
+        },
+      },
 
       colors: {
         /* header */
@@ -120,5 +131,12 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("tailwindcss-debug-screens"),
+  ],
+  corePlugins: {
+    preflight: true,
+  },
 }

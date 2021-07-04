@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from "react"
 import {
   Box,
   Flex,
@@ -7,12 +7,13 @@ import {
   FormControl,
   Button,
   useColorModeValue as colorMode,
-} from '@chakra-ui/react'
-import { Input } from 'baseUiComponents'
-import { CommentStatusFeedback } from './index'
-import { inputFields } from './inputfields'
-import { CommentsListContext } from 'baseComponents/comments/context'
-import { useCommentForm } from 'baseComponents/comments/hooks/useCommentForm'
+} from "@chakra-ui/react"
+import { Input, TextSpecial } from "baseUiComponents"
+import { CommentStatusFeedback } from "./index"
+import { inputFields } from "./inputfields"
+import { CommentsListContext } from "baseComponents/comments/context"
+import { useCommentForm } from "baseComponents/comments/hooks/useCommentForm"
+import clsx from "clsx"
 
 export const CommentForm = () => {
   const { activeComment, cancelReply } = useContext(CommentsListContext)
@@ -20,33 +21,25 @@ export const CommentForm = () => {
 
   const CommentNotes = () => {
     return (
-      <Box
-        as="p"
-        textStyle="special"
-        textAlign="center"
-        w="full"
-        className="comment-notes"
-      >
+      <TextSpecial as="p" className="w-full text-center comment-notes">
         <span id="email-notes">Your email address will not be published.</span>
         <br />
         Required fields are marked <span className="required">*</span>
-      </Box>
+      </TextSpecial>
     )
   }
 
   const CommentSubmitButton = () => {
     return (
-      <Box w="full">
-        <Button
-          d="flex"
-          ml="auto"
-          className="submit-button"
+      <div className="w-full">
+        <button
+          className="flex ml-auto submit-button"
           type="submit"
-          disabled={commentStatus === 'loading'}
+          disabled={commentStatus === "loading"}
         >
           Post Comment
-        </Button>
-      </Box>
+        </button>
+      </div>
     )
   }
 
@@ -54,30 +47,24 @@ export const CommentForm = () => {
     <>
       <CommentStatusFeedback commentStatus={commentStatus} />
       {!commentStatus && (
-        <Box>
+        <div>
           {activeComment === 0 ? (
-            <Box as="h2" textAlign="center" mb={8}>
-              Leave a comment
-            </Box>
+            <h2 className="mb-8 text-center">Leave a comment</h2>
           ) : (
-            <Button
-              variant="link"
-              display="flex"
-              ml="auto"
-              color="inherit"
-              className="comment-button-cancel"
+            <button
+              className="flex ml-auto comment-button-cancel"
               onClick={cancelReply}
             >
               <span>Cancel</span>
-            </Button>
+            </button>
           )}
-          <Flex
-            as="form"
-            wrap="wrap"
-            justify="space-between"
-            bg={colorMode('cardBg', 'modes.dark.cardBg')}
-            borderRadius="lg"
-            p={['4', '8']}
+          <form
+            className={clsx(
+              "flex flex-wrap justify-between",
+              "bg-cardBg dark:bg-dark-cardBg",
+              "rounded-lg",
+              "p-4 sm:p-8"
+            )}
             onSubmit={onSubmit}
             noValidate
           >
@@ -85,15 +72,15 @@ export const CommentForm = () => {
             {inputFields.map((el) => {
               const Tag = el.tag
               const pStyles =
-                Tag === 'textarea'
+                Tag === "textarea"
                   ? {
-                      w: 'full',
+                      w: "full",
                     }
                   : {
-                      w: ['full', 'calc(50% - 1rem)'],
+                      w: ["full", "calc(50% - 1rem)"],
                     }
               const textarea =
-                Tag === 'textarea' ? { rows: 6, cols: 48, h: 'auto' } : {}
+                Tag === "textarea" ? { rows: 6, cols: 48, h: "auto" } : {}
               return (
                 <FormControl
                   key={el.name}
@@ -123,10 +110,10 @@ export const CommentForm = () => {
                     />
                   </FormLabel>
                   <FormErrorMessage fontStyle="italic" mt="0">
-                    {errors[el.name]?.type === 'required' && (
+                    {errors[el.name]?.type === "required" && (
                       <span className="error">Required</span>
                     )}
-                    {errors[el.name]?.type === 'pattern' && (
+                    {errors[el.name]?.type === "pattern" && (
                       <span className="error">Invalid value</span>
                     )}
                   </FormErrorMessage>
@@ -134,8 +121,8 @@ export const CommentForm = () => {
               )
             })}
             <CommentSubmitButton commentStatus={commentStatus} />
-          </Flex>
-        </Box>
+          </form>
+        </div>
       )}
     </>
   )
