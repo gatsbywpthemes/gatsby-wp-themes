@@ -1,14 +1,13 @@
-import React from 'react'
-import { Box } from '@chakra-ui/react'
+import React from "react"
 
 export const CommentContent = ({ content }) => {
   return (
-    <Box
+    <div
       className="comment-content"
       dangerouslySetInnerHTML={{ __html: content }}
-      sx={{
+      css={{
         a: {
-          textDecoration: 'underline',
+          textDecoration: "underline",
         },
       }}
     />
