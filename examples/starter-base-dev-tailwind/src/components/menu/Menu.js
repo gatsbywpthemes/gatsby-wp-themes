@@ -25,7 +25,7 @@ export const Menu = ({ location = "PRIMARY", orientation, ...props }) => {
 
   return (
     menuItems && (
-      <nav className="menu" sx={{ ...style }} aria-label="main" {...props}>
+      <nav className="menu" css={{ ...style }} aria-label="main" {...props}>
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
         <div
           direction={orientation === "H" ? "row" : "column"}

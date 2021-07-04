@@ -1,26 +1,13 @@
 import React from "react"
-import {
-  chakra,
-  Box,
-  Menu,
-  MenuButton,
-  MenuItem as SubMenuItem,
-  MenuList,
-  Button,
-  useColorModeValue,
-} from "@chakra-ui/react"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 
 import { Collapse } from "baseUiComponents"
 import { MenuLink, MenuItem } from "baseComponents"
+import { Menu } from "@headlessui/react"
 
 const SubMenuV = ({ menuItem }) => {
   return (
-    <Box
-      className="has-subMenu menu-item"
-      position="relative"
-      key={menuItem.id}
-    >
+    <div className="relative has-subMenu menu-item" key={menuItem.id}>
       <Collapse menuItem={menuItem}>
         <ul className="flex menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
@@ -28,33 +15,25 @@ const SubMenuV = ({ menuItem }) => {
           ))}
         </ul>
       </Collapse>
-    </Box>
+    </div>
   )
 }
 
 const SubMenuH = ({ menuItem }) => {
   return (
-    <Menu key={menuItem.id} autoSelect={false}>
-      <MenuButton
-        as={Button}
-        className="menu-item"
-        variant="unstyled"
-        rightIcon={<ChevronDownIcon />}
-        _hover={{
-          color: useColorModeValue("accent", "modes.dark.accent"),
-        }}
-      >
+    <Menu key={menuItem.id}>
+      <Menu.Button className="menu-item hover:text-accentColor dark:hover:text-dark-accentColor">
         {menuItem.label}
-      </MenuButton>
-      <Box position="absolute">
-        <MenuList>
-          {menuItem.children.map((item) => (
-            <SubMenuItem key={item.id}>
-              <MenuLink menuItem={item} />
-            </SubMenuItem>
-          ))}
-        </MenuList>
-      </Box>
+        <ChevronDownIcon />
+      </Menu.Button>
+
+      <Menu.Items>
+        {menuItem.children.map((item) => (
+          <Menu.Item key={item.id}>
+            {({ active }) => <MenuLink menuItem={item} />}
+          </Menu.Item>
+        ))}
+      </Menu.Items>
     </Menu>
   )
 }

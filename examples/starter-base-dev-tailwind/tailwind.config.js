@@ -83,6 +83,7 @@ module.exports = {
           bg: dark,
           text: ultraLight,
           text2: teal[900],
+          accentColor: primary,
           /* header*/
           headerBg: ultraDark,
           headerColor: ultraLight,
