@@ -1,24 +1,18 @@
-import React from 'react'
-import {
-  Flex,
-  Box,
-  Link as ChakraLink,
-  useColorModeValue as colorMode,
-} from '@chakra-ui/react'
-import { Link } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
+import { TextSpecial } from "baseUiComponents"
+import clsx from "clsx"
 
 const renderPreviousLink = (previousPagePath) => {
   if (previousPagePath) {
     return (
-      <ChakraLink
-        as={Link}
-        textAlign="left"
-        sx={{ ...linkStyles }}
-        className="newer"
+      <Link
+        css={{ ...linkStyles }}
+        className="text-left newer"
         to={previousPagePath}
       >
         <span>Previous</span>
-      </ChakraLink>
+      </Link>
     )
   } else {
     return <span />
@@ -28,15 +22,14 @@ const renderPreviousLink = (previousPagePath) => {
 const renderNextLink = (nextPagePath) => {
   if (nextPagePath) {
     return (
-      <ChakraLink
-        as={Link}
+      <Link
         textAlign="right"
-        sx={{ ...linkStyles }}
-        className="older"
+        css={{ ...linkStyles }}
+        className="text-right older"
         to={nextPagePath}
       >
-        <Box as="span">Next</Box>
-      </ChakraLink>
+        <span>Next</span>
+      </Link>
     )
   } else {
     return <span />
@@ -47,62 +40,63 @@ export const Pagination = ({ ctx }) => {
   const { humanPageNumber, nextPagePath, previousPagePath } = ctx
   // return empty string if there is only one page
   if (humanPageNumber === 1 && !nextPagePath) {
-    return ''
+    return ""
   }
   return (
-    <Flex
+    <TextSpecial
       as="nav"
-      textStyle="special"
-      justify="space-between"
-      _hover={{
-        '.page-numbers.current': { color: colorMode('dark', 'light') },
-      }}
       mt={10}
-      overflow="hidden"
-      sx={{ '>*': { flex: 1 } }}
+      className={clsx(
+        "group",
+        "flex justify-between",
+        "overflow-hidden",
+        "mt-10"
+      )}
+      css={{ ">*": { flex: 1 } }}
     >
       {renderPreviousLink(previousPagePath)}
-      <Box
-        as="span"
-        textAlign="center"
+      <span
         aria-current="page"
-        fontWeight="bold"
-        className="page-numbers current"
+        className={clsx(
+          "page-numbers current",
+          "font-bold text-center",
+          "group-hover:text-dark dark:group-hover:text-light"
+        )}
       >
         {humanPageNumber}
-      </Box>
+      </span>
       {renderNextLink(nextPagePath)}
-    </Flex>
+    </TextSpecial>
   )
 }
 
 const linkStyles = {
-  transition: '.6s',
-  fontWeight: 'bold',
-  '&.older': {
-    transform: 'translate3d(1.75rem, 0, 0)',
+  transition: ".6s",
+  fontWeight: "bold",
+  "&.older": {
+    transform: "translate3d(1.75rem, 0, 0)",
     mr: [4, 0],
   },
-  '&.newer': {
-    transform: 'translate3d(-1.75rem, 0, 0)',
+  "&.newer": {
+    transform: "translate3d(-1.75rem, 0, 0)",
     ml: [4, 0],
   },
-  ':hover': {
-    transform: 'translate3d(0, 0, 0)',
-    textDecoration: 'none',
+  ":hover": {
+    transform: "translate3d(0, 0, 0)",
+    textDecoration: "none",
   },
-  '&.newer::before,&.older::after': {
+  "&.newer::before,&.older::after": {
     content: '""',
-    width: '1.5rem',
-    height: '1px',
-    mr: '0.25rem',
-    bg: 'currentColor',
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    transition: '0.6s',
-    transform: 'scaleX(0)',
+    width: "1.5rem",
+    height: "1px",
+    mr: "0.25rem",
+    bg: "currentColor",
+    display: "inline-block",
+    verticalAlign: "middle",
+    transition: "0.6s",
+    transform: "scaleX(0)",
   },
-  ':hover::before, :hover::after': {
-    transform: 'scaleX(1)',
+  ":hover::before, :hover::after": {
+    transform: "scaleX(1)",
   },
 }
