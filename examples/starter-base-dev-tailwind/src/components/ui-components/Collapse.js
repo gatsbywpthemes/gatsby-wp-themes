@@ -4,7 +4,7 @@ import { ChevronRightIcon, ChevronDownIcon } from "@chakra-ui/icons"
 
 export const Collapse = ({ menuItem, children }) => {
   const [open, setOpen] = useState(false)
-  // const { isOpen, onToggle } = useDisclosure()
+
   const openStyle =
     menuItem.url === "#"
       ? {
@@ -14,7 +14,6 @@ export const Collapse = ({ menuItem, children }) => {
         }
       : ""
   return (
-    //TODO: remove focus color on click
     <>
       <button
         aria-label="Open menu item"
