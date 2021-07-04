@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from "react"
 import {
   Date,
   CommentForm,
@@ -6,26 +6,28 @@ import {
   CommentAuthor,
   ReplyButton,
   CommentNestingInfo,
-} from 'baseComponents'
-import { Box, useColorModeValue as colorMode } from '@chakra-ui/react'
-import { CommentsListContext } from 'baseComponents/comments/context'
+} from "baseComponents"
+
+import { CommentsListContext } from "baseComponents/comments/context"
+import clsx from "clsx"
 
 export const Comment = ({ comment, withReply }) => {
   const { author, date, content, commentId } = comment
   const { activeComment, addReply } = useContext(CommentsListContext)
   return (
-    <Box
-      className="comment"
-      bg={colorMode('cardBg', 'modes.dark.cardBg')}
-      p="4"
-      shadow="lg"
-      borderRadius="md"
-      mb={6}
+    <div
+      className={clsx(
+        "comment",
+        "bg-cardBg dark:bg-dark-cardBg",
+        "p4 mb-6",
+        "rounded-md",
+        "shadow-lg"
+      )}
     >
       <CommentAuthor name={author.node.name} url={author.node.url} />
-      <Box fontStyle="italic" fontSize="xs">
+      <div className="text-xs italic">
         <Date date={date} />
-      </Box>
+      </div>
       <CommentContent content={content} />
       {withReply ? (
         activeComment === comment.commentId ? (
@@ -36,6 +38,6 @@ export const Comment = ({ comment, withReply }) => {
       ) : (
         <CommentNestingInfo />
       )}
-    </Box>
+    </div>
   )
 }

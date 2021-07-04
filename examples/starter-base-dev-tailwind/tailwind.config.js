@@ -41,6 +41,7 @@ module.exports = {
         /* header */
         ...colors,
         light,
+        dark,
         ultraLight,
         ultraDark,
         primary,
@@ -80,6 +81,7 @@ module.exports = {
 
         dark: {
           /* basic colors*/
+
           bg: dark,
           text: ultraLight,
           text2: teal[900],
