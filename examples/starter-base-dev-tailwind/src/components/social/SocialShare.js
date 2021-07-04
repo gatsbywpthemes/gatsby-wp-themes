@@ -1,24 +1,25 @@
-import React from 'react'
-import { Center, Heading, IconButton, HStack } from '@chakra-ui/react'
-import { Twitter, Facebook, Pinterest } from './icons'
-import { FiShare2 } from 'react-icons/fi'
+import React from "react"
+import { Twitter, Facebook, Pinterest } from "./icons"
+import { FiShare2 } from "react-icons/fi"
+import clsx from "clsx"
 
 export const SocialShare = ({ url, title, media }) => {
   return (
-    <Center flexDirection="column" mt={10}>
-      <Heading as="h3" fontSize="base" textTransform="uppercase" mb={4}>
-        Share on social media
-      </Heading>
-      <IconButton
-        isRound={true}
-        variant="outline"
-        colorScheme="gray"
+    <div className={clsx("flex flex-col justify-center align-center mt-10")}>
+      <h3 className="mb-4 text-base uppercase">Share on social media</h3>
+      <button
+        className="cursor-pointer"
         size="sm"
         cursor="auto"
         icon={<FiShare2 />}
       />
 
-      <HStack fontWeight="bold" fontSize="sm" mt={4}>
+      <div
+        fontWeight="bold"
+        fontSize="sm"
+        mt={4}
+        className="flex space-x-2 text-sm font-bold"
+      >
         <Twitter url={url} title={title} textStyle="link">
           Twitter
         </Twitter>
@@ -30,7 +31,7 @@ export const SocialShare = ({ url, title, media }) => {
         <Pinterest url={url} media={media}>
           Pinterest
         </Pinterest>
-      </HStack>
-    </Center>
+      </div>
+    </div>
   )
 }

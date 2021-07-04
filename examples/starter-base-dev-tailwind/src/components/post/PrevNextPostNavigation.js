@@ -1,17 +1,8 @@
-import React from 'react'
-import { Flex, Button } from '@chakra-ui/react'
-import { Link } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
 
 const LinkButton = (props) => (
-  <Button
-    as={Link}
-    variant="unstyled"
-    size="xs"
-    className="prev"
-    textTransform="uppercase"
-    letterSpacing="widest"
-    {...props}
-  />
+  <Link className="tracking-widest uppercase prev" {...props} />
 )
 const renderPreviousLink = ({ prev }) => {
   let previousLink = null
@@ -24,7 +15,7 @@ const renderPreviousLink = ({ prev }) => {
   return (
     <LinkButton
       className="previous"
-      sx={{ ...linkStyles }}
+      css={{ ...linkStyles }}
       to={previousLink}
       aria-label="visit previous post"
     >
@@ -38,7 +29,7 @@ const renderNextLink = ({ next }) => {
     return (
       <LinkButton
         className="next"
-        sx={{ ...linkStyles }}
+        css={{ ...linkStyles }}
         aria-label="visit next post"
         to={`${next}`}
       >
@@ -50,42 +41,42 @@ const renderNextLink = ({ next }) => {
   }
 }
 
-export const PrevNextPostNavigation = ({ ctx, style }) => {
+export const PrevNextPostNavigation = ({ ctx }) => {
   return (
-    <Flex as="nav" justify="space-between" mt={16}>
+    <nav className="flex justify-between mt-16">
       {renderPreviousLink(ctx)}
       {renderNextLink(ctx)}
-    </Flex>
+    </nav>
   )
 }
 
 const linkStyles = {
-  transition: '.6s',
-  fontWeight: 'bold',
-  '&.next': {
-    transform: 'translate3d(1.75rem, 0, 0)',
+  transition: ".6s",
+  fontWeight: "bold",
+  "&.next": {
+    transform: "translate3d(1.75rem, 0, 0)",
     mr: [4, 0],
   },
-  '&.previous': {
-    transform: 'translate3d(-1.75rem, 0, 0)',
+  "&.previous": {
+    transform: "translate3d(-1.75rem, 0, 0)",
     ml: [4, 0],
   },
-  ':hover': {
-    transform: 'translate3d(0, 0, 0)',
-    textDecoration: 'none',
+  ":hover": {
+    transform: "translate3d(0, 0, 0)",
+    textDecoration: "none",
   },
-  '&.previous::before,&.next::after': {
+  "&.previous::before,&.next::after": {
     content: '""',
-    width: '1.5rem',
-    height: '1px',
-    mr: '0.25rem',
-    bg: 'currentColor',
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    transition: '0.6s',
-    transform: 'scaleX(0)',
+    width: "1.5rem",
+    height: "1px",
+    mr: "0.25rem",
+    bg: "currentColor",
+    display: "inline-block",
+    verticalAlign: "middle",
+    transition: "0.6s",
+    transform: "scaleX(0)",
   },
-  ':hover::before, :hover::after': {
-    transform: 'scaleX(1)',
+  ":hover::before, :hover::after": {
+    transform: "scaleX(1)",
   },
 }
