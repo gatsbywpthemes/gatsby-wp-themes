@@ -6,9 +6,9 @@
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
-    "gatsby": "^2.28.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "gatsby": "^3.9.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "*",
@@ -17,7 +17,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
-    "bootstrap": "^5.0.1"
+    "bootstrap": "^5.0.2"
   },
   "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4",
   "devDependencies": {

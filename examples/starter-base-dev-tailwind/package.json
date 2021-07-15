@@ -19,12 +19,12 @@
     "@kunukn/react-collapse": "^2.2.9",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.3.1",
     "clsx": "^1.1.1",
-    "gatsby": "^3.7.0",
+    "gatsby": "^3.9.1",
     "gatsby-plugin-dark-mode": "^1.1.2",
-    "gatsby-plugin-emotion": "^6.8.0",
-    "gatsby-plugin-postcss": "^4.8.0",
+    "gatsby-plugin-emotion": "^6.9.0",
+    "gatsby-plugin-postcss": "^4.9.0",
     "gatsby-plugin-root-import": "^2.0.5",
     "lodash.merge": "^4.6.2",
     "postcss": "^8.3.5",
@@ -36,7 +36,7 @@
     "twin.macro": "^2.6.1"
   },
   "devDependencies": {
-    "babel-preset-gatsby": "^1.7.0",
+    "babel-preset-gatsby": "^1.9.0",
     "prettier": "^2.3.1"
   }
 }
