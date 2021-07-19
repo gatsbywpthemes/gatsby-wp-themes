@@ -27,6 +27,7 @@ const DEFAULT_OPTIONS = {
   developLimit: null,
   addColorModes: true,
   webfontsOptions: {},
+  gatsbySourceWordPressOptions: { presets: [] },
 }
 
 module.exports = DEFAULT_OPTIONS
