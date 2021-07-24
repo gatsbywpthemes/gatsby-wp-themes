@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Collapsible from "@kunukn/react-collapse"
-import { ChevronRightIcon, ChevronDownIcon } from "@chakra-ui/icons"
+import { CgChevronDown, CgChevronRight } from "react-icons/cg"
 
 export const Collapse = ({ menuItem, children }) => {
   const [open, setOpen] = useState(false)
@@ -30,7 +30,7 @@ export const Collapse = ({ menuItem, children }) => {
           },
         }}
       />
-      {menuItem.label} {open ? <ChevronDownIcon /> : <ChevronRightIcon />}
+      {menuItem.label} {open ? <CgChevronDown /> : <CgChevronRight />}
       <Collapsible isOpen={open}>{children}</Collapsible>
     </>
   )

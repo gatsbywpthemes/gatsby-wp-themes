@@ -5,10 +5,9 @@ import { Container } from "baseUiComponents"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
 import { ColorSwitch } from "baseComponents"
-import { SearchModal } from "baseComponents"
 
 export const Header = () => {
-  const { addWordPressSearch: search, addColorModes } = useThemeOptions()
+  const { addColorModes } = useThemeOptions()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -28,7 +27,6 @@ export const Header = () => {
       <Container className="flex justify-between">
         <div className="flex items-center">
           <SiteBranding title={title} />
-          {search && <SearchModal />}
         </div>
         <div className="flex">
           <Menu orientation="H" className="hidden lg:block" />

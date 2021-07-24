@@ -1,5 +1,5 @@
 export * from "./archive"
-export * from "./comments"
+
 export * from "./footer"
 export * from "./header"
 export * from "./images"
@@ -10,5 +10,4 @@ export * from "./widgets"
 export * from "./Layout"
 export * from "./Sidebar"
 export * from "./ColorSwitch"
-export * from "./search"
 export * from "./menu"

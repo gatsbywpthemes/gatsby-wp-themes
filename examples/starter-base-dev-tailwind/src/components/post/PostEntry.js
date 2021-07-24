@@ -1,5 +1,4 @@
 import React from "react"
-import { Box, Center, Divider } from "@chakra-ui/react"
 
 import {
   PostEntryTitle,
@@ -47,16 +46,11 @@ export const PostEntry = ({
         <PostEntryTitle
           location={location}
           post={post}
-          className="text-2xl uppercase  entry-title sm:text-3xl"
+          className="text-2xl uppercase entry-title sm:text-3xl"
         />
         <PostEntryInfo className=" entry-info" post={post} />
 
         <PostEntryContent location={location} post={post} />
-        {location !== "single" && (
-          <Center height={20}>
-            <Divider />
-          </Center>
-        )}
 
         <div className="entry-footer">
           <PostEntryMeta className="entry-meta" post={post} />

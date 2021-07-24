@@ -1,26 +1,19 @@
-import React from 'react'
-import { Flex } from '@chakra-ui/react'
+import React from "react"
 
 export const BorderTitle = (props) => (
-  <Flex
-    justify="center"
-    align="center"
-    textAlign="center"
-    textTransform="uppercase"
-    letterSpacing="2px"
-    fontSize="lg"
-    fontWeight="bold"
-    sx={{
-      ':after, :before': {
+  <div
+    className="flex justify-center font-bold tracking-widest text-center uppercase"
+    css={{
+      ":after, :before": {
         content: '""',
-        height: '1px',
-        borderTop: '1px solid',
-        flex: '1 0',
+        height: "1px",
+        borderTop: "1px solid",
+        flex: "1 0",
       },
-      ':after': {
+      ":after": {
         ml: 4,
       },
-      ':before': {
+      ":before": {
         mr: 4,
       },
     }}

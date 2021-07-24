@@ -1,9 +1,8 @@
 import React from "react"
-import { Flex, Box, Heading } from "@chakra-ui/react"
 import { Container, Card } from "baseUiComponents"
 import { Layout, Sidebar } from "baseComponents"
 import { ActivatePageScripts } from "baseUtils"
-import { useLayoutStyles } from "baseUtils/hooks"
+
 import ParsedContent from "baseUtils/ParsedContent"
 
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
@@ -13,8 +12,6 @@ const Page = ({ page, ctx }) => {
   const { title, isFrontPage, content, uri, headlesswp } = page
   const pageTemplate = headlesswp?.pageTemplate || "default"
   const skipTitle = headlesswp?.skipTitle || false
-  const { containerStyles, sidebarSide, sidebarPage, sidebarWidgets } =
-    useLayoutStyles("page", pageTemplate)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -34,10 +31,10 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <Container className="mainContainer" sx={{ ...containerStyles }}>
-        <Flex
-          sx={{
-            ...sidebarSide,
+      <Container className="mainContainer">
+        <div
+          className="flex"
+          css={{
             flexWrap: { base: "wrap", lg: "nowrap" },
             alignItems: `flex-start`,
           }}
@@ -55,20 +52,15 @@ const Page = ({ page, ctx }) => {
               mb={{ base: 14, lg: 0 }}
             >
               {!skipTitle && pageTemplate !== "full width" && (
-                <Heading
-                  as="h1"
-                  marginBottom={10}
-                  textTransform="uppercase"
-                  fontSize="3xl"
-                  textAlign="center"
-                  className="page-title"
+                <h1
+                  className="mb-10 text-3xl text-center uppercase page-title"
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               )}
 
-              <Box
+              <div
                 className="entry-content"
-                sx={{
+                css={{
                   ...gutenbergStyles,
                   "&:after": {
                     clear: "both",
@@ -79,11 +71,10 @@ const Page = ({ page, ctx }) => {
               >
                 <ActivatePageScripts />
                 <ParsedContent content={content} />
-              </Box>
+              </div>
             </Card>
           </article>
-          {sidebarPage && <Sidebar widgets={sidebarWidgets} />}
-        </Flex>
+        </div>
       </Container>
     </Layout>
   )

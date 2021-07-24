@@ -1,5 +1,4 @@
 import React from "react"
-import { VStack, Link as ChakraLink } from "@chakra-ui/react"
 import { BorderTitle } from "baseUiComponents"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
@@ -24,13 +23,13 @@ export const CategoriesWidget = (props) => {
         <BorderTitle as="h2" className="widget-title" mt={2} mb={5}>
           Categories
         </BorderTitle>
-        <VStack align="flex-start">
+        <div align="flex-start" className="flex flex-col items-start space-y-3">
           {nodes.map((category) => (
-            <ChakraLink as={Link} key={category.slug} to={`${category.uri}`}>
+            <Link key={category.slug} to={`${category.uri}`}>
               {category.name}
-            </ChakraLink>
+            </Link>
           ))}
-        </VStack>
+        </div>
       </section>
     )
   )

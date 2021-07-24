@@ -1,5 +1,5 @@
 import React from "react"
-import { ChevronDownIcon } from "@chakra-ui/icons"
+import { CgChevronDown } from "react-icons/cg"
 
 import { Collapse } from "baseUiComponents"
 import { MenuLink, MenuItem } from "baseComponents"
@@ -24,7 +24,7 @@ const SubMenuH = ({ menuItem }) => {
     <Menu key={menuItem.id}>
       <Menu.Button className="menu-item hover:text-accentColor dark:hover:text-dark-accentColor">
         {menuItem.label}
-        <ChevronDownIcon />
+        <CgChevronDown />
       </Menu.Button>
 
       <Menu.Items>
