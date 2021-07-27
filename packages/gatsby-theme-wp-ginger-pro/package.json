@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "*",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "*",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "1.1.0",
     "gatsby-plugin-smoothscroll": "^1.2.0"
   },
   "devDependencies": {
