@@ -4,13 +4,16 @@ import Page from '../components/Page'
 export default Page
 
 export const pageQuery = graphql`
-  query($uri: String!) {
+  query ($uri: String!) {
     wpPage(uri: { eq: $uri }) {
       title
       content
       uri
       slug
       isFrontPage
+      template {
+        templateName
+      }
       featuredImage {
         node {
           localFile {
