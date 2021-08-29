@@ -72,11 +72,15 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     ...options,
   }
   await Promise.all([
-    createPosts({ actions, graphql }, mergedOptions),
-    createSitePages({ actions, graphql }, mergedOptions),
-    createCategories({ actions, graphql }, mergedOptions),
-    createTags({ actions, graphql }, mergedOptions),
-    createUsers({ actions, graphql }, mergedOptions),
+    mergedOptions.createPosts &&
+      createPosts({ actions, graphql }, mergedOptions),
+    mergedOptions.createPages &&
+      createSitePages({ actions, graphql }, mergedOptions),
+    mergedOptions.createCategories &&
+      createCategories({ actions, graphql }, mergedOptions),
+    mergedOptions.createTags && createTags({ actions, graphql }, mergedOptions),
+    mergedOptions.createUsers &&
+      createUsers({ actions, graphql }, mergedOptions),
   ])
 }
 

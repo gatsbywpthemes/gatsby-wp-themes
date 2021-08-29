@@ -28,6 +28,11 @@ const DEFAULT_OPTIONS = {
   addColorModes: true,
   webfontsOptions: {},
   gatsbySourceWordPressOptions: { presets: [] },
+  createPages: true,
+  createPosts: true,
+  createCategories: true,
+  createTags: true,
+  createUsers: true,
 }
 
 module.exports = DEFAULT_OPTIONS
