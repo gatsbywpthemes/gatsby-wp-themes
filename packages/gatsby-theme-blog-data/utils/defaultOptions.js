@@ -33,6 +33,7 @@ const DEFAULT_OPTIONS = {
   createCategories: true,
   createTags: true,
   createUsers: true,
+  withApollo: true,
 }
 
 module.exports = DEFAULT_OPTIONS
