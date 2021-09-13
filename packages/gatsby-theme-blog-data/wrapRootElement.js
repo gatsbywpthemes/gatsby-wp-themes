@@ -61,9 +61,11 @@ export const Root = ({ element }, options) => {
   }
   const client = createClient(slashes(mergedOptions.wordPressUrl))
 
-  return (
+  return mergedOptions.withApollo ? (
     <ApolloProvider client={client}>
       <ThemeOptionsProvider options={options}>{element}</ThemeOptionsProvider>
     </ApolloProvider>
+  ) : (
+    <ThemeOptionsProvider options={options}>{element}</ThemeOptionsProvider>
   )
 }
