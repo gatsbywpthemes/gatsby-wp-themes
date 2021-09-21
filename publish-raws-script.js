@@ -17,30 +17,31 @@ const publishedPackages = [
   {
     name: "starter-ginger",
     srcPath: "examples/starter-ginger",
-    packagePath: "pro-theme-starters/ginger-theme-starters/starter-ginger",
+    packagePath: "pro-themes-starters/ginger-theme-starters/starter-ginger",
   },
   {
     name: "starter-ginger-dev",
     srcPath: "examples/starter-ginger-dev",
-    packagePath: "pro-theme-starters/ginger-theme-starters/starter-ginger-dev",
+    packagePath: "pro-themes-starters/ginger-theme-starters/starter-ginger-dev",
   },
   {
     name: "starter-ginger-kitchen",
     srcPath: "examples/starter-ginger-kitchen",
     packagePath:
-      "pro-theme-starters/ginger-theme-starters/starter-ginger-kitchen",
+      "pro-themes-starters/ginger-theme-starters/starter-ginger-kitchen",
   },
   {
     name: "starter-ginger-mini",
     srcPath: "examples/starter-ginger-mini",
-    packagePath: "pro-theme-starters/ginger-theme-starters/starter-ginger-mini",
+    packagePath:
+      "pro-themes-starters/ginger-theme-starters/starter-ginger-mini",
   },
   // add here each new starter to be published
 ]
 const subfoldersToCreate = [
   "base-theme-starters",
-  "pro-theme-starters",
-  "pro-theme-starters/ginger-theme-starters",
+  "pro-themes-starters",
+  "pro-themes-starters/ginger-theme-starters",
   // add here when new starters subfolder is added
 ]
   .map((el) => `user-starters/${el}`)
@@ -69,12 +70,12 @@ execSync(
 )
 
 execSync(
-  `cd user-starters && zip -r pro-theme-starters.zip pro-theme-starters `
+  `cd user-starters && zip -r pro-themes-starters.zip pro-themes-starters `
 )
 
 execSync(
   `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/base-theme-starters.zip`
 )
 execSync(
-  `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/pro-theme-starters.zip`
+  `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/pro-themes-starters.zip`
 )
