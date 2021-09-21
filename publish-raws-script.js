@@ -54,7 +54,7 @@ execSync(`mkdir user-starters ${subfoldersToCreate}`)
 for (const package of publishedPackages) {
   execSync(`cp -r ${package.srcPath} user-starters/${package.packagePath}`)
   execSync(
-    `rm -rf user-starters/${package.packagePath}/node_modules user-starters/${package.packagePath}/.cache user-starters/${package.packagePath}/.env user-starters/${package.packagePath}/public`
+    `rm -rf user-starters/${package.packagePath}/node_modules user-starters/${package.packagePath}/.cache user-starters/${package.packagePath}/.env user-starters/${package.packagePath}/.env.production user-starters/${package.packagePath}/.env.development user-starters/${package.packagePath}/public`
   )
 
   execSync(
