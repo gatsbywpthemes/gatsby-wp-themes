@@ -1,7 +1,7 @@
 {
   "name": "@gatsbywpthemes/gatsby-plugin-wordpress-lightbox",
   "description": "A Gatsby plugin that adds Lightbox to galleries.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
   "author": "Paulina Hetman <info@pehaa.com>",
   "keywords": [
