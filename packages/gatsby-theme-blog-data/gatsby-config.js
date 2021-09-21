@@ -16,7 +16,11 @@ module.exports = (options) => {
     addSiteMap,
     siteMapOptions,
     developLimit,
+    gatsbySourceWordPressOptions,
   } = mergedOptions
+
+  const { presets = [], ...otherGatsbySourceWordPressOptions } =
+    gatsbySourceWordPressOptions
 
   const url = slashes(wordPressUrl)
 
@@ -44,7 +48,9 @@ module.exports = (options) => {
               },
             },
           },
+          ...presets,
         ],
+        ...otherGatsbySourceWordPressOptions,
       },
     },
     {

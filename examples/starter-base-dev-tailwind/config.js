@@ -5,6 +5,8 @@ const config = {
     post: "lg",
     archive: "lg",
   },
+  createCategories: false,
+  // createPosts: true,
 }
 
 module.exports = config

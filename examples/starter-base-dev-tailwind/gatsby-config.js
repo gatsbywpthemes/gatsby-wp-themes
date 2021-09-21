@@ -31,7 +31,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
 
     {
-      resolve: `@gatsbywpthemes/gatsby-theme-base-dev`,
+      resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: {
         ...options,
         wordPressUrl: process.env.GATSBY_WP_URL,
