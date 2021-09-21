@@ -1,6 +1,6 @@
 {
   "name": "starter-data-nostyles",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "SEE LICENSE IN LICENSE",
   "private": true,
   "scripts": {
@@ -14,10 +14,10 @@
   },
   "dependencies": {
     "@emotion/styled": "^11.1.5",
-    "@gatsbywpthemes/gatsby-plugin-wordpress-lightbox": "^1.1.0",
-    "@gatsbywpthemes/gatsby-plugin-wp-seo": "^1.1.0",
-    "@gatsbywpthemes/gatsby-plugin-wpcf7": "^1.1.0",
-    "@gatsbywpthemes/gatsby-theme-blog-data": "^1.4.0",
+    "@gatsbywpthemes/gatsby-plugin-wordpress-lightbox": "^1.1.1",
+    "@gatsbywpthemes/gatsby-plugin-wp-seo": "^1.1.1",
+    "@gatsbywpthemes/gatsby-plugin-wpcf7": "^1.1.1",
+    "@gatsbywpthemes/gatsby-theme-blog-data": "^1.4.1",
     "autoprefixer": "^10.3.1",
     "babel-plugin-prismjs": "^2.1.0",
     "detect-browser": "^5.2.0",
