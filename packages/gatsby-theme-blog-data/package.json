@@ -39,5 +39,5 @@
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "npm"
   },
-  "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4"
+  "gitHead": "94c8dd5e197d45c9a3a060075237c00d549ffa5e"
 }
