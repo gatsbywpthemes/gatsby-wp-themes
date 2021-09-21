@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "starter-ginger-dev",
   "description": "WordPress basic theme for Gatsby using WPGraphQL",
   "author": "Paulina Hetman <info@pehaa.com>",
