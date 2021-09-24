@@ -1,9 +1,12 @@
 import React from "react"
-import { Footer, Header } from "baseComponents"
+
 import Headroom from "react-headroom"
 // import "baseStyles/wp-styles/styles.scss"
-import { HelmetForFavicon } from "./HelmetForFavicon"
+// import { HelmetForFavicon } from "./HelmetForFavicon"
 import clsx from "clsx"
+// import { Header } from "./header"
+// import { Header } from "./header"
+import { Footer } from "./footer"
 
 export const Layout = ({ children, page, type = "page", ...props }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ""
@@ -12,7 +15,7 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
   const fullWidthClass = pageTemplate === "full width" ? "fullWidth" : ""
   return (
     <>
-      <HelmetForFavicon />
+      {/* <HelmetForFavicon /> */}
 
       <div
         className={clsx(
@@ -33,9 +36,10 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
         }}
         {...props}
       >
-        <Headroom css={{ "&>div": { zIndex: "2!important" } }}>
+        {/* <Headroom css={{ "&>div": { zIndex: "2!important" } }}>
           <Header />
-        </Headroom>
+        </Headroom> */}
+
         <main
           className="flex-1 py-16"
           css={{

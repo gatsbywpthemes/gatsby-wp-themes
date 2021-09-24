@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -36,9 +36,9 @@ import {
   PocketIcon,
   InstapaperIcon,
   EmailIcon,
-} from 'react-share'
-import slashes from 'remove-trailing-slash'
-import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+} from "react-share"
+import slashes from "remove-trailing-slash"
+import { useSiteMetaData } from "@gatsbywpthemes/gatsby-theme-blog-data-light/src/hooks"
 
 export const ShareIcon = ({
   url,
@@ -49,7 +49,7 @@ export const ShareIcon = ({
   size = 32,
   borderRadius = 0,
   iconBgStyle = {},
-  logoFillColor = 'white',
+  logoFillColor = "white",
   socialMediaName,
 }) => {
   const { siteUrl } = useSiteMetaData()
@@ -63,8 +63,8 @@ export const ShareIcon = ({
     icon: icon,
   }
 
-  let ShareButton = Map['button']
-  let ShareIcon = Map['icon']
+  let ShareButton = Map["button"]
+  let ShareIcon = Map["icon"]
 
   return (
     <ShareButton url={shareUrl}>

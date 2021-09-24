@@ -1,5 +1,5 @@
 import React from "react"
-import User from "baseComponents/templates/User"
+import User from "../../../components/templates/User"
 
 const UserComponent = ({ data, pageContext }) => {
   return (

@@ -1,10 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Menu, SiteBranding, SlideSidebar } from "baseComponents"
-import { Container } from "baseUiComponents"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
-import { ColorSwitch } from "baseComponents"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data-light/src/hooks"
+import { SiteBranding, SlideSidebar } from "./index"
+import { Menu } from "../menu"
+import { ColorSwitch } from "../ColorSwitch"
 
 export const Header = () => {
   const { addColorModes } = useThemeOptions()
@@ -24,7 +24,7 @@ export const Header = () => {
 
   return (
     <header className="py-4 shadow-md dark:text-dark-headerColor text-headerColor bg-headerBg dark:bg-dark-headerBg">
-      <Container className="flex justify-between">
+      <div className="container">
         <div className="flex items-center">
           <SiteBranding title={title} />
         </div>
@@ -34,7 +34,7 @@ export const Header = () => {
           {addColorModes && <ColorSwitch />}
           <SlideSidebar className="lg:hidden" />
         </div>
-      </Container>
+      </div>
     </header>
   )
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, withPrefix } from "gatsby"
 
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data-light/src/hooks"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export const Logo = () => {

@@ -1,9 +1,8 @@
 import React from "react"
 import { CgChevronDown } from "react-icons/cg"
-
-import { Collapse } from "baseUiComponents"
-import { MenuLink, MenuItem } from "baseComponents"
 import { Menu } from "@headlessui/react"
+import { Collapse } from "../ui-components/Collapse"
+import { MenuItem, MenuLink } from "./index"
 
 const SubMenuV = ({ menuItem }) => {
   return (

@@ -1,6 +1,7 @@
-import React from 'react'
-import { Layout, ArchiveContent } from 'baseComponents'
-import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import React from "react"
+import { Layout } from "../Layout"
+import { ArchiveContent } from "../archive"
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Tag = ({ tag, ctx }) => {
   const { name, posts, uri } = tag

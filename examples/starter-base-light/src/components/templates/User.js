@@ -1,6 +1,7 @@
-import React from 'react'
-import { Layout, ArchiveContent } from 'baseComponents'
-import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import React from "react"
+import { ArchiveContent } from "../archive"
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
+import { Layout } from "../Layout"
 
 const User = ({ user, ctx }) => {
   const { name, posts, uri } = user

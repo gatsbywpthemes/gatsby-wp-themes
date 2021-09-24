@@ -1,5 +1,5 @@
 import React from "react"
-import Tag from "baseComponents/templates/Tag"
+import Tag from "../../../components/templates/Tag"
 
 const TagComponent = ({ data, pageContext }) => {
   return (

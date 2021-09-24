@@ -1,13 +1,12 @@
 import React from "react"
-import { Container } from "baseUiComponents"
-import { FooterContent } from "baseComponents"
-import { SocialFollows } from "baseComponents"
+import { FooterContent } from "./index"
+import { SocialFollows } from "../social"
 
 export const Footer = () => (
   <footer className="shadow-md py-7 bg-footerBg dark:bg-dark-footerBg text-footerColor dark:text-dark-footerColor">
-    <Container>
+    <div className="container">
       <FooterContent className="mb-4" />
       <SocialFollows />
-    </Container>
+    </div>
   </footer>
 )

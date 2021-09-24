@@ -1,6 +1,6 @@
 import React from "react"
 
-import { SubMenu, MenuLink } from "baseComponents"
+import { SubMenu, MenuLink } from "./index"
 
 export const MenuItem = ({ menuItem, orientation }) => {
   if (menuItem.children.length) {

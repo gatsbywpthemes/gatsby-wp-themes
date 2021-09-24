@@ -1,10 +1,10 @@
 import React from "react"
-import { Container } from "baseUiComponents"
-import { Layout, PostEntry, Sidebar } from "baseComponents"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
+import { Layout } from "../../components/Layout"
+
 const Post = ({ post, ctx }) => {
-  const { title, uri, headlesswp } = post
+  const { title, uri, headlesswp, content } = post
 
   const pageTemplate = headlesswp?.pageTemplate || "default"
   const featuredImage =
@@ -25,7 +25,7 @@ const Post = ({ post, ctx }) => {
           }
         }
       />
-      <Container className="mainContainer">
+      <div className="container mainContainer">
         <div
           className="flex"
           css={{
@@ -33,9 +33,11 @@ const Post = ({ post, ctx }) => {
             alignItems: `flex-start`,
           }}
         >
-          <PostEntry post={post} location="single" ctx={ctx} isFirst={true} />
+          {/* <PostEntry post={post} location="single" ctx={ctx} isFirst={true} /> */}
+          <h1 dangerouslySetInnerHTML={{ __html: title }} />
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
-      </Container>
+      </div>
     </Layout>
   )
 }

@@ -3,13 +3,10 @@ import { Dialog, Transition } from "@headlessui/react"
 import clsx from "clsx"
 import { GiHamburgerMenu as Hamburger } from "react-icons/gi"
 import { MdClose as Close } from "react-icons/md"
-import { Menu, Widget } from "baseComponents"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { Menu } from "baseComponents"
 
 export const SlideSidebar = ({ className, ...props }) => {
   const [open, setOpen] = useState(false)
-  const { widgetAreas } = useThemeOptions()
-  const widgets = widgetAreas.slideMenuWidgets || []
 
   return (
     <div className={clsx(className)} {...props}>
@@ -87,11 +84,6 @@ export const SlideSidebar = ({ className, ...props }) => {
                       </div>
 
                       <Menu orientation="V" mt={7} />
-                      {widgets.map((widget, i) => (
-                        <div key={i} sx={{ ".widget": { my: 10 } }}>
-                          <Widget colorBg="dark" widget={widget} />
-                        </div>
-                      ))}
                     </div>
                     {/* End of panel content */}
                   </div>
