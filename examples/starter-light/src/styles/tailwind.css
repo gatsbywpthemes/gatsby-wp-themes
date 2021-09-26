@@ -4,7 +4,6 @@
 
 @layer base {
   #___gatsby {
-    @apply text-base text-text dark:text-dark-text bg-bg dark:bg-dark-bg;
   }
   a {
     @apply transition duration-300;
@@ -39,5 +38,8 @@
   }
   .content ol {
     @apply pl-6 mb-6;
+  }
+  .center-container {
+    @apply px-5 mx-auto md:px-6 lg:px-10;
   }
 }
