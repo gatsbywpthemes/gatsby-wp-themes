@@ -11,10 +11,7 @@ export const MenuItem = ({ menuItem, orientation }) => {
         className={`menu-item flex items-center ${menuItem.cssClasses}`}
         key={menuItem.id}
       >
-        <MenuLink
-          menuItem={menuItem}
-          className="hover:text-accentColor dark:hover:text-dark-accentColor"
-        />
+        <MenuLink menuItem={menuItem} />
       </div>
     )
   }
