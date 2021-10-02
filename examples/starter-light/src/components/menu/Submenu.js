@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from "react"
+import React, { Fragment } from "react"
 import { CgChevronDown } from "react-icons/cg"
 import { Collapse } from "../ui-components"
 import { Menu, Transition } from "@headlessui/react"
@@ -8,8 +8,11 @@ import clsx from "clsx"
 
 const SubmenuV = ({ menuItem }) => {
   return (
-    <div className={`relative has-submenu menu-item `}>
-      <Collapse trigger={menuItem.label}>
+    <div className={`relative has-submenu menu-item`}>
+      <Collapse
+        trigger={menuItem.label}
+        className="text-mobileMenuColor dark:text-dark-mobileMenuColor"
+      >
         <ul className="flex menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
             <MenuItem key={item.id} menuItem={item} />
@@ -25,12 +28,13 @@ const SubmenuH = ({ menuItem }) => {
     <Menu as="div" className={clsx(`menu-item`, `relative`, `flex`)}>
       <Menu.Button
         className={clsx(
-          `inline-flex  items-center`,
+          `inline-flex items-center`,
+
           `focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-gray-100`
         )}
       >
         {menuItem.label}
-        <CgChevronDown className={` ml-2 h-4 w-4`} aria-hidden="true" />
+        <CgChevronDown className={`ml-2 w-4 h-4`} aria-hidden="true" />
       </Menu.Button>
 
       <Transition
@@ -44,9 +48,9 @@ const SubmenuH = ({ menuItem }) => {
       >
         <Menu.Items
           className={clsx(
-            `origin-top-right absolute mt-12`,
-            `bg-orange-200 w-56 px-3`,
-            `ring-1 ring-black ring-opacity-5  focus:outline-none`
+            `absolute mt-12 origin-top-right`,
+            `px-3 w-56 bg-gray-100`,
+            `ring-1 ring-black ring-opacity-5 focus:outline-none`
           )}
         >
           {menuItem.children.map((item) => (

@@ -8,7 +8,11 @@ export const MenuItem = ({ menuItem, orientation }) => {
   } else {
     return (
       <div
-        className={`menu-item flex items-center ${menuItem.cssClasses}`}
+        className={`menu-item flex items-center ${menuItem.cssClasses} ${
+          orientation === "V"
+            ? "text-mobileMenuColor dark:text-dark-mobileMenuColor"
+            : "text-text dark:text-dark-text"
+        }`}
         key={menuItem.id}
       >
         <MenuLink menuItem={menuItem} />

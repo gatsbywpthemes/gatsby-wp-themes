@@ -14,12 +14,12 @@ export const Collapse = ({ trigger, children, ...props }) => {
         className={`absolute top-2 right-0 w-full flex justify-end`}
         css={css`
           svg {
-            ${tw`w-5 h-5`}
-            stroke: white
+            ${tw`w-5 h-5 text-mobileMenuColor dark:text-dark-mobileMenuColor`}
           }
         `}
-      />
-      {trigger} {open ? <CgChevronDown /> : <CgChevronRight />}
+      >
+        {trigger} {open ? <CgChevronDown /> : <CgChevronRight />}
+      </button>
       <Collapsible isOpen={open}>{children}</Collapsible>
     </div>
   )
