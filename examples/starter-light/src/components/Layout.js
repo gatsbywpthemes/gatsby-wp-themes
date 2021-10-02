@@ -17,7 +17,9 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
       )}
     >
       <Header />
-      <main>{children}</main>
+      <main className={`${pageTemplate !== "full width" ? "py-10" : ""}`}>
+        {children}
+      </main>
       <Footer />
     </div>
   )

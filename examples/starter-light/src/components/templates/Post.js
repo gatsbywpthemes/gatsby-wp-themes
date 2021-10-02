@@ -1,12 +1,13 @@
 import React from "react"
 import { Layout } from "../Layout"
+import { PostEntry } from "../post"
 
 const Post = ({ post, ctx }) => {
-  const { title, uri, content, headlesswp } = post
   return (
     <Layout page={post} type="post">
-      <h1 dangerouslySetInnerHTML={{ __html: title }} />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div className="center-container">
+        <PostEntry location="single" post={post} />
+      </div>
     </Layout>
   )
 }

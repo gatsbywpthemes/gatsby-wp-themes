@@ -6,7 +6,9 @@ const Posts = ({ posts, ctx }) => {
 
   return (
     <Layout page="blog">
-      <h1>posts for {title}</h1>
+      <div className="center-container">
+        <h1>Title</h1>
+      </div>
     </Layout>
   )
 }
