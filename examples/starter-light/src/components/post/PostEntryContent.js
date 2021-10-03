@@ -1,16 +1,14 @@
 import React from "react"
-import ParsedContent from "baseUtils/ParsedContent"
+import { ParsedContent, ActivatePostScripts } from "../../utils"
 import { gutenbergStyles } from "baseStyles/gutenbergStyles"
-import { css } from "twin.macro"
 
 export const PostEntryContent = ({ post, location, ...props }) => {
   const content = location === "single" ? post.content : post.excerpt
 
   return (
-    <div
-      css={{ ...gutenbergStyles }}
-      dangerouslySetInnerHTML={{ __html: content }}
-      {...props}
-    />
+    <div {...props} css={{ ...gutenbergStyles }}>
+      <ActivatePostScripts />
+      <ParsedContent content={content} />
+    </div>
   )
 }
