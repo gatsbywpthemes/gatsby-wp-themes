@@ -5,7 +5,7 @@ import { PostEntry } from "../post"
 const Post = ({ post, ctx }) => {
   return (
     <Layout page={post} type="post">
-      <PostEntry location="single" post={post} />
+      <PostEntry location="single" post={post} ctx={ctx} />
     </Layout>
   )
 }

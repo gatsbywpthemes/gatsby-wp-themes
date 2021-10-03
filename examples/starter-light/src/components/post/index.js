@@ -6,6 +6,7 @@ import { PostEntryInfo } from "./PostEntryInfo"
 import { PostEntryMedia } from "./PostEntryMedia"
 import { PostEntryMeta } from "./PostEntryMeta"
 import { PostEntryTitle } from "./PostEntryTitle"
+import { PrevNextPostNavigation } from "./PrevNextPostNavigation"
 
 export const PostEntry = ({
   isFirst = false,
@@ -14,6 +15,7 @@ export const PostEntry = ({
   location,
   ...props
 }) => {
+  console.log("ctx", ctx)
   const media = post.featuredImage
     ? post.featuredImage.node.localFile.childImageSharp.original.src
     : null
@@ -46,6 +48,7 @@ export const PostEntry = ({
               media={media}
             />
           </div>
+          <PrevNextPostNavigation ctx={ctx} />
         </div>
       </div>
     </article>
