@@ -5,9 +5,7 @@ import { PostEntry } from "../post"
 const Post = ({ post, ctx }) => {
   return (
     <Layout page={post} type="post">
-      <div className="center-container">
-        <PostEntry location="single" post={post} />
-      </div>
+      <PostEntry location="single" post={post} />
     </Layout>
   )
 }

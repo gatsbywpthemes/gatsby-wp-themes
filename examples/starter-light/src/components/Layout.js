@@ -17,7 +17,11 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
       )}
     >
       <Header />
-      <main className={`${pageTemplate !== "full width" ? "py-10" : ""}`}>
+      <main
+        className={`${
+          pageTemplate !== "full width" ? "py-10 center-container" : ""
+        }`}
+      >
         {children}
       </main>
       <Footer />
