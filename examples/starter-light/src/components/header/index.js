@@ -9,7 +9,7 @@ export const Header = ({ ...props }) => {
     <header className={`py-4 shadow-md relative`} {...props}>
       <div className={`flex justify-between center-container`}>
         <Branding title="Starter Light" />
-        <div className="flex space-x-5">
+        <div className="flex items-center space-x-5">
           <MainMenu orientation="H" className="hidden md:flex" />
           <Slidemenu className="md:hidden" />
           <ColorSwitch />
