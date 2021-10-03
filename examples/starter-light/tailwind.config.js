@@ -135,6 +135,20 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("tailwindcss-debug-screens"),
+    require("tailwindcss-base-buttons")({
+      colors: {
+        theme: {
+          primary: {
+            background: primary,
+            text: "white",
+          },
+          secondary: {
+            background: secondary,
+            text: "white",
+          },
+        },
+      },
+    }),
   ],
   corePlugins: {
     preflight: true,

@@ -2,6 +2,7 @@ import React from "react"
 import { PostEntryContent } from "./PostEntryContent"
 import { PostEntryInfo } from "./PostEntryInfo"
 import { PostEntryMedia } from "./PostEntryMedia"
+import { PostEntryMeta } from "./PostEntryMeta"
 import { PostEntryTitle } from "./PostEntryTitle"
 
 export const PostEntry = ({
@@ -24,13 +25,16 @@ export const PostEntry = ({
         />
       )}
       <div
-        className={`${pageTemplate === "full width" ? "center-container" : ""}`}
+        className={`${
+          pageTemplate === "full width" ? "center-container" : ""
+        } space-y-5`}
       >
-        {!skipTitle && (
-          <PostEntryTitle post={post} location={location} className="mb-5" />
-        )}
-        <PostEntryInfo post={post} className="mb-5" />
+        {!skipTitle && <PostEntryTitle post={post} location={location} />}
+        <PostEntryInfo post={post} />
         <PostEntryContent post={post} location={location} />
+        <div className="entry-footer">
+          <PostEntryMeta post={post} />
+        </div>
       </div>
     </article>
   )

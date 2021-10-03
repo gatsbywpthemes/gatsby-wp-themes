@@ -8,18 +8,17 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
   return (
     taxonomies.length > 0 && (
       <div className="flex flex-wrap" {...props}>
-        <h3
-          className={clsx(
-            "font-body font-sm italic rounded-md leading-tight capitalize",
-            "bg-infoBg dark:bg-white-dark-infoBg",
-            "px-4 py-2 mr-4 mb-3"
-          )}
-        >
+        <h3 className={clsx("text-base font-bold mr-2")}>
           {taxonomies.length > 1 ? `${taxName} : ` : `${singularName} : `}
         </h3>
 
         {taxonomies.map((cat) => (
-          <TaxonomyItem key={cat.slug} taxName="category" item={cat} />
+          <TaxonomyItem
+            key={cat.slug}
+            taxName="category"
+            item={cat}
+            className="mx-1 mb-3 btn btn-gradient-primary btn-xs "
+          />
         ))}
       </div>
     )
