@@ -1,4 +1,6 @@
 import React from "react"
+import normalize from "normalize-path"
+import { SocialShare } from "../social/SocialShare"
 import { PostEntryContent } from "./PostEntryContent"
 import { PostEntryInfo } from "./PostEntryInfo"
 import { PostEntryMedia } from "./PostEntryMedia"
@@ -12,7 +14,10 @@ export const PostEntry = ({
   location,
   ...props
 }) => {
-  console.log("post", post)
+  const media = post.featuredImage
+    ? post.featuredImage.node.localFile.childImageSharp.original.src
+    : null
+
   const { pageTemplate, skipTitle } = post.headlesswp
   return (
     <article {...props}>
@@ -34,6 +39,13 @@ export const PostEntry = ({
         <PostEntryContent post={post} location={location} />
         <div className="entry-footer">
           <PostEntryMeta post={post} />
+          <div className="flex justify-center">
+            <SocialShare
+              url={normalize(`/${post.uri}`)}
+              title={post.title}
+              media={media}
+            />
+          </div>
         </div>
       </div>
     </article>
