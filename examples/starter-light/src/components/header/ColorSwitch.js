@@ -6,7 +6,7 @@ export const ColorSwitch = (props) => {
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
-        <label>
+        <label {...props}>
           <input
             type="checkbox"
             onChange={(e) => toggleTheme(e.target.checked ? "dark" : "light")}
