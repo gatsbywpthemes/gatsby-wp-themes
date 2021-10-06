@@ -13,9 +13,9 @@ const SubmenuV = ({ menuItem }) => {
         trigger={menuItem.label}
         className="text-mobileMenuColor dark:text-dark-mobileMenuColor"
       >
-        <ul className="flex menuItemGroup sub-menu">
+        <ul className=" menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
-            <MenuItem key={item.id} menuItem={item} />
+            <MenuItem key={item.id} menuItem={item} orientation="V" />
           ))}
         </ul>
       </Collapse>
@@ -29,7 +29,6 @@ const SubmenuH = ({ menuItem }) => {
       <Menu.Button
         className={clsx(
           `inline-flex items-center`,
-
           `focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-gray-100`
         )}
       >

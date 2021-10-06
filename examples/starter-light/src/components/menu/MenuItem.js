@@ -15,7 +15,14 @@ export const MenuItem = ({ menuItem, orientation }) => {
         }`}
         key={menuItem.id}
       >
-        <MenuLink menuItem={menuItem} />
+        <MenuLink
+          menuItem={menuItem}
+          className={` ${
+            orientation === "V"
+              ? "text-mobileMenuColor dark:text-dark-mobileMenuColor"
+              : "text-text dark:text-dark-text"
+          }`}
+        />
       </div>
     )
   }

@@ -11,15 +11,15 @@ export const MainMenu = ({
   ...props
 }) => {
   const menuItems = useMenuItems(location)
-  console.log("menuItems", menuItems)
+
   return (
     menuItems && (
       <nav
-        className={`main-menu flex  space-x-3 ${
-          orientation === "V" ? "flex-col" : ""
+        className={`main-menu flex   ${
+          orientation === "V" ? "flex-col" : "space-x-3"
         } ${className ? className : ""}`}
         css={css`
-          & > .menu-item {
+          .menu-item {
             ${tw`px-2 transition duration-300 hover:text-accentColor dark:hover:text-dark-accentColor`}
           }
         `}
