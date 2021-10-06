@@ -15,7 +15,6 @@ export const PostEntry = ({
   location,
   ...props
 }) => {
-  console.log("ctx", ctx)
   const media = post.featuredImage
     ? post.featuredImage.node.localFile.childImageSharp.original.src
     : null
