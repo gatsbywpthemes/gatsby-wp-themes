@@ -1,9 +1,9 @@
-import { graphql } from 'gatsby'
-import User from '../components/User'
+import { graphql } from "gatsby"
+import User from "../components/User"
 export default User
 
 export const pageQuery = graphql`
-  query($slug: String!, $limit: Int!, $skip: Int!) {
+  query ($slug: String!, $limit: Int!, $skip: Int!) {
     allWpPost(
       filter: { author: { node: { slug: { eq: $slug } } } }
       limit: $limit
@@ -21,6 +21,7 @@ export const pageQuery = graphql`
       slug
       id
       uri
+      description
       avatar {
         url
       }
