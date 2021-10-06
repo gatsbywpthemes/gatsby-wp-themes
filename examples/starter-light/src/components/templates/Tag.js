@@ -1,6 +1,7 @@
 import React from "react"
 import { ArchiveContent } from "../archive"
 import { Layout } from "../../components/Layout"
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Tag = ({ tag, ctx }) => {
   const { name, posts, uri, description } = tag
@@ -8,14 +9,20 @@ const Tag = ({ tag, ctx }) => {
 
   return (
     <Layout page={tag} type="tag">
-      <div className="center-container">
-        <ArchiveContent
-          posts={posts.nodes}
-          ctx={ctx}
-          name={name}
-          description={description}
-        />
-      </div>
+      <Seo
+        title={`${name} Archives`}
+        humanPageNumber={humanPageNumber}
+        numberOfPages={numberOfPages}
+        uri={uri}
+        yoastSeo={yoastSeo}
+        seo={seo}
+      />
+      <ArchiveContent
+        posts={posts.nodes}
+        ctx={ctx}
+        name={name}
+        description={description}
+      />
     </Layout>
   )
 }
