@@ -5,9 +5,8 @@ import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import parse from "html-react-parser"
 
 const Post = ({ post, ctx }) => {
-  const { title, uri, headlesswp, seo } = post
-  const yoastHead = parse(seo.schema.raw)
-  console.log("yoast", yoastHead)
+  const { title, uri, headlesswp } = post
+
   const featuredImage =
     post.featuredImage?.node.localFile.childImageSharp.original
   return (
