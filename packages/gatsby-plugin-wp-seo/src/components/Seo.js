@@ -4,6 +4,7 @@ import {
   SeoTwitter,
   SeoOg,
   CustomHeadElements,
+  SeoSchemaRaw,
 } from "./index"
 import { SeoSiteSettingsContextProvider } from "./../context"
 
@@ -13,6 +14,7 @@ export const Seo = (props) => {
       <SeoTitleDescription {...props} />
       {props.yoastSeo && <SeoTwitter {...props} />}
       {props.yoastSeo && <SeoOg {...props} />}
+      <SeoSchemaRaw {...props} />
       <CustomHeadElements {...props} />
     </SeoSiteSettingsContextProvider>
   )
