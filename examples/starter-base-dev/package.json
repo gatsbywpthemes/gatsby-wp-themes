@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "starter-base-dev",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
@@ -14,7 +14,7 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@gatsbywpthemes/gatsby-theme-base-dev": "^1.1.1",
+    "@gatsbywpthemes/gatsby-theme-base-dev": "^1.2.0",
     "gatsby": "^3.9.1",
     "gatsby-plugin-root-import": "^2.0.5",
     "lodash.merge": "^4.6.2",

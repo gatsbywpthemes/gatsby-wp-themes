@@ -11,6 +11,9 @@ const taxonomySeoFromWP = `seo {
       twitterTitle
       cornerstone
       title
+      schema {
+        raw
+      }
       opengraphImage {
         localFile {
           childImageSharp {

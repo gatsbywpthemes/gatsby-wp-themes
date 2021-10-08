@@ -3,6 +3,9 @@ const authorSeoFromWP = `seo {
   title
   metaRobotsNofollow
   metaRobotsNoindex
+  schema {
+    raw
+  }
 }`
 
 module.exports = authorSeoFromWP
