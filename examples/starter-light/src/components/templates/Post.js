@@ -2,7 +2,6 @@ import React from "react"
 import { Layout } from "../Layout"
 import { PostEntry } from "../post"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
-import parse from "html-react-parser"
 
 const Post = ({ post, ctx }) => {
   const { title, uri, headlesswp } = post
