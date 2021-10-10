@@ -49,7 +49,8 @@ const SubmenuH = ({ menuItem }) => {
           className={clsx(
             `absolute mt-12 origin-top-right`,
             `px-3 w-56 bg-gray-100`,
-            `ring-1 ring-black ring-opacity-5 focus:outline-none`
+            `ring-1 ring-black ring-opacity-5 focus:outline-none`,
+            `z-10`
           )}
         >
           {menuItem.children.map((item) => (
