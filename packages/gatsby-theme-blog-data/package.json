@@ -33,11 +33,5 @@
     "gatsby-plugin",
     "wordpress",
     "wpgraphql"
-  ],
-  "bit": {
-    "env": {},
-    "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
-  },
-  "gitHead": "94c8dd5e197d45c9a3a060075237c00d549ffa5e"
+  ]
 }
