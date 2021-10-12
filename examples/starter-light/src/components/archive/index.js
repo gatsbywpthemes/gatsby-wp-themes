@@ -6,11 +6,11 @@ import { PostsList } from "./PostsList"
 
 export const ArchiveContent = ({ posts, ctx, name, description }) => {
   return (
-    <div className="center-container">
+    <>
       {name && <Archivetitle name={name} text="Posts for " />}
       <Description description={description} />
       <PostsList posts={posts} className="space-y-10" />
       <Pagination ctx={ctx} />
-    </div>
+    </>
   )
 }

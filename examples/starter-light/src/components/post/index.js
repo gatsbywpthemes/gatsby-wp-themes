@@ -27,7 +27,11 @@ export const PostEntry = ({
           imageLoading="eager"
           post={post}
           location="single"
-          className="mb-10"
+          className={`mb-10 ${
+            pageTemplate === "full width"
+              ? "aspect-w-3 aspect-h-1"
+              : "aspect-w-16 aspect-h-9"
+          }`}
         />
       )}
       <div
