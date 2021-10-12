@@ -20,6 +20,7 @@ module.exports = {
     siteUrl,
   },
   plugins: [
+    `@gatsbywpthemes/gatsby-theme-wp-comments`,
     {
       resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: options,

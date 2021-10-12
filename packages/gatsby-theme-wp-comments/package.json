@@ -1,0 +1,13 @@
+{
+  "name": "@gatsbywpthemes/gatsby-theme-wp-comments",
+  "description": "WordPress basic theme for Gatsby using WPGraphQL",
+  "author": "Paulina Hetman <info@pehaa.com>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "peerDependencies": {
+    "gatsby": "^3.9.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

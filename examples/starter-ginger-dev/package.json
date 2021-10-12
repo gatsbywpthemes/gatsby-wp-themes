@@ -13,6 +13,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "^1.1.1",
     "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^1.5.0",
+    "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.0",
     "gatsby": "^3.9.1",
     "gatsby-plugin-smoothscroll": "^1.2.0",
     "prismjs": "^1.22.0",
