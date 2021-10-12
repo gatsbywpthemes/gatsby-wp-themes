@@ -1,6 +1,7 @@
 export const gutenbergStyles = {
   "& > *": {
-    mx: "auto",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   "& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.entry-content)":
     {
@@ -23,31 +24,32 @@ export const gutenbergStyles = {
     mx: "auto",
   },
   ".aligncenter > .gatsby-image-wrapper": {
-    mx: "auto",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   '[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright)':
     {
-      mx: "auto",
+      marginLeft: "auto",
+      marginRight: "auto",
     },
   /* Full */
   ".alignfull": {
-    mx: "auto",
-    my: ["3rem", "5rem"],
+    margin: "3rem auto",
     position: "relative",
     width: "100%",
   },
   ".alignfull:first-of-type": {
-    mt: 0,
+    marginTop: 0,
   },
 
   '[class*="__inner-container"] > .alignfull': {
     maxWidth: "100%",
   },
   "&> .wp-block-group.alignfull.has-background": {
-    p: ["2rem", "4rem", "6rem"],
+    padding: ["2rem", "4rem", "6rem"],
   },
   "& > .wp-block-cover.alignfull:last-of-type": {
-    mb: 0,
+    marginBottom: 0,
   },
   /* Wide */
   ".alignwide": {
@@ -59,11 +61,11 @@ export const gutenbergStyles = {
     width: "100%",
   },
   ".wp-block-cover h1, .wp-block-cover h2": {
-    variant: "title.page",
-    my: "2rem",
+    marginTop: "2rem",
+    marginBottom: "2rem",
   },
   ".has-background": {
-    p: "1.5rem",
+    padding: "1.5rem",
   },
   ".wp-block-media-text .wp-block-media-text__content": {
     pt: ["1.5rem", 0, 0],
@@ -84,5 +86,8 @@ export const gutenbergStyles = {
   },
   "&.entry-content": {
     borderBottom: `1px solid transparent`,
+  },
+  ".blocks-gallery-grid": {
+    maxWidth: "100%",
   },
 }
