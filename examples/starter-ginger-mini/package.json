@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "starter-ginger-mini",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
@@ -18,7 +18,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@gatsbywpthemes/gatsby-theme-wp-ginger-pro": "^1.2.0",
+    "@gatsbywpthemes/gatsby-theme-wp-ginger-pro": "^1.2.1",
     "gatsby": "^3.9.1",
     "gatsby-plugin-root-import": "^2.0.5",
     "lodash.merge": "^4.6.2",
