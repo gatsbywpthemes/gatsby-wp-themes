@@ -2,7 +2,6 @@ import React from "react"
 import parser from "html-react-parser"
 
 export default function ContentParser({ content, customFn = [] }) {
-
   if (typeof content === "undefined") {
     console.log(
       "ERROR: contentParser requires content parameter to be string but got undefined."
@@ -26,11 +25,9 @@ export default function ContentParser({ content, customFn = [] }) {
 
   const parserOptions = {
     replace: (domNode) => {
-      return firstFind(
-        domNode,
-        { parserOptions },
-        replacementFunctions
-      )
+      return replacementFunctions.length
+        ? firstFind(domNode, { parserOptions }, replacementFunctions)
+        : domNode
     },
   }
 
