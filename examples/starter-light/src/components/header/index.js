@@ -6,7 +6,10 @@ import { Slidemenu } from "./SlideMenu"
 
 export const Header = ({ ...props }) => {
   return (
-    <header className={`py-4 shadow-md relative`} {...props}>
+    <header
+      className={`py-4 shadow-md relative bg-headerBg dark:bg-dark-headerBg`}
+      {...props}
+    >
       <div className={`flex justify-between center-container`}>
         <Branding title="Starter Light" />
         <div className="flex items-center space-x-5">

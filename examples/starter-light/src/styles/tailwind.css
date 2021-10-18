@@ -4,6 +4,7 @@
 
 @layer base {
   #___gatsby {
+    @apply text-text dark:text-dark-text;
   }
   a {
     @apply transition duration-300;

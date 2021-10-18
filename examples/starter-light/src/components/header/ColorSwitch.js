@@ -14,7 +14,7 @@ export const ColorSwitch = (props) => {
             className="hidden"
           />{" "}
           {theme === "dark" ? (
-            <Sun className="text-[24px]" />
+            <Sun className="text-[24px] text-dark-text" />
           ) : (
             <Moon className="text-[22px] w-[24px]" />
           )}
