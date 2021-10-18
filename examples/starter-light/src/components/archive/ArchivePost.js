@@ -6,13 +6,14 @@ import { PostEntryTitle } from "../post/PostEntryTitle"
 
 export const Archivepost = ({ isFirst = false, post, ctx, ...props }) => {
   return (
-    <article {...props}>
+    <article className="space-y-5" {...props}>
       <PostEntryMedia
         post={post}
         location="archive"
         imageLoading={isFirst ? "eager" : "lazy"}
-        className="mb-10 aspect-w-16 aspect-h-9"
+        className="mb-5 aspect-w-16 aspect-h-9"
       />
+
       <PostEntryTitle post={post} location="archive" />
       <PostEntryContent post={post} location="archive" />
       <PostEntryMeta post={post} />
