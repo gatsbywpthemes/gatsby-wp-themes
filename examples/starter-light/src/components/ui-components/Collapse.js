@@ -1,12 +1,14 @@
 import React, { useState } from "react"
 import Collapsible from "@kunukn/react-collapse"
-import { CgChevronDown, CgChevronRight } from "react-icons/cg"
-import tw, { css } from "twin.macro"
+import {
+  GoChevronDown as ChevronDown,
+  GoChevronRight as ChevronRight,
+} from "react-icons/go"
 
 export const Collapse = ({ trigger, children, className, ...props }) => {
   const [open, setOpen] = useState(false)
   const iconStyle =
-    "font-bold text-[25px] text-mobileMenuColor dark:text-dark-mobileMenuColor"
+    "font-bold text-[20px] text-mobileMenuColor dark:text-dark-mobileMenuColor"
 
   return (
     <div {...props}>
@@ -17,9 +19,9 @@ export const Collapse = ({ trigger, children, className, ...props }) => {
       >
         {trigger}{" "}
         {open ? (
-          <CgChevronDown className={iconStyle} />
+          <ChevronDown className={iconStyle} />
         ) : (
-          <CgChevronRight className={iconStyle} />
+          <ChevronRight className={iconStyle} />
         )}
       </button>
       <Collapsible

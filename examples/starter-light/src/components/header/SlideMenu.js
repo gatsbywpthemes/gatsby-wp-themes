@@ -71,14 +71,15 @@ export const Slidemenu = ({ className, ...props }) => {
                         "h-screen",
                         "overflow-y-scroll",
                         "shadow-xl",
+                        "p-5",
                         "bg-mobileMenuBg dark:bg-dark-mobileMenuBg ",
                         "text-mobileMenuColor dark:text-dark-mobileMenuColor"
                       )}
                     >
-                      <div className="flex items-center justify-between px-4 py-2 border-b border-white">
-                        <button className={clsx("")} aria-label="close menu">
+                      <div className="flex justify-end mb-5">
+                        <button aria-label="close menu">
                           <Close
-                            className="text-[35px] text-white"
+                            className="text-[24px] text-mobileMenuColor dark:text-dark-mobileMenuColor"
                             onClick={() => setOpen(false)}
                           />
                         </button>

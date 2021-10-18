@@ -13,7 +13,7 @@ const SubmenuV = ({ menuItem }) => {
         trigger={menuItem.label}
         className="text-mobileMenuColor dark:text-dark-mobileMenuColor"
       >
-        <ul className=" menuItemGroup sub-menu">
+        <ul className="py-2 pl-3 menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
             <MenuItem key={item.id} menuItem={item} orientation="V" />
           ))}

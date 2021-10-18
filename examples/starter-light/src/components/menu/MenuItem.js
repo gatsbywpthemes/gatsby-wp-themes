@@ -1,8 +1,14 @@
 import React from "react"
 import { MenuLink } from "./MenuLink"
 import { Submenu } from "./Submenu"
+import tw, { styled, css } from "twin.macro"
 
-export const MenuItem = ({ menuItem, orientation }) => {
+export const MenuItem = ({
+  menuItem,
+  orientation,
+  className = "",
+  ...props
+}) => {
   if (menuItem.children.length) {
     return <Submenu menuItem={menuItem} />
   } else {
@@ -12,8 +18,9 @@ export const MenuItem = ({ menuItem, orientation }) => {
           orientation === "V"
             ? "text-mobileMenuColor dark:text-dark-mobileMenuColor"
             : "text-text dark:text-dark-text"
-        }`}
+        } ${className}`}
         key={menuItem.id}
+        {...props}
       >
         <MenuLink
           menuItem={menuItem}

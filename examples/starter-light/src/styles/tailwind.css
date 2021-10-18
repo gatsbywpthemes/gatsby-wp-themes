@@ -43,4 +43,14 @@
   .center-container {
     @apply px-5 mx-auto md:px-6 lg:px-10;
   }
+  .menu-item,
+  .menu-item a {
+    @apply transition duration-300 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+  }
+  .menuV > .menu-item {
+    @apply py-3 border-b border-dashed border-opacity-40 last:border-none;
+  }
+  .menu-item [aria-current="page"] {
+    @apply italic;
+  }
 }

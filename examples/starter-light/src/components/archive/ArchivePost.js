@@ -3,10 +3,17 @@ import { PostEntryContent } from "../post/PostEntryContent"
 import { PostEntryMedia } from "../post/PostEntryMedia"
 import { PostEntryMeta } from "../post/PostEntryMeta"
 import { PostEntryTitle } from "../post/PostEntryTitle"
+import clsx from "clsx"
 
-export const Archivepost = ({ isFirst = false, post, ctx, ...props }) => {
+export const Archivepost = ({
+  isFirst = false,
+  post,
+  className = null,
+  ctx,
+  ...props
+}) => {
   return (
-    <article className="space-y-5" {...props}>
+    <article className={clsx("space-y-5", className)} {...props}>
       <PostEntryMedia
         post={post}
         location="archive"
