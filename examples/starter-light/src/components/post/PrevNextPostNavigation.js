@@ -6,11 +6,14 @@ import {
   CgArrowLongRight as ArrowNext,
 } from "react-icons/cg"
 
+const animStyle =
+  "transition duration-700 transform scale-x-0 bg-text  w-7 h-[1px] group-hover:scale-x-100 "
+
 const LinkButton = ({ className, ...props }) => {
   return (
     <Link
       className={clsx(
-        "tracking-widest uppercase font-bold text-sm",
+        "prev-next-text",
         "transition duration-700 transform group-hover:translate-x-0",
         className
       )}
@@ -21,14 +24,14 @@ const LinkButton = ({ className, ...props }) => {
 const renderPreviousLink = ({ prev }) => {
   let previousLink = null
   if (!prev) {
-    return <span />
+    return <span className="text-gray-400 prev-next-text">Previous</span>
   } else {
     previousLink = `${prev}`
   }
 
   return (
     <div className="flex items-center group">
-      <ArrowPrev className="text-current transition duration-700 transform scale-x-0  text-[30px] group-hover:scale-x-100 -mr-4" />
+      <div className={`prev-next-anim -mr-4`} />
       <LinkButton
         className="ml-6 -translate-x-7 "
         to={previousLink}
@@ -51,11 +54,11 @@ const renderNextLink = ({ next }) => {
         >
           <span>Next</span>
         </LinkButton>
-        <ArrowNext className="text-current transition duration-700 transform scale-x-0  text-[30px] group-hover:scale-x-100 -ml-4" />
+        <div className={`prev-next-anim -ml-4`} />
       </div>
     )
   } else {
-    return <span />
+    return <span className="text-gray-400 prev-next-text">Next</span>
   }
 }
 

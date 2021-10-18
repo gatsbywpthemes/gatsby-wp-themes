@@ -43,6 +43,12 @@
   .center-container {
     @apply px-5 mx-auto md:px-6 lg:px-10;
   }
+  .prev-next-text {
+    @apply text-sm font-bold tracking-widest uppercase;
+  }
+  .prev-next-anim {
+    @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100;
+  }
   .menu-item,
   .menu-item a {
     @apply transition duration-300 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;

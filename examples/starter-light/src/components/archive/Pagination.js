@@ -1,20 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 import clsx from "clsx"
-import {
-  CgArrowLongLeft as ArrowPrev,
-  CgArrowLongRight as ArrowNext,
-} from "react-icons/cg"
 
 const renderPreviousLink = (previousPagePath) => {
   if (previousPagePath) {
     return (
       <div className="flex items-center group">
-        <ArrowPrev className="text-current transition duration-700 transform scale-x-0  text-[30px] group-hover:scale-x-100 -mr-4" />
+        <div className="-mr-4 prev-next-anim" />
         <Link
           className={clsx(
-            "tracking-widest uppercase font-bold font-info text-sm",
-            `bg-black px-4 py-1 text-white`,
+            "prev-next-text",
             "transition duration-700 transform group-hover:translate-x-0",
             "ml-6 -translate-x-7"
           )}
@@ -25,7 +20,7 @@ const renderPreviousLink = (previousPagePath) => {
       </div>
     )
   } else {
-    return <span />
+    return <span className="text-gray-400 prev-next-text">Previous</span>
   }
 }
 
@@ -35,20 +30,19 @@ const renderNextLink = (nextPagePath) => {
       <div className="flex items-center group">
         <Link
           className={clsx(
-            "tracking-widest uppercase font-bold font-info text-sm",
-            `bg-black px-4 py-1 text-white`,
+            "prev-next-text",
             "transition duration-700 transform group-hover:translate-x-0",
             "mr-6 translate-x-7"
           )}
           to={nextPagePath}
         >
-          <span>Next</span>
+          <span className="prev-next-text">Next</span>
         </Link>
-        <ArrowNext className="text-current transition duration-700 transform scale-x-0  text-[30px] group-hover:scale-x-100 -ml-4" />
+        <div className="-ml-4 prev-next-anim" />
       </div>
     )
   } else {
-    return <span />
+    return <span className="text-gray-400 prev-next-text">Next</span>
   }
 }
 
