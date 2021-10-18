@@ -2,7 +2,6 @@ import React from "react"
 import { Twitter, Facebook, Pinterest } from "./icons"
 import { FiShare2 } from "react-icons/fi"
 import clsx from "clsx"
-import tw, { css } from "twin.macro"
 
 export const SocialShare = ({ url, title, media }) => {
   return (

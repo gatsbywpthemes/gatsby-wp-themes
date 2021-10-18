@@ -1,7 +1,6 @@
 import React from "react"
 import { MenuLink } from "./MenuLink"
 import { Submenu } from "./Submenu"
-import tw, { styled, css } from "twin.macro"
 
 export const MenuItem = ({
   menuItem,

@@ -4,7 +4,7 @@ import { PostEntry } from "../post"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Post = ({ post, ctx }) => {
-  const { title, uri, headlesswp } = post
+  const { title, uri } = post
 
   const featuredImage =
     post.featuredImage?.node.localFile.childImageSharp.original

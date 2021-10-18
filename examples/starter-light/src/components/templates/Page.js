@@ -3,7 +3,6 @@ import { Layout } from "../Layout"
 import { ParsedContent, ActivatePageScripts } from "../../utils"
 import { gutenbergStyles } from "../../styles/gutenbergStyles"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
-import parse from "html-react-parser"
 
 const Page = ({ page, ctx }) => {
   const { title, isFrontPage, content, uri, headlesswp } = page

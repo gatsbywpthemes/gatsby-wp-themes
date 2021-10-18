@@ -1,13 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import clsx from "clsx"
-import {
-  CgArrowLongLeft as ArrowPrev,
-  CgArrowLongRight as ArrowNext,
-} from "react-icons/cg"
-
-const animStyle =
-  "transition duration-700 transform scale-x-0 bg-text  w-7 h-[1px] group-hover:scale-x-100 "
 
 const LinkButton = ({ className, ...props }) => {
   return (
