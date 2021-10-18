@@ -19,7 +19,9 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
       <Header />
       <main
         className={`${
-          pageTemplate !== "full width" ? "py-10 center-container max-w-lg" : ""
+          pageTemplate !== "full width"
+            ? "py-10 center-container max-w-lg"
+            : "pb-10"
         }`}
       >
         {children}
