@@ -1,10 +1,15 @@
 import React from "react"
 import { SocialFollows } from "../social"
+import clsx from "clsx"
 
 export const Footer = ({ ...props }) => {
   return (
     <footer
-      className="py-5 bg-footerBg dark:bg-dark-footerBg text-footerColor dark:text-dark-footerColor"
+      className={clsx(
+        "py-5",
+        "bg-footerBg dark:bg-dark-footerBg",
+        "text-footerColor dark:text-dark-footerColor"
+      )}
       {...props}
     >
       <div className="center-container">

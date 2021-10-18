@@ -70,7 +70,9 @@ export const Slidemenu = ({ className, ...props }) => {
                         "flex flex-col",
                         "h-screen",
                         "overflow-y-scroll",
-                        "bg-mobileMenuBg dark:bg-dark-mobileMenuBg shadow"
+                        "shadow-xl",
+                        "bg-mobileMenuBg dark:bg-dark-mobileMenuBg ",
+                        "text-mobileMenuColor dark:text-dark-mobileMenuColor"
                       )}
                     >
                       <div className="flex items-center justify-between px-4 py-2 border-b border-white">

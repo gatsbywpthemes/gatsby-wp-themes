@@ -25,7 +25,7 @@ const SubmenuV = ({ menuItem }) => {
 
 const SubmenuH = ({ menuItem }) => {
   return (
-    <Menu as="div" className={clsx(`menu-item`, `relative`, `flex`)}>
+    <Menu as="div" className={clsx("menu-item", "relative", "flex")}>
       <Menu.Button
         className={clsx(
           `inline-flex items-center`,
@@ -50,7 +50,9 @@ const SubmenuH = ({ menuItem }) => {
             `absolute mt-12 origin-top-right`,
             `px-3 w-56 bg-gray-100`,
             `ring-1 ring-black ring-opacity-5 focus:outline-none`,
-            `z-10`
+            `z-10`,
+            `text-subMenuColor dark:text-dark-subMenuColor`,
+            `bg-subMenuBg dark:bg-dark-subMenuBg`
           )}
         >
           {menuItem.children.map((item) => (
