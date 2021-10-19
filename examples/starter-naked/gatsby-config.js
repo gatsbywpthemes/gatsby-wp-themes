@@ -37,17 +37,5 @@ module.exports = {
         wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
-    {
-      resolve: "gatsby-plugin-root-import",
-      options: {
-        baseSrc: path.join(__dirname, "src"),
-        basePages: path.join(__dirname, "src/pages"),
-        baseStyles: path.join(__dirname, "src/styles"),
-        baseComponents: path.join(__dirname, "src/components"),
-        baseUiComponents: path.join(__dirname, "src/components/ui-components"),
-        baseUtils: path.join(__dirname, "src/utils"),
-        baseThemeConfig: path.join(__dirname, "themeConfig"),
-      },
-    },
   ],
 }
