@@ -2,7 +2,6 @@ const colors = require("tailwindcss/colors")
 const rem = (px) => px / 16 + "rem"
 const { darken, lighten } = require("polished")
 
-const { blueGray, red, teal } = colors
 //palette
 const light = "#FBEED9",
   ultraLight = lighten(0.04, "#FBEED9"),
@@ -13,9 +12,7 @@ const light = "#FBEED9",
   primary = "tomato",
   secondary = "#4C959B",
   yellow = "#FCB458",
-  purple = "#c725A3",
-  bg = ultraLight,
-  text = ultraDark
+  purple = "#c725A3"
 
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -24,6 +21,10 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      fontFamily: {
+        body: "Coda, sans-serif",
+        heading: "Baumans, sans-serif",
+      },
       maxWidth: {
         lg: rem(1024),
         md: rem(768),
