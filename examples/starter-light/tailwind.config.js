@@ -1,18 +1,22 @@
 const colors = require("tailwindcss/colors")
 const rem = (px) => px / 16 + "rem"
+const { darken, lighten } = require("polished")
 
-const { blueGray, red, teal, purple } = colors
+const { blueGray, red, teal } = colors
 //palette
-const light = blueGray[100],
-  ultraLight = blueGray[50],
-  dark = blueGray[800],
-  ultraDark = blueGray[900],
-  primary = teal[400],
-  secondary = purple[500],
-  highlight = red[500],
-  mutted = blueGray[200],
+const light = "#FBEED9",
+  ultraLight = lighten(0.04, "#FBEED9"),
+  dark = "#082737",
+  dark0 = lighten(0.08, "#082737"),
+  dark2 = darken(0.04, "#082737"),
+  ultraDark = darken(0.1, "#082737"),
+  primary = "tomato",
+  secondary = "#4C959B",
+  yellow = "#FCB458",
+  purple = "#c725A3",
   bg = ultraLight,
   text = ultraDark
+
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
 
@@ -49,83 +53,59 @@ module.exports = {
       },
 
       colors: {
-        /* header */
+        /* base colors */
         ...colors,
         light,
-        dark,
         ultraLight,
-        ultraDark,
+        dark,
         primary,
         secondary,
-        highlight,
-        mutted,
-        bg,
-        text,
+        ultraDark,
+        highlight: purple,
+        yellow,
+        purple,
+        bg: light,
+        text: dark0,
         accentColor: primary,
         /* header */
-        headerBg: "white",
-        headerColor: ultraDark,
+        headerBg: dark,
+        headerColor: ultraLight,
         /* footer */
-        footerBg: "white",
-        footerColor: ultraDark,
-        /* search */
-        searchBg: "white",
-        searchResultsHeaderBg: ultraDark,
-        searchResultsHeaderColor: primary,
-        searchResultsBg: bg,
-        searchResultsColor: text,
+        footerBg: dark,
+        footerColor: ultraLight,
+
         /* menu */
         mobileMenuBg: "black",
         mobileMenuColor: light,
         subMenuBg: "black",
-        subMenuColor: "white",
+        subMenucolor: "white",
         menuHoverColor: primary,
-        /* newsletter */
-        nlButtonBg: "black",
-        nlButtonColor: "white",
-        nlInputBg: light,
-        nlColor: text,
         /* post */
-        infoBg: light,
-        archiveTitleBg: blueGray[100],
-        archiveTitleColor: text,
-        cardBg: "white",
+        infoBg: darken(0.02, light),
+        archiveTitleBg: primary,
+        cardBg: ultraLight,
 
         dark: {
           /* basic colors*/
-
           bg: dark,
-          text: ultraLight,
-          text2: teal[900],
-          accentColor: primary,
-          /* header*/
+          text: light,
+          /* header */
           headerBg: ultraDark,
           headerColor: ultraLight,
-          /* footer*/
+          /* footer */
           footerBg: ultraDark,
           footerColor: ultraLight,
-          /* search */
-          searchBg: ultraDark,
-          searchResultsHeaderBg: primary,
-          searchResultsHeaderColor: light,
-          searchResultsBg: bg,
-          searchResultsColor: text,
           /* menu*/
-          mobileMenuBg: "black",
+          mobileMenuBg: dark,
           mobileMenuColor: light,
-          subMenuBg: primary,
-          subMenuColor: teal[900],
-          menuHoverColor: teal[100],
-          /* newsletter */
-          nlButtonBg: primary,
-          nlButtonColor: teal[900],
-          nlInputBg: blueGray[700],
-          nlColor: teal[900],
+          subMenuBg: secondary,
+          subMenucolor: "white",
+          menuHoverColor: primary,
           /* post*/
+          infoBg: ultraDark,
           archiveTitleBg: primary,
-          archiveTitleColor: teal[900],
-          infoBg: primary,
-          cardBg: ultraDark,
+          highlight: yellow,
+          cardBg: dark2,
         },
       },
     },
