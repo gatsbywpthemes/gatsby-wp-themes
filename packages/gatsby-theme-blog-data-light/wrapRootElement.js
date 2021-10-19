@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-
+import { ApolloProvider } from '@apollo/client'
+import { createClient } from './src/apollo/client'
 import { themeOptions } from './context'
 import defaultOptions from './utils/defaultOptions'
 import slashes from 'remove-trailing-slash'
@@ -58,8 +59,13 @@ export const Root = ({ element }, options) => {
     ...defaultOptions,
     ...options,
   }
+  const client = createClient(slashes(mergedOptions.wordPressUrl))
 
-  return (
+  return mergedOptions.withApollo ? (
+    <ApolloProvider client={client}>
+      <ThemeOptionsProvider options={options}>{element}</ThemeOptionsProvider>
+    </ApolloProvider>
+  ) : (
     <ThemeOptionsProvider options={options}>{element}</ThemeOptionsProvider>
   )
 }

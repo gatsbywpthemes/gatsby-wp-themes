@@ -6,6 +6,7 @@ const PageSeoFromWP = `seo {
       schema {
         articleType
         pageType
+        raw
       }
       opengraphType
       opengraphTitle

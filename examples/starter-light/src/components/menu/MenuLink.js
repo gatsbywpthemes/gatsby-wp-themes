@@ -3,7 +3,7 @@ import slashes from "remove-trailing-slash"
 import { createLocalLink } from "../../utils"
 import { Link } from "gatsby"
 
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data-light/src/hooks"
 
 export const MenuLink = ({ menuItem, ...props }) => {
   const { wordPressUrl } = useThemeOptions()
