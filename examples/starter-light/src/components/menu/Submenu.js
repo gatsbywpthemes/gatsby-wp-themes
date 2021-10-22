@@ -47,12 +47,13 @@ const SubmenuH = ({ menuItem }) => {
       >
         <Menu.Items
           className={clsx(
-            `absolute mt-12 origin-top-right`,
-            `px-3 w-56 bg-gray-100`,
+            `absolute mt-9 origin-top-right`,
+            `px-5 py-4 w-56 bg-gray-100`,
             `ring-1 ring-black ring-opacity-5 focus:outline-none`,
-            `z-10`,
+            `z-50`,
             `text-subMenuColor dark:text-dark-subMenuColor`,
-            `bg-subMenuBg dark:bg-dark-subMenuBg`
+            `rounded-lg`,
+            ` from-secondary to-teal-300 dark:from-primary dark:to-purple bg-gradient-to-tr`
           )}
         >
           {menuItem.children.map((item) => (

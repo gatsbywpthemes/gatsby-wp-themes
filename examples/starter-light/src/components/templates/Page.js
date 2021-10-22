@@ -27,10 +27,12 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <article>
+      <article
+        className={`${pageTemplate === "full width" ? "" : "card sm:p-10 p-5"}`}
+      >
         {!skipTitle && pageTemplate !== "full width" && (
           <h1
-            className="text-center uppercase "
+            className="mb-10 text-center uppercase"
             dangerouslySetInnerHTML={{ __html: title }}
           />
         )}
