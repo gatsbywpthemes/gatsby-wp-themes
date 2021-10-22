@@ -42,7 +42,6 @@
   },
   "devDependencies": {
     "babel-preset-gatsby": "^2.0.0",
-    "prettier": "^2.4.1",
-    "tailwindcss-base-buttons": "https://github.com/thebakerdev/tailwindcss-base-buttons"
+    "prettier": "^2.4.1"
   }
 }

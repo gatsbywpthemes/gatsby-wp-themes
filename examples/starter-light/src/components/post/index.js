@@ -21,7 +21,10 @@ export const PostEntry = ({
 
   const { pageTemplate, skipTitle } = post.headlesswp
   return (
-    <article {...props}>
+    <article
+      className={`${pageTemplate === "full width" ? "" : "card"}`}
+      {...props}
+    >
       {post.featuredImage && (
         <PostEntryMedia
           imageLoading="eager"
@@ -36,12 +39,15 @@ export const PostEntry = ({
       )}
       <div
         className={`${
-          pageTemplate === "full width" ? "center-container" : ""
+          pageTemplate === "full width"
+            ? "center-container"
+            : "p-5 sm:pt-5 sm:p-10"
         } space-y-5`}
       >
         {!skipTitle && <PostEntryTitle post={post} location={location} />}
         <PostEntryInfo post={post} />
         <PostEntryContent post={post} location={location} />
+        <div className="!my-10 divider" />
         <div className="entry-footer">
           <PostEntryMeta post={post} />
           <div className="flex justify-center">

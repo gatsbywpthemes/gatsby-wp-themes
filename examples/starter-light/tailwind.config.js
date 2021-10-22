@@ -119,20 +119,6 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/aspect-ratio"),
-    require("tailwindcss-base-buttons")({
-      colors: {
-        theme: {
-          primary: {
-            background: primary,
-            text: "white",
-          },
-          secondary: {
-            background: secondary,
-            text: "white",
-          },
-        },
-      },
-    }),
   ],
   corePlugins: {
     preflight: true,
