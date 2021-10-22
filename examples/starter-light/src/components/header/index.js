@@ -11,7 +11,7 @@ export const Header = ({ ...props }) => {
     <Headroom>
       <header
         className={clsx(
-          "py-4 shadow-md relative",
+          "py-5 shadow-md relative",
           "bg-headerBg dark:bg-dark-headerBg",
           "text-headerColor dark:text-dark-headerColor"
         )}

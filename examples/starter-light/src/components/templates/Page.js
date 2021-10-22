@@ -29,7 +29,10 @@ const Page = ({ page, ctx }) => {
       />
       <article>
         {!skipTitle && pageTemplate !== "full width" && (
-          <h1 dangerouslySetInnerHTML={{ __html: title }} />
+          <h1
+            className="text-center uppercase "
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
         )}
         <div
           className="entry-content"

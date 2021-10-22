@@ -6,7 +6,7 @@ export const Footer = ({ ...props }) => {
   return (
     <footer
       className={clsx(
-        "py-5",
+        "py-8",
         "bg-footerBg dark:bg-dark-footerBg",
         "text-footerColor dark:text-dark-footerColor"
       )}
