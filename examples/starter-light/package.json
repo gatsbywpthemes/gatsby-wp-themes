@@ -19,7 +19,6 @@
     "@kunukn/react-collapse": "^2.2.9",
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/forms": "^0.3.4",
-    "@tailwindcss/typography": "^0.4.1",
     "@wordpress/base-styles": "^4.0.1",
     "@wordpress/block-library": "^6.0.1",
     "autoprefixer": "^10.3.7",

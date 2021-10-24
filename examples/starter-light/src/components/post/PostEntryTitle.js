@@ -17,7 +17,7 @@ export const PostEntryTitle = ({ post, location, ...props }) => {
           <Link
             to={`${uri}`}
             dangerouslySetInnerHTML={{ __html: title }}
-            className="uppercase"
+            className="uppercase hover:text-secondary dark:hover:text-primary"
           />
         </h2>
       )}

@@ -45,13 +45,6 @@ module.exports = {
         input: "currentcolor 0px 0px 0px inset",
         inputFocus: "currentcolor 0px -3px 0px inset",
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {},
-          },
-        },
-      },
 
       colors: {
         /* base colors */
@@ -81,7 +74,7 @@ module.exports = {
         subMenuBg: "black",
         subMenucolor: "white",
         subMenuHoverColor: colors.teal[900],
-        menuHoverColor: primary,
+        menuHoverColor: colors.teal[300],
         /* post */
         infoBg: darken(0.02, light),
         archiveTitleBg: primary,
@@ -117,7 +110,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/aspect-ratio"),

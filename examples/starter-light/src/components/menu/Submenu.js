@@ -26,12 +26,7 @@ const SubmenuV = ({ menuItem }) => {
 const SubmenuH = ({ menuItem }) => {
   return (
     <Menu as="div" className={clsx("menu-item", "relative", "flex")}>
-      <Menu.Button
-        className={clsx(
-          `inline-flex items-center`,
-          `focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-gray-100`
-        )}
-      >
+      <Menu.Button className={clsx(`inline-flex items-center`)}>
         {menuItem.label}
         <CgChevronDown className={`ml-2 w-4 h-4`} aria-hidden="true" />
       </Menu.Button>

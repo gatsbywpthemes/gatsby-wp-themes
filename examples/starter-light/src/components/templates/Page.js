@@ -1,6 +1,6 @@
 import React from "react"
 import { Layout } from "../Layout"
-import { ParsedContent, ActivatePageScripts } from "../../utils"
+import { ActivatePageScripts } from "../../utils"
 import { gutenbergStyles } from "../../styles/gutenbergStyles"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
@@ -48,7 +48,8 @@ const Page = ({ page, ctx }) => {
           }}
         >
           <ActivatePageScripts />
-          <ParsedContent content={content} />
+          {/* <ParsedContent content={content} /> */}
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
       </article>
     </Layout>
