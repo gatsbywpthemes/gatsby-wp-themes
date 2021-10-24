@@ -11,11 +11,8 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.16",
     "gatsby-awesome-pagination": "^0.3.8",
-    "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-source-wordpress": "^6.0.0",
-    "isomorphic-fetch": "^3.0.0",
     "normalize-path": "^3.0.0",
     "remove-trailing-slash": "^0.1.1"
   },
