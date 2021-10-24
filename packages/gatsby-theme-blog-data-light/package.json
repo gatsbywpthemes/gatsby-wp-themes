@@ -12,11 +12,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
-    "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "^1.1.1",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-anchor-links": "^1.2.1",
-    "gatsby-plugin-google-gtag": "^4.0.0",
-    "gatsby-plugin-google-tagmanager": "^4.0.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-sharp": "^4.0.0",
     "gatsby-plugin-sitemap": "^5.0.0",

@@ -40,19 +40,6 @@ module.exports = (options) => {
     })
   }
 
-  /**
-   * Conditionally add mailchimp subscription plugin
-   */
-
-  if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
-    plugins.push({
-      resolve: "gatsby-plugin-mailchimp",
-      options: {
-        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
-      },
-    })
-  }
-
   return {
     plugins,
   }
