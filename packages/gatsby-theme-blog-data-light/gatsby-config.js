@@ -16,9 +16,8 @@ module.exports = (options) => {
   const url = slashes(wordPressUrl)
 
   const plugins = [
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-anchor-links`,
+
     {
       resolve: `gatsby-source-wordpress`,
       options: {
@@ -39,13 +38,6 @@ module.exports = (options) => {
           ...presets,
         ],
         ...otherGatsbySourceWordPressOptions,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
       },
     },
   ]

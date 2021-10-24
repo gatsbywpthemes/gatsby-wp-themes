@@ -32,6 +32,11 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-image`,
+    },
 
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages-light`,
@@ -46,6 +51,13 @@ module.exports = {
       options: {
         ...options,
         wordPressUrl: process.env.GATSBY_WP_URL,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
   ],
