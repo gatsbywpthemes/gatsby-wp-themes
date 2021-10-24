@@ -80,6 +80,7 @@ module.exports = {
         mobileMenuColor: light,
         subMenuBg: "black",
         subMenucolor: "white",
+        subMenuHoverColor: colors.teal[900],
         menuHoverColor: primary,
         /* post */
         infoBg: darken(0.02, light),
@@ -101,6 +102,7 @@ module.exports = {
           mobileMenuColor: light,
           subMenuBg: secondary,
           subMenucolor: "white",
+          subMenuHoverColor: dark,
           menuHoverColor: primary,
           /* post*/
           infoBg: ultraDark,

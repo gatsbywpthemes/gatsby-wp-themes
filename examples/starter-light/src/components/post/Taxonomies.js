@@ -17,7 +17,7 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
             key={cat.slug}
             taxName="category"
             item={cat}
-            className="mx-1 mb-3 btn"
+            className="mx-1 mb-3 btn btn-secondary dark:btn-primary"
           />
         ))}
       </div>

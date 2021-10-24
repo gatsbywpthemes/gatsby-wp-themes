@@ -34,36 +34,52 @@
   blockquote {
     @apply px-5 py-12 border-l-4 sm:px-12 border-accentColor max-w-[800px] mx-auto my-10 bg-teal-50 italic dark:bg-blueGray-800;
   }
-  .card {
-    @apply shadow-md bg-cardBg dark:bg-dark-cardBg;
-  }
-  .divider {
-    @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;
-  }
-  .btn {
-    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r from-primary to-yellow hover:-translate-y-1;
-  }
-  .btn-secondary {
-    @apply from-secondary to-teal-900;
-  }
   .content ul {
     @apply pl-6 mb-6;
   }
   .content ol {
     @apply pl-6 mb-6;
   }
+  /* Components */
   .center-container {
     @apply px-5 mx-auto md:px-6 lg:px-10;
   }
+  .card {
+    @apply shadow-md bg-cardBg dark:bg-dark-cardBg;
+  }
+  .divider {
+    @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;
+  }
+  /* Buttons */
+  .btn {
+    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1;
+  }
+  .btn-primary {
+    @apply from-primary to-yellow;
+  }
+  .btn-secondary {
+    @apply from-secondary to-teal-300;
+  }
+
+  /* Pagination */
   .prev-next-text {
     @apply text-sm font-bold tracking-widest uppercase;
   }
   .prev-next-anim {
     @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100;
   }
+
+  /* Menu */
   .menu-item,
   .menu-item a {
-    @apply transition duration-300 text-headerColor dark:text-dark-headerColor hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+    @apply transition duration-500 text-headerColor dark:text-dark-headerColor;
+  }
+  .menu-item > a {
+    @apply hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+  }
+
+  .menu-item button {
+    @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
   }
   .menuV > .menu-item {
     @apply py-3 border-b border-dashed border-opacity-40 last:border-none;

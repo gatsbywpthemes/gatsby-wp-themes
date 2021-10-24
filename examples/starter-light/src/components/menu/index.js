@@ -35,6 +35,7 @@ export const MainMenu = ({
                 key={menuItem.id}
                 menuItem={menuItem}
                 orientation={orientation}
+                className={`hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor`}
               />
             )
           }
