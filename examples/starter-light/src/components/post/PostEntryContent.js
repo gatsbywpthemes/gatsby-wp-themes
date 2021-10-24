@@ -7,7 +7,10 @@ export const PostEntryContent = ({ post, location, ...props }) => {
   return (
     <div {...props}>
       <ActivatePostScripts />
-      <div dangerouslySetInnerHTML={{ __html: content }} className="content" />
+      <div
+        dangerouslySetInnerHTML={{ __html: content }}
+        className="text-base content md:text-lg"
+      />
     </div>
   )
 }

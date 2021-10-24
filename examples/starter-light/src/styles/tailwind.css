@@ -101,4 +101,9 @@
   .menu-item [aria-current="page"] {
     @apply italic;
   }
+  /* Text effects */
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

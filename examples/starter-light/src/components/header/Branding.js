@@ -11,7 +11,7 @@ export const Branding = ({ title, ...props }) => {
       ) : (
         <h1 className="mb-0 text-2xl tracking-wider uppercase" {...props}>
           <Link
-            className="hover:text-accentColor hover:no-underline"
+            className="hover:no-underline text-gradient bg-gradient-to-r from-primary to-yellow"
             to="/"
             rel="home"
           >

@@ -20,7 +20,7 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
       <main
         className={`${
           pageTemplate !== "full width"
-            ? "py-16 center-container max-w-lg"
+            ? "pt:5 xl:pt-16 pb-16 center-container max-w-lg"
             : "pb-16"
         }`}
       >
