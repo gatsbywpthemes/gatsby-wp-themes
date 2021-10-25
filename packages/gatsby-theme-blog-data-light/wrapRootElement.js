@@ -57,7 +57,6 @@ export const Root = ({ element }, options) => {
     ...defaultOptions,
     ...options,
   }
-  const client = createClient(slashes(mergedOptions.wordPressUrl))
 
   return (
     <ThemeOptionsProvider options={options}>{element}</ThemeOptionsProvider>
