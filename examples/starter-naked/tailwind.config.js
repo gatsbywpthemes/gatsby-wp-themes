@@ -40,13 +40,6 @@ module.exports = {
         input: "currentcolor 0px 0px 0px inset",
         inputFocus: "currentcolor 0px -3px 0px inset",
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {},
-          },
-        },
-      },
 
       colors: {
         /* header */
@@ -79,7 +72,7 @@ module.exports = {
         mobileMenuColor: light,
         subMenuBg: "black",
         subMenuColor: "white",
-        subMenuHoverColor: colors.teal[900],
+        subMenuHoverColor: primary,
         menuHoverColor: primary,
         /* newsletter */
         nlButtonBg: "black",
@@ -115,7 +108,7 @@ module.exports = {
           mobileMenuBg: "black",
           mobileMenuColor: light,
           subMenuBg: primary,
-          subMenuColor: teal[900],
+          subMenuColor: "white",
           subMenuHoverColor: colors.teal[900],
           menuHoverColor: teal[100],
           /* newsletter */
@@ -136,24 +129,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/aspect-ratio"),
-    require("tailwindcss-base-buttons")({
-      colors: {
-        theme: {
-          primary: {
-            background: primary,
-            text: "white",
-          },
-          secondary: {
-            background: secondary,
-            text: "white",
-          },
-        },
-      },
-    }),
   ],
   corePlugins: {
     preflight: true,

@@ -44,8 +44,7 @@ const SubmenuH = ({ menuItem }) => {
           className={clsx(
             `subMenu`,
             `absolute mt-9 origin-top-right`,
-            `px-5 py-4 w-56 bg-gray-100`,
-            `ring-1 ring-black ring-opacity-5 focus:outline-none`,
+            `px-5 py-4 w-56`,
             `z-50`,
             `text-subMenuColor dark:text-dark-subMenuColor`,
             `rounded-lg`,

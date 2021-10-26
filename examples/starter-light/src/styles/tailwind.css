@@ -64,7 +64,7 @@
 
   /* Menu */
   .menu-item,
-  .menu-item a {
+  .menu-item > a {
     @apply transition duration-500 text-headerColor dark:text-dark-headerColor;
   }
   .menu-item > a {

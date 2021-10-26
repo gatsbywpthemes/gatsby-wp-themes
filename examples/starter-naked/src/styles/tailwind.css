@@ -40,23 +40,58 @@
   .content ol {
     @apply pl-6 mb-6;
   }
-  .center-container {
-    @apply px-5 mx-auto md:px-6 lg:px-10;
+  .content p {
+    @apply mb-5 text-text dark:text-dark-text;
   }
+  .content a,
+  .description a {
+    @apply text-black no-underline dark:text-white hover:text-secondary dark:hover:text-primary;
+  }
+  /* Pagination */
   .prev-next-text {
     @apply text-sm font-bold tracking-widest uppercase;
   }
   .prev-next-anim {
     @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100;
   }
+  /* Menu */
   .menu-item,
-  .menu-item a {
-    @apply transition duration-300 text-headerColor dark:text-dark-headerColor hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+  .menu-item > a {
+    @apply transition duration-300 text-headerColor dark:text-dark-headerColor;
+  }
+  .menu-item button {
+    @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+  }
+  .menu-item > a {
+    @apply hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
   }
   .menuV > .menu-item {
     @apply py-3 border-b border-dashed border-opacity-40 last:border-none;
   }
   .menu-item [aria-current="page"] {
     @apply italic;
+  }
+}
+
+@layer components {
+  /* Components */
+  .center-container {
+    @apply px-5 mx-auto md:px-6 lg:px-10;
+  }
+  .card {
+    @apply shadow-md bg-cardBg dark:bg-dark-cardBg;
+  }
+  .divider {
+    @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;
+  }
+  /* Buttons */
+  .btn {
+    @apply px-4 py-2 text-white transition duration-500;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-secondary;
+  }
+  .btn-secondary {
+    @apply bg-secondary hover:bg-primary;
   }
 }
