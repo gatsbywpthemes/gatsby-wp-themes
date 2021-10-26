@@ -6,7 +6,7 @@ export const Sidebar = ({ widgets, className, ...props }) => {
   return (
     <>
       {widgets && widgets.length > 0 && (
-        <div
+        <aside
           className={clsx("sidebar", "p-5 sm:p-10 pt-0", className)}
           {...props}
         >
@@ -15,7 +15,7 @@ export const Sidebar = ({ widgets, className, ...props }) => {
               <Widget widget={widget} />
             </div>
           ))}
-        </div>
+        </aside>
       )}
     </>
   )

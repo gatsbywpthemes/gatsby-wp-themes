@@ -1,12 +1,20 @@
 import React from "react"
 import { Layout } from "../Layout"
+import { Sidebar } from "../Sidebar"
 import { ParsedContent, ActivatePageScripts } from "../../utils"
 import { gutenbergStyles } from "../../styles/gutenbergStyles"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import clsx from "clsx"
 
 const Page = ({ page, ctx }) => {
   const { title, isFrontPage, content, uri, headlesswp } = page
+  const { widgetAreas, layoutWidth } = useThemeOptions()
+  const { sidebarWidgets } = widgetAreas
+
   const pageTemplate = headlesswp?.pageTemplate || "default"
+  const hasSidebar = pageTemplate.includes("sidebar") && sidebarWidgets
+
   const skipTitle = headlesswp?.skipTitle || false
 
   const featuredImage =
@@ -28,22 +36,47 @@ const Page = ({ page, ctx }) => {
         }
       />
       <article>
-        {!skipTitle && pageTemplate !== "full width" && (
-          <h1 dangerouslySetInnerHTML={{ __html: title }} />
+        {!skipTitle && pageTemplate.includes("full") && (
+          <h1
+            dangerouslySetInnerHTML={{ __html: title }}
+            className="mb-10 text-center"
+          />
         )}
         <div
-          className="entry-content"
-          css={{
-            ...gutenbergStyles,
-            "&:after": {
-              clear: "both",
-              content: "''",
-              display: "block",
-            },
-          }}
+          className={`mainContainer ${
+            hasSidebar
+              ? `max-w-xl lg:grid xl:grid-cols-3 grid-cols-10 gap-8`
+              : pageTemplate.includes("full")
+              ? `max-w-full`
+              : `max-w-${layoutWidth.page}`
+          }`}
         >
-          <ActivatePageScripts />
-          <ParsedContent content={content} />
+          <div
+            className={clsx(
+              "content",
+              "xl:col-span-2 col-span-7",
+              "space-y-10",
+              {
+                "order-2": pageTemplate.includes("left"),
+              }
+            )}
+            css={{
+              ...gutenbergStyles,
+              "&:after": {
+                clear: "both",
+                content: "''",
+                display: "block",
+              },
+            }}
+          >
+            <ActivatePageScripts />
+            <ParsedContent content={content} />
+          </div>
+          {hasSidebar && (
+            <div className={clsx("xl:col-span-1 col-span-3")}>
+              <Sidebar widgets={sidebarWidgets} />
+            </div>
+          )}
         </div>
       </article>
     </Layout>
