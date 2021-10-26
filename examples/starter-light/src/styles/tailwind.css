@@ -54,27 +54,6 @@
     @apply mb-5 text-text dark:text-dark-text;
   }
 
-  /* Components */
-  .center-container {
-    @apply px-5 mx-auto md:px-6 lg:px-10;
-  }
-  .card {
-    @apply shadow-md bg-cardBg dark:bg-dark-cardBg;
-  }
-  .divider {
-    @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;
-  }
-  /* Buttons */
-  .btn {
-    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1;
-  }
-  .btn-primary {
-    @apply from-primary to-purple;
-  }
-  .btn-secondary {
-    @apply from-secondary to-teal-300;
-  }
-
   /* Pagination */
   .prev-next-text {
     @apply text-sm font-bold tracking-widest uppercase hover:text-secondary dark:hover:text-primary;
@@ -101,6 +80,32 @@
   .menu-item [aria-current="page"] {
     @apply italic;
   }
+}
+
+@layer components {
+  /* Components */
+  .center-container {
+    @apply px-5 mx-auto md:px-6 lg:px-10;
+  }
+  .card {
+    @apply shadow-md bg-cardBg dark:bg-dark-cardBg;
+  }
+  .divider {
+    @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;
+  }
+  /* Buttons */
+  .btn {
+    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1;
+  }
+  .btn-primary {
+    @apply from-primary to-purple;
+  }
+  .btn-secondary {
+    @apply from-secondary to-teal-300;
+  }
+}
+
+@layer utilities {
   /* Text effects */
   .text-gradient {
     background-clip: text;
