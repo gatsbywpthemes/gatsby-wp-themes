@@ -20,6 +20,13 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      debugScreens: {
+        position: ["top", "left"],
+        style: {
+          backgroundColor: "black",
+          color: "#fff",
+        },
+      },
       maxWidth: {
         lg: rem(1024),
         md: rem(768),

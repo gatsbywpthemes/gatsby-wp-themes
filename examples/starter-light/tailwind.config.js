@@ -21,6 +21,13 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      debugScreens: {
+        position: ["top", "left"],
+        style: {
+          backgroundColor: "black",
+          color: "#fff",
+        },
+      },
       fontFamily: {
         body: "Coda, sans-serif",
         heading: "Baumans, sans-serif",
