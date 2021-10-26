@@ -30,11 +30,11 @@ export const ArchiveContent = ({ posts, ctx, name, description }) => {
       >
         <PostsList
           posts={posts}
-          className={clsx("xl:col-span-2 col-span-7", {
+          className={clsx("xl:col-span-2 col-span-7", "space-y-10", {
             "order-2": archiveSidebar === "left",
           })}
         />
-        {archiveSidebar && (
+        {hasSidebar && (
           <div className={clsx("xl:col-span-1 col-span-3")}>
             <Sidebar widgets={sidebarWidgets} />
           </div>
