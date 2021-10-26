@@ -41,7 +41,11 @@ export const PostEntry = ({
       >
         {!skipTitle && <PostEntryTitle post={post} location={location} />}
         <PostEntryInfo post={post} />
-        <PostEntryContent post={post} location={location} />
+        <PostEntryContent
+          post={post}
+          location={location}
+          className="p-5 md:p-10"
+        />
         <div className="entry-footer">
           <PostEntryMeta post={post} />
           <div className="flex justify-center">

@@ -16,6 +16,7 @@ const Page = ({ page, ctx }) => {
   const hasSidebar = pageTemplate.includes("sidebar") && sidebarWidgets
 
   const skipTitle = headlesswp?.skipTitle || false
+  console.log("title", skipTitle)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -36,12 +37,6 @@ const Page = ({ page, ctx }) => {
         }
       />
       <article>
-        {!skipTitle && pageTemplate.includes("full") && (
-          <h1
-            dangerouslySetInnerHTML={{ __html: title }}
-            className="mb-10 text-center"
-          />
-        )}
         <div
           className={`mainContainer ${
             hasSidebar
@@ -53,24 +48,34 @@ const Page = ({ page, ctx }) => {
         >
           <div
             className={clsx(
-              "content",
+              "card pt-5",
               "xl:col-span-2 col-span-7",
               "space-y-10",
               {
                 "order-2": pageTemplate.includes("left"),
               }
             )}
-            css={{
-              ...gutenbergStyles,
-              "&:after": {
-                clear: "both",
-                content: "''",
-                display: "block",
-              },
-            }}
           >
-            <ActivatePageScripts />
-            <ParsedContent content={content} />
+            {!skipTitle && !pageTemplate.includes("full") && (
+              <h1
+                dangerouslySetInnerHTML={{ __html: title }}
+                className="mb-10 text-center"
+              />
+            )}
+            <div
+              className={clsx("content")}
+              css={{
+                ...gutenbergStyles,
+                "&:after": {
+                  clear: "both",
+                  content: "''",
+                  display: "block",
+                },
+              }}
+            >
+              <ActivatePageScripts />
+              <ParsedContent content={content} />
+            </div>
           </div>
           {hasSidebar && (
             <div className={clsx("xl:col-span-1 col-span-3")}>

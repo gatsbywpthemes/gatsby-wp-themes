@@ -7,7 +7,7 @@ export const Sidebar = ({ widgets, className, ...props }) => {
     <>
       {widgets && widgets.length > 0 && (
         <aside
-          className={clsx("sidebar", "p-5 sm:p-10 pt-0", className)}
+          className={clsx("sidebar", "p-5 sm:p-10 pt-0 card", className)}
           {...props}
         >
           {widgets.map((widget, i) => (
