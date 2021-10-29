@@ -76,6 +76,10 @@
   .menu-item [aria-current="page"] {
     @apply italic;
   }
+  /* Widgets */
+  .widget-title {
+    @apply mb-3;
+  }
 }
 
 @layer components {
