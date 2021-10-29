@@ -47,14 +47,10 @@ const Page = ({ page, ctx }) => {
           }`}
         >
           <div
-            className={clsx(
-              "card pt-5",
-              "xl:col-span-2 col-span-7",
-              "space-y-10",
-              {
-                "order-2": pageTemplate.includes("left"),
-              }
-            )}
+            className={clsx("pb-5", "xl:col-span-2 col-span-7", "space-y-10", {
+              "order-2": pageTemplate.includes("left"),
+              "pt-5 card": !pageTemplate.includes("full"),
+            })}
           >
             {!skipTitle && !pageTemplate.includes("full") && (
               <h1

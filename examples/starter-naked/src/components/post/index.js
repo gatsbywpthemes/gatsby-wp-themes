@@ -13,6 +13,7 @@ export const PostEntry = ({
   post,
   ctx,
   location,
+  className = "",
   ...props
 }) => {
   const media = post.featuredImage
@@ -21,13 +22,13 @@ export const PostEntry = ({
 
   const { pageTemplate, skipTitle } = post.headlesswp
   return (
-    <article {...props}>
+    <article className={`card ${className}`} {...props}>
       {post.featuredImage && (
         <PostEntryMedia
           imageLoading="eager"
           post={post}
           location="single"
-          className={`mb-10 ${
+          className={` ${
             pageTemplate === "full width"
               ? "aspect-w-3 aspect-h-1"
               : "aspect-w-16 aspect-h-9"
@@ -35,27 +36,23 @@ export const PostEntry = ({
         />
       )}
       <div
-        className={`${
-          pageTemplate === "full width" ? "center-container" : ""
-        } space-y-5`}
+        className={`${pageTemplate === "full width" ? "center-container" : ""}`}
       >
-        {!skipTitle && <PostEntryTitle post={post} location={location} />}
-        <PostEntryInfo post={post} />
-        <PostEntryContent
-          post={post}
-          location={location}
-          className="p-5 md:p-10"
-        />
-        <div className="entry-footer">
-          <PostEntryMeta post={post} />
-          <div className="flex justify-center">
-            <SocialShare
-              url={normalize(`/${post.uri}`)}
-              title={post.title}
-              media={media}
-            />
+        <div className="p-5 space-y-5 md:p-10">
+          {!skipTitle && <PostEntryTitle post={post} location={location} />}
+          <PostEntryInfo post={post} />
+          <PostEntryContent post={post} location={location} />
+          <div className="entry-footer">
+            <PostEntryMeta post={post} />
+            <div className="flex justify-center">
+              <SocialShare
+                url={normalize(`/${post.uri}`)}
+                title={post.title}
+                media={media}
+              />
+            </div>
+            <PrevNextPostNavigation ctx={ctx} />
           </div>
-          <PrevNextPostNavigation ctx={ctx} />
         </div>
       </div>
     </article>

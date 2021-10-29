@@ -46,7 +46,7 @@ const Post = ({ post, ctx }) => {
           location="single"
           post={post}
           ctx={ctx}
-          className={clsx("xl:col-span-2 col-span-7", "space-y-10", {
+          className={clsx("xl:col-span-2 col-span-7", {
             "order-2": pageTemplate.includes("left"),
           })}
         />
