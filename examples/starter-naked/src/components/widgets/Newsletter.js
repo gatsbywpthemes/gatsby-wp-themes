@@ -39,13 +39,18 @@ export const Newsletter = (props) => {
                   name="email"
                   required
                   value={email}
-                  className="border-0 rounded-none bg-nlInputBg dark:bg-dark-nlInputBg text-nlColor dark:text-dark-nlColor"
+                  className="h-10 px-5 border-0 rounded-none bg-nlInputBg dark:bg-dark-nlInputBg text-nlColor dark:text-dark-nlColor"
                   onChange={handleChange}
                   aria-label="Add your Email address to subscribe"
                 />
               </div>
               <div className="w-1/3">
-                <button type="submit">Subscribe</button>
+                <button
+                  type="submit"
+                  className="btn bg-nlButtonBg dark:bg-dark-nlButtonBg hover:bg-nlButtonHoverBg dark:hover:bg-dark-nlButtonHoverBg"
+                >
+                  Subscribe
+                </button>
               </div>
             </div>
           </form>

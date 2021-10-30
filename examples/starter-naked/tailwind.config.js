@@ -84,6 +84,7 @@ module.exports = {
         /* newsletter */
         nlButtonBg: "black",
         nlButtonColor: "white",
+        nlButtonHoverBg: primary,
         nlInputBg: light,
         nlColor: text,
         /* post */
@@ -121,6 +122,7 @@ module.exports = {
           /* newsletter */
           nlButtonBg: primary,
           nlButtonColor: teal[900],
+          nlButtonHoverBg: secondary,
           nlInputBg: blueGray[700],
           nlColor: teal[900],
           /* post*/
