@@ -7,7 +7,8 @@ export const PostEntryContent = ({ post, location, ...props }) => {
   return (
     <div className="text-base content md:text-lg" {...props}>
       <ActivatePostScripts />
-      <ParsedContent content={content} />
+      {/* <ParsedContent content={content} /> */}
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   )
 }
