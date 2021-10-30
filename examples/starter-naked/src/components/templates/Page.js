@@ -16,7 +16,7 @@ const Page = ({ page, ctx }) => {
   const hasSidebar = pageTemplate.includes("sidebar") && sidebarWidgets
 
   const skipTitle = headlesswp?.skipTitle || false
-  console.log("title", skipTitle)
+  const postWidth = layoutWidth.post || "xl"
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -43,7 +43,14 @@ const Page = ({ page, ctx }) => {
               ? `max-w-xl lg:grid xl:grid-cols-3 grid-cols-10 gap-8`
               : pageTemplate.includes("full")
               ? `max-w-full`
-              : `max-w-${layoutWidth.page}`
+              : `${
+                  postWidth === "md"
+                    ? "max-w-md"
+                    : postWidth === "lg"
+                    ? "max-w-lg"
+                    : "max-w-xl"
+                }`
+          }
           }`}
         >
           <div

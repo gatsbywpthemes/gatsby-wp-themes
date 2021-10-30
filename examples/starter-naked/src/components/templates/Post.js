@@ -15,6 +15,8 @@ const Post = ({ post, ctx }) => {
 
   const hasSidebar = pageTemplate.includes("sidebar") && sidebarWidgets
 
+  const postWidth = layoutWidth.post || "xl"
+
   const featuredImage =
     post.featuredImage?.node.localFile.childImageSharp.original
 
@@ -39,7 +41,13 @@ const Post = ({ post, ctx }) => {
             ? `max-w-xl lg:grid xl:grid-cols-3 grid-cols-10 gap-8`
             : pageTemplate.includes("full")
             ? `max-w-full`
-            : `max-w-${layoutWidth.post}`
+            : `${
+                postWidth === "md"
+                  ? "max-w-md"
+                  : postWidth === "lg"
+                  ? "max-w-lg"
+                  : "max-w-xl"
+              }`
         }`}
       >
         <PostEntry
