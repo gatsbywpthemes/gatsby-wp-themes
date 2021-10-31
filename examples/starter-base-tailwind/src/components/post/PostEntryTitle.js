@@ -1,7 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export const PostEntryTitle = ({ post, location, ...props }) => {
+export const PostEntryTitle = ({
+  post,
+  location,
+  className = "",
+  ...props
+}) => {
   const { title, uri } = post
 
   return (
@@ -9,7 +14,7 @@ export const PostEntryTitle = ({ post, location, ...props }) => {
       {location === "single" ? (
         <h1
           dangerouslySetInnerHTML={{ __html: title }}
-          className="uppercase"
+          className={`uppercase ${className}`}
           {...props}
         />
       ) : (
@@ -17,7 +22,7 @@ export const PostEntryTitle = ({ post, location, ...props }) => {
           <Link
             to={`${uri}`}
             dangerouslySetInnerHTML={{ __html: title }}
-            className="uppercase hover:text-primary"
+            className={`uppercase hover:text-primary ${className}`}
           />
         </h2>
       )}

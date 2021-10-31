@@ -7,7 +7,7 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
 
   return (
     taxonomies.length > 0 && (
-      <div className="flex items-center flex-wrap mb-8" {...props}>
+      <div className="flex items-center flex-wrap mb-3" {...props}>
         <div>
           <h3
             className={clsx(

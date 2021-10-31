@@ -38,10 +38,13 @@ export const PostEntry = ({
       <div
         className={`${pageTemplate === "full width" ? "center-container" : ""}`}
       >
-        <div className="p-5 space-y-5 md:p-10">
-          {!skipTitle && <PostEntryTitle post={post} location={location} />}
-          <PostEntryInfo post={post} />
+        <div className="p-5 md:p-10">
+          {!skipTitle && (
+            <PostEntryTitle post={post} location={location} className="mb-5" />
+          )}
+          <PostEntryInfo post={post} className="mb-10" />
           <PostEntryContent post={post} location={location} />
+          <div className="divider my-12" />
           <div className="entry-footer">
             <PostEntryMeta post={post} />
             <div className="flex justify-center">
