@@ -23,7 +23,11 @@ export const CategoriesWidget = (props) => {
         <WidgetTitle title="Categories" />
         <div className="flex flex-col items-start space-y-3">
           {nodes.map((category) => (
-            <Link key={category.slug} to={`${category.uri}`}>
+            <Link
+              key={category.slug}
+              to={`${category.uri}`}
+              className={`text-special hover:text-primary`}
+            >
               {category.name}
             </Link>
           ))}

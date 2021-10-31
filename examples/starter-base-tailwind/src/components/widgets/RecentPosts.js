@@ -46,7 +46,7 @@ export const RecentPosts = (props) => {
           ? nodes.map((post) => {
               const uri = normalize(`${post.uri}`)
               return (
-                <div className="flex space-x-4" key={post.id}>
+                <div className="flex items-center space-x-4" key={post.id}>
                   <Link aria-label={`Read more - ${post.title}`} to={uri}>
                     {post.featuredImage && (
                       <GatsbyImage
@@ -59,13 +59,13 @@ export const RecentPosts = (props) => {
                     )}
                   </Link>{" "}
                   <div>
-                    <time
-                      className="block font-bold widget-post-date entry-date"
-                      dateTime={post.date}
-                    >
+                    <time className="text-special block" dateTime={post.date}>
                       {format(new Date(post.date), "MMMM dd, yyyy")}
                     </time>{" "}
-                    <Link className="widget-post-title" to={uri}>
+                    <Link
+                      className="widget-post-title font-bold hover:text-primary"
+                      to={uri}
+                    >
                       {post.title}
                     </Link>
                   </div>
