@@ -95,7 +95,10 @@
   }
   /* Buttons */
   .btn {
-    @apply px-4 py-2 text-white transition duration-500;
+    @apply px-6 py-2 text-white transition duration-500 text-xs uppercase tracking-wider font-semibold;
+  }
+  .btn-ghost {
+    @apply border-2 border-black dark:border-light text-black dark:text-light hover:bg-black dark:hover:bg-light transform hover:-translate-y-1 shadow-md hover:shadow-lg hover:text-light dark:hover:text-black;
   }
   .btn-primary {
     @apply bg-primary hover:bg-secondary;
