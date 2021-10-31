@@ -51,16 +51,19 @@ const SubmenuH = ({ menuItem }) => {
             `bg-subMenuBg dark:bg-dark-subMenuBg`
           )}
         >
-          {menuItem.children.map((item) => (
-            <Menu.Item key={item.id}>
-              {({ active }) => (
-                <MenuLink
-                  menuItem={item}
-                  className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor py-2 block`}
-                />
-              )}
-            </Menu.Item>
-          ))}
+          <div className="relative">
+            <div className="c-triangle-up text-subMenuBg dark:text-dark-subMenuBg  absolute -top-5"></div>
+            {menuItem.children.map((item) => (
+              <Menu.Item key={item.id}>
+                {({ active }) => (
+                  <MenuLink
+                    menuItem={item}
+                    className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor py-2 block`}
+                  />
+                )}
+              </Menu.Item>
+            ))}
+          </div>
         </Menu.Items>
       </Transition>
     </Menu>

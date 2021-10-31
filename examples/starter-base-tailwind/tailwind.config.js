@@ -133,6 +133,13 @@ module.exports = {
         },
       },
     },
+    triangles: {
+      up: {
+        direction: "up",
+        size: "18px",
+        height: "10px",
+      },
+    },
   },
   variants: {
     extend: {},
@@ -141,6 +148,11 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/aspect-ratio"),
+    require("tailwindcss-triangles")({
+      componentPrefix: "c-", // defaults to 'c-'
+      defaultSize: "1em", // defaults to '1em'
+      defaultColor: "currentColor", // defaults to 'currentColor'
+    }),
   ],
   corePlugins: {
     preflight: true,
