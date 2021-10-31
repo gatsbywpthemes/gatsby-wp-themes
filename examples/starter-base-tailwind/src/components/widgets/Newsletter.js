@@ -29,7 +29,7 @@ export const Newsletter = (props) => {
           <form
             maxWidth="400px"
             mx="auto"
-            className=" max-w-[400px] mx-auto"
+            className=" max-w-[400px] lg:mx-auto"
             onSubmit={handleSubmit}
           >
             <div className="flex">
@@ -39,7 +39,7 @@ export const Newsletter = (props) => {
                   name="email"
                   required
                   value={email}
-                  className="h-10 px-5 border-0 rounded-none bg-nlInputBg dark:bg-dark-nlInputBg text-nlColor dark:text-dark-nlColor"
+                  className="h-10 px-5 border-0 rounded-none bg-nlInputBg dark:bg-dark-nlInputBg text-nlColor dark:text-dark-nlColor w-full"
                   onChange={handleChange}
                   aria-label="Add your Email address to subscribe"
                 />

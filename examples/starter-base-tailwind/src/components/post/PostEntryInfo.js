@@ -11,7 +11,7 @@ export const PostEntryInfo = ({ post, className, ...props }) => {
         "inline-block",
         "italic text-sm text-text dark:text-teal-900",
         "rounded-md bg-infoBg dark:bg-dark-infoBg",
-        "px-4 py-2",
+        "px-4 py-3",
         className
       )}
       {...props}

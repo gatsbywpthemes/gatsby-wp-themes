@@ -3,6 +3,7 @@ import { PostEntryContent } from "../post/PostEntryContent"
 import { PostEntryMedia } from "../post/PostEntryMedia"
 import { PostEntryMeta } from "../post/PostEntryMeta"
 import { PostEntryTitle } from "../post/PostEntryTitle"
+import { PostEntryInfo } from "../post/PostEntryInfo"
 import clsx from "clsx"
 
 export const Archivepost = ({
@@ -23,6 +24,7 @@ export const Archivepost = ({
 
       <div className="p-5 space-y-5 md:p-10">
         <PostEntryTitle post={post} location="archive" />
+        <PostEntryInfo post={post} />
         <PostEntryContent post={post} location="archive" />
         <PostEntryMeta post={post} />
       </div>
