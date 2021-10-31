@@ -56,13 +56,13 @@ const Page = ({ page, ctx }) => {
           <div
             className={clsx("pb-5", "xl:col-span-2 col-span-7", "space-y-10", {
               "order-2": pageTemplate.includes("left"),
-              "pt-5 card": !pageTemplate.includes("full"),
+              "pt-5 sm:p-10 card": !pageTemplate.includes("full"),
             })}
           >
             {!skipTitle && !pageTemplate.includes("full") && (
               <h1
                 dangerouslySetInnerHTML={{ __html: title }}
-                className="mb-10 text-center"
+                className="mb-10 text-center uppercase"
               />
             )}
             <div
