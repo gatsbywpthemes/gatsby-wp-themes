@@ -26,7 +26,7 @@ export const CategoriesWidget = (props) => {
             <Link
               key={category.slug}
               to={`${category.uri}`}
-              className={`text-special hover:text-primary`}
+              className={`text-upper-spaced hover:text-primary`}
             >
               {category.name}
             </Link>

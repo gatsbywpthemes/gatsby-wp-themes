@@ -55,7 +55,7 @@
 }
 
 @layer utilities {
-  .text-special {
+  .text-upper-spaced {
     @apply uppercase font-semibold tracking-wider text-xs;
   }
 }
@@ -66,10 +66,10 @@
   /* Menu */
   .menu-item,
   .menu-item > a {
-    @apply transition duration-300 text-headerColor dark:text-dark-headerColor text-special;
+    @apply transition duration-300 text-headerColor dark:text-dark-headerColor text-upper-spaced;
   }
   .menu-item button {
-    @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor text-special;
+    @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor text-upper-spaced;
   }
   .menu-item > a {
     @apply hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
@@ -82,7 +82,7 @@
   }
   /* Pagination */
   .prev-next-text {
-    @apply text-special  hover:text-primary;
+    @apply text-upper-spaced  hover:text-primary;
   }
   .prev-next-anim {
     @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100 group-hover:bg-primary;

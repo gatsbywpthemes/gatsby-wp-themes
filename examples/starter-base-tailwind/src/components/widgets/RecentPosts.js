@@ -59,7 +59,10 @@ export const RecentPosts = (props) => {
                     )}
                   </Link>{" "}
                   <div>
-                    <time className="text-special block" dateTime={post.date}>
+                    <time
+                      className="text-upper-spaced block"
+                      dateTime={post.date}
+                    >
                       {format(new Date(post.date), "MMMM dd, yyyy")}
                     </time>{" "}
                     <Link

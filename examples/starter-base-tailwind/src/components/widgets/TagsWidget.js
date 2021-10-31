@@ -27,7 +27,7 @@ export const TagsWidget = (props) => {
             <div className="pb-3" key={tag.slug}>
               <Link
                 to={`/tag/${tag.slug}`}
-                className="inline-block pl-2 pr-1 hover:text-accentColor dark:hover:text-dark-accentColor text-special hover:text-primary"
+                className="inline-block pl-2 pr-1 hover:text-accentColor dark:hover:text-dark-accentColor text-upper-spaced hover:text-primary"
               >
                 {tag.name} ({tag.count})
               </Link>
