@@ -88,7 +88,7 @@
     @apply px-5 mx-auto md:px-6 lg:px-10;
   }
   .card {
-    @apply shadow-md bg-cardBg dark:bg-dark-cardBg;
+    @apply shadow-lg bg-cardBg dark:bg-dark-cardBg rounded-lg;
   }
   .divider {
     @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;

@@ -23,7 +23,12 @@ export const PostEntryMedia = ({
     <>
       {img && (
         <WithLink location={location} post={post}>
-          <Image img={img} loading={imageLoading} {...props} />
+          <Image
+            img={img}
+            loading={imageLoading}
+            imgClassName="rounded-t-lg"
+            {...props}
+          />
         </WithLink>
       )}
     </>
