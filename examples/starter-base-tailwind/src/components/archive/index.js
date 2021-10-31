@@ -15,14 +15,28 @@ export const ArchiveContent = ({ posts, ctx, name, description }) => {
   } = useThemeOptions()
 
   const hasSidebar = sidebarWidgets && archiveSidebar
+  const archiveWidth = layoutWidth.archive
   return (
     <div
       className={`mainContainer  ${
-        hasSidebar ? `max-w-xl` : `max-w-${layoutWidth.archive}`
+        hasSidebar
+          ? `max-w-xl`
+          : `${
+              archiveWidth === "md"
+                ? "max-w-md"
+                : archiveWidth === "lg"
+                ? "max-w-lg"
+                : "max-w-xl"
+            }`
       }`}
     >
-      {name && <Archivetitle name={name} text="Posts for " />}
-      <Description description={description} />
+      {name && (
+        <>
+          <Archivetitle name={name} text="Posts for " className="mb-10" />
+          <Description description={description} className="mb-10" />
+        </>
+      )}
+
       <div
         className={`${
           hasSidebar && "lg:grid"
