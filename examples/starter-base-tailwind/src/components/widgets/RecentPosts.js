@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { format } from "date-fns"
 import { GatsbyImage } from "gatsby-plugin-image"
 import normalize from "normalize-path"
+import { WidgetTitle } from "./WidgetTitle"
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {
@@ -39,7 +40,7 @@ export const RecentPosts = (props) => {
   const { nodes } = data.allWpPost
   return (
     <section className="widget widget-recent-posts" {...props}>
-      <h3 className="widget-title">Recent Posts</h3>
+      <WidgetTitle title="Recent Posts" />
       <div className="flex flex-col space-y-5 align-start">
         {nodes.length
           ? nodes.map((post) => {

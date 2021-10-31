@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import { WidgetTitle } from "./WidgetTitle"
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {
@@ -20,7 +21,7 @@ export const TagsWidget = (props) => {
   return (
     !!nodes.length && (
       <section className="widget widget-tags" {...props}>
-        <h3 className="widget-title">Tags</h3>
+        <WidgetTitle title="Tags" />
         <div className="flex flex-wrap justify-center">
           {nodes.map((tag, index) => (
             <div className="pb-3" key={tag.slug}>

@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import { WidgetTitle } from "./WidgetTitle"
 
 export const Newsletter = (props) => {
   const [email, setEmail] = useState("")
@@ -23,9 +24,7 @@ export const Newsletter = (props) => {
         msg
       ) : (
         <>
-          <h3 mb={5} className="widget-title">
-            Newsletter
-          </h3>
+          <WidgetTitle title="Newsletter" />
           <form
             maxWidth="400px"
             mx="auto"
