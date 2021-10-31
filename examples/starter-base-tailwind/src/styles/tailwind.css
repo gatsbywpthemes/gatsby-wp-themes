@@ -59,13 +59,24 @@
   .prev-next-anim {
     @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100;
   }
+}
+
+@layer utilities {
+  .text-special {
+    @apply uppercase font-semibold tracking-wider text-xs;
+  }
+}
+
+@layer components {
+  /* Components */
+
   /* Menu */
   .menu-item,
   .menu-item > a {
-    @apply transition duration-300 text-headerColor dark:text-dark-headerColor;
+    @apply transition duration-300 text-headerColor dark:text-dark-headerColor text-special;
   }
   .menu-item button {
-    @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+    @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor text-special;
   }
   .menu-item > a {
     @apply hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
@@ -80,10 +91,6 @@
   .widget-title {
     @apply mb-3;
   }
-}
-
-@layer components {
-  /* Components */
   .center-container {
     @apply px-5 mx-auto md:px-6 lg:px-10;
   }

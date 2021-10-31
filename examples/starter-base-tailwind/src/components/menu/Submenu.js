@@ -43,24 +43,23 @@ const SubmenuH = ({ menuItem }) => {
         <Menu.Items
           className={clsx(
             `subMenu`,
-            `absolute mt-9 origin-top-right`,
-            `px-3 w-56 bg-gray-100`,
+            `absolute mt-7 origin-top-right`,
+            `rounded-lg`,
+            `px-5 py-3 w-56`,
             `z-50`,
             `text-subMenuColor dark:text-dark-subMenuColor`,
             `bg-subMenuBg dark:bg-dark-subMenuBg`
           )}
         >
           {menuItem.children.map((item) => (
-            <div className="py-1">
-              <Menu.Item key={item.id}>
-                {({ active }) => (
-                  <MenuLink
-                    menuItem={item}
-                    className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor`}
-                  />
-                )}
-              </Menu.Item>
-            </div>
+            <Menu.Item key={item.id}>
+              {({ active }) => (
+                <MenuLink
+                  menuItem={item}
+                  className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor py-2 block`}
+                />
+              )}
+            </Menu.Item>
           ))}
         </Menu.Items>
       </Transition>
