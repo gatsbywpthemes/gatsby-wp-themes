@@ -30,7 +30,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-dark-mode`,
+    `gatsby-plugin-use-dark-mode`,
     `gatsby-plugin-emotion`,
 
     {
