@@ -9,7 +9,7 @@ export const Sidebar = ({ widgets, className, ...props }) => {
         <aside
           className={clsx(
             "sidebar",
-            "p-5 sm:p-10 pt-0 card space-y-5",
+            "px-5 py-10 sm:p-10  card space-y-5",
             className
           )}
           {...props}
