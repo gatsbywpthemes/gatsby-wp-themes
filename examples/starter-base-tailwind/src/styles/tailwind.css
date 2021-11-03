@@ -56,7 +56,7 @@
 
 @layer utilities {
   .text-upper-spaced {
-    @apply uppercase font-semibold tracking-wider text-xs;
+    @apply text-xs font-semibold tracking-wider uppercase;
   }
 }
 
@@ -77,12 +77,15 @@
   .menuV > .menu-item {
     @apply py-3 border-b border-dashed border-opacity-40 last:border-none;
   }
+  .menuV .menu-item a {
+    @apply text-dark-headerColor;
+  }
   .menu-item [aria-current="page"] {
     @apply italic;
   }
   /* Pagination */
   .prev-next-text {
-    @apply text-upper-spaced  hover:text-primary;
+    @apply text-upper-spaced hover:text-primary;
   }
   .prev-next-anim {
     @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100 group-hover:bg-primary;
@@ -95,17 +98,17 @@
     @apply px-5 mx-auto md:px-6 lg:px-10;
   }
   .card {
-    @apply shadow-lg bg-cardBg dark:bg-dark-cardBg rounded-lg;
+    @apply rounded-lg shadow-lg bg-cardBg dark:bg-dark-cardBg;
   }
   .divider {
     @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;
   }
   /* Buttons */
   .btn {
-    @apply px-6 py-2 text-white transition duration-500 text-xs uppercase tracking-wider font-semibold;
+    @apply px-6 py-2 text-xs font-semibold tracking-wider text-white uppercase transition duration-500;
   }
   .btn-ghost {
-    @apply border-2 border-black dark:border-light text-black dark:text-light hover:bg-black dark:hover:bg-light transform hover:-translate-y-1 shadow-md hover:shadow-lg hover:text-light dark:hover:text-black;
+    @apply text-black transform border-2 border-black shadow-md dark:border-light dark:text-light hover:bg-black dark:hover:bg-light hover:-translate-y-1 hover:shadow-lg hover:text-light dark:hover:text-black;
   }
   .btn-primary {
     @apply bg-primary hover:bg-secondary;

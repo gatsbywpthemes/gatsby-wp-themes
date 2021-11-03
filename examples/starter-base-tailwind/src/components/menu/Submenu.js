@@ -15,7 +15,12 @@ const SubmenuV = ({ menuItem }) => {
       >
         <ul className="py-2 pl-3 menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
-            <MenuItem key={item.id} menuItem={item} orientation="V" />
+            <MenuItem
+              key={item.id}
+              menuItem={item}
+              orientation="V"
+              className="py-2 border-b border-dashed border-opacity-20 border-light last:border-none"
+            />
           ))}
         </ul>
       </Collapse>
@@ -52,7 +57,7 @@ const SubmenuH = ({ menuItem }) => {
           )}
         >
           <div className="relative">
-            <div className="c-triangle-up text-subMenuBg dark:text-dark-subMenuBg  absolute -top-5"></div>
+            <div className="absolute c-triangle-up text-subMenuBg dark:text-dark-subMenuBg -top-5"></div>
             {menuItem.children.map((item) => (
               <Menu.Item key={item.id}>
                 {({ active }) => (
