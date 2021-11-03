@@ -78,8 +78,8 @@ module.exports = {
         searchBg: "white",
         searchResultsHeaderBg: ultraDark,
         searchResultsHeaderColor: primary,
-        searchResultsBg: bg,
-        searchResultsColor: text,
+        searchResultsBg: light,
+        searchResultsColor:dark0,
         /* menu */
         mobileMenuBg: "black",
         mobileMenuColor: light,
@@ -92,7 +92,7 @@ module.exports = {
         nlButtonColor: "white",
         nlButtonHoverBg: primary,
         nlInputBg: light,
-        nlColor: text,
+        nlColor: dark0,
         /* post */
         infoBg: darken(0.02, light),
         archiveTitleBg: primary,
@@ -112,10 +112,10 @@ module.exports = {
           searchBg: ultraDark,
           searchResultsHeaderBg: primary,
           searchResultsHeaderColor: light,
-          searchResultsBg: bg,
-          searchResultsColor: text,
+          searchResultsBg: light,
+          searchResultsColor: dark0,
           /* menu*/
-          mobileMenuBg: dark,
+          mobileMenuBg: dark0,
           mobileMenuColor: light,
           subMenuBg: secondary,
           subMenucolor: "white",
