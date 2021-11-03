@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "name": "starter-base-gradient-tailwind",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "dev": "rm -rf .cache && gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop --host 0.0.0.0",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
+  },
+  "dependencies": {
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^1.4.1",
+    "@headlessui/react": "^1.4.1",
+    "@kunukn/react-collapse": "^2.2.9",
+    "@tailwindcss/aspect-ratio": "^0.3.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@wordpress/base-styles": "^4.0.1",
+    "@wordpress/block-library": "^6.0.1",
+    "autoprefixer": "^10.3.7",
+    "clsx": "^1.1.1",
+    "gatsby": "^4.0.0",
+    "gatsby-plugin-emotion": "^7.0.0",
+    "gatsby-plugin-postcss": "^5.0.0",
+    "gatsby-plugin-sass": "^5.0.0",
+    "gatsby-plugin-use-dark-mode": "^1.4.0",
+    "local-storage": "^2.0.0",
+    "lodash.merge": "^4.6.2",
+    "postcss": "^8.3.11",
+    "prismjs": "^1.25.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "sass": "1.43",
+    "tailwindcss": "^2.2.17",
+    "tailwindcss-debug-screens": "^2.2.0",
+    "tailwindcss-triangles": "^4.0.0",
+    "twin.macro": "^2.8.0",
+    "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-preset-gatsby": "^2.0.0",
+    "prettier": "^2.4.1"
+  }
+}
