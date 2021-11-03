@@ -5,6 +5,11 @@ const config = {
     post: "lg",
     archive: "lg",
   },
+  webfontsOptions: {
+    fonts: {
+      google: [{ family: "Baumans" }, { family: "Coda" }],
+    },
+  },
 }
 
 module.exports = config
