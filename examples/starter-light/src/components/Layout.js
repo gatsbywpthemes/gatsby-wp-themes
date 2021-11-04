@@ -14,7 +14,7 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
   return (
     <div
       className={clsx(
-        "flex min-h-full flex-col",
+        "flex min-h-screen flex-col",
         `${layoutClass}-${type}`,
         fullWidthClass
       )}
