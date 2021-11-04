@@ -1,14 +1,12 @@
-import React from 'react'
-import { format } from 'date-fns'
-const PostDate = ({ date }) => {
-  const formatDate = date.split(' ').join('T')
+import React from "react"
+import { format } from "date-fns"
+export const Date = ({ date }) => {
+  const formatDate = date.split(" ").join("T")
   return (
-    <>
+    <em>
       <time className="entry-date published updated" dateTime={date}>
-        {format(new Date(formatDate), 'MMMM dd, yyyy')}
+        {format(new Date(formatDate), "MMMM dd, yyyy")}
       </time>
-    </>
+    </em>
   )
 }
-
-export { PostDate as Date }

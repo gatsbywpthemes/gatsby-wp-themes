@@ -5,7 +5,8 @@ import {
   ActiveCommentContext,
   SetActiveCommentContext,
 } from "./context"
-import { CommentsList } from "./index"
+import { CommentsList } from "./CommentsList"
+import { CommentsContainer } from "./CommentsContainer"
 
 const ActiveCommentProvider = ({ children }) => {
   const [activeComment, setActiveComment] = useState(0)
@@ -21,10 +22,12 @@ const ActiveCommentProvider = ({ children }) => {
 export const WordPressComments = ({ post }) => {
   const commentsFromQuery = useCommentsList(post)
   return (
-    <CommentsListContext.Provider value={commentsFromQuery}>
-      <ActiveCommentProvider>
-        <CommentsList />
-      </ActiveCommentProvider>
-    </CommentsListContext.Provider>
+    <CommentsContainer>
+      <CommentsListContext.Provider value={commentsFromQuery}>
+        <ActiveCommentProvider>
+          <CommentsList />
+        </ActiveCommentProvider>
+      </CommentsListContext.Provider>
+    </CommentsContainer>
   )
 }

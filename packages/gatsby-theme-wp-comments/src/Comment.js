@@ -1,13 +1,11 @@
 import React, { useContext, memo } from "react"
-import {
-  Date,
-  CommentForm,
-  CommentContent,
-  CommentAuthor,
-  ReplyButton,
-  CommentNestingInfo,
-} from "./index"
-
+import { Date } from "./Date"
+import { CommentForm } from "./CommentForm"
+import { CommentContent } from "./CommentContent"
+import { CommentAuthor } from "./CommentAuthor"
+import { ReplyButton } from "./ReplyButton"
+import { CommentNestingInfo } from "./CommentNestingInfo"
+import { CommentContainer } from "./CommentContainer"
 import { SetActiveCommentContext } from "./context"
 
 export const Comment = memo(
@@ -15,11 +13,9 @@ export const Comment = memo(
     const { author, date, content, commentId } = comment
     const setActiveComment = useContext(SetActiveCommentContext)
     return (
-      <div className="comment">
+      <CommentContainer>
         <CommentAuthor name={author.node.name} url={author.node.url} />
-        <em>
-          <Date date={date} />
-        </em>
+        <Date date={date} />
         <CommentContent content={content} />
         {withReply ? (
           activeComment === commentId ? (
@@ -30,7 +26,7 @@ export const Comment = memo(
         ) : (
           <CommentNestingInfo />
         )}
-      </div>
+      </CommentContainer>
     )
   },
   (prev, next) =>
