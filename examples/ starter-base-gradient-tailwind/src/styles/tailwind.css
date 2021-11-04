@@ -4,7 +4,7 @@
 
 @layer base {
   #___gatsby {
-    @apply text-text dark:text-dark-text bg-bg dark:bg-dark-bg;
+    @apply text-text dark:text-dark-text bg-bg dark:bg-dark-bg font-body;
   }
   a {
     @apply transition duration-300;
@@ -54,15 +54,7 @@
   }
 }
 
-@layer utilities {
-  .text-upper-spaced {
-    @apply text-xs font-semibold tracking-wider uppercase;
-  }
-}
-
 @layer components {
-  /* Components */
-
   /* Menu */
   .menu-item,
   .menu-item > a {
@@ -105,15 +97,23 @@
   }
   /* Buttons */
   .btn {
-    @apply px-6 py-2 text-xs font-semibold tracking-wider text-white uppercase transition duration-500;
-  }
-  .btn-ghost {
-    @apply text-black transform border-2 border-black shadow-md dark:border-light dark:text-light hover:bg-black dark:hover:bg-light hover:-translate-y-1 hover:shadow-lg hover:text-light dark:hover:text-black;
+    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1;
   }
   .btn-primary {
-    @apply bg-primary hover:bg-secondary;
+    @apply from-primary to-purple;
   }
   .btn-secondary {
-    @apply bg-secondary hover:bg-primary;
+    @apply from-secondary to-teal-300;
+  }
+}
+
+@layer utilities {
+  /* Text effects */
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-upper-spaced {
+    @apply text-xs font-semibold tracking-wider uppercase;
   }
 }

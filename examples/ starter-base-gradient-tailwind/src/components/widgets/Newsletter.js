@@ -46,7 +46,7 @@ export const Newsletter = (props) => {
               <div className="w-1/3">
                 <button
                   type="submit"
-                  className="h-10 btn bg-nlButtonBg dark:bg-dark-nlButtonBg hover:bg-nlButtonHoverBg dark:hover:bg-dark-nlButtonHoverBg"
+                  className="h-10 px-5 transition duration-500 bg-nlButtonBg dark:bg-dark-nlButtonBg hover:bg-nlButtonHoverBg dark:hover:bg-dark-nlButtonHoverBg"
                 >
                   Subscribe
                 </button>
