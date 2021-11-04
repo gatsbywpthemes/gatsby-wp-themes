@@ -11,9 +11,9 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
         <div>
           <h3
             className={clsx(
-              "italic text-base text-text dark:text-teal-900 leading-none capitalize font-semibold",
-              "rounded-md bg-infoBg dark:bg-dark-infoBg",
-              "px-4 py-3 mr-4 mb-3 "
+              " text-sm text-text dark:text-dark-text leading-none capitalize font-semibold font-body italic ",
+              "rounded-full bg-infoBg dark:bg-dark-infoBg",
+              "px-5 py-3 mr-2 mb-3  "
             )}
           >
             {taxonomies.length > 1 ? `${taxName} : ` : `${singularName} : `}

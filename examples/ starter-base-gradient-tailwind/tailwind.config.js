@@ -32,6 +32,7 @@ module.exports = {
         body: "Coda, sans-serif",
         heading: "Baumans, sans-serif",
       },
+
       maxWidth: {
         lg: rem(1024),
         md: rem(768),
@@ -51,6 +52,7 @@ module.exports = {
       boxShadow: {
         input: "currentcolor 0px 0px 0px inset",
         inputFocus: "currentcolor 0px -3px 0px inset",
+        hover: "0px 10px 20px rgba(0,0,0,.45)",
       },
 
       colors: {
@@ -79,7 +81,7 @@ module.exports = {
         searchResultsHeaderBg: ultraDark,
         searchResultsHeaderColor: primary,
         searchResultsBg: light,
-        searchResultsColor:dark0,
+        searchResultsColor: dark0,
         /* menu */
         mobileMenuBg: "black",
         mobileMenuColor: light,

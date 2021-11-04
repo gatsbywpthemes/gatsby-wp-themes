@@ -97,7 +97,7 @@
   }
   /* Buttons */
   .btn {
-    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1;
+    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1 hover:shadow-hover;
   }
   .btn-primary {
     @apply from-primary to-purple;
