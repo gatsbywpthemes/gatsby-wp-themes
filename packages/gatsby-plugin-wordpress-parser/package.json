@@ -18,10 +18,10 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "@babel/runtime": "^7.15.4",
-    "gatsby-plugin-sharp": "^4.0.0",
-    "gatsby-source-filesystem": "^4.0.0",
-    "gatsby-transformer-sharp": "^4.0.0",
+    "@babel/runtime": "^7.16.0",
+    "gatsby-plugin-sharp": "^4.1.0",
+    "gatsby-source-filesystem": "^4.1.0",
+    "gatsby-transformer-sharp": "^4.1.0",
     "html-react-parser": "^1.4.0",
     "normalize-path": "^3.0.0"
   },
