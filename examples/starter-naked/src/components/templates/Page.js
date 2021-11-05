@@ -77,8 +77,7 @@ const Page = ({ page, ctx }) => {
               }}
             >
               <ActivatePageScripts />
-              {/* <ParsedContent content={content} /> */}
-              <div dangerouslySetInnerHTML={{ __html: content }} />
+              <ParsedContent content={content} /> 
             </div>
           </div>
           {hasSidebar && (
