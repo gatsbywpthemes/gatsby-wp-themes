@@ -8,7 +8,7 @@ export const PostEntryInfo = ({ post, className, ...props }) => {
   return (
     <div
       className={clsx(
-        "inline-block",
+        "inline-block post-info",
         "italic text-sm text-text dark:text-teal-900",
         "rounded-md bg-infoBg dark:bg-dark-infoBg",
         "px-4 py-2",

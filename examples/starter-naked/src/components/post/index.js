@@ -35,24 +35,21 @@ export const PostEntry = ({
           }`}
         />
       )}
-      <div
-        className={`${pageTemplate === "full width" ? "center-container" : ""}`}
-      >
-        <div className="p-5 space-y-5 md:p-10">
-          {!skipTitle && <PostEntryTitle post={post} location={location} />}
-          <PostEntryInfo post={post} />
-          <PostEntryContent post={post} location={location} />
-          <div className="entry-footer">
-            <PostEntryMeta post={post} />
-            <div className="flex justify-center">
-              <SocialShare
-                url={normalize(`/${post.uri}`)}
-                title={post.title}
-                media={media}
-              />
-            </div>
-            <PrevNextPostNavigation ctx={ctx} />
+
+      <div className="py-5 space-y-5 content md:py-10">
+        {!skipTitle && <PostEntryTitle post={post} location={location} />}
+        <PostEntryInfo post={post} />
+        <PostEntryContent post={post} location={location} />
+        <div className="entry-footer">
+          <PostEntryMeta post={post} />
+          <div className="flex justify-center">
+            <SocialShare
+              url={normalize(`/${post.uri}`)}
+              title={post.title}
+              media={media}
+            />
           </div>
+          <PrevNextPostNavigation ctx={ctx} />
         </div>
       </div>
     </article>
