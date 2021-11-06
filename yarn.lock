@@ -3587,6 +3587,9 @@
   version "10.36.0"
   resolved "https://registry.yarnpkg.com/@styled-icons/heroicons-solid/-/heroicons-solid-10.36.0.tgz#38c3399d000c8f39eba5da66f3ad47d24f5acc60"
   integrity sha512-cbC0roQSwvrw+ryVx1MfK3NAxh5CyOCzJwFgwZTuXsYpk7IVNNFFSRn1uRGaFDHn3aLLEikMkxxR4q5NM07ZpA==
+  dependencies:
+    "@babel/runtime" "^7.14.6"
+    "@styled-icons/styled-icon" "^10.6.3"
 
 "@styled-icons/icomoon@10.34.0":
   version "10.34.0"
@@ -15358,7 +15361,7 @@ sass-loader@^10.1.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@1.43, sass@1.43.4, sass@^1.43.4:
+sass@1.43.4, sass@^1.43.4:
   version "1.43.4"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.43.4.tgz#68c7d6a1b004bef49af0d9caf750e9b252105d1f"
   integrity sha512-/ptG7KE9lxpGSYiXn7Ar+lKOv37xfWsZRtFYal2QHNigyVQDx685VFT/h7ejVr+R8w7H4tmUgtulsKl5YpveOg==
