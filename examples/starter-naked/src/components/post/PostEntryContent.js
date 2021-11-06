@@ -5,7 +5,7 @@ export const PostEntryContent = ({ post, location, ...props }) => {
   const content = location === "single" ? post.content : post.excerpt
 
   return (
-    <div className="text-base content md:text-lg" {...props}>
+    <div className="text-base md:text-lg" {...props}>
       <ActivatePostScripts />
       {/* <ParsedContent content={content} /> */}
       <div dangerouslySetInnerHTML={{ __html: content }} />
