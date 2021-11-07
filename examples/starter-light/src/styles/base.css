@@ -2,9 +2,7 @@
   #___gatsby {
     @apply text-lg text-text dark:text-dark-text bg-bg dark:bg-dark-bg font-body;
   }
-  body {
-    border: 20px solid red;
-  }
+
   a {
     @apply transition duration-300;
   }
