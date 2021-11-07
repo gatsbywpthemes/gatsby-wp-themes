@@ -29,9 +29,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-use-dark-mode`,
-    `gatsby-plugin-emotion`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -45,6 +43,7 @@ module.exports = {
         ...options,
       },
     },
+    { resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind` },
 
     {
       resolve: `@gatsbywpthemes/gatsby-theme-blog-data-light`,

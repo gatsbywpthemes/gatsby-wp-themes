@@ -1,0 +1,21 @@
+{
+  "name": "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind",
+  "version": "1.0.0",
+  "description": "\"packages for tailwindcss\"",
+  "main": "index.js",
+  "author": "Alexandra Spalato",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.3.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "autoprefixer": "^10.4.0",
+    "clsx": "^1.1.1",
+    "gatsby-plugin-emotion": "^7.1.0",
+    "gatsby-plugin-postcss": "^5.1.0",
+    "postcss": "^8.3.11",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.19",
+    "tailwindcss-debug-screens": "^2.2.0",
+    "twin.macro": "^2.8.1"
+  }
+}
