@@ -1,7 +1,6 @@
 import React from "react"
 import { Layout } from "../Layout"
 import { ActivatePageScripts } from "../../utils"
-import { gutenbergStyles } from "../../styles/gutenbergStyles"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Page = ({ page, ctx }) => {
@@ -36,19 +35,8 @@ const Page = ({ page, ctx }) => {
             dangerouslySetInnerHTML={{ __html: title }}
           />
         )}
-        <div
-          className="entry-content"
-          css={{
-            ...gutenbergStyles,
-            "&:after": {
-              clear: "both",
-              content: "''",
-              display: "block",
-            },
-          }}
-        >
+        <div className="content">
           <ActivatePageScripts />
-          {/* <ParsedContent content={content} /> */}
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
       </article>

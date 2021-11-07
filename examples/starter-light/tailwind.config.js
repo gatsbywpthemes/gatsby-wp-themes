@@ -117,6 +117,8 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require("postcss-import"),
+    require("tailwindcss/nesting"),
     require("@tailwindcss/forms"),
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/aspect-ratio"),
