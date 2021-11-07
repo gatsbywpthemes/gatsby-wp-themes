@@ -4,7 +4,7 @@ export const Description = ({ description, className = "", ...props }) => {
   return (
     <div
       dangerouslySetInnerHTML={{ __html: description }}
-      className={`description  mb-10 italic  text-base xl:w-10/12 ${className}`}
+      className={`description card  mb-10 italic  text-base  p-5 sm:p-10 ${className}`}
       {...props}
     />
   )

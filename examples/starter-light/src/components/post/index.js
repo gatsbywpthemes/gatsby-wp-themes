@@ -39,13 +39,11 @@ export const PostEntry = ({
       )}
       <div
         className={`${
-          pageTemplate === "full width"
-            ? "center-container"
-            : "p-5 sm:pt-5 sm:p-10"
-        } space-y-5`}
+          pageTemplate === "full width" && "p-5 sm:p-10 card max-w-lg mx-auto"
+        } space-y-5 content pb-5 sm:pb-10`}
       >
         {!skipTitle && <PostEntryTitle post={post} location={location} />}
-        <PostEntryInfo post={post} />
+        <PostEntryInfo post={post} className="ml-8" />
         <PostEntryContent post={post} location={location} />
         <div className="!my-10 divider" />
         <div className="entry-footer">

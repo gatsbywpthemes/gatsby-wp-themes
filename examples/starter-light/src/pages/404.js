@@ -10,7 +10,7 @@ const NotFoundPage = () => {
         <h1 className="inline-block px-10 py-6 mb-10 border-8 border-double border-accentColor dark:border-dark-accentColor">
           404
         </h1>
-        <div className="text-sm font-bold tracking-wider uppercase entry-content">
+        <div className="text-sm font-bold tracking-wider uppercase content">
           <p>That page can't be found.</p>
           <p>It looks like nothing was found at this location.</p>
         </div>

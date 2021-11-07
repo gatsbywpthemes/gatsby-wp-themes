@@ -1,13 +1,13 @@
-@import "base.css";
-@tailwind base;
-
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+/* @import "base.css"; */
 
 @layer base {
   #___gatsby {
     @apply text-lg text-text dark:text-dark-text bg-bg dark:bg-dark-bg font-body;
   }
+
   a {
     @apply transition duration-300;
   }
@@ -37,25 +37,6 @@
     @apply px-5 py-12 border-l-4 sm:px-12 border-accentColor max-w-[800px] mx-auto my-10 bg-teal-50 italic dark:bg-blueGray-800;
   }
   /* gutenberg */
-  .wp-block-cover {
-    @apply z-0;
-  }
-  /* Content */
-  .content ul {
-    @apply pl-6 mb-6;
-  }
-  .content ol {
-    @apply pl-6 mb-6;
-  }
-  .content a,
-  .description a {
-    @apply text-black no-underline dark:text-white hover:text-secondary dark:hover:text-primary;
-  }
-
-  .content p {
-    @apply mb-5 text-text dark:text-dark-text;
-  }
-
   .content > * {
     @apply mx-auto;
   }
@@ -134,141 +115,23 @@
   .blocks-gallery-grid {
     @apply max-w-full;
   }
-
-  .wp-block-button__link {
-    @apply margin-bottom: 1em;
+  .wp-block-cover {
+    @apply z-0;
   }
-  .wp-block-button.is-style-squared * {
-    @apply border-radius: 0;
+  /* Content */
+  .content ul {
+    @apply pl-6 mb-6;
   }
-  .wp-block-button.alignright {
-    @apply flex display:;
-    & > * {
-      margin-left: auto;
-    }
+  .content ol {
+    @apply pl-6 mb-6;
   }
-  .wp-block-cover .wp-block-cover__image-background {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-    width: 100% !important;
-    height: 100%;
-    max-width: none;
-    max-height: none;
+  .content a,
+  .description a {
+    @apply text-black no-underline dark:text-white hover:text-secondary dark:hover:text-primary;
   }
 
-  .wp-block-image.alignwide,
-  .wp-block-image.alignfull {
-    .gatsby-image-wrapper {
-      width: 100% !important;
-    }
-  }
-  .wp-block-image.alignwide,
-  .wp-block-image.alignfull {
-    .gatsby-image-wrapper {
-      width: 100% !important;
-    }
-  }
-
-  *[class*="_inner-container"] > *:last-child {
-    margin-bottom: 0;
-  }
-
-  .content:after {
-    clear: both;
-    content: "";
-    display: block;
-  }
-
-  .wp-block-media-text {
-    /* This block's direction should not be manipulated by rtl, as the mediaPosition control does. */
-    direction: ltr;
-    display: grid;
-    grid-template-columns: 50% 1fr;
-    grid-template-rows: auto;
-
-    &.has-media-on-the-right {
-      grid-template-columns: 1fr 50%;
-    }
-  }
-
-  .wp-block-media-text.is-vertically-aligned-top {
-    .wp-block-media-text__content,
-    .wp-block-media-text__media {
-      align-self: start;
-    }
-  }
-  .wp-block-media-text,
-  .wp-block-media-text.is-vertically-aligned-center {
-    .wp-block-media-text__content,
-    .wp-block-media-text__media {
-      align-self: center;
-    }
-  }
-
-  .wp-block-media-text.is-vertically-aligned-bottom {
-    .wp-block-media-text__content,
-    .wp-block-media-text__media {
-      align-self: end;
-    }
-  }
-
-  .wp-block-media-text .wp-block-media-text__media {
-    grid-column: 1;
-    grid-row: 1;
-    margin: 0;
-  }
-
-  .wp-block-media-text .wp-block-media-text__content {
-    direction: ltr;
-    grid-column: 2;
-    grid-row: 1;
-    padding: 0 8% 0 8%;
-    word-break: break-word;
-  }
-
-  .wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .wp-block-media-text__media img,
-  .wp-block-media-text__media video {
-    max-width: unset;
-    width: 100%;
-    vertical-align: middle;
-  }
-
-  .wp-block-media-text.is-image-fill .wp-block-media-text__media {
-    height: 100%;
-    min-height: 250px;
-    background-size: cover;
-  }
-
-  .wp-block-media-text.is-image-fill .wp-block-media-text__media > a {
-    display: block;
-    height: 100%;
-  }
-
-  .wp-block-media-text.is-image-fill .wp-block-media-text__media img {
-    /* The image is visually hidden but accessible to assistive technologies. */
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+  .content p {
+    @apply mb-5 text-text dark:text-dark-text;
   }
 
   /* Pagination */
@@ -312,7 +175,7 @@
   }
   /* Buttons */
   .btn {
-    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1 hover:shadow-2xl;
+    @apply px-4 py-2 text-xs !text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1 hover:shadow-2xl;
   }
   .btn-primary {
     @apply from-primary to-purple;
