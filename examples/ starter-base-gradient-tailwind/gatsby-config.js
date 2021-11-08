@@ -28,10 +28,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-postcss`,
+    `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     `gatsby-plugin-use-dark-mode`,
-    `gatsby-plugin-emotion`,
 
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
