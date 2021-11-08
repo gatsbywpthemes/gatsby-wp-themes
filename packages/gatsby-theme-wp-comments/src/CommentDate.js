@@ -1,6 +1,6 @@
 import React from "react"
 import { format } from "date-fns"
-export const Date = ({ date }) => {
+export const CommentDate = ({ date }) => {
   const formatDate = date.split(" ").join("T")
   return (
     <em>

@@ -1,5 +1,5 @@
 import React, { useContext, memo } from "react"
-import { Date } from "./Date"
+import { CommentDate } from "./CommentDate"
 import { CommentForm } from "./CommentForm"
 import { CommentContent } from "./CommentContent"
 import { CommentAuthor } from "./CommentAuthor"
@@ -15,7 +15,7 @@ export const Comment = memo(
     return (
       <CommentContainer>
         <CommentAuthor name={author.node.name} url={author.node.url} />
-        <Date date={date} />
+        <CommentDate date={date} />
         <CommentContent content={content} />
         {withReply ? (
           activeComment === commentId ? (

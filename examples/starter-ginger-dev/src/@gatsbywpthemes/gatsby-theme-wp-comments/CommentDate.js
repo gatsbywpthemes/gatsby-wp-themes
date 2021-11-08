@@ -1,7 +1,7 @@
 import React from 'react'
 import { format } from 'date-fns'
 import { Box } from '@chakra-ui/layout'
-const PostDate = ({ date }) => {
+export const CommentDate = ({ date }) => {
   const formatDate = date.split(' ').join('T')
   return (
     <Box fontStyle="italic" fontSize="xs">
@@ -11,5 +11,3 @@ const PostDate = ({ date }) => {
     </Box>
   )
 }
-
-export { PostDate as Date }
