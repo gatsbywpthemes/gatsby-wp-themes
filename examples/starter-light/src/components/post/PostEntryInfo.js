@@ -19,7 +19,7 @@ export const PostEntryInfo = ({ post, className, ...props }) => {
       <span>Posted on:</span> <Date date={post.date} /> by{" "}
       <Author
         author={post.author.node}
-        className="font-bold hover:opacity-70"
+        className="font-bold hover:text-primary"
       />
     </div>
   )
