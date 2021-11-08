@@ -2,17 +2,17 @@
   "name": "@gatsbywpthemes/gatsby-theme-base-dev",
   "description": "WordPress basic theme for Gastby using WPGraphQL",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
-    "gatsby": "^3.9.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "gatsby": "^4.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "^1.1.1",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^1.5.0"
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^1.5.1"
   },
   "gitHead": "94c8dd5e197d45c9a3a060075237c00d549ffa5e"
 }

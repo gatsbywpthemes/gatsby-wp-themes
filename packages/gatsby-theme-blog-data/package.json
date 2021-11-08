@@ -2,27 +2,27 @@
   "name": "@gatsbywpthemes/gatsby-theme-blog-data",
   "description": "WordPress core source theme for Gastby using WPGraphQL",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
-    "gatsby": "^3.13.0",
+    "gatsby": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.11",
-    "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "^1.1.1",
-    "gatsby-awesome-pagination": "^0.3.6",
+    "@apollo/client": "^3.4.16",
+    "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "^1.1.2",
+    "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-anchor-links": "^1.2.1",
-    "gatsby-plugin-google-gtag": "^3.13.0",
-    "gatsby-plugin-google-tagmanager": "^3.13.0",
-    "gatsby-plugin-image": "^1.13.0",
-    "gatsby-plugin-sharp": "^3.13.0",
-    "gatsby-plugin-sitemap": "^4.9.0",
-    "gatsby-source-filesystem": "^3.13.0",
-    "gatsby-source-wordpress": "^5.13.0",
-    "gatsby-transformer-sharp": "^3.13.0",
+    "gatsby-plugin-google-gtag": "^4.1.0",
+    "gatsby-plugin-google-tagmanager": "^4.1.0",
+    "gatsby-plugin-image": "^2.1.0",
+    "gatsby-plugin-sharp": "^4.1.0",
+    "gatsby-plugin-sitemap": "^5.1.0",
+    "gatsby-source-filesystem": "^4.1.0",
+    "gatsby-source-wordpress": "^6.1.0",
+    "gatsby-transformer-sharp": "^4.1.0",
     "isomorphic-fetch": "^3.0.0",
     "normalize-path": "^3.0.0",
     "remove-trailing-slash": "^0.1.1"
@@ -33,11 +33,5 @@
     "gatsby-plugin",
     "wordpress",
     "wpgraphql"
-  ],
-  "bit": {
-    "env": {},
-    "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
-  },
-  "gitHead": "94c8dd5e197d45c9a3a060075237c00d549ffa5e"
+  ]
 }

@@ -1,0 +1,26 @@
+{
+  "name": "@gatsbywpthemes/gatsby-theme-blog-data-light",
+  "description": "WordPress core source theme for Gastby using WPGraphQL",
+  "author": "Alexandra Spalato <alexaspalato@gmail.com>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "peerDependencies": {
+    "gatsby": "^4.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "gatsby-awesome-pagination": "^0.3.8",
+    "gatsby-source-wordpress": "^6.1.0",
+    "normalize-path": "^3.0.0",
+    "remove-trailing-slash": "^0.1.1"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-plugin",
+    "wordpress",
+    "wpgraphql"
+  ]
+}

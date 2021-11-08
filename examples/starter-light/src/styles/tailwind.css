@@ -1,0 +1,65 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "base.css";
+@import "wordpress.css";
+
+@layer base {
+  /* Pagination */
+  .prev-next-text {
+    @apply text-sm font-bold tracking-widest uppercase hover:text-secondary dark:hover:text-primary;
+  }
+  .prev-next-anim {
+    @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100;
+  }
+
+  /* Menu */
+  .menu-item,
+  .menu-item > a {
+    @apply transition duration-500 text-headerColor dark:text-dark-headerColor;
+  }
+  .menu-item > a {
+    @apply hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+  }
+
+  .menu-item button {
+    @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+  }
+  .menuV > .menu-item {
+    @apply py-3 border-b border-dashed border-opacity-40 last:border-none;
+  }
+  .menu-item [aria-current="page"] {
+    @apply italic;
+  }
+}
+
+@layer components {
+  /* Components */
+  .center-container {
+    @apply px-5 mx-auto md:px-6 lg:px-10 w-[100%];
+  }
+  .card {
+    @apply shadow-md bg-cardBg dark:bg-dark-cardBg;
+  }
+  .divider {
+    @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;
+  }
+  /* Buttons */
+  .btn {
+    @apply px-4 py-2 text-xs !text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1 hover:shadow-2xl;
+  }
+  .btn-primary {
+    @apply from-primary to-purple;
+  }
+  .btn-secondary {
+    @apply from-secondary to-teal-300;
+  }
+}
+
+@layer utilities {
+  /* Text effects */
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
