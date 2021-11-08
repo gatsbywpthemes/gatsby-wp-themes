@@ -39,7 +39,7 @@ export const PostEntry = ({
       )}
       <div
         className={`${
-          pageTemplate === "full width" && "p-5 sm:p-10 card max-w-lg mx-auto"
+          pageTemplate === "full width" && "p-5 sm:p-10 "
         } space-y-5 content pb-5 sm:pb-10`}
       >
         {!skipTitle && <PostEntryTitle post={post} location={location} />}
