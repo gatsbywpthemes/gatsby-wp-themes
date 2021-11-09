@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { MdClose as CloseIcon } from "react-icons/md"
-import { SearchQueries } from "./index"
+import { SearchQueries } from "./SearchQueries"
 
 export const SearchForm = (props) => {
   const [value, setValue] = useState("")

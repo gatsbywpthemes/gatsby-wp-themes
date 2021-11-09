@@ -1,66 +1,40 @@
 import React from "react"
 import { Link } from "gatsby"
-import {
-  Box,
-  Heading,
-  chakra,
-  Link as ChakraLink,
-  useColorModeValue as colorMode,
-} from "@chakra-ui/react"
-
 const Stats = ({ postType, search }) => (
-  <Box className="stats" fontStyle="italic" fontSize="sm" color="ultraLight">
+  <div className="text-sm italic stats text-ultraLight">
     {postType.length > 0
       ? `${postType.length} results`
       : `no results for ${search}`}
-  </Box>
+  </div>
 )
 
 export const SearchResults = ({ type, posts, search, children, ...props }) => {
   return (
-    <Box {...props}>
-      <chakra.header
-        py={3}
-        bg={colorMode(
-          "searchResultsHeaderBg",
-          "modes.dark.searchResultsHeaderBg"
-        )}
-        color={colorMode(
-          "searchResultsHeaderColor",
-          "modes.dark.searchResultsHeaderColor"
-        )}
-      >
-        <Heading as="h3" fontSize="xl">
-          {type}
-        </Heading>
+    <div {...props}>
+      <header className="py-3 bg-searchResultsHeaderBg dark:bg-dark-searchResultsHeaderBg text-searchResultsHeaderColor dark:text-dark-searchResultsHeaderColor">
+        <h3 className="text-xl">{type}</h3>
         <Stats postType={posts} search={search} />
-      </chakra.header>
-      <Box className="results">
+      </header>
+      <div className="results">
         {posts.map((post) => {
           return (
-            <Box
+            <div
+              className="py-3 border-b border-gray-500 border-dashed last:border-none"
               key={post.slug}
-              py={3}
-              borderBottom="1px dashed"
-              borderColor="gray.500"
-              sx={{ "&:last-of-type": { borderBottom: "none" } }}
             >
-              <chakra.h4>
-                <ChakraLink
-                  as={Link}
-                  _hover={{
-                    color: colorMode("accent", "modes.dark.accent"),
-                  }}
+              <h4>
+                <Link
+                  className="hover:text-accentColor dark:hover:text-dark-accentColor"
                   to={post.uri}
                 >
                   {post.title}
-                </ChakraLink>
-              </chakra.h4>
-            </Box>
+                </Link>
+              </h4>
+            </div>
           )
         })}
-      </Box>
+      </div>
       {children}
-    </Box>
+    </div>
   )
 }
