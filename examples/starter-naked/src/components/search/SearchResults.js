@@ -11,20 +11,20 @@ const Stats = ({ postType, search }) => (
 export const SearchResults = ({ type, posts, search, children, ...props }) => {
   return (
     <div {...props}>
-      <header className="py-3 bg-searchResultsHeaderBg dark:bg-dark-searchResultsHeaderBg text-searchResultsHeaderColor dark:text-dark-searchResultsHeaderColor">
-        <h3 className="text-xl">{type}</h3>
+      <header className="px-5 py-3 bg-searchResultsHeaderBg dark:bg-dark-searchResultsHeaderBg text-searchResultsHeaderColor dark:text-dark-searchResultsHeaderColor">
+        <h3 className="text-xl ">{type}</h3>
         <Stats postType={posts} search={search} />
       </header>
       <div className="results">
         {posts.map((post) => {
           return (
             <div
-              className="py-3 border-b border-gray-500 border-dashed last:border-none"
+              className="px-5 py-3 border-b border-gray-500 border-dashed last:border-none"
               key={post.slug}
             >
               <h4>
                 <Link
-                  className="hover:text-accentColor dark:hover:text-dark-accentColor"
+                  className="text-text dark:text-dark-text hover:text-accentColor dark:hover:text-dark-accentColor"
                   to={post.uri}
                 >
                   {post.title}

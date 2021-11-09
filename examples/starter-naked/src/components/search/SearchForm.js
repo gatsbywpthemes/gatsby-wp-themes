@@ -2,6 +2,7 @@ import React from "react"
 import { useState } from "react"
 import { MdClose as CloseIcon } from "react-icons/md"
 import { SearchQueries } from "./SearchQueries"
+import clsx from "clsx"
 
 export const SearchForm = (props) => {
   const [value, setValue] = useState("")
@@ -26,7 +27,14 @@ export const SearchForm = (props) => {
       <div className="flex">
         <input
           value={value}
-          className="search-box max-w-[80%] text-3xl border-l-[5px] border-accentColor dark:border-dark-accentColor px-5"
+          className={clsx(
+            "search-box",
+            "lg:w-[80%] px-5",
+            "bg-transparent text-text dark:text-dark-text ",
+            "text-3xl",
+            "border-0 border-l-[5px] border-accentColor dark:border-dark-accentColor",
+            "focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-20 focus:border-0 focus:border-l-[5px] focus:placeholder-transparent focus:border-accentColor dark:focus:border-dark-accentColor"
+          )}
           type="search"
           onChange={handleChange}
           onSubmit={handleSubmit}

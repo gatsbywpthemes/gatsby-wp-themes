@@ -13,9 +13,11 @@ export const SearchModal = () => {
       <button
         aria-label="search"
         onClick={() => setOpen(true)}
-        className="mt-1 ml-3 border-l cursor-pointer border-accentColor dark:border-dark-accentColor"
+        className="border-l cursor-pointer border-accentColor dark:border-dark-accentColor"
       >
-        <SearchIcon className={`text-[24px] text-gray-600  dark:text-light`} />
+        <SearchIcon
+          className={`text-[24px] text-gray-600  dark:text-light  ml-3`}
+        />
       </button>
       <Transition show={open} as={Fragment}>
         <Dialog
@@ -61,7 +63,7 @@ export const SearchModal = () => {
                   className={clsx(
                     "relative",
                     "w-screen max-w-full",
-                    "bg-black",
+                    "bg-searchBg dark:bg-dark-searchBg",
                     "px-10 py-5"
                   )}
                 >
@@ -70,7 +72,7 @@ export const SearchModal = () => {
                     aria-label="close menu"
                   >
                     <Close
-                      className={`text-[24px] `}
+                      className={`text-[24px] text-text dark:text-dark-text`}
                       onClick={() => setOpen(false)}
                     />
                   </button>

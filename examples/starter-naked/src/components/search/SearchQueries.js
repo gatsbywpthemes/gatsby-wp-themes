@@ -11,10 +11,9 @@ export const SearchQueries = ({ search, ...props }) => {
         "bg-light dark:bg-dark-bg",
         "overflow-scroll",
         "absolute left-0 top-20 lg:top-[93px]",
-        "w-[100px lg:w-[]600px]",
+        "w-[100px lg:w-[600px]",
         "z-10"
       )}
-      css={{ "h3,h4,.stats": { padding: "0 20px" } }}
       {...props}
     >
       <SearchPostsQuery search={search} />
