@@ -92,6 +92,9 @@ module.exports = {
         archiveTitleBg: blueGray[100],
         archiveTitleColor: text,
         cardBg: "white",
+        /* comments */
+        commentBg: "white",
+        commentsColor: text,
 
         dark: {
           /* basic colors*/
@@ -130,6 +133,9 @@ module.exports = {
           archiveTitleColor: teal[900],
           infoBg: primary,
           cardBg: ultraDark,
+          /* comments */
+          commentBg: ultraDark,
+          commentsColor: light,
         },
       },
     },
