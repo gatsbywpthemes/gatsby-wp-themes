@@ -1,12 +1,18 @@
 import React from "react"
 import { inputFields } from "@gatsbywpthemes/gatsby-theme-wp-comments/src/CommentForm/inputfields"
 import { Error } from "@gatsbywpthemes/gatsby-theme-wp-comments/src/CommentForm/Error"
+import clsx from "clsx"
 
 export const FormFields = ({ register, errors }) => {
   return inputFields.map((el) => {
     const Tag = el.tag
+    const isTextArea = Tag === 'textarea'
     return (
-      <div>
+      <div
+        className={`mb-5 ${
+          isTextArea ? "w-full " : "w-full sm:w-[calc(50%-1rem)]"
+        }`}
+      >
         <label htmlFor={el.name}>
           {el.label}
           <Tag
@@ -18,6 +24,9 @@ export const FormFields = ({ register, errors }) => {
             id={el.name}
             placeholder={el.placeholder}
             aria-required={el.required}
+            className={clsx("border-0 border-b-2 bg-transparent", "w-full", {
+              "h-[200px]": isTextArea,
+            })}
           />
         </label>
         {errors[el.name]?.type === "required" && <Error>Required</Error>}

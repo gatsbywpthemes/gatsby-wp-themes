@@ -5,6 +5,7 @@ import { PostEntry } from "../post"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import clsx from "clsx"
+import { Comments } from "@gatsbywpthemes/gatsby-theme-wp-comments/src"
 
 const Post = ({ post, ctx }) => {
   const { title, uri, headlesswp } = post
@@ -64,6 +65,7 @@ const Post = ({ post, ctx }) => {
           </div>
         )}
       </div>
+      <Comments post={post} />
     </Layout>
   )
 }
