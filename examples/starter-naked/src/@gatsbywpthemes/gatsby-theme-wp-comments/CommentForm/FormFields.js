@@ -6,7 +6,7 @@ import clsx from "clsx"
 export const FormFields = ({ register, errors }) => {
   return inputFields.map((el) => {
     const Tag = el.tag
-    const isTextArea = Tag === 'textarea'
+    const isTextArea = Tag === "textarea"
     return (
       <div
         className={`mb-5 ${
@@ -24,9 +24,14 @@ export const FormFields = ({ register, errors }) => {
             id={el.name}
             placeholder={el.placeholder}
             aria-required={el.required}
-            className={clsx("border-0 border-b-2 bg-transparent", "w-full", {
-              "h-[200px]": isTextArea,
-            })}
+            className={clsx(
+              "border-0 border-b-2 bg-transparent",
+              " focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-20 focus:border-0 focus:border-b-2 focus:border-text dark:focus:border-dark-text",
+              "w-full",
+              {
+                "h-[200px]": isTextArea,
+              }
+            )}
           />
         </label>
         {errors[el.name]?.type === "required" && <Error>Required</Error>}
