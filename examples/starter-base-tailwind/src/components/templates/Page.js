@@ -2,7 +2,6 @@ import React from "react"
 import { Layout } from "../Layout"
 import { Sidebar } from "../Sidebar"
 import { ParsedContent, ActivatePageScripts } from "../../utils"
-import { gutenbergStyles } from "../../styles/gutenbergStyles"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import clsx from "clsx"
@@ -65,20 +64,9 @@ const Page = ({ page, ctx }) => {
                 className="mb-10 text-center uppercase"
               />
             )}
-            <div
-              className={clsx("content")}
-              css={{
-                ...gutenbergStyles,
-                "&:after": {
-                  clear: "both",
-                  content: "''",
-                  display: "block",
-                },
-              }}
-            >
+            <div className={clsx("content")}>
               <ActivatePageScripts />
-              {/* <ParsedContent content={content} /> */}
-              <div dangerouslySetInnerHTML={{ __html: content }} />
+              <ParsedContent content={content} />
             </div>
           </div>
           {hasSidebar && (

@@ -1,5 +1,5 @@
 import React from "react"
-import { ActivatePostScripts } from "../../utils"
+import { ParsedContent, ActivatePostScripts } from "../../utils"
 
 export const PostEntryContent = ({ post, location, ...props }) => {
   const content = location === "single" ? post.content : post.excerpt
@@ -7,10 +7,7 @@ export const PostEntryContent = ({ post, location, ...props }) => {
   return (
     <div {...props}>
       <ActivatePostScripts />
-      <div
-        dangerouslySetInnerHTML={{ __html: content }}
-        className="text-base md:text-lg"
-      />
+      <ParsedContent content={content} />
     </div>
   )
 }
