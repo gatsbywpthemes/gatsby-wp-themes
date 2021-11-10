@@ -56,4 +56,16 @@
   .btn-secondary {
     @apply bg-secondary hover:bg-primary;
   }
+  /* Forms */
+  .styled-input {
+    @apply input-focus;
+    @apply bg-transparent border-0 border-b-2 border-text dark:border-dark-text;
+    @apply focus:border-b-2;
+  }
+}
+
+@layer utilities {
+  .input-focus {
+    @apply focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-25;
+  }
 }
