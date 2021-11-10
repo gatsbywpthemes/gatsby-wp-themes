@@ -1,22 +1,19 @@
 import React from "react"
-import { Box } from "@chakra-ui/react"
+import clsx from "clsx"
 
 export const Label = ({ className, children, ...props }) => {
   return (
-    <Box
-      as="label"
-      textStyle="special"
-      letterSpacing="normal"
-      className={className}
-      sx={{
+    <label
+      className={clsx("", className)}
+      css={{
         ".form-field-checkbox &, .form-field-radio &": {
-          d: "flex",
+          display: "flex",
           alignItems: "center",
         },
       }}
       {...props}
     >
       {children}
-    </Box>
+    </label>
   )
 }

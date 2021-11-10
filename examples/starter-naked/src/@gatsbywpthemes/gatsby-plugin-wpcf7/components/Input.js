@@ -1,27 +1,28 @@
 import React from "react"
-import { Input as ChakraInput } from "baseUiComponents"
-import { chakra } from "@chakra-ui/react"
+import clsx from "clsx"
 
 export const Input = React.forwardRef(({ className, ...props }, ref) => {
-  const inputComponentTypes = ["email", "url", "text", "tel", "date", "number"]
-  if (inputComponentTypes.includes(props.type)) {
-    return <ChakraInput className={className} {...props} ref={ref} />
-  }
+  // const inputComponentTypes = ["email", "url", "text", "tel", "date", "number"]
+  // if (inputComponentTypes.includes(props.type)) {
+  //   return <ChakraInput className={className} {...props} ref={ref} />
+  // }
   return (
-    <chakra.input
-      className={className}
-      fontSize="md"
+    <input
+      className={clsx(
+        "text-md text-red-500 border-4 border-red-400",
+        className
+      )}
       {...props}
-      sx={{
+      css={{
+        border: "green 4px solid",
         '&[type="range"]': {
-          w: "100%",
+          width: "100%",
         },
         '&[type="file"]': {
-          py: 3,
+          padding: "12px 0",
         },
         '&[type="radio"], &[type="checkbox"]': {
-          mr: 1,
-          my: 2,
+          margin: "8px 4px 8px 0",
         },
       }}
       ref={ref}

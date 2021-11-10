@@ -15,7 +15,7 @@ export const Alert = ({ alertMessages, setAlertMessages }) => {
 
   return (
     <div className="p-5 text-center text-red-500 bg-red-200 rounded-lg danger">
-      <p className="sal-disabled">{alertMessages[0]}</p>
+      <p>{alertMessages[0]}</p>
       <ul>
         {alertMessages.slice(1).map((el, index) => (
           <li key={index}>{el}</li>
