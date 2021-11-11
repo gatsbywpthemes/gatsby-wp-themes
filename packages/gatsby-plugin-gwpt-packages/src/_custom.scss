@@ -23,7 +23,10 @@
   max-width: none;
   max-height: none;
 }
-
+.wp-block-image figure:nth-child(n) {
+  display: block;
+  max-width: 100%;
+}
 .wp-block-image.alignwide,
 .wp-block-image.alignfull {
   .gatsby-image-wrapper {
