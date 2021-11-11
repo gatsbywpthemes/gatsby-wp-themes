@@ -3,7 +3,7 @@
   "name": "starter-ginger-dev",
   "description": "WordPress basic theme for Gatsby using WPGraphQL",
   "author": "Paulina Hetman <info@pehaa.com>",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
@@ -12,7 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "^1.1.1",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^1.5.1",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^1.5.2",
     "gatsby": "^3.9.1",
     "gatsby-plugin-smoothscroll": "^1.2.0",
     "prismjs": "^1.22.0",
