@@ -36,11 +36,11 @@ export const PostEntry = ({
         />
       )}
 
-      <div className="py-5 space-y-5 content md:py-10">
+      <div className="py-5 space-y-5 md:py-10">
         {!skipTitle && <PostEntryTitle post={post} location={location} />}
         <PostEntryInfo post={post} />
-        <PostEntryContent post={post} location={location} />
-        <div className="entry-footer">
+        <PostEntryContent className="content" post={post} location={location} />
+        <div className="entry-footer mx-6 sm:mx-8">
           <PostEntryMeta post={post} />
           <div className="flex justify-center">
             <SocialShare
