@@ -37,7 +37,7 @@ const Page = ({ page, ctx }) => {
       />
       <article>
         <div
-          className={`mainContainer ${
+          className={`mainContainer mx-auto ${
             hasSidebar
               ? `max-w-xl lg:grid xl:grid-cols-3 grid-cols-10 gap-8`
               : pageTemplate.includes("full")
@@ -66,7 +66,7 @@ const Page = ({ page, ctx }) => {
             )}
             <div className={clsx("content")}>
               <ActivatePageScripts />
-              <ParsedContent content={content} /> 
+              <ParsedContent content={content} />
             </div>
           </div>
           {hasSidebar && (

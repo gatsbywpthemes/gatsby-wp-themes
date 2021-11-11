@@ -18,7 +18,7 @@ export const ArchiveContent = ({ posts, ctx, name, description }) => {
   const archiveWidth = layoutWidth.archive
   return (
     <div
-      className={`mainContainer  ${
+      className={`mainContainer mx-auto ${
         hasSidebar
           ? `max-w-xl`
           : `${
