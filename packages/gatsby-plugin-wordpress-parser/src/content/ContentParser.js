@@ -11,6 +11,9 @@ export default function ContentParser({ content, customFn = [] }) {
   if (typeof content !== "string") {
     return content
   }
+  if(content === ''){
+    return []
+  }
 
   customFn = Array.isArray(customFn) ? customFn : []
 
