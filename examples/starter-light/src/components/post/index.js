@@ -40,23 +40,21 @@ export const PostEntry = ({
       <div
         className={`${
           pageTemplate === "full width" ? "p-5 sm:p-10 " : ""
-        } space-y-5 pb-5 sm:pb-10`}
+        } content space-y-5 pb-5 sm:pb-10 ${!post.featuredImage && "pt-10"}`}
       >
         {!skipTitle && <PostEntryTitle post={post} location={location} />}
         <PostEntryInfo post={post} />
-        <PostEntryContent className="content" post={post} location={location} />
+        <PostEntryContent post={post} location={location} />
         <div className="!my-10 divider" />
-        <div className="entry-footer mx-6 sm:mx-8">
-          <PostEntryMeta post={post} />
-          <div className="flex justify-center">
-            <SocialShare
-              url={normalize(`/${post.uri}`)}
-              title={post.title}
-              media={media}
-            />
-          </div>
-          <PrevNextPostNavigation ctx={ctx} />
+        <PostEntryMeta post={post} />
+        <div className="flex justify-center">
+          <SocialShare
+            url={normalize(`/${post.uri}`)}
+            title={post.title}
+            media={media}
+          />
         </div>
+        <PrevNextPostNavigation ctx={ctx} />
       </div>
     </article>
   )

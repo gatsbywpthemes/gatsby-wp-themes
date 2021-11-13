@@ -14,7 +14,7 @@ export const PostEntryTitle = ({
       {location === "single" ? (
         <h1
           dangerouslySetInnerHTML={{ __html: title }}
-          className={`mx-6 sm:mx-8 uppercase ${className}`}
+          className={` uppercase ${className}`}
           {...props}
         />
       ) : (

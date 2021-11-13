@@ -10,7 +10,7 @@ export const PostEntryTitle = ({ post, location, ...props }) => {
         <h1
           dangerouslySetInnerHTML={{ __html: title }}
           {...props}
-          className="uppercase mx-6 sm:mx-8"
+          className="uppercase"
         />
       ) : (
         <h2 {...props}>

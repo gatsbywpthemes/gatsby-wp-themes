@@ -17,7 +17,7 @@ export const PostEntryMedia = ({
   location,
   ...props
 }) => {
-  const img = post.featuredImage.node?.localFile
+  const img = post.featuredImage?.node?.localFile
 
   return (
     <>
