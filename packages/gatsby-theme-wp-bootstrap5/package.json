@@ -22,6 +22,6 @@
   },
   "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4",
   "devDependencies": {
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.21"
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26"
   }
 }

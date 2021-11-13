@@ -17,7 +17,7 @@
     "gatsby-plugin-smoothscroll": "^1.2.0"
   },
   "devDependencies": {
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25"
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26"
   },
   "gitHead": "94c8dd5e197d45c9a3a060075237c00d549ffa5e"
 }
