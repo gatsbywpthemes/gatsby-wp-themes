@@ -27,6 +27,9 @@ export const SearchForm = (props) => {
       <div className="flex">
         <input
           value={value}
+          css={{
+            "::-webkit-search-cancel-button": { WebkitAppearance: "none" },
+          }}
           className={clsx(
             "search-box",
             "lg:w-[80%] px-5",
