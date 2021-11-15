@@ -1,5 +1,5 @@
 [data-parsed-gallery] {
-  display: grid;
+  display: grid !important;
   gap: 1rem;
   margin-bottom: 1.5rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -76,4 +76,13 @@
 .lightbox-outer-wrapper-full,
 .lightbox-outer-wrapper > div {
   max-width: 100% !important;
+}
+
+[data-parsed-gallery] .gatsby-image-wrapper {
+  position: absolute;
+  top: 0;
+}
+
+[data-parsed-gallery].is-cropped .gatsby-image-wrapper {
+  bottom: 0;
 }
