@@ -70,6 +70,9 @@
 [class^="wp-block"] .gatsby-image-wrapper {
   @apply rounded-none shadow-none;
 }
+.wp-block-gallery.is-cropped .gatsby-image-wrapper {
+  @apply h-[100%];
+}
 .blocks-gallery-grid {
   @apply max-w-full;
 }
