@@ -28,10 +28,10 @@ module.exports = {
         },
       },
       maxWidth: {
+        xl: rem(1280),
         lg: rem(1024),
         md: rem(768),
         sm: rem(640),
-        xl: rem(1280),
       },
       fontWeight: {
         body: 400,

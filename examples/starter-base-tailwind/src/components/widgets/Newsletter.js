@@ -26,8 +26,6 @@ export const Newsletter = (props) => {
         <>
           <WidgetTitle title="Newsletter" />
           <form
-            maxWidth="400px"
-            mx="auto"
             className=" max-w-[90%] sm:max-w-[400px] lg:mx-auto"
             onSubmit={handleSubmit}
           >
