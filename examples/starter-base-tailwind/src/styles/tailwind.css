@@ -52,7 +52,7 @@
   }
   .content a,
   .description a {
-    @apply text-black no-underline dark:text-white hover:text-secondary dark:hover:text-primary;
+    @apply text-black no-underline dark:text-white hover:text-primary;
   }
 }
 
@@ -95,7 +95,7 @@
   }
   /* Pagination */
   .prev-next-text {
-    @apply text-upper-spaced hover:text-primary;
+    @apply text-upper-spaced hover:!text-primary;
   }
   .prev-next-anim {
     @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100 group-hover:bg-primary;
@@ -118,7 +118,7 @@
     @apply px-6 py-2 text-xs font-semibold tracking-wider text-white uppercase transition duration-500;
   }
   .btn-ghost {
-    @apply text-black transform border-2 border-black shadow-md dark:border-light dark:text-light hover:bg-black dark:hover:bg-light hover:-translate-y-1 hover:shadow-lg hover:text-light dark:hover:text-black;
+    @apply text-black transform border-2 border-black shadow-md dark:border-light dark:text-light hover:bg-black dark:hover:bg-light hover:-translate-y-1 hover:shadow-lg hover:!text-light dark:hover:!text-black;
   }
   .btn-primary {
     @apply bg-primary hover:bg-secondary;
