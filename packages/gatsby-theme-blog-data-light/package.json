@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "gatsby-awesome-pagination": "^0.3.8",
-    "gatsby-source-wordpress": "^6.1.3",
+    "gatsby-source-wordpress": "@6.3.0-alpha-wordpress-image-hydration.5+633909e707",
     "normalize-path": "^3.0.0",
     "remove-trailing-slash": "^0.1.1"
   },
