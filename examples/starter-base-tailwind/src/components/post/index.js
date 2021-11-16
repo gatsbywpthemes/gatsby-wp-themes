@@ -40,15 +40,15 @@ export const PostEntry = ({
           pageTemplate === "full width" ? "center-container" : ""
         } content`}
       >
-        <div
-          className={`${
-            pageTemplate === "full width" ? "p-5 sm:p-10 " : ""
-          } space-y-5 pb-5 sm:pb-10 ${!post.featuredImage && "pt-10"}`}
-        >
+        <div className={` space-y-5 p-5 sm:p-10`}>
           {!skipTitle && (
-            <PostEntryTitle post={post} location={location} className="mb-5" />
+            <PostEntryTitle
+              post={post}
+              location={location}
+              className="mb-5 text-2xl uppercase"
+            />
           )}
-          <PostEntryInfo post={post} className="mb-10" />
+          <PostEntryInfo post={post} className="mb-3" />
           <PostEntryContent post={post} location={location} />
           <div className="my-12 divider" />
 

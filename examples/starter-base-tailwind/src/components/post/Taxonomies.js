@@ -7,11 +7,11 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
 
   return (
     taxonomies.length > 0 && (
-      <div className="flex items-center flex-wrap mb-3" {...props}>
+      <div className="flex flex-wrap items-center mb-3" {...props}>
         <div>
           <h3
             className={clsx(
-              "italic text-base text-text dark:text-teal-900 leading-none capitalize font-semibold",
+              "italic text-base text-text dark:text-teal-900 leading-none capitalize font-normal",
               "rounded-md bg-infoBg dark:bg-dark-infoBg",
               "px-4 py-3 mr-4 mb-3 "
             )}

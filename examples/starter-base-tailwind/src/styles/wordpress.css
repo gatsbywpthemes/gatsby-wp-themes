@@ -5,7 +5,7 @@
 
 .content
   > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.content) {
-  @apply max-w-4xl w-[calc(100%-3rem)]  sm:w-[calc(100%-4rem)];
+  @apply max-w-4xl;
 }
 [class*="__inner-container"] > [style*="width: 100vw"],
 [class*="__inner-container"] > [style*="width:100vw"] {
@@ -89,5 +89,5 @@
 }
 
 .content p {
-  @apply mb-5 text-text dark:text-dark-text;
+  @apply !w-full mb-5 text-text dark:text-dark-text;
 }

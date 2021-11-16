@@ -89,6 +89,7 @@ module.exports = {
         nlColor: text,
         /* post */
         infoBg: light,
+        infoColor: teal[900],
         archiveTitleBg: blueGray[100],
         archiveTitleColor: text,
         cardBg: "white",
@@ -116,8 +117,8 @@ module.exports = {
           mobileMenuBg: "black",
           mobileMenuColor: light,
           subMenuBg: primary,
-          subMenuColor: "white",
-          subMenuHoverColor: colors.teal[900],
+          subMenuColor: teal[900],
+          subMenuHoverColor: colors.teal[800],
           menuHoverColor: teal[100],
           /* newsletter */
           nlButtonBg: primary,

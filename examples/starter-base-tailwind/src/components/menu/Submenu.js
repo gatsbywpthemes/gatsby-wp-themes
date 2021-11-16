@@ -52,7 +52,7 @@ const SubmenuH = ({ menuItem }) => {
             `rounded-lg`,
             `px-5 py-3 w-56`,
             `z-50`,
-            `text-subMenuColor dark:text-dark-subMenuColor`,
+            `text-subMenuColor dark:text-dark-subMenuColor 0`,
             `bg-subMenuBg dark:bg-dark-subMenuBg`
           )}
         >
@@ -63,7 +63,7 @@ const SubmenuH = ({ menuItem }) => {
                 {({ active }) => (
                   <MenuLink
                     menuItem={item}
-                    className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor py-2 block`}
+                    className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor dark:hover:opacity-80 py-2 block`}
                   />
                 )}
               </Menu.Item>
