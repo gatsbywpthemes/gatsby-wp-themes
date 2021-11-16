@@ -118,14 +118,14 @@ module.exports = {
           mobileMenuColor: light,
           subMenuBg: primary,
           subMenuColor: teal[900],
-          subMenuHoverColor: colors.teal[800],
+          subMenuHoverColor: teal[800],
           menuHoverColor: teal[100],
           /* newsletter */
           nlButtonBg: primary,
           nlButtonColor: teal[900],
-          nlButtonHoverBg: secondary,
+          nlButtonHoverBg: teal[300],
           nlInputBg: blueGray[700],
-          nlColor: teal[900],
+          nlColor: light,
           /* post*/
           archiveTitleBg: primary,
           archiveTitleColor: teal[900],
