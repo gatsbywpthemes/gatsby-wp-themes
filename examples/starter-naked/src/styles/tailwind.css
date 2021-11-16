@@ -68,4 +68,12 @@
   .input-focus {
     @apply focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-25;
   }
+  input[type="search"]:-webkit-autofill {
+    box-shadow: theme("colors.searchBg") 0px 0px 0px 1000px inset;
+    -webkit-text-fill-color: theme("colors.text");
+  }
+  .dark input[type="search"]:-webkit-autofill {
+    box-shadow: theme("colors.dark.searchBg") 0px 0px 0px 1000px inset;
+    -webkit-text-fill-color: theme("colors.dark.text");
+  }
 }
