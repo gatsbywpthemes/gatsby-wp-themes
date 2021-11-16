@@ -60,6 +60,14 @@
   .text-upper-spaced {
     @apply text-xs font-semibold tracking-wider uppercase;
   }
+  input[type="search"]:-webkit-autofill {
+    box-shadow: theme("colors.searchBg") 0px 0px 0px 1000px inset;
+    -webkit-text-fill-color: theme("colors.text");
+  }
+  .dark input[type="search"]:-webkit-autofill {
+    box-shadow: theme("colors.dark.searchBg") 0px 0px 0px 1000px inset;
+    -webkit-text-fill-color: theme("colors.dark.text");
+  }
 }
 
 @layer components {

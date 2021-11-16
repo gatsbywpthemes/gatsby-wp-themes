@@ -50,6 +50,7 @@ export const SearchForm = (props) => {
         {value.length > 0 && (
           <button
             aria-label="Reset Search"
+            className="text-text dark:text-dark-text"
             onClick={() => {
               setValue("")
               setSearch("")
