@@ -83,7 +83,7 @@
   /* Forms */
   .styled-input {
     @apply input-focus;
-    @apply bg-transparent border-0 border-b-2 border-text dark:border-dark-text;
-    @apply focus:border-b-2;
+    @apply bg-transparent border-0 border-b-[1px] border-text dark:border-dark-text transition duration-500;
+    @apply dark:focus:border-dark-text focus:border-b-2 focus:border-text;
   }
 }
