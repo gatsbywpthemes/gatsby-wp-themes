@@ -4,6 +4,7 @@ import { Sidebar } from "../Sidebar"
 import { PostEntry } from "../post"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { Comments } from "@gatsbywpthemes/gatsby-theme-wp-comments/src"
 import clsx from "clsx"
 
 const Post = ({ post, ctx }) => {
@@ -64,6 +65,7 @@ const Post = ({ post, ctx }) => {
           </div>
         )}
       </div>
+      <Comments post={post} />
     </Layout>
   )
 }

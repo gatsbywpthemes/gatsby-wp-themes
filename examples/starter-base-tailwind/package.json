@@ -16,6 +16,7 @@
   "dependencies": {
     "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^1.4.1",
     "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.0.0",
+    "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.0",
     "@headlessui/react": "^1.4.1",
     "@kunukn/react-collapse": "^2.2.9",
     "gatsby": "^4.1.4",
