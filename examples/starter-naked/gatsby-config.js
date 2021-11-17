@@ -28,10 +28,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-use-dark-mode`,
     `@gatsbywpthemes/gatsby-theme-wp-comments`,
-    { resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind` },
+    `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
 
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
