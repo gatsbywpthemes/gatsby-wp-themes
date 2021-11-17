@@ -46,7 +46,7 @@ export const PostEntry = ({
               className="mb-5 text-2xl uppercase"
             />
           )}
-          <PostEntryInfo post={post} className="mb-10 " />
+          <PostEntryInfo post={post} className="mb-3" />
           <PostEntryContent post={post} location={location} />
           <div className="my-12 divider" />
 
