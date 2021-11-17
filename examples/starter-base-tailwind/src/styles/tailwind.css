@@ -9,7 +9,7 @@
 
 @layer utilities {
   .text-upper-spaced {
-    @apply text-xs font-semibold tracking-wider uppercase;
+    @apply text-xs tracking-widest uppercase;
   }
   .input-focus {
     @apply focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-25;

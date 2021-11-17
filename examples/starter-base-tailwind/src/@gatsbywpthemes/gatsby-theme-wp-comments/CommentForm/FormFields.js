@@ -13,7 +13,7 @@ export const FormFields = ({ register, errors }) => {
           isTextArea ? "w-full " : "w-full sm:w-[calc(50%-1rem)]"
         }`}
       >
-        <label htmlFor={el.name}>
+        <label htmlFor={el.name} className="text-upper-spaced !text-base !font-normal  ">
           {el.label}
           <Tag
             {...register(el.name, {

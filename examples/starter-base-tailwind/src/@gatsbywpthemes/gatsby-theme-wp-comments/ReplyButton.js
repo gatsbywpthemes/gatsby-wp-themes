@@ -4,7 +4,10 @@ import clsx from "clsx"
 export const ReplyButton = (props) => {
   return (
     <button
-      className="flex flex-col ml-auto text-xl text-center text-current transition duration-500 comment-button-reply text-upper-spaced group hover:text-primary"
+      className={clsx(
+        "flex flex-col ml-auto  text-center text-current transition duration-500 comment-button-reply text-upper-spaced group hover:text-primary",
+        "!text-base"
+      )}
       {...props}
     >
       <span>Reply</span>
