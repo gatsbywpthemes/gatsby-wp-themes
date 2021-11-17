@@ -47,7 +47,7 @@
 }
 /* gut Wide */
 .alignwide {
-  @apply max-w-6xl relative w-[calx(100%-4rem)];
+  @apply max-w-6xl relative w-[calc(100%-4rem)];
 }
 [class*="__inner-container"] > .alignwide {
   @apply w-full;
