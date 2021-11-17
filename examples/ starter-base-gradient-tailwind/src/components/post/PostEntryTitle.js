@@ -18,7 +18,7 @@ export const PostEntryTitle = ({
           {...props}
         />
       ) : (
-        <h2 className={`uppercase ${className}`} {...props}>
+        <h2 className={`${className}`} {...props}>
           <Link
             to={`${uri}`}
             dangerouslySetInnerHTML={{ __html: title }}

@@ -11,7 +11,7 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
         <div>
           <h3
             className={clsx(
-              " text-sm text-text dark:text-dark-text leading-none capitalize font-semibold font-body italic ",
+              " text-sm text-text dark:text-dark-text leading-none capitalize font-normal font-body italic ",
               "rounded-full bg-infoBg dark:bg-dark-infoBg",
               "px-5 py-3 mr-2 mb-3  "
             )}

@@ -36,11 +36,7 @@ export const PostEntry = ({
         />
       )}
 
-      <div
-        className={`${
-          pageTemplate === "full width" ? "p-5 sm:p-10 " : ""
-        } content space-y-5 pb-5 sm:pb-10 ${!post.featuredImage && "pt-10"}`}
-      >
+      <div className={` space-y-5 p-5 sm:p-10`}>
         {!skipTitle && <PostEntryTitle post={post} location={location} />}
         <PostEntryInfo post={post} />
         <PostEntryContent post={post} location={location} />

@@ -18,6 +18,7 @@ export const PostEntryMedia = ({
   ...props
 }) => {
   const img = post.featuredImage?.node?.localFile
+  const { pageTemplate } = post.headlesswp
 
   return (
     <>
@@ -26,7 +27,9 @@ export const PostEntryMedia = ({
           <Image
             img={img}
             loading={imageLoading}
-            imgClassName="rounded-t-lg"
+            imgClassName={` ${
+              pageTemplate !== "full width" ? "rounded-t-lg" : ""
+            }`}
             {...props}
           />
         </WithLink>

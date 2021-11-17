@@ -85,9 +85,9 @@
 }
 .content a,
 .description a {
-  @apply text-black no-underline dark:text-white hover:text-secondary dark:hover:text-primary;
+  @apply text-black no-underline dark:text-white hover:text-primary;
 }
 
 .content p {
-  @apply !w-full mb-5 text-text dark:text-dark-text;
+  @apply mb-5 text-text dark:text-dark-text;
 }

@@ -63,7 +63,7 @@ const SubmenuH = ({ menuItem }) => {
                 {({ active }) => (
                   <MenuLink
                     menuItem={item}
-                    className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor py-2 block`}
+                    className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor dark:hover:opacity-80 py-2 block`}
                   />
                 )}
               </Menu.Item>

@@ -60,13 +60,13 @@ export const RecentPosts = (props) => {
                   </Link>{" "}
                   <div>
                     <time
-                      className="text-upper-spaced block"
+                      className="block text-upper-spaced"
                       dateTime={post.date}
                     >
                       {format(new Date(post.date), "MMMM dd, yyyy")}
                     </time>{" "}
                     <Link
-                      className="widget-post-title font-bold hover:text-primary"
+                      className="text-base font-bold widget-post-title hover:text-primary"
                       to={uri}
                     >
                       {post.title}

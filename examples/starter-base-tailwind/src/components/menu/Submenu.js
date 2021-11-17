@@ -52,7 +52,7 @@ const SubmenuH = ({ menuItem }) => {
             `rounded-lg`,
             `px-5 py-3 w-56`,
             `z-50`,
-            `text-subMenuColor dark:text-dark-subMenuColor 0`,
+            `text-subMenuColor dark:text-dark-subMenuColor`,
             `bg-subMenuBg dark:bg-dark-subMenuBg`
           )}
         >
