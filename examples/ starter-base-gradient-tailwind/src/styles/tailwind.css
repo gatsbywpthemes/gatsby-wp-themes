@@ -58,6 +58,12 @@
   .btn-secondary {
     @apply from-secondary to-teal-300;
   }
+  /* Forms */
+  .styled-input {
+    @apply input-focus;
+    @apply bg-transparent border-0 border-b-2 border-text dark:border-dark-text;
+    @apply focus:border-b-2;
+  }
 }
 
 @layer utilities {
@@ -68,6 +74,10 @@
   }
   .text-upper-spaced {
     @apply text-xs font-semibold tracking-wider uppercase;
+  }
+  /* Inputs */
+  .input-focus {
+    @apply focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-25;
   }
   input[type="search"]:-webkit-autofill {
     box-shadow: theme("colors.searchBg") 0px 0px 0px 1000px inset;
