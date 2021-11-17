@@ -3,7 +3,7 @@ import React from "react"
 export const CommentAuthor = ({ name, url }) => {
   return url ? (
     <a
-      className="comment-author"
+      className="text-xs font-light comment-author text-upper-spaced"
       href={url}
       target="_blank"
       rel="noopener noreferrer"
@@ -11,6 +11,8 @@ export const CommentAuthor = ({ name, url }) => {
       {name}
     </a>
   ) : (
-    <span>{name}</span>
+    <span className="text-xs font-light comment-author text-upper-spaced">
+      {name}
+    </span>
   )
 }
