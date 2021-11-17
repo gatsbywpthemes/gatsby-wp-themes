@@ -55,12 +55,12 @@ const Post = ({ post, ctx }) => {
           location="single"
           post={post}
           ctx={ctx}
-          className={clsx("xl:col-span-2 col-span-7", {
+          className={clsx("xl:col-span-2 col-span-6", "space-y-10", {
             "order-2": pageTemplate.includes("left"),
           })}
         />
         {hasSidebar && (
-          <div className={clsx("xl:col-span-1 col-span-3")}>
+          <div className={clsx("xl:col-span-1 col-span-4 mt-10 lg:mt-0")}>
             <Sidebar widgets={sidebarWidgets} />
           </div>
         )}
