@@ -8,7 +8,7 @@ import clsx from "clsx"
 
 export const Header = ({ ...props }) => {
   return (
-    <Headroom>
+    <Headroom style={{ zIndex: 100 }}>
       <header
         className={clsx(
           "py-5 shadow-md relative",
