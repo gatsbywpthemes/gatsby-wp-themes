@@ -51,8 +51,8 @@ const SubmenuH = ({ menuItem }) => {
           )}
         >
           {menuItem.children.map((item) => (
-            <div className="py-1">
-              <Menu.Item key={item.id}>
+            <div className="py-1" key={item.id}>
+              <Menu.Item>
                 {({ active }) => (
                   <MenuLink
                     menuItem={item}
