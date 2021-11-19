@@ -81,9 +81,11 @@
 }
 /* Content */
 .content ul {
+  list-style: revert;
   @apply pl-6 mb-6;
 }
 .content ol {
+  list-style: revert;
   @apply pl-6 mb-6;
 }
 .content a,
@@ -93,4 +95,8 @@
 
 .content p {
   @apply mb-5 text-text dark:text-dark-text;
+}
+
+.wp-block-gallery .blocks-gallery-grid {
+  @apply pl-0;
 }
