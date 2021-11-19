@@ -19,30 +19,22 @@ export const PostEntry = ({
     ? post.featuredImage.node.localFile.childImageSharp.original.src
     : null
 
-  const { pageTemplate, skipTitle } = post.headlesswp
   return (
-    <article
-      className={`${pageTemplate === "full width" ? "" : "card"}`}
-      {...props}
-    >
+    <article className="card" {...props}>
       {post.featuredImage && (
         <PostEntryMedia
           imageLoading="eager"
           post={post}
           location="single"
-          className={`mb-10 ${
-            pageTemplate === "full width"
-              ? "aspect-w-3 aspect-h-1"
-              : "aspect-w-16 aspect-h-9"
-          }`}
+          className="mb-10  aspect-w-16 aspect-h-9"
         />
       )}
       <div
-        className={`${
-          pageTemplate === "full width" ? "p-5 sm:p-10 " : ""
-        } content space-y-5 pb-5 sm:pb-10 ${!post.featuredImage && "pt-10"}`}
+        className={`content space-y-5 pb-5 sm:pb-10 ${
+          !post.featuredImage && "pt-10"
+        }`}
       >
-        {!skipTitle && <PostEntryTitle post={post} location={location} />}
+        <PostEntryTitle post={post} location={location} />
         <PostEntryInfo post={post} />
         <PostEntryContent post={post} location={location} />
         <div className="!my-10 divider" />
