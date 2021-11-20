@@ -1,6 +1,6 @@
 {
   "name": "@gatsbywpthemes/gatsby-theme-base-dev",
-  "description": "WordPress basic theme for Gastby using WPGraphQL",
+  "description": "WordPress basic theme for Gatsby using WPGraphQL",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
   "version": "1.2.1",
   "main": "index.js",

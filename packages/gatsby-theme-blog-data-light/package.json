@@ -1,6 +1,6 @@
 {
   "name": "@gatsbywpthemes/gatsby-theme-blog-data-light",
-  "description": "WordPress core source theme for Gastby using WPGraphQL",
+  "description": "WordPress core source theme for Gatsby using WPGraphQL",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
   "version": "1.0.0",
   "main": "index.js",
