@@ -1,4 +1,4 @@
-const DEFAULT_OPTIONS = require("@gatsbywpthemes/gatsby-theme-blog-data/utils/defaultOptions")
+const DEFAULT_OPTIONS = require("@gatsbywpthemes/gatsby-theme-blog-data-light/utils/defaultOptions")
 const fs = require("fs")
 require("dotenv").config({
   path:
