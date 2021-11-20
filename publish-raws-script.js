@@ -14,7 +14,7 @@ const publishedPackages = [
     srcPath: "examples/starter-base-dev",
     packagePath: "base-theme-starters/starter-base-dev",
   },
-  {
+  /*   {
     name: "starter-base-tailwind",
     srcPath: "examples/starter-base-tailwind",
     packagePath: "base-theme-starters/starter-base-tailwind",
@@ -23,7 +23,7 @@ const publishedPackages = [
     name: "starter-base-gradient-tailwind",
     srcPath: "examples/starter-base-gradient-tailwind",
     packagePath: "base-theme-starters/starter-base-gradient-tailwind",
-  },
+  }, */
   {
     name: "starter-light",
     srcPath: "examples/starter-light",
