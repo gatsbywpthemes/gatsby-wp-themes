@@ -74,4 +74,12 @@ export const galleryStyles = {
   ".lightbox-outer-wrapper-full, .lightbox-outer-wrapper > div": {
     maxWidth: "100% !important",
   },
+  "[data-parsed-gallery] .gatsby-image-wrapper": {
+    position: "absolute",
+    top: 0,
+  },
+
+  "[data-parsed-gallery].is-cropped .gatsby-image-wrapper": {
+    bottom: 0,
+  },
 }

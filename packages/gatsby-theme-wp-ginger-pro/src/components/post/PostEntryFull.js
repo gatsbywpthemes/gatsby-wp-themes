@@ -6,9 +6,9 @@ import {
   PrevNextPostNavigation,
   Tags,
   ScrollToContentButton,
-  Comments,
   Image,
 } from 'gingerThemeComponents'
+import { Comments } from '@gatsbywpthemes/gatsby-theme-wp-comments/src'
 import { gutenbergStyles } from 'gingerThemeStyles'
 import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
 

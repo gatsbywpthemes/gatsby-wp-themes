@@ -1,0 +1,98 @@
+[data-parsed-gallery] {
+  display: grid !important;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-3 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+[data-parsed-gallery] > *:last-of-type:nth-of-type(2n + 1) {
+  grid-column: span 2;
+}
+@media (min-width: 37.5em) {
+  [data-parsed-gallery] > *:last-of-type:nth-of-type(2n + 1) {
+    grid-column: span 1;
+  }
+}
+
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-3 > *:last-of-type:nth-of-type(2n + 1) {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-2 > *:last-of-type:nth-of-type(2n + 1),
+  [data-parsed-gallery].columns-3 > *,
+  [data-parsed-gallery].columns-4 > *:nth-last-of-type(2):nth-of-type(4n + 1),
+  [data-parsed-gallery].columns-4 > *:last-of-type:nth-of-type(4n + 2) {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-3
+    > *:last-of-type:nth-of-type(3n + 1):nth-of-type(2n) {
+    grid-column: span 6;
+  }
+}
+
+[data-parsed-gallery].columns-3
+  > *:last-of-type:nth-of-type(3n + 1):nth-of-type(2n + 1) {
+  grid-column: span 2;
+}
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-3
+    > *:last-of-type:nth-of-type(3n + 1):nth-of-type(2n + 1) {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 37.5em) {
+  [data-parsed-gallery].columns-3 > *:nth-last-of-type(2):nth-of-type(3n + 1),
+  [data-parsed-gallery].columns-3 > *:last-of-type:nth-of-type(3n + 2) {
+    grid-column: span 3;
+  }
+}
+
+[data-parsed-gallery]:not(.is-cropped) a img {
+  height: auto !important;
+}
+
+.lightbox-outer-wrapper-full,
+.lightbox-outer-wrapper > div {
+  max-width: 100% !important;
+}
+
+[data-parsed-gallery] .gatsby-image-wrapper {
+  position: absolute;
+  top: 0;
+}
+
+[data-parsed-gallery].is-cropped .gatsby-image-wrapper {
+  bottom: 0;
+}

@@ -7,17 +7,8 @@ module.exports = (options) => {
     ...defaultOptions,
     ...options,
   }
-  const {
-    wordPressUrl,
-    gaTrackingId,
-    gaOptions,
-    googleTagManagerId,
-    googleTagManagerOptions,
-    addSiteMap,
-    siteMapOptions,
-    developLimit,
-    gatsbySourceWordPressOptions,
-  } = mergedOptions
+  const { wordPressUrl, developLimit, gatsbySourceWordPressOptions } =
+    mergedOptions
 
   const { presets = [], ...otherGatsbySourceWordPressOptions } =
     gatsbySourceWordPressOptions
@@ -25,12 +16,6 @@ module.exports = (options) => {
   const url = slashes(wordPressUrl)
 
   const plugins = [
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-anchor-links`,
-    {
-      resolve: 'gatsby-plugin-image',
-    },
     {
       resolve: `gatsby-source-wordpress`,
       options: {
@@ -53,46 +38,7 @@ module.exports = (options) => {
         ...otherGatsbySourceWordPressOptions,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    '@gatsbywpthemes/gatsby-plugin-wordpress-parser',
   ]
-
-  /**
-   * Conditionally add plugins based on theme config
-   * to avoid errors while Gatsby boots.
-   */
-  if (googleTagManagerId || googleTagManagerOptions.id) {
-    plugins.push({
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: googleTagManagerId,
-        ...googleTagManagerOptions,
-      },
-    })
-  }
-
-  if (gaTrackingId || gaOptions.trackingIds) {
-    plugins.push({
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [gaTrackingId],
-        ...gaOptions,
-      },
-    })
-  }
-
-  if (addSiteMap) {
-    plugins.push({
-      resolve: 'gatsby-plugin-sitemap',
-      options: siteMapOptions,
-    })
-  }
 
   return {
     siteMetadata: {

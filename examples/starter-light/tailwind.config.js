@@ -21,6 +21,13 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      debugScreens: {
+        position: ["top", "left"],
+        style: {
+          backgroundColor: "black",
+          color: "#fff",
+        },
+      },
       fontFamily: {
         body: "Coda, sans-serif",
         heading: "Baumans, sans-serif",
@@ -44,13 +51,6 @@ module.exports = {
       boxShadow: {
         input: "currentcolor 0px 0px 0px inset",
         inputFocus: "currentcolor 0px -3px 0px inset",
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {},
-          },
-        },
       },
 
       colors: {
@@ -80,7 +80,8 @@ module.exports = {
         mobileMenuColor: light,
         subMenuBg: "black",
         subMenucolor: "white",
-        menuHoverColor: primary,
+        subMenuHoverColor: colors.teal[900],
+        menuHoverColor: colors.teal[300],
         /* post */
         infoBg: darken(0.02, light),
         archiveTitleBg: primary,
@@ -101,6 +102,7 @@ module.exports = {
           mobileMenuColor: light,
           subMenuBg: secondary,
           subMenucolor: "white",
+          subMenuHoverColor: dark,
           menuHoverColor: primary,
           /* post*/
           infoBg: ultraDark,
@@ -115,24 +117,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/aspect-ratio"),
-    require("tailwindcss-base-buttons")({
-      colors: {
-        theme: {
-          primary: {
-            background: primary,
-            text: "white",
-          },
-          secondary: {
-            background: secondary,
-            text: "white",
-          },
-        },
-      },
-    }),
   ],
   corePlugins: {
     preflight: true,

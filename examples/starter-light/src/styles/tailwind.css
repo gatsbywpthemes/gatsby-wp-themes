@@ -1,62 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "base.css";
+@import "wordpress.css";
 
 @layer base {
-  #___gatsby {
-    @apply text-text dark:text-dark-text bg-bg dark:bg-dark-bg font-body;
-  }
-  a {
-    @apply transition duration-300;
-  }
-
-  h1 {
-    @apply text-3xl font-heading leading-heading sm:text-4xl;
-  }
-  h2 {
-    @apply text-2xl font-heading leading-heading sm:text-3xl;
-  }
-  h3 {
-    @apply text-xl font-heading leading-heading sm:text-2xl;
-  }
-  h4 {
-    @apply text-lg font-heading leading-heading sm:text-xl;
-  }
-  h5 {
-    @apply text-sm font-heading leading-heading;
-  }
-  h6 {
-    @apply text-xs font-heading leading-heading;
-  }
-  table {
-    @apply mb-6;
-  }
-  blockquote {
-    @apply px-5 py-12 border-l-4 sm:px-12 border-accentColor max-w-[800px] mx-auto my-10 bg-teal-50 italic dark:bg-blueGray-800;
-  }
-  .content ul {
-    @apply pl-6 mb-6;
-  }
-  .content ol {
-    @apply pl-6 mb-6;
-  }
-  .center-container {
-    @apply px-5 mx-auto md:px-6 lg:px-10;
-  }
+  /* Pagination */
   .prev-next-text {
-    @apply text-sm font-bold tracking-widest uppercase;
+    @apply text-sm font-bold tracking-widest uppercase hover:text-secondary dark:hover:text-primary;
   }
   .prev-next-anim {
     @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100;
   }
+
+  /* Menu */
   .menu-item,
-  .menu-item a {
-    @apply transition duration-300 text-headerColor dark:text-dark-headerColor hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+  .menu-item > a {
+    @apply transition duration-500 text-headerColor dark:text-dark-headerColor;
+  }
+  .menu-item > a {
+    @apply hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+  }
+
+  .menu-item button {
+    @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
   }
   .menuV > .menu-item {
     @apply py-3 border-b border-dashed border-opacity-40 last:border-none;
   }
   .menu-item [aria-current="page"] {
     @apply italic;
+  }
+}
+
+@layer components {
+  /* Components */
+  .center-container {
+    @apply px-5 mx-auto md:px-6 lg:px-10 w-[100%];
+  }
+  .card {
+    @apply shadow-md bg-cardBg dark:bg-dark-cardBg;
+  }
+  .divider {
+    @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;
+  }
+  /* Buttons */
+  .btn {
+    @apply px-4 py-2 text-xs !text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1 hover:shadow-2xl;
+  }
+  .btn-primary {
+    @apply from-primary to-purple;
+  }
+  .btn-secondary {
+    @apply from-secondary to-teal-300;
+  }
+}
+
+@layer utilities {
+  /* Text effects */
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

@@ -5,10 +5,7 @@ export const Archivetitle = ({ name, text, ...props }) => {
   return (
     <div
       className={clsx(
-        "inline-block",
-        "px-5 py-3 rounded-md shadow-md mb-5",
-        "text-archiveTitleColor dark:text-dark-archiveTitleColor",
-        "bg-archiveTitleBg dark:bg-dark-archiveTitleBg"
+        "text-archiveTitleColor dark:text-dark-archiveTitleColor text-center uppercase mb-10 mt-5 md:mt-10"
       )}
       {...props}
     >

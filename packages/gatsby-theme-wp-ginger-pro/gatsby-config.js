@@ -10,6 +10,7 @@ require('dotenv').config({
 const path = require('path')
 module.exports = (options) => {
   const plugins = [
+    `@gatsbywpthemes/gatsby-theme-wp-comments`,
     {
       resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: options,

@@ -8,7 +8,7 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
   return (
     taxonomies.length > 0 && (
       <div className="flex flex-wrap" {...props}>
-        <h3 className={clsx("text-base font-bold mr-2")}>
+        <h3 className={clsx("text-base font-normal mr-2")}>
           {taxonomies.length > 1 ? `${taxName} : ` : `${singularName} : `}
         </h3>
 
@@ -17,7 +17,7 @@ export const Taxonomies = ({ post, taxName, singularName, ...props }) => {
             key={cat.slug}
             taxName="category"
             item={cat}
-            className="mx-1 mb-3 btn btn-gradient-primary btn-xs "
+            className="mx-1 mb-3 btn btn-primary "
           />
         ))}
       </div>

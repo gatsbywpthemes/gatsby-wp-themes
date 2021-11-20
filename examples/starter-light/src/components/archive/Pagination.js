@@ -57,10 +57,7 @@ export const Pagination = ({ ctx }) => {
       {renderPreviousLink(previousPagePath)}
       <span
         aria-current="page"
-        className={clsx(
-          "page-numbers current",
-          "font-bold font-info text-center"
-        )}
+        className={clsx("page-numbers current", "font-bold text-center")}
       >
         {humanPageNumber}
       </span>

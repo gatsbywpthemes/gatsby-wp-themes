@@ -1,13 +1,21 @@
 import React from "react"
 import { Layout } from "../Layout"
+import { Sidebar } from "../Sidebar"
 import { ParsedContent, ActivatePageScripts } from "../../utils"
-import { gutenbergStyles } from "../../styles/gutenbergStyles"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import clsx from "clsx"
 
 const Page = ({ page, ctx }) => {
   const { title, isFrontPage, content, uri, headlesswp } = page
+  const { widgetAreas, layoutWidth } = useThemeOptions()
+  const { sidebarWidgets } = widgetAreas
+
   const pageTemplate = headlesswp?.pageTemplate || "default"
+  const hasSidebar = pageTemplate.includes("sidebar") && sidebarWidgets
+
   const skipTitle = headlesswp?.skipTitle || false
+  const postWidth = layoutWidth.post || "xl"
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -28,22 +36,44 @@ const Page = ({ page, ctx }) => {
         }
       />
       <article>
-        {!skipTitle && pageTemplate !== "full width" && (
-          <h1 dangerouslySetInnerHTML={{ __html: title }} />
-        )}
         <div
-          className="entry-content"
-          css={{
-            ...gutenbergStyles,
-            "&:after": {
-              clear: "both",
-              content: "''",
-              display: "block",
-            },
-          }}
+          className={`mainContainer mx-auto ${
+            hasSidebar
+              ? `max-w-xl lg:grid xl:grid-cols-3 grid-cols-10 gap-8`
+              : pageTemplate.includes("full")
+              ? `max-w-full`
+              : `${
+                  postWidth === "md"
+                    ? "max-w-md"
+                    : postWidth === "lg"
+                    ? "max-w-lg"
+                    : "max-w-xl"
+                }`
+          }
+          }`}
         >
-          <ActivatePageScripts />
-          <ParsedContent content={content} />
+          <div
+            className={clsx("pb-5", "xl:col-span-2 col-span-7", "", {
+              "order-2": pageTemplate.includes("left"),
+              "p-5 sm:p-10 card": !pageTemplate.includes("full"),
+            })}
+          >
+            {!skipTitle && !pageTemplate.includes("full") && (
+              <h1
+                dangerouslySetInnerHTML={{ __html: title }}
+                className="mb-10 text-center"
+              />
+            )}
+            <div className={clsx("content")}>
+              <ActivatePageScripts />
+              <ParsedContent content={content} />
+            </div>
+          </div>
+          {hasSidebar && (
+            <div className={clsx("xl:col-span-1 col-span-3")}>
+              <Sidebar widgets={sidebarWidgets} />
+            </div>
+          )}
         </div>
       </article>
     </Layout>

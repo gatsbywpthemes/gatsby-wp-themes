@@ -16,11 +16,6 @@ export const fragments = graphql`
       skipTitle
     }
 
-    featuredImage {
-      node {
-        ...GatsbyImageQuery
-      }
-    }
     categories {
       nodes {
         id
@@ -45,16 +40,6 @@ export const fragments = graphql`
         name
         slug
         uri
-      }
-    }
-  }
-
-  fragment GatsbyImageQuery on WpMediaItem {
-    altText
-    sourceUrl
-    localFile {
-      childImageSharp {
-        gatsbyImageData(width: 1200, quality: 80, layout: CONSTRAINED)
       }
     }
   }

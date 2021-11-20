@@ -13,7 +13,7 @@ export const Archivepost = ({
   ...props
 }) => {
   return (
-    <article className={clsx("space-y-5", className)} {...props}>
+    <article className={clsx("card ", className)} {...props}>
       <PostEntryMedia
         post={post}
         location="archive"
@@ -21,9 +21,11 @@ export const Archivepost = ({
         className="mb-5 aspect-w-16 aspect-h-9"
       />
 
-      <PostEntryTitle post={post} location="archive" />
-      <PostEntryContent post={post} location="archive" />
-      <PostEntryMeta post={post} />
+      <div className="p-5 space-y-5 sm:pt-5 sm:p-10">
+        <PostEntryTitle post={post} location="archive" />
+        <PostEntryContent post={post} location="archive" />
+        <PostEntryMeta post={post} />
+      </div>
     </article>
   )
 }

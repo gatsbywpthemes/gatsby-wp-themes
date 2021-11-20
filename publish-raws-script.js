@@ -15,6 +15,21 @@ const publishedPackages = [
     packagePath: "base-theme-starters/starter-base-dev",
   },
   {
+    name: "starter-base-tailwind",
+    srcPath: "examples/starter-base-tailwind",
+    packagePath: "base-theme-starters/starter-base-tailwind",
+  },
+  {
+    name: "starter-base-gradient-tailwind",
+    srcPath: "examples/starter-base-gradient-tailwind",
+    packagePath: "base-theme-starters/starter-base-gradient-tailwind",
+  },
+  {
+    name: "starter-light",
+    srcPath: "examples/starter-light",
+    packagePath: "starter-light",
+  },
+  {
     name: "starter-ginger",
     srcPath: "examples/starter-ginger",
     packagePath: "pro-themes-starters/ginger-theme-starters/starter-ginger",
@@ -55,7 +70,7 @@ execSync(`mkdir user-starters ${subfoldersToCreate}`)
 for (const package of publishedPackages) {
   execSync(`cp -r ${package.srcPath} user-starters/${package.packagePath}`)
   execSync(
-    `rm -rf user-starters/${package.packagePath}/node_modules user-starters/${package.packagePath}/.cache user-starters/${package.packagePath}/.env user-starters/${package.packagePath}/.env.production user-starters/${package.packagePath}/.env.development user-starters/${package.packagePath}/public`
+    `rm -rf user-starters/${package.packagePath}/node_modules user-starters/${package.packagePath}/.cache user-starters/${package.packagePath}/.env user-starters/${package.packagePath}/.env.production user-starters/${package.packagePath}/.env.development user-starters/${package.packagePath}/public user-starters/${package.packagePath}/yarn-error.log user-starters/${package.packagePath}/.vscode`
   )
 
   execSync(
@@ -73,9 +88,18 @@ execSync(
   `cd user-starters && zip -r pro-themes-starters.zip pro-themes-starters `
 )
 
+execSync(`cd user-starters && zip -r starter-light.zip starter-light `)
+
 execSync(
-  `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/base-theme-starters.zip`
+  `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/base-theme-starters.zip`,
+  { stdio: "inherit" }
 )
 execSync(
-  `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/pro-themes-starters.zip`
+  `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/pro-themes-starters.zip`,
+  { stdio: "inherit" }
+)
+
+execSync(
+  `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/starter-light.zip`,
+  { stdio: "inherit" }
 )

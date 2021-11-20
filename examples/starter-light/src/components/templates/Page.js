@@ -1,7 +1,6 @@
 import React from "react"
 import { Layout } from "../Layout"
 import { ParsedContent, ActivatePageScripts } from "../../utils"
-import { gutenbergStyles } from "../../styles/gutenbergStyles"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Page = ({ page, ctx }) => {
@@ -27,21 +26,16 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <article>
+      <article
+        className={`${pageTemplate === "full width" ? "" : "card sm:p-10 p-5"}`}
+      >
         {!skipTitle && pageTemplate !== "full width" && (
-          <h1 dangerouslySetInnerHTML={{ __html: title }} />
+          <h1
+            className="mb-10 text-center uppercase"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
         )}
-        <div
-          className="entry-content"
-          css={{
-            ...gutenbergStyles,
-            "&:after": {
-              clear: "both",
-              content: "''",
-              display: "block",
-            },
-          }}
-        >
+        <div className="content">
           <ActivatePageScripts />
           <ParsedContent content={content} />
         </div>

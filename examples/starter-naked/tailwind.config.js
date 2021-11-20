@@ -20,6 +20,13 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      debugScreens: {
+        position: ["top", "left"],
+        style: {
+          backgroundColor: "black",
+          color: "#fff",
+        },
+      },
       maxWidth: {
         lg: rem(1024),
         md: rem(768),
@@ -39,13 +46,6 @@ module.exports = {
       boxShadow: {
         input: "currentcolor 0px 0px 0px inset",
         inputFocus: "currentcolor 0px -3px 0px inset",
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {},
-          },
-        },
       },
 
       colors: {
@@ -79,10 +79,12 @@ module.exports = {
         mobileMenuColor: light,
         subMenuBg: "black",
         subMenuColor: "white",
+        subMenuHoverColor: primary,
         menuHoverColor: primary,
         /* newsletter */
         nlButtonBg: "black",
         nlButtonColor: "white",
+        nlButtonHoverBg: primary,
         nlInputBg: light,
         nlColor: text,
         /* post */
@@ -90,6 +92,9 @@ module.exports = {
         archiveTitleBg: blueGray[100],
         archiveTitleColor: text,
         cardBg: "white",
+        /* comments */
+        commentBg: "white",
+        commentsColor: text,
 
         dark: {
           /* basic colors*/
@@ -114,11 +119,13 @@ module.exports = {
           mobileMenuBg: "black",
           mobileMenuColor: light,
           subMenuBg: primary,
-          subMenuColor: teal[900],
+          subMenuColor: "white",
+          subMenuHoverColor: colors.teal[900],
           menuHoverColor: teal[100],
           /* newsletter */
           nlButtonBg: primary,
           nlButtonColor: teal[900],
+          nlButtonHoverBg: secondary,
           nlInputBg: blueGray[700],
           nlColor: teal[900],
           /* post*/
@@ -126,6 +133,9 @@ module.exports = {
           archiveTitleColor: teal[900],
           infoBg: primary,
           cardBg: ultraDark,
+          /* comments */
+          commentBg: ultraDark,
+          commentsColor: light,
         },
       },
     },
@@ -134,24 +144,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/aspect-ratio"),
-    require("tailwindcss-base-buttons")({
-      colors: {
-        theme: {
-          primary: {
-            background: primary,
-            text: "white",
-          },
-          secondary: {
-            background: secondary,
-            text: "white",
-          },
-        },
-      },
-    }),
   ],
   corePlugins: {
     preflight: true,
