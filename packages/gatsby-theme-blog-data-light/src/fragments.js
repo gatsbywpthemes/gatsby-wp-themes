@@ -11,10 +11,6 @@ export const fragments = graphql`
     template {
       templateName
     }
-    headlesswp {
-      pageTemplate
-      skipTitle
-    }
 
     categories {
       nodes {

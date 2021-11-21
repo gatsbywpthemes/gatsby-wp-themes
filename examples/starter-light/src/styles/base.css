@@ -4,7 +4,7 @@
   }
 
   a {
-    @apply transition duration-300;
+    @apply transition duration-300 hover:text-accentColor;
   }
 
   h1 {
@@ -29,7 +29,7 @@
     @apply mb-6;
   }
   blockquote {
-    @apply px-5 py-8 border-l-4 sm:px-12 border-accentColor  my-10 italic;
+    @apply px-5 py-8 my-10 italic border-l-4 sm:px-12 border-accentColor;
   }
   blockquote p:last-child {
     @apply mb-0;

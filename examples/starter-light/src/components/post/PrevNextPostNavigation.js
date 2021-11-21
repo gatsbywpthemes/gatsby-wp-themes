@@ -17,7 +17,11 @@ const LinkButton = ({ className, ...props }) => {
 const renderPreviousLink = ({ prev }) => {
   let previousLink = null
   if (!prev) {
-    return <span className="text-gray-400 prev-next-text">Previous</span>
+    return (
+      <span className="text-gray-400 prev-next-text hover:!text-gray-400">
+        Previous
+      </span>
+    )
   } else {
     previousLink = `${prev}`
   }
@@ -51,7 +55,11 @@ const renderNextLink = ({ next }) => {
       </div>
     )
   } else {
-    return <span className="text-gray-400 prev-next-text">Next</span>
+    return (
+      <span className="text-gray-400 prev-next-text hover:!text-gray-400">
+        Next
+      </span>
+    )
   }
 }
 

@@ -4,9 +4,7 @@ import { ParsedContent, ActivatePageScripts } from "../../utils"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Page = ({ page, ctx }) => {
-  const { title, isFrontPage, content, uri, headlesswp } = page
-  const pageTemplate = headlesswp?.pageTemplate || "default"
-  const skipTitle = headlesswp?.skipTitle || false
+  const { title, isFrontPage, content, uri } = page
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -26,15 +24,12 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <article
-        className={`${pageTemplate === "full width" ? "" : "card sm:p-10 p-5"}`}
-      >
-        {!skipTitle && pageTemplate !== "full width" && (
-          <h1
-            className="mb-10 text-center uppercase"
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
-        )}
+      <article className="p-5 card sm:p-10">
+        <h1
+          className="mb-10 text-center uppercase"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+
         <div className="content">
           <ActivatePageScripts />
           <ParsedContent content={content} />
