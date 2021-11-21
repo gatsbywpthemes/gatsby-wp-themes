@@ -5,11 +5,7 @@ const config = {
     },
   },
   gatsbySourceWordPressOptions: {
-    schema: {
-      perPage: 20, // currently set to 100
-      requestConcurrency: 5, // currently set to 15
-      previewRequestConcurrency: 1, // currently set to 5
-    },
+    //Write here your other gatsby-source-wordpress options https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/docs/plugin-options.md
   },
 }
 
