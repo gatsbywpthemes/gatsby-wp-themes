@@ -28,10 +28,10 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-use-dark-mode`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     {
       resolve: `gatsby-plugin-image`,
     },
@@ -43,7 +43,6 @@ module.exports = {
         ...options,
       },
     },
-    { resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind` },
 
     {
       resolve: `@gatsbywpthemes/gatsby-theme-blog-data-light`,
