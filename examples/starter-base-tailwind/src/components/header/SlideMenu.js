@@ -4,9 +4,13 @@ import clsx from "clsx"
 import { GiHamburgerMenu as Hamburger } from "react-icons/gi"
 import { MdClose as Close } from "react-icons/md"
 import { MainMenu } from "../menu"
+import { Widget } from "../widgets"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
 export const Slidemenu = ({ className, ...props }) => {
   const [open, setOpen] = useState(false)
+  const { widgetAreas } = useThemeOptions()
+  const widgets = widgetAreas.slideMenuWidgets || []
   return (
     <div className={clsx(className)} {...props}>
       <button aria-label="open menu">
@@ -86,6 +90,13 @@ export const Slidemenu = ({ className, ...props }) => {
                       </div>
 
                       <MainMenu orientation="V" />
+
+                      {widgets?.length > 0 &&
+                        widgets.map((widget, i) => (
+                          <div key={i} css={{ ".widget": { my: 10 } }}>
+                            <Widget widget={widget} />
+                          </div>
+                        ))}
                     </div>
                     {/* End of panel content */}
                   </div>

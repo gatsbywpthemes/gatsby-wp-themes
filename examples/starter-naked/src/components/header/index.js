@@ -12,7 +12,7 @@ export const Header = ({ ...props }) => {
   const { addWordPressSearch: search, addColorModes } = useThemeOptions()
 
   return (
-    <Headroom style={{ zIndex: 100 }}>
+    <Headroom className="z-10">
       <header
         className={clsx(
           "py-4 shadow-md relative",
