@@ -8,10 +8,10 @@ import clsx from "clsx"
 
 const SubmenuV = ({ menuItem }) => {
   return (
-    <div className={`relative has-submenu menu-item`}>
+    <div className={`relative has-submenu menu-item `}>
       <Collapse
         trigger={menuItem.label}
-        className="text-mobileMenuColor dark:text-dark-mobileMenuColor"
+        className="font-semibold text-mobileMenuColor dark:text-dark-mobileMenuColor"
       >
         <ul className="py-2 pl-3 menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
@@ -31,7 +31,7 @@ const SubmenuV = ({ menuItem }) => {
 const SubmenuH = ({ menuItem }) => {
   return (
     <Menu as="div" className={clsx("menu-item", "relative", "flex")}>
-      <Menu.Button className={clsx(`inline-flex items-center`)}>
+      <Menu.Button className={clsx(`inline-flex items-center font-semibold`)}>
         {menuItem.label}
         <CgChevronDown className={`ml-2 w-4 h-4`} aria-hidden="true" />
       </Menu.Button>
@@ -52,7 +52,7 @@ const SubmenuH = ({ menuItem }) => {
             `rounded-lg`,
             `px-5 py-3 w-56`,
             `z-50`,
-            `text-subMenuColor dark:text-dark-subMenuColor`,
+            `text-subMenuColor dark:text-dark-subMenuColor font-semibold`,
             `bg-subMenuBg dark:bg-dark-subMenuBg`
           )}
         >

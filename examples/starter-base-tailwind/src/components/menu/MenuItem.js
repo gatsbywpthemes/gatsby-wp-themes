@@ -13,10 +13,12 @@ export const MenuItem = ({
   } else {
     return (
       <div
-        className={`menu-item flex items-center ${menuItem.cssClasses} ${
+        className={`menu-item flex items-center font-semibold ${
+          menuItem.cssClasses
+        } ${
           orientation === "V"
             ? "text-mobileMenuColor dark:text-dark-mobileMenuColor"
-            : "text-text dark:text-dark-text"
+            : "text-text dark:text-dark-text "
         } ${className}`}
         key={menuItem.id}
         {...props}
@@ -26,7 +28,7 @@ export const MenuItem = ({
           className={` ${
             orientation === "V"
               ? "text-mobileMenuColor dark:text-dark-mobileMenuColor"
-              : "text-text dark:text-dark-text"
+              : "text-text dark:text-dark-text "
           }`}
         />
       </div>
