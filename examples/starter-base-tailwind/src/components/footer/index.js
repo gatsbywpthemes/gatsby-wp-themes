@@ -17,19 +17,11 @@ export const Footer = ({ ...props }) => {
         <div className={`text-center mb-3`}>
           © {new Date().getFullYear()} | Built with{`   `}
           <a
-            href="https://www.wpgraphql.com"
+            href="https://gatsbywpthemes.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            WPGraphQL
-          </a>{" "}
-          and{`  `}
-          <a
-            href="https://www.gatsbyjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Gatsby
+            Gatsby WP Themes
           </a>
         </div>
         <SocialFollows />

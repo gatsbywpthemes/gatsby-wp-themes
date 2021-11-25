@@ -38,12 +38,12 @@ export const PostEntry = ({
       <div
         className={`${pageTemplate === "full width" ? "center-container" : ""}`}
       >
-        <div className={` space-y-5 p-5 sm:p-10`}>
+        <div className={` space-y-5 px-5 sm:px-10 pb-10`}>
           {!skipTitle && (
             <PostEntryTitle
               post={post}
               location={location}
-              className="mb-5 text-2xl uppercase"
+              className="mb-5 uppercase"
             />
           )}
           <PostEntryInfo post={post} className="mb-3" />

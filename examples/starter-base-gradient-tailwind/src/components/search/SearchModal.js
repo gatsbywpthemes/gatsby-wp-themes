@@ -15,9 +15,7 @@ export const SearchModal = () => {
         onClick={() => setOpen(true)}
         className="border-l cursor-pointer border-accentColor dark:border-dark-accentColor"
       >
-        <SearchIcon
-          className={`text-[24px] text-gray-600  dark:text-light  ml-3`}
-        />
+        <SearchIcon className={`text-[24px] text-light  ml-3`} />
       </button>
       <Transition show={open} as={Fragment}>
         <Dialog

@@ -23,10 +23,14 @@ export const Archivepost = ({
       />
 
       <div className="p-5 md:p-10">
-        <PostEntryTitle post={post} location="archive" className="mb-5" />
+        <PostEntryTitle
+          post={post}
+          location="archive"
+          className="mb-5 uppercase"
+        />
         <PostEntryInfo post={post} className="mb-10" />
         <PostEntryContent post={post} location="archive" />
-        <div className="divider my-12" />
+        <div className="my-12 divider" />
         <PostEntryMeta post={post} />
       </div>
     </article>
