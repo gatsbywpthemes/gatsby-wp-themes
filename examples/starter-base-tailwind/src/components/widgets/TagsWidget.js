@@ -21,7 +21,7 @@ export const TagsWidget = (props) => {
   return (
     !!nodes.length && (
       <section className="widget widget-tags" {...props}>
-        <WidgetTitle title="Tags" />
+        <WidgetTitle title="Tags" lightBg={props.lightBg} />
         <div className="flex flex-wrap justify-center">
           {nodes.map((tag, index) => (
             <div className="pb-3" key={tag.slug}>

@@ -40,7 +40,7 @@ export const RecentPosts = (props) => {
   const { nodes } = data.allWpPost
   return (
     <section className="widget widget-recent-posts" {...props}>
-      <WidgetTitle title="Recent Posts" />
+      <WidgetTitle title="Recent Posts" lightBg={props.lightBg} />
       <div className="flex flex-col space-y-5 align-start">
         {nodes.length
           ? nodes.map((post) => {

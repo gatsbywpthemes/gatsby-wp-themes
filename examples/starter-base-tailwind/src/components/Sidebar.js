@@ -15,8 +15,8 @@ export const Sidebar = ({ widgets, className, ...props }) => {
           {...props}
         >
           {widgets.map((widget, i) => (
-            <div key={i} css={{ ".widget": { my: 10 } }}>
-              <Widget widget={widget} />
+            <div key={i} className="my-5 first:mt-0">
+              <Widget widget={widget} lightBg />
             </div>
           ))}
         </aside>

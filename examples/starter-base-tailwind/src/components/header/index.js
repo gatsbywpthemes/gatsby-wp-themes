@@ -21,7 +21,7 @@ export const Header = ({ ...props }) => {
         )}
         {...props}
       >
-        <div className={"flex justify-between center-container"}>
+        <div className={"flex justify-between center-container items-center"}>
           <div className="flex space-x-3">
             <Branding title="Starter Light" />
             {search && <SearchModal />}
