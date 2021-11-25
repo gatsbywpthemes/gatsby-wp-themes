@@ -2,23 +2,23 @@ import React from "react"
 import { CategoriesWidget, TagsWidget, RecentPosts, Newsletter } from "./index"
 import { SocialFollows } from "../social/SocialFollows"
 
-export const Widget = ({ widget }) => {
+export const Widget = ({ widget, lightBg }) => {
   switch (widget) {
     case "SocialFollow":
       return (
         <div>
-          <SocialFollows />
+          <SocialFollows lightBg={lightBg} />
         </div>
       )
     case "RecentPosts":
-      return <RecentPosts />
+      return <RecentPosts lightBg={lightBg} />
     case "Categories":
-      return <CategoriesWidget />
+      return <CategoriesWidget lightBg={lightBg} />
     case "Tags":
-      return <TagsWidget />
+      return <TagsWidget lightBg={lightBg} />
     case "Newsletter":
       return process.env.GATSBY_MAILCHIMP_ENDPOINT ? (
-        <Newsletter title="subscribe to our newsletter" />
+        <Newsletter title="subscribe to our newsletter" lightBg={lightBg} />
       ) : null
 
     default:

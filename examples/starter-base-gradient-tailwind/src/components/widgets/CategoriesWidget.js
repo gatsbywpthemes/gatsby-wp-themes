@@ -20,7 +20,7 @@ export const CategoriesWidget = (props) => {
   return (
     !!nodes.length && (
       <section className="widget widget-categories" {...props}>
-        <WidgetTitle title="Categories" />
+        <WidgetTitle title="Categories" lightBg={props.lightBg} />
         <div className="flex flex-col items-start space-y-3">
           {nodes.map((category) => (
             <Link

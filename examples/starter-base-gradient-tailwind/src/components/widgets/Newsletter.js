@@ -24,7 +24,7 @@ export const Newsletter = (props) => {
         msg
       ) : (
         <>
-          <WidgetTitle title="Newsletter" />
+          <WidgetTitle title="Newsletter" lightBg={props.lightBg} />
           <form
             className=" max-w-[90%] sm:max-w-[400px] lg:mx-auto"
             onSubmit={handleSubmit}
