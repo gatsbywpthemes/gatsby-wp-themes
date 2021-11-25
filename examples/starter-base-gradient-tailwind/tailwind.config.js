@@ -86,7 +86,7 @@ module.exports = {
         mobileMenuBg: "black",
         mobileMenuColor: light,
         subMenuBg: "black",
-        subMenucolor: "white",
+        subMenucolor: colors.teal[900],
         subMenuHoverColor: colors.teal[900],
         menuHoverColor: colors.teal[300],
         /* newsletter */
@@ -97,7 +97,8 @@ module.exports = {
         nlColor: dark0,
         /* post */
         infoBg: darken(0.02, light),
-        archiveTitleBg: primary,
+        archiveTitleBg: ultraLight,
+        archiveTitleColor: dark,
         cardBg: ultraLight,
 
         dark: {
@@ -121,7 +122,7 @@ module.exports = {
           mobileMenuColor: light,
           subMenuBg: secondary,
           subMenucolor: "white",
-          subMenuHoverColor: dark,
+          subMenuHoverColor: "black",
           menuHoverColor: primary,
           /* newsletter */
           nlButtonBg: primary,
@@ -132,6 +133,7 @@ module.exports = {
           /* post*/
           infoBg: ultraDark,
           archiveTitleBg: primary,
+          archiveTitleColor: light,
           highlight: yellow,
           cardBg: dark2,
         },

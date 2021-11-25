@@ -52,18 +52,17 @@ const SubmenuH = ({ menuItem }) => {
             `rounded-lg`,
             `px-5 py-3 w-56`,
             `z-50`,
-            `text-subMenuColor dark:text-dark-subMenuColor`,
-            `bg-subMenuBg dark:bg-dark-subMenuBg`
+
+            `bg-gradient-to-tr from-secondary to-teal-300 dark:from-primary dark:to-purple`
           )}
         >
           <div className="relative">
-            <div className="absolute c-triangle-up text-subMenuBg dark:text-dark-subMenuBg -top-5"></div>
             {menuItem.children.map((item) => (
               <Menu.Item key={item.id}>
                 {({ active }) => (
                   <MenuLink
                     menuItem={item}
-                    className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor dark:hover:opacity-80 py-2 block`}
+                    className={`  dark:hover:opacity-80 py-2 block !text-subMenuColor dark:text-dark-subMenuColor`}
                   />
                 )}
               </Menu.Item>
