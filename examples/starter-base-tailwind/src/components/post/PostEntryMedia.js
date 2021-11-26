@@ -17,12 +17,12 @@ export const PostEntryMedia = ({
   location,
   ...props
 }) => {
-  const img = post.featuredImage?.node?.localFile
+  const img = post.featuredImage?.node
   const { pageTemplate } = post.headlesswp
 
   return (
     <>
-      {img && (
+      {img?.localFile && (
         <WithLink location={location} post={post}>
           <Image
             img={img}
