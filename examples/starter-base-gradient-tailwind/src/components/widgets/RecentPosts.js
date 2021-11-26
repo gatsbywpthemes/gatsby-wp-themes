@@ -36,11 +36,11 @@ const RECENT_POSTS_QUERY = graphql`
 
 export const RecentPosts = (props) => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
-
+  const { lightBg, ...rest } = props
   const { nodes } = data.allWpPost
   return (
-    <section className="widget widget-recent-posts" {...props}>
-      <WidgetTitle title="Recent Posts" lightBg={props.lightBg} />
+    <section className="widget widget-recent-posts" {...rest}>
+      <WidgetTitle title="Recent Posts" lightBg={lightBg} />
       <div className="flex flex-col space-y-5 align-start">
         {nodes.length
           ? nodes.map((post) => {

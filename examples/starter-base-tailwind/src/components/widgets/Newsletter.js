@@ -17,14 +17,14 @@ export const Newsletter = (props) => {
   const handleChange = (e) => {
     setEmail(e.target.value)
   }
-
+  const { lightBg, ...rest } = props
   return (
-    <div {...props}>
+    <div {...rest}>
       {msg ? (
         msg
       ) : (
         <>
-          <WidgetTitle title="Newsletter" lightBg={props.lightBg} />
+          <WidgetTitle title="Newsletter" lightBg={lightBg} />
           <form
             className=" max-w-[90%] sm:max-w-[400px] lg:mx-auto"
             onSubmit={handleSubmit}

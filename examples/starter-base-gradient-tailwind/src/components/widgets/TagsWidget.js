@@ -17,11 +17,11 @@ const ALL_TAGS_QUERY = graphql`
 export const TagsWidget = (props) => {
   const data = useStaticQuery(ALL_TAGS_QUERY)
   const { nodes } = data.allWpTag
-
+  const { lightBg, ...rest } = props
   return (
     !!nodes.length && (
-      <section className="widget widget-tags" {...props}>
-        <WidgetTitle title="Tags" lightBg={props.lightBg} />
+      <section className="widget widget-tags" {...rest}>
+        <WidgetTitle title="Tags" lightBg={lightBg} />
         <div className="flex flex-wrap justify-center">
           {nodes.map((tag, index) => (
             <div className="pb-3" key={tag.slug}>

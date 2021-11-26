@@ -82,11 +82,11 @@ export const SocialFollows = (props) => {
   ]
 
   const { socialFollowLinks: social } = useThemeOptions()
-
+  const { lightBg, ...rest } = props
   return (
     <div
       className="flex justify-center space-x-5 widget widget-socialFollow"
-      {...props}
+      {...rest}
     >
       {social &&
         social.map(({ name, url }) => {

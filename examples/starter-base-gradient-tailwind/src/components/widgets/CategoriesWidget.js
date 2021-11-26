@@ -17,10 +17,11 @@ const ALL_CATEGORIES_QUERY = graphql`
 export const CategoriesWidget = (props) => {
   const data = useStaticQuery(ALL_CATEGORIES_QUERY)
   const { nodes } = data.allWpCategory
+  const { lightBg, ...rest } = props
   return (
     !!nodes.length && (
-      <section className="widget widget-categories" {...props}>
-        <WidgetTitle title="Categories" lightBg={props.lightBg} />
+      <section className="widget widget-categories" {...rest}>
+        <WidgetTitle title="Categories" lightBg={lightBg} />
         <div className="flex flex-col items-start space-y-3">
           {nodes.map((category) => (
             <Link
