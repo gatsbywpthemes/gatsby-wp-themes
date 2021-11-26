@@ -6,7 +6,7 @@ export const FormFields = ({ register, errors }) => {
   return inputFields.map((el) => {
     const Tag = el.tag
     return (
-      <div>
+      <div key={el.name}>
         <label htmlFor={el.name}>
           {el.label}
           <Tag

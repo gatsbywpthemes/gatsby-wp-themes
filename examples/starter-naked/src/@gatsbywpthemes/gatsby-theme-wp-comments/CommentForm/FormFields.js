@@ -12,6 +12,7 @@ export const FormFields = ({ register, errors }) => {
         className={`mb-5 ${
           isTextArea ? "w-full " : "w-full sm:w-[calc(50%-1rem)]"
         }`}
+        key={el.name}
       >
         <label htmlFor={el.name}>
           {el.label}
