@@ -1,14 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
+
 export const fragment = graphql`
   fragment contentBlock on WpPage_Layoutblocks_Blocks_ContentBlock {
-    ...blockSettings
+    adminTitle
+    cssClass
+    anchorId
     headline
-    text
+    content
     image {
       id
     }
-    ...button
+    button {
+      ...button
+    }
   }
 `
 const Contentblock = ({
@@ -16,19 +21,17 @@ const Contentblock = ({
   anchorId,
   adminTitle,
   headline,
-  text,
+  content,
   button,
   image,
-  className = null,
+  className,
   ...props
 }) => {
   return (
-    <section className={`${cssClass} ${className}`} {...props}>
+    <section className={`${cssClass ? cssClass : ""}`} {...props}>
       <div className="center-container">
-        <div className="center-container">
-          <h2 dangerouslySetInnerHTML={{ __html: headline }} />
-          <div dangerouslySetInnerHTML={{ __html: text }} />
-        </div>
+        <h2 dangerouslySetInnerHTML={{ __html: headline }} />
+        <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </section>
   )

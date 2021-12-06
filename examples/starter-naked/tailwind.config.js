@@ -14,8 +14,16 @@ const light = blueGray[100],
   bg = ultraLight,
   text = ultraDark
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-
+  purge: {
+    content: ["./src/**/*.{js,jsx,ts,tsx,html}"],
+    layers: ["utilities", "base"], // elements from the layer component will not be purged, so you can use them in your WordPress admin too
+    safelist: [
+      //here you can add specific classes to whitelist if you need to use them in your WordPress admin
+      "grid",
+      "grid-cols-2",
+      "gap-10",
+    ],
+  },
   darkMode: "class",
   mode: "jit",
   theme: {

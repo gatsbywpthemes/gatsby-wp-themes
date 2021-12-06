@@ -11,6 +11,12 @@ export const pageQuery = graphql`
       uri
       slug
       isFrontPage
+      layoutBlocks {
+        blocks {
+          __typename
+          ...contentBlock
+        }
+      }
       template {
         templateName
       }
@@ -30,12 +36,6 @@ export const pageQuery = graphql`
       headlesswp {
         pageTemplate
         skipTitle
-      }
-      layoutBlocks{
-          blocks{
-              --typename
-              ...contentBlock
-          }
       }
     }
   }

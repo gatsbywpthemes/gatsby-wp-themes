@@ -6,10 +6,4 @@ export const fragments = graphql`
     title
     target
   }
-
-  fragment blockSettings on WpAcfFieldGroup {
-    adminTitle
-    cssClass
-    anchorId
-  }
 `
