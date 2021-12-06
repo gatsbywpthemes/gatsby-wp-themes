@@ -20,6 +20,7 @@ module.exports = {
     safelist: [
       //here you can add specific classes to whitelist if you need to use them in your WordPress admin
       "grid",
+      "sm:grid",
       "grid-cols-2",
       "gap-10",
     ],

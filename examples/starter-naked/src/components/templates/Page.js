@@ -8,6 +8,7 @@ import clsx from "clsx"
 import loadable from "@loadable/component"
 
 const ContentBlock = loadable(() => import("../LayoutBlocks/ContentBlock"))
+const SectionsBlock = loadable(() => import("../LayoutBlocks/SectionsBlock"))
 
 const Page = ({ page, ctx }) => {
   const {
@@ -82,6 +83,8 @@ const Page = ({ page, ctx }) => {
                   switch (block.__typename) {
                     case "WpPage_Layoutblocks_Blocks_ContentBlock":
                       return <ContentBlock {...block} />
+                    case "WpPage_Layoutblocks_Blocks_SectionsBlock":
+                      return <SectionsBlock {...block} />
 
                     default:
                       return null

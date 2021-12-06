@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 
 export const fragment = graphql`
   fragment contentBlock on WpPage_Layoutblocks_Blocks_ContentBlock {
-    adminTitle
     cssClass
     anchorId
     headline
@@ -19,7 +18,6 @@ export const fragment = graphql`
 const Contentblock = ({
   cssClass,
   anchorId,
-  adminTitle,
   headline,
   content,
   button,
@@ -28,7 +26,11 @@ const Contentblock = ({
   ...props
 }) => {
   return (
-    <section className={`${cssClass ? cssClass : ""}`} {...props}>
+    <section
+      className={`${cssClass ? cssClass : ""}`}
+      id={`${anchorId ? anchorId : ""}`}
+      {...props}
+    >
       <div className="center-container">
         <h2 dangerouslySetInnerHTML={{ __html: headline }} />
         <div dangerouslySetInnerHTML={{ __html: content }} />
