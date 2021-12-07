@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Heading } from "./Heading"
 
 export const fragment = graphql`
   fragment sectionsBlock on WpPage_Layoutblocks_Blocks_SectionsBlock {
@@ -8,6 +9,7 @@ export const fragment = graphql`
     sections {
       cssClass
       headline
+      headlineTag
       content
       button {
         ...button
@@ -25,13 +27,25 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
       {...props}
     >
       {sections?.map((section, index) => {
+        const { headline, content, headlineTag, image, button } = section
         return (
           <section
             key={index}
-            className={`${section.className ? section.className : ""}`}
+            className={`${section.cssClass ? section.cssClass : ""}`}
           >
-            <h3 dangerouslySetInnerHTML={{ __html: section.headline }} />
-            <div dangerouslySetInnerHTML={{ __html: section.content }} />
+            {headline && (
+              <Heading
+                tag={headlineTag}
+                className="headline"
+                dangerouslySetInnerHTML={{ __html: headline }}
+              />
+            )}
+            {content && (
+              <p
+                className="content"
+                dangerouslySetInnerHTML={{ __html: content }}
+              />
+            )}
           </section>
         )
       })}

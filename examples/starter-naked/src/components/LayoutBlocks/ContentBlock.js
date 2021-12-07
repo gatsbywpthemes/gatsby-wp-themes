@@ -1,28 +1,27 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Heading } from "./Heading"
 
 export const fragment = graphql`
   fragment contentBlock on WpPage_Layoutblocks_Blocks_ContentBlock {
     cssClass
     anchorId
     headline
+    headlineTag
     content
-    image {
-      id
-    }
     button {
       ...button
     }
   }
 `
+
 const Contentblock = ({
   cssClass,
   anchorId,
   headline,
+  headlineTag,
   content,
   button,
-  image,
-  className,
   ...props
 }) => {
   return (
@@ -32,8 +31,13 @@ const Contentblock = ({
       {...props}
     >
       <div className="center-container">
-        <h2 dangerouslySetInnerHTML={{ __html: headline }} />
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        {headline && (
+          <Heading
+            tag={headlineTag}
+            dangerouslySetInnerHTML={{ __html: headline }}
+          />
+        )}
+        {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
       </div>
     </section>
   )
