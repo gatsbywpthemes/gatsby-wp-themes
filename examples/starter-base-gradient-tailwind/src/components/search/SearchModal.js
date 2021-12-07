@@ -2,7 +2,7 @@ import React, { useState, Fragment } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { HiOutlineSearch as SearchIcon } from "react-icons/hi"
 import { MdClose as Close } from "react-icons/md"
-import { SearchForm } from "./SearchForm"
+import { SearchForm } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchForm"
 import clsx from "clsx"
 
 export const SearchModal = () => {
@@ -15,7 +15,9 @@ export const SearchModal = () => {
         onClick={() => setOpen(true)}
         className="border-l cursor-pointer border-accentColor dark:border-dark-accentColor"
       >
-        <SearchIcon className={`text-[24px] text-light  ml-3`} />
+        <SearchIcon
+          className={`text-[24px] text-gray-600  dark:text-light  ml-3`}
+        />
       </button>
       <Transition show={open} as={Fragment}>
         <Dialog

@@ -11,7 +11,7 @@ import { OpenButton } from 'gingerThemeComponents'
 import {
   DispatchSearchContext,
   EscapeInSearchContext,
-} from 'gingerThemeComponents/search/context'
+} from '@gatsbywpthemes/gatsby-theme-wp-search/src/context'
 
 export const SlideSidebarWrapper = ({ isOpen, onOpen, onClose, children }) => {
   const menuBtn = useRef()

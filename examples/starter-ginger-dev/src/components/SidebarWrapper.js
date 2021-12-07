@@ -4,7 +4,7 @@ import { SlideSidebar } from 'gingerThemeComponents'
 import {
   DispatchSearchContext,
   NavigateFromSearchContext,
-} from 'gingerThemeComponents/search/context'
+} from '@gatsbywpthemes/gatsby-theme-wp-search/src/context'
 
 export const SidebarWrapper = (props) => {
   const { children, location } = props

@@ -2,7 +2,7 @@ import React, { useState, Fragment } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { HiOutlineSearch as SearchIcon } from "react-icons/hi"
 import { MdClose as Close } from "react-icons/md"
-import { SearchForm } from "./SearchForm"
+import { SearchForm } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchForm"
 import clsx from "clsx"
 
 export const SearchModal = () => {
