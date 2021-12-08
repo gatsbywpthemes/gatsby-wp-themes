@@ -7,8 +7,12 @@ import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hook
 import clsx from "clsx"
 import loadable from "@loadable/component"
 
-const ContentBlock = loadable(() => import("../LayoutBlocks/ContentBlock"))
-const SectionsBlock = loadable(() => import("../LayoutBlocks/SectionsBlock"))
+const ContentBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/ContentBlock")
+)
+const SectionsBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/SectionsBlock")
+)
 
 const Page = ({ page, ctx }) => {
   const {
