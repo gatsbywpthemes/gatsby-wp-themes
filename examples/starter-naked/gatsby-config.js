@@ -32,6 +32,7 @@ module.exports = {
     `@gatsbywpthemes/gatsby-theme-wp-comments`,
     `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     `gatsby-plugin-loadable-components-ssr`,
+    `@gatsbywpthemes/gatsby-theme-acf-builder`,
 
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,

@@ -31,6 +31,8 @@ module.exports = {
     `gatsby-plugin-use-dark-mode`,
     `@gatsbywpthemes/gatsby-theme-wp-comments`,
     `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
+    `@gatsbywpthemes/gatsby-theme-acf-builder`,
+
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
       options: {
