@@ -15,9 +15,7 @@ const light = slate[100],
   text = ultraDark
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-
   darkMode: "class",
-
   theme: {
     extend: {
       debugScreens: {

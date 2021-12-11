@@ -14,10 +14,8 @@ const light = slate[100],
   bg = ultraLight,
   text = ultraDark
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
-  mode: "jit",
   theme: {
     extend: {
       debugScreens: {

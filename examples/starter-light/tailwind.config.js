@@ -15,10 +15,8 @@ const light = "#FBEED9",
   purple = "#c725A3"
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
-  mode: "jit",
   theme: {
     extend: {
       debugScreens: {
