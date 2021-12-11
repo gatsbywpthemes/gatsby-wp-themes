@@ -15,7 +15,7 @@ const renderPreviousLink = (previousPagePath) => {
           )}
           to={previousPagePath}
         >
-          <span>Previous</span>
+          <div>Previous</div>
         </Link>
       </div>
     )
@@ -42,7 +42,11 @@ const renderNextLink = (nextPagePath) => {
       </div>
     )
   } else {
-    return <span className="text-gray-400 prev-next-text">Next</span>
+    return (
+      <div className="text-gray-400 prev-next-text w-[70px] text-right">
+        Next
+      </div>
+    )
   }
 }
 

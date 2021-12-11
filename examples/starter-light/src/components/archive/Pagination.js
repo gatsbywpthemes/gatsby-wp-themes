@@ -21,9 +21,9 @@ const renderPreviousLink = (previousPagePath) => {
     )
   } else {
     return (
-      <span className="text-gray-400 prev-next-text hover:!text-gray-400">
+      <div className="text-gray-400 prev-next-text hover:!text-gray-400">
         Previous
-      </span>
+      </div>
     )
   }
 }
@@ -47,9 +47,9 @@ const renderNextLink = (nextPagePath) => {
     )
   } else {
     return (
-      <span className="text-gray-400 prev-next-text hover:!text-gray-400">
+      <div className="text-gray-400 prev-next-text hover:!text-gray-400 w-[70px] text-right">
         Next
-      </span>
+      </div>
     )
   }
 }
