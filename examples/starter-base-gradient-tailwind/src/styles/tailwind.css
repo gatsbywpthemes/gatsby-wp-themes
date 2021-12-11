@@ -30,7 +30,7 @@
     @apply text-upper-spaced hover:!text-primary;
   }
   .prev-next-anim {
-    @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100 group-hover:bg-primary;
+    @apply transition duration-700 scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100 group-hover:bg-primary;
   }
   /* Widgets */
   .widget-title {
@@ -50,7 +50,7 @@
   }
   /* Buttons */
   .btn {
-    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 transform rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1 hover:shadow-hover;
+    @apply px-4 py-2 text-xs text-white uppercase transition duration-500 rounded-full shadow-md bg-gradient-to-r hover:-translate-y-1 hover:shadow-hover;
   }
   .btn-primary {
     @apply from-primary to-purple;

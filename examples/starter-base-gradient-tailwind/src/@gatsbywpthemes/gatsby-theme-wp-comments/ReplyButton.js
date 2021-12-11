@@ -14,7 +14,7 @@ export const ReplyButton = (props) => {
       <div
         className={clsx(
           "h-[1px] w-full  bg-current mt-1",
-          "transition duration-500 transform scale-x-0",
+          "transition duration-500 scale-x-0",
           "group-hover:scale-x-100"
         )}
       />
