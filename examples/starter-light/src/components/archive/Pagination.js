@@ -10,7 +10,7 @@ const renderPreviousLink = (previousPagePath) => {
         <Link
           className={clsx(
             "prev-next-text",
-            "transition duration-700 transform group-hover:translate-x-0",
+            "transition duration-700 group-hover:translate-x-0",
             "ml-6 -translate-x-7"
           )}
           to={previousPagePath}
@@ -35,7 +35,7 @@ const renderNextLink = (nextPagePath) => {
         <Link
           className={clsx(
             "prev-next-text",
-            "transition duration-700 transform group-hover:translate-x-0",
+            "transition duration-700 group-hover:translate-x-0",
             "mr-6 translate-x-7"
           )}
           to={nextPagePath}

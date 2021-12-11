@@ -7,7 +7,7 @@ const LinkButton = ({ className, ...props }) => {
     <Link
       className={clsx(
         "prev-next-text",
-        "transition duration-700 transform group-hover:translate-x-0",
+        "transition duration-700 group-hover:translate-x-0",
         className
       )}
       {...props}

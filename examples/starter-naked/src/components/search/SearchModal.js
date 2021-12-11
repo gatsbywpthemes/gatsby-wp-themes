@@ -52,10 +52,10 @@ export const SearchModal = () => {
               {/* Sliding search */}
               <Transition.Child
                 as={Fragment}
-                enter="transform transition ease-in-out duration-500"
+                enter="transition ease-in-out duration-500"
                 enterFrom="-translate-y-full"
                 enterTo="-translate-y-0"
-                leave="transform transition ease-in-out duration-500 "
+                leave="transition ease-in-out duration-500 "
                 leaveFrom="-translate-y-0"
                 leaveTo="-translate-y-full"
               >

@@ -10,7 +10,7 @@
     @apply text-sm font-bold tracking-widest uppercase;
   }
   .prev-next-anim {
-    @apply transition duration-700 transform scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100;
+    @apply transition duration-700 scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100;
   }
   /* Menu */
   .menu-item,
