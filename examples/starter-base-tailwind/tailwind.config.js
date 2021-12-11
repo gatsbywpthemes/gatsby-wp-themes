@@ -1,16 +1,16 @@
 const colors = require("tailwindcss/colors")
 const rem = (px) => px / 16 + "rem"
 
-const { blueGray, red, teal, purple } = colors
+const { slate, red, teal, purple } = colors
 //palette
-const light = blueGray[100],
-  ultraLight = blueGray[50],
-  dark = blueGray[800],
-  ultraDark = blueGray[900],
+const light = slate[100],
+  ultraLight = slate[50],
+  dark = slate[800],
+  ultraDark = slate[900],
   primary = teal[400],
   secondary = purple[500],
   highlight = red[500],
-  mutted = blueGray[200],
+  mutted = slate[200],
   bg = ultraLight,
   text = ultraDark
 module.exports = {
@@ -90,7 +90,7 @@ module.exports = {
         /* post */
         infoBg: light,
         infoColor: teal[900],
-        archiveTitleBg: blueGray[100],
+        archiveTitleBg: slate[100],
         archiveTitleColor: text,
         cardBg: "white",
 
@@ -124,7 +124,7 @@ module.exports = {
           nlButtonBg: primary,
           nlButtonColor: teal[900],
           nlButtonHoverBg: teal[300],
-          nlInputBg: blueGray[700],
+          nlInputBg: slate[700],
           nlColor: light,
           /* post*/
           archiveTitleBg: primary,

@@ -128,7 +128,7 @@ module.exports = {
           nlButtonBg: primary,
           nlButtonColor: colors.teal[900],
           nlButtonHoverBg: secondary,
-          nlInputBg: colors.blueGray[700],
+          nlInputBg: colors.slate[700],
           nlColor: colors.teal[900],
           /* post*/
           infoBg: ultraDark,

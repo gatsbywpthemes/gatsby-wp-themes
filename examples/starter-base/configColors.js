@@ -5,7 +5,7 @@
 // const colors = require('tailwindcss/colors')
 
 // const {
-//   blueGray,
+//   slate,
 //   coolGray,
 //   trueGray,
 //   warmGray,
