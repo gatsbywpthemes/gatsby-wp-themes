@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "starter-base-dev",
+  "name": "starter-base-dev-legacy",
   "version": "2.0.0",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
