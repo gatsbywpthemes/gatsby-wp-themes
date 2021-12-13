@@ -1,10 +1,6 @@
 import React, { memo } from 'react'
-import {
-  Menu,
-  WidgetsList,
-  SearchForm,
-  SlideSidebarWrapper,
-} from 'gingerThemeComponents'
+import { Menu, WidgetsList, SlideSidebarWrapper } from 'gingerThemeComponents'
+import { SearchForm } from '@gatsbywpthemes/gatsby-theme-wp-search/src/SearchForm'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 
 export const SlideSidebar = memo(({ isOpen, onOpen, onClose }) => {

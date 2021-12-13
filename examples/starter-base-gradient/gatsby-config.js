@@ -30,6 +30,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-use-dark-mode`,
     `@gatsbywpthemes/gatsby-theme-wp-comments`,
+    `@gatsbywpthemes/gatsby-theme-wp-search`,
     `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,

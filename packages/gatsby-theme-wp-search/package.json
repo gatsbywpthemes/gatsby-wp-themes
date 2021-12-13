@@ -1,0 +1,17 @@
+{
+  "name": "@gatsbywpthemes/gatsby-theme-wp-search",
+  "description": "WordPress basic theme for Gatsby using WPGraphQL",
+  "author": "Paulina Hetman <info@pehaa.com>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "peerDependencies": {
+    "@apollo/client": "^3.4.16",
+    "gatsby": "^4.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "lodash.uniqby": "^4.7.0"
+  }
+}
