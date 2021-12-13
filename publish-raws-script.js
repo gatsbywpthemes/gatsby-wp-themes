@@ -90,6 +90,8 @@ execSync(
 
 execSync(`cd user-starters && zip -r starter-light.zip starter-light `)
 
+// publishing start here
+
 execSync(
   `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/base-theme-starters.zip`,
   { stdio: "inherit" }

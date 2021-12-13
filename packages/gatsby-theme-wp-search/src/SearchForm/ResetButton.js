@@ -1,5 +1,5 @@
 import React from "react"
-import { FiSearch, FiX } from "react-icons/fi"
+import { FiX } from "react-icons/fi"
 
 export const ResetButton = (props) => {
   return (

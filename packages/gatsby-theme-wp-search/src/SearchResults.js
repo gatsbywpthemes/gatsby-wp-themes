@@ -1,9 +1,7 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Link } from "gatsby"
-import { DispatchSearchContext } from "./context"
 
 export const SearchResults = ({ posts }) => {
-  const dispatch = useContext(DispatchSearchContext)
   return (
     !!posts.length && (
       <ul>
@@ -11,7 +9,6 @@ export const SearchResults = ({ posts }) => {
           return (
             <li key={post.slug}>
               <Link
-                onClick={() => dispatch({ fromSearch: true })}
                 to={post.uri}
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />
