@@ -3,6 +3,7 @@ import { Footer } from "./footer"
 import { Header } from "./header"
 import clsx from "clsx"
 import Helmet from "react-helmet"
+import { HelmetForFavicon } from "./HelmetForFavicon"
 
 export const Layout = ({ children, page, type = "page", ...props }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ""
@@ -19,6 +20,7 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
         fullWidthClass
       )}
     >
+      <HelmetForFavicon />
       <Helmet
         bodyAttributes={{
           class: devMode ? "debug-screens" : "",
