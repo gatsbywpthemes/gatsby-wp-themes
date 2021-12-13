@@ -1,9 +1,9 @@
 const config = {
-  //pathPrefix: "",
+  // pathPrefix: "",
   layoutWidth: {
     page: "lg",
     post: "lg",
-    archive: "md",
+    archive: "lg",
   },
 }
 

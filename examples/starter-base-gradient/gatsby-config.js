@@ -1,3 +1,4 @@
+const DEFAULT_OPTIONS = require("@gatsbywpthemes/gatsby-theme-blog-data/utils/defaultOptions")
 const fs = require("fs")
 require("dotenv").config({
   path:
@@ -5,6 +6,7 @@ require("dotenv").config({
       `.env.${process.env.NODE_ENV}`) ||
     ".env",
 })
+
 const {
   title,
   author,
@@ -13,6 +15,7 @@ const {
   ...options
 } = require("./config")
 const siteUrl = process.env.GATSBY_SITE_URL || options.siteUrl
+options.wordPressUrl = process.env.GATSBY_WP_URL
 
 module.exports = {
   pathPrefix,
@@ -24,23 +27,23 @@ module.exports = {
     siteUrl,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-use-dark-mode`,
+    `@gatsbywpthemes/gatsby-theme-wp-comments`,
+    `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     {
-      resolve: `@gatsbywpthemes/gatsby-theme-wp-base`,
+      resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
+      options: {
+        ...DEFAULT_OPTIONS,
+        ...options,
+      },
+    },
+
+    {
+      resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: {
         ...options,
         wordPressUrl: process.env.GATSBY_WP_URL,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-root-import",
-      options: {
-        baseSrc: "@gatsbywpthemes/gatsby-theme-wp-base/src",
-        basePages: "@gatsbywpthemes/gatsby-theme-wp-base/src/pages",
-        baseStyles: "@gatsbywpthemes/gatsby-theme-wp-base/src/styles",
-        baseComponents: "@gatsbywpthemes/gatsby-theme-wp-base/src/components",
-        baseUiComponents:
-          "@gatsbywpthemes/gatsby-theme-wp-base/src/components/ui-components",
-        baseUtils: "@gatsbywpthemes/gatsby-theme-wp-base/src/utils",
       },
     },
   ],

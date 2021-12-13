@@ -1,4 +1,5 @@
 const config = {
+  // pathPrefix: "",
   layoutWidth: {
     page: "lg",
     post: "lg",
@@ -9,7 +10,6 @@ const config = {
       google: [{ family: "Baumans" }, { family: "Coda" }],
     },
   },
-  overrideWPColors: true,
 }
 
 module.exports = config

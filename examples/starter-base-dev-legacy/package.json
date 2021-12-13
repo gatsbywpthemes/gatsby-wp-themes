@@ -1,12 +1,12 @@
 {
   "private": true,
-  "name": "starter-base-tailwind",
-  "version": "1.0.1",
+  "name": "starter-base-dev-legacy",
+  "version": "2.0.0",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop --host 0.0.0.0",
+    "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -14,20 +14,13 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.0.0",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.0.1",
-    "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.1",
-    "@headlessui/react": "^1.4.1",
-    "@kunukn/react-collapse": "^2.2.9",
+    "@gatsbywpthemes/gatsby-theme-base-dev": "^2.0.0",
     "gatsby": "^4.3.0",
-    "gatsby-plugin-use-dark-mode": "^1.4.0",
-    "local-storage": "^2.0.0",
+    "gatsby-plugin-root-import": "^2.0.8",
     "lodash.merge": "^4.6.2",
     "prismjs": "^1.25.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "use-dark-mode": "^2.3.1"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "babel-preset-gatsby": "^2.3.0",
