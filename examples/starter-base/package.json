@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "starter-base-tailwind",
+  "name": "starter-base",
   "version": "1.0.1",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
