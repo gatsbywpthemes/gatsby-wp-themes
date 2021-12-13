@@ -15,7 +15,7 @@ export const Slidemenu = ({ className, ...props }) => {
     <div className={clsx(className)} {...props}>
       <button aria-label="open menu">
         <Hamburger
-          className={clsx("text-[24px] text-text dark:text-dark-text")}
+          className={clsx("text-[24px] text-light")}
           onClick={() => setOpen(true)}
         />
         <Transition show={open} as={Fragment}>
