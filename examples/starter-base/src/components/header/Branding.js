@@ -5,6 +5,7 @@ import { Logo } from "./Logo"
 
 export const Branding = ({ title, ...props }) => {
   const { logo } = useThemeOptions()
+
   return (
     <div className="flex items-center h-full">
       {logo ? (

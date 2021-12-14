@@ -8,7 +8,7 @@ export const Logo = () => {
   const { logo, darkModeLogo } = useThemeOptions()
   const darkMode = useDarkMode(false)
   const img = darkMode.value && darkModeLogo ? darkModeLogo : logo
-  console.log(darkMode, img)
+
   return (
     <Link className="logo" to="/" rel="home">
       {logo && (

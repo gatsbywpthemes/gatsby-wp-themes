@@ -21,9 +21,9 @@ export const ColorSwitch = (props) => {
           className="hidden"
         />{" "}
         {darkMode.value === true ? (
-          <Sun className="text-[24px] text-dark-text -mt-1" />
+          <Sun className="text-[24px] text-dark-text -mt-1 cursor-pointer" />
         ) : (
-          <Moon className="text-[22px] w-[24px] text-dark-text -mt-2" />
+          <Moon className="text-[22px] w-[24px] text-dark-text -mt-2 cursor-pointer" />
         )}
       </label>
     </>
