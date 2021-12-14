@@ -9,21 +9,23 @@ const publishedPackages = [
     srcPath: "examples/starter-base-gradient",
     packagePath: "base-theme-starters/starter-base-gradient",
   },
+  /* 
   {
-    name: "starter-base-dev",
-    srcPath: "examples/starter-base-dev",
-    packagePath: "base-theme-starters/starter-base-dev",
-  },
-  /*   {
-    name: "starter-base-tailwind",
-    srcPath: "examples/starter-base-tailwind",
-    packagePath: "base-theme-starters/starter-base-tailwind",
+    name: "starter-base-legacy",
+    srcPath: "examples/starter-base-legacy",
+    packagePath: "base-theme-starters/starter-base-legacy",
   },
   {
-    name: "starter-base-gradient-tailwind",
-    srcPath: "examples/starter-base-gradient-tailwind",
-    packagePath: "base-theme-starters/starter-base-gradient-tailwind",
-  }, */
+    name: "starter-base-gradient-legacy",
+    srcPath: "examples/starter-base-gradient-legacy",
+    packagePath: "base-theme-starters/starter-base-gradient-legacy",
+  },
+  {
+    name: "starter-base-dev-legacy",
+    srcPath: "examples/starter-base-dev-legacy",
+    packagePath: "base-theme-starters/starter-base-dev-legacy",
+  }, 
+  */
   {
     name: "starter-light",
     srcPath: "examples/starter-light",
