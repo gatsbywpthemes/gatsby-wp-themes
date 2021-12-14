@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "starter-ginger-kitchen",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
@@ -18,7 +18,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
-    "@gatsbywpthemes/gatsby-theme-wp-ginger-pro": "^2.0.0",
+    "@gatsbywpthemes/gatsby-theme-wp-ginger-pro": "^2.0.1",
     "gatsby": "^4.3.0",
     "gatsby-plugin-root-import": "^2.0.8",
     "lodash.merge": "^4.6.2",

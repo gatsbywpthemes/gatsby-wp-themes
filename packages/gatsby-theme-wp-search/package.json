@@ -2,7 +2,7 @@
   "name": "@gatsbywpthemes/gatsby-theme-wp-search",
   "description": "WordPress basic theme for Gatsby using WPGraphQL",
   "author": "Paulina Hetman <info@pehaa.com>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
