@@ -1,36 +1,46 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Heading, Button } from "./ui-components"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const fragment = graphql`
-  fragment contentBlock on WpPage_Layoutblocks_Blocks_ContentBlock {
+  fragment coverBlock on WpPage_Layoutblocks_Blocks_CoverBlock {
     cssClass
     anchorId
     headline
     headlineTag
     content
+    image {
+      ...GatsbyImageQuery_starter
+    }
     button {
       ...button
     }
   }
 `
 
-const Contentblock = ({
+const Coverblock = ({
   cssClass,
   anchorId,
   headline,
   headlineTag,
   content,
   button,
+  image,
   ...props
 }) => {
   return (
     <section
-      className={`${cssClass ? cssClass : ""}`}
+      className={`relative aspect-video ${cssClass ? cssClass : ""}`}
       id={`${anchorId ? anchorId : ""}`}
       {...props}
     >
-      <div className="center-container">
+      <GatsbyImage
+        loading="lazy"
+        image={image.localFile.childImageSharp.gatsbyImageData}
+        className="object-cover object-top w-full h-[300px]"
+      />
+      <div className="absolute w-full px-10 mx-auto text-center text-black uppercase -translate-y-1/2 top-1/2 left-10">
         {headline && (
           <Heading
             tag={headlineTag}
@@ -48,4 +58,4 @@ const Contentblock = ({
   )
 }
 
-export default Contentblock
+export default Coverblock

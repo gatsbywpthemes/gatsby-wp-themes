@@ -50,12 +50,7 @@ export const fragments = graphql`
     sourceUrl
     localFile {
       childImageSharp {
-        gatsbyImageData(
-          # width: 1200
-          # height: 600
-          quality: 80
-          layout: FULL_WIDTH
-        )
+        gatsbyImageData(quality: 80, layout: FULL_WIDTH)
         original {
           height
           width

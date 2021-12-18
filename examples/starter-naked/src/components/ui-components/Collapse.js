@@ -1,14 +1,13 @@
 import React, { useState } from "react"
 import Collapsible from "@kunukn/react-collapse"
 import {
-  GoChevronDown as ChevronDown,
-  GoChevronRight as ChevronRight,
-} from "react-icons/go"
+  ChevronDownIcon as ChevronDown,
+  ChevronRightIcon as ChevronRight,
+} from "@heroicons/react/outline"
 
 export const Collapse = ({ trigger, children, className, ...props }) => {
   const [open, setOpen] = useState(false)
-  const iconStyle =
-    "font-bold text-[20px] text-mobileMenuColor dark:text-dark-mobileMenuColor"
+  const iconStyle = "w-5 text-mobileMenuColor dark:text-dark-mobileMenuColor"
 
   return (
     <div {...props}>

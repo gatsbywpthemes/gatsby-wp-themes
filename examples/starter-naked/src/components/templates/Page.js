@@ -14,6 +14,10 @@ const SectionsBlock = loadable(() =>
   import("@gatsbywpthemes/gatsby-theme-acf-builder/src/SectionsBlock")
 )
 
+const CoverBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/CoverBlock")
+)
+
 const Page = ({ page, ctx }) => {
   const {
     title,
@@ -82,19 +86,21 @@ const Page = ({ page, ctx }) => {
             <div className={clsx("content")}>
               <ActivatePageScripts />
               <ParsedContent content={content} />
-              {blocks?.length > 0 &&
-                blocks.map((block) => {
-                  switch (block.__typename) {
-                    case "WpPage_Layoutblocks_Blocks_ContentBlock":
-                      return <ContentBlock {...block} />
-                    case "WpPage_Layoutblocks_Blocks_SectionsBlock":
-                      return <SectionsBlock {...block} />
-
-                    default:
-                      return null
-                  }
-                })}
             </div>
+            {blocks?.length > 0 &&
+              blocks.map((block) => {
+                switch (block.__typename) {
+                  case "WpPage_Layoutblocks_Blocks_ContentBlock":
+                    return <ContentBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_SectionsBlock":
+                    return <SectionsBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_CoverBlock":
+                    return <CoverBlock {...block} />
+
+                  default:
+                    return null
+                }
+              })}
           </div>
           {hasSidebar && (
             <div className={clsx("xl:col-span-1 col-span-3")}>

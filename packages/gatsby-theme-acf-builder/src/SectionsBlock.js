@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Heading } from "./Heading"
-import { Button } from "./Button"
+import { Heading, Button } from "./ui-components"
 
 export const fragment = graphql`
   fragment sectionsBlock on WpPage_Layoutblocks_Blocks_SectionsBlock {

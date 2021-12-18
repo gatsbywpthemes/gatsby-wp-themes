@@ -16,6 +16,7 @@ export const pageQuery = graphql`
           __typename
           ...contentBlock
           ...sectionsBlock
+          ...coverBlock
         }
       }
       template {
