@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Heading } from "./Heading"
+import { Button } from "./Button"
 
 export const fragment = graphql`
   fragment sectionsBlock on WpPage_Layoutblocks_Blocks_SectionsBlock {
@@ -19,7 +20,6 @@ export const fragment = graphql`
 `
 
 const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
-  console.log("sections", sections)
   return (
     <div
       className={`${cssClass ? cssClass : ""}`}
@@ -28,6 +28,7 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
     >
       {sections?.map((section, index) => {
         const { headline, content, headlineTag, image, button } = section
+
         return (
           <section
             key={index}
@@ -45,6 +46,11 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
                 className="content"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
+            )}
+            {button && (
+              <div className="flex justify-center">
+                <Button button={button} />
+              </div>
             )}
           </section>
         )

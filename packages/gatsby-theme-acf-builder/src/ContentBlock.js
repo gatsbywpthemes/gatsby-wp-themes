@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Heading } from "./Heading"
+import { Button } from "./Button"
 
 export const fragment = graphql`
   fragment contentBlock on WpPage_Layoutblocks_Blocks_ContentBlock {
@@ -38,6 +39,11 @@ const Contentblock = ({
           />
         )}
         {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
+        {button && (
+          <div className="flex justify-center">
+            <Button button={button} />
+          </div>
+        )}
       </div>
     </section>
   )
