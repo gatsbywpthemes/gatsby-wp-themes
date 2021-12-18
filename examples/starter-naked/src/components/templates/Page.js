@@ -5,9 +5,24 @@ import { ParsedContent, ActivatePageScripts } from "../../utils"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import clsx from "clsx"
+import loadable from "@loadable/component"
+
+const ContentBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/ContentBlock")
+)
+const SectionsBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/SectionsBlock")
+)
 
 const Page = ({ page, ctx }) => {
-  const { title, isFrontPage, content, uri, headlesswp } = page
+  const {
+    title,
+    isFrontPage,
+    content,
+    uri,
+    headlesswp,
+    layoutBlocks: { blocks },
+  } = page
   const { widgetAreas, layoutWidth } = useThemeOptions()
   const { sidebarWidgets } = widgetAreas
 
@@ -67,6 +82,18 @@ const Page = ({ page, ctx }) => {
             <div className={clsx("content")}>
               <ActivatePageScripts />
               <ParsedContent content={content} />
+              {blocks?.length > 0 &&
+                blocks.map((block) => {
+                  switch (block.__typename) {
+                    case "WpPage_Layoutblocks_Blocks_ContentBlock":
+                      return <ContentBlock {...block} />
+                    case "WpPage_Layoutblocks_Blocks_SectionsBlock":
+                      return <SectionsBlock {...block} />
+
+                    default:
+                      return null
+                  }
+                })}
             </div>
           </div>
           {hasSidebar && (
