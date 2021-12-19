@@ -80,7 +80,6 @@
     -webkit-text-fill-color: theme("colors.dark.text");
   }
 }
-
 .test {
   @apply font-bold text-primary;
 }
