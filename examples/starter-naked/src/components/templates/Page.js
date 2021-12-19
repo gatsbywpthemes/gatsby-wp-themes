@@ -18,6 +18,9 @@ const CoverBlock = loadable(() =>
   import("@gatsbywpthemes/gatsby-theme-acf-builder/src/CoverBlock")
 )
 
+const FeaturesBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/FeaturesBlock")
+)
 const Page = ({ page, ctx }) => {
   const {
     title,
@@ -96,6 +99,8 @@ const Page = ({ page, ctx }) => {
                     return <SectionsBlock {...block} />
                   case "WpPage_Layoutblocks_Blocks_CoverBlock":
                     return <CoverBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_FeaturesBlock":
+                    return <FeaturesBlock {...block} />
 
                   default:
                     return null

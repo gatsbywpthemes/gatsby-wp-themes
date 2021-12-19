@@ -30,7 +30,7 @@ const Contentblock = ({
       id={`${anchorId ? anchorId : ""}`}
       {...props}
     >
-      <div className="center-container">
+      <div className="content-container">
         {headline && (
           <Heading
             tag={headlineTag}
