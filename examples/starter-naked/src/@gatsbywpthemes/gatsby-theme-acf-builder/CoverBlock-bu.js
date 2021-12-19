@@ -1,7 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Heading, Button } from "./ui-components"
+import {
+  Heading,
+  Button,
+} from "@gatsbywpthemes/gatsby-theme-acf-builder/src/ui-components"
 import { GatsbyImage } from "gatsby-plugin-image"
+import clsx from "clsx"
 
 export const fragment = graphql`
   fragment coverBlock on WpPage_Layoutblocks_Blocks_CoverBlock {
@@ -31,7 +35,7 @@ const Coverblock = ({
 }) => {
   return (
     <section
-      className={`cover-block ${cssClass ? cssClass : ""}`}
+      className={`relative aspect-video ${cssClass ? cssClass : ""}`}
       id={`${anchorId ? anchorId : ""}`}
       {...props}
     >
@@ -39,29 +43,29 @@ const Coverblock = ({
         loading="lazy"
         alt={image.altText}
         image={image.localFile.childImageSharp.gatsbyImageData}
-        className="image-container"
-        imgClassName="cover-image"
+        className="w-full h-[400px]"
         objectFit="cover"
         objectPosition="center"
       />
-      <div className={`content`}>
+      <div
+        className={clsx(
+          `absolute inset-0`,
+          `bg-[rgba(0,0,0,.4)] `,
+          `flex items-center justify-center`
+        )}
+      >
         <div className="text-center">
           {headline && (
             <Heading
-              className="headline"
+              className="text-2xl uppercase"
               tag={headlineTag}
               dangerouslySetInnerHTML={{ __html: headline }}
             />
           )}
-          {content && (
-            <div
-              dangerouslySetInnerHTML={{ __html: content }}
-              className="content-text"
-            />
-          )}
+          {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
           {button && (
-            <div className="button-container">
-              <Button button={button} className="button" />
+            <div className="flex justify-center">
+              <Button button={button} />
             </div>
           )}
         </div>

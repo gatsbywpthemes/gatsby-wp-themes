@@ -21,7 +21,7 @@ export const fragment = graphql`
 const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
   return (
     <div
-      className={`${cssClass ? cssClass : ""}`}
+      className={`sections-block ${cssClass ? cssClass : ""}`}
       id={`${anchorId ? anchorId : ""}`}
       {...props}
     >
@@ -47,8 +47,8 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
               />
             )}
             {button && (
-              <div className="flex justify-center">
-                <Button button={button} />
+              <div className="button-container">
+                <Button button={button} className="button" />
               </div>
             )}
           </section>

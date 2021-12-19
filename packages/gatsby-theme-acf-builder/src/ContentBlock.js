@@ -26,7 +26,7 @@ const Contentblock = ({
 }) => {
   return (
     <section
-      className={`${cssClass ? cssClass : ""}`}
+      className={`content-block ${cssClass ? cssClass : ""}`}
       id={`${anchorId ? anchorId : ""}`}
       {...props}
     >
@@ -35,12 +35,18 @@ const Contentblock = ({
           <Heading
             tag={headlineTag}
             dangerouslySetInnerHTML={{ __html: headline }}
+            className="headline"
           />
         )}
-        {content && <div dangerouslySetInnerHTML={{ __html: content }} />}
+        {content && (
+          <div
+            dangerouslySetInnerHTML={{ __html: content }}
+            className="content"
+          />
+        )}
         {button && (
-          <div className="flex justify-center">
-            <Button button={button} />
+          <div className="btn-container">
+            <Button className="button" button={button} />
           </div>
         )}
       </div>

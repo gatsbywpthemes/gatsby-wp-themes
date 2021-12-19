@@ -1,0 +1,25 @@
+.cover-block {
+  @apply relative;
+
+  .content {
+    @apply absolute inset-0;
+    @apply bg-[rgba(0,0,0,0.5)];
+    @apply flex items-center justify-center;
+    @apply text-center;
+
+    .headline {
+      @apply text-3xl uppercase;
+    }
+  }
+  .image-container {
+    @apply w-full h-[400px];
+  }
+  .image {
+  }
+  .button-container {
+    @apply flex justify-center;
+  }
+  .button {
+    @apply btn btn-primary;
+  }
+}
