@@ -6,4 +6,14 @@ export const fragments = graphql`
     title
     target
   }
+  fragment basicImage on WpMediaItem {
+    altText
+    sourceUrl
+    localFile {
+      publicURL
+      childImageSharp {
+        gatsbyImageData(quality: 80, layout: CONSTRAINED)
+      }
+    }
+  }
 `

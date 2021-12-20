@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Heading, Button } from "./ui-components"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { Heading, Button, Image } from "./ui-components"
 
 export const fragment = graphql`
   fragment featuresBlock on WpPage_Layoutblocks_Blocks_FeaturesBlock {
@@ -14,6 +13,9 @@ export const fragment = graphql`
       cssClass
       headline
       headlineTag
+      image {
+        ...basicImage
+      }
       content
       button {
         ...button
@@ -29,6 +31,7 @@ const FeaturesBlock = ({
   headlineTag,
   content,
   features,
+
   ...props
 }) => {
   return (
@@ -58,8 +61,10 @@ const FeaturesBlock = ({
       {features && (
         <div className="features-container">
           {features.map((feature, index) => {
+            console.log(feature)
             return (
               <div className="feature" key={index}>
+                {feature.image && <Image img={feature.image} />}
                 <Heading
                   tag={feature.headlineTag}
                   dangerouslySetInnerHTML={{ __html: feature.headline }}
