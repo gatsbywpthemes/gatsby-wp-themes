@@ -61,7 +61,6 @@ const FeaturesBlock = ({
       {features && (
         <div className="features-container">
           {features.map((feature, index) => {
-            console.log(feature)
             return (
               <div className="feature" key={index}>
                 {feature.image && <Image img={feature.image} />}

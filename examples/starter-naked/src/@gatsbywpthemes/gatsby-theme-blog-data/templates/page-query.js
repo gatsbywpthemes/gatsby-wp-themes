@@ -18,6 +18,7 @@ export const pageQuery = graphql`
           ...sectionsBlock
           ...coverBlock
           ...featuresBlock
+          ...accordionBlock
         }
       }
       template {
