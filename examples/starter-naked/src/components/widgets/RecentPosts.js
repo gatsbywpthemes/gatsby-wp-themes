@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { format } from "date-fns"
 import { GatsbyImage } from "gatsby-plugin-image"
 import normalize from "normalize-path"
+import { Image } from "../ui-components/Image"
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {
@@ -15,8 +16,8 @@ const RECENT_POSTS_QUERY = graphql`
         featuredImage {
           node {
             altText
-            sourceUrl
             localFile {
+              publicURL
               childImageSharp {
                 gatsbyImageData(
                   width: 72
@@ -48,12 +49,13 @@ export const RecentPosts = (props) => {
                 <div className="flex space-x-4" key={post.id}>
                   <Link aria-label={`Read more - ${post.title}`} to={uri}>
                     {post.featuredImage && (
-                      <GatsbyImage
-                        image={
-                          post.featuredImage.node.localFile.childImageSharp
-                            .gatsbyImageData
-                        }
-                        alt={post.featuredImage.node.altText}
+                      <Image
+                        img={post.featuredImage.node}
+                        css={{
+                          objectFit: "cover",
+                          width: "72px",
+                          height: "48px",
+                        }}
                       />
                     )}
                   </Link>{" "}
