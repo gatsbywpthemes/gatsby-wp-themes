@@ -42,7 +42,7 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
             )}
             {content && (
               <p
-                className="content"
+                className="content-text"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
             )}

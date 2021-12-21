@@ -41,7 +41,7 @@ const Contentblock = ({
         {content && (
           <div
             dangerouslySetInnerHTML={{ __html: content }}
-            className="content"
+            className="content-text"
           />
         )}
         {button && (

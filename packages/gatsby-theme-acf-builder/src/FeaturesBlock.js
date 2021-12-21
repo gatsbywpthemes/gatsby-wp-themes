@@ -52,7 +52,7 @@ const FeaturesBlock = ({
           {content && (
             <div
               dangerouslySetInnerHTML={{ __html: content }}
-              className="content"
+              className="content-text"
             />
           )}
         </div>
@@ -71,7 +71,7 @@ const FeaturesBlock = ({
                 />
                 <div
                   dangerouslySetInnerHTML={{ __html: feature.content }}
-                  className="content"
+                  className="content-text"
                 />
                 {feature.button && (
                   <div className="btn-container">

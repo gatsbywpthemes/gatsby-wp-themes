@@ -6,6 +6,7 @@
 @import "acfBlocks/cover-block.css";
 @import "acfBlocks/content-block.css";
 @import "acfBlocks/sections-block.css";
+@import "acfBlocks/accordion-block.css";
 
 @layer base {
   /* Pagination */
