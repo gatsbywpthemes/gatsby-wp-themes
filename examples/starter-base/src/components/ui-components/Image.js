@@ -10,6 +10,6 @@ export const Image = ({ img, loading = "lazy", ...props }) => {
       {...props}
     />
   ) : (
-    <img src={img.localFile.sourceUrl} alt={img.altText} {...props} />
+    <img src={img.localFile.publicURL} alt={img.altText} {...props} />
   )
 }
