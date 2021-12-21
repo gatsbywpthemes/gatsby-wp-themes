@@ -19,7 +19,7 @@ const Post = ({ post, ctx }) => {
   const postWidth = layoutWidth.post || "xl"
 
   const featuredImage =
-    post.featuredImage?.node.localFile.childImageSharp.original
+    post.featuredImage?.node.localFile.childImageSharp?.original
 
   return (
     <Layout page={post} type="post">

@@ -24,7 +24,7 @@ export const PostEntry = ({
   const withImgClass = post.featuredImage ? 'withImg' : ''
   const pageTemplate = post.headlesswp?.pageTemplate || 'default'
   const media = post.featuredImage
-    ? post.featuredImage.node.localFile.childImageSharp.original.src
+    ? post.featuredImage.node.localFile.childImageSharp?.original.src
     : null
 
   return (

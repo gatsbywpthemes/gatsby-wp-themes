@@ -23,7 +23,7 @@ export const SeoOg = (props) => {
     (isFrontPage &&
       seo?.general?.openGraph?.frontPage?.image?.localFile?.childImageSharp
         .original) ||
-    seo?.general?.openGraph?.defaultImage?.localFile?.childImageSharp.original
+    seo?.general?.openGraph?.defaultImage?.localFile?.childImageSharp?.original
 
   const ogDescription =
     seo.page?.opengraphDescription ||

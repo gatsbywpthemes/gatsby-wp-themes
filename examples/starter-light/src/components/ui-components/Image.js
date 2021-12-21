@@ -5,7 +5,7 @@ export const Image = ({ img, loading = "lazy", ...props }) => {
   return img.localFile?.childImageSharp ? (
     <GatsbyImage
       loading={loading}
-      image={img.localFile.childImageSharp.gatsbyImageData}
+      image={img.localFile.childImageSharp?.gatsbyImageData}
       alt={img.altText}
       {...props}
     />

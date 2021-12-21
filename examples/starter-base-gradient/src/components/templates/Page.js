@@ -18,7 +18,7 @@ const Page = ({ page, ctx }) => {
   const postWidth = layoutWidth.post || "xl"
 
   const featuredImage =
-    page.featuredImage?.node.localFile.childImageSharp.original
+    page.featuredImage?.node.localFile.childImageSharp?.original
   return (
     <Layout page={page} type="page">
       <Seo

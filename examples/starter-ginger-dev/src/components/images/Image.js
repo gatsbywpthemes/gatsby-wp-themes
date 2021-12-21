@@ -6,7 +6,7 @@ export const Image = ({ img, loading = 'lazy' }) => {
     !!img && (
       <GatsbyImage
         loading={loading}
-        image={img.node.localFile.childImageSharp.gatsbyImageData}
+        image={img.node.localFile.childImageSharp?.gatsbyImageData}
         alt={img.node.altText}
       />
     )

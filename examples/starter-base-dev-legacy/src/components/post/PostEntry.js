@@ -1,5 +1,5 @@
-import React from 'react'
-import { Box, Center, Divider } from '@chakra-ui/react'
+import React from "react"
+import { Box, Center, Divider } from "@chakra-ui/react"
 
 import {
   PostEntryTitle,
@@ -10,9 +10,9 @@ import {
   ReadMoreButton,
   PrevNextPostNavigation,
   SocialShare,
-} from 'baseComponents'
-import { Card } from 'baseUiComponents'
-import normalize from 'normalize-path'
+} from "baseComponents"
+import { Card } from "baseUiComponents"
+import normalize from "normalize-path"
 
 export const PostEntry = ({
   isFirst = false,
@@ -21,10 +21,10 @@ export const PostEntry = ({
   location,
   ...props
 }) => {
-  const withImgClass = post.featuredImage ? 'withImg' : ''
-  const pageTemplate = post.headlesswp?.pageTemplate || 'default'
+  const withImgClass = post.featuredImage ? "withImg" : ""
+  const pageTemplate = post.headlesswp?.pageTemplate || "default"
   const media = post.featuredImage
-    ? post.featuredImage.node.localFile.childImageSharp.original.src
+    ? post.featuredImage.node.localFile.childImageSharp?.original.src
     : null
 
   return (
@@ -33,23 +33,23 @@ export const PostEntry = ({
         location={location}
         post={post}
         className="entry-media"
-        imageLoading={isFirst ? 'eager' : 'lazy'}
+        imageLoading={isFirst ? "eager" : "lazy"}
         mb={-2}
         sx={{
-          '.gatsby-image-wrapper':
-            pageTemplate === 'full width' && location === 'single'
+          ".gatsby-image-wrapper":
+            pageTemplate === "full width" && location === "single"
               ? { height: 500 }
               : {
-                  borderTopRadius: 'lg',
+                  borderTopRadius: "lg",
                 },
         }}
       />
 
       <Card
-        borderTopRadius={media ? 0 : 'lg'}
+        borderTopRadius={media ? 0 : "lg"}
         className={`content ${withImgClass}`}
         sx={{
-          '&.withImg': {
+          "&.withImg": {
             borderTopLeftRadius: 0,
             borderTopRightRadius: 0,
           },
@@ -59,14 +59,14 @@ export const PostEntry = ({
           location={location}
           post={post}
           textTransform="uppercase"
-          fontSize={['2xl', '3xl']}
+          fontSize={["2xl", "3xl"]}
           mb={5}
           className="entry-title"
         />
         <PostEntryInfo className="entry-info" post={post} />
 
         <PostEntryContent location={location} post={post} />
-        {location !== 'single' && (
+        {location !== "single" && (
           <Center height={20}>
             <Divider />
           </Center>
@@ -76,7 +76,7 @@ export const PostEntry = ({
           <PostEntryMeta className="entry-meta" post={post} />
           <ReadMoreButton location={location} post={post} />
         </div>
-        {location === 'single' && (
+        {location === "single" && (
           <>
             <SocialShare
               url={normalize(`/${post.uri}`)}

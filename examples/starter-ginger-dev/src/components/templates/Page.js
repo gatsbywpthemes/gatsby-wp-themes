@@ -10,7 +10,7 @@ const Page = (props) => {
   const { content, title, uri, headlesswp } = page
   const skipTitle = headlesswp?.skipTitle || false
   const featuredImage =
-    page.featuredImage?.node.localFile.childImageSharp.original
+    page.featuredImage?.node.localFile.childImageSharp?.original
   const { colorMode } = useColorMode()
 
   return (

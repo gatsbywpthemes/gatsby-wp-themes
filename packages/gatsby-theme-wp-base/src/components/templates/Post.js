@@ -11,14 +11,10 @@ const Post = ({ post, ctx }) => {
 
   const pageTemplate = headlesswp?.pageTemplate || 'default'
   const featuredImage =
-    post.featuredImage?.node.localFile.childImageSharp.original
+    post.featuredImage?.node.localFile.childImageSharp?.original
 
-  const {
-    containerStyles,
-    sidebarSide,
-    sidebarPage,
-    sidebarWidgets,
-  } = useLayoutStyles('post', pageTemplate)
+  const { containerStyles, sidebarSide, sidebarPage, sidebarWidgets } =
+    useLayoutStyles('post', pageTemplate)
   return (
     <Layout page={post} type="post">
       <Seo

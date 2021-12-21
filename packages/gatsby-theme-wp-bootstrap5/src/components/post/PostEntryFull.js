@@ -35,7 +35,7 @@ export const PostEntryFull = ({ ctx, post }) => {
           title={post.title}
           media={
             post.featuredImage
-              ? post.featuredImage.node.localFile.childImageSharp.original.src
+              ? post.featuredImage.node.localFile.childImageSharp?.original.src
               : null
           }
         />

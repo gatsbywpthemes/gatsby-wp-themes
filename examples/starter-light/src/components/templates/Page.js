@@ -7,7 +7,7 @@ const Page = ({ page, ctx }) => {
   const { title, isFrontPage, content, uri } = page
 
   const featuredImage =
-    page.featuredImage?.node.localFile.childImageSharp.original
+    page.featuredImage?.node.localFile.childImageSharp?.original
   return (
     <Layout page={page} type="page">
       <Seo

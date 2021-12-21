@@ -22,7 +22,7 @@ export const Logo = () => {
         <>
           {img.localFile ? (
             <GatsbyImage
-              image={img.localFile.childImageSharp.gatsbyImageData}
+              image={img.localFile.childImageSharp?.gatsbyImageData}
               alt="logo"
             />
           ) : (

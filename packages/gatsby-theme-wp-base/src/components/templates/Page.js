@@ -17,7 +17,7 @@ const Page = ({ page, ctx }) => {
     useLayoutStyles('page', pageTemplate)
   const { colorMode } = useColorMode()
   const featuredImage =
-    page.featuredImage?.node.localFile.childImageSharp.original
+    page.featuredImage?.node.localFile.childImageSharp?.original
 
   return (
     <Layout page={page} type="page">

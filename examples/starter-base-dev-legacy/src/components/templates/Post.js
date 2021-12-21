@@ -1,24 +1,20 @@
-import React from 'react'
-import { Flex } from '@chakra-ui/react'
-import { Container } from 'baseUiComponents'
-import { Layout, PostEntry, Sidebar, Comments } from 'baseComponents'
-import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import React from "react"
+import { Flex } from "@chakra-ui/react"
+import { Container } from "baseUiComponents"
+import { Layout, PostEntry, Sidebar, Comments } from "baseComponents"
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
-import { useLayoutStyles } from 'baseUtils/hooks'
+import { useLayoutStyles } from "baseUtils/hooks"
 
 const Post = ({ post, ctx }) => {
   const { title, uri, headlesswp } = post
 
-  const pageTemplate = headlesswp?.pageTemplate || 'default'
+  const pageTemplate = headlesswp?.pageTemplate || "default"
   const featuredImage =
-    post.featuredImage?.node.localFile.childImageSharp.original
+    post.featuredImage?.node.localFile.childImageSharp?.original
 
-  const {
-    containerStyles,
-    sidebarSide,
-    sidebarPage,
-    sidebarWidgets,
-  } = useLayoutStyles('post', pageTemplate)
+  const { containerStyles, sidebarSide, sidebarPage, sidebarWidgets } =
+    useLayoutStyles("post", pageTemplate)
   return (
     <Layout page={post} type="post">
       <Seo
@@ -38,7 +34,7 @@ const Post = ({ post, ctx }) => {
         <Flex
           sx={{
             ...sidebarSide,
-            flexWrap: { base: 'wrap', lg: 'nowrap' },
+            flexWrap: { base: "wrap", lg: "nowrap" },
             alignItems: `flex-start`,
           }}
         >

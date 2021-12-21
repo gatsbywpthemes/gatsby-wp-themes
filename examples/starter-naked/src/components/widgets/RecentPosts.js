@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { format } from "date-fns"
-import { GatsbyImage } from "gatsby-plugin-image"
 import normalize from "normalize-path"
 import { Image } from "../ui-components/Image"
 

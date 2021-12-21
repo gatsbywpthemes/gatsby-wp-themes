@@ -1,11 +1,11 @@
-import React from 'react'
-import { VStack, HStack, Box, Link as ChakraLink } from '@chakra-ui/react'
-import { BorderTitle } from 'baseUiComponents'
+import React from "react"
+import { VStack, HStack, Box, Link as ChakraLink } from "@chakra-ui/react"
+import { BorderTitle } from "baseUiComponents"
 
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import { format } from 'date-fns'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import normalize from 'normalize-path'
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { format } from "date-fns"
+import { GatsbyImage } from "gatsby-plugin-image"
+import normalize from "normalize-path"
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {
@@ -56,12 +56,12 @@ export const RecentPosts = (props) => {
                       <GatsbyImage
                         image={
                           post.featuredImage.node.localFile.childImageSharp
-                            .gatsbyImageData
+                            ?.gatsbyImageData
                         }
                         alt={post.featuredImage.node.altText}
                       />
                     )}
-                  </Link>{' '}
+                  </Link>{" "}
                   <Box>
                     <Box
                       as="time"
@@ -71,8 +71,8 @@ export const RecentPosts = (props) => {
                       className="widget-post-date entry-date"
                       dateTime={post.date}
                     >
-                      {format(new Date(post.date), 'MMMM dd, yyyy')}
-                    </Box>{' '}
+                      {format(new Date(post.date), "MMMM dd, yyyy")}
+                    </Box>{" "}
                     <ChakraLink
                       as={Link}
                       className="widget-post-title"

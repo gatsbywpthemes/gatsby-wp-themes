@@ -7,7 +7,7 @@ const Post = ({ post, ctx }) => {
   const { title, uri } = post
 
   const featuredImage =
-    post.featuredImage?.node.localFile.childImageSharp.original
+    post.featuredImage?.node.localFile.childImageSharp?.original
   return (
     <Layout page={post} type="post">
       <Seo

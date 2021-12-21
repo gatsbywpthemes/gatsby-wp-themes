@@ -56,7 +56,7 @@ export const RecentPosts = (props) => {
                       <GatsbyImage
                         image={
                           post.featuredImage.node.localFile.childImageSharp
-                            .gatsbyImageData
+                            ?.gatsbyImageData
                         }
                         alt={post.featuredImage.node.altText}
                       />
