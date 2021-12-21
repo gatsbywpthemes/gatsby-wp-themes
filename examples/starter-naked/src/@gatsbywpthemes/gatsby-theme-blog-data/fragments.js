@@ -49,6 +49,7 @@ export const fragments = graphql`
     altText
     sourceUrl
     localFile {
+      publicURL
       childImageSharp {
         gatsbyImageData(
           # width: 1200
