@@ -24,6 +24,9 @@ const FeaturesBlock = loadable(() =>
 const AccordionBlock = loadable(() =>
   import("@gatsbywpthemes/gatsby-theme-acf-builder/src/AccordionBlock")
 )
+const TestimonialsBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/TestimonialsBlock")
+)
 const Page = ({ page, ctx }) => {
   const {
     title,
@@ -106,6 +109,8 @@ const Page = ({ page, ctx }) => {
                     return <FeaturesBlock {...block} />
                   case "WpPage_Layoutblocks_Blocks_AccordionBlock":
                     return <AccordionBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_TestimonialsBlock":
+                    return <TestimonialsBlock {...block} />
 
                   default:
                     return null

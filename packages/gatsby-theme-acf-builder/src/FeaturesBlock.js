@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Button, Image, Heading } from "./ui-components"
+import { Button, Image } from "./ui-components"
 import { HeadlineContent } from "./HeadlineContent"
 
 export const fragment = graphql`
@@ -32,7 +32,6 @@ const FeaturesBlock = ({
   headlineTag,
   content,
   features,
-
   ...props
 }) => {
   return (
@@ -54,7 +53,7 @@ const FeaturesBlock = ({
             const { image, headline, headlineTag, content, button } = feature
             return (
               <div className="feature" key={index}>
-                {image && <Image img={image} />}
+                {image && <Image img={image} className="image-container" />}
 
                 {(headline || content) && (
                   <HeadlineContent
