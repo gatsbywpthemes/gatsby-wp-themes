@@ -1,11 +1,12 @@
 .accordion-block {
+  .accordion {
+    @apply center-container;
+  }
 }
-.accordion {
-  @apply center-container;
-}
+
 .accordion-item {
   @apply px-5 py-3 mb-4 border-2 border-teal-400 bg-teal-50 rounded-xl;
-  .content {
+  .content-text {
     @apply w-full;
   }
 }

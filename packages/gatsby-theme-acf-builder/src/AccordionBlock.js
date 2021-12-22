@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import { Heading } from "./ui-components"
+import { HeadlineContent } from "./HeadlineContent"
 import Collapsible from "@kunukn/react-collapse"
 import {
   ChevronRightIcon as ClosedIcon,
@@ -37,21 +37,11 @@ const AccordionBlock = ({
       {...props}
     >
       {(headline || content) && (
-        <div className="content-container">
-          {headline && (
-            <Heading
-              tag={headlineTag}
-              dangerouslySetInnerHTML={{ __html: headline }}
-              className="headline"
-            />
-          )}
-          {content && (
-            <div
-              dangerouslySetInnerHTML={{ __html: content }}
-              className="content-text"
-            />
-          )}
-        </div>
+        <HeadlineContent
+          headline={headline}
+          content={content}
+          headlineTag={headlineTag}
+        />
       )}
       {accordionItems && (
         <div className="accordion">

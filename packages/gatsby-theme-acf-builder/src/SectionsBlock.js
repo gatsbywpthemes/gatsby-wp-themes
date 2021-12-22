@@ -26,7 +26,7 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
       {...props}
     >
       {sections?.map((section, index) => {
-        const { headline, content, headlineTag, image, button } = section
+        const { headline, content, headlineTag, button } = section
 
         return (
           <section

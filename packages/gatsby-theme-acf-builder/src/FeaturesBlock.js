@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Heading, Button, Image } from "./ui-components"
+import { Button, Image, Heading } from "./ui-components"
+import { HeadlineContent } from "./HeadlineContent"
 
 export const fragment = graphql`
   fragment featuresBlock on WpPage_Layoutblocks_Blocks_FeaturesBlock {
@@ -41,41 +42,30 @@ const FeaturesBlock = ({
       {...props}
     >
       {(headline || content) && (
-        <div className="content-container">
-          {headline && (
-            <Heading
-              tag={headlineTag}
-              dangerouslySetInnerHTML={{ __html: headline }}
-              className="headline"
-            />
-          )}
-          {content && (
-            <div
-              dangerouslySetInnerHTML={{ __html: content }}
-              className="content-text"
-            />
-          )}
-        </div>
+        <HeadlineContent
+          headline={headline}
+          content={content}
+          headlineTag={headlineTag}
+        />
       )}
-
       {features && (
         <div className="features-container">
           {features.map((feature, index) => {
+            const { image, headline, headlineTag, content, button } = feature
             return (
               <div className="feature" key={index}>
-                {feature.image && <Image img={feature.image} />}
-                <Heading
-                  tag={feature.headlineTag}
-                  dangerouslySetInnerHTML={{ __html: feature.headline }}
-                  className="headline"
-                />
-                <div
-                  dangerouslySetInnerHTML={{ __html: feature.content }}
-                  className="content-text"
-                />
-                {feature.button && (
+                {image && <Image img={image} />}
+
+                {(headline || content) && (
+                  <HeadlineContent
+                    headline={headline}
+                    content={content}
+                    headlineTag={headlineTag}
+                  />
+                )}
+                {button && (
                   <div className="btn-container">
-                    <Button className="button" button={feature.button} />
+                    <Button className="button" button={button} />
                   </div>
                 )}
               </div>

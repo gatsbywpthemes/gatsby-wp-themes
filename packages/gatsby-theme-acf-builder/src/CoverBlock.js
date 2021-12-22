@@ -44,27 +44,25 @@ const Coverblock = ({
         objectFit="cover"
         objectPosition="center"
       />
-      <div className={`content`}>
-        <div className="text-center">
-          {headline && (
-            <Heading
-              className="headline"
-              tag={headlineTag}
-              dangerouslySetInnerHTML={{ __html: headline }}
-            />
-          )}
-          {content && (
-            <div
-              dangerouslySetInnerHTML={{ __html: content }}
-              className="content-text"
-            />
-          )}
-          {button && (
-            <div className="button-container">
-              <Button button={button} className="button" />
-            </div>
-          )}
-        </div>
+      <div className="overlay">
+        {headline && (
+          <Heading
+            className="headline"
+            tag={headlineTag}
+            dangerouslySetInnerHTML={{ __html: headline }}
+          />
+        )}
+        {content && (
+          <div
+            dangerouslySetInnerHTML={{ __html: content }}
+            className="content-text"
+          />
+        )}
+        {button && (
+          <div className="button-container">
+            <Button button={button} className="button" />
+          </div>
+        )}
       </div>
     </section>
   )
