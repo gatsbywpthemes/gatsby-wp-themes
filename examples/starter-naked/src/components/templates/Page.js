@@ -30,6 +30,7 @@ const TestimonialsBlock = loadable(() =>
 const PricingBlock = loadable(() =>
   import("@gatsbywpthemes/gatsby-theme-acf-builder/src/PricingBlock")
 )
+
 const Page = ({ page, ctx }) => {
   const {
     title,
