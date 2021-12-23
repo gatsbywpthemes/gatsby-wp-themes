@@ -20,6 +20,7 @@ export const pageQuery = graphql`
           ...featuresBlock
           ...accordionBlock
           ...testimonialsBlock
+          ...pricingBlock
         }
       }
       template {

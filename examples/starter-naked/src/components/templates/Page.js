@@ -27,6 +27,9 @@ const AccordionBlock = loadable(() =>
 const TestimonialsBlock = loadable(() =>
   import("@gatsbywpthemes/gatsby-theme-acf-builder/src/TestimonialsBlock")
 )
+const PricingBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/PricingBlock")
+)
 const Page = ({ page, ctx }) => {
   const {
     title,
@@ -111,6 +114,8 @@ const Page = ({ page, ctx }) => {
                     return <AccordionBlock {...block} />
                   case "WpPage_Layoutblocks_Blocks_TestimonialsBlock":
                     return <TestimonialsBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_PricingBlock":
+                    return <PricingBlock {...block} />
 
                   default:
                     return null
