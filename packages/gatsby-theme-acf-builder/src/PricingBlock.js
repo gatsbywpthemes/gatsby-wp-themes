@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Button } from "./ui-components"
 import { HeadlineContent } from "./HeadlineContent"
 import { Tooltip } from "react-tippy"
+import "react-tippy/dist/tippy.css"
 
 export const fragment = graphql`
   fragment pricingBlock on WpPage_Layoutblocks_Blocks_PricingBlock {
@@ -64,17 +65,27 @@ const PricingBlock = ({
 
                 <div className="features">
                   {features &&
-                    features.map((feature, index) => {
-                      const { description, feature } = feature
+                    features.map((item, index) => {
+                      const { description, feature } = item
                       return (
                         <div className="feature-container" key={index}>
-                          <Tooltip title={description} arrow distance={15}>
+                          <Tooltip
+                            className="description"
+                            title={description}
+                            arrow
+                            distance={15}
+                          >
                             <div className="feature">{feature}</div>
                           </Tooltip>
                         </div>
                       )
                     })}
                 </div>
+                {productId && (
+                  <div className="button-container">
+                    <button>buy now</button>
+                  </div>
+                )}
               </div>
             )
           })}
