@@ -10,6 +10,7 @@
     "@gatsbywpthemes/gatsby-plugin-wp-seo": "^2.0.1",
     "@gatsbywpthemes/gatsby-plugin-wpcf7": "^2.0.1",
     "@gatsbywpthemes/gatsby-theme-blog-data": "^2.0.1",
+    "@heroicons/react": "^1.0.5",
     "@wordpress/base-styles": "^4.0.4",
     "@wordpress/block-library": "^6.0.13",
     "babel-plugin-prismjs": "^2.1.0",

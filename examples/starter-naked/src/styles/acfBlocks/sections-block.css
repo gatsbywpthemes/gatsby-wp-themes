@@ -1,0 +1,22 @@
+.sections-block {
+  section {
+    .button-container {
+      @apply flex justify-center;
+    }
+  }
+  &.two-cols {
+    @apply grid-cols-2 gap-10 sm:grid;
+    .headline {
+      @apply mb-10 text-center text-7xl text-primary;
+    }
+    section {
+      @apply first:mb-5 sm:mb-0;
+    }
+    .content {
+      @apply flex flex-col justify-center;
+    }
+    img {
+      @apply rounded-xl;
+    }
+  }
+}

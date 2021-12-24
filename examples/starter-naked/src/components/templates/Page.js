@@ -5,9 +5,41 @@ import { ParsedContent, ActivatePageScripts } from "../../utils"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import clsx from "clsx"
+import loadable from "@loadable/component"
+
+const ContentBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/ContentBlock")
+)
+const SectionsBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/SectionsBlock")
+)
+
+const CoverBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/CoverBlock")
+)
+
+const FeaturesBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/FeaturesBlock")
+)
+const AccordionBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/AccordionBlock")
+)
+const TestimonialsBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/TestimonialsBlock")
+)
+const PricingBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/PricingBlock")
+)
 
 const Page = ({ page, ctx }) => {
-  const { title, isFrontPage, content, uri, headlesswp } = page
+  const {
+    title,
+    isFrontPage,
+    content,
+    uri,
+    headlesswp,
+    layoutBlocks: { blocks },
+  } = page
   const { widgetAreas, layoutWidth } = useThemeOptions()
   const { sidebarWidgets } = widgetAreas
 
@@ -68,6 +100,28 @@ const Page = ({ page, ctx }) => {
               <ActivatePageScripts />
               <ParsedContent content={content} />
             </div>
+            {blocks?.length > 0 &&
+              blocks.map((block) => {
+                switch (block.__typename) {
+                  case "WpPage_Layoutblocks_Blocks_ContentBlock":
+                    return <ContentBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_SectionsBlock":
+                    return <SectionsBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_CoverBlock":
+                    return <CoverBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_FeaturesBlock":
+                    return <FeaturesBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_AccordionBlock":
+                    return <AccordionBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_TestimonialsBlock":
+                    return <TestimonialsBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_PricingBlock":
+                    return <PricingBlock {...block} />
+
+                  default:
+                    return null
+                }
+              })}
           </div>
           {hasSidebar && (
             <div className={clsx("xl:col-span-1 col-span-3")}>

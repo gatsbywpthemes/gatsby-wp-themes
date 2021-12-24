@@ -1,0 +1,28 @@
+.pricing-block {
+  .headline {
+  }
+  .content-text {
+  }
+}
+.tables-container {
+}
+.pricing-table {
+  .title {
+  }
+  .price {
+  }
+  .features {
+    .feature-container {
+      .feature {
+      }
+      .description {
+      }
+    }
+  }
+  .button-container {
+    @apply flex justify-center;
+    button {
+      @apply btn btn-primary;
+    }
+  }
+}

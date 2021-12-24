@@ -1,0 +1,12 @@
+.content-block {
+  .headline {
+  }
+  .content-text {
+  }
+  .button-container {
+    @apply flex justify-center;
+  }
+  .button {
+    @apply btn btn-primary;
+  }
+}

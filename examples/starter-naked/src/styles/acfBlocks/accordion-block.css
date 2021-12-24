@@ -1,0 +1,22 @@
+.accordion-block {
+  .accordion {
+    @apply center-container;
+  }
+}
+
+.accordion-item {
+  @apply px-5 py-3 mb-4 border-2 border-teal-400 bg-teal-50 rounded-xl;
+  .content-text {
+    @apply w-full;
+  }
+}
+.accordion-icon {
+  @apply w-7;
+}
+.accordion-trigger {
+  @apply flex justify-between w-full;
+}
+
+.accordion-collapse {
+  @apply duration-500;
+}

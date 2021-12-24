@@ -1,0 +1,30 @@
+.cover-block {
+  @apply relative;
+
+  .overlay {
+    @apply absolute inset-0;
+    @apply bg-[rgba(0,0,0,0.5)];
+    @apply flex flex-col items-center justify-center;
+    @apply text-center;
+
+    .headline {
+      @apply text-red-500 uppercase text-7xl;
+    }
+    .content-text p {
+      @apply text-white text-[40px];
+    }
+  }
+  .image-container {
+    @apply w-full h-[400px];
+  }
+  /* .cover-image {
+
+  } */
+
+  .button-container {
+    @apply flex justify-center;
+  }
+  .button {
+    @apply btn btn-primary;
+  }
+}

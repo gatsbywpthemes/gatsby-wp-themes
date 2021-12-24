@@ -3,6 +3,11 @@
 @import "tailwindcss/utilities";
 @import "base.css";
 @import "wordpress.css";
+@import "acfBlocks/cover-block.css";
+@import "acfBlocks/content-block.css";
+@import "acfBlocks/sections-block.css";
+@import "acfBlocks/accordion-block.css";
+@import "acfBlocks/testimonials-block.css";
 
 @layer base {
   /* Pagination */
@@ -76,4 +81,7 @@
     box-shadow: theme("colors.dark.searchBg") 0px 0px 0px 1000px inset;
     -webkit-text-fill-color: theme("colors.dark.text");
   }
+}
+.test {
+  @apply font-bold text-primary;
 }
