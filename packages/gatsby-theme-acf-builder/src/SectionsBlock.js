@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Heading, Button } from "./ui-components"
+import { SubscribeForm } from "./SubscribeForm"
 
 export const fragment = graphql`
   fragment sectionsBlock on WpPage_Layoutblocks_Blocks_SectionsBlock {
@@ -26,13 +27,11 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
       {...props}
     >
       {sections?.map((section, index) => {
-        const { headline, content, headlineTag, button } = section
+        const { headline, content, headlineTag, button, cssClass } = section
+        const hasSubscribe = cssClass.includes("subscribe")
 
         return (
-          <section
-            key={index}
-            className={`${section.cssClass ? section.cssClass : ""}`}
-          >
+          <section key={index} className={`${cssClass ? cssClass : ""}`}>
             {headline && (
               <Heading
                 tag={headlineTag}
@@ -45,6 +44,11 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
                 className="content-text"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
+            )}
+            {hasSubscribe && (
+              <div className="subscribe-container">
+                <SubscribeForm />
+              </div>
             )}
             {button && (
               <div className="button-container">

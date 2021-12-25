@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Heading, Button } from "./ui-components"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { SubscribeForm } from "./SubscribeForm"
 
 export const fragment = graphql`
   fragment coverBlock on WpPage_Layoutblocks_Blocks_CoverBlock {
@@ -29,6 +30,8 @@ const Coverblock = ({
   image,
   ...props
 }) => {
+  const hasSubscribe = cssClass.includes("subscribe")
+
   return (
     <section
       className={`cover-block ${cssClass ? cssClass : ""}`}
@@ -37,8 +40,8 @@ const Coverblock = ({
     >
       <GatsbyImage
         loading="lazy"
-        alt={image.altText}
-        image={image.localFile.childImageSharp.gatsbyImageData}
+        alt={image?.altText}
+        image={image?.localFile.childImageSharp.gatsbyImageData}
         className="image-container"
         imgClassName="cover-image"
         objectFit="cover"
@@ -57,6 +60,11 @@ const Coverblock = ({
             dangerouslySetInnerHTML={{ __html: content }}
             className="content-text"
           />
+        )}
+        {hasSubscribe && (
+          <div className="subscribe-container">
+            <SubscribeForm />
+          </div>
         )}
         {button && (
           <div className="button-container">

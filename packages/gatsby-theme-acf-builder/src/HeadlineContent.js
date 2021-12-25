@@ -5,11 +5,14 @@ export const HeadlineContent = ({
   headline,
   content,
   headlineTag,
-  className = null,
+  className,
   ...props
 }) => {
   return (
-    <div className={`content-container ${className}`} {...props}>
+    <div
+      className={`content-container ${className ? className : ""}`}
+      {...props}
+    >
       {headline && (
         <Heading
           tag={headlineTag}
