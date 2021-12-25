@@ -28,7 +28,7 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
     >
       {sections?.map((section, index) => {
         const { headline, content, headlineTag, button, cssClass } = section
-        const hasSubscribe = cssClass.includes("subscribe")
+        const hasSubscribe = cssClass?.includes("subscribe")
 
         return (
           <section key={index} className={`${cssClass ? cssClass : ""}`}>

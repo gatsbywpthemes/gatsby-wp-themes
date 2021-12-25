@@ -25,7 +25,7 @@ const Contentblock = ({
   button,
   ...props
 }) => {
-  const hasSubscribe = cssClass.includes("subscribe")
+  const hasSubscribe = cssClass?.includes("subscribe")
 
   return (
     <section
