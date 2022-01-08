@@ -9,10 +9,7 @@ export const HeadlineContent = ({
   ...props
 }) => {
   return (
-    <div
-      className={`content-container ${className ? className : ""}`}
-      {...props}
-    >
+    <div className={`intro ${className ? className : ""}`} {...props}>
       {headline && (
         <Heading
           tag={headlineTag}
