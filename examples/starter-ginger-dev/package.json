@@ -10,19 +10,19 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "^2.0.1",
     "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.0.5",
     "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.2",
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.0.1",
-    "gatsby": "^4.3.0",
+    "gatsby": "^4.6.0",
     "gatsby-plugin-smoothscroll": "^1.2.0",
-    "prismjs": "^1.25.0",
+    "prismjs": "^1.26.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "babel-preset-gatsby": "^2.3.0",
+    "babel-preset-gatsby": "^2.6.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26",
     "prettier": "^2.5.1"
   },

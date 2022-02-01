@@ -17,16 +17,16 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "@gatsbywpthemes/gatsby-theme-wp-ginger-pro": "^2.0.5",
-    "gatsby": "^4.3.0",
+    "gatsby": "^4.6.0",
     "gatsby-plugin-root-import": "^2.0.8",
     "lodash.merge": "^4.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "babel-preset-gatsby": "^2.3.0",
+    "babel-preset-gatsby": "^2.6.0",
     "prettier": "^2.5.1"
   }
 }
