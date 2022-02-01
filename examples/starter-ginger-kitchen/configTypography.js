@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-const rem = (px) => px / 16 + "rem"
+const rem = (px) => px / 16 + 'rem'
 const typographySettings = {
   fonts: {
-    body: "Lora, serif",
-    heading: "Abril Fatface, serif",
+    body: 'Lora, serif',
+    heading: 'Abril Fatface, serif',
   },
   fontWeights: {
     heading: 400,

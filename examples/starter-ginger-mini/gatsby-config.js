@@ -1,48 +1,58 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-const fs = require("fs")
-require("dotenv").config({
+const DEFAULT_OPTIONS = require('@gatsbywpthemes/gatsby-theme-blog-data/utils/defaultOptions')
+const fs = require('fs')
+require('dotenv').config({
   path:
     (fs.existsSync(`.env.${process.env.NODE_ENV}`) &&
       `.env.${process.env.NODE_ENV}`) ||
-    ".env",
+    '.env',
 })
-const { author, pathPrefix, ...options } = require("./config")
+
+const path = require('path')
+const { author, pathPrefix, ...options } = require('./config')
 const siteUrl = process.env.GATSBY_SITE_URL || options.siteUrl
+options.wordPressUrl = process.env.GATSBY_WP_URL
 
 module.exports = {
   pathPrefix,
-
   siteMetadata: {
-    author,
+    author: `@pehaa`,
     wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl,
   },
   plugins: [
+    `@gatsbywpthemes/gatsby-theme-wp-comments`,
+    `@gatsbywpthemes/gatsby-theme-wp-search`,
     {
-      resolve: `@gatsbywpthemes/gatsby-theme-wp-ginger-pro`,
+      resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
+      options: options,
+    },
+    {
+      resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
       options: {
+        ...DEFAULT_OPTIONS,
         ...options,
-        wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
     {
-      resolve: "gatsby-plugin-root-import",
+      resolve: 'gatsby-plugin-root-import',
       options: {
-        gingerThemeSrc: "@gatsbywpthemes/gatsby-theme-wp-ginger-pro/src",
-        gingerThemePages:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-pro/src/pages",
-        gingerThemeStyles:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-pro/src/styles",
-        gingerThemeComponents:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-pro/src/components",
-        gingerThemeUiComponents:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-pro/src/components/ui-components",
-        gingerThemeUtils:
-          "@gatsbywpthemes/gatsby-theme-wp-ginger-pro/src/utils",
+        gingerThemeSrc: path.join(__dirname, 'src'),
+        gingerThemePages: path.join(__dirname, 'src/pages'),
+        gingerThemeStyles: path.join(__dirname, 'src/styles'),
+        gingerThemeComponents: path.join(__dirname, 'src/components'),
+        gingerThemeUiComponents: path.join(
+          __dirname,
+          'src/components/ui-components'
+        ),
+        gingerThemeUtils: path.join(__dirname, 'src/utils'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.1,
+        once: true,
+        selector: `[data-sal], .entry-content .animate-on-scroll`,
       },
     },
   ],

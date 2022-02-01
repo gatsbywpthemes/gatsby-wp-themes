@@ -69,14 +69,3 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-
-.netlify/
-
-#packages
-packages/@gatsbywpthemes/gatsby-theme-blog-data
-packages/gatsby-theme-algolia
-
-
-#bit
-.bitmap
-.bit/

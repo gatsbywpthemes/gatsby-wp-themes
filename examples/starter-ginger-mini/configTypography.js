@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-const rem = (px) => px / 16 + "rem"
+const rem = (px) => px / 16 + 'rem'
 const typographySettings = {
   fonts: {
-    body: "Lexend, sans-serif",
-    heading: "Special Elite, serif",
+    body: 'Lexend, sans-serif',
+    heading: 'Special Elite, serif',
   },
   fontWeights: {
     heading: 400,
