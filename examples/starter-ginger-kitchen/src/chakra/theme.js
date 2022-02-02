@@ -22,7 +22,7 @@ const theme = extendTheme({
   breakpoints,
   letterSpacings,
   sizes: {
-    header: ['4.5rem', '6rem', '6rem'],
+    header: ['6.75rem', '6.75rem', '5rem'],
     content: '60rem',
   },
   textStyles: {

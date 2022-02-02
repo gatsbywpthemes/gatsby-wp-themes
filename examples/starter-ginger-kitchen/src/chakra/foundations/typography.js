@@ -16,13 +16,13 @@ export const fontSizes = {
 }
 
 export const fonts = {
-  body: 'Trebuchet MS, sans-serif',
-  heading: 'Trebuchet MS, sans-serif',
+  body: 'Lora, serif',
+  heading: 'Abril Fatface, serif',
 }
 
 export const fontWeights = {
+  heading: 400,
   body: 400,
-  heading: 'bold',
   bold: 700,
 }
 
