@@ -1,62 +1,53 @@
-const dark0 = '#3a3a3a'
-const dark1 = '#303030'
-const dark2 = '#262626'
-const dark3 = '#1f1f1f'
-const dark4 = '#161616'
-const light = '#f5f5f5'
-const primary = '#076666'
-const white = '#ffffff'
-
 export const colors = {
   /* basic colors */
-  text: dark1,
-  bg: white,
+  // text: "#303030",
+  // bg: "#ffffff",
   /* header */
-  headerColor: dark1,
-  headerBg: light,
+  headerColor: '#fff',
+  headerBg: '#111',
   /* footer */
-  footerColor: dark1,
-  footerBg: light,
+  // footerColor: "#303030",
+  // footerBg: "#f5f5f5",
   /* sidebar */
-  sidebarColor: white,
-  sidebarBg: primary,
-  menuButtonColor: white,
-  menuButtonBg: dark1,
+  sidebarColor: '#111',
+  sidebarBg: '#eabc2d',
+  // menuButtonColor: "#ffffff",
+  menuButtonBg: '#111',
   /* post */
-  splashBg: primary,
-  scrollDownColor: dark1,
-  scrollDownBg: white,
-  cardColor: dark1,
-  cardBg: light,
-  cardBorder: white,
-  commentsColor: white,
-  commentsBg: dark1,
+  splashBg: '#eabc2d',
+  scrollDownColor: '#111',
+  // scrollDownBg: "#ffffff",
+  // cardColor: "#303030",
+  cardBg: '#efefef',
+  // cardBorder: "#ffffff",
+  commentsColor: '#111',
+  commentsBg: '#eaeaea',
 
   modes: {
     dark: {
       /* basic colors */
-      text: light,
-      bg: dark1,
+      // text: "#f5f5f5",
+      // bg: "#303030",
       /* header */
-      headerColor: light,
-      headerBg: dark2,
+      headerColor: '#fff',
+      headerBg: '#111',
       /* footer */
-      footerColor: light,
-      footerBg: dark4,
+      // footerColor: "#f5f5f5",
+      // footerBg: "#161616",
       /* sidebar */
-      sidebarColor: light,
-      sidebarBg: dark4,
-      menuButtonColor: dark1,
-      menuButtonBg: light,
+      // sidebarColor: "#f5f5f5",
+      // sidebarBg: "#161616",
+      // menuButtonColor: "#303030",
+      // menuButtonBg: "#f5f5f5",
       /* post */
-      splashBg: dark3,
-      scrollDownColor: white,
-      scrollDownBg: dark1,
-      cardColor: light,
-      cardBg: dark1,
-      cardBorder: dark0,
-      commentsColor: light,
-      commentsBg: dark3,
+      // splashBg: "#1f1f1f",
+      // scrollDownColor: "#ffffff",
+      // scrollDownBg: "#303030",
+      // cardColor: "#f5f5f5",
+      // cardBg: "#303030",
+      // cardBorder: "#3a3a3a",
+      // commentsColor: "#f5f5f5",
+      // commentsBg: "#1f1f1f",
     },
   },
 }
