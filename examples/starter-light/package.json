@@ -18,7 +18,7 @@
     "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.2.2",
     "@headlessui/react": "^1.4.3",
     "@kunukn/react-collapse": "^2.2.9",
-    "gatsby": "^4.6.0",
+    "gatsby": "^4.6.1",
     "gatsby-plugin-image": "^2.6.0",
     "gatsby-plugin-sharp": "^4.6.0",
     "gatsby-plugin-use-dark-mode": "^1.4.0",
