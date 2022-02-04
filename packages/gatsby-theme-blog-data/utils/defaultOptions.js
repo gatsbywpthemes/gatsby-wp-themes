@@ -23,7 +23,7 @@ const DEFAULT_OPTIONS = {
   logo: null,
   darkModeLogo: null,
   socialFollowLinks: [],
-  overrideWPColors: false,
+
   developLimit: null,
   addColorModes: true,
   webfontsOptions: {},
