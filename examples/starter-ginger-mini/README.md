@@ -1,4 +1,4 @@
-# Starter Ginger Dev
+# Starter Ginger Mini
 
 [📖 Documentation](https://doc.gatsbywpthemes.com/)
 

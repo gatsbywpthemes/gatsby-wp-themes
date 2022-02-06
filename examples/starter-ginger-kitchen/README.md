@@ -1,4 +1,4 @@
-# Starter Ginger Dev
+# Starter Ginger Kitchen
 
 [📖 Documentation](https://doc.gatsbywpthemes.com/)
 

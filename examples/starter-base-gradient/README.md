@@ -1,4 +1,4 @@
-# Starter Ginger
+# Starter Base Gradient
 
 [📖 Documentation](https://doc.gatsbywpthemes.com/)
 
