@@ -9,7 +9,7 @@ const publishedPackages = [
     srcPath: "examples/starter-base-gradient",
     packagePath: "base-theme-starters/starter-base-gradient",
   },
-  /* 
+  /*
   {
     name: "starter-base-legacy",
     srcPath: "examples/starter-base-legacy",
@@ -24,7 +24,7 @@ const publishedPackages = [
     name: "starter-base-dev-legacy",
     srcPath: "examples/starter-base-dev-legacy",
     packagePath: "base-theme-starters/starter-base-dev-legacy",
-  }, 
+  },
   */
   {
     name: "starter-light",
@@ -36,11 +36,11 @@ const publishedPackages = [
     srcPath: "examples/starter-ginger",
     packagePath: "pro-themes-starters/ginger-theme-starters/starter-ginger",
   },
-  {
-    name: "starter-ginger-dev",
-    srcPath: "examples/starter-ginger-dev",
-    packagePath: "pro-themes-starters/ginger-theme-starters/starter-ginger-dev",
-  },
+  // {
+  //   name: "starter-ginger-dev",
+  //   srcPath: "examples/starter-ginger-dev",
+  //   packagePath: "pro-themes-starters/ginger-theme-starters/starter-ginger-dev",
+  // },
   {
     name: "starter-ginger-kitchen",
     srcPath: "examples/starter-ginger-kitchen",
