@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "bootstrap5",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
@@ -14,7 +14,7 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@gatsbywpthemes/gatsby-theme-wp-bootstrap5": "^2.0.5",
+    "@gatsbywpthemes/gatsby-theme-wp-bootstrap5": "^2.0.6",
     "gatsby": "^4.6.1",
     "gatsby-plugin-root-import": "^2.0.8",
     "lodash.merge": "^4.6.2",
