@@ -1,7 +1,7 @@
 import React from "react"
 import { Layout } from "~/components/Layout"
 import { Sidebar } from "~/components/Sidebar"
-import { PostEntry } from "~/components/post"
+import { PostEntry } from "~/components/post/PostEntry"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import { Comments } from "@gatsbywpthemes/gatsby-theme-wp-comments/src"

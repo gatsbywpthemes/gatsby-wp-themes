@@ -3,7 +3,7 @@ import { useMenuItems } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import { Submenu } from "./Submenu"
 import { MenuItem } from "./MenuItem"
 
-export const MainMenu = ({
+export const Menu = ({
   location = "PRIMARY",
   orientation,
   className,

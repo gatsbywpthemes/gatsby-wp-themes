@@ -1,5 +1,5 @@
 import React from "react"
-import { ArchiveContent } from "~/components/archive"
+import { Archive } from "~/components/archive"
 import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
@@ -17,7 +17,7 @@ const Tag = ({ tag, ctx }) => {
         yoastSeo={yoastSeo}
         seo={seo}
       />
-      <ArchiveContent
+      <Archive
         posts={posts.nodes}
         ctx={ctx}
         name={name}

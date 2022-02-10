@@ -1,5 +1,5 @@
 import React from "react"
-import { MainMenu } from "~/components/menu"
+import { Menu } from "~/components/menu"
 import { ColorSwitch } from "./ColorSwitch"
 import { Branding } from "./Branding"
 import { Slidemenu } from "./SlideMenu"
@@ -27,7 +27,7 @@ export const Header = ({ ...props }) => {
             {search && <SearchModal />}
           </div>
           <div className="flex items-center space-x-5">
-            <MainMenu orientation="H" className="hidden md:flex" />
+            <Menu orientation="H" className="hidden md:flex" />
             <Slidemenu className="md:hidden" />
             {addColorModes && <ColorSwitch />}
           </div>
