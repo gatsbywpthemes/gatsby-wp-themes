@@ -3,11 +3,11 @@ import { Archivetitle } from "./ArchiveTitle"
 import { Description } from "./Description"
 import { Pagination } from "./Pagination"
 import { PostsList } from "./PostsList"
-import { Sidebar } from "../Sidebar"
+import { Sidebar } from "~/components/Sidebar"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import clsx from "clsx"
 
-export const ArchiveContent = ({ posts, ctx, name, description }) => {
+export const Archive = ({ posts, ctx, name, description }) => {
   const {
     archiveSidebarPosition: archiveSidebar,
     layoutWidth,

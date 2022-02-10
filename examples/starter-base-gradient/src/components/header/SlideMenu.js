@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react"
 import clsx from "clsx"
 import { GiHamburgerMenu as Hamburger } from "react-icons/gi"
 import { MdClose as Close } from "react-icons/md"
-import { MainMenu } from "../menu"
+import { Menu } from "../menu"
 import { Widget } from "../widgets"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
@@ -89,7 +89,7 @@ export const Slidemenu = ({ className, ...props }) => {
                         </button>
                       </div>
 
-                      <MainMenu orientation="V" />
+                      <Menu orientation="V" />
 
                       {widgets?.length > 0 &&
                         widgets.map((widget, i) => (

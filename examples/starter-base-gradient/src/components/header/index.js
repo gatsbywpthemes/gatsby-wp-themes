@@ -1,9 +1,9 @@
 import React from "react"
-import { MainMenu } from "../menu"
+import { Menu } from "~/components/menu"
 import { ColorSwitch } from "./ColorSwitch"
 import { Branding } from "./Branding"
 import { Slidemenu } from "./SlideMenu"
-import { SearchModal } from "../search/SearchModal"
+import { SearchModal } from "~/components/search/SearchModal"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import Headroom from "react-headroom"
 import clsx from "clsx"
@@ -27,7 +27,7 @@ export const Header = ({ ...props }) => {
             {search && <SearchModal />}
           </div>
           <div className="flex items-center space-x-5">
-            <MainMenu orientation="H" className="hidden md:flex" />
+            <Menu orientation="H" className="hidden md:flex" />
             <Slidemenu className="md:hidden" />
             {addColorModes && <ColorSwitch />}
           </div>

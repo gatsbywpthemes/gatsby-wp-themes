@@ -1,6 +1,6 @@
 import React from "react"
-import { ArchiveContent } from "../archive"
-import { Layout } from "../Layout"
+import { Archive } from "~/components/archive"
+import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
@@ -18,7 +18,7 @@ const Posts = ({ posts, ctx }) => {
         yoastSeo={yoastSeo}
         seo={seo}
       />
-      <ArchiveContent posts={posts.nodes} ctx={ctx} />
+      <Archive posts={posts.nodes} ctx={ctx} />
     </Layout>
   )
 }

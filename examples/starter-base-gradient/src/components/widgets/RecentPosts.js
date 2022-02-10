@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { format } from "date-fns"
 import normalize from "normalize-path"
 import { WidgetTitle } from "./WidgetTitle"
-import { Image } from "../ui-components/Image"
+import { Image } from "~/components/ui-components/Image"
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {

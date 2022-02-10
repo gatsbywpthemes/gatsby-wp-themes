@@ -1,6 +1,6 @@
 import React from "react"
-import { Layout } from "../../components/Layout"
-import { ArchiveContent } from "../archive"
+import { Layout } from "~/components/Layout"
+import { Archive } from "~/components/archive"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Category = ({ category, ctx }) => {
@@ -18,7 +18,7 @@ const Category = ({ category, ctx }) => {
         uri={uri}
       />
 
-      <ArchiveContent
+      <Archive
         posts={posts.nodes}
         ctx={ctx}
         name={name}

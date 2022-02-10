@@ -1,5 +1,5 @@
 import React from "react"
-import { Layout } from "../components/Layout"
+import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const NotFoundPage = () => {

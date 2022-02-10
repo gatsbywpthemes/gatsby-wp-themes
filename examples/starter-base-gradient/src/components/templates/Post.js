@@ -1,11 +1,11 @@
 import React from "react"
-import { Layout } from "../Layout"
-import { Sidebar } from "../Sidebar"
-import { PostEntry } from "../post"
+import { Layout } from "~/components/Layout"
+import { Sidebar } from "~/components/Sidebar"
+import { PostEntry } from "~/components/post/PostEntry"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
-import clsx from "clsx"
 import { Comments } from "@gatsbywpthemes/gatsby-theme-wp-comments/src"
+import clsx from "clsx"
 
 const Post = ({ post, ctx }) => {
   const { title, uri, headlesswp } = post

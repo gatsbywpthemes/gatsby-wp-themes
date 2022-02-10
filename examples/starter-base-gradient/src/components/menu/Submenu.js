@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import { CgChevronDown } from "react-icons/cg"
-import { Collapse } from "../ui-components"
+import { Collapse } from "~/components/ui-components"
 import { Menu, Transition } from "@headlessui/react"
 import { MenuLink } from "./MenuLink"
 import { MenuItem } from "./MenuItem"
