@@ -1,5 +1,5 @@
 import React from "react"
-import Category from "../../../components/templates/Category"
+import Category from "~/components/templates/Category"
 
 const CategoryComponent = ({ data, pageContext }) => {
   return (
