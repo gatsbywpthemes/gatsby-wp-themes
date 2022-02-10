@@ -22,7 +22,7 @@
     "@headlessui/react": "^1.4.3",
     "@kunukn/react-collapse": "^2.2.9",
     "@loadable/component": "^5.15.2",
-    "gatsby": "^4.6.1",
+    "gatsby": "^4.7.1",
     "gatsby-plugin-loadable-components-ssr": "^4.1.2",
     "gatsby-plugin-use-dark-mode": "^1.4.0",
     "lodash.merge": "^4.6.2",
@@ -33,9 +33,9 @@
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
-    "babel-preset-gatsby": "^2.6.0",
+    "babel-preset-gatsby": "^2.7.0",
     "prettier": "^2.5.1",
-    "stylelint": "^14.3.0",
-    "stylelint-config-standard": "^24.0.0"
+    "stylelint": "^14.4.0",
+    "stylelint-config-standard": "^25.0.0"
   }
 }
