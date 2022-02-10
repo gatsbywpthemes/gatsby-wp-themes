@@ -1,6 +1,6 @@
 import React from "react"
 import { CategoriesWidget, TagsWidget, RecentPosts, Newsletter } from "./index"
-import { SocialFollows } from "../social/SocialFollows"
+import { SocialFollows } from "~/components/social/SocialFollows"
 
 export const Widget = ({ widget, lightBg }) => {
   switch (widget) {

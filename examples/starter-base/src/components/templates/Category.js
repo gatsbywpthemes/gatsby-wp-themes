@@ -1,6 +1,6 @@
 import React from "react"
-import { Layout } from "../../components/Layout"
-import { ArchiveContent } from "../archive"
+import { Layout } from "~/components/Layout"
+import { ArchiveContent } from "~/components/archive"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Category = ({ category, ctx }) => {

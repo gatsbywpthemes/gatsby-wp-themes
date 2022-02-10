@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Image } from "../ui-components/Image"
+import { Image } from "~/components/ui-components/Image"
 
 const WithLink = ({ post, location, children }) =>
   location === "single" ? (
