@@ -1,10 +1,10 @@
-import { graphql } from 'gatsby'
-import SinglePost from '../components/Post'
+import { graphql } from "gatsby"
+import SinglePost from "~/@gatsbywpthemes/gatsby-theme-blog-data-light/components/Post"
 
 export default SinglePost
 
 export const pageQuery = graphql`
-  query($uri: String!) {
+  query ($uri: String!) {
     wpPost(uri: { eq: $uri }) {
       content
       commentStatus

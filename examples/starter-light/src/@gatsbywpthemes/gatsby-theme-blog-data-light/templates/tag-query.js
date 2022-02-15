@@ -1,10 +1,10 @@
-import { graphql } from 'gatsby'
-import Tag from '../components/Tag'
+import { graphql } from "gatsby"
+import Tag from "~/@gatsbywpthemes/gatsby-theme-blog-data-light/components/Tag"
 
 export default Tag
 
 export const pageQuery = graphql`
-  query($slug: String!, $limit: Int!, $skip: Int!) {
+  query ($slug: String!, $limit: Int!, $skip: Int!) {
     allWpPost(
       filter: { tags: { nodes: { elemMatch: { slug: { eq: $slug } } } } }
       limit: $limit

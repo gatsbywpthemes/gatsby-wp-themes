@@ -1,10 +1,10 @@
-import { graphql } from 'gatsby'
-import Category from '../components/Category'
+import { graphql } from "gatsby"
+import Category from "~/@gatsbywpthemes/gatsby-theme-blog-data-light/components/Category"
 
 export default Category
 
 export const pageQuery = graphql`
-  query($slug: String!, $limit: Int!, $skip: Int!) {
+  query ($slug: String!, $limit: Int!, $skip: Int!) {
     allWpPost(
       filter: { categories: { nodes: { elemMatch: { slug: { eq: $slug } } } } }
       limit: $limit
