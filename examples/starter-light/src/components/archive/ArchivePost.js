@@ -1,8 +1,8 @@
 import React from "react"
-import { PostEntryContent } from "../post/PostEntryContent"
-import { PostEntryMedia } from "../post/PostEntryMedia"
-import { PostEntryMeta } from "../post/PostEntryMeta"
-import { PostEntryTitle } from "../post/PostEntryTitle"
+import { PostEntryContent } from "~/components/post/PostEntryContent"
+import { PostEntryMedia } from "~/components/post/PostEntryMedia"
+import { PostEntryMeta } from "~/components/post/PostEntryMeta"
+import { PostEntryTitle } from "~/components/post/PostEntryTitle"
 import clsx from "clsx"
 
 export const Archivepost = ({

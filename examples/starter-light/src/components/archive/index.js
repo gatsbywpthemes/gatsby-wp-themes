@@ -4,7 +4,7 @@ import { Description } from "./Description"
 import { Pagination } from "./Pagination"
 import { PostsList } from "./PostsList"
 
-export const ArchiveContent = ({ posts, ctx, name, description }) => {
+export const Archive = ({ posts, ctx, name, description }) => {
   return (
     <>
       {name && <Archivetitle name={name} text="Posts for " />}
