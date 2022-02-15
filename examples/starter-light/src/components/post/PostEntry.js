@@ -1,6 +1,6 @@
 import React from "react"
 import normalize from "normalize-path"
-import { SocialShare } from "../social/SocialShare"
+import { SocialShare } from "~/components/social/SocialShare"
 import { PostEntryContent } from "./PostEntryContent"
 import { PostEntryInfo } from "./PostEntryInfo"
 import { PostEntryMedia } from "./PostEntryMedia"
@@ -26,7 +26,7 @@ export const PostEntry = ({
           imageLoading="eager"
           post={post}
           location="single"
-          className="mb-10  aspect-w-16 aspect-h-9"
+          className="mb-10 aspect-w-16 aspect-h-9"
         />
       )}
       <div

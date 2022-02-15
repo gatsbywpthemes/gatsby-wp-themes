@@ -1,6 +1,6 @@
 import React from "react"
-import { Layout } from "../Layout"
-import { PostEntry } from "../post"
+import { Layout } from "~/components/Layout"
+import { PostEntry } from "~/components/post/PostEntry"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Post = ({ post, ctx }) => {

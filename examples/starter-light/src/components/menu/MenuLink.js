@@ -1,6 +1,6 @@
 import React from "react"
 import slashes from "remove-trailing-slash"
-import { createLocalLink } from "../../utils"
+import { createLocalLink } from "~/utils"
 import { Link } from "gatsby"
 
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data-light/src/hooks"

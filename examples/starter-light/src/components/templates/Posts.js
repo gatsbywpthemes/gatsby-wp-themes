@@ -1,6 +1,6 @@
 import React from "react"
-import { Archive } from "../archive"
-import { Layout } from "../Layout"
+import { Archive } from "~/components/archive"
+import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data-light/src/hooks"
 

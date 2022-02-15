@@ -1,5 +1,5 @@
 import React from "react"
-import { Menu } from "../menu"
+import { Menu } from "~/components/menu"
 import { ColorSwitch } from "./ColorSwitch"
 import { Branding } from "./Branding"
 import { Slidemenu } from "./SlideMenu"

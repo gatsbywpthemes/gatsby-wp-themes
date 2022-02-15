@@ -1,6 +1,6 @@
 import React from "react"
-import { Layout } from "../Layout"
-import { ParsedContent, ActivatePageScripts } from "../../utils"
+import { Layout } from "~/components/Layout"
+import { ParsedContent, ActivatePageScripts } from "~/utils"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Page = ({ page, ctx }) => {

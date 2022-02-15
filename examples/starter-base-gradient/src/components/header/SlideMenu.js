@@ -3,8 +3,8 @@ import { Dialog, Transition } from "@headlessui/react"
 import clsx from "clsx"
 import { GiHamburgerMenu as Hamburger } from "react-icons/gi"
 import { MdClose as Close } from "react-icons/md"
-import { Menu } from "../menu"
-import { Widget } from "../widgets"
+import { Menu } from "~/components/menu"
+import { Widget } from "~/components/widgets"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
 export const Slidemenu = ({ className, ...props }) => {

@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react"
 import clsx from "clsx"
 import { GiHamburgerMenu as Hamburger } from "react-icons/gi"
 import { MdClose as Close } from "react-icons/md"
-import { Menu } from "../menu"
+import { Menu } from "~/components/menu"
 
 export const Slidemenu = ({ className, ...props }) => {
   const [open, setOpen] = useState(false)

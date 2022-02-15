@@ -1,6 +1,6 @@
 import React from "react"
 import normalize from "normalize-path"
-import { SocialShare } from "../social/SocialShare"
+import { SocialShare } from "~/components/social/SocialShare"
 import { PostEntryContent } from "./PostEntryContent"
 import { PostEntryInfo } from "./PostEntryInfo"
 import { PostEntryMedia } from "./PostEntryMedia"

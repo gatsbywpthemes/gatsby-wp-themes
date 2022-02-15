@@ -1,6 +1,6 @@
 import React from "react"
-import { Archive } from "../archive"
-import { Layout } from "../../components/Layout"
+import { Archive } from "~/components/archive"
+import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Tag = ({ tag, ctx }) => {
