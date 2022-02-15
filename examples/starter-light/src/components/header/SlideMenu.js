@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react"
 import clsx from "clsx"
 import { GiHamburgerMenu as Hamburger } from "react-icons/gi"
 import { MdClose as Close } from "react-icons/md"
-import { MainMenu } from "../menu"
+import { Menu } from "../menu"
 
 export const Slidemenu = ({ className, ...props }) => {
   const [open, setOpen] = useState(false)
@@ -87,7 +87,7 @@ export const Slidemenu = ({ className, ...props }) => {
                         </button>
                       </div>
 
-                      <MainMenu orientation="V" />
+                      <Menu orientation="V" />
                     </div>
                     {/* End of panel content */}
                   </div>
