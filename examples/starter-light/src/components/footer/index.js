@@ -1,5 +1,5 @@
 import React from "react"
-import { SocialFollows } from "../social"
+import { SocialFollows } from "~/components/social"
 import clsx from "clsx"
 
 export const Footer = ({ ...props }) => {
