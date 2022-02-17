@@ -12,7 +12,7 @@ export const fragment = graphql`
     headlineTag
     content
     image {
-      ...GatsbyImageQuery_starter
+      ...coverImage
     }
     button {
       ...button

@@ -8,7 +8,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import clsx from "clsx"
 
 export const fragment = graphql`
-  fragment coverBlock on WpPage_Layoutblocks_Blocks_CoverBlock {
+  fragment coverBlock2 on WpPage_Layoutblocks_Blocks_CoverBlock {
     cssClass
     anchorId
     headline

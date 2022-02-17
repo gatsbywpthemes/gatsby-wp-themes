@@ -16,4 +16,14 @@ export const fragments = graphql`
       }
     }
   }
+  fragment coverImage on WpMediaItem {
+    altText
+    sourceUrl
+    localFile {
+      publicURL
+      childImageSharp {
+        gatsbyImageData(quality: 80, layout: FULL_WIDTH)
+      }
+    }
+  }
 `

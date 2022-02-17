@@ -31,6 +31,10 @@ const PricingBlock = loadable(() =>
   import("@gatsbywpthemes/gatsby-theme-acf-builder/src/PricingBlock")
 )
 
+const ProjectsBlock = loadable(() =>
+  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/ProjectsBlock")
+)
+
 const Page = ({ page, ctx }) => {
   const {
     title,
@@ -117,6 +121,8 @@ const Page = ({ page, ctx }) => {
                     return <TestimonialsBlock {...block} />
                   case "WpPage_Layoutblocks_Blocks_PricingBlock":
                     return <PricingBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_ProjectsBlock":
+                    return <ProjectsBlock {...block} />
 
                   default:
                     return null

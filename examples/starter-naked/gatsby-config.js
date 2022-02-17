@@ -33,7 +33,6 @@ module.exports = {
     `@gatsbywpthemes/gatsby-theme-wp-search`,
     `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     `@gatsbywpthemes/gatsby-theme-acf-builder`,
-    // `gatsby-plugin-loadable-components-ssr`,
 
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
