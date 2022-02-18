@@ -8,6 +8,7 @@
 @import "acfBlocks/sections-block.css";
 @import "acfBlocks/accordion-block.css";
 @import "acfBlocks/testimonials-block.css";
+@import "acfBlocks/projects-block.css";
 
 @layer base {
   /* Pagination */

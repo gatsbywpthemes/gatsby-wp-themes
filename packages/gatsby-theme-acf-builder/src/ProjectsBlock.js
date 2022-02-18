@@ -79,22 +79,23 @@ const ProjectsBlock = ({
                   />
                 )}
                 <h3 className="headline">{title}</h3>
-              </Link>
-              {tags?.nodes?.length > 0 && (
-                <div className="tags">
-                  {tags.nodes.map((tag, index) => (
-                    <div className="tag" key={tag.id}>
-                      {tag.name}
-                      {tags.nodes.length !== index + 1 && (
-                        <span className="separator">.</span>
-                      )}
-                    </div>
-                  ))}
+
+                {tags?.nodes?.length > 0 && (
+                  <div className="tags">
+                    {tags.nodes.map((tag, index) => (
+                      <div className="tag" key={tag.id}>
+                        {tag.name}
+                        {tags.nodes.length !== index + 1 && (
+                          <span className="separator">.</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <div className="project-description">
+                  {projectShortDescription}
                 </div>
-              )}
-              <div className="project-description">
-                {projectShortDescription}
-              </div>
+              </Link>
               <div className="button-container">
                 <a
                   href={projectUrl}
