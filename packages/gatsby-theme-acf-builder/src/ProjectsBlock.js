@@ -78,13 +78,16 @@ const ProjectsBlock = ({
                     imgClassName="project-image"
                   />
                 )}
-                <h3>{title}</h3>
+                <h3 className="headline">{title}</h3>
               </Link>
               {tags?.nodes?.length > 0 && (
-                <div>
-                  {tags.nodes.map((tag) => (
+                <div className="tags">
+                  {tags.nodes.map((tag, index) => (
                     <div className="tag" key={tag.id}>
                       {tag.name}
+                      {tags.nodes.length !== index + 1 && (
+                        <span className="separator">.</span>
+                      )}
                     </div>
                   ))}
                 </div>
