@@ -33,7 +33,16 @@ module.exports = {
     `@gatsbywpthemes/gatsby-theme-wp-search`,
     `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     `@gatsbywpthemes/gatsby-theme-acf-builder`,
-
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
       options: {
