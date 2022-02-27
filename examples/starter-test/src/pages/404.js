@@ -1,9 +1,11 @@
 import React from "react"
 import { Layout } from "~/components/Layout"
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const NotFoundPage = () => {
   return (
     <Layout location="page" page="404">
+      <Seo title="404: Not found" />
       <article className="text-center">
         <h1 className="inline-block px-10 py-6 mb-10 border-8 border-double border-accentColor dark:border-dark-accentColor">
           404
