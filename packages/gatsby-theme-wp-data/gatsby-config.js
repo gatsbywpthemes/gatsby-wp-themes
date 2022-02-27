@@ -25,8 +25,6 @@ module.exports = (options) => {
   const url = slashes(wordPressUrl)
 
   const plugins = [
-    `gatsby-plugin-anchor-links`,
-
     {
       resolve: `gatsby-source-wordpress`,
       options: {

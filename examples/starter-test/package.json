@@ -20,6 +20,7 @@
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.0.4",
     "@gatsbywpthemes/gatsby-plugin-gwpt-image": "^1.0.0",
     "@gatsbywpthemes/gatsby-plugin-wp-seo": "^2.0.4",
+    "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "^2.0.4",
     "gatsby": "^4.7.1",
     "gatsby-plugin-use-dark-mode": "^1.4.0",
     "lodash.merge": "^4.6.2",
