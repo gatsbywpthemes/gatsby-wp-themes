@@ -1,7 +1,7 @@
 import React from "react"
 import { Layout } from "~/components/Layout"
 import { Link } from "gatsby"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 
 const Posts = ({ posts, ctx }) => {
   const { humanPageNumber, numberOfPages, title, yoastSeo, seo } = ctx

@@ -1,5 +1,5 @@
 import { graphql } from "gatsby"
-import Blog from "~/@gatsbywpthemes/gatsby-theme-blog-data/components/Posts"
+import Blog from "~/@gatsbywpthemes/gatsby-theme-wp-data/components/Posts"
 
 export default Blog
 

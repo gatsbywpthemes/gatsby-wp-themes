@@ -14,10 +14,11 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@gatsbywpthemes/gatsby-theme-blog-data": "^2.1.2",
+    "@gatsbywpthemes/gatsby-theme-wp-data": "^1.0.0",
     "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.2.5",
     "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.5",
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.0.4",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-image": "^1.0.0",
     "gatsby": "^4.7.1",
     "gatsby-plugin-use-dark-mode": "^1.4.0",
     "lodash.merge": "^4.6.2",

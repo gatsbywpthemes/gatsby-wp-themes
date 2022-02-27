@@ -1,12 +1,12 @@
 import { graphql } from "gatsby"
-import Tag from "~/@gatsbywpthemes/gatsby-theme-blog-data/components/Tag"
+import Category from "~/@gatsbywpthemes/gatsby-theme-wp-data/components/Category"
 
-export default Tag
+export default Category
 
 export const pageQuery = graphql`
   query ($slug: String!, $limit: Int!, $skip: Int!) {
     allWpPost(
-      filter: { tags: { nodes: { elemMatch: { slug: { eq: $slug } } } } }
+      filter: { categories: { nodes: { elemMatch: { slug: { eq: $slug } } } } }
       limit: $limit
       skip: $skip
       sort: { order: DESC, fields: date }
@@ -15,7 +15,7 @@ export const pageQuery = graphql`
         ...PostTemplateFragment_starter
       }
     }
-    wpTag(slug: { eq: $slug }) {
+    wpCategory(slug: { eq: $slug }) {
       uri
       name
       description
