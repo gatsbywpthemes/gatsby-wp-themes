@@ -8,9 +8,9 @@ const User = ({ user, ctx }) => {
   return (
     <Layout page={user} type="user">
       <h1>Posts from: {name}</h1>
-      {posts?.map(({ node: post }) => {
+      {posts?.nodes?.map((post) => {
         return (
-          <h2>
+          <h2 key={post.id}>
             <Link to={`${post.uri}`}>{post.title}</Link>
           </h2>
         )

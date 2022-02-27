@@ -8,9 +8,9 @@ const Category = ({ category, ctx }) => {
   return (
     <Layout page={category} type="category">
       <h1>Posts for: {name}</h1>
-      {posts?.map(({ node: post }) => {
+      {posts?.nodes?.map((post) => {
         return (
-          <h2>
+          <h2 key={post.id}>
             <Link to={`${post.uri}`}>{post.title}</Link>
           </h2>
         )
