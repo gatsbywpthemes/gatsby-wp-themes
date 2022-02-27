@@ -31,6 +31,7 @@ module.exports = {
     `gatsby-plugin-use-dark-mode`,
     `@gatsbywpthemes/gatsby-theme-wp-comments`,
     `@gatsbywpthemes/gatsby-theme-wp-search`,
+    `@gatsbywpthemes/gatsby-theme-ui-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
