@@ -3,6 +3,7 @@ import { Layout } from "~/components/Layout"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import { Comments } from "@gatsbywpthemes/gatsby-theme-wp-comments/src"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
+import { ParsedContent, ActivatePageScripts } from "~/utils"
 
 const Post = ({ post, ctx }) => {
   const { title, content, uri, headlesswp } = post
@@ -26,7 +27,10 @@ const Post = ({ post, ctx }) => {
 
       <article>
         <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div className="content">
+          <ActivatePageScripts />
+          <ParsedContent content={post.content} />
+        </div>
       </article>
       <Comments post={post} />
     </Layout>
