@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "name": "starter-test",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "dev": "rm -rf .cache && gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop --host 0.0.0.0",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
+  },
+  "dependencies": {
+    "@gatsbywpthemes/gatsby-theme-blog-data": "^2.1.2",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.2.5",
+    "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.5",
+    "@gatsbywpthemes/gatsby-theme-wp-search": "^1.0.4",
+    "gatsby": "^4.7.1",
+    "gatsby-plugin-use-dark-mode": "^1.4.0",
+    "lodash.merge": "^4.6.2",
+    "prismjs": "^1.26.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-preset-gatsby": "^2.7.0",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.4.0",
+    "stylelint-config-standard": "^25.0.0"
+  }
+}
