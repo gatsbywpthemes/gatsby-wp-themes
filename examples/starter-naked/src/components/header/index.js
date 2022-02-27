@@ -4,7 +4,7 @@ import { ColorSwitch } from "./ColorSwitch"
 import { Branding } from "./Branding"
 import { Slidemenu } from "./SlideMenu"
 import { SearchModal } from "../search/SearchModal"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import Headroom from "react-headroom"
 import clsx from "clsx"
 

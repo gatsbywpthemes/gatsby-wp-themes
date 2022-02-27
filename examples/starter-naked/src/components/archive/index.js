@@ -4,7 +4,7 @@ import { Description } from "./Description"
 import { Pagination } from "./Pagination"
 import { PostsList } from "./PostsList"
 import { Sidebar } from "../Sidebar"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import clsx from "clsx"
 
 export const ArchiveContent = ({ posts, ctx, name, description }) => {

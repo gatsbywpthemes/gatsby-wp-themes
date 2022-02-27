@@ -1,7 +1,7 @@
-import React from 'react'
-import { TwitterShareButton, TwitterIcon } from 'react-share'
-import slashes from 'remove-trailing-slash'
-import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import React from "react"
+import { TwitterShareButton, TwitterIcon } from "react-share"
+import slashes from "remove-trailing-slash"
+import { useSiteMetaData } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 
 export const Twitter = ({
   url,
@@ -11,7 +11,7 @@ export const Twitter = ({
   size = 32,
   borderRadius = 0,
   iconBgStyle = {},
-  logoFillColor = 'white',
+  logoFillColor = "white",
 }) => {
   const { siteUrl } = useSiteMetaData()
   const shareUrl = `${slashes(siteUrl)}${url}`
