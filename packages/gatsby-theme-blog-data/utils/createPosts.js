@@ -18,6 +18,7 @@ module.exports = async ({ actions, graphql }, options) => {
       edges {
         previous {
           uri
+          title
         }
         node {
           uri
@@ -26,6 +27,7 @@ module.exports = async ({ actions, graphql }, options) => {
         }
         next {
           uri
+          title
         }
       }
     }
