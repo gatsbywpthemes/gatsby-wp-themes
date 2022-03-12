@@ -2,7 +2,7 @@
   "name": "@gatsbywpthemes/gatsby-theme-ui-components",
   "description": "common ui components for gatsby themes",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
