@@ -1,4 +1,4 @@
-const DEFAULT_OPTIONS = require("@gatsbywpthemes/gatsby-theme-blog-data/utils/defaultOptions")
+const DEFAULT_OPTIONS = require("@gatsbywpthemes/gatsby-theme-wp-data/utils/defaultOptions")
 const fs = require("fs")
 require("dotenv").config({
   path:
@@ -33,6 +33,16 @@ module.exports = {
     `@gatsbywpthemes/gatsby-theme-wp-search`,
     `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     `@gatsbywpthemes/gatsby-theme-acf-builder`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
 
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
@@ -43,7 +53,7 @@ module.exports = {
     },
 
     {
-      resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
+      resolve: `@gatsbywpthemes/gatsby-theme-wp-data`,
       options: {
         ...options,
         wordPressUrl: process.env.GATSBY_WP_URL,

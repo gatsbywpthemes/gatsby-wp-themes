@@ -3,7 +3,7 @@ import { Layout } from "../Layout"
 import { Sidebar } from "../Sidebar"
 import { PostEntry } from "../post"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import clsx from "clsx"
 import { Comments } from "@gatsbywpthemes/gatsby-theme-wp-comments/src"
 

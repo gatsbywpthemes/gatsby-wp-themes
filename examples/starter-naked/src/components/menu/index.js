@@ -1,5 +1,5 @@
 import React from "react"
-import { useMenuItems } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useMenuItems } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import { Submenu } from "./Submenu"
 import { MenuItem } from "./MenuItem"
 

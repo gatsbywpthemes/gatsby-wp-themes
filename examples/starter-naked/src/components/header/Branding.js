@@ -1,5 +1,5 @@
 import React from "react"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import { Link } from "gatsby"
 import { Logo } from "./Logo"
 

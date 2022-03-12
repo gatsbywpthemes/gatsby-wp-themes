@@ -14,7 +14,9 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.0.9",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-utils": "^1.0.0",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-image": "^1.0.0",
+    "@gatsbywpthemes/gatsby-theme-wp-data": "^1.0.0",
     "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.2.5",
     "@gatsbywpthemes/gatsby-theme-acf-builder": "^1.0.10",
     "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.5",

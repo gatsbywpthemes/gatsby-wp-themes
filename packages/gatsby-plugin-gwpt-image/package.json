@@ -1,0 +1,23 @@
+{
+  "name": "@gatsbywpthemes/gatsby-plugin-gwpt-image",
+  "version": "1.0.0",
+  "description": "All the packages for gatsby image",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "wordpress",
+    "wpgraphql"
+  ],
+  "author": "\"Alexandra Spalato <alexaspalato@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "gatsby-plugin-image": "^2.8.1",
+    "gatsby-plugin-sharp": "^4.8.1",
+    "gatsby-source-filesystem": "^4.8.1",
+    "gatsby-transformer-sharp": "^4.8.0"
+  }
+}

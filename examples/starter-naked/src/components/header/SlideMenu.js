@@ -5,7 +5,7 @@ import { GiHamburgerMenu as Hamburger } from "react-icons/gi"
 import { MdClose as Close } from "react-icons/md"
 import { MainMenu } from "../menu"
 import { Widget } from "../widgets"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 
 export const Slidemenu = ({ className, ...props }) => {
   const [open, setOpen] = useState(false)

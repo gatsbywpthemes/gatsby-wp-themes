@@ -1,0 +1,22 @@
+{
+  "name": "@gatsbywpthemes/gatsby-theme-ui-components",
+  "description": "common ui components for gatsby themes",
+  "author": "Alexandra Spalato <alexaspalato@gmail.com>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "peerDependencies": {
+    "@gatsbywpthemes/gatsby-plugin-gwpt-image": "^1.0.0",
+    "react-icons": "^4.3.1"
+  },
+  "dependencies": {
+    "@kunukn/react-collapse": "^2.2.9"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-plugin",
+    "wordpress",
+    "wpgraphql"
+  ]
+}
