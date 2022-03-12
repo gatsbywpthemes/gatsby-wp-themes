@@ -45,7 +45,7 @@ module.exports = {
     },
 
     {
-      resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
+      resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-utils`,
       options: {
         ...DEFAULT_OPTIONS,
         ...options,
