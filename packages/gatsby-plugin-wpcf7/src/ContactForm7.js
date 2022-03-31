@@ -18,7 +18,7 @@ const findId = (node) => {
 }
 
 const ContactForm7 = ({ formObject }) => {
-  const { wordPressUrl } = useWordPressSettings()
+  const wordPressUrl = useWordPressSettings()
   const formId = findId(formObject)
   const { register, handleSubmit, setError, clearErrors, formState } = useForm()
   const { errors, isSubmitSuccessful, isSubmited } = formState
