@@ -8,7 +8,7 @@ const useWordPressSettings = () => {
       }
     }
   `)
-  return data.sitePlugin.pluginOptions
+  return data.sitePlugin.pluginOptions?.wordPressUrl
 }
 
 export default useWordPressSettings
