@@ -1,6 +1,6 @@
 {
   "name": "@gatsbywpthemes/gatsby-plugin-gwpt-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "common packages for all gatsbywpthemes",
   "main": "index.js",
   "author": "Gatsby WP Themes <contact@gatsbywpthemes.com>",
@@ -8,7 +8,7 @@
   "dependencies": {
     "@gatsbywpthemes/gatsby-plugin-wordpress-lightbox": "^2.0.4",
     "@gatsbywpthemes/gatsby-plugin-wp-seo": "^2.0.4",
-    "@gatsbywpthemes/gatsby-plugin-wpcf7": "^2.0.5",
+    "@gatsbywpthemes/gatsby-plugin-wpcf7": "^2.0.6",
     "@heroicons/react": "^1.0.5",
     "@wordpress/base-styles": "^4.1.1",
     "@wordpress/block-library": "^7.0.0",

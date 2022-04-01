@@ -3,7 +3,7 @@
   "name": "@gatsbywpthemes/gatsby-theme-wp-bootstrap5",
   "description": "WordPress basic theme for Gatsby using WPGraphQL",
   "author": "Paulina Hetman <info@pehaa.com>",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
@@ -17,7 +17,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.17",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.0.10",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.0.11",
     "bootstrap": "^5.1.3"
   },
   "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4",
