@@ -3,7 +3,7 @@
   "name": "starter-ginger-kitchen",
   "description": "WordPress basic theme for Gatsby using WPGraphQL",
   "author": "Paulina Hetman <info@pehaa.com>",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
@@ -12,7 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.17",
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "^2.0.2",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.0.11",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.0.12",
     "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.5",
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.0.4",
     "gatsby": "^4.7.1",
