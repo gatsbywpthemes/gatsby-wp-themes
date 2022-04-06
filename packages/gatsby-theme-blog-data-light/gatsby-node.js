@@ -61,9 +61,9 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
   const mergedOptions = {
     ...defaultOptions,
-    postsPerPage: data.wp.allSettings.readingSettingsPostsPerPage,
+    postsPerPage: data.wp?.allSettings?.readingSettingsPostsPerPage,
     seoFromWP,
-    generalSeoSettings: data.wp.seo,
+    generalSeoSettings: data.wp?.seo,
     postsPath,
     ...(data.wp.headlesswp &&
       data.wp.headlesswp.paginationPrefix && {
