@@ -1,8 +1,8 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import customTheme from '../chakra/theme'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import customTheme from "../chakra/theme"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
 export const CustomThemeWrapper = ({ children }) => {
   const { overrideWPColors } = useThemeOptions()
@@ -28,12 +28,12 @@ export const CustomThemeWrapper = ({ children }) => {
     }
   `)
 
-  const wpColors = data.wp.headlesswp?.cssTheme?.colors.reduce((acc, c) => {
+  const wpColors = data.wp?.headlesswp?.cssTheme?.colors.reduce((acc, c) => {
     acc[c.name] = c.hexValue
     return acc
   }, {})
 
-  const modes = data.wp.headlesswp?.cssTheme?.modes.reduce((acc, c) => {
+  const modes = data.wp?.headlesswp?.cssTheme?.modes.reduce((acc, c) => {
     acc[c.name] = c.colors.reduce((acc, c) => {
       acc[c.name] = c.hexValue
       return acc

@@ -111,33 +111,33 @@ export const useHeadlessWPOptions = () => {
     }
   `)
   // sidebars as object with sidebar areas as keys
-  const widgetAreas = data.wp.headlesswp?.widgetAreas
-    ? data.wp.headlesswp.widgetAreas.reduce(
+  const widgetAreas = data.wp?.headlesswp?.widgetAreas
+    ? data.wp?.headlesswp?.widgetAreas.reduce(
         (ac, c) => ({ ...ac, [c.name]: c.widgets }),
         {}
       )
     : {}
 
-  /* 
+  /*
  // ex. usage
   const { widgetAreas } = useThemeOptions()
   const widgets = widgetAreas.sidebarWidgets || []
   */
 
-  const archiveSidebarPosition = data.wp.headlesswp?.archiveSidebarPosition
-    ? data.wp.headlesswp.archiveSidebarPosition === 'none'
+  const archiveSidebarPosition = data.wp?.headlesswp?.archiveSidebarPosition
+    ? data.wp?.headlesswp?.archiveSidebarPosition === 'none'
       ? false
-      : data.wp.headlesswp.archiveSidebarPosition
+      : data.wp?.headlesswp?.archiveSidebarPosition
     : null
   return {
-    ...data.wp.headlesswp,
-    ...(data.wp.headlesswp &&
-      data.wp.headlesswp.favicon && {
-        faviconFile: data.wp.headlesswp.favicon.localFile,
+    ...data.wp?.headlesswp,
+    ...(data.wp?.headlesswp &&
+      data.wp?.headlesswp?.favicon && {
+        faviconFile: data.wp?.headlesswp?.favicon.localFile,
       }),
     // only add wigetAreas if queried
-    ...(data.wp.headlesswp && { widgetAreas: { ...widgetAreas } }),
+    ...(data.wp?.headlesswp && { widgetAreas: { ...widgetAreas } }),
     // only add archiveSidebarPosition if queried
-    ...(data.wp.headlesswp && { archiveSidebarPosition }),
+    ...(data.wp?.headlesswp && { archiveSidebarPosition }),
   }
 }

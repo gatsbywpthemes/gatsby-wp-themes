@@ -65,9 +65,9 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     seoFromWP,
     generalSeoSettings: data.wp?.seo,
     postsPath,
-    ...(data.wp.headlesswp &&
-      data.wp.headlesswp.paginationPrefix && {
-        paginationPrefix: data.wp.headlesswp.paginationPrefix,
+    ...(data.wp?.headlesswp &&
+      data.wp?.headlesswp?.paginationPrefix && {
+        paginationPrefix: data.wp?.headlesswp?.paginationPrefix,
       }),
     ...options,
   }

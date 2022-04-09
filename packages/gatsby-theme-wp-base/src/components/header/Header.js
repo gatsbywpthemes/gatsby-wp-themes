@@ -27,7 +27,7 @@ export const Header = () => {
     }
   `)
 
-  const { title } = data.wp.generalSettings
+  const { title } = data.wp?.generalSettings
 
   return (
     <Box
