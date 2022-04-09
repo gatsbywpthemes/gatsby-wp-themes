@@ -16,7 +16,7 @@
     "gatsby-plugin-google-gtag": "^4.7.0",
     "gatsby-plugin-google-tagmanager": "^4.7.0",
     "gatsby-plugin-sitemap": "^5.7.0",
-    "gatsby-source-wordpress": "^6.7.0",
+    "gatsby-source-wordpress": "^6.11.2",
     "isomorphic-fetch": "^3.0.0",
     "normalize-path": "^3.0.0",
     "remove-trailing-slash": "^0.1.1"
