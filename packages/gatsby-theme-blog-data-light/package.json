@@ -2,7 +2,7 @@
   "name": "@gatsbywpthemes/gatsby-theme-blog-data-light",
   "description": "WordPress core source theme for Gatsby using WPGraphQL",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
