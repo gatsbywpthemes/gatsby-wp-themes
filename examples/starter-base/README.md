@@ -4,7 +4,7 @@
 
 ---
 
-## Gatsby WP Themes License
+### Gatsby WP Themes License
 
 All items purchased separately or in a bundle on Gatsby WP Themes have the same license terms.
 

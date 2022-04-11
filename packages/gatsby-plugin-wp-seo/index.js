@@ -1,2 +1,1 @@
-// noop
-export { Seo } from "./src/components"
+export { Seo } from "./src/components";
