@@ -11,7 +11,7 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.8",
+    "@apollo/client": "^3.5.10",
     "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "^2.0.4",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-anchor-links": "^1.2.1",
