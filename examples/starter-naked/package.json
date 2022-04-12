@@ -24,7 +24,7 @@
     "@headlessui/react": "^1.4.3",
     "@kunukn/react-collapse": "^2.2.9",
     "@loadable/component": "^5.15.2",
-    "gatsby": "^4.11.2",
+    "gatsby": "^4.11.3",
     "gatsby-plugin-loadable-components-ssr": "^4.1.2",
     "gatsby-plugin-use-dark-mode": "^1.4.0",
     "lodash.merge": "^4.6.2",
