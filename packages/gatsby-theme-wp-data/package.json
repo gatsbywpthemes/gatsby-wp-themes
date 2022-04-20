@@ -13,10 +13,10 @@
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "gatsby-awesome-pagination": "^0.3.8",
-    "gatsby-plugin-google-gtag": "^4.11.0",
-    "gatsby-plugin-google-tagmanager": "^4.11.1",
-    "gatsby-plugin-sitemap": "^5.7.0",
-    "gatsby-source-wordpress": "^6.11.2",
+    "gatsby-plugin-google-gtag": "^4.12.1",
+    "gatsby-plugin-google-tagmanager": "^4.12.1",
+    "gatsby-plugin-sitemap": "^5.12.1",
+    "gatsby-source-wordpress": "^6.12.2",
     "isomorphic-fetch": "^3.0.0",
     "normalize-path": "^3.0.0",
     "remove-trailing-slash": "^0.1.1"

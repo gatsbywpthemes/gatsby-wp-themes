@@ -21,7 +21,7 @@
     "@headlessui/react": "^1.4.3",
     "@kunukn/react-collapse": "^2.2.9",
     "gatsby": "^4.12.1",
-    "gatsby-plugin-use-dark-mode": "^1.4.0",
+    "gatsby-plugin-use-dark-mode": "^1.5.0",
     "local-storage": "^2.0.0",
     "lodash.merge": "^4.6.2",
     "prismjs": "^1.26.0",
@@ -32,6 +32,6 @@
   },
   "devDependencies": {
     "babel-preset-gatsby": "^2.7.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.6.2"
   }
 }

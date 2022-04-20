@@ -24,7 +24,7 @@
   "devDependencies": {
     "babel-preset-gatsby": "^2.7.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26",
-    "prettier": "^2.5.1"
+    "prettier": "^2.6.2"
   },
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
