@@ -1,14 +1,13 @@
 {
   "name": "@gatsbywpthemes/gatsby-plugin-gwpt-packages-light",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "common packages for all gatsbywpthemes",
   "main": "index.js",
   "author": "Gatsby WP Themes <contact@gatsbywpthemes.com>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-
     "@gatsbywpthemes/gatsby-plugin-wp-seo": "^2.0.6",
-    "@gatsbywpthemes/gatsby-theme-blog-data-light": "^1.0.12",
+    "@gatsbywpthemes/gatsby-theme-blog-data-light": "^1.0.13",
     "@wordpress/base-styles": "^4.3.0",
     "@wordpress/block-library": "^7.3.1",
     "babel-plugin-prismjs": "^2.1.0",
