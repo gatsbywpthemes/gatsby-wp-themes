@@ -20,9 +20,9 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "gatsby-plugin-sharp": "^4.12.1",
-    "gatsby-source-filesystem": "^4.7.0",
+    "gatsby-source-filesystem": "^4.12.1",
     "gatsby-transformer-sharp": "^4.12.1",
-    "html-react-parser": "^1.4.8",
+    "html-react-parser": "^1.4.11",
     "normalize-path": "^3.0.0"
   },
   "peerDependencies": {
