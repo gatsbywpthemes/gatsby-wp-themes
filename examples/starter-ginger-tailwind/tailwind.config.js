@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -7,6 +8,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Trebuchet MS", "sans-serif", ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        gray: colors.trueGray,
       },
     },
   },
