@@ -10,7 +10,7 @@ export default function Layout({ children }) {
   return (
     <div className="antialiased dark:bg-gray-700 dark:text-white">
       <Header />
-      <main className="">{children}</main>
+      <main className="lg:ml-24">{children}</main>
       <Footer />
     </div>
   );

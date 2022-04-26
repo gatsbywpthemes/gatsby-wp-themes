@@ -1,9 +1,13 @@
 import React, { Fragment, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Dialog, Transition } from "@headlessui/react";
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks";
+import { SearchForm } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchForm";
+import Menu from "~/components/sidebar/Menu";
 
 export default function SiteNavigation() {
   const [open, setOpen] = useState(false);
+  const { addWordPressSearch } = useThemeOptions();
 
   return (
     <div>
@@ -62,22 +66,10 @@ export default function SiteNavigation() {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col overflow-y-scroll bg-[#076666] py-6 shadow-xl">
-                    <div className="px-4 sm:px-6">
-                      <Dialog.Title className="text-lg font-medium text-gray-900">
-                        {" "}
-                        Panel title{" "}
-                      </Dialog.Title>
-                    </div>
-                    <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                      {/* Replace with your content */}
-                      <div className="absolute inset-0 px-4 sm:px-6">
-                        <div
-                          className="h-full border-2 border-dashed border-gray-200"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      {/* /End replace */}
+                  <div className="flex h-full flex-col overflow-y-scroll bg-[#076666] py-6 px-6 shadow-xl text-white">
+                    <div className="relative flex-1 mt-4">
+                      {/* {addWordPressSearch && <SearchForm />} */}
+                      <Menu />
                     </div>
                   </div>
                 </div>
