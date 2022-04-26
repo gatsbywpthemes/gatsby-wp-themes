@@ -1,7 +1,8 @@
 import React from "react";
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo";
 import Layout from "~/components/Layout";
-import parser from "html-react-parser";
+import ActivatePrismaScripts from "~/utils/ActivatePrismaScripts";
+import ParsedContent from "~/utils/ParsedContent";
 
 const Page = (props) => {
   const { page, ctx } = props;
@@ -9,7 +10,6 @@ const Page = (props) => {
   const skipTitle = headlesswp?.skipTitle || false;
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp?.original;
-  console.log({ content });
   return (
     <Layout>
       <Seo
@@ -26,27 +26,20 @@ const Page = (props) => {
           }
         }
       />
-      {/* <article>{parser(content)}</article> */}
-      <article
-        className="page-content"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-      {/* <main>
-        <article data-sal="fade" data-sal-duration="600" data-sal-easing="ease">
+      <div className="page-wrapper">
+        <article className="page-content">
           {!skipTitle && (
-            <Box as="h1" textStyle="h1Archive">
+            <h1 className="h1Archive">
               <span
                 className="page-title-value"
                 dangerouslySetInnerHTML={{ __html: title }}
               />
-            </Box>
+            </h1>
           )}
-          <Box className="entry-content" sx={gutenbergStyles({ colorMode })}>
-            <ActivatePageScripts />
-            <ParsedContent content={content} />
-          </Box>
+          <ParsedContent content={content} />
+          <ActivatePrismaScripts />
         </article>
-      </main> */}
+      </div>
     </Layout>
   );
 };

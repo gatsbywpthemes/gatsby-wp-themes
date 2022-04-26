@@ -5,5 +5,5 @@ import { lightboxParserFunction } from "@gatsbywpthemes/gatsby-plugin-wordpress-
 
 export default function ParsedContent({ content }) {
   const parserFunctions = [cf7ParserFunction, lightboxParserFunction];
-  return <ContentParser content={content} />;
+  return <ContentParser content={content} customFn={parserFunctions} />;
 }

@@ -10,7 +10,7 @@ module.exports = {
         sans: ["Trebuchet MS", "sans-serif", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        gray: colors.trueGray,
+        gray: colors.neutral,
       },
     },
   },
