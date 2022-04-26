@@ -36,7 +36,7 @@
         @apply mb-6
     }
     .h1Archive{
-        @apply text-center my-10
+        @apply text-center py-10
     }
 }
 .h1Archive::after{
