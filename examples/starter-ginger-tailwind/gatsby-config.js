@@ -24,6 +24,7 @@ module.exports = {
         classNameDark: "dark",
         classNameLight: "light",
         storageKey: "darkMode",
+        element: "document",
         minify: true,
       },
     },

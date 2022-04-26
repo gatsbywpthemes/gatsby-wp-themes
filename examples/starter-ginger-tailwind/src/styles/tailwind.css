@@ -5,7 +5,7 @@
 
 @layer base {
     body{
-        @apply text-gray-700 lg:text-lg
+        @apply text-gray-700 lg:text-lg 
     }
     h1{
         @apply text-5xl lg:text-7xl font-bold

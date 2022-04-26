@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "~/components/header";
-import useDarkMode from "use-dark-mode";
 import Footer from "./Footer";
+import useThemeDarkMode from "~/hooks/useThemeDarkMode";
 
 export default function Layout({ children }) {
-  const { value: colorMode } = useDarkMode();
+  const { value: colorMode } = useThemeDarkMode();
   console.log({ colorMode });
 
   return (
-    <div className="antialiased">
+    <div className="antialiased dark:bg-gray-700 dark:text-white">
       <Header />
-      <main className="lg:ml-24">{children}</main>
+      <main className="">{children}</main>
       <Footer />
     </div>
   );
