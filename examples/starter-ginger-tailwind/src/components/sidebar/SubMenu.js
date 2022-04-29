@@ -7,13 +7,15 @@ import MenuItem from "./MenuItem";
 export default function SubMenu({ menuItem }) {
   return (
     <>
-      <Menu as="li" className="relative inline-block text-left">
+      <Menu as="li" className="relative block text-left">
         {({ open }) => (
           <Fragment>
-            <LinkItem menuItem={menuItem} />
-            <Menu.Button aria-label="Open menu item">
-              {open ? <FiChevronDown /> : <FiChevronRight />}
-            </Menu.Button>
+            <span className="flex justify-between">
+              <LinkItem menuItem={menuItem} />
+              <Menu.Button aria-label="Open menu item">
+                {open ? <FiChevronDown /> : <FiChevronRight />}
+              </Menu.Button>
+            </span>
             <Transition
               as={Fragment}
               enter="transition ease-out duration-100"
@@ -23,7 +25,7 @@ export default function SubMenu({ menuItem }) {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="focus:outline-none">
+              <Menu.Items as={Fragment} className="focus:outline-none">
                 <ul className="px-1 py-1">
                   {menuItem.children.map((item) => (
                     <Menu.Item key={item.id}>

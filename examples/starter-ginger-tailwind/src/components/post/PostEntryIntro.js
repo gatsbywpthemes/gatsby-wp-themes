@@ -1,5 +1,5 @@
 import React from "react";
-import SocialShare from "../SocialShare";
+import SocialShare from "~/components/social/SocialShare";
 import Author from "./Author";
 import Categories from "./Categories";
 import PostEntryExcerpt from "./PostEntryExcerpt";

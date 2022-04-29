@@ -5,10 +5,7 @@ export default function ColorSwitch() {
   const darkMode = useThemeDarkMode();
   return (
     <>
-      <button
-        onClick={darkMode.toggle}
-        className="bg-gray-700 dark:bg-white dark:text-gray-800 rounded-full w-12 h-12 text-white flex items-center justify-center text-2xl"
-      >
+      <button onClick={darkMode.toggle} className="rounded-buttons">
         {darkMode.value ? <FiSun /> : <FiMoon />}
       </button>
     </>

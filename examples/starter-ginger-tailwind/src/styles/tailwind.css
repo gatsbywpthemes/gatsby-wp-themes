@@ -38,6 +38,14 @@
     .h1Archive{
         @apply text-center py-10
     }
+    .rounded-buttons{
+        @apply bg-gray-700 dark:bg-white dark:text-gray-800 rounded-full w-12 h-12 text-white flex 
+        items-center justify-center text-2xl hover:bg-white hover:text-gray-800 dark:hover:bg-gray-700 dark:hover:text-white
+    }
+    .specialLink{
+        @apply border-b flex py-2
+    }
+
 }
 .h1Archive::after{
     content: "";
@@ -47,6 +55,9 @@
     background-color: #131313;
     margin: 0 auto;
     margin-top: 1.5rem;
+}
+.dark .h1Archive::after{
+    background-color: #ffffff;
 }
 .wp-block-group.alignfull.has-background {
     @apply p-16 lg:p-24

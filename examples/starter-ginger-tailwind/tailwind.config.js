@@ -1,6 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
-
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
@@ -10,7 +9,7 @@ module.exports = {
         sans: ["Trebuchet MS", "sans-serif", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        gray: colors.neutral,
+        gray: { ...colors.neutral, 700: "#303030" },
       },
     },
   },

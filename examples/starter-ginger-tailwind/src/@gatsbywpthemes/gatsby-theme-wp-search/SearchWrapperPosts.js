@@ -1,14 +1,14 @@
-import React from "react";
-import { SearchStats } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchStats";
+import React from "react"
+import { SearchStats } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchStats"
 
 export const SearchWrapperPosts = ({ children }) => {
   return (
-    <section className="search-results-posts">
-      <header>
-        <h3>Posts</h3>
+    <section className="search-results-pages">
+      <header className="px-5 py-3 bg-searchResultsHeaderBg dark:bg-dark-searchResultsHeaderBg text-searchResultsHeaderColor dark:text-dark-searchResultsHeaderColor">
+        <h3 className="text-xl ">Posts</h3>
         <SearchStats type="POST" />
       </header>
-      {children}
+      <div className="results">{children}</div>
     </section>
-  );
-};
+  )
+}

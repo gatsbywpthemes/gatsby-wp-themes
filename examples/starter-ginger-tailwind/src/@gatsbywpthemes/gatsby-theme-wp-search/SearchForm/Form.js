@@ -1,16 +1,12 @@
-import React from "react";
-import { FiSearch } from "react-icons/fi";
-import { SubmitButton } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchForm/SubmitButton";
+import React from "react"
 
 export const Form = (props) => {
-  const { children, ...rest } = props;
+  const { children, ...rest } = props
   return (
     <div>
-      <FiSearch />
       <form {...rest}>
-        <div>{children}</div>
-        <SubmitButton />
+        <div className="flex">{children}</div>
       </form>
     </div>
-  );
-};
+  )
+}

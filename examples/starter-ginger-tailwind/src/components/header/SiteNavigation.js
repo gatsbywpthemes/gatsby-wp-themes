@@ -4,6 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks";
 import { SearchForm } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchForm";
 import Menu from "~/components/sidebar/Menu";
+import WidgetsList from "../widgets/WidgetsList";
 
 export default function SiteNavigation() {
   const [open, setOpen] = useState(false);
@@ -11,10 +12,7 @@ export default function SiteNavigation() {
 
   return (
     <div>
-      <button
-        onClick={() => setOpen(true)}
-        className="bg-gray-700 dark:bg-white dark:text-gray-800 rounded-full w-12 h-12 text-white flex items-center justify-center text-2xl"
-      >
+      <button onClick={() => setOpen(true)} className="rounded-buttons">
         <FiMenu />
       </button>
       <Transition.Root show={open} as={Fragment}>
@@ -66,10 +64,11 @@ export default function SiteNavigation() {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col overflow-y-scroll bg-[#076666] py-6 px-6 shadow-xl text-white">
+                  <div className="flex h-full flex-col overflow-y-scroll bg-[#076666] dark:bg-gray-800 py-6 px-6 shadow-xl text-white">
                     <div className="relative flex-1 mt-4">
-                      {/* {addWordPressSearch && <SearchForm />} */}
+                      {addWordPressSearch && <SearchForm />}
                       <Menu />
+                      <WidgetsList />
                     </div>
                   </div>
                 </div>

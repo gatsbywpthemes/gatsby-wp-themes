@@ -1,26 +1,26 @@
-import React, { useState, useContext } from "react"
-import { SearchQueries } from "./../SearchQueries"
-import { SearchContext, DispatchSearchContext } from "./../context"
-import { Form } from "./Form"
+import React, { useState, useContext } from "react";
+import { SearchQueries } from "./../SearchQueries";
+import { SearchContext, DispatchSearchContext } from "./../context";
+import { Form } from "./Form";
 
-import { ResetButton } from "./ResetButton"
-import { SearchInput } from "./SearchInput"
+import { ResetButton } from "./ResetButton";
+import { SearchInput } from "./SearchInput";
 
 export const SearchForm = () => {
-  const search = useContext(SearchContext)
-  const [value, setValue] = useState(search)
-  const dispatch = useContext(DispatchSearchContext)
+  const search = useContext(SearchContext);
+  const [value, setValue] = useState(search);
+  const dispatch = useContext(DispatchSearchContext);
   const handleSubmit = (e) => {
-    e.preventDefault()
-    dispatch({ search: value })
-  }
+    e.preventDefault();
+    dispatch({ search: value });
+  };
 
   const handleChange = (e) => {
-    setValue(e.target.value)
+    setValue(e.target.value);
     if (e.target.value === "") {
-      dispatch({ search: "" })
+      dispatch({ search: "" });
     }
-  }
+  };
 
   return (
     <>
@@ -34,12 +34,12 @@ export const SearchForm = () => {
           placeholder="search here..."
           aria-label="Search here"
         />
-        {value.length > 0 && (
+        {value?.length > 0 && (
           <ResetButton
             type="reset"
             onClick={() => {
-              setValue("")
-              dispatch({ search: "" })
+              setValue("");
+              dispatch({ search: "" });
             }}
           />
         )}
@@ -48,5 +48,5 @@ export const SearchForm = () => {
       {/* value && search so that results are reset on Escape */}
       {value && search && <SearchQueries search={search} />}
     </>
-  )
-}
+  );
+};
