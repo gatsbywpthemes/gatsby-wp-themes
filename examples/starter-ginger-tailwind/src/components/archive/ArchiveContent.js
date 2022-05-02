@@ -12,14 +12,16 @@ export default function ArchiveContent({
   description,
 }) {
   return (
-    <div className="page-wrapper">
+    <div className="page-wrapper py-8">
       <section className="page-content">
         {name && <ArchiveTitle text={text} name={name} />}
         {description && <Description description={description} />}
-        {posts.nodes &&
-          posts.nodes.map((post, index) => (
-            <PostEntry key={post.id} post={post} isFirst={index === 0} />
-          ))}
+        <div className="flex flex-col space-y-6 lg:space-y-10">
+          {posts.nodes &&
+            posts.nodes.map((post, index) => (
+              <PostEntry key={post.id} post={post} isFirst={index === 0} />
+            ))}
+        </div>
       </section>
       <Pagination ctx={ctx} />
     </div>

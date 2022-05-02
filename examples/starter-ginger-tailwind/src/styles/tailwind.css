@@ -53,6 +53,22 @@
     }
 
 }
+.widget-title:after, .widget-title:before {
+    content: "";
+    height: 1px;
+    border-top: 1px solid;
+    -webkit-flex: 1 0;
+    -ms-flex: 1 0;
+    flex: 1 0;
+    border-color: currentColor;
+    margin-left: 10px;
+}
+.widget-title:after {
+    margin-left: 10px;
+}
+.widget-title:before {
+    margin-right: 10px;
+}
 .h1Archive::after{
     content: "";
     display: block;

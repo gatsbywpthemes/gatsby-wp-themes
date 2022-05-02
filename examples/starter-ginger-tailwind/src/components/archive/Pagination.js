@@ -31,16 +31,18 @@ export default function Pagination({ ctx }) {
   }
   return (
     <>
-      <nav className="nav items-center justify-between flex overflow-hidden">
-        {renderPreviousLink(previousPagePath)}
-        <span
-          aria-current="page"
-          className="page-numbers current text-clip text-center"
-        >
-          {humanPageNumber}
-        </span>
-        {renderNextLink(nextPagePath)}
-      </nav>
+      <div className="page-content mt-12 mb-8">
+        <nav className="nav items-center justify-between flex overflow-hidden">
+          {renderPreviousLink(previousPagePath)}
+          <span
+            aria-current="page"
+            className="page-numbers current text-clip text-center"
+          >
+            {humanPageNumber}
+          </span>
+          {renderNextLink(nextPagePath)}
+        </nav>
+      </div>
     </>
   );
 }

@@ -84,7 +84,7 @@ export default function SocialFollows() {
 
   return (
     social && (
-      <div className="flex justify-center mb-12">
+      <div className="flex justify-center text-2xl">
         {social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase());
           return (

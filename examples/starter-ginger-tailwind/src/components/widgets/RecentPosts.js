@@ -12,10 +12,10 @@ export default function RecentPosts() {
         className="widget widget-recent-posts"
         title="Recent Posts"
       >
-        <ul className="listRaw">
+        <ul className="listRaw flex flex-col space-y-3">
           {nodes.map((post) => {
             return (
-              <li key={post.id}>
+              <li key={post.id} className="flex items-center space-x-2">
                 <Link aria-label={`Read more - ${post.title}`} to={post.uri}>
                   {post.featuredImage && (
                     <GatsbyImage
@@ -27,8 +27,11 @@ export default function RecentPosts() {
                     />
                   )}
                 </Link>
-                <div>
-                  <Link className="widget-post-date" to={post.uri}>
+                <div className="flex flex-col">
+                  <Link
+                    className="widget-post-date text-sm font-light"
+                    to={post.uri}
+                  >
                     <time className="entry-date" dateTime={post.date}>
                       {format(new Date(post.date), "MMMM dd, yyyy")}
                     </time>
