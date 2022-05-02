@@ -56,6 +56,9 @@
     }
 
 }
+.styled-input{
+    @apply border-0 border-b px-0 focus:ring-0  focus:outline-none
+}
 #content{
     @apply my-8 lg:my-12
 }
