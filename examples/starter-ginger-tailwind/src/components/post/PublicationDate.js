@@ -18,7 +18,7 @@ export default function PublicationDate({ post, location = "archive" }) {
   ) : (
     <>
       {post?.date && (
-        <span className="meta-data inline-block mb-4 special">
+        <span className="meta-data inline-block special">
           <p className="entry-date published updated">
             {format(new Date(post?.date), "MMMM dd, yyyy")}
           </p>

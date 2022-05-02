@@ -6,13 +6,17 @@ import Pinterest from "./Pinterest";
 import Twitter from "./Twitter";
 export default function SocialShare({ url, title, media }) {
   return (
-    <div>
-      <span aria-label="Share on social networks">
-        <FiShare2 />
-      </span>
-
-      <ul>
-        <li className="separateWithSlashes">
+    <div className="flex flex-col space-y-4 justify-center">
+      <div className="sh flex items-center justify-center ">
+        <span
+          aria-label="Share on social networks"
+          className="bg-gray-700 p-2 rounded-full text-white"
+        >
+          <FiShare2 />
+        </span>
+      </div>
+      <ul className="flex justify-center">
+        <li className="separateWithSlashes ">
           <Twitter url={url} title={title}>
             Twitter
           </Twitter>

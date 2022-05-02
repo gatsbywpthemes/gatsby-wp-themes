@@ -9,7 +9,7 @@ import PublicationDate from "./PublicationDate";
 
 export default function PostEntryIntro({ ctx, post }) {
   return (
-    <div>
+    <div className="">
       <SocialShare
         url={post.uri}
         title={post.title}
@@ -22,7 +22,7 @@ export default function PostEntryIntro({ ctx, post }) {
       <PublicationDate post={post} location="single" />
       <PostEntryTitle post={post} location="single" />
       <PostEntryExcerpt post={post} location="single" />
-      <footer className="entry-meta">
+      <footer className="entry-meta uppercase text-base">
         <Author post={post} location="single" />{" "}
         {!!post.categories.nodes.length && (
           <>

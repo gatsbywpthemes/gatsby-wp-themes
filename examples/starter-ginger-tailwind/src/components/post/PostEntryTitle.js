@@ -7,7 +7,7 @@ export default function PostEntryTitle({ post, location }) {
     </h2>
   ) : (
     <h1
-      className="entry-title"
+      className="entry-title mb-4 lg:mb-6"
       dangerouslySetInnerHTML={{ __html: post.title }}
     />
   );
