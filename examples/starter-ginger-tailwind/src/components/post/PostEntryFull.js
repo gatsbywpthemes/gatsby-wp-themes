@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "~/components/Image";
-import Comments from "./Comments";
+// import Comments from "./Comments";
 import PostEntryContent from "./PostEntryContent";
 import PostEntryIntro from "./PostEntryIntro";
 import PrevNextPostNavigation from "./PrevNextPostNavigation";
 import ScrollToContentButton from "./ScrollToContentButton";
 import Tags from "./Tags";
+import { Comments } from "@gatsbywpthemes/gatsby-theme-wp-comments/src";
 
 export default function PostEntryFull({ ctx, post }) {
   return (

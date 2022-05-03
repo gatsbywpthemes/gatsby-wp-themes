@@ -3,7 +3,7 @@ import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo";
 import Layout from "~/components/Layout";
 import ArchiveContent from "~/components/archive/ArchiveContent";
 export default function User({ user, ctx }) {
-  const { name, posts, uri, description } = user;
+  const { name, posts, uri } = user;
   const { humanPageNumber, numberOfPages, yoastSeo, seo } = ctx;
   return (
     <>
