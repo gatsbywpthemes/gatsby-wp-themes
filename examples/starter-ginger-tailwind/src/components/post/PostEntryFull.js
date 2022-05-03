@@ -17,7 +17,10 @@ export default function PostEntryFull({ ctx, post }) {
             <Image img={post.featuredImage} />
           </div>
           <div className="content absolute inset-0 flex items-center justify-center">
-            <div className="t-w lg:w-[45rem] bg-white z-[1] relative text-center bg-opacity-80 border-8 p-8 border-white">
+            <div
+              className="t-w lg:w-[45rem] bg-white z-[1] relative text-center bg-opacity-80
+             border-8 p-8 border-white dark:border-gray-700 dark:bg-gray-700 dark:bg-opacity-90"
+            >
               <PostEntryIntro post={post} ctx={ctx} />
               {/* <ScrollToContentButton /> */}
             </div>

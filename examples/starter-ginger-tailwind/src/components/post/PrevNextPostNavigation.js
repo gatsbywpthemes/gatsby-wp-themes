@@ -22,7 +22,7 @@ const NextLink = ({ ctx: { next } }) => {
 };
 export default function PrevNextPostNavigation({ ctx }) {
   return (
-    <nav className="flex items-center justify-between py-4">
+    <nav className="flex items-center justify-between py-4 uppercase">
       <PreviousLink ctx={ctx} />
       <NextLink ctx={ctx} />
     </nav>

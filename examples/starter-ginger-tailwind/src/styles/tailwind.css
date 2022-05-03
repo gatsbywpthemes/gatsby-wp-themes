@@ -69,7 +69,10 @@
     @apply bg-gray-600 p-8
 }
 #post-comments >div>form>input,textarea,label{
-    @apply flex flex-col w-full
+    @apply flex flex-col w-full 
+}
+input,textarea{
+    @apply text-gray-700
 }
 #post-comments >div>form>div{
     @apply mb-6
