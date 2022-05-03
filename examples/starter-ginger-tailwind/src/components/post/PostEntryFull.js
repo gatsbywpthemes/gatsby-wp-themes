@@ -29,7 +29,12 @@ export default function PostEntryFull({ ctx, post }) {
         {post.tags.nodes.length > 0 && <Tags tags={post.tags.nodes} />}
         <PrevNextPostNavigation ctx={ctx} />
       </div>
-      <Comments post={post} />
+      <div
+        id="post-comments"
+        className="bg-gray-700 text-white page-content py-8 lg:py-16"
+      >
+        <Comments post={post} />
+      </div>
     </article>
   );
 }

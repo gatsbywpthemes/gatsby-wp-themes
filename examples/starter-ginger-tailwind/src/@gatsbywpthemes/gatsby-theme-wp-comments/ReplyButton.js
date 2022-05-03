@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const ReplyButton = (props) => {
   return (
@@ -8,5 +8,5 @@ export const ReplyButton = (props) => {
     >
       Reply
     </button>
-  )
-}
+  );
+};

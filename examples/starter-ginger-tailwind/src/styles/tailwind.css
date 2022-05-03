@@ -56,6 +56,35 @@
     }
 
 }
+#post-comments h2{
+    @apply text-center
+}
+#post-comments .comment{
+    @apply bg-gray-600 mb-4 p-4
+}
+#post-comments ul{
+    @apply ml-8
+}
+#post-comments >div>form{
+    @apply bg-gray-600 p-8
+}
+#post-comments >div>form>input,textarea,label{
+    @apply flex flex-col w-full
+}
+#post-comments >div>form>div{
+    @apply mb-6
+}
+#post-comments .comment >div>form>div{
+    @apply mb-4
+}
+.comment-notes{
+    @apply text-center uppercase text-base
+}
+.submit-button{
+    @apply bg-gray-700 dark:bg-white dark:text-gray-800  text-white flex 
+    items-center justify-center px-6 py-1.5 hover:bg-white hover:text-gray-800 dark:hover:bg-gray-700 dark:hover:text-white
+}
+
 .styled-input{
     @apply border-0 border-b px-0 focus:ring-0  focus:outline-none
 }
