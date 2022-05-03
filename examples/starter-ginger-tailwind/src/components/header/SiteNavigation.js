@@ -67,7 +67,9 @@ export default function SiteNavigation() {
                   <div className="flex h-full flex-col overflow-y-scroll bg-[#076666] dark:bg-gray-800 py-6 px-10 shadow-xl text-white">
                     <div className="relative flex-1 mt-4 flex flex-col space-y-8">
                       <div className="flex flex-col">
-                        {addWordPressSearch && <SearchForm />}
+                        <div className="search-form-nav">
+                          {addWordPressSearch && <SearchForm />}
+                        </div>
                         <Menu />
                       </div>
                       <WidgetsList />

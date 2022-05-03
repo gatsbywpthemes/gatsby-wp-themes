@@ -80,6 +80,15 @@ input,textarea{
 #post-comments .comment >div>form>div{
     @apply mb-4
 }
+.search-form-nav div{
+    @apply flex items-center space-x-2
+}
+.search-form-nav> div>form{
+    @apply flex items-center
+}
+.search-form-nav> div>form>button{
+    @apply bg-white text-gray-700 flex h-full px-4 py-1.5
+}
 .comment-notes{
     @apply text-center uppercase text-base
 }
