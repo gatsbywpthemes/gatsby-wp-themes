@@ -7,8 +7,8 @@ import PublicationDate from "./PublicationDate";
 
 export default function PostEntryIntroBlog({ post }) {
   return (
-    <div className="bg-white m-4 -mt-16 z-[1] relative w-[95%] lg:w-[75%] mx-auto p-4 shadow-lg text-center">
-      <div className="bg-gray-100 p-4 lg:p-8">
+    <div className="bg-white m-4 -mt-16 z-[1] relative w-[95%] lg:w-[75%] mx-auto p-3 shadow-lg text-center dark:bg-gray-600">
+      <div className="bg-gray-100 dark:bg-gray-700 p-4 lg:p-8">
         <PublicationDate post={post} location="archive" />
         <PostEntryTitle post={post} location="archive" />
         <PostEntryExcerpt post={post} location="archive" />
