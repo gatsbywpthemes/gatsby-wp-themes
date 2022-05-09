@@ -5,6 +5,18 @@
 @import "wordpress.css";
 
 @layer base {
+  body{
+    @apply text-gray-700 lg:text-lg 
+}
+h1{
+    @apply text-5xl lg:text-7xl font-bold
+}
+h2{
+    @apply text-5xl font-bold mb-4 leading-[1.2]
+}
+p{
+    @apply mb-5 text-lg leading-8
+}
 }
 
 @layer utilities {
@@ -29,6 +41,7 @@
 .footer-link a{
   @apply font-bold hover:text-gray-500
 }
+
 }
 
 @layer components {
@@ -94,6 +107,12 @@
     @apply dark:focus:border-dark-text focus:border-b-2 focus:border-text;
   }
 }
+.wp-block-separator {
+  @apply mb-6
+}
 .post-content a{
   @apply underline hover:no-underline
+}
+.content > .wp-block-group.alignfull.has-background{
+  @apply dark:!bg-lightBgGray
 }

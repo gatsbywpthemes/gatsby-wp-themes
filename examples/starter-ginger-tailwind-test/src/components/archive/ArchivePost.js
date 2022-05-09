@@ -14,15 +14,15 @@ export const Archivepost = ({
   ...props
 }) => {
   return (
-    <article className={clsx("card", className)} {...props}>
+    <article className={clsx("card-", className)} {...props}>
       <PostEntryMedia
         post={post}
         location="archive"
         imageLoading={isFirst ? "eager" : "lazy"}
-        className="aspect-w-16 aspect-h-9"
+        className="aspect-w-16 aspect-h-5 object-center object-cover"
       />
 
-      <div className="p-5 md:p-10">
+      <div className="bg-white m-4 -mt-16 z-[1] relative w-[95%] lg:w-[75%] mx-auto p-3 shadow-lg text-center dark:bg-dark-bg border-[0.75em] dark:border-darkBorder">
         <PostEntryTitle post={post} location="archive" className="mb-5" />
         <PostEntryInfo post={post} className="mb-10" />
         <PostEntryContent post={post} location="archive" />

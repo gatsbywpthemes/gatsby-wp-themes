@@ -17,19 +17,7 @@ export const Archive = ({ posts, ctx, name, description }) => {
   const hasSidebar = sidebarWidgets && archiveSidebar
   const archiveWidth = layoutWidth.archive
   return (
-    <div
-      className={`mainContainer mx-auto ${
-        hasSidebar
-          ? `max-w-xl`
-          : `${
-              archiveWidth === "md"
-                ? "max-w-md"
-                : archiveWidth === "lg"
-                ? "max-w-lg"
-                : "max-w-xl"
-            }`
-      }`}
-    >
+    <div className="mainContainer max-w-lg mx-auto p-4 py-8">
       {name && <Archivetitle name={name} text="Posts for " className="mb-10" />}
       {description && (
         <Description description={description} className="mb-10" />

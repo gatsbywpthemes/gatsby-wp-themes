@@ -16,6 +16,8 @@ const light = slate[100],
   mutted = slate[200],
   bg = ultraLight,
   text = ultraDark
+lightBgGray = "#4d4f4f"
+darkBorder = "#3a3a3a"
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
@@ -55,6 +57,8 @@ module.exports = {
       colors: {
         /* header */
         ...colors,
+        lightBgGray,
+        darkBorder,
         light,
         dark,
         ultraLight,

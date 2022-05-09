@@ -27,9 +27,9 @@ export const PostEntryMedia = ({
           <Image
             img={img}
             loading={imageLoading}
-            className={` ${
-              pageTemplate !== "full width" ? "rounded-t-lg" : ""
-            }`}
+            // className={` ${
+            //   pageTemplate !== "full width" ? "rounded-t-lg" : ""
+            // }`}
             {...props}
           />
         </WithLink>

@@ -13,11 +13,8 @@ export const Slidemenu = ({ className, ...props }) => {
   const widgets = widgetAreas.slideMenuWidgets || []
   return (
     <div className={clsx(className)} {...props}>
-      <button aria-label="open menu">
-        <Hamburger
-          className={clsx("text-[24px] text-text dark:text-dark-text")}
-          onClick={() => setOpen(true)}
-        />
+      <button aria-label="open menu" className="rounded-buttons">
+        <Hamburger onClick={() => setOpen(true)} />
         <Transition show={open} as={Fragment}>
           <Dialog
             as="div"

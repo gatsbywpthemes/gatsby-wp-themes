@@ -12,7 +12,7 @@ export const Header = () => {
   const { logo } = useThemeOptions()
 
   return (
-    <header className="sticky top-0 bg-gray-100 dark:bg-gray-800 dark:text-white h-24 px-4 lg:px-0 lg:fixed z-10 lg:w-24 lg:h-full lg:pt-10 lg:pb-[6.5rem] items-center flex lg:flex-col justify-between text-gray-700">
+    <header className="sticky top-0 bg-gray-100 dark:bg-[#262626] dark:text-white h-24 px-4 lg:px-0 lg:fixed z-10 lg:w-24 lg:h-full lg:pt-10 lg:pb-[6.5rem] items-center flex lg:flex-col justify-between text-gray-700">
       <div className="logo-wrapper lg:-rotate-90">
         {logo ? (
           <Logo />
