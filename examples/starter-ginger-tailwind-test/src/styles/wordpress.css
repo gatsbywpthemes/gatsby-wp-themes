@@ -91,3 +91,6 @@
 .content p {
   @apply mb-5 text-text dark:text-dark-text;
 }
+[type="text"], [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"], [multiple], textarea, select {
+@apply border-white placeholder:text-gray-200 px-0
+}
