@@ -15,7 +15,7 @@ h2{
     @apply text-5xl font-bold mb-4 leading-[1.2]
 }
 p{
-    @apply mb-5 text-lg leading-8
+    @apply mb-5 text-[1rem] md:text-lg leading-8
 }
 }
 
@@ -82,7 +82,7 @@ p{
     @apply px-5 mx-auto md:px-6 lg:px-10 w-[100%];
   }
   .card {
-    @apply rounded-lg shadow-lg bg-cardBg dark:bg-dark-cardBg;
+    @apply shadow-lg bg-[#363636] ;
   }
   .divider {
     @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;

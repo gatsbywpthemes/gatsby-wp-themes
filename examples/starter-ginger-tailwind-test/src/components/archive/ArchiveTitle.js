@@ -1,22 +1,10 @@
 import React from "react"
-import clsx from "clsx"
 
 export const Archivetitle = ({ name, text, className, ...props }) => {
   return (
-    <div
-      className={clsx(
-        "inline-block",
-        "px-5 py-3 rounded-md shadow-lg",
-        "bg-archiveTitleBg dark:bg-dark-archiveTitleBg",
-        className
-      )}
-      {...props}
-    >
-      <h1
-        className={`text-archiveTitleColor dark:text-dark-archiveTitleColor uppercase text-2xl`}
-      >
-        {text} {name}
-      </h1>
+    <div className="text-center my-8 lg:my-16" {...props}>
+      <p className="uppercase text-sm tracking-widest mb-0">{text}</p>
+      <h1 className="archive-title text-4xl lg:text-7xl">{name}</h1>
     </div>
   )
 }

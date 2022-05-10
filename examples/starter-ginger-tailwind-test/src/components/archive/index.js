@@ -18,7 +18,9 @@ export const Archive = ({ posts, ctx, name, description }) => {
   const archiveWidth = layoutWidth.archive
   return (
     <div className="mainContainer max-w-lg mx-auto p-4 py-8">
-      {name && <Archivetitle name={name} text="Posts for " className="mb-10" />}
+      {name && (
+        <Archivetitle name={name} text="Posts Form:" className="mb-10" />
+      )}
       {description && (
         <Description description={description} className="mb-10" />
       )}
