@@ -13,7 +13,7 @@ export const Taxonomies = ({
 
   return (
     taxonomies.length > 0 && (
-      <div className="flex flex-wrap items-center mb-3" {...props}>
+      <div className="inline-flex space-x-1 font-bold" {...props}>
         {showTitle && (
           <div>
             <h3
@@ -28,13 +28,16 @@ export const Taxonomies = ({
           </div>
         )}
 
-        {taxonomies.map((cat) => (
-          <TaxonomyItem
-            key={cat.slug}
-            taxName="category"
-            item={cat}
-            className="mx-2 mb-3 btn btn-ghost "
-          />
+        {taxonomies.map((cat, index) => (
+          <>
+            <TaxonomyItem
+              key={cat.slug}
+              taxName="category"
+              item={cat}
+              // className="mx-2 mb-3 btn btn-ghost "
+            />
+            {index !== taxonomies.length - 1 && <span>·</span>}
+          </>
         ))}
       </div>
     )

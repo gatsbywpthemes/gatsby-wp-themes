@@ -5,7 +5,7 @@
 
 .content
   > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.content) {
-  @apply max-w-4xl;
+    max-width: min(60rem, calc(100% - 3rem))
 }
 [class*="__inner-container"] > [style*="width: 100vw"],
 [class*="__inner-container"] > [style*="width:100vw"] {
@@ -31,7 +31,7 @@
 }
 /* gut Full */
 .alignfull {
-  @apply relative w-full mx-auto my-12;
+  @apply relative w-full mx-auto;
 }
 .alignfull:first-of-type {
   @apply mt-0;
@@ -52,10 +52,10 @@
 [class*="__inner-container"] > .alignwide {
   @apply w-full;
 }
-.wp-block-cover h1,
+/* .wp-block-cover h1,
 .wp-block-cover h2 {
   @apply my-8;
-}
+} */
 .has-background {
   @apply p-6;
 }
@@ -74,7 +74,7 @@
   @apply max-w-full;
 }
 .wp-block-cover {
-  @apply z-0 mb-10;
+  @apply z-0;
 }
 /* Content */
 .content ul {

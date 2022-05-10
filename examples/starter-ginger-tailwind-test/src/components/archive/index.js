@@ -30,9 +30,13 @@ export const Archive = ({ posts, ctx, name, description }) => {
       >
         <PostsList
           posts={posts}
-          className={clsx("xl:col-span-2 col-span-6", "space-y-10", {
-            "order-2": archiveSidebar === "left",
-          })}
+          className={clsx(
+            "xl:col-span-2 col-span-6",
+            "space-y-10 lg:space-y-14",
+            {
+              "order-2": archiveSidebar === "left",
+            }
+          )}
         />
         {hasSidebar && (
           <div className={clsx("xl:col-span-1 col-span-4 mt-10 lg:mt-0")}>
