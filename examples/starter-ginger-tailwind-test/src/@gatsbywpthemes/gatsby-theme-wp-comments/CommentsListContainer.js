@@ -2,7 +2,7 @@ import React from "react"
 
 export const CommentsListContainer = ({ children }) => {
   return (
-    <div className="max-w-lg mx-auto  px-4">
+    <>
       <h2 className="mb-6 text-center">Comments</h2>
       <ul
         className="p-0 mb-12"
@@ -13,6 +13,6 @@ export const CommentsListContainer = ({ children }) => {
       >
         {children}
       </ul>
-    </div>
+    </>
   )
 }

@@ -94,3 +94,25 @@
 [type="text"], [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"], [multiple], textarea, select {
 @apply border-white placeholder:text-gray-200 px-0
 }
+/* .styled-input{
+  @apply !outline focus:!outline-none !border-0 focus:!border-0
+} */
+
+.contact-form{
+  @apply bg-white
+}
+.h1Archive{
+  @apply text-center py-10
+}
+.h1Archive::after{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 1px;
+  background-color: #131313;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+.dark .h1Archive::after{
+  background-color: #ffffff;
+}

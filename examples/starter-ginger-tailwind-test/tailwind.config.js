@@ -53,8 +53,8 @@ module.exports = {
       boxShadow: {
         input: "currentcolor 0px 0px 0px inset",
         inputFocus: "currentcolor 0px -3px 0px inset",
+        lg: "0 10px 40px rgb(0 0 0 / 15%)",
       },
-
       colors: {
         /* header */
         ...colors,

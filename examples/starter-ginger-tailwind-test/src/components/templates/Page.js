@@ -61,7 +61,7 @@ const Page = ({ page, ctx }) => {
             {!skipTitle && !pageTemplate.includes("full") && (
               <h1
                 dangerouslySetInnerHTML={{ __html: title }}
-                className="mb-10 text-center uppercase"
+                className="text-center h1Archive"
               />
             )}
             <div className={clsx("content")}>

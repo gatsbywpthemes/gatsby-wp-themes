@@ -1,6 +1,6 @@
 @layer base {
   #___gatsby {
-    @apply text-lg text-text dark:text-dark-text bg-bg dark:bg-dark-bg font-body;
+    @apply text-lg text-text dark:text-dark-text  dark:bg-dark-bg font-body;
   }
 
   a {
