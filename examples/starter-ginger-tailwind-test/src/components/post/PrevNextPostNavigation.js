@@ -18,7 +18,7 @@ const renderPreviousLink = ({ prev }) => {
   let previousLink = null
   if (!prev) {
     return (
-      <span className="text-gray-400 prev-next-text hover:!text-gray-400">
+      <span className="text-gray-400 prev-next-text hover:!text-gray-400 text-sm tracking-widest">
         Previous
       </span>
     )
@@ -30,7 +30,7 @@ const renderPreviousLink = ({ prev }) => {
     <div className="flex items-center group">
       <div className={`prev-next-anim -mr-4`} />
       <LinkButton
-        className="ml-6 -translate-x-7 "
+        className="ml-6 -translate-x-7 text-sm tracking-widest"
         to={previousLink}
         aria-label="visit previous post"
       >
@@ -45,7 +45,7 @@ const renderNextLink = ({ next }) => {
     return (
       <div className="flex items-center group">
         <LinkButton
-          className="mr-6 translate-x-7 "
+          className="mr-6 translate-x-7 text-sm tracking-widest"
           aria-label="visit next post"
           to={`${next}`}
         >
@@ -56,7 +56,7 @@ const renderNextLink = ({ next }) => {
     )
   } else {
     return (
-      <span className="text-gray-400 hover:!text-gray-400 prev-next-text">
+      <span className="text-gray-400 hover:!text-gray-400 prev-next-text text-sm tracking-widest">
         Next
       </span>
     )

@@ -8,7 +8,7 @@ export const PostEntryMeta = ({ post, ...props }) => {
       By{" "}
       <Author
         author={post.author.node}
-        className="font-bold hover:opacity-70 !text-text !dark:text-teal-900 uppercase "
+        className="font-bold hover:opacity-70  uppercase "
       />
       {" / "}In{" "}
       <Taxonomies

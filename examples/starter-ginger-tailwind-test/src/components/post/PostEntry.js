@@ -7,6 +7,7 @@ import { PostEntryMedia } from "./PostEntryMedia"
 import { PostEntryMeta } from "./PostEntryMeta"
 import { PostEntryTitle } from "./PostEntryTitle"
 import { PrevNextPostNavigation } from "./PrevNextPostNavigation"
+import { TaxonomyItem } from "./TaxonomyItem"
 
 export const PostEntry = ({
   isFirst = false,
@@ -21,45 +22,71 @@ export const PostEntry = ({
     : null
 
   const { pageTemplate, skipTitle } = post.headlesswp
+  const taxonomies = post["tags"].nodes
+
   return (
     <article className={`not-card single-blog-post ${className}`} {...props}>
-      {post.featuredImage && (
-        <PostEntryMedia
-          imageLoading="eager"
-          post={post}
-          location="single"
-          className={` ${
-            pageTemplate === "full width"
-              ? "aspect-w-3 aspect-h-1"
-              : "aspect-w-16 aspect-h-9"
-          }`}
-        />
-      )}
-      <div
-        className={`${
-          pageTemplate === "full width" ? "center-container" : ""
-        } content`}
-      >
-        <div className={` space-y-5 px-5 sm:px-10 pb-10`}>
-          {!skipTitle && (
-            <PostEntryTitle
-              post={post}
-              location={location}
-              className="mb-5 uppercase"
-            />
-          )}
-          <PostEntryInfo post={post} className="mb-3" />
-          <PostEntryContent post={post} location={location} />
-          <div className="my-12 divider" />
-
-          <PostEntryMeta post={post} />
-          <div className="flex justify-center">
-            <SocialShare
-              url={normalize(`/${post.uri}`)}
-              title={post.title}
-              media={media}
-            />
+      <header data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
+        <div className="relative h-[70vh] lg:min-h-screen lg:h-screen blog-header">
+          <div className="featured-wrapper absolute inset-0 w-full h-full">
+            {post.featuredImage && (
+              <PostEntryMedia
+                imageLoading="eager"
+                post={post}
+                location="single"
+                className="w-full h-full"
+              />
+            )}
           </div>
+          <div className="content absolute inset-0 flex items-center justify-center">
+            <div
+              className="t-w lg:w-[45rem] bg-white z-[1] relative text-center bg-opacity-80
+             border-[0.5rem] lg:border-[0.75rem] px-8 py-6 border-white dark:border-darkBorder dark:bg-dark-bg dark:bg-opacity-90"
+            >
+              <div className="flex justify-center">
+                <SocialShare
+                  url={normalize(`/${post.uri}`)}
+                  title={post.title}
+                  media={media}
+                />
+              </div>
+              <PostEntryInfo post={post} className="mb-3" />
+              {!skipTitle && (
+                <PostEntryTitle
+                  post={post}
+                  location={location}
+                  className="mb-5 text-5xl"
+                />
+              )}
+              <PostEntryMeta
+                className="!text-sm uppercase tracking-widest"
+                post={post}
+              />
+              <PrevNextPostNavigation ctx={ctx} />
+              {/* <ScrollToContentButton /> */}
+            </div>
+          </div>
+        </div>
+      </header>
+      <div className={`mb-10 lg:pt-10`}>
+        <PostEntryContent post={post} location={location} />
+        <div className="content my-6 lg:my-10">
+          <h4 className="text-4xl lg:text-5xl">Tags:</h4>
+          <div className="box mt-4 flex space-x-2 text-sm">
+            {taxonomies.map((cat, index) => (
+              <>
+                <TaxonomyItem
+                  key={cat.slug}
+                  taxName="category"
+                  item={cat}
+                  className="inline-block uppercase tracking-widest"
+                />
+                {index !== taxonomies.length - 1 && <span>·</span>}
+              </>
+            ))}
+          </div>
+        </div>
+        <div className="content mb-10 lg:mb-20">
           <PrevNextPostNavigation ctx={ctx} />
         </div>
       </div>
