@@ -99,7 +99,7 @@
 } */
 
 .contact-form{
-  @apply bg-white
+  @apply bg-white dark:bg-dark-bg
 }
 .h1Archive{
   @apply text-center py-10
