@@ -8,18 +8,18 @@ import clsx from "clsx"
 
 const SubmenuV = ({ menuItem }) => {
   return (
-    <div className={`relative has-submenu menu-item `}>
+    <div className={`relative has-submenu menu-item !border-none`}>
       <Collapse
         trigger={menuItem.label}
-        className="font-semibold text-mobileMenuColor dark:text-dark-mobileMenuColor"
+        className="font-semibold text-mobileMenuColor dark:text-dark-mobileMenuColor border-b border-dashed"
       >
-        <ul className="py-2 pl-3 menuItemGroup sub-menu">
+        <ul className="menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
             <MenuItem
               key={item.id}
               menuItem={item}
               orientation="V"
-              className="py-2 border-b border-dashed border-opacity-20 border-light last:border-none"
+              className="border-b border-dashed last:border-nonee"
             />
           ))}
         </ul>
@@ -31,7 +31,11 @@ const SubmenuV = ({ menuItem }) => {
 const SubmenuH = ({ menuItem }) => {
   return (
     <Menu as="div" className={clsx("menu-item", "relative", "flex")}>
-      <Menu.Button className={clsx(`inline-flex items-center font-semibold`)}>
+      <Menu.Button
+        className={clsx(
+          `inline-flex items-center font-semibold border-b border-dashed`
+        )}
+      >
         {menuItem.label}
         <CgChevronDown className={`ml-2 w-4 h-4`} aria-hidden="true" />
       </Menu.Button>
@@ -76,6 +80,7 @@ const SubmenuH = ({ menuItem }) => {
 }
 
 export const Submenu = ({ menuItem, orientation }) => {
+  // console.log({ menuItem })
   return orientation === "H" ? (
     <SubmenuH menuItem={menuItem} />
   ) : (

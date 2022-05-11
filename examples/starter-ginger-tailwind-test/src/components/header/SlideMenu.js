@@ -6,10 +6,11 @@ import { MdClose as Close } from "react-icons/md"
 import { Menu } from "~/components/menu"
 import { Widget } from "~/components/widgets"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { SearchForm } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchForm"
 
 export const Slidemenu = ({ className, ...props }) => {
   const [open, setOpen] = useState(false)
-  const { widgetAreas } = useThemeOptions()
+  const { widgetAreas, addWordPressSearch } = useThemeOptions()
   const widgets = widgetAreas.slideMenuWidgets || []
   return (
     <div className={clsx(className)} {...props}>
@@ -68,11 +69,11 @@ export const Slidemenu = ({ className, ...props }) => {
                         "overflow-y-scroll",
                         "shadow-xl",
                         "p-5",
-                        "bg-mobileMenuBg dark:bg-dark-mobileMenuBg ",
+                        "bg-[#076666] dark:bg-dark-mobileMenuBg ",
                         "text-mobileMenuColor dark:text-dark-mobileMenuColor"
                       )}
                     >
-                      <div className="flex justify-end mb-5">
+                      <div className="flex justify-end">
                         <button aria-label="close menu">
                           <Close
                             className="text-[24px] text-mobileMenuColor dark:text-dark-mobileMenuColor"
@@ -80,9 +81,8 @@ export const Slidemenu = ({ className, ...props }) => {
                           />
                         </button>
                       </div>
-
+                      {addWordPressSearch && <SearchForm />}
                       <Menu orientation="V" />
-
                       {widgets?.length > 0 &&
                         widgets.map((widget, i) => (
                           <div key={i} className="my-5">
@@ -90,7 +90,6 @@ export const Slidemenu = ({ className, ...props }) => {
                           </div>
                         ))}
                     </div>
-                    {/* End of panel content */}
                   </div>
                 </Transition.Child>
               </div>

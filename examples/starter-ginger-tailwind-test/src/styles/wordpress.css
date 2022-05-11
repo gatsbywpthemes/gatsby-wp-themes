@@ -97,7 +97,9 @@
 /* .styled-input{
   @apply !outline focus:!outline-none !border-0 focus:!border-0
 } */
-
+select{
+  @apply border border-dark-bg dark:border-white
+}
 .contact-form{
   @apply bg-white dark:bg-dark-bg
 }

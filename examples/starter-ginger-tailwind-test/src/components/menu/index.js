@@ -14,7 +14,7 @@ export const Menu = ({
   return (
     menuItems && (
       <nav
-        className={`main-menu flex   ${
+        className={`main-menu flex !text-2xl   ${
           orientation === "V" ? "flex-col  menuV" : "space-x-5 menuH"
         } ${className ? className : ""}`}
         aria-label="main"

@@ -55,11 +55,17 @@ p{
   .menu-item button {
     @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor text-upper-spaced;
   }
+  .has-submenu button {
+    @apply !text-sm;
+  }
   .menu-item > a {
-    @apply hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor;
+    @apply hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor  text-sm;
+  }
+  .menuV .menu-item a,button {
+    @apply !py-3;
   }
   .menuV > .menu-item {
-    @apply py-3 border-b border-dashed border-opacity-40 last:border-none;
+    @apply border-b border-dashed border-opacity-40 last:border-none;
   }
   .menuV .menu-item a {
     @apply text-dark-headerColor;
@@ -67,6 +73,13 @@ p{
   .menu-item [aria-current="page"] {
     @apply italic;
   }
+  .menu-item
+  > *:not(.has-submenu) {
+    @apply !p-0
+}
+.menuItemGroup > div {
+  @apply !pl-4
+} 
   /* Pagination */
   .prev-next-text {
     @apply text-upper-spaced hover:!text-primary;
