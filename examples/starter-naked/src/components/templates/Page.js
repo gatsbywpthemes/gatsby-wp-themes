@@ -7,33 +7,15 @@ import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import clsx from "clsx"
 import loadable from "@loadable/component"
 
-const ContentBlock = loadable(() =>
-  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/ContentBlock")
-)
-const SectionsBlock = loadable(() =>
-  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/SectionsBlock")
-)
-
-const CoverBlock = loadable(() =>
-  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/CoverBlock")
-)
-
-const FeaturesBlock = loadable(() =>
-  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/FeaturesBlock")
-)
-const AccordionBlock = loadable(() =>
-  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/AccordionBlock")
-)
-const TestimonialsBlock = loadable(() =>
-  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/TestimonialsBlock")
-)
-const PricingBlock = loadable(() =>
-  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/PricingBlock")
-)
-
-const ProjectsBlock = loadable(() =>
-  import("@gatsbywpthemes/gatsby-theme-acf-builder/src/ProjectsBlock")
-)
+import ContentBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/ContentBlock"
+import SectionsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/SectionsBlock"
+import CoverBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/CoverBlock"
+import FeaturesBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/FeaturesBlock"
+import AccordionBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/AccordionBlock"
+import TestimonialsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/TestimonialsBlock"
+import PricingBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/PricingBlock"
+import ProjectsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/ProjectsBlock"
+import GalleryBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/GalleryBlock"
 
 const Page = ({ page, ctx }) => {
   const {
@@ -123,6 +105,8 @@ const Page = ({ page, ctx }) => {
                     return <PricingBlock {...block} />
                   case "WpPage_Layoutblocks_Blocks_ProjectsBlock":
                     return <ProjectsBlock {...block} />
+                  case "WpPage_Layoutblocks_Blocks_GalleryBlock":
+                    return <GalleryBlock {...block} />
 
                   default:
                     return null

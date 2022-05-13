@@ -1,4 +1,4 @@
-import { graphql } from "gatsby"
+import { graphql } from "gatsby";
 
 export const fragments = graphql`
   fragment button on WpAcfLink {
@@ -8,6 +8,8 @@ export const fragments = graphql`
   }
   fragment basicImage on WpMediaItem {
     altText
+    caption
+    description
     sourceUrl
     localFile {
       publicURL
@@ -26,4 +28,4 @@ export const fragments = graphql`
       }
     }
   }
-`
+`;

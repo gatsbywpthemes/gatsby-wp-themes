@@ -22,6 +22,7 @@ export const pageQuery = graphql`
           ...testimonialsBlock
           ...pricingBlock
           ...projectsBlock
+          ...galleryBlock
         }
       }
       template {
