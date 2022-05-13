@@ -18,9 +18,9 @@
     "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.2.6",
     "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.6",
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.0.4",
-    "@headlessui/react": "^1.4.3",
+    "@headlessui/react": "^1.6.1",
     "@kunukn/react-collapse": "^2.2.9",
-    "gatsby": "^4.12.1",
+    "gatsby": "^4.14.0",
     "gatsby-plugin-use-dark-mode": "^1.5.0",
     "local-storage": "^2.0.0",
     "lodash.merge": "^4.6.2",
@@ -31,7 +31,7 @@
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
-    "babel-preset-gatsby": "^2.12.1",
+    "babel-preset-gatsby": "^2.14.0",
     "prettier": "^2.6.2"
   }
 }
