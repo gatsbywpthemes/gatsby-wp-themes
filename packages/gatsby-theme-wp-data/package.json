@@ -11,11 +11,11 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.10",
+    "@apollo/client": "^3.6.2",
     "gatsby-awesome-pagination": "^0.3.8",
-    "gatsby-plugin-google-gtag": "^4.12.1",
-    "gatsby-plugin-google-tagmanager": "^4.12.1",
-    "gatsby-plugin-sitemap": "^5.12.1",
+    "gatsby-plugin-google-gtag": "^4.14.0",
+    "gatsby-plugin-google-tagmanager": "^4.14.0",
+    "gatsby-plugin-sitemap": "^5.14.0",
     "gatsby-source-wordpress": "^6.12.2",
     "isomorphic-fetch": "^3.0.0",
     "normalize-path": "^3.0.0",
