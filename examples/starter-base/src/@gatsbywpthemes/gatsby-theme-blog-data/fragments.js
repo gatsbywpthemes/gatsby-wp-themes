@@ -48,7 +48,7 @@ export const fragments = graphql`
   fragment GatsbyImageQuery_starter on WpMediaItem {
     altText
     sourceUrl
-    gatsbyImage(quality: 80, layout: FULL_WIDTH)
+    gatsbyImage(quality: 80, width: 940, layout: CONSTRAINED)
     localFile {
       publicURL
 

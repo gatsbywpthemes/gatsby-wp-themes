@@ -24,16 +24,15 @@ export const PostEntry = ({
   return (
     <article className={`card ${className}`} {...props}>
       {post.featuredImage && (
-        <PostEntryMedia
-          imageLoading="eager"
-          post={post}
-          location="single"
+        <div
           className={` ${
             pageTemplate === "full width"
               ? "aspect-w-3 aspect-h-1"
               : "aspect-w-16 aspect-h-9"
           }`}
-        />
+        >
+          <PostEntryMedia imageLoading="eager" post={post} location="single" />
+        </div>
       )}
       <div
         className={`${
