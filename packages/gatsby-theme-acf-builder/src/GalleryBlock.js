@@ -27,7 +27,7 @@ const GalleryBlock = ({
 }) => {
   return (
     <section
-      className={`content-block ${cssClass ? cssClass : ""}`}
+      className={`gallery-block ${cssClass ? cssClass : ""}`}
       id={`${anchorId ? anchorId : ""}`}
       {...props}
     >
@@ -39,10 +39,17 @@ const GalleryBlock = ({
         />
       )}
       {gallery && (
-        <div>
+        <div className="gallery-items">
           {gallery.map((img, index) => {
             const { altText, caption, description, sourceUrl, localFile } = img;
-            return <Image key={index} img={img} />;
+            return (
+              <Image
+                key={index}
+                img={img}
+                className="gallery-item"
+                imgClassName="img"
+              />
+            );
           })}
         </div>
       )}
