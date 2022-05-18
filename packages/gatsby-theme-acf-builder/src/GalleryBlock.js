@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Image } from "./ui-components";
 import { HeadlineContent } from "./HeadlineContent";
+import LightboxWrapper from "./LightboxWrapper";
 
 export const fragment = graphql`
   fragment galleryBlock on WpPage_Layoutblocks_Blocks_GalleryBlock {
@@ -40,17 +41,33 @@ const GalleryBlock = ({
       )}
       {gallery && (
         <div className="gallery-items">
-          {gallery.map((img, index) => {
-            const { altText, caption, description, sourceUrl, localFile } = img;
-            return (
-              <Image
-                key={index}
-                img={img}
-                className="gallery-item"
-                imgClassName="img"
-              />
-            );
-          })}
+          <LightboxWrapper>
+            {gallery.map((img, index) => {
+              const { caption, description } = img;
+              return (
+                <div className="gallery-item-container">
+                  <Image
+                    key={index}
+                    img={img}
+                    className="gallery-item"
+                    imgClassName="img"
+                  />
+                  {caption && (
+                    <div
+                      className="caption"
+                      dangerouslySetInnerHTML={{ __html: caption }}
+                    />
+                  )}
+                  {description && (
+                    <div
+                      className="description"
+                      dangerouslySetInnerHTML={{ __html: description }}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </LightboxWrapper>
         </div>
       )}
     </section>
