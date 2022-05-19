@@ -6,7 +6,6 @@
   "author": "Gatsby WP Themes <contact@gatsbywpthemes.com>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "@gatsbywpthemes/gatsby-plugin-wordpress-lightbox": "^2.0.5",
     "@gatsbywpthemes/gatsby-plugin-wp-seo": "^2.0.6",
     "@gatsbywpthemes/gatsby-plugin-wpcf7": "^2.0.7",
     "@heroicons/react": "^1.0.6",
