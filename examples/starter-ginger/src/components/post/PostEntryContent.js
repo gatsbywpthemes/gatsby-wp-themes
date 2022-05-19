@@ -1,12 +1,13 @@
-import React from 'react'
-import { ParsedContent, ActivatePostScripts } from 'gingerThemeUtils'
-import { Box } from '@chakra-ui/react'
+import React from "react"
+import { ParsedContent, ActivatePostScripts } from "~/utils"
 
-export const PostEntryContent = ({ content }) => {
+export const PostEntryContent = ({ post, location, ...props }) => {
+  const content = location === "single" ? post.content : post.excerpt
+
   return (
-    <Box mb="8">
+    <div className="leading-relaxed content post-content" {...props}>
       <ActivatePostScripts />
       <ParsedContent content={content} />
-    </Box>
+    </div>
   )
 }

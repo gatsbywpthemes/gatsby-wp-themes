@@ -2,7 +2,6 @@ import React from 'react'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
 import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { NoIconShare } from 'gingerThemeComponents'
 
 export const Twitter = ({
   url,
@@ -16,17 +15,18 @@ export const Twitter = ({
 }) => {
   const { siteUrl } = useSiteMetaData()
   const shareUrl = `${slashes(siteUrl)}${url}`
-  return children ? (
-    <NoIconShare as={TwitterShareButton} url={shareUrl} title={title}>
+  return (
+    <TwitterShareButton url={shareUrl} title={title}>
       {children}
-    </NoIconShare>
-  ) : (
-    <TwitterIcon
-      round={round}
-      size={size}
-      borderRadius={borderRadius}
-      iconBgStyle={iconBgStyle}
-      logoFillColor={logoFillColor}
-    />
+      {!children && (
+        <TwitterIcon
+          round={round}
+          size={size}
+          borderRadius={borderRadius}
+          iconBgStyle={iconBgStyle}
+          logoFillColor={logoFillColor}
+        />
+      )}
+    </TwitterShareButton>
   )
 }

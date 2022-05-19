@@ -1,32 +1,73 @@
-import React from 'react'
-import { Link as GatsbyLink } from 'gatsby'
-import { Flex, Link } from '@chakra-ui/react'
+import React from "react"
+import { Link } from "gatsby"
+import clsx from "clsx"
 
-const PreviousLink = ({ ctx: { prev } }) => {
-  return prev ? (
-    <Link as={GatsbyLink} textStyle="specialLeft" to={prev}>
-      Previous
-    </Link>
-  ) : (
-    <span />
+const LinkButton = ({ className, ...props }) => {
+  return (
+    <Link
+      className={clsx(
+        "prev-next-text",
+        "transition duration-700 group-hover:translate-x-0",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+const renderPreviousLink = ({ prev }) => {
+  let previousLink = null
+  if (!prev) {
+    return (
+      <span className="text-gray-400 prev-next-text hover:!text-gray-400 text-sm tracking-widest">
+        Previous
+      </span>
+    )
+  } else {
+    previousLink = `${prev}`
+  }
+
+  return (
+    <div className="flex items-center group">
+      <div className={`prev-next-anim -mr-4`} />
+      <LinkButton
+        className="ml-6 -translate-x-7 text-sm tracking-widest"
+        to={previousLink}
+        aria-label="visit previous post"
+      >
+        <span>Previous</span>
+      </LinkButton>
+    </div>
   )
 }
 
-const NextLink = ({ ctx: { next } }) => {
-  return next ? (
-    <Link as={GatsbyLink} textStyle="specialRight" to={next}>
-      <span>Up Next</span>
-    </Link>
-  ) : (
-    <span />
-  )
+const renderNextLink = ({ next }) => {
+  if (next) {
+    return (
+      <div className="flex items-center group">
+        <LinkButton
+          className="mr-6 translate-x-7 text-sm tracking-widest"
+          aria-label="visit next post"
+          to={`${next}`}
+        >
+          <span>Next</span>
+        </LinkButton>
+        <div className={`prev-next-anim -ml-4`} />
+      </div>
+    )
+  } else {
+    return (
+      <span className="text-gray-400 hover:!text-gray-400 prev-next-text text-sm tracking-widest">
+        Next
+      </span>
+    )
+  }
 }
 
 export const PrevNextPostNavigation = ({ ctx }) => {
   return (
-    <Flex as="nav" justify="space-between" mt="8" overflow="hidden">
-      <PreviousLink ctx={ctx} />
-      <NextLink ctx={ctx} />
-    </Flex>
+    <nav className="flex justify-between mt-16">
+      {renderPreviousLink(ctx)}
+      {renderNextLink(ctx)}
+    </nav>
   )
 }

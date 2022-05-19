@@ -2,7 +2,6 @@ import React from 'react'
 import { TelegramShareButton, TelegramIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
 import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { NoIconShare } from 'gingerThemeComponents'
 
 export const Telegram = ({
   url,
@@ -16,17 +15,18 @@ export const Telegram = ({
 }) => {
   const { siteUrl } = useSiteMetaData()
   const shareUrl = `${slashes(siteUrl)}${url}`
-  return children ? (
-    <NoIconShare as={TelegramShareButton} url={shareUrl} title={title}>
+  return (
+    <TelegramShareButton url={shareUrl} title={title}>
       {children}
-    </NoIconShare>
-  ) : (
-    <TelegramIcon
-      round={round}
-      size={size}
-      borderRadius={borderRadius}
-      iconBgStyle={iconBgStyle}
-      logoFillColor={logoFillColor}
-    />
+      {!children && (
+        <TelegramIcon
+          round={round}
+          size={size}
+          borderRadius={borderRadius}
+          iconBgStyle={iconBgStyle}
+          logoFillColor={logoFillColor}
+        />
+      )}
+    </TelegramShareButton>
   )
 }

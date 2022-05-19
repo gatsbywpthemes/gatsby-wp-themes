@@ -1,10 +1,12 @@
-import React from 'react'
-import { Button } from '@chakra-ui/react'
+import React from "react"
 
-export const SubmitButton = () => {
+export function SubmitButton() {
   return (
-    <Button type="submit" height="auto">
+    <button
+      className="border-2 uppercase font-bold flex items-center justify-center px-4"
+      type="submit"
+    >
       Search
-    </Button>
+    </button>
   )
 }

@@ -1,13 +1,12 @@
-import React from 'react'
-import { Input } from 'gingerThemeUiComponents/Input'
+import React from "react"
 
 export const SearchInput = (props) => {
   return (
-    <Input
-      w="full"
-      py="2"
-      pl="8"
-      h="100%"
+    <input
+      css={{
+        "::-webkit-search-cancel-button": { WebkitAppearance: "none" },
+      }}
+      className="search-input w-full !px-2 !py-0.5 bg-transparent border-0 border-b focus:outline-none focus:ring-0"
       placeholder="search here..."
       aria-label="Search here"
       {...props}

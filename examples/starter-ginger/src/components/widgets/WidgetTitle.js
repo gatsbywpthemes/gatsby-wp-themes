@@ -1,32 +1,16 @@
-import React from 'react'
-import { Box } from '@chakra-ui/react'
+import React from "react"
 
-export const WidgetTitle = ({ children, props }) => {
+export const WidgetTitle = ({ title, className = "", lightBg, ...props }) => {
+  const borderStyle = `h-[1px] border-t flex-1 ${
+    lightBg ? "border-text" : "border-dark-text"
+  }  dark:border-dark-text `
   return (
-    <Box
-      as="h2"
-      sx={{
-        fontSize: '2xl',
-        textAlign: 'center',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        ':after, :before': {
-          content: '""',
-          height: '1px',
-          borderTop: '1px solid',
-          flex: '1 0',
-        },
-        ':after': {
-          ml: 3,
-        },
-        ':before': {
-          mr: 3,
-        },
-      }}
-      className="widget-title"
-      dangerouslySetInnerHTML={{ __html: children }}
-    />
+    <div className={`flex items-center space-x-4 mb-5 ${className}`} {...props}>
+      <div className={borderStyle} />
+      <h3 className="mb-0 text-lg font-bold tracking-widest text-center uppercase widget-title">
+        {title}
+      </h3>
+      <div className={borderStyle} />
+    </div>
   )
 }

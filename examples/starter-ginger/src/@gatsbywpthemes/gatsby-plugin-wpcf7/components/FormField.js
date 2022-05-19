@@ -1,10 +1,10 @@
-import React from 'react'
-import { FormControl } from '@chakra-ui/react'
+import React from "react"
+import clsx from "clsx"
 
 export const FormField = ({ className, children }) => {
   return (
-    <FormControl maxWidth="60ch" mx="auto" mb="6" className={className}>
+    <p className={clsx(`max-w-[30rem] mb-4 mx-auto ${className}`)}>
       {children}
-    </FormControl>
+    </p>
   )
 }

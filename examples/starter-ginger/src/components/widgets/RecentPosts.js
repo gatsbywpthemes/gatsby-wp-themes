@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
-import { format } from 'date-fns'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { Box, Flex, chakra } from '@chakra-ui/react'
-import { WidgetContainer } from 'gingerThemeComponents'
+import React from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { format } from "date-fns"
+import normalize from "normalize-path"
+import { WidgetTitle } from "./WidgetTitle"
+import { Image } from "~/components/ui-components/Image"
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {
@@ -13,11 +13,11 @@ const RECENT_POSTS_QUERY = graphql`
         title
         uri
         date
-
         featuredImage {
           node {
             altText
             localFile {
+              publicURL
               childImageSharp {
                 gatsbyImageData(
                   width: 72
@@ -34,65 +34,52 @@ const RECENT_POSTS_QUERY = graphql`
   }
 `
 
-export const RecentPosts = () => {
+export const RecentPosts = (props) => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
+
   const { nodes } = data.allWpPost
+  const { lightBg, ...rest } = props
+
   return (
-    !!nodes.length && (
-      <WidgetContainer
-        className="widget widget-recent-posts"
-        title="Recent Posts"
-      >
-        <chakra.ul textStyle="listRaw">
-          {nodes.map((post) => {
-            return (
-              <Flex key={post.id} as="li" align="center" mb="4">
-                <Box
-                  as={GatsbyLink}
-                  sx={{
-                    '&>*': {
-                      verticalAlign: 'middle',
-                    },
-                  }}
-                  mr="3"
-                  aria-label={`Read more - ${post.title}`}
-                  to={post.uri}
-                >
-                  {post.featuredImage && (
-                    <GatsbyImage
-                      image={
-                        post.featuredImage.node.localFile.childImageSharp
-                          ?.gatsbyImageData
-                      }
-                      alt={post.featuredImage.node.altText}
-                    />
-                  )}
-                </Box>
-                <Box>
-                  <Box
-                    as={GatsbyLink}
-                    className="widget-post-date"
-                    textStyle="special"
-                    d="block"
-                    to={post.uri}
-                  >
-                    <time className="entry-date" dateTime={post.date}>
-                      {format(new Date(post.date), 'MMMM dd, yyyy')}
-                    </time>
-                  </Box>
-                  <Box
-                    as={GatsbyLink}
-                    className="widget-post-title"
-                    textDecoration="none"
-                    to={post.uri}
-                    dangerouslySetInnerHTML={{ __html: post.title }}
-                  />
-                </Box>
-              </Flex>
-            )
-          })}
-        </chakra.ul>
-      </WidgetContainer>
-    )
+    <section className="widget widget-recent-posts" {...rest}>
+      <WidgetTitle title="Recent Posts" lightBg={lightBg} />
+      <div className="flex flex-col space-y-5 align-start">
+        {nodes.length
+          ? nodes.map((post) => {
+              const uri = normalize(`${post.uri}`)
+              return (
+                <div className="flex items-center space-x-4" key={post.id}>
+                  <Link aria-label={`Read more - ${post.title}`} to={uri}>
+                    {post.featuredImage && (
+                      <Image
+                        img={post.featuredImage.node}
+                        css={{
+                          objectFit: "cover",
+                          width: "72px",
+                          height: "48px",
+                        }}
+                      />
+                    )}
+                  </Link>{" "}
+                  <div>
+                    <time
+                      className="block text-upper-spaced"
+                      dateTime={post.date}
+                    >
+                      {format(new Date(post.date), "MMMM dd, yyyy")}
+                    </time>{" "}
+                    <Link
+                      className="text-base font-bold widget-post-title hover:text-primary"
+                      to={uri}
+                    >
+                      {post.title}
+                    </Link>
+                  </div>
+                </div>
+              )
+            })
+          : null}
+      </div>
+    </section>
   )
 }

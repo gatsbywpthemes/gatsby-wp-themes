@@ -1,18 +1,15 @@
-import React from 'react'
-import { Button, Box } from '@chakra-ui/react'
+import React from "react"
 
 export const SubmitButton = ({ disabled, children }) => {
   return (
-    <Box maxWidth="35rem" mb="4" mx="auto">
-      <Button
-        d="flex"
-        ml="auto"
-        className="submit-button"
+    <div className="max-w-[30rem] mb-4 mx-auto">
+      <button
+        className="flex ml-auto submit-button btn btn-ghost"
         type="submit"
         disabled={disabled}
       >
         {children}
-      </Button>
-    </Box>
+      </button>
+    </div>
   )
 }

@@ -2,7 +2,6 @@ import React from 'react'
 import { PinterestShareButton, PinterestIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
 import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { NoIconShare } from 'gingerThemeComponents'
 
 export const Pinterest = ({
   url,
@@ -19,22 +18,18 @@ export const Pinterest = ({
   const shareUrl = `${slashes(siteUrl)}${url}`
   const shareMedia = `${slashes(siteUrl)}${media}`
 
-  return children ? (
-    <NoIconShare
-      as={PinterestShareButton}
-      url={shareUrl}
-      media={shareMedia}
-      description={title}
-    >
+  return (
+    <PinterestShareButton url={shareUrl} media={shareMedia} description={title}>
       {children}
-    </NoIconShare>
-  ) : (
-    <PinterestIcon
-      round={round}
-      size={size}
-      borderRadius={borderRadius}
-      iconBgStyle={iconBgStyle}
-      logoFillColor={logoFillColor}
-    />
+      {!children && (
+        <PinterestIcon
+          round={round}
+          size={size}
+          borderRadius={borderRadius}
+          iconBgStyle={iconBgStyle}
+          logoFillColor={logoFillColor}
+        />
+      )}
+    </PinterestShareButton>
   )
 }

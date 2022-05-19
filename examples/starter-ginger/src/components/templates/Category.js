@@ -1,12 +1,14 @@
-import React from 'react'
-import { ArchiveContent, Layout } from 'gingerThemeComponents'
-import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import React from "react"
+import { Layout } from "~/components/Layout"
+import { Archive } from "~/components/archive"
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Category = ({ category, ctx }) => {
   const { name, posts, uri, description } = category
   const { humanPageNumber, numberOfPages, yoastSeo, seo } = ctx
+
   return (
-    <Layout>
+    <Layout page={category} type="category">
       <Seo
         title={`${name} Archives`}
         humanPageNumber={humanPageNumber}
@@ -15,11 +17,12 @@ const Category = ({ category, ctx }) => {
         seo={seo}
         uri={uri}
       />
-      <ArchiveContent
+
+      <Archive
+        posts={posts.nodes}
+        ctx={ctx}
         name={name}
         description={description}
-        posts={posts}
-        ctx={ctx}
       />
     </Layout>
   )

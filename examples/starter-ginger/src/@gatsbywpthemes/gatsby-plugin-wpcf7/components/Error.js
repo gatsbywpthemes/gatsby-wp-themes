@@ -1,34 +1,25 @@
-import React from 'react'
-import { FormControl, FormErrorMessage } from '@chakra-ui/react'
+import React from "react"
+
 export const Error = ({ error }) => {
   if (error) {
-    let errorMessage = ''
     switch (error.type) {
-      case 'required':
-        errorMessage = error.message || 'Required'
-        break
-      case 'filesize':
-        errorMessage = error.message || 'Invalid filesize'
-        break
-      case 'accept':
-        errorMessage = error.message || 'Invalid file type'
-        break
+      case "required":
+        return <span className="error">{error.message || "Required"}</span>
+      case "filesize":
+        return (
+          <span className="error">{error.message || "Invalid filesize"}</span>
+        )
+      case "accept":
+        return (
+          <span className="error">{error.message || "Invalid file type"}</span>
+        )
       default:
-        errorMessage = error.message || 'Invalid value'
-        break
+        return (
+          <span className="italic text-red-500 error">
+            {error.message || "Invalid value"}
+          </span>
+        )
     }
-    return (
-      <FormControl isInvalid={error}>
-        <FormErrorMessage
-          fontStyle="italic"
-          mt="0"
-          letterSpacing="normal"
-          textTransform="none"
-        >
-          {errorMessage}
-        </FormErrorMessage>
-      </FormControl>
-    )
   } else {
     return null
   }

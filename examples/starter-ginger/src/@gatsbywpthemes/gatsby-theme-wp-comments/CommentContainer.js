@@ -1,20 +1,5 @@
-import React from 'react'
-import { Box } from '@chakra-ui/layout'
+import React from "react"
 
 export const CommentContainer = ({ children }) => {
-  return (
-    <Box
-      className="comment"
-      layerStyle="overlay"
-      p="4"
-      mb={6}
-      sx={{
-        '.comment-content a': {
-          textDecoration: 'underline',
-        },
-      }}
-    >
-      {children}
-    </Box>
-  )
+  return <div className="p-4 mb-6 rounded-lg comment card ">{children}</div>
 }

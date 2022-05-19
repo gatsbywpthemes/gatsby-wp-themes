@@ -1,31 +1,37 @@
-const DEFAULT_OPTIONS = require('@gatsbywpthemes/gatsby-theme-blog-data/utils/defaultOptions')
-const fs = require('fs')
-require('dotenv').config({
+const DEFAULT_OPTIONS = require("@gatsbywpthemes/gatsby-theme-blog-data/utils/defaultOptions")
+const fs = require("fs")
+require("dotenv").config({
   path:
     (fs.existsSync(`.env.${process.env.NODE_ENV}`) &&
       `.env.${process.env.NODE_ENV}`) ||
-    '.env',
+    ".env",
 })
 
-const path = require('path')
-const { author, pathPrefix, ...options } = require('./config')
+const {
+  title,
+  author,
+  description,
+  pathPrefix,
+  ...options
+} = require("./config")
 const siteUrl = process.env.GATSBY_SITE_URL || options.siteUrl
 options.wordPressUrl = process.env.GATSBY_WP_URL
 
 module.exports = {
   pathPrefix,
   siteMetadata: {
-    author: `@pehaa`,
+    title,
+    description,
+    author,
     wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-use-dark-mode`,
     `@gatsbywpthemes/gatsby-theme-wp-comments`,
     `@gatsbywpthemes/gatsby-theme-wp-search`,
-    {
-      resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
-      options: options,
-    },
+    `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     {
       resolve: `@gatsbywpthemes/gatsby-plugin-gwpt-packages`,
       options: {
@@ -33,26 +39,12 @@ module.exports = {
         ...options,
       },
     },
+
     {
-      resolve: 'gatsby-plugin-root-import',
+      resolve: `@gatsbywpthemes/gatsby-theme-blog-data`,
       options: {
-        gingerThemeSrc: path.join(__dirname, 'src'),
-        gingerThemePages: path.join(__dirname, 'src/pages'),
-        gingerThemeStyles: path.join(__dirname, 'src/styles'),
-        gingerThemeComponents: path.join(__dirname, 'src/components'),
-        gingerThemeUiComponents: path.join(
-          __dirname,
-          'src/components/ui-components'
-        ),
-        gingerThemeUtils: path.join(__dirname, 'src/utils'),
-      },
-    },
-    {
-      resolve: `gatsby-plugin-scroll-reveal`,
-      options: {
-        threshold: 0.1,
-        once: true,
-        selector: `[data-sal], .entry-content .animate-on-scroll`,
+        ...options,
+        wordPressUrl: process.env.GATSBY_WP_URL,
       },
     },
   ],

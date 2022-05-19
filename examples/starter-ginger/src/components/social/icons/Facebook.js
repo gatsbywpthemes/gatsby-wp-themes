@@ -2,7 +2,6 @@ import React from 'react'
 import { FacebookShareButton, FacebookIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
 import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { NoIconShare } from 'gingerThemeComponents'
 
 export const Facebook = ({
   url,
@@ -16,17 +15,18 @@ export const Facebook = ({
 }) => {
   const { siteUrl } = useSiteMetaData()
   const shareUrl = `${slashes(siteUrl)}${url}`
-  return children ? (
-    <NoIconShare as={FacebookShareButton} url={shareUrl} quote={title}>
+  return (
+    <FacebookShareButton url={shareUrl} quote={title}>
       {children}
-    </NoIconShare>
-  ) : (
-    <FacebookIcon
-      round={round}
-      size={size}
-      borderRadius={borderRadius}
-      iconBgStyle={iconBgStyle}
-      logoFillColor={logoFillColor}
-    />
+      {!children && (
+        <FacebookIcon
+          round={round}
+          size={size}
+          borderRadius={borderRadius}
+          iconBgStyle={iconBgStyle}
+          logoFillColor={logoFillColor}
+        />
+      )}
+    </FacebookShareButton>
   )
 }

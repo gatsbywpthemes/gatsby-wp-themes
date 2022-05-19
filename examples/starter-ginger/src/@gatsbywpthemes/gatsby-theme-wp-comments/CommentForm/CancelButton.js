@@ -1,17 +1,12 @@
-import React from 'react'
-import { Button } from '@chakra-ui/button'
+import React from "react"
 
 export const CancelButton = (props) => {
   return (
-    <Button
-      variant="link"
-      display="flex"
-      ml="auto"
-      color="inherit"
-      className="comment-button-cancel"
+    <button
+      className="flex ml-auto transition duration-500 comment-button-cancel text-upper-spaced hover:text-red-400"
       onClick={props.onClick}
     >
       <span>Cancel</span>
-    </Button>
+    </button>
   )
 }

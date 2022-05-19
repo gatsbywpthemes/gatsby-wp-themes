@@ -1,22 +1,17 @@
-import React from 'react'
-import { Flex } from '@chakra-ui/react'
+import React from "react"
 export const Form = (props) => {
   const { children, ...rest } = props
   return (
-    <Flex
-      as="form"
-      wrap="wrap"
-      justify="space-between"
-      boxShadow="0 20px 40px rgba(0,0,0,.4)"
-      p={['4', '8']}
-      sx={{
-        '.comment &': {
-          boxShadow: 'none',
+    <div
+      className="flex flex-wrap justify-between p-4 mt-8  text-white max-w-lg mx-auto card lg:p-8"
+      css={{
+        ".comment &": {
+          boxShadow: "none",
         },
       }}
       {...rest}
     >
       {children}
-    </Flex>
+    </div>
   )
 }

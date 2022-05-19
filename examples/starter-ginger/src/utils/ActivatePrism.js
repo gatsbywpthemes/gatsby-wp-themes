@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import Prism from 'prismjs'
+import { useEffect } from "react"
+import Prism from "prismjs"
 
 export const ActivatePrism = () => {
   useEffect(() => {

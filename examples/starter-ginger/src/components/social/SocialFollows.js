@@ -1,120 +1,113 @@
-import React from 'react'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Flex, Link } from '@chakra-ui/react'
-
+import React from "react"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import {
-  faBehance,
-  faCodepen,
-  faDev,
-  faDiscord,
-  faDribbble,
-  faFacebook,
-  faGithub,
-  faGitlab,
-  faInstagram,
-  faLinkedin,
-  faMastodon,
-  faMedium,
-  faPinterest,
-  faReddit,
-  faSlack,
-  faSlideshare,
-  faSnapchat,
-  faSoundcloud,
-  faStackOverflow,
-  faTelegram,
-  faTumblr,
-  faTwitter,
-  faVimeo,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons'
+  FaBehance,
+  FaCodepen,
+  FaDev,
+  FaDiscord,
+  FaDribbble,
+  FaFacebook,
+  FaGithub,
+  FaGitlab,
+  FaInstagram,
+  FaLinkedin,
+  FaMastodon,
+  FaMedium,
+  FaPinterest,
+  FaReddit,
+  FaSlack,
+  FaSlideshare,
+  FaSnapchat,
+  FaSoundcloud,
+  FaStackOverflow,
+  FaTelegram,
+  FaTumblr,
+  FaTwitter,
+  FaVimeo,
+  FaYoutube,
+} from "react-icons/fa"
 
-export const SocialFollows = () => {
+export const SocialFollows = (props) => {
   const supportedIcons = [
-    'behance',
-    'codepen',
-    'dev',
-    'discord',
-    'dribbble',
-    'facebook',
-    'github',
-    'gitlab',
-    'instagram',
-    'linkedin',
-    'mastodon',
-    'medium',
-    'pinterest',
-    'reddit',
-    'slack',
-    'slideshare',
-    'snapchat',
-    'soundcloud',
-    'stack-overflow',
-    'telegram',
-    'tumblr',
-    'twitter',
-    'vimeo',
-    'youtube',
+    "behance",
+    "codepen",
+    "dev",
+    "discord",
+    "dribbble",
+    "facebook",
+    "github",
+    "gitlab",
+    "instagram",
+    "linkedin",
+    "mastodon",
+    "medium",
+    "pinterest",
+    "reddit",
+    "slack",
+    "slideshare",
+    "snapchat",
+    "soundcloud",
+    "stack-overflow",
+    "telegram",
+    "tumblr",
+    "twitter",
+    "vimeo",
+    "youtube",
   ]
   const components = [
-    faBehance,
-    faCodepen,
-    faDev,
-    faDiscord,
-    faDribbble,
-    faFacebook,
-    faGithub,
-    faGitlab,
-    faInstagram,
-    faLinkedin,
-    faMastodon,
-    faMedium,
-    faPinterest,
-    faReddit,
-    faSlack,
-    faSlideshare,
-    faSnapchat,
-    faSoundcloud,
-    faStackOverflow,
-    faTelegram,
-    faTumblr,
-    faTwitter,
-    faVimeo,
-    faYoutube,
+    FaBehance,
+    FaCodepen,
+    FaDev,
+    FaDiscord,
+    FaDribbble,
+    FaFacebook,
+    FaGithub,
+    FaGitlab,
+    FaInstagram,
+    FaLinkedin,
+    FaMastodon,
+    FaMedium,
+    FaPinterest,
+    FaReddit,
+    FaSlack,
+    FaSlideshare,
+    FaSnapchat,
+    FaSoundcloud,
+    FaStackOverflow,
+    FaTelegram,
+    FaTumblr,
+    FaTwitter,
+    FaVimeo,
+    FaYoutube,
   ]
 
   const { socialFollowLinks: social } = useThemeOptions()
-
+  const { lightBg, ...rest } = props
   return (
-    social && (
-      <Flex justify="center" mb="12">
-        {social.map(({ name, url }) => {
+    <div
+      className="flex justify-center space-x-5 widget widget-socialFollow"
+      {...rest}
+    >
+      {social &&
+        social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())
-          return (
-            index > -1 && (
-              <Link
+          if (index > -1) {
+            const Component = components[index]
+            return (
+              <a
                 key={name}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Follow on ${name}`}
-                textStyle="linkHoverOpacity"
-                p="2"
-                mx="1"
-                sx={{
-                  svg: {
-                    fontSize: '2xl',
-                    verticalAlign: 'middle',
-                  },
-                }}
               >
-                {<FontAwesomeIcon icon={components[index]} />}
-              </Link>
+                {<Component />}
+              </a>
             )
-          )
+          } else {
+            return null
+          }
         })}
-      </Flex>
-    )
+    </div>
   )
 }

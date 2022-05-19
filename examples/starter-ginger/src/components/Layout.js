@@ -1,34 +1,41 @@
-import React from 'react'
-import { Box, Container } from '@chakra-ui/react'
-import { Header, Footer } from 'gingerThemeComponents'
-import { HelmetForFavicon } from './HelmetForFavicon'
+import React from "react"
+import { Footer } from "./footer"
+import { Header } from "./header"
+import clsx from "clsx"
+import Helmet from "react-helmet"
+import { HelmetForFavicon } from "./HelmetForFavicon"
 
-const MaybeWithContainer = ({ useContainer, children }) => {
-  return !useContainer ? (
-    children
-  ) : (
-    <Container
-      maxWidth="60rem"
-      px="1rem"
-      pb={['1.5rem', '2rem', '4.5rem']}
-      pt="2rem"
-    >
-      {children}
-    </Container>
-  )
-}
+export const Layout = ({ children, page, type = "page", ...props }) => {
+  const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ""
+  const pageTemplate = page?.headlesswp?.pageTemplate
 
-export const Layout = ({ useContainer = true, children }) => {
+  const fullWidthClass = pageTemplate === "full width" ? "fullWidth" : ""
+  const devMode = process.env.NODE_ENV === "development"
+
   return (
-    <>
+    <div
+      className={clsx(
+        "flex min-h-screen flex-col",
+        `${layoutClass}-${type}`,
+        fullWidthClass
+      )}
+    >
       <HelmetForFavicon />
+      <Helmet
+        bodyAttributes={{
+          class: devMode ? "debug-screens" : "",
+        }}
+      />
       <Header />
-      <Box marginLeft={{ md: (theme) => theme.sizes.header }}>
-        <MaybeWithContainer useContainer={useContainer}>
-          {children}
-        </MaybeWithContainer>
-      </Box>
+      <main
+        // className={`${
+        //   pageTemplate !== "full width" ? "py-16 center-container" : "pb-10"
+        // }`}
+        className="lg:ml-24"
+      >
+        {children}
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }

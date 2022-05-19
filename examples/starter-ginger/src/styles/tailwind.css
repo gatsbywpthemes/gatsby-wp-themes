@@ -1,0 +1,131 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "base.css";
+@import "wordpress.css";
+
+@layer base {
+  body{
+    @apply text-gray-700 lg:text-lg 
+}
+h1{
+    @apply text-5xl lg:text-7xl font-bold
+}
+h2{
+    @apply text-5xl font-bold mb-4 leading-[1.2]
+}
+p{
+    @apply mb-5 text-[1rem] md:text-lg leading-8
+}
+}
+
+@layer utilities {
+  .text-upper-spaced {
+    @apply text-xs tracking-widest uppercase;
+  }
+  .input-focus {
+    @apply focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-25;
+  }
+  input[type="search"]:-webkit-autofill {
+    box-shadow: theme("colors.searchBg") 0px 0px 0px 1000px inset;
+    -webkit-text-fill-color: theme("colors.text");
+  }
+  .dark input[type="search"]:-webkit-autofill {
+    box-shadow: theme("colors.dark.searchBg") 0px 0px 0px 1000px inset;
+    -webkit-text-fill-color: theme("colors.dark.text");
+  }
+  .rounded-buttons{
+    @apply bg-dark-bg dark:bg-white dark:text-dark-bg rounded-full w-12 h-12 text-white flex 
+    items-center justify-center text-2xl hover:bg-white hover:text-dark-bg dark:hover:bg-dark-bg dark:hover:text-white transition duration-300 ease-in-out cursor-pointer
+}
+.footer-link a{
+  @apply font-bold hover:text-gray-500
+}
+
+}
+
+@layer components {
+  /* Components */
+
+  /* Menu */
+  .menu-item,
+  .menu-item > a {
+    @apply transition duration-300 text-headerColor dark:text-dark-headerColor text-upper-spaced;
+  }
+  .menu-item button {
+    @apply transition duration-500 hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor text-upper-spaced;
+  }
+  .has-submenu button {
+    @apply !text-sm;
+  }
+  .menu-item > a {
+    @apply hover:text-menuHoverColor dark:hover:text-dark-menuHoverColor  text-sm;
+  }
+  .menuV .menu-item a,button {
+    @apply !py-3;
+  }
+  .menuV > .menu-item {
+    @apply border-b border-dashed border-opacity-40 last:border-none;
+  }
+  .menuV .menu-item a {
+    @apply text-dark-headerColor;
+  }
+  .menu-item [aria-current="page"] {
+    @apply italic;
+  }
+  .menu-item
+  > *:not(.has-submenu) {
+    @apply !p-0
+}
+.menuItemGroup > div {
+  @apply !pl-4
+} 
+  /* Pagination */
+  .prev-next-text {
+    @apply text-upper-spaced hover:!text-primary;
+  }
+  .prev-next-anim {
+    @apply transition duration-700 scale-x-0 bg-text dark:bg-dark-text  w-7 h-[1px] group-hover:scale-x-100 group-hover:bg-primary;
+  }
+  /* Widgets */
+  .widget-title {
+    @apply mb-3;
+  }
+  .center-container {
+    @apply px-5 mx-auto md:px-6 lg:px-10 w-[100%];
+  }
+  .card {
+    @apply shadow-lg bg-[#363636] ;
+  }
+  .divider {
+    @apply bg-text dark:bg-dark-text mx-auto h-[1px] w-[90%] opacity-25;
+  }
+  /* Buttons */
+  .btn {
+    @apply px-6 py-2 text-xs font-semibold tracking-wider text-white uppercase transition duration-500;
+  }
+  .btn-ghost {
+    @apply text-black border-2 border-black shadow-md dark:border-light dark:text-light hover:bg-black dark:hover:bg-light hover:-translate-y-1 hover:shadow-lg hover:!text-light dark:hover:!text-black;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-secondary;
+  }
+  .btn-secondary {
+    @apply bg-secondary hover:bg-primary;
+  }
+  /* Forms */
+  .styled-input {
+    @apply input-focus;
+    @apply bg-transparent border-0 border-b-[1px] border-text dark:border-dark-text transition duration-500;
+    @apply dark:focus:border-dark-text focus:border-b-2 focus:border-text;
+  }
+}
+.wp-block-separator {
+  @apply mb-6
+}
+.post-content a{
+  @apply underline hover:no-underline
+}
+.content > .wp-block-group.alignfull.has-background{
+  @apply dark:!bg-lightBgGray
+}

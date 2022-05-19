@@ -1,7 +1,6 @@
-import React from 'react'
-import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
-import { chakra } from '@chakra-ui/react'
-import { WidgetContainer } from 'gingerThemeComponents'
+import React from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { WidgetTitle } from "./WidgetTitle"
 
 const ALL_CATEGORIES_QUERY = graphql`
   query GetCategories {
@@ -15,28 +14,26 @@ const ALL_CATEGORIES_QUERY = graphql`
   }
 `
 
-export const CategoriesWidget = () => {
-  const {
-    allWpCategory: { nodes },
-  } = useStaticQuery(ALL_CATEGORIES_QUERY)
+export const CategoriesWidget = (props) => {
+  const data = useStaticQuery(ALL_CATEGORIES_QUERY)
+  const { nodes } = data.allWpCategory
+  const { lightBg, ...rest } = props
   return (
     !!nodes.length && (
-      <WidgetContainer title="Categories" className="widget widget-categories">
-        <chakra.ul textStyle="listRaw">
+      <section className="widget widget-categories" {...rest}>
+        <WidgetTitle title="Categories" lightBg={lightBg} />
+        <div className="flex flex-col items-start space-y-3">
           {nodes.map((category) => (
-            <li key={category.slug}>
-              <chakra.a
-                as={GatsbyLink}
-                textStyle="special"
-                fontWeight="bold"
-                to={category.uri}
-              >
-                {category.name}
-              </chakra.a>
-            </li>
+            <Link
+              key={category.slug}
+              to={`${category.uri}`}
+              className={`text-upper-spaced hover:text-primary`}
+            >
+              {category.name}
+            </Link>
           ))}
-        </chakra.ul>
-      </WidgetContainer>
+        </div>
+      </section>
     )
   )
 }

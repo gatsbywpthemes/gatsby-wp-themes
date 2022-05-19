@@ -1,22 +1,14 @@
-import React from 'react'
-import { Heading, Flex, Box } from '@chakra-ui/react'
-import { SearchStats } from '@gatsbywpthemes/gatsby-theme-wp-search/src/SearchStats'
+import React from "react"
+import { SearchStats } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchStats"
 
 export const SearchWrapperPosts = ({ children }) => {
   return (
-    <Box
-      as="section"
-      className="search-results-posts"
-      borderBottom="3px solid"
-      mt="6"
-    >
-      <Flex as="header" align="center" justify="space-between" mb="4">
-        <Heading as="h3" fontSize="xl" mb="0">
-          Posts
-        </Heading>
+    <section className="search-results-pages">
+      <header className="px-5 py-3 bg-searchResultsHeaderBg dark:bg-dark-searchResultsHeaderBg text-searchResultsHeaderColor dark:text-dark-searchResultsHeaderColor">
+        <h3 className="text-xl ">Posts</h3>
         <SearchStats type="POST" />
-      </Flex>
-      {children}
-    </Box>
+      </header>
+      <div className="results">{children}</div>
+    </section>
   )
 }
