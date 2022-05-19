@@ -20,7 +20,7 @@
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.0.4",
     "@headlessui/react": "^1.4.3",
     "@kunukn/react-collapse": "^2.2.9",
-    "gatsby": "^4.7.1",
+    "gatsby": "^4.14.0",
     "gatsby-plugin-use-dark-mode": "^1.4.0",
     "local-storage": "^2.0.0",
     "lodash.merge": "^4.6.2",

@@ -9752,7 +9752,7 @@ gatsby-source-filesystem@^4.14.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-source-wordpress@^6.12.2:
+gatsby-source-wordpress@^6.12.2, gatsby-source-wordpress@^6.14.3:
   version "6.14.3"
   resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-6.14.3.tgz#528e093ccba2df3df74f9e4a432fe6731035b3b0"
   integrity sha512-gduznl7j9ajXI5k/WUD52iZ9XDU7tdd9erJg1S34Fes/i+qlsNAhCptW5loXFZgFMaJzETUN9iUxcnY2yChn8Q==
@@ -9835,7 +9835,7 @@ gatsby-worker@^1.14.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@^4.14.0, gatsby@^4.7.1:
+gatsby@^4.14.0, gatsby@^4.14.1:
   version "4.14.1"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.14.1.tgz#6d92761bb98dd2504ea0868977c8ded793eeb6dd"
   integrity sha512-YWA7Xn4yUCinTyIVJXGYp0ZHNeCsHyDVCU3KpVfCyFbhAsLi4gzGlZsFJPqnWRikMNrvT5yXR5Ni314+oQmCYg==
@@ -16329,7 +16329,7 @@ stylelint-config-standard@^25.0.0:
   dependencies:
     stylelint-config-recommended "^7.0.0"
 
-stylelint@^14.4.0, stylelint@^14.8.2:
+stylelint@^14.8.2:
   version "14.8.2"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-14.8.2.tgz#801eef74fe6020611e6a515abb9fc7caeb125793"
   integrity sha512-tjDfexCYfoPdl/xcDJ9Fv+Ko9cvzbDnmdiaqEn3ovXHXasi/hbkt5tSjsiReQ+ENqnz0eltaX/AOO+AlzVdcNA==
