@@ -1,36 +1,26 @@
-import React from 'react'
-import { Link, withPrefix } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { chakra, useColorMode } from '@chakra-ui/react'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-
-export const Logo = () => {
-  const { logo, darkModeLogo } = useThemeOptions()
-  const { colorMode } = useColorMode()
-  const img = colorMode === 'dark' && darkModeLogo ? darkModeLogo : logo
+import React from "react";
+import { Link, withPrefix } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import useDarkMode from "use-dark-mode";
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks";
+export default function Logo() {
+  const { logo, darkModeLogo } = useThemeOptions();
+  const { value: colorMode } = useDarkMode();
+  const img = colorMode && darkModeLogo ? darkModeLogo : logo;
   return (
-    <chakra.a
-      as={Link}
-      maxWidth="100%"
-      px={[0, null, 3]}
-      py={3}
-      className="logo"
-      to="/"
-      rel="home"
-    >
+    <Link className="logo" to="/" rel="home">
       {logo && (
         <>
-          {img.localFile ? (
+          {img?.localFile ? (
             <GatsbyImage
-              image={img.localFile.childImageSharp?.gatsbyImageData}
+              image={img.localFile?.childImageSharp?.gatsbyImageData}
               alt="logo"
             />
           ) : (
-            <chakra.img
-              maxHeight={['3rem', null, '100%']}
-              className="logo-img"
+            <img
+              className="logo-img max-h-[3rem]"
               src={
-                colorMode === 'dark' && darkModeLogo
+                colorMode === "dark" && darkModeLogo
                   ? withPrefix(darkModeLogo)
                   : withPrefix(logo)
               }
@@ -39,6 +29,6 @@ export const Logo = () => {
           )}
         </>
       )}
-    </chakra.a>
-  )
+    </Link>
+  );
 }

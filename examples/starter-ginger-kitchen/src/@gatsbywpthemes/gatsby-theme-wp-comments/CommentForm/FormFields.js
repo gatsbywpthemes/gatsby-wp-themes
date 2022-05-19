@@ -1,38 +1,25 @@
-import React from 'react'
-import { FormErrorMessage, FormLabel, FormControl } from '@chakra-ui/react'
-import { Input } from 'gingerThemeUiComponents/Input'
-import { inputFields } from '@gatsbywpthemes/gatsby-theme-wp-comments/src/CommentForm/inputfields'
-import { Error } from '@gatsbywpthemes/gatsby-theme-wp-comments/src/CommentForm/Error'
+import React from "react"
+import { inputFields } from "@gatsbywpthemes/gatsby-theme-wp-comments/src/CommentForm/inputfields"
+import { Error } from "@gatsbywpthemes/gatsby-theme-wp-comments/src/CommentForm/Error"
+import clsx from "clsx"
 
 export const FormFields = ({ register, errors }) => {
   return inputFields.map((el) => {
     const Tag = el.tag
-    const pStyles =
-      Tag === 'textarea'
-        ? {
-            w: 'full',
-          }
-        : {
-            w: ['full', 'calc(50% - 1rem)'],
-          }
-    const textarea = Tag === 'textarea' ? { rows: 6, cols: 48, h: 'auto' } : {}
+    const isTextArea = Tag === "textarea"
     return (
-      <FormControl
+      <div
+        className={`mb-5 ${
+          isTextArea ? "w-full " : "w-full sm:w-[calc(50%-1rem)]"
+        }`}
         key={el.name}
-        isInvalid={errors[el.name]}
-        mb="6"
-        {...pStyles}
       >
-        <FormLabel
-          textStyle="special"
-          fontWeight="bold"
+        <label
           htmlFor={el.name}
-          mb="0"
+          className="text-upper-spaced !text-base !font-normal  "
         >
           {el.label}
-          <Input
-            as={Tag}
-            d="block"
+          <Tag
             {...register(el.name, {
               required: el.required,
               pattern: el.pattern,
@@ -41,14 +28,19 @@ export const FormFields = ({ register, errors }) => {
             id={el.name}
             placeholder={el.placeholder}
             aria-required={el.required}
-            {...textarea}
+            className={clsx(
+              "border-0 border-b-2 bg-transparent",
+              " focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-20 focus:border-0 focus:border-b-2 focus:border-text dark:focus:border-dark-text",
+              "w-full",
+              {
+                "h-[200px]": isTextArea,
+              }
+            )}
           />
-        </FormLabel>
-        <FormErrorMessage fontStyle="italic" mt="0">
-          {errors[el.name]?.type === 'required' && <Error>Required</Error>}
-          {errors[el.name]?.type === 'pattern' && <Error>Invalid value</Error>}
-        </FormErrorMessage>
-      </FormControl>
+        </label>
+        {errors[el.name]?.type === "required" && <Error>Required</Error>}
+        {errors[el.name]?.type === "pattern" && <Error>Invalid value</Error>}
+      </div>
     )
   })
 }

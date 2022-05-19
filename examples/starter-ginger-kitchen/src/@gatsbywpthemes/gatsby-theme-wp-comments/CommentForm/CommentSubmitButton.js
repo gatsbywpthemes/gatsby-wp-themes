@@ -1,18 +1,15 @@
-import React from 'react'
-import { Box, Button } from '@chakra-ui/react'
+import React from "react"
 
 export const CommentSubmitButton = ({ commentStatus }) => {
   return (
-    <Box w="full">
-      <Button
-        d="flex"
-        ml="auto"
-        className="submit-button"
+    <div className="w-full">
+      <button
+        className="flex ml-auto px-4 py-1 transition duration-300 ease-in-out btn-ghost hover:bg-white hover:!text-dark-bg text-white border-white"
         type="submit"
-        disabled={commentStatus === 'loading'}
+        disabled={commentStatus === "loading"}
       >
         Post Comment
-      </Button>
-    </Box>
+      </button>
+    </div>
   )
 }

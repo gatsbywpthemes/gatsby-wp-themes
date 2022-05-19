@@ -1,14 +1,37 @@
-import React from 'react'
-import { SubMenu, LinkItem } from 'gingerThemeComponents'
+import React from "react"
+import { MenuLink } from "./MenuLink"
+import { Submenu } from "./Submenu"
 
-export const MenuItem = ({ menuItem }) => {
+export const MenuItem = ({
+  menuItem,
+  orientation,
+  className = "",
+  ...props
+}) => {
   if (menuItem.children.length) {
-    return <SubMenu menuItem={menuItem} />
+    return <Submenu menuItem={menuItem} />
   } else {
     return (
-      <li key={menuItem.id}>
-        <LinkItem menuItem={menuItem} />
-      </li>
+      <div
+        className={`menu-item flex items-center font-semibold ${
+          menuItem.cssClasses
+        } ${
+          orientation === "V"
+            ? "text-mobileMenuColor dark:text-dark-mobileMenuColor"
+            : "text-text dark:text-dark-text "
+        } ${className}`}
+        key={menuItem.id}
+        {...props}
+      >
+        <MenuLink
+          menuItem={menuItem}
+          className={` ${
+            orientation === "V"
+              ? "text-mobileMenuColor dark:text-dark-mobileMenuColor"
+              : "text-text dark:text-dark-text "
+          }`}
+        />
+      </div>
     )
   }
 }

@@ -1,22 +1,27 @@
-import React from 'react'
-import { Box, useColorMode } from '@chakra-ui/react'
-import { Layout } from 'gingerThemeComponents'
-import { ParsedContent, ActivatePageScripts } from 'gingerThemeUtils'
-import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
-import { gutenbergStyles } from 'gingerThemeStyles'
+import React from "react"
+import { Layout } from "~/components/Layout"
+import { Sidebar } from "~/components/Sidebar"
+import { ParsedContent, ActivatePageScripts } from "~/utils"
+import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import clsx from "clsx"
 
-const Page = (props) => {
-  const { page, ctx } = props
-  const { content, title, uri, headlesswp } = page
+const Page = ({ page, ctx }) => {
+  const { title, isFrontPage, content, uri, headlesswp } = page
+  const { widgetAreas, layoutWidth } = useThemeOptions()
+  const { sidebarWidgets } = widgetAreas
+
+  const pageTemplate = headlesswp?.pageTemplate || "default"
+  const hasSidebar = pageTemplate.includes("sidebar") && sidebarWidgets
+
   const skipTitle = headlesswp?.skipTitle || false
+
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp?.original
-  const { colorMode } = useColorMode()
-
   return (
-    <Layout useContainer={false}>
+    <Layout page={page} type="page">
       <Seo
-        isFrontPage={page.isFrontPage}
+        isFrontPage={isFrontPage}
         title={title}
         uri={uri}
         yoastSeo={ctx.yoastSeo}
@@ -29,22 +34,47 @@ const Page = (props) => {
           }
         }
       />
-      <main>
-        <article data-sal="fade" data-sal-duration="600" data-sal-easing="ease">
-          {!skipTitle && (
-            <Box as="h1" textStyle="h1Archive">
-              <span
-                className="page-title-value"
+      <article>
+        <div
+        // className={`mainContainer mx-auto ${
+        //   hasSidebar
+        //     ? `max-w-xl lg:grid xl:grid-cols-3 grid-cols-10 gap-8`
+        //     : pageTemplate.includes("full")
+        //     ? `max-w-full`
+        //     : `${
+        //         postWidth === "md"
+        //           ? "max-w-md"
+        //           : postWidth === "lg"
+        //           ? "max-w-lg"
+        //           : "max-w-xl"
+        //       }`
+        // }
+        // }`}
+        >
+          <div
+          // className={clsx("pb-5", "xl:col-span-2 col-span-7", "", {
+          //   "order-2": pageTemplate.includes("left"),
+          //   "p-5 sm:p-10 card": !pageTemplate.includes("full"),
+          // })}
+          >
+            {!skipTitle && !pageTemplate.includes("full") && (
+              <h1
                 dangerouslySetInnerHTML={{ __html: title }}
+                className="text-center h1Archive"
               />
-            </Box>
+            )}
+            <div className={clsx("content")}>
+              <ActivatePageScripts />
+              <ParsedContent content={content} />
+            </div>
+          </div>
+          {hasSidebar && (
+            <div className={clsx("xl:col-span-1 col-span-3")}>
+              <Sidebar widgets={sidebarWidgets} />
+            </div>
           )}
-          <Box className="entry-content" sx={gutenbergStyles({ colorMode })}>
-            <ActivatePageScripts />
-            <ParsedContent content={content} />
-          </Box>
-        </article>
-      </main>
+        </div>
+      </article>
     </Layout>
   )
 }

@@ -1,18 +1,9 @@
-import React from 'react'
-import { Box, Container } from '@chakra-ui/react'
-import { useThemeColorModeValue } from 'gingerThemeSrc/hooks/useThemeColorModeValue'
+import React from "react"
 
 export const CommentsContainer = ({ children }) => {
   return (
-    <Box
-      as="section"
-      bg={useThemeColorModeValue('commentsBg')}
-      color={useThemeColorModeValue('commentsColor')}
-      py={['6', '16']}
-    >
-      <Container sx={{ maxWidth: (theme) => theme.sizes.content }}>
-        {children}
-      </Container>
-    </Box>
+    <section className="bg-[#303030] text-white py-8 lg:py-16">
+      <div className="max-w-lg mx-auto  px-4">{children}</div>
+    </section>
   )
 }

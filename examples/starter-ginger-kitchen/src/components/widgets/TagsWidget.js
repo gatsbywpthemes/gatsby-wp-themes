@@ -1,7 +1,6 @@
-import React from 'react'
-import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby'
-import { Flex, chakra } from '@chakra-ui/react'
-import { WidgetContainer } from 'gingerThemeComponents'
+import React from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { WidgetTitle } from "./WidgetTitle"
 
 const ALL_TAGS_QUERY = graphql`
   query GetAllTags {
@@ -10,34 +9,34 @@ const ALL_TAGS_QUERY = graphql`
         name
         slug
         count
-        uri
       }
     }
   }
 `
 
-export const TagsWidget = () => {
-  const {
-    allWpTag: { nodes },
-  } = useStaticQuery(ALL_TAGS_QUERY)
+export const TagsWidget = (props) => {
+  const data = useStaticQuery(ALL_TAGS_QUERY)
+  const { nodes } = data.allWpTag
+  const { lightBg, ...rest } = props
+
   return (
     !!nodes.length && (
-      <WidgetContainer className="widget widget-tags" title="Tags">
-        <Flex as="ul" wrap="wrap" textStyle="listRaw">
-          {nodes.map((tag) => (
-            <chakra.li key={tag.slug} textStyle="separateWithMiddots">
-              <chakra.a
-                as={GatsbyLink}
-                textStyle="special"
-                fontWeight="bold"
-                to={tag.uri}
+      <section className="widget widget-tags" {...rest}>
+        <WidgetTitle title="Tags" lightBg={lightBg} />
+        <div className="flex flex-wrap justify-center">
+          {nodes.map((tag, index) => (
+            <div className="pb-3" key={tag.slug}>
+              <Link
+                to={`/tag/${tag.slug}`}
+                className="inline-block pl-2 pr-1 hover:text-accentColor dark:hover:text-dark-accentColor text-upper-spaced hover:text-primary"
               >
                 {tag.name} ({tag.count})
-              </chakra.a>
-            </chakra.li>
+              </Link>
+              {index < nodes.length - 1 && " · "}
+            </div>
           ))}
-        </Flex>
-      </WidgetContainer>
+        </div>
+      </section>
     )
   )
 }

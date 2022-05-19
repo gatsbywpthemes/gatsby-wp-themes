@@ -1,12 +1,11 @@
-import React from 'react'
-import { Box } from '@chakra-ui/react'
+import React from "react"
 
-export const Description = ({ description }) => {
+export const Description = ({ description, className = "", ...props }) => {
   return (
-    <Box
-      textAlign="center"
-      mb="10"
+    <div
       dangerouslySetInnerHTML={{ __html: description }}
+      className={`description card p-5 sm:p-10 text-lg ${className}`}
+      {...props}
     />
   )
 }

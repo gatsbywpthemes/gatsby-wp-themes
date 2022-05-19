@@ -1,21 +1,11 @@
-import React from 'react'
-import { Link as GatsbyLink } from 'gatsby'
-import { Link, chakra } from '@chakra-ui/react'
+import React from "react"
+import { Link } from "gatsby"
 
-export const Author = ({ post }) => {
+export const Author = ({ author, ...props }) => {
+  const { name, slug } = author
   return (
-    post.author?.node && (
-      <>
-        <chakra.span textStyle="special">by </chakra.span>
-        <Link
-          as={GatsbyLink}
-          textStyle="specialLinkUnderline"
-          fontWeight="bold"
-          to={post.author.node.uri}
-        >
-          {post.author.node.name}
-        </Link>
-      </>
-    )
+    <Link aria-label={`visit ${name} page`} to={`/author/${slug}`} {...props}>
+      {name}
+    </Link>
   )
 }

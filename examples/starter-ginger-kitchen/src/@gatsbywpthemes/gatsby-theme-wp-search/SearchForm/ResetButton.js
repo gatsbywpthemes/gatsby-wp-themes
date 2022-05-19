@@ -1,18 +1,14 @@
-import React from 'react'
-import { FiX } from 'react-icons/fi'
-import { Button } from '@chakra-ui/react'
+import React from "react"
+import { MdClose as CloseIcon } from "react-icons/md"
 
 export const ResetButton = (props) => {
   return (
-    <Button
-      variant="ghost"
-      position="absolute"
-      right="0"
-      h="100%"
-      className="reset-button"
+    <button
+      className="reset-button text-text dark:text-dark-text"
       aria-label="Reset Search"
+      {...props}
     >
-      <FiX />
-    </Button>
+      <CloseIcon />
+    </button>
   )
 }

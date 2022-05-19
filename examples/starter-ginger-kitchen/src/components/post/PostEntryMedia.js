@@ -1,30 +1,39 @@
-import React from 'react'
-import { Link as GatsbyLink } from 'gatsby'
-import { Image } from 'gingerThemeComponents'
-import { Link } from '@chakra-ui/react'
+import React from "react"
+import { Link } from "gatsby"
+import { Image } from "~/components/ui-components/Image"
+
+const WithLink = ({ post, location, children }) =>
+  location === "single" ? (
+    children
+  ) : (
+    <Link to={`${post.uri}`} aria-label="View the entire post">
+      {children}
+    </Link>
+  )
 
 export const PostEntryMedia = ({
-  imageLoading = 'lazy',
-  post: { featuredImage, uri },
+  imageLoading = "lazy",
+  post,
+  location,
+  ...props
 }) => {
+  const img = post.featuredImage?.node
+  const { pageTemplate } = post.headlesswp
+
   return (
-    !!featuredImage && (
-      <Link
-        as={GatsbyLink}
-        to={uri}
-        aria-label="View the entire post"
-        sx={{
-          overflow: 'hidden',
-          img: {
-            transition: 'transform 1.6s 0.2s!important',
-          },
-          'article:hover & img': {
-            transform: 'scale(1.1)',
-          },
-        }}
-      >
-        <Image img={featuredImage} loading={imageLoading} />
-      </Link>
-    )
+    <>
+      {img?.localFile && (
+        <WithLink location={location} post={post}>
+          <Image
+            img={img}
+            loading={imageLoading}
+            // className={` ${
+            //   pageTemplate !== "full width" ? "rounded-t-lg" : ""
+            // }`}
+            {...props}
+          />
+        </WithLink>
+      )}
+    </>
   )
 }

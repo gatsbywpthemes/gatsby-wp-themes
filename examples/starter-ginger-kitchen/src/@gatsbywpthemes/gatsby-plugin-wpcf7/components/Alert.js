@@ -1,10 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import {
-  Alert as ChakraAlert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-} from "@chakra-ui/react"
+
 export const Alert = ({ alertMessages, setAlertMessages }) => {
   const timeoutRef = useRef(null)
 
@@ -19,23 +14,13 @@ export const Alert = ({ alertMessages, setAlertMessages }) => {
   }, [setAlertMessages])
 
   return (
-    <ChakraAlert
-      status="error"
-      variant="subtle"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      textAlign="center"
-    >
-      <AlertIcon boxSize="24px" mr={0} />
-      <AlertTitle mt={4} mb={1} fontSize="md">
-        {alertMessages[0]}
-      </AlertTitle>
-      {alertMessages.slice(1).map((el, index) => (
-        <AlertDescription key={index} maxWidth="sm" fontSize="sm">
-          {el}
-        </AlertDescription>
-      ))}
-    </ChakraAlert>
+    <div className="p-5 text-center text-red-500 bg-red-200 rounded-lg danger">
+      <p>{alertMessages[0]}</p>
+      <ul>
+        {alertMessages.slice(1).map((el, index) => (
+          <li key={index}>{el}</li>
+        ))}
+      </ul>
+    </div>
   )
 }

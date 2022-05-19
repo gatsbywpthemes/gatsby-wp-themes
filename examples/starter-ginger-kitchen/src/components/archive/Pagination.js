@@ -1,33 +1,52 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { Flex, chakra } from '@chakra-ui/react'
+import React from "react"
+import { Link } from "gatsby"
+import clsx from "clsx"
 
 const renderPreviousLink = (previousPagePath) => {
   if (previousPagePath) {
     return (
-      <chakra.a
-        as={Link}
-        textStyle="specialLeft"
-        flex="1"
-        to={previousPagePath}
-      >
-        <span>Previous</span>
-      </chakra.a>
+      <div className="flex items-center group">
+        <div className="-mr-4 prev-next-anim" />
+        <Link
+          className={clsx(
+            "prev-next-text",
+            "transition duration-700 group-hover:translate-x-0",
+            "ml-6 -translate-x-7"
+          )}
+          to={previousPagePath}
+        >
+          <span>Previous</span>
+        </Link>
+      </div>
     )
   } else {
-    return <chakra.span flex="1" />
+    return <div className="text-gray-400 prev-next-text">Previous</div>
   }
 }
 
 const renderNextLink = (nextPagePath) => {
   if (nextPagePath) {
     return (
-      <chakra.a as={Link} textStyle="specialRight" flex="1" to={nextPagePath}>
-        <span>Next</span>
-      </chakra.a>
+      <div className="flex items-center group">
+        <Link
+          className={clsx(
+            "prev-next-text",
+            "transition duration-700 group-hover:translate-x-0",
+            "mr-6 translate-x-7"
+          )}
+          to={nextPagePath}
+        >
+          <span className="prev-next-text">Next</span>
+        </Link>
+        <div className="-ml-4 prev-next-anim" />
+      </div>
     )
   } else {
-    return <chakra.span flex="1" />
+    return (
+      <div className="text-gray-400 prev-next-text w-[70px] text-right">
+        Next
+      </div>
+    )
   }
 }
 
@@ -35,20 +54,21 @@ export const Pagination = ({ ctx }) => {
   const { humanPageNumber, nextPagePath, previousPagePath } = ctx
   // return empty string if there is only one page
   if (humanPageNumber === 1 && !nextPagePath) {
-    return ''
+    return ""
   }
   return (
-    <Flex as="nav" align="center" justify="space-between" overflow="hidden">
+    <nav className="flex justify-between mt-16">
       {renderPreviousLink(previousPagePath)}
-      <chakra.span
+      <span
         aria-current="page"
-        className="page-numbers current"
-        textAlign="center"
-        flex="1"
+        className={clsx(
+          "page-numbers current",
+          "font-bold font-info text-center"
+        )}
       >
         {humanPageNumber}
-      </chakra.span>
+      </span>
       {renderNextLink(nextPagePath)}
-    </Flex>
+    </nav>
   )
 }

@@ -1,10 +1,9 @@
-import React from 'react'
-import { Box } from '@chakra-ui/react'
+import React from "react"
 
 export const CommentNestingInfo = () => {
   return (
-    <Box as="p" fontSize="xs" textAlign="right" mb="0" opacity="0.6">
+    <div className="mb-0 text-xs text-right opacity-60">
       Only two levels of nesting is supported.
-    </Box>
+    </div>
   )
 }

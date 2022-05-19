@@ -1,4 +1,4 @@
-# Starter Ginger Kitchen
+# Starter Base
 
 [📖 Documentation](https://doc.gatsbywpthemes.com/)
 

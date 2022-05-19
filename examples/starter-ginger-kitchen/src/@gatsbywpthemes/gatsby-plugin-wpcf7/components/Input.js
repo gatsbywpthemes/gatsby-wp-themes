@@ -1,25 +1,30 @@
-import React from 'react'
-import { Input as ChakraInput } from 'gingerThemeUiComponents/Input'
-import { chakra } from '@chakra-ui/react'
+import React from "react"
+import clsx from "clsx"
+
 export const Input = React.forwardRef(({ className, ...props }, ref) => {
-  const inputComponentTypes = ['email', 'url', 'text', 'tel', 'date', 'number']
+  const inputComponentTypes = ["email", "url", "text", "tel", "date", "number"]
   if (inputComponentTypes.includes(props.type)) {
-    return <ChakraInput className={className} {...props} ref={ref} />
+    return (
+      <input
+        className={clsx("styled-input w-full", className)}
+        {...props}
+        ref={ref}
+      />
+    )
   }
   return (
-    <chakra.input
-      className={className}
+    <input
+      className={clsx(className)}
       {...props}
-      sx={{
+      css={{
         '&[type="range"]': {
-          w: '100%',
+          width: "100%",
         },
         '&[type="file"]': {
-          pb: 3,
+          padding: "12px 0",
         },
-        '&[type="checkbox"], &[type="radio"]': {
-          mx: 2,
-          my: 2,
+        '&[type="radio"], &[type="checkbox"]': {
+          margin: "8px 4px 8px 0",
         },
       }}
       ref={ref}

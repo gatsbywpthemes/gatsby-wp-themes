@@ -1,5 +1,5 @@
-import React from 'react'
-import Tag from 'gingerThemeComponents/templates/Tag'
+import React from "react"
+import Tag from "~/components/templates/Tag"
 
 const TagComponent = ({ data, pageContext }) => {
   return (

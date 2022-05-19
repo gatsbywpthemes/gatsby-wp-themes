@@ -1,24 +1,27 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { Box } from '@chakra-ui/react'
+import React from "react"
+import { Link } from "gatsby"
 
-export const PostEntryTitle = ({ post, location }) => {
-  return location === 'archive' ? (
-    <Box
-      as="h2"
-      className="entry-title"
-      fontSize={['xl', '4xl']}
-      sx={{ a: { textDecoration: 'none' } }}
-    >
-      <Link to={post.uri} dangerouslySetInnerHTML={{ __html: post.title }} />
-    </Box>
-  ) : (
-    <Box
-      as="h1"
-      className="entry-title"
-      mb="4"
-      fontSize="5xl"
-      dangerouslySetInnerHTML={{ __html: post.title }}
-    />
+export const PostEntryTitle = ({
+  post,
+  location,
+  className = "",
+  ...props
+}) => {
+  const { title, uri } = post
+
+  return (
+    <>
+      {location === "single" ? (
+        <h1
+          dangerouslySetInnerHTML={{ __html: title }}
+          className={`  ${className}`}
+          {...props}
+        />
+      ) : (
+        <h2 className={`text-xl md:text-4xl  ${className}`} {...props}>
+          <Link to={`${uri}`} dangerouslySetInnerHTML={{ __html: title }} />
+        </h2>
+      )}
+    </>
   )
 }

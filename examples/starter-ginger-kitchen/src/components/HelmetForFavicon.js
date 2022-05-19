@@ -1,7 +1,7 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { getSrc } from 'gatsby-plugin-image'
-import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
+import React from "react"
+import { Helmet } from "react-helmet"
+import { getSrc } from "gatsby-plugin-image"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
 export const HelmetForFavicon = () => {
   const { faviconFile } = useThemeOptions()

@@ -2,7 +2,6 @@ import React from 'react'
 import { LinkedinShareButton, LinkedinIcon } from 'react-share'
 import slashes from 'remove-trailing-slash'
 import { useSiteMetaData } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
-import { NoIconShare } from 'gingerThemeComponents'
 
 export const Linkedin = ({
   url,
@@ -16,17 +15,18 @@ export const Linkedin = ({
 }) => {
   const { siteUrl } = useSiteMetaData()
   const shareUrl = `${slashes(siteUrl)}${url}`
-  return children ? (
-    <NoIconShare as={LinkedinShareButton} url={shareUrl}>
+  return (
+    <LinkedinShareButton url={shareUrl}>
       {children}
-    </NoIconShare>
-  ) : (
-    <LinkedinIcon
-      round={round}
-      size={size}
-      borderRadius={borderRadius}
-      iconBgStyle={iconBgStyle}
-      logoFillColor={logoFillColor}
-    />
+      {!children && (
+        <LinkedinIcon
+          round={round}
+          size={size}
+          borderRadius={borderRadius}
+          iconBgStyle={iconBgStyle}
+          logoFillColor={logoFillColor}
+        />
+      )}
+    </LinkedinShareButton>
   )
 }

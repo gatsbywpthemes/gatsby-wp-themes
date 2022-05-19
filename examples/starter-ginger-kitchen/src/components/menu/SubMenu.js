@@ -1,40 +1,89 @@
-import React from 'react'
-import { FiChevronDown, FiChevronRight } from 'react-icons/fi'
-import { MenuItem, LinkItem } from 'gingerThemeComponents'
-import { chakra, Button, Collapse, useDisclosure } from '@chakra-ui/react'
+import React, { Fragment } from "react"
+import { CgChevronDown } from "react-icons/cg"
+import { Collapse } from "~/components/ui-components"
+import { Menu, Transition } from "@headlessui/react"
+import { MenuLink } from "./MenuLink"
+import { MenuItem } from "./MenuItem"
+import clsx from "clsx"
 
-export const SubMenu = ({ menuItem }) => {
-  const { isOpen, onToggle } = useDisclosure()
+const SubmenuV = ({ menuItem }) => {
   return (
-    <chakra.li position="relative" key={menuItem.id}>
-      <LinkItem menuItem={menuItem} />
-      <Button
-        aria-label="Open menu item"
-        onClick={onToggle}
-        variant="ghost"
-        height="12"
-        color="inherit"
-        position="absolute"
-        top="0"
-        right="0"
-        px="6"
-        borderRadius="0"
-        _hover={{
-          bg: 'rgba(0, 0, 0, 0.1)',
-        }}
-        _active={{
-          bg: 'rgba(0, 0, 0, 0.1)',
-        }}
+    <div className={`relative has-submenu menu-item !border-none`}>
+      <Collapse
+        trigger={menuItem.label}
+        className="font-semibold text-mobileMenuColor dark:text-dark-mobileMenuColor border-b border-dashed"
       >
-        {isOpen ? <FiChevronDown /> : <FiChevronRight />}
-      </Button>
-      <Collapse in={isOpen} animateOpacity>
-        <ul>
+        <ul className="menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
-            <MenuItem key={item.id} menuItem={item} />
+            <MenuItem
+              key={item.id}
+              menuItem={item}
+              orientation="V"
+              className="border-b border-dashed last:border-nonee"
+            />
           ))}
         </ul>
       </Collapse>
-    </chakra.li>
+    </div>
+  )
+}
+
+const SubmenuH = ({ menuItem }) => {
+  return (
+    <Menu as="div" className={clsx("menu-item", "relative", "flex")}>
+      <Menu.Button
+        className={clsx(
+          `inline-flex items-center font-semibold border-b border-dashed`
+        )}
+      >
+        {menuItem.label}
+        <CgChevronDown className={`ml-2 w-4 h-4`} aria-hidden="true" />
+      </Menu.Button>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-300"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+      >
+        <Menu.Items
+          className={clsx(
+            `subMenu`,
+            `absolute mt-7 origin-top-right`,
+            `rounded-lg`,
+            `px-5 py-3 w-56`,
+            `z-50`,
+            `text-subMenuColor dark:text-dark-subMenuColor font-semibold`,
+            `bg-subMenuBg dark:bg-dark-subMenuBg`
+          )}
+        >
+          <div className="relative">
+            <div className="absolute c-triangle-up text-subMenuBg dark:text-dark-subMenuBg -top-5"></div>
+            {menuItem.children.map((item) => (
+              <Menu.Item key={item.id}>
+                {({ active }) => (
+                  <MenuLink
+                    menuItem={item}
+                    className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor dark:hover:opacity-80 py-2 block`}
+                  />
+                )}
+              </Menu.Item>
+            ))}
+          </div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
+  )
+}
+
+export const Submenu = ({ menuItem, orientation }) => {
+  // console.log({ menuItem })
+  return orientation === "H" ? (
+    <SubmenuH menuItem={menuItem} />
+  ) : (
+    <SubmenuV menuItem={menuItem} />
   )
 }
