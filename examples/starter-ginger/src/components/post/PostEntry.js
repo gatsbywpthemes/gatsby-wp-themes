@@ -40,8 +40,8 @@ export const PostEntry = ({
           </div>
           <div className="absolute inset-0 flex items-center justify-center content">
             <div
-              className="t-w lg:w-[45rem] bg-white z-[1] relative text-center bg-opacity-80
-             border-[0.5rem] lg:border-[0.75rem] px-8 py-6 border-white dark:border-darkBorder dark:bg-dark-bg dark:bg-opacity-90"
+              className="t-w lg:w-[45rem] bg-cardBg z-[1] relative text-center bg-opacity-80
+             border-[0.5rem] lg:border-[0.75rem] px-8 py-6 border-cardBorder dark:border-dark-cardBorder dark:bg-dark-cardBg dark:bg-opacity-90"
             >
               <div className="flex justify-center">
                 <SocialShare

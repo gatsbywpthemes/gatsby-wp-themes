@@ -22,7 +22,7 @@ export const Archivepost = ({
         className="aspect-w-16 aspect-h-[5.5] object-center object-cover"
       />
 
-      <div className=" m-4 -mt-7 md:-mt-16 z-[1] relative w-[95%] lg:w-[75%] mx-auto p-4 shadow-lg text-center bg-[#f5f5f5] dark:bg-dark-bg border-[0.75em] border-white dark:border-darkBorder">
+      <div className=" m-4 -mt-7 md:-mt-16 z-[1] relative w-[95%] lg:w-[75%] mx-auto p-4 shadow-lg text-center bg-cardBg dark:bg-dark-cardBg border-[0.75em] border-white dark:border-darkBorder">
         <PostEntryInfo post={post} className="my-2" />
         <PostEntryTitle post={post} location="archive" className="mb-5" />
         <PostEntryContent post={post} location="archive" />

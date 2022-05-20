@@ -5,12 +5,11 @@ const rem = (px) => px / 16 + "rem"
 
 const { slate, red, teal, purple } = colors
 //palette
-const light = slate[100],
-  ultraLight = slate[50],
+
+const ultraLight = slate[50],
   dark = "#303030",
   // dark = slate[800],
   ultraDark = slate[900],
-  primary = dark,
   // primary = teal[400],
   secondary = purple[500],
   highlight = red[500],
@@ -19,6 +18,15 @@ const light = slate[100],
   text = ultraDark
 lightBgGray = "#4d4f4f"
 darkBorder = "#3a3a3a"
+
+const dark0 = "#3a3a3a"
+const dark1 = "#303030"
+const dark2 = "#262626"
+const dark3 = "#1f1f1f"
+const dark4 = "#161616"
+const light = "#f5f5f5"
+const primary = "#076666"
+const white = "#ffffff"
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
@@ -56,12 +64,12 @@ module.exports = {
         lg: "0 10px 40px rgb(0 0 0 / 15%)",
       },
       colors: {
-        /* header */
+        /* basic colors */
         ...colors,
         lightBgGray,
         darkBorder,
         light,
-        dark,
+        // dark,
         ultraLight,
         ultraDark,
         primary,
@@ -72,11 +80,16 @@ module.exports = {
         text,
         accentColor: primary,
         /* header */
-        headerBg: "white",
-        headerColor: ultraDark,
+        headerColor: dark1,
+        headerBg: light,
         /* footer */
-        footerBg: "white",
-        footerColor: ultraDark,
+        footerColor: dark1,
+        footerBg: light,
+        /* sidebar */
+        sidebarColor: white,
+        sidebarBg: primary,
+        menuButtonColor: white,
+        menuButtonBg: dark1,
         /* search */
         searchBg: "white",
         searchResultsHeaderBg: ultraDark,
@@ -97,25 +110,37 @@ module.exports = {
         nlInputBg: light,
         nlColor: text,
         /* post */
+        splashBg: primary,
+        scrollDownColor: dark1,
+        scrollDownBg: white,
+        cardColor: dark1,
+        cardBg: light,
+        cardBorder: white,
+        commentsColor: white,
+        commentsBg: dark1,
         infoBg: light,
         infoColor: teal[900],
         archiveTitleBg: slate[100],
         archiveTitleColor: text,
-        cardBg: "white",
 
         dark: {
           /* basic colors*/
 
-          bg: dark,
-          text: ultraLight,
+          text: light,
+          bg: dark1,
           text2: teal[900],
           accentColor: primary,
           /* header*/
           headerBg: ultraDark,
           headerColor: ultraLight,
-          /* footer*/
-          footerBg: ultraDark,
-          footerColor: ultraLight,
+          /* footer */
+          footerColor: light,
+          footerBg: dark4,
+          /* sidebar */
+          sidebarColor: light,
+          sidebarBg: dark4,
+          menuButtonColor: dark1,
+          menuButtonBg: light,
           /* search */
           searchBg: ultraDark,
           searchResultsHeaderBg: primary,
@@ -138,8 +163,15 @@ module.exports = {
           /* post*/
           archiveTitleBg: primary,
           archiveTitleColor: teal[900],
-          infoBg: primary,
-          cardBg: ultraDark,
+          /* post */
+          splashBg: dark3,
+          scrollDownColor: white,
+          scrollDownBg: dark1,
+          cardColor: light,
+          cardBg: dark1,
+          cardBorder: dark0,
+          commentsColor: light,
+          commentsBg: dark3,
         },
       },
     },

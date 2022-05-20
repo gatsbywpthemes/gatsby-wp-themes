@@ -17,7 +17,7 @@ export const MenuItem = ({
           menuItem.cssClasses
         } ${
           orientation === "V"
-            ? "text-mobileMenuColor dark:text-dark-mobileMenuColor"
+            ? "text-sidebarColor dark:text-dark-sidebarColor"
             : "text-text dark:text-dark-text "
         } ${className}`}
         key={menuItem.id}
@@ -27,7 +27,7 @@ export const MenuItem = ({
           menuItem={menuItem}
           className={` ${
             orientation === "V"
-              ? "text-mobileMenuColor dark:text-dark-mobileMenuColor"
+              ? "text-sidebarColor dark:text-dark-sidebarColor"
               : "text-text dark:text-dark-text "
           }`}
         />
