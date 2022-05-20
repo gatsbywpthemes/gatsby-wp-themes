@@ -10,7 +10,7 @@ import clsx from "clsx"
 export const Archive = ({ posts, ctx, name, description }) => {
   const {
     archiveSidebarPosition: archiveSidebar,
-
+    layoutWidth,
     widgetAreas: { sidebarWidgets },
   } = useThemeOptions()
 

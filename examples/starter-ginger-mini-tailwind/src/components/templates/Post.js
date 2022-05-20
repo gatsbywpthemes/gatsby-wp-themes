@@ -9,7 +9,7 @@ import clsx from "clsx"
 
 const Post = ({ post, ctx }) => {
   const { title, uri, headlesswp } = post
-  const { widgetAreas } = useThemeOptions()
+  const { widgetAreas, layoutWidth } = useThemeOptions()
 
   const pageTemplate = headlesswp?.pageTemplate || "default"
   const { sidebarWidgets } = widgetAreas
