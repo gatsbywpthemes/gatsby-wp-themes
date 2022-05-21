@@ -108,7 +108,7 @@ module.exports = {
         nlButtonColor: "white",
         nlButtonHoverBg: primary,
         nlInputBg: light,
-        nlColor: text,
+        nlColor: light,
         /* post */
         splashBg: primary,
         scrollDownColor: dark1,

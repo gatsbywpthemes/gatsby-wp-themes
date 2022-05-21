@@ -69,7 +69,7 @@ export const RecentPosts = (props) => {
                       {format(new Date(post.date), "MMMM dd, yyyy")}
                     </time>{" "}
                     <Link
-                      className="text-base font-bold widget-post-title hover:text-primary"
+                      className="text-base font-bold widget-post-title hover:opacity-80"
                       to={uri}
                     >
                       {post.title}
