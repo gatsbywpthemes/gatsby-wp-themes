@@ -18,7 +18,6 @@ export const PostEntryMedia = ({
   ...props
 }) => {
   const img = post.featuredImage?.node
-  const { pageTemplate } = post.headlesswp
 
   return (
     <>

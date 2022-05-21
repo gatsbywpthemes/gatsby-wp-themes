@@ -11,7 +11,7 @@ const SubmenuV = ({ menuItem }) => {
     <div className={`relative has-submenu menu-item !border-none`}>
       <Collapse
         trigger={menuItem.label}
-        className="font-semibold text-mobileMenuColor dark:text-dark-mobileMenuColor border-b border-dashed"
+        className="font-semibold border-b border-dashed text-sidebarColor dark:text-dark-sidebarColor"
       >
         <ul className="menuItemGroup sub-menu">
           {menuItem.children.map((item) => (
@@ -56,8 +56,8 @@ const SubmenuH = ({ menuItem }) => {
             `rounded-lg`,
             `px-5 py-3 w-56`,
             `z-50`,
-            `text-subMenuColor dark:text-dark-subMenuColor font-semibold`,
-            `bg-subMenuBg dark:bg-dark-subMenuBg`
+            `text-sidebarColor dark:text-dark-sidebarColor font-semibold`
+            // `bg-subMenuBg dark:bg-dark-subMenuBg`
           )}
         >
           <div className="relative">
@@ -67,7 +67,7 @@ const SubmenuH = ({ menuItem }) => {
                 {({ active }) => (
                   <MenuLink
                     menuItem={item}
-                    className={` hover:text-subMenuHoverColor dark:hover:text-dark-subMenuHoverColor dark:hover:opacity-80 py-2 block`}
+                    className={` dark:hover:opacity-80 py-2 block`}
                   />
                 )}
               </Menu.Item>

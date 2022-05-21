@@ -122,6 +122,10 @@ module.exports = {
         infoColor: teal[900],
         archiveTitleBg: slate[100],
         archiveTitleColor: text,
+        // Comments
+        commentsColor: light,
+        commentsBg: dark2,
+        commentBg: dark1,
 
         dark: {
           /* basic colors*/
@@ -170,8 +174,6 @@ module.exports = {
           cardColor: light,
           cardBg: dark1,
           cardBorder: dark0,
-          commentsColor: light,
-          commentsBg: dark3,
         },
       },
     },

@@ -105,6 +105,10 @@ module.exports = {
         cardBorder: "#ffffff",
         commentsColor: "#483262",
         commentsBg: "#e7f0eb",
+        // Comments
+        commentsColor: light,
+        commentsBg: "#1a0c2a",
+        commentBg: "#271d33",
 
         dark: {
           /* basic colors*/
@@ -145,7 +149,6 @@ module.exports = {
           cardBg: "#271d33",
           cardBorder: "#261e32",
           commentsColor: "#f5f5f5",
-          commentsBg: "#22172d",
         },
       },
     },

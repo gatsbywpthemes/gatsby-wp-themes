@@ -5,8 +5,8 @@ export const Footer = () => {
   const siteSettings = useSiteSettings()
 
   return (
-    <footer className="bg-gray-100 dark:bg-gray-700 p-4 lg:p-[0.1px]">
-      <div className="flex flex-col space-y-1 items-center justify-center whitespace-nowrap text-sm footer-link lg:hidden">
+    <footer className="bg-footerBg dark:bg-dark-footerBg p-4 lg:p-[0.1px]">
+      <div className="flex flex-col items-center justify-center space-y-1 text-sm whitespace-nowrap footer-link lg:hidden">
         <div>
           © {new Date().getFullYear()} {siteSettings.title}
         </div>

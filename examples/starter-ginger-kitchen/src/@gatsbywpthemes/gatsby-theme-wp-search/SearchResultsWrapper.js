@@ -6,7 +6,7 @@ export const SearchResultsWrapper = ({ children }) => {
     <div
       className={clsx(
         "search-results",
-        "bg-light dark:bg-dark-bg",
+        "bg-searchBg dark:bg-dark-searchBg",
         "overflow-scroll",
         "absolute left-0 top-20 lg:top-[93px]",
         "w-[100px lg:w-[600px]",

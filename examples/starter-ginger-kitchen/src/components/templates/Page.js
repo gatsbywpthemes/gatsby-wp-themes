@@ -8,7 +8,7 @@ import clsx from "clsx"
 
 const Page = ({ page, ctx }) => {
   const { title, isFrontPage, content, uri, headlesswp } = page
-  const { widgetAreas, layoutWidth } = useThemeOptions()
+  const { widgetAreas } = useThemeOptions()
   const { sidebarWidgets } = widgetAreas
 
   const pageTemplate = headlesswp?.pageTemplate || "default"
