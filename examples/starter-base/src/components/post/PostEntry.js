@@ -20,7 +20,7 @@ export const PostEntry = ({
     ? post.featuredImage.node.localFile.childImageSharp?.original.src
     : null
 
-  const { pageTemplate, skipTitle } = post.headlesswp
+  const { pageTemplate, skipTitle } = post.headlesswp || {}
   return (
     <article className={`card ${className}`} {...props}>
       {post.featuredImage && (

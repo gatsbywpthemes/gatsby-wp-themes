@@ -4,12 +4,16 @@ import { ColorSwitch } from "./ColorSwitch"
 import { Branding } from "./Branding"
 import { Slidemenu } from "./SlideMenu"
 import { SearchModal } from "~/components/search/SearchModal"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import {
+  useThemeOptions,
+  useSettings,
+} from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import Headroom from "react-headroom"
 import clsx from "clsx"
 
 export const Header = ({ ...props }) => {
   const { addWordPressSearch: search, addColorModes } = useThemeOptions()
+  const siteSettings = useSiteSettings()
 
   return (
     <Headroom className="z-10">
@@ -23,7 +27,7 @@ export const Header = ({ ...props }) => {
       >
         <div className={"flex justify-between center-container"}>
           <div className="flex space-x-3">
-            <Branding title="Starter Light" />
+            <Branding title={siteSettings.title} />
             {search && <SearchModal />}
           </div>
           <div className="flex items-center space-x-5">
