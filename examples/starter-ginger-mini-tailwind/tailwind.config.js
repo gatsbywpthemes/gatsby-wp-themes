@@ -105,7 +105,7 @@ module.exports = {
         cardBg: "#efefef",
         cardBorder: "#ffffff",
         commentsColor: "#111",
-        commentsBg: "#eaeaea",
+
         // scrollDownBg: "#ffffff",
         cardColor: "#483262",
         cardBg: "#f0e7e4",

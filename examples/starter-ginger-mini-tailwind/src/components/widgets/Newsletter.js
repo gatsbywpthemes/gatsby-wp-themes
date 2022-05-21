@@ -36,7 +36,7 @@ export const Newsletter = (props) => {
                   name="email"
                   required
                   value={email}
-                  className="w-full h-10 px-5 border-0 rounded-none bg-nlInputBg dark:bg-dark-nlInputBg text-nlColor dark:text-dark-nlColor focus:outline-none focus:ring-1 focus:ring-primary dark:focus:ring-opacity-40 focus:ring-inset"
+                  className="w-full !px-2 !py-0.5 bg-transparent border-0 border-b-2 h-10 focus:outline-none focus:ring-0 placeholder-nlColor dark:placeholder-dark-nlColor focus:placeholder-transparent"
                   onChange={handleChange}
                   aria-label="Add your Email address to subscribe"
                 />
@@ -44,7 +44,7 @@ export const Newsletter = (props) => {
               <div className="w-1/3">
                 <button
                   type="submit"
-                  className="h-10 btn bg-nlButtonBg dark:bg-dark-nlButtonBg dark:text-dark-nlButtonColor hover:bg-nlButtonHoverBg dark:hover:bg-dark-nlButtonHoverBg"
+                  className="flex items-center justify-center h-10 px-4 font-bold uppercase border-2"
                 >
                   Subscribe
                 </button>

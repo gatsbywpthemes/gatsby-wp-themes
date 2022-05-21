@@ -3,7 +3,7 @@ export const Form = (props) => {
   const { children, ...rest } = props
   return (
     <div
-      className="flex flex-wrap justify-between p-4 mt-8  text-white max-w-lg mx-auto card lg:p-8"
+      className="flex flex-wrap justify-between max-w-lg p-4 mx-auto mt-8 text-white card lg:p-8 bg-commentBg"
       css={{
         ".comment &": {
           boxShadow: "none",

@@ -69,8 +69,8 @@ export const Slidemenu = ({ className, ...props }) => {
                         "overflow-y-scroll",
                         "shadow-xl",
                         "p-5",
-                        "bg-sidebarBg dark:bg-sidebarBg",
-                        "text-mobileMenuColor dark:text-dark-mobileMenuColor"
+                        "bg-sidebarBg dark:bg-dark-sidebarBg",
+                        "text-sidebarColor dark:text-dark-sidebarColor"
                       )}
                     >
                       <div className="flex justify-end">
