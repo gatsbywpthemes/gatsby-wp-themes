@@ -47,14 +47,14 @@ const publishedPackages = [
     packagePath:
       "pro-themes-starters/ginger-theme-starters/starter-ginger-kitchen",
   },
-  {
-    name: "starter-ginger-mini",
-    srcPath: "examples/starter-ginger-mini",
-    packagePath:
-      "pro-themes-starters/ginger-theme-starters/starter-ginger-mini",
-  },
+  // {
+  //   name: "starter-ginger-mini",
+  //   srcPath: "examples/starter-ginger-mini",
+  //   packagePath:
+  //     "pro-themes-starters/ginger-theme-starters/starter-ginger-mini",
+  // },
   // add here each new starter to be published
-]
+];
 const subfoldersToCreate = [
   "base-theme-starters",
   "pro-themes-starters",
@@ -62,48 +62,48 @@ const subfoldersToCreate = [
   // add here when new starters subfolder is added
 ]
   .map((el) => `user-starters/${el}`)
-  .join(" ")
+  .join(" ");
 
-const { execSync } = require("child_process")
+const { execSync } = require("child_process");
 
-execSync(`rm -rf user-starters`)
-execSync(`mkdir user-starters ${subfoldersToCreate}`)
+execSync(`rm -rf user-starters`);
+execSync(`mkdir user-starters ${subfoldersToCreate}`);
 
 for (const package of publishedPackages) {
-  execSync(`cp -r ${package.srcPath} user-starters/${package.packagePath}`)
+  execSync(`cp -r ${package.srcPath} user-starters/${package.packagePath}`);
   execSync(
     `rm -rf user-starters/${package.packagePath}/node_modules user-starters/${package.packagePath}/.cache user-starters/${package.packagePath}/.env user-starters/${package.packagePath}/.env.production user-starters/${package.packagePath}/.env.development user-starters/${package.packagePath}/public user-starters/${package.packagePath}/yarn-error.log user-starters/${package.packagePath}/.vscode`
-  )
+  );
 
   execSync(
     "echo '@gatsbywpthemes:registry=https://npm.cloudsmith.io/gatsbywpthemes/gatsby-themes/\n//npm.cloudsmith.io/gatsbywpthemes/gatsby-themes/:_authToken=${GWPT_AUTH_TOKEN}\nalways-auth' > user-starters/" +
       package.packagePath +
       "/.npmrc"
-  )
+  );
 }
 
 execSync(
   `cd user-starters && zip -r base-theme-starters.zip base-theme-starters`
-)
+);
 
 execSync(
   `cd user-starters && zip -r pro-themes-starters.zip pro-themes-starters `
-)
+);
 
-execSync(`cd user-starters && zip -r starter-light.zip starter-light `)
+execSync(`cd user-starters && zip -r starter-light.zip starter-light `);
 
 // publishing start here
 
 execSync(
   `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/base-theme-starters.zip`,
   { stdio: "inherit" }
-)
+);
 execSync(
   `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/pro-themes-starters.zip`,
   { stdio: "inherit" }
-)
+);
 
 execSync(
   `cloudsmith push raw gatsbywpthemes/gatsby-themes user-starters/starter-light.zip`,
   { stdio: "inherit" }
-)
+);
