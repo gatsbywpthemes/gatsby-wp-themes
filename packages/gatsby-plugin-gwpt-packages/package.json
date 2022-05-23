@@ -8,6 +8,7 @@
   "dependencies": {
     "@gatsbywpthemes/gatsby-plugin-wp-seo": "^2.0.7",
     "@gatsbywpthemes/gatsby-plugin-wpcf7": "^2.0.8",
+    "@gatsbywpthemes/gatsby-plugin-wordpress-lightbox": "^2.0.6",
     "@gatsbywpthemes/gatsby-theme-blog-data": "^2.1.8",
     "@heroicons/react": "^1.0.6",
     "@wordpress/base-styles": "^4.4.0",
