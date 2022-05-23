@@ -8,7 +8,7 @@ import { Widget } from "~/components/widgets"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import { SearchForm } from "@gatsbywpthemes/gatsby-theme-wp-search/src/SearchForm"
 
-export const Slidemenu = ({ className, ...props }) => {
+export const SlideMenu = ({ className, ...props }) => {
   const [open, setOpen] = useState(false)
   const { widgetAreas, addWordPressSearch } = useThemeOptions()
   const widgets = widgetAreas.slideMenuWidgets || []

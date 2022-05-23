@@ -4,7 +4,7 @@ import {
   useThemeOptions,
   useSiteSettings,
 } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
-import { Slidemenu } from "./Slidemenu"
+import { SlideMenu } from "./SlideMenu"
 import Logo from "./Logo"
 import { Link } from "gatsby"
 export const Header = () => {
@@ -24,7 +24,7 @@ export const Header = () => {
       </div>
       <div className="fixed top-0 right-0 flex items-center h-24 pr-4 space-x-4 buttons">
         <ColorSwitch />
-        <Slidemenu />
+        <SlideMenu />
       </div>
       <div className="flex-col hidden space-y-1 text-sm -rotate-90 lg:flex whitespace-nowrap footer-link">
         <div>
