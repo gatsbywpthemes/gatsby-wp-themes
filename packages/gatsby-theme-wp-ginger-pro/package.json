@@ -2,7 +2,7 @@
   "name": "@gatsbywpthemes/gatsby-theme-wp-ginger-pro",
   "description": "WordPress basic theme for Gatsby using WPGraphQL",
   "author": "Paulina Hetman <info@pehaa.com>",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "^2.0.2",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.0.15",
-    "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.6",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.0.16",
+    "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.7",
     "gatsby-plugin-smoothscroll": "^1.2.0"
   },
   "devDependencies": {
