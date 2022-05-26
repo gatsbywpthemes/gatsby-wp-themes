@@ -1,36 +1,15 @@
-const fs = require("fs")
+const fs = require("fs");
 require("dotenv").config({
   path:
     (fs.existsSync(`.env.${process.env.NODE_ENV}`) &&
       `.env.${process.env.NODE_ENV}`) ||
     ".env",
-})
-const path = require("path")
+});
+const path = require("path");
 module.exports = (options) => {
-  options.fonts = options.fonts || []
+  options.fonts = options.fonts || [];
 
-  const mergedOptions = {
-    ...options,
-  }
-  const plugins = [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    {
-      resolve: `@gatsbywpthemes/gatsby-plugin-wpcf7`,
-      options: {
-        wordPressUrl: options.wordPressUrl,
-      },
-    },
-    {
-      resolve: "@gatsbywpthemes/gatsby-plugin-wp-seo",
-    },
-    {
-      resolve: `@gatsbywpthemes/gatsby-plugin-wordpress-lightbox`,
-      options: {
-        ...(options.lightboxOptions || {}),
-      },
-    },
-  ]
+  const plugins = [`gatsby-plugin-react-helmet`];
   /**
    * Conditionally add google fonts plugin
    * to avoid errors on build
@@ -48,23 +27,10 @@ module.exports = (options) => {
         display: "swap",
         ...options.webfontsOptions,
       },
-    })
-  }
-
-  /**
-   * Conditionally add mailchimp subscription plugin
-   */
-
-  if (process.env.GATSBY_MAILCHIMP_ENDPOINT) {
-    plugins.push({
-      resolve: "gatsby-plugin-mailchimp",
-      options: {
-        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
-      },
-    })
+    });
   }
 
   return {
     plugins,
-  }
-}
+  };
+};

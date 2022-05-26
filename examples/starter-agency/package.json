@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "name": "starter-agency",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "dev": "rm -rf .cache && gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop --host 0.0.0.0",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
+  },
+  "dependencies": {
+    "@gatsbywpthemes/gatsby-plugin-gwpt-image": "^1.0.3",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.2.7",
+    "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "^2.0.6",
+    "@gatsbywpthemes/gatsby-plugin-wp-seo": "^2.0.7",
+    "@gatsbywpthemes/gatsby-theme-ui-components": "^1.0.1",
+    "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.0.7",
+    "@gatsbywpthemes/gatsby-theme-wp-data": "^1.0.4",
+    "@gatsbywpthemes/gatsby-theme-wp-search": "^1.0.5",
+    "@gatsbywpthemes/gatsby-plugin-wpcf7": "^2.0.8",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-utils": "^1.0.7",
+    "@headlessui/react": "^1.6.1",
+    "gatsby": "^4.14.0",
+    "gatsby-plugin-mailchimp": "^5.2.2",
+    "gatsby-plugin-use-dark-mode": "^1.5.0",
+    "lodash.merge": "^4.6.2",
+    "prismjs": "^1.28.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-preset-gatsby": "^2.14.0",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.8.3",
+    "stylelint-config-standard": "^25.0.0"
+  }
+}
