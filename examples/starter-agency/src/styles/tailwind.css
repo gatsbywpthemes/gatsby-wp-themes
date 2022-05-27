@@ -3,30 +3,9 @@
 @import "tailwindcss/utilities";
 @import "base.css";
 @import "wordpress.css";
+@import "acfBlocks/cover-block.css";
 
 @layer base {
-}
-
-@layer utilities {
-  .text-upper-spaced {
-    @apply text-xs tracking-widest uppercase;
-  }
-  .input-focus {
-    @apply focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-25;
-  }
-  /* input[type="search"]:-webkit-autofill {
-    box-shadow: theme("colors.searchBg") 0px 0px 0px 1000px inset;
-    -webkit-text-fill-color: theme("colors.text");
-  } */
-  /* .dark input[type="search"]:-webkit-autofill {
-    box-shadow: theme("colors.dark.searchBg") 0px 0px 0px 1000px inset;
-    -webkit-text-fill-color: theme("colors.dark.text");
-  } */
-}
-
-@layer components {
-  /* Components */
-
   /* Menu */
   .menu-item,
   .menu-item > a {
@@ -58,6 +37,28 @@
   .widget-title {
     @apply mb-3;
   }
+}
+
+@layer utilities {
+  .text-upper-spaced {
+    @apply text-xs tracking-widest uppercase;
+  }
+  .input-focus {
+    @apply focus:outline-none focus:ring-gray-200 dark:focus:ring-opacity-25;
+  }
+  /* input[type="search"]:-webkit-autofill {
+    box-shadow: theme("colors.searchBg") 0px 0px 0px 1000px inset;
+    -webkit-text-fill-color: theme("colors.text");
+  } */
+  /* .dark input[type="search"]:-webkit-autofill {
+    box-shadow: theme("colors.dark.searchBg") 0px 0px 0px 1000px inset;
+    -webkit-text-fill-color: theme("colors.dark.text");
+  } */
+}
+
+@layer components {
+  /* Components */
+
   .center-container {
     @apply px-5 mx-auto md:px-6 lg:px-10 w-[100%];
   }
@@ -69,17 +70,12 @@
   }
   /* Buttons */
   .btn {
-    @apply px-6 py-2 text-xs font-semibold tracking-wider text-white uppercase transition duration-500;
+    @apply px-6 py-3 font-semibold text-white transition duration-500;
   }
   .btn-ghost {
     @apply text-black border-2 border-black shadow-md dark:border-light dark:text-light hover:bg-black dark:hover:bg-light hover:-translate-y-1 hover:shadow-lg hover:!text-light dark:hover:!text-black;
   }
-  .btn-primary {
-    @apply bg-primary hover:bg-secondary;
-  }
-  .btn-secondary {
-    @apply bg-secondary hover:bg-primary;
-  }
+
   /* Forms */
   .styled-input {
     @apply input-focus;

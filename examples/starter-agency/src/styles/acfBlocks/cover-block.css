@@ -1,0 +1,35 @@
+.cover-block {
+  @apply relative;
+
+  .overlay {
+    @apply absolute inset-0;
+    @apply bg-[rgba(0,0,0,0.5)];
+    @apply flex flex-col justify-center px-20;
+    .cover-content {
+      @apply container max-w-sm space-y-8;
+    }
+
+    .headline {
+      @apply text-6xl text-light;
+    }
+    .content-text p {
+      @apply text-light max-w-[600px];
+    }
+    .button-container {
+      @apply flex justify-start;
+    }
+    .button {
+      @apply btn bg-highlight hover:bg-light text-light hover:text-black;
+    }
+  }
+  .image-container {
+    @apply w-full h-[600px];
+  }
+  /* .cover-image {
+
+    } */
+
+  /* .button {
+    @apply text-white bg-primary hover:bg-primary-dark hover:text-white;
+  } */
+}

@@ -59,11 +59,9 @@ module.exports = {
         /* base colors */
         ...colors,
         light,
-        dark,
 
         primary,
         highlight,
-
         mutted,
         bg: light,
         text: dark,

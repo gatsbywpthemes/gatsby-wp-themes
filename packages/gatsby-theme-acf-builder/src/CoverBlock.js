@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Heading, Button } from "./ui-components"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { SubscribeForm } from "./SubscribeForm"
+import React from "react";
+import { graphql } from "gatsby";
+import { Heading, Button } from "./ui-components";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { SubscribeForm } from "./SubscribeForm";
 
 export const fragment = graphql`
   fragment coverBlock on WpPage_Layoutblocks_Blocks_CoverBlock {
@@ -18,7 +18,7 @@ export const fragment = graphql`
       ...button
     }
   }
-`
+`;
 
 const Coverblock = ({
   cssClass,
@@ -30,7 +30,7 @@ const Coverblock = ({
   image,
   ...props
 }) => {
-  const hasSubscribe = cssClass?.includes("subscribe")
+  const hasSubscribe = cssClass?.includes("subscribe");
 
   return (
     <section
@@ -48,32 +48,34 @@ const Coverblock = ({
         objectPosition="center"
       />
       <div className="overlay">
-        {headline && (
-          <Heading
-            className="headline"
-            tag={headlineTag}
-            dangerouslySetInnerHTML={{ __html: headline }}
-          />
-        )}
-        {content && (
-          <div
-            dangerouslySetInnerHTML={{ __html: content }}
-            className="content-text"
-          />
-        )}
-        {hasSubscribe && (
-          <div className="subscribe-container">
-            <SubscribeForm />
-          </div>
-        )}
-        {button && (
-          <div className="button-container">
-            <Button button={button} className="button" />
-          </div>
-        )}
+        <div className="cover-content">
+          {headline && (
+            <Heading
+              className="headline"
+              tag={headlineTag}
+              dangerouslySetInnerHTML={{ __html: headline }}
+            />
+          )}
+          {content && (
+            <div
+              dangerouslySetInnerHTML={{ __html: content }}
+              className="content-text"
+            />
+          )}
+          {hasSubscribe && (
+            <div className="subscribe-container">
+              <SubscribeForm />
+            </div>
+          )}
+          {button && (
+            <div className="button-container">
+              <Button button={button} className="button" />
+            </div>
+          )}
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Coverblock
+export default Coverblock;
