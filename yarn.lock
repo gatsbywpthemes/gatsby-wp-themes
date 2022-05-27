@@ -9610,6 +9610,15 @@ gatsby-plugin-sass@^5.14.0:
     resolve-url-loader "^3.1.4"
     sass-loader "^10.1.1"
 
+gatsby-plugin-sass@^5.15.0:
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.15.0.tgz#f2dbe76ad7d9206eda0cfa2cbfccedcb16f39301"
+  integrity sha512-iIwOjEXccWl61xTISVXTDvsRBJH47A+atTPVCCjTQqG7VOQgbNJ7OVE1OAxDb2w49votSMjXQFVUx0RwddO61g==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    resolve-url-loader "^3.1.4"
+    sass-loader "^10.1.1"
+
 gatsby-plugin-scroll-reveal@^0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-scroll-reveal/-/gatsby-plugin-scroll-reveal-0.0.7.tgz#5f0d1bcf65bf3c7b3d9d6b69dc4a8896129747ee"
@@ -15333,6 +15342,15 @@ sass@1.51.0, sass@^1.51.0:
   version "1.51.0"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.51.0.tgz#25ea36cf819581fe1fe8329e8c3a4eaaf70d2845"
   integrity sha512-haGdpTgywJTvHC2b91GSq+clTKGbtkkZmVAb82jZQN/wTy6qs8DdFm2lhEQbEwrY0QDRgSQ3xDurqM977C3noA==
+  dependencies:
+    chokidar ">=3.0.0 <4.0.0"
+    immutable "^4.0.0"
+    source-map-js ">=0.6.2 <2.0.0"
+
+sass@^1.52.1:
+  version "1.52.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.52.1.tgz#554693da808543031f9423911d62c60a1acf7889"
+  integrity sha512-fSzYTbr7z8oQnVJ3Acp9hV80dM1fkMN7mSD/25mpcct9F7FPBMOI8krEYALgU1aZoqGhQNhTPsuSmxjnIvAm4Q==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
