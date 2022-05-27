@@ -23,7 +23,7 @@ const Page = ({ page, ctx }) => {
     headlesswp,
     layoutBlocks: { blocks },
   } = page
-  console.log(page)
+
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp?.original
   const { widgetAreas, layoutWidth } = useThemeOptions()

@@ -3,16 +3,21 @@ const rem = (px) => px / 16 + "rem"
 
 const { slate, red, teal, purple } = colors
 //palette
-const light = slate[100],
-  ultraLight = slate[50],
-  dark = slate[800],
-  ultraDark = slate[900],
-  primary = teal[400],
-  secondary = purple[500],
-  highlight = red[500],
-  mutted = slate[200],
-  bg = ultraLight,
-  text = ultraDark
+// const light = slate[100],
+//   ultraLight = slate[50],
+//   dark = slate[800],
+//   ultraDark = slate[900],
+//   primary = teal[400],
+//   secondary = purple[500],
+//   highlight = red[500],
+//   mutted = slate[200],
+//   bg = ultraLight,
+//   text = ultraDark
+const primary = "black"
+const light = "white"
+const dark = "black"
+const mutted = slate[600]
+const highlight = "#CC0063"
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
@@ -26,7 +31,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        body: "Inter, sans-serif",
+        body: "Mulish, sans-serif",
         heading: "Inter, sans-serif",
       },
       maxWidth: {
@@ -51,88 +56,87 @@ module.exports = {
       },
 
       colors: {
-        /* header */
+        /* base colors */
         ...colors,
         light,
         dark,
-        ultraLight,
-        ultraDark,
+
         primary,
-        secondary,
         highlight,
+
         mutted,
-        bg,
-        text,
-        accentColor: primary,
+        bg: light,
+        text: dark,
+
         /* header */
-        headerBg: "white",
-        headerColor: ultraDark,
+        headerBg: light,
+        headerColor: dark,
         /* footer */
-        footerBg: "white",
-        footerColor: ultraDark,
-        /* search */
-        searchBg: "white",
-        searchResultsHeaderBg: ultraDark,
-        searchResultsHeaderColor: primary,
-        searchResultsBg: bg,
-        searchResultsColor: text,
+        footerBg: light,
+        footerColor: dark,
+        // /* search */
+        // searchBg: "white",
+        // searchResultsHeaderBg: ultraDark,
+        // searchResultsHeaderColor: primary,
+        // searchResultsBg: bg,
+        // searchResultsColor: text,
         /* menu */
-        mobileMenuBg: "black",
+        mobileMenuBg: primary,
         mobileMenuColor: light,
-        subMenuBg: "black",
-        subMenuColor: "white",
-        subMenuHoverColor: primary,
-        menuHoverColor: primary,
-        /* newsletter */
-        nlButtonBg: "black",
-        nlButtonColor: "white",
-        nlButtonHoverBg: primary,
-        nlInputBg: light,
-        nlColor: text,
+        subMenuBg: primary,
+        subMenuColor: light,
+        subMenuHoverColor: highlight,
+        menuHoverColor: highlight,
+        // /* newsletter */
+        // nlButtonBg: "black",
+        // nlButtonColor: "white",
+        // nlButtonHoverBg: primary,
+        // nlInputBg: light,
+        // nlColor: text,
         /* post */
-        infoBg: light,
-        infoColor: teal[900],
-        archiveTitleBg: slate[100],
-        archiveTitleColor: text,
-        cardBg: "white",
+        // infoBg: light,
+        // infoColor: teal[900],
+        // archiveTitleBg: slate[100],
+        // archiveTitleColor: text,
+        // cardBg: "white",
 
         dark: {
           /* basic colors*/
 
           bg: dark,
-          text: ultraLight,
-          text2: teal[900],
-          accentColor: primary,
+          text: light,
+          // text2: teal[900],
+          accentColor: highlight,
           /* header*/
-          headerBg: ultraDark,
-          headerColor: ultraLight,
-          /* footer*/
-          footerBg: ultraDark,
-          footerColor: ultraLight,
-          /* search */
-          searchBg: ultraDark,
-          searchResultsHeaderBg: primary,
-          searchResultsHeaderColor: light,
-          searchResultsBg: bg,
-          searchResultsColor: text,
-          /* menu*/
+          headerBg: dark,
+          headerColor: light,
+          // /* footer*/
+          footerBg: dark,
+          footerColor: light,
+          // /* search */
+          // searchBg: ultraDark,
+          // searchResultsHeaderBg: primary,
+          // searchResultsHeaderColor: light,
+          // searchResultsBg: bg,
+          // searchResultsColor: text,
+          // /* menu*/
           mobileMenuBg: "black",
           mobileMenuColor: light,
           subMenuBg: primary,
           subMenuColor: teal[900],
           subMenuHoverColor: teal[800],
           menuHoverColor: teal[100],
-          /* newsletter */
-          nlButtonBg: primary,
-          nlButtonColor: teal[900],
-          nlButtonHoverBg: teal[300],
-          nlInputBg: slate[700],
-          nlColor: light,
-          /* post*/
-          archiveTitleBg: primary,
-          archiveTitleColor: teal[900],
-          infoBg: primary,
-          cardBg: ultraDark,
+          // /* newsletter */
+          // nlButtonBg: primary,
+          // nlButtonColor: teal[900],
+          // nlButtonHoverBg: teal[300],
+          // nlInputBg: slate[700],
+          // nlColor: light,
+          // /* post*/
+          // archiveTitleBg: primary,
+          // archiveTitleColor: teal[900],
+          // infoBg: primary,
+          // cardBg: ultraDark,
         },
       },
     },
