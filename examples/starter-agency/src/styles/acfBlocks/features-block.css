@@ -1,0 +1,26 @@
+.features-block {
+  @apply py-28;
+  &.services {
+    .features-container {
+      @apply mt-16 center-container;
+      @apply grid gap-20 md:grid-cols-3;
+    }
+    .feature {
+      @apply space-y-4;
+      img {
+        @apply max-w-[75px];
+      }
+      .intro {
+        .headline {
+          @apply mb-3 text-base font-semibold uppercase;
+        }
+      }
+      .btn-container {
+        @apply flex;
+        .button {
+          @apply bg-black btn btn-small text-light hover:bg-highlight;
+        }
+      }
+    }
+  }
+}

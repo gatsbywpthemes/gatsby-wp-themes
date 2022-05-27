@@ -4,9 +4,9 @@
   .overlay {
     @apply absolute inset-0;
     @apply bg-[rgba(0,0,0,0.5)];
-    @apply flex flex-col justify-center px-20;
+    @apply flex flex-col justify-center;
     .cover-content {
-      @apply container max-w-sm space-y-8;
+      @apply space-y-8 center-container;
     }
 
     .headline {
@@ -23,7 +23,7 @@
     }
   }
   .image-container {
-    @apply w-full h-[600px];
+    @apply w-full h-screen;
   }
   /* .cover-image {
 

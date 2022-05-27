@@ -4,6 +4,7 @@
 @import "base.css";
 @import "wordpress.css";
 @import "acfBlocks/cover-block.css";
+@import "acfBlocks/features-block.css";
 
 @layer base {
   /* Menu */
@@ -72,6 +73,9 @@
   .btn {
     @apply px-6 py-3 font-semibold text-white transition duration-500;
   }
+  .btn-small {
+    @apply px-4 py-2;
+  }
   .btn-ghost {
     @apply text-black border-2 border-black shadow-md dark:border-light dark:text-light hover:bg-black dark:hover:bg-light hover:-translate-y-1 hover:shadow-lg hover:!text-light dark:hover:!text-black;
   }
@@ -81,5 +85,12 @@
     @apply input-focus;
     @apply bg-transparent border-0 border-b-[1px] border-text dark:border-dark-text transition duration-500;
     @apply dark:focus:border-dark-text focus:border-b-2 focus:border-text;
+  }
+}
+
+section > .intro {
+  @apply center-container;
+  .headline {
+    @apply mb-4 text-5xl;
   }
 }
