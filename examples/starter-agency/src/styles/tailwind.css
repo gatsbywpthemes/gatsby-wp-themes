@@ -5,6 +5,8 @@
 @import "wordpress.css";
 @import "acfBlocks/cover-block.css";
 @import "acfBlocks/features-block.css";
+@import "acfBlocks/projects-block.css";
+@import "acfBlocks/spacer-block.css";
 
 @layer base {
   /* Menu */
@@ -88,9 +90,18 @@
   }
 }
 
-section > .intro {
-  @apply center-container;
-  .headline {
-    @apply mb-4 text-5xl;
+section {
+  &.dark-section {
+    @apply bg-slate-100;
+  }
+  > .intro {
+    @apply center-container mb-16;
+    .spacer {
+      @apply h-[4px] w-[100px] bg-highlight my-10;
+    }
+
+    .headline {
+      @apply mb-4 text-5xl;
+    }
   }
 }

@@ -2,7 +2,7 @@
   @apply py-28;
   &.services {
     .features-container {
-      @apply mt-16 center-container;
+      @apply center-container;
       @apply grid gap-20 md:grid-cols-3;
     }
     .feature {

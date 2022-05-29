@@ -22,14 +22,18 @@
       @apply btn bg-highlight hover:bg-light text-light hover:text-black;
     }
   }
-  .image-container {
-    @apply w-full h-screen;
+  &.hero {
+    .image-container {
+      @apply w-full h-screen;
+    }
   }
-  /* .cover-image {
-
-    } */
-
-  /* .button {
-    @apply text-white bg-primary hover:bg-primary-dark hover:text-white;
-  } */
+  &.logos {
+    .image-container {
+      @apply w-full h-[600px];
+    }
+    .content-text {
+      img {
+      }
+    }
+  }
 }

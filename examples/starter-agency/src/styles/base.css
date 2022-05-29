@@ -4,7 +4,7 @@
   }
 
   a {
-    @apply transition duration-300;
+    @apply transition duration-500;
   }
 
   h1 {

@@ -18,6 +18,7 @@ const light = "white"
 const dark = "black"
 const mutted = slate[600]
 const highlight = "#CC0063"
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",

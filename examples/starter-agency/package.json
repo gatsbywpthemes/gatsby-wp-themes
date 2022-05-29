@@ -24,6 +24,7 @@
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.0.5",
     "@gatsbywpthemes/gatsby-plugin-wpcf7": "^2.0.8",
     "@gatsbywpthemes/gatsby-plugin-gwpt-utils": "^1.0.7",
+    "@gatsbywpthemes/gatsby-theme-acf-builder": "^1.1.0",
     "@headlessui/react": "^1.6.1",
     "gatsby": "^4.14.0",
     "gatsby-plugin-mailchimp": "^5.2.2",

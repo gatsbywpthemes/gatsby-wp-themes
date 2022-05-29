@@ -1,0 +1,7 @@
+.spacer-block {
+  @apply center-container;
+  @apply flex justify-center p-10;
+  .spacer {
+    @apply w-1/3 h-[1px] bg-text;
+  }
+}
