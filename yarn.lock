@@ -9720,7 +9720,7 @@ gatsby-source-filesystem@^4.14.0, gatsby-source-filesystem@^4.15.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-source-wordpress@^6.12.2, gatsby-source-wordpress@^6.14.3:
+gatsby-source-wordpress@^6.12.2, gatsby-source-wordpress@^6.14.3, gatsby-source-wordpress@^6.15.0:
   version "6.15.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-6.15.0.tgz#8447fcd13e72386b310aa493ba087629c751ef5f"
   integrity sha512-eoqgSK3//wjjZhWdYKnPFoor48+2HXDigmHYQOGLX0LIvcSaRkBnyZo/l8NqCuTj6gM1X0UnUrIe0YhFOkazVg==
@@ -9804,7 +9804,7 @@ gatsby-worker@^1.15.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@^4.14.0, gatsby@^4.14.1:
+gatsby@^4.14.0, gatsby@^4.15.0:
   version "4.15.1"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.15.1.tgz#a6dd1afb3f87572c9b25fab0bababef2a792a708"
   integrity sha512-ZzgrfLpTqJzcZ2mWNb4+tegV6E5ftDTIzT7Pzg3OLzm8ApeScv/vNkim03R9BQDc7f2EzLwd0/ZjiHqqZpKbSw==
