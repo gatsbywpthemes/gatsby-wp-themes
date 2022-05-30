@@ -5,7 +5,7 @@
     @apply grid px-[2px] gap-0.5 xl:grid-cols-3 lg:grid-cols-2;
     .project {
       @apply relative;
-      .project-image-container {
+      img {
         @apply aspect-1;
       }
       .overlay {

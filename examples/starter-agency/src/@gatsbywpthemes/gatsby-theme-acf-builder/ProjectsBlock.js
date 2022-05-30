@@ -6,6 +6,7 @@ import {
   AiOutlineLink as LinkIcon,
   AiOutlinePlus as PlusIcon,
 } from "react-icons/ai"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const fragment = graphql`
   fragment projectsBlock_agency on WpPage_Layoutblocks_Blocks_ProjectsBlock {
@@ -61,7 +62,7 @@ const ProjectsBlock = ({
             id,
             title,
             uri,
-            projectFields: { projectUrl, projectShortDescription },
+            projectFields: { projectUrl },
             featuredImage,
             tags,
           } = project
@@ -72,6 +73,9 @@ const ProjectsBlock = ({
                   img={featuredImage.node}
                   className="project-image-container"
                   imgClassName="project-image"
+                  aspectRatio={1}
+                  objectFit="cover"
+                  objectPosition="center"
                 />
               )}
               <div className="overlay">

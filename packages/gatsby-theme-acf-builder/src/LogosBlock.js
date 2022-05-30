@@ -5,7 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { SubscribeForm } from "./SubscribeForm";
 
 export const fragment = graphql`
-  fragment coverBlock on WpPage_Layoutblocks_Blocks_CoverBlock {
+  fragment logosBlock on WpPage_Layoutblocks_Blocks_LogosBlock {
     cssClass
     anchorId
     headline
@@ -14,20 +14,23 @@ export const fragment = graphql`
     image {
       ...coverImage
     }
-    button {
-      ...button
+    logos {
+      logo {
+        ...basicImage
+      }
+      url
     }
   }
 `;
 
-const CoverBlock = ({
+const LogosBlock = ({
   cssClass,
   anchorId,
   headline,
   headlineTag,
   content,
-  button,
   image,
+  logos,
   ...props
 }) => {
   const hasSubscribe = cssClass?.includes("subscribe");
@@ -41,7 +44,7 @@ const CoverBlock = ({
       <GatsbyImage
         loading="lazy"
         alt={image?.altText}
-        image={image?.gatsbyImage}
+        image={image?.localFile.childImageSharp.gatsbyImageData}
         className="image-container"
         imgClassName="cover-image"
         objectFit="cover"
@@ -78,4 +81,4 @@ const CoverBlock = ({
   );
 };
 
-export default CoverBlock;
+export default LogosBlock;
