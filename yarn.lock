@@ -9490,7 +9490,7 @@ gatsby-plugin-google-tagmanager@^4.14.0:
     "@babel/runtime" "^7.15.4"
     web-vitals "^1.1.2"
 
-gatsby-plugin-image@^2.14.1:
+gatsby-plugin-image@^2.14.1, gatsby-plugin-image@^2.15.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-image/-/gatsby-plugin-image-2.15.0.tgz#5c2f2de7bf053518295da4b2dafee5fddbf23897"
   integrity sha512-+r9gR9vz1W9RCQ+yANcHCE1tvbJNwKw4pV6A5B7ca5r9fU62ycWvGIOfAkVZntxOSh/oCBAzwnLI/TD+oBmdEA==
