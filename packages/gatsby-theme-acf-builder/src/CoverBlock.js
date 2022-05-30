@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Heading, Button } from "./ui-components";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { Heading, Button, Image } from "./ui-components";
+
 import { SubscribeForm } from "./SubscribeForm";
 
 export const fragment = graphql`
@@ -38,10 +38,10 @@ const CoverBlock = ({
       id={`${anchorId ? anchorId : ""}`}
       {...props}
     >
-      <GatsbyImage
-        loading="lazy"
+      <Image
+        loading="eager"
         alt={image?.altText}
-        image={image?.gatsbyImage}
+        img={image}
         className="image-container"
         imgClassName="cover-image"
         objectFit="cover"
