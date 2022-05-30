@@ -9490,7 +9490,7 @@ gatsby-plugin-google-tagmanager@^4.14.0:
     "@babel/runtime" "^7.15.4"
     web-vitals "^1.1.2"
 
-gatsby-plugin-image@^2.14.1, gatsby-plugin-image@^2.15.0:
+gatsby-plugin-image@^2.14.1:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-image/-/gatsby-plugin-image-2.15.0.tgz#5c2f2de7bf053518295da4b2dafee5fddbf23897"
   integrity sha512-+r9gR9vz1W9RCQ+yANcHCE1tvbJNwKw4pV6A5B7ca5r9fU62ycWvGIOfAkVZntxOSh/oCBAzwnLI/TD+oBmdEA==
@@ -9720,7 +9720,7 @@ gatsby-source-filesystem@^4.14.0, gatsby-source-filesystem@^4.15.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-source-wordpress@^6.12.2, gatsby-source-wordpress@^6.14.3, gatsby-source-wordpress@^6.15.0:
+gatsby-source-wordpress@^6.12.2, gatsby-source-wordpress@^6.14.3:
   version "6.15.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-6.15.0.tgz#8447fcd13e72386b310aa493ba087629c751ef5f"
   integrity sha512-eoqgSK3//wjjZhWdYKnPFoor48+2HXDigmHYQOGLX0LIvcSaRkBnyZo/l8NqCuTj6gM1X0UnUrIe0YhFOkazVg==

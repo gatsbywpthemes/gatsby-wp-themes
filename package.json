@@ -5,8 +5,6 @@
     "examples/*"
   ],
   "dependencies": {
-    "gatsby-plugin-image": "^2.15.0",
-    "gatsby-source-wordpress": "^6.15.0",
     "lerna": "^4.0.0"
   },
   "name": "gatsby-wp-themes"
