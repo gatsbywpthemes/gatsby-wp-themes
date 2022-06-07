@@ -80,8 +80,8 @@ module.exports = {
         // searchResultsBg: bg,
         // searchResultsColor: text,
         /* menu */
-        mobileMenuBg: primary,
-        mobileMenuColor: light,
+        mobileMenuBg: highlight,
+        mobileMenuColor: dark,
         subMenuBg: primary,
         subMenuColor: light,
         subMenuHoverColor: highlight,

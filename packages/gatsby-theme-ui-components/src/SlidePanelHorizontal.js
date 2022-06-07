@@ -1,7 +1,6 @@
-import React, { Fragment, useState } from "react"
-import { Dialog, Transition } from "@headlessui/react"
-import clsx from "clsx"
-import { MdClose as Close } from "react-icons/md"
+import React, { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import clsx from "clsx";
 
 export const SlidePanelHorizontal = ({ children, open, setOpen }) => {
   return (
@@ -48,35 +47,12 @@ export const SlidePanelHorizontal = ({ children, open, setOpen }) => {
               <div
                 className={clsx("relative", "w-screen max-w-full md:max-w-md")}
               >
-                {/* Panel content */}
-                <div
-                  className={clsx(
-                    "flex flex-col",
-                    "h-screen",
-                    "overflow-y-scroll",
-                    "shadow-xl",
-                    "p-5",
-                    "bg-mobileMenuBg dark:bg-dark-mobileMenuBg ",
-                    "text-mobileMenuColor dark:text-dark-mobileMenuColor"
-                  )}
-                >
-                  <div className="flex justify-end mb-5">
-                    <button aria-label="close menu">
-                      <Close
-                        className="text-[24px] text-mobileMenuColor dark:text-dark-mobileMenuColor"
-                        onClick={() => setOpen(false)}
-                      />
-                    </button>
-                  </div>
-
-                  {children}
-                </div>
-                {/* End of panel content */}
+                {children}
               </div>
             </Transition.Child>
           </div>
         </div>
       </Dialog>
     </Transition>
-  )
-}
+  );
+};
