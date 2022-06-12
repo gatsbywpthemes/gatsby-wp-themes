@@ -1,6 +1,6 @@
 {
   "name": "@gatsbywpthemes/gatsby-plugin-gwpt-utils",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "common packages for all gatsbywpthemes",
   "main": "index.js",
   "author": "Gatsby WP Themes <contact@gatsbywpthemes.com>",
