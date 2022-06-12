@@ -2,7 +2,7 @@
   "name": "@gatsbywpthemes/gatsby-theme-base-dev",
   "description": "WordPress basic theme for Gatsby using WPGraphQL",
   "author": "Alexandra Spalato <alexaspalato@gmail.com>",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@gatsbywpthemes/gatsby-plugin-gwpt-chakra": "^2.0.2",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.1.0"
+    "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.1.1"
   },
   "gitHead": "94c8dd5e197d45c9a3a060075237c00d549ffa5e"
 }
