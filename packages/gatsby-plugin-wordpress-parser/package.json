@@ -26,7 +26,7 @@
     "normalize-path": "^3.0.0"
   },
   "peerDependencies": {
-    "gatsby": "^4.15.0",
+    "gatsby": "^4.16.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
