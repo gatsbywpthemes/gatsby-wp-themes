@@ -2,7 +2,7 @@ import React from "react"
 import { Menu } from "~/components/menu"
 // import { ColorSwitch } from "./ColorSwitch"
 import { Branding } from "./Branding"
-// import { Slidemenu } from "./SlideMenu"
+import { Slidemenu } from "./SlideMenu"
 // import { SearchModal } from "~/components/search/SearchModal"
 import {
   useThemeOptions,
@@ -32,7 +32,7 @@ export const Header = ({ ...props }) => {
           </div>
           <div className="flex items-center space-x-5">
             <Menu orientation="H" className="hidden md:flex" />
-            {/* <Slidemenu className="md:hidden" /> */}
+            <Slidemenu className="md:hidden" />
             {/* {addColorModes && <ColorSwitch />} */}
           </div>
         </div>

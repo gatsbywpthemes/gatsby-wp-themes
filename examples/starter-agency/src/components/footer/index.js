@@ -1,5 +1,5 @@
 import React from "react"
 
 export const Footer = () => {
-  return <h3>Footer</h3>
+  return <div className="centered-container">Footer</div>
 }
