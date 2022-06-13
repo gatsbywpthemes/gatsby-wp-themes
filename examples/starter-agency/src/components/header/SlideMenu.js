@@ -7,7 +7,7 @@ import { GiHamburgerMenu as Hamburger } from "react-icons/gi"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import clsx from "clsx"
 
-export const Slidemenu = ({ className, ...props }) => {
+export const Slidemenu = ({ ...props }) => {
   const [open, setOpen] = useState(false)
   const { widgetAreas } = useThemeOptions()
   const widgets = widgetAreas.slideMenuWidgets || []
@@ -90,7 +90,7 @@ export const Slidemenu = ({ className, ...props }) => {
 
                     {widgets?.length > 0 &&
                       widgets.map((widget, i) => (
-                        <div key={i} css={{ ".widget": { my: 10 } }}>
+                        <div key={i} className="my-5">
                           <Widget widget={widget} />
                         </div>
                       ))}

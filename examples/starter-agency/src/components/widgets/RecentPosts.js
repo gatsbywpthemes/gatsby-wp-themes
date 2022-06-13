@@ -2,7 +2,8 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { format } from "date-fns"
 import normalize from "normalize-path"
-import { Image } from "@gatsbywpthemes/gatsby-theme-ui-components/src"
+import { WidgetTitle } from "./WidgetTitle"
+import { Image } from "~/components/ui-components/Image"
 
 const RECENT_POSTS_QUERY = graphql`
   query GetRecentPosts {
@@ -37,15 +38,17 @@ export const RecentPosts = (props) => {
   const data = useStaticQuery(RECENT_POSTS_QUERY)
 
   const { nodes } = data.allWpPost
+  const { lightBg, ...rest } = props
+
   return (
-    <section className="widget widget-recent-posts" {...props}>
-      <h3 className="widget-title">Recent Posts</h3>
+    <section className="widget widget-recent-posts" {...rest}>
+      <WidgetTitle title="Recent Posts" lightBg={lightBg} />
       <div className="flex flex-col space-y-5 align-start">
         {nodes.length
           ? nodes.map((post) => {
               const uri = normalize(`${post.uri}`)
               return (
-                <div className="flex space-x-4" key={post.id}>
+                <div className="flex items-center space-x-4" key={post.id}>
                   <Link aria-label={`Read more - ${post.title}`} to={uri}>
                     {post.featuredImage && (
                       <Image
@@ -60,12 +63,15 @@ export const RecentPosts = (props) => {
                   </Link>{" "}
                   <div>
                     <time
-                      className="block font-bold widget-post-date entry-date"
+                      className="block text-upper-spaced"
                       dateTime={post.date}
                     >
                       {format(new Date(post.date), "MMMM dd, yyyy")}
                     </time>{" "}
-                    <Link className="widget-post-title" to={uri}>
+                    <Link
+                      className="text-base font-bold widget-post-title hover:text-primary"
+                      to={uri}
+                    >
                       {post.title}
                     </Link>
                   </div>

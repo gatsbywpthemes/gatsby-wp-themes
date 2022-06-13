@@ -73,7 +73,6 @@ const ProjectsBlock = ({
                   img={featuredImage.node}
                   className="project-image-container"
                   imgClassName="project-image"
-                  aspectRatio={1}
                   objectFit="cover"
                   objectPosition="center"
                 />
