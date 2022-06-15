@@ -1,8 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Heading, Button } from "./ui-components";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { SubscribeForm } from "./SubscribeForm";
+import { Image } from "./ui-components";
+import { HeadlineContent } from "./HeadlineContent";
 
 export const fragment = graphql`
   fragment logosBlock on WpPage_Layoutblocks_Blocks_LogosBlock {
@@ -11,9 +10,6 @@ export const fragment = graphql`
     headline
     headlineTag
     content
-    image {
-      ...coverImage
-    }
     logos {
       logo {
         ...basicImage
@@ -33,50 +29,31 @@ const LogosBlock = ({
   logos,
   ...props
 }) => {
-  const hasSubscribe = cssClass?.includes("subscribe");
-
   return (
     <section
-      className={`cover-block ${cssClass ? cssClass : ""}`}
+      className={`logos-block ${cssClass ? cssClass : ""}`}
       id={`${anchorId ? anchorId : ""}`}
       {...props}
     >
-      <GatsbyImage
-        loading="lazy"
-        alt={image?.altText}
-        image={image?.localFile.childImageSharp.gatsbyImageData}
-        className="image-container"
-        imgClassName="cover-image"
-        objectFit="cover"
-        objectPosition="center"
-      />
-      <div className="overlay">
-        <div className="cover-content">
-          {headline && (
-            <Heading
-              className="headline"
-              tag={headlineTag}
-              dangerouslySetInnerHTML={{ __html: headline }}
-            />
-          )}
-          {content && (
-            <div
-              dangerouslySetInnerHTML={{ __html: content }}
-              className="content-text"
-            />
-          )}
-          {hasSubscribe && (
-            <div className="subscribe-container">
-              <SubscribeForm />
-            </div>
-          )}
-          {button && (
-            <div className="button-container">
-              <Button button={button} className="button" />
-            </div>
-          )}
+      {(headline || content) && (
+        <HeadlineContent
+          headline={headline}
+          content={content}
+          headlineTag={headlineTag}
+        />
+      )}
+      {logos && (
+        <div className="logos-container">
+          {logos.map((item, index) => {
+            const { logo, url } = item;
+            return (
+              <div className="logo" key={index}>
+                {logo && <Image img={logo} className="image-container" />}
+              </div>
+            );
+          })}
         </div>
-      </div>
+      )}
     </section>
   );
 };

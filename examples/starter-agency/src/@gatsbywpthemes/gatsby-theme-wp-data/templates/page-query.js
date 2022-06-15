@@ -24,6 +24,7 @@ export const pageQuery = graphql`
           ...projectsBlock
           ...galleryBlock
           ...spacerBlock
+          ...logosBlock
         }
       }
       template {

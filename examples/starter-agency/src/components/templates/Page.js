@@ -14,6 +14,7 @@ import TestimonialsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/Test
 import PricingBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/PricingBlock"
 import ProjectsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/ProjectsBlock"
 import SpacerBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/SpacerBlock"
+import LogosBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/LogosBlock"
 
 const Page = ({ page, ctx }) => {
   const {
@@ -83,6 +84,8 @@ const Page = ({ page, ctx }) => {
                 return <ProjectsBlock {...blockRef} />
               case "WpPage_Layoutblocks_Blocks_SpacerBlock":
                 return <SpacerBlock {...blockRef} />
+              case "WpPage_Layoutblocks_Blocks_LogosBlock":
+                return <LogosBlock {...blockRef} />
               default:
                 return null
             }

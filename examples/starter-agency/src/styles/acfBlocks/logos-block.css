@@ -1,0 +1,13 @@
+.logos-block {
+  @apply py-28;
+  &.dark-section {
+    @apply bg-neutral-100;
+  }
+
+  .logos-container {
+    @apply flex flex-wrap justify-center gap-5 center-container;
+    .logo {
+      @apply bg-white px-3 py-10 rounded-md min-w-[300px] flex justify-center items-center sm:min-w-[200px] xl:min-w-[150px];
+    }
+  }
+}

@@ -7,6 +7,7 @@
 @import "acfBlocks/features-block.css";
 @import "acfBlocks/projects-block.css";
 @import "acfBlocks/spacer-block.css";
+@import "acfBlocks/logos-block.css";
 
 @layer base {
   /* Menu */
