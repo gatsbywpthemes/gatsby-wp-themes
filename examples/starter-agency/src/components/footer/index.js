@@ -45,9 +45,11 @@ export const Footer = () => {
             <HomeIcon className="mr-4 text-3xl" />
             <span dangerouslySetInnerHTML={{ __html: address }} />
           </div>
-          <div className="flex">
+          <div className="flex ">
             <PhoneIcon className="mr-4 text-3xl" />
-            <a href={`tel:${phone}`}>{phone}</a>
+            <a href={`tel:${phone}`} className="hover:text-highlight">
+              {phone}
+            </a>
           </div>
         </FooterColumn>
         <FooterColumn title="The agency">
@@ -66,7 +68,7 @@ export const Footer = () => {
         <div className="flex justify-center">
           <SocialFollows
             className="flex space-x-2 text-center"
-            iconClassName="text-2xl"
+            iconClassName="text-2xl hover:text-highlight transition duration-500"
           />
         </div>
       </div>

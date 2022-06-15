@@ -15,6 +15,11 @@ export const fragment = graphql`
     content
     headline
     headlineTag
+    allProjects {
+      target
+      title
+      url
+    }
     projects {
       ... on WpProject {
         id
@@ -41,6 +46,7 @@ const ProjectsBlock = ({
   headline,
   headlineTag,
   projects,
+  allProjects,
   ...props
 }) => {
   return (
@@ -99,6 +105,16 @@ const ProjectsBlock = ({
           )
         })}
       </div>
+      {allProjects && (
+        <div className="button-container flex justify-center">
+          <Link
+            className="btn bg-black hover:bg-highlight transition duration-500 mt-10"
+            to={allProjects.url}
+          >
+            {allProjects.title}
+          </Link>
+        </div>
+      )}
     </section>
   )
 }

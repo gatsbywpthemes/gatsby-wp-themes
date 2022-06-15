@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { HeadlineContent } from "./HeadlineContent"
-import { Image } from "./ui-components"
-import { Link } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
+import { HeadlineContent } from "./HeadlineContent";
+import { Image } from "./ui-components";
+import { Link } from "gatsby";
 
 export const fragment = graphql`
   fragment projectsBlock on WpPage_Layoutblocks_Blocks_ProjectsBlock {
@@ -11,6 +11,11 @@ export const fragment = graphql`
     content
     headline
     headlineTag
+    allProjects {
+      target
+      title
+      url
+    }
     projects {
       ... on WpProject {
         id
@@ -20,6 +25,7 @@ export const fragment = graphql`
           projectUrl
           projectShortDescription
         }
+
         featuredImage {
           node {
             ...basicImage
@@ -34,7 +40,7 @@ export const fragment = graphql`
       }
     }
   }
-`
+`;
 
 const ProjectsBlock = ({
   cssClass,
@@ -43,6 +49,7 @@ const ProjectsBlock = ({
   headline,
   headlineTag,
   projects,
+  allProjects,
   ...props
 }) => {
   return (
@@ -67,7 +74,7 @@ const ProjectsBlock = ({
             projectFields: { projectUrl, projectShortDescription },
             featuredImage,
             tags,
-          } = project
+          } = project;
           return (
             <div className="project" key={id}>
               <Link to={uri}>
@@ -107,11 +114,18 @@ const ProjectsBlock = ({
                 </a>
               </div>
             </div>
-          )
+          );
         })}
       </div>
+      {allProjects && (
+        <div className="button-container">
+          <Link className="btn" to={allProjects.url}>
+            {allProjects.title}
+          </Link>
+        </div>
+      )}
     </section>
-  )
-}
+  );
+};
 
-export default ProjectsBlock
+export default ProjectsBlock;

@@ -4,7 +4,7 @@
   }
 
   a {
-    @apply transition duration-500 hover:text-highlight;
+    @apply transition duration-500;
   }
 
   h1 {

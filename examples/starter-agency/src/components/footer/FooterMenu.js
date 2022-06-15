@@ -10,7 +10,7 @@ const FooterMenu = ({ location }) => {
       {menuItems.map((menuItem) => {
         return (
           <div key={menuItem.id}>
-            <MenuLink menuItem={menuItem} />
+            <MenuLink menuItem={menuItem} className="hover:text-highlight" />
           </div>
         )
       })}
