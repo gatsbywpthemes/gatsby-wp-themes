@@ -105,3 +105,15 @@ section {
     }
   }
 }
+
+/* Footer */
+footer {
+  form {
+    input {
+      @apply mb-5;
+    }
+    button {
+      @apply btn btn-small !bg-highlight border-2 border-highlight hover:!bg-black;
+    }
+  }
+}

@@ -71,8 +71,8 @@ module.exports = {
         headerBg: light,
         headerColor: dark,
         /* footer */
-        footerBg: light,
-        footerColor: dark,
+        footerBg: "black",
+        footerColor: "white",
         // /* search */
         // searchBg: "white",
         // searchResultsHeaderBg: ultraDark,
