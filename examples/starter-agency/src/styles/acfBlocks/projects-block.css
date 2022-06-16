@@ -1,5 +1,5 @@
 .projects-block {
-  @apply pt-28;
+  @apply py-28;
   .projects {
     /* @apply center-container; */
     @apply grid px-[2px] gap-0.5 xl:grid-cols-3 lg:grid-cols-2;
@@ -12,18 +12,18 @@
         @apply absolute inset-0;
         @apply bg-highlight;
         @apply flex flex-col justify-center;
-        @apply opacity-0 hover:opacity-100 hover:bg-opacity-80 transition-all duration-500 ease-in-out;
+        @apply transition-all duration-500 ease-in-out opacity-0 hover:opacity-100 hover:bg-opacity-80;
       }
 
       .headline {
-        @apply text-center text-light text-4xl hover:text-black;
+        @apply text-4xl text-center text-light hover:text-black;
       }
 
       .button-container {
         @apply flex justify-center mb-5 space-x-5;
         .icon {
           @apply text-4xl text-light;
-          @apply border-2 border-white border-opacity-30 rounded-full hover:bg-black transition duration-500;
+          @apply transition duration-500 border-2 border-white rounded-full border-opacity-30 hover:bg-black;
           @apply w-16 h-16 p-3;
         }
       }

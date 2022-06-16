@@ -8,6 +8,7 @@
 @import "acfBlocks/projects-block.css";
 @import "acfBlocks/spacer-block.css";
 @import "acfBlocks/logos-block.css";
+@import "acfBlocks/lasts-posts-block.css";
 
 @layer base {
   /* Menu */
@@ -93,10 +94,10 @@
 
 section {
   &.dark-section {
-    @apply bg-slate-100;
+    @apply bg-neutral-100;
   }
   > .intro {
-    @apply center-container mb-16;
+    @apply mb-16 center-container;
     .spacer {
       @apply h-[4px] w-[100px] bg-highlight my-10;
     }

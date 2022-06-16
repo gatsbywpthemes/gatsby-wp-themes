@@ -15,6 +15,7 @@ import PricingBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/PricingBl
 import ProjectsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/ProjectsBlock"
 import SpacerBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/SpacerBlock"
 import LogosBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/LogosBlock"
+import LastsPostsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/LastsPostsBlock"
 
 const Page = ({ page, ctx }) => {
   const {
@@ -86,6 +87,8 @@ const Page = ({ page, ctx }) => {
                 return <SpacerBlock {...blockRef} />
               case "WpPage_Layoutblocks_Blocks_LogosBlock":
                 return <LogosBlock {...blockRef} />
+              case "WpPage_Layoutblocks_Blocks_LastsPostsBlock":
+                return <LastsPostsBlock {...blockRef} />
               default:
                 return null
             }
