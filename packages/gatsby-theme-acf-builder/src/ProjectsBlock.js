@@ -119,7 +119,7 @@ export const ProjectsBlock = ({
       </div>
       {allProjects && (
         <div className="button-container">
-          <Link className="btn" to={allProjects.url}>
+          <Link className="button" to={allProjects.url}>
             {allProjects.title}
           </Link>
         </div>

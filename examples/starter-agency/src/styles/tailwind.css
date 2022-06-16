@@ -96,6 +96,14 @@ section {
   &.dark-section {
     @apply bg-neutral-100;
   }
+  &.right {
+    > .intro {
+      @apply flex flex-col items-end text-right;
+    }
+    .spacer-block {
+      @apply flex justify-end;
+    }
+  }
   > .intro {
     @apply mb-16 center-container;
     .spacer {
@@ -104,6 +112,9 @@ section {
 
     .headline {
       @apply mb-4 text-5xl;
+    }
+    .content-text {
+      @apply max-w-[500px];
     }
   }
 }
