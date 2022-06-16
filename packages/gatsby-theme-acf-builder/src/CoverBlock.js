@@ -20,7 +20,7 @@ export const fragment = graphql`
   }
 `;
 
-const CoverBlock = ({
+export const CoverBlock = ({
   cssClass,
   anchorId,
   headline,
@@ -77,5 +77,3 @@ const CoverBlock = ({
     </section>
   );
 };
-
-export default CoverBlock;

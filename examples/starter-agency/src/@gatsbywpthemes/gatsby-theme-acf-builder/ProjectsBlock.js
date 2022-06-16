@@ -38,7 +38,7 @@ export const fragment = graphql`
   }
 `
 
-const ProjectsBlock = ({
+export const ProjectsBlock = ({
   cssClass,
   anchorId,
   content,
@@ -117,5 +117,3 @@ const ProjectsBlock = ({
     </section>
   )
 }
-
-export default ProjectsBlock

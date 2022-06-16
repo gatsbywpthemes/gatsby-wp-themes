@@ -17,7 +17,7 @@ export const fragment = graphql`
   }
 `;
 
-const GalleryBlock = ({
+export const GalleryBlock = ({
   cssClass,
   anchorId,
   headline,
@@ -73,5 +73,3 @@ const GalleryBlock = ({
     </section>
   );
 };
-
-export default GalleryBlock;

@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Button, Image } from "./ui-components"
-import { HeadlineContent } from "./HeadlineContent"
+import React from "react";
+import { graphql } from "gatsby";
+import { Button, Image } from "./ui-components";
+import { HeadlineContent } from "./HeadlineContent";
 
 export const fragment = graphql`
   fragment featuresBlock on WpPage_Layoutblocks_Blocks_FeaturesBlock {
@@ -23,9 +23,9 @@ export const fragment = graphql`
       }
     }
   }
-`
+`;
 
-const FeaturesBlock = ({
+export const FeaturesBlock = ({
   cssClass,
   anchorId,
   headline,
@@ -50,7 +50,7 @@ const FeaturesBlock = ({
       {features && (
         <div className="features-container">
           {features.map((feature, index) => {
-            const { image, headline, headlineTag, content, button } = feature
+            const { image, headline, headlineTag, content, button } = feature;
             return (
               <div className="feature" key={index}>
                 {image && <Image img={image} className="image-container" />}
@@ -68,12 +68,10 @@ const FeaturesBlock = ({
                   </div>
                 )}
               </div>
-            )
+            );
           })}
         </div>
       )}
     </section>
-  )
-}
-
-export default FeaturesBlock
+  );
+};

@@ -19,7 +19,7 @@ export const fragment = graphql`
   }
 `;
 
-const LogosBlock = ({
+export const LogosBlock = ({
   cssClass,
   anchorId,
   headline,
@@ -57,5 +57,3 @@ const LogosBlock = ({
     </section>
   );
 };
-
-export default LogosBlock;

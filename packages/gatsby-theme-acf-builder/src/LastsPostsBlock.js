@@ -18,7 +18,7 @@ export const fragment = graphql`
   }
 `;
 
-const LastsPostsBlock = ({
+export const LastsPostsBlock = ({
   cssClass,
   anchorId,
   content,
@@ -93,5 +93,3 @@ const LastsPostsBlock = ({
     </section>
   );
 };
-
-export default LastsPostsBlock;

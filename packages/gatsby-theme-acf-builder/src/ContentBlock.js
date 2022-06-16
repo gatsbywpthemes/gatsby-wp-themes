@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Heading, Button } from "./ui-components"
-import { SubscribeForm } from "./SubscribeForm"
+import React from "react";
+import { graphql } from "gatsby";
+import { Heading, Button } from "./ui-components";
+import { SubscribeForm } from "./SubscribeForm";
 
 export const fragment = graphql`
   fragment contentBlock on WpPage_Layoutblocks_Blocks_ContentBlock {
@@ -14,9 +14,9 @@ export const fragment = graphql`
       ...button
     }
   }
-`
+`;
 
-const Contentblock = ({
+export const ContentBlock = ({
   cssClass,
   anchorId,
   headline,
@@ -25,7 +25,7 @@ const Contentblock = ({
   button,
   ...props
 }) => {
-  const hasSubscribe = cssClass?.includes("subscribe")
+  const hasSubscribe = cssClass?.includes("subscribe");
 
   return (
     <section
@@ -59,7 +59,5 @@ const Contentblock = ({
         )}
       </div>
     </section>
-  )
-}
-
-export default Contentblock
+  );
+};

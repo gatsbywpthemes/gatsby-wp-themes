@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Image } from "./ui-components"
-import { HeadlineContent } from "./HeadlineContent"
+import React from "react";
+import { graphql } from "gatsby";
+import { Image } from "./ui-components";
+import { HeadlineContent } from "./HeadlineContent";
 
-import Slider from "react-slick"
-import "./styles/slick.scss"
+import Slider from "react-slick";
+import "./styles/slick.scss";
 
 export const fragment = graphql`
   fragment testimonialsBlock on WpPage_Layoutblocks_Blocks_TestimonialsBlock {
@@ -22,9 +22,9 @@ export const fragment = graphql`
       }
     }
   }
-`
+`;
 
-const TestimonialsBlock = ({
+export const TestimonialsBlock = ({
   cssClass,
   anchorId,
   headline,
@@ -33,13 +33,13 @@ const TestimonialsBlock = ({
   quotesItems,
   ...props
 }) => {
-  const slides = quotesItems.length > 3 ? 3 : quotesItems.length
+  const slides = quotesItems.length > 3 ? 3 : quotesItems.length;
   const sliderSettings = {
     slidesToShow: slides,
     slidesToScroll: slides,
     autoplay: true,
     arrows: false,
-  }
+  };
   return (
     <section
       className={`testimonials-block ${cssClass ? cssClass : ""}`}
@@ -56,7 +56,7 @@ const TestimonialsBlock = ({
       <Slider {...sliderSettings}>
         {quotesItems &&
           quotesItems.map((quote, index) => {
-            const { author, position, picture, content } = quote
+            const { author, position, picture, content } = quote;
             return (
               <div className="testimonial" key={index}>
                 {picture && (
@@ -75,11 +75,9 @@ const TestimonialsBlock = ({
                   <div className="author-position">{position}</div>
                 </div>
               </div>
-            )
+            );
           })}
       </Slider>
     </section>
-  )
-}
-
-export default TestimonialsBlock
+  );
+};

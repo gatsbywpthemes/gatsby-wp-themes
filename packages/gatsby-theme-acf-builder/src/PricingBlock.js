@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Button } from "./ui-components"
-import { HeadlineContent } from "./HeadlineContent"
-import { Tooltip } from "react-tippy"
-import "react-tippy/dist/tippy.css"
+import React from "react";
+import { graphql } from "gatsby";
+import { Button } from "./ui-components";
+import { HeadlineContent } from "./HeadlineContent";
+import { Tooltip } from "react-tippy";
+import "react-tippy/dist/tippy.css";
 
 export const fragment = graphql`
   fragment pricingBlock on WpPage_Layoutblocks_Blocks_PricingBlock {
@@ -24,9 +24,9 @@ export const fragment = graphql`
       }
     }
   }
-`
+`;
 
-const PricingBlock = ({
+export const PricingBlock = ({
   cssClass,
   anchorId,
   headline,
@@ -52,7 +52,7 @@ const PricingBlock = ({
         <div className="tables-container">
           {tables.map((table, index) => {
             const { cssClass, price, productId, title, features, description } =
-              table
+              table;
             return (
               <div
                 className={`pricing-table ${cssClass ? cssClass : ""}`}
@@ -66,7 +66,7 @@ const PricingBlock = ({
                 <div className="features">
                   {features &&
                     features.map((item, index) => {
-                      const { description, feature } = item
+                      const { description, feature } = item;
                       return (
                         <div className="feature-container" key={index}>
                           <Tooltip
@@ -78,7 +78,7 @@ const PricingBlock = ({
                             <div className="feature">{feature}</div>
                           </Tooltip>
                         </div>
-                      )
+                      );
                     })}
                 </div>
                 {productId && (
@@ -87,12 +87,10 @@ const PricingBlock = ({
                   </div>
                 )}
               </div>
-            )
+            );
           })}
         </div>
       )}
     </section>
-  )
-}
-
-export default PricingBlock
+  );
+};

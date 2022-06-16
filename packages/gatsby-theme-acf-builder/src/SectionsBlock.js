@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Heading, Button } from "./ui-components"
-import { SubscribeForm } from "./SubscribeForm"
+import React from "react";
+import { graphql } from "gatsby";
+import { Heading, Button } from "./ui-components";
+import { SubscribeForm } from "./SubscribeForm";
 
 export const fragment = graphql`
   fragment sectionsBlock on WpPage_Layoutblocks_Blocks_SectionsBlock {
@@ -17,9 +17,9 @@ export const fragment = graphql`
       }
     }
   }
-`
+`;
 
-const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
+export const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
   return (
     <div
       className={`sections-block ${cssClass ? cssClass : ""}`}
@@ -27,8 +27,8 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
       {...props}
     >
       {sections?.map((section, index) => {
-        const { headline, content, headlineTag, button, cssClass } = section
-        const hasSubscribe = cssClass?.includes("subscribe")
+        const { headline, content, headlineTag, button, cssClass } = section;
+        const hasSubscribe = cssClass?.includes("subscribe");
 
         return (
           <section key={index} className={`${cssClass ? cssClass : ""}`}>
@@ -56,10 +56,8 @@ const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
               </div>
             )}
           </section>
-        )
+        );
       })}
     </div>
-  )
-}
-
-export default SectionsBlock
+  );
+};

@@ -1,11 +1,11 @@
-import React, { useState } from "react"
-import { graphql } from "gatsby"
-import { HeadlineContent } from "./HeadlineContent"
-import Collapsible from "@kunukn/react-collapse"
+import React, { useState } from "react";
+import { graphql } from "gatsby";
+import { HeadlineContent } from "./HeadlineContent";
+import Collapsible from "@kunukn/react-collapse";
 import {
   ChevronRightIcon as ClosedIcon,
   ChevronDownIcon as OpenIcon,
-} from "@heroicons/react/outline"
+} from "@heroicons/react/outline";
 
 export const fragment = graphql`
   fragment accordionBlock on WpPage_Layoutblocks_Blocks_AccordionBlock {
@@ -19,9 +19,9 @@ export const fragment = graphql`
       content
     }
   }
-`
+`;
 
-const AccordionBlock = ({
+export const AccordionBlock = ({
   cssClass,
   anchorId,
   content,
@@ -46,7 +46,7 @@ const AccordionBlock = ({
       {accordionItems && (
         <div className="accordion">
           {accordionItems.map((item, index) => {
-            const [open, setOpen] = useState(false)
+            const [open, setOpen] = useState(false);
             return (
               <div className="accordion-item" key={index}>
                 <button
@@ -71,12 +71,10 @@ const AccordionBlock = ({
                   />
                 </Collapsible>
               </div>
-            )
+            );
           })}
         </div>
       )}
     </section>
-  )
-}
-
-export default AccordionBlock
+  );
+};

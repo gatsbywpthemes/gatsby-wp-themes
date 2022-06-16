@@ -7,7 +7,7 @@ export const fragment = graphql`
   }
 `;
 
-const Contentblock = ({
+export const SpacerBlock = ({
   cssClass,
 
   ...props
@@ -18,5 +18,3 @@ const Contentblock = ({
     </div>
   );
 };
-
-export default Contentblock;

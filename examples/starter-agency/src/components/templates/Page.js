@@ -1,21 +1,22 @@
 import React from "react"
 import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
-import { Sidebar } from "~/components/Sidebar"
 import { ParsedContent, ActivatePageScripts } from "~/utils"
-import clsx from "clsx"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
-import ContentBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/ContentBlock"
-import SectionsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/SectionsBlock"
-import CoverBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/CoverBlock"
-import FeaturesBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/FeaturesBlock"
-import AccordionBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/AccordionBlock"
-import TestimonialsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/TestimonialsBlock"
-import PricingBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/PricingBlock"
-import ProjectsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/ProjectsBlock"
-import SpacerBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/SpacerBlock"
-import LogosBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/LogosBlock"
-import LastsPostsBlock from "@gatsbywpthemes/gatsby-theme-acf-builder/src/LastsPostsBlock"
+import {
+  ContentBlock,
+  SectionsBlock,
+  CoverBlock,
+  FeaturesBlock,
+  AccordionBlock,
+  TestimonialsBlock,
+  PricingBlock,
+  ProjectsBlock,
+  SpacerBlock,
+  LogosBlock,
+  LastsPostsBlock,
+  GalleryBlock,
+} from "@gatsbywpthemes/gatsby-theme-acf-builder/src"
 
 const Page = ({ page, ctx }) => {
   const {
@@ -89,6 +90,8 @@ const Page = ({ page, ctx }) => {
                 return <LogosBlock {...blockRef} />
               case "WpPage_Layoutblocks_Blocks_LastsPostsBlock":
                 return <LastsPostsBlock {...blockRef} />
+              case "WpPage_Layoutblocks_Blocks_GalleryPostsBlock":
+                return <GalleryBlock {...blockRef} />
               default:
                 return null
             }
