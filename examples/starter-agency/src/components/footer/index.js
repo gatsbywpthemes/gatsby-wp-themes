@@ -12,7 +12,7 @@ const FooterColumn = ({ children, title, className = "" }) => {
       className={`footer-column w-full sm:w-1/2 md:w-1/4 px-3  ${className}`}
     >
       {title && (
-        <h3 className=" text-lg font-bold uppercase tracking-wider mb-4">
+        <h3 className="mb-4 text-lg font-bold tracking-wider uppercase ">
           {title}
         </h3>
       )}
@@ -39,7 +39,7 @@ export const Footer = () => {
 
   return (
     <footer className={clsx(" bg-footerBg text-footerColor")}>
-      <div className=" center-container flex flex-wrap sm:flex-nowrap justify-between gap-8 py-10">
+      <div className="flex flex-wrap justify-between gap-8 py-10 center-container lg:flex-nowrap">
         <FooterColumn className="space-y-3" title="contact">
           <div className="flex">
             <HomeIcon className="mr-4 text-3xl" />
@@ -62,7 +62,7 @@ export const Footer = () => {
           <SubscribeForm />
         </FooterColumn>
       </div>
-      <div className="copyright text-center space-y-5 pt-5 pb-10 border-t border-neutral-600">
+      <div className="pt-5 pb-10 space-y-5 text-center border-t copyright border-neutral-600">
         Copyright © {new Date().getFullYear()}
         <span className="font-bold"> {company}</span>
         <div className="flex justify-center">

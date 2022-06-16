@@ -6,6 +6,7 @@
   }
   .post {
     @apply relative;
+    @apply max-w-[90%] md:max-w-full mx-auto;
     @apply -mb-20;
     .headline {
       @apply text-base tracking-wider uppercase transition duration-500 sm:mb-2 sm:text-lg hover:text-highlight;

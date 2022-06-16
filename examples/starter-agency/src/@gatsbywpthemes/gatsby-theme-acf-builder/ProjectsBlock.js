@@ -6,7 +6,6 @@ import {
   AiOutlineLink as LinkIcon,
   AiOutlinePlus as PlusIcon,
 } from "react-icons/ai"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 export const fragment = graphql`
   fragment projectsBlock_agency on WpPage_Layoutblocks_Blocks_ProjectsBlock {
@@ -106,9 +105,9 @@ const ProjectsBlock = ({
         })}
       </div>
       {allProjects && (
-        <div className="button-container flex justify-center">
+        <div className="flex justify-center button-container">
           <Link
-            className="btn bg-black hover:bg-highlight transition duration-500 mt-10"
+            className="mt-10 transition duration-500 bg-black btn hover:bg-highlight"
             to={allProjects.url}
           >
             {allProjects.title}

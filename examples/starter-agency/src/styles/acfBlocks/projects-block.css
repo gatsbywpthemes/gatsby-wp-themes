@@ -2,7 +2,7 @@
   @apply py-28;
   .projects {
     /* @apply center-container; */
-    @apply grid px-[2px] gap-0.5 xl:grid-cols-3 lg:grid-cols-2;
+    @apply grid px-[2px] gap-0.5 lg:grid-cols-3 sm:grid-cols-2;
     .project {
       @apply relative;
       img {
