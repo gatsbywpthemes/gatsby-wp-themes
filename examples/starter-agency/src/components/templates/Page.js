@@ -2,7 +2,6 @@ import React from "react"
 import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { ParsedContent, ActivatePageScripts } from "~/utils"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import {
   ContentBlock,
   SectionsBlock,
@@ -30,13 +29,10 @@ const Page = ({ page, ctx }) => {
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp?.original
-  const { widgetAreas, layoutWidth } = useThemeOptions()
-  const { sidebarWidgets } = widgetAreas
   const pageTemplate = headlesswp?.pageTemplate || "default"
-  const hasSidebar = pageTemplate.includes("sidebar") && sidebarWidgets
 
   const skipTitle = headlesswp?.skipTitle || false
-  const postWidth = layoutWidth.post || "xl"
+
   return (
     <Layout page={page} type="page">
       <Seo
