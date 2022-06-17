@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { HeadlineContent } from "@gatsbywpthemes/gatsby-theme-acf-builder/src/HeadlineContent"
 import { Image } from "@gatsbywpthemes/gatsby-theme-acf-builder/src/ui-components"
 import {
@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai"
 
 export const fragment = graphql`
-  fragment projectsBlock_agency on WpPage_Layoutblocks_Blocks_ProjectsBlock {
+  fragment projectsBlock on WpPage_Layoutblocks_Blocks_ProjectsBlock {
     cssClass
     anchorId
     content
@@ -48,6 +48,21 @@ export const ProjectsBlock = ({
   allProjects,
   ...props
 }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      wp {
+        themeOptions {
+          defaultImages {
+            projectImage {
+              ...basicImage
+            }
+          }
+        }
+      }
+    }
+  `)
+  const defaultImage = data.wp.themeOptions.defaultImages.projectImage
+
   return (
     <section
       className={`projects-block ${cssClass ? cssClass : ""}`}
@@ -71,11 +86,13 @@ export const ProjectsBlock = ({
             featuredImage,
             tags,
           } = project
+          const image = featuredImage ? featuredImage.node : defaultImage
+
           return (
             <div className="project" key={id}>
               {featuredImage && (
                 <Image
-                  img={featuredImage.node}
+                  img={image}
                   className="project-image-container"
                   imgClassName="project-image"
                   objectFit="cover"

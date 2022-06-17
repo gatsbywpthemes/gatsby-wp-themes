@@ -7,7 +7,7 @@ const FooterMenu = ({ location }) => {
 
   return (
     <nav>
-      {menuItems.map((menuItem) => {
+      {menuItems?.map((menuItem) => {
         return (
           <div key={menuItem.id}>
             <MenuLink menuItem={menuItem} className="hover:text-highlight" />

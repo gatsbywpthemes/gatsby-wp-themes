@@ -27,7 +27,7 @@ export const LastsPostsBlock = ({
   allPosts,
   ...props
 }) => {
-  const lastsPosts = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query MyQuery {
       allWpPost(limit: 6) {
         nodes {
@@ -41,10 +41,21 @@ export const LastsPostsBlock = ({
           }
         }
       }
+      wp {
+        themeOptions {
+          defaultImages {
+            postImage {
+              ...basicImage
+            }
+          }
+        }
+      }
     }
   `);
 
-  const posts = lastsPosts.allWpPost.nodes;
+  const posts = data.allWpPost.nodes;
+  const defaultImage = data.wp.themeOptions.defaultImages.postImage;
+
   return (
     <section
       className={`lasts-posts-block ${cssClass ? cssClass : ""}`}
@@ -61,16 +72,16 @@ export const LastsPostsBlock = ({
       <div className="posts">
         {posts?.map((post) => {
           const { id, title, uri, excerpt, featuredImage } = post;
+          const image = featuredImage ? featuredImage.node : defaultImage;
           return (
             <div className="post" key={id}>
               <Link to={uri}>
-                {featuredImage && (
-                  <Image
-                    img={featuredImage.node}
-                    className="post-image-container"
-                    imgClassName="post-image"
-                  />
-                )}
+                <Image
+                  img={image}
+                  className="post-image-container"
+                  imgClassName="post-image"
+                />
+
                 <div className="post-content">
                   <h3 className="headline">{title}</h3>
                   <div

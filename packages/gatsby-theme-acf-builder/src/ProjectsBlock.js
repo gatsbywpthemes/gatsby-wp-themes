@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { HeadlineContent } from "./HeadlineContent";
 import { Image } from "./ui-components";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
 export const fragment = graphql`
   fragment projectsBlock on WpPage_Layoutblocks_Blocks_ProjectsBlock {
@@ -52,6 +52,21 @@ export const ProjectsBlock = ({
   allProjects,
   ...props
 }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      wp {
+        themeOptions {
+          defaultImages {
+            projectImage {
+              ...basicImage
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const defaultImage = data.wp.themeOptions.defaultImages.projectImage;
   return (
     <section
       className={`projects-block ${cssClass ? cssClass : ""}`}
@@ -75,12 +90,13 @@ export const ProjectsBlock = ({
             featuredImage,
             tags,
           } = project;
+          const image = featuredImage ? featuredImage.node : defaultImage;
           return (
             <div className="project" key={id}>
               <Link to={uri}>
                 {featuredImage && (
                   <Image
-                    img={featuredImage.node}
+                    img={image}
                     className="project-image-container"
                     imgClassName="project-image"
                   />
