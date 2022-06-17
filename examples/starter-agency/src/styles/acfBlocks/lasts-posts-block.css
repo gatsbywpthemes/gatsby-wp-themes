@@ -36,3 +36,6 @@
     }
   }
 }
+.posts-list .post-image {
+  @apply transition duration-1000;
+}

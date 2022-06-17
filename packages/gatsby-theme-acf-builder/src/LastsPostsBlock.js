@@ -28,7 +28,7 @@ export const LastsPostsBlock = ({
   ...props
 }) => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       allWpPost(limit: 6) {
         nodes {
           uri
@@ -53,7 +53,7 @@ export const LastsPostsBlock = ({
     }
   `);
 
-  const posts = data.allWpPost.nodes;
+  const posts = data.allWpPost?.nodes;
   const defaultImage = data.wp.themeOptions.defaultImages.postImage;
 
   return (
