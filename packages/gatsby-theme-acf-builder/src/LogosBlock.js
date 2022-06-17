@@ -19,6 +19,18 @@ export const fragment = graphql`
   }
 `;
 
+const WithLink = ({ url, children }) => {
+  if (url) {
+    return (
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    );
+  } else {
+    return children;
+  }
+};
+
 export const LogosBlock = ({
   cssClass,
   anchorId,
@@ -47,9 +59,11 @@ export const LogosBlock = ({
           {logos.map((item, index) => {
             const { logo, url } = item;
             return (
-              <div className="logo" key={index}>
-                {logo && <Image img={logo} className="image-container" />}
-              </div>
+              <WithLink url={url}>
+                <div className="logo" key={index}>
+                  {logo && <Image img={logo} className="image-container" />}
+                </div>
+              </WithLink>
             );
           })}
         </div>
