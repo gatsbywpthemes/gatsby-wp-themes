@@ -49,7 +49,7 @@ export const PostsList = ({ posts, ...props }) => {
                   "post-content",
                   "text-center",
                   "transition duration-500",
-                  "bg-neutral-50  mx-auto max-w-[300px] sm:max-w-[500px] md:max-w-[300px] lg:max-w-[500px] rounded-md py-8 px-10 shadow-md hover:shadow-xl",
+                  "bg-neutral-50  mx-auto max-w-[300px] sm:max-w-[500px] md:max-w-[300px] xl:max-w-[500px] rounded-md py-8 px-10 shadow-md hover:shadow-xl",
 
                   "relative -top-24"
                 )}
@@ -58,7 +58,7 @@ export const PostsList = ({ posts, ...props }) => {
                   {title}
                 </h3>
                 <div
-                  className="excerpt line-clamp-4"
+                  className="excerpt line-clamp-3 xl:line-clamp-4"
                   dangerouslySetInnerHTML={{ __html: excerpt }}
                 />
               </div>

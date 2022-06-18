@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai"
 
 export const fragment = graphql`
-  fragment projectsBlock on WpPage_Layoutblocks_Blocks_ProjectsBlock {
+  fragment projectsBlock_agency on WpPage_Layoutblocks_Blocks_ProjectsBlock {
     cssClass
     anchorId
     content
