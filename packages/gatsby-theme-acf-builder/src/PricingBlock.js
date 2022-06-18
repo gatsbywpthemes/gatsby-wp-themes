@@ -1,30 +1,7 @@
 import React from "react";
-import { graphql } from "gatsby";
-import { Button } from "./ui-components";
 import { HeadlineContent } from "./HeadlineContent";
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
-
-export const fragment = graphql`
-  fragment pricingBlock on WpPage_Layoutblocks_Blocks_PricingBlock {
-    cssClass
-    anchorId
-    content
-    headline
-    headlineTag
-    tables {
-      cssClass
-      price
-      productId
-      title
-      description
-      features {
-        description
-        feature
-      }
-    }
-  }
-`;
 
 export const PricingBlock = ({
   cssClass,

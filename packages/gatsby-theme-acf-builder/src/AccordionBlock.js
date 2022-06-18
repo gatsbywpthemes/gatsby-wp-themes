@@ -1,25 +1,10 @@
 import React, { useState } from "react";
-import { graphql } from "gatsby";
 import { HeadlineContent } from "./HeadlineContent";
 import Collapsible from "@kunukn/react-collapse";
 import {
   ChevronRightIcon as ClosedIcon,
   ChevronDownIcon as OpenIcon,
 } from "@heroicons/react/outline";
-
-export const fragment = graphql`
-  fragment accordionBlock on WpPage_Layoutblocks_Blocks_AccordionBlock {
-    cssClass
-    anchorId
-    content
-    headline
-    headlineTag
-    accordionItems {
-      headline
-      content
-    }
-  }
-`;
 
 export const AccordionBlock = ({
   cssClass,

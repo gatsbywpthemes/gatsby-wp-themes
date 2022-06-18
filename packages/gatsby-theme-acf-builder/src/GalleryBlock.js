@@ -1,21 +1,7 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { Image } from "./ui-components";
 import { HeadlineContent } from "./HeadlineContent";
 import LightboxWrapper from "./LightboxWrapper";
-
-export const fragment = graphql`
-  fragment galleryBlock on WpPage_Layoutblocks_Blocks_GalleryBlock {
-    cssClass
-    anchorId
-    content
-    headline
-    headlineTag
-    gallery {
-      ...basicImage
-    }
-  }
-`;
 
 export const GalleryBlock = ({
   cssClass,

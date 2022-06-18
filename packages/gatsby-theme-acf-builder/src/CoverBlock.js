@@ -1,24 +1,6 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { Heading, Button, Image } from "./ui-components";
-
 import { SubscribeForm } from "./SubscribeForm";
-
-export const fragment = graphql`
-  fragment coverBlock on WpPage_Layoutblocks_Blocks_CoverBlock {
-    cssClass
-    anchorId
-    headline
-    headlineTag
-    content
-    image {
-      ...coverImage
-    }
-    button {
-      ...button
-    }
-  }
-`;
 
 export const CoverBlock = ({
   cssClass,

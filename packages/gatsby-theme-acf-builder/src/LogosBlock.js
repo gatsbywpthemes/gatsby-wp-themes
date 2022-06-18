@@ -1,23 +1,6 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { Image } from "./ui-components";
 import { HeadlineContent } from "./HeadlineContent";
-
-export const fragment = graphql`
-  fragment logosBlock on WpPage_Layoutblocks_Blocks_LogosBlock {
-    cssClass
-    anchorId
-    headline
-    headlineTag
-    content
-    logos {
-      logo {
-        ...basicImage
-      }
-      url
-    }
-  }
-`;
 
 const WithLink = ({ url, children }) => {
   if (url) {

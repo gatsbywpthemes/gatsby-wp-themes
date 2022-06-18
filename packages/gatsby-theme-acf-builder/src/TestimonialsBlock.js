@@ -1,28 +1,9 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { Image } from "./ui-components";
 import { HeadlineContent } from "./HeadlineContent";
 
 import Slider from "react-slick";
 import "./styles/slick.scss";
-
-export const fragment = graphql`
-  fragment testimonialsBlock on WpPage_Layoutblocks_Blocks_TestimonialsBlock {
-    cssClass
-    anchorId
-    content
-    headline
-    headlineTag
-    quotesItems {
-      author
-      position
-      content
-      picture {
-        ...basicImage
-      }
-    }
-  }
-`;
 
 export const TestimonialsBlock = ({
   cssClass,

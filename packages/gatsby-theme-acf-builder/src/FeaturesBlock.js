@@ -1,29 +1,6 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { Button, Image } from "./ui-components";
 import { HeadlineContent } from "./HeadlineContent";
-
-export const fragment = graphql`
-  fragment featuresBlock on WpPage_Layoutblocks_Blocks_FeaturesBlock {
-    cssClass
-    anchorId
-    content
-    headline
-    headlineTag
-    features {
-      cssClass
-      headline
-      headlineTag
-      image {
-        ...basicImage
-      }
-      content
-      button {
-        ...button
-      }
-    }
-  }
-`;
 
 export const FeaturesBlock = ({
   cssClass,

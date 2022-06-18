@@ -3,21 +3,6 @@ import { HeadlineContent } from "./HeadlineContent";
 import { Image } from "./ui-components";
 import { Link, useStaticQuery, graphql } from "gatsby";
 
-export const fragment = graphql`
-  fragment lastsPostsBlock on WpPage_Layoutblocks_Blocks_LastsPostsBlock {
-    cssClass
-    anchorId
-    content
-    headline
-    headlineTag
-    allPosts {
-      target
-      title
-      url
-    }
-  }
-`;
-
 export const LastsPostsBlock = ({
   cssClass,
   anchorId,

@@ -3,44 +3,6 @@ import { HeadlineContent } from "./HeadlineContent";
 import { Image } from "./ui-components";
 import { Link, graphql, useStaticQuery } from "gatsby";
 
-export const fragment = graphql`
-  fragment projectsBlock on WpPage_Layoutblocks_Blocks_ProjectsBlock {
-    cssClass
-    anchorId
-    content
-    headline
-    headlineTag
-    allProjects {
-      target
-      title
-      url
-    }
-    projects {
-      ... on WpProject {
-        id
-        title
-        uri
-        projectFields {
-          projectUrl
-          projectShortDescription
-        }
-
-        featuredImage {
-          node {
-            ...basicImage
-          }
-        }
-        tags {
-          nodes {
-            id
-            name
-          }
-        }
-      }
-    }
-  }
-`;
-
 export const ProjectsBlock = ({
   cssClass,
   anchorId,

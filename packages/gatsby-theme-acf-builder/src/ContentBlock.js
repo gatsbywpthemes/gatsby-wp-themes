@@ -1,20 +1,6 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { Heading, Button } from "./ui-components";
 import { SubscribeForm } from "./SubscribeForm";
-
-export const fragment = graphql`
-  fragment contentBlock on WpPage_Layoutblocks_Blocks_ContentBlock {
-    cssClass
-    anchorId
-    headline
-    headlineTag
-    content
-    button {
-      ...button
-    }
-  }
-`;
 
 export const ContentBlock = ({
   cssClass,

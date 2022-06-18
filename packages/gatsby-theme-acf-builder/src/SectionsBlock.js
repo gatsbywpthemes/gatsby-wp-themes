@@ -1,23 +1,6 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { Heading, Button } from "./ui-components";
 import { SubscribeForm } from "./SubscribeForm";
-
-export const fragment = graphql`
-  fragment sectionsBlock on WpPage_Layoutblocks_Blocks_SectionsBlock {
-    cssClass
-    anchorId
-    sections {
-      cssClass
-      headline
-      headlineTag
-      content
-      button {
-        ...button
-      }
-    }
-  }
-`;
 
 export const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
   return (
