@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { HeadlineContent } from "./HeadlineContent";
 import { Image } from "./ui-components";
 import { Link, graphql, useStaticQuery } from "gatsby";

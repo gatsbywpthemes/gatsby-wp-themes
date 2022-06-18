@@ -21,7 +21,7 @@ export const pageQuery = graphql`
           ...accordionBlock
           ...testimonialsBlock
           ...pricingBlock
-          ...projectsBlock_agency
+          ...projectsBlock
           ...galleryBlock
           ...spacerBlock
           ...logosBlock
