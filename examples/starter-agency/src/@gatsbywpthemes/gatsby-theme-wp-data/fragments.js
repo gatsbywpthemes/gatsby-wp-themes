@@ -8,7 +8,23 @@ export const fragments = graphql`
     title
     excerpt
     date
-
+    layoutBlocks {
+      blocks {
+        __typename
+        ...postContentBlock
+        ...postSectionsBlock
+        ...postCoverBlock
+        ...postFeaturesBlock
+        ...postAccordionBlock
+        ...postTestimonialsBlock
+        ...postPricingBlock
+        ...postProjectsBlock
+        ...postGalleryBlock
+        ...postSpacerBlock
+        ...postLogosBlock
+        ...postLastsPostsBlock
+      }
+    }
     featuredImage {
       node {
         ...GatsbyImageQuery_starter

@@ -28,7 +28,7 @@ export const fragment = graphql`
     }
   }
 
-  fragment ProjectCoverBlock on WpProject_Layoutblocks_Blocks_CoverBlock {
+  fragment projectCoverBlock on WpProject_Layoutblocks_Blocks_CoverBlock {
     cssClass
     anchorId
     headline
