@@ -29,7 +29,6 @@ const Post = ({ post, ctx }) => {
     headlesswp,
     layoutBlocks: { blocks },
   } = post
-  console.log(blocks)
   const { widgetAreas, layoutWidth } = useThemeOptions()
 
   const pageTemplate = headlesswp?.pageTemplate || "default"

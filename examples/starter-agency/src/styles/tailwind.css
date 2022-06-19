@@ -107,7 +107,7 @@ section {
   > .intro {
     @apply mb-16 center-container;
     .spacer {
-      @apply h-[4px] w-[100px] bg-highlight my-10;
+      @apply h-1 w-[100px] bg-highlight my-10;
     }
 
     .headline {
