@@ -11,10 +11,10 @@ export const TestimonialsBlock = ({
   headline,
   headlineTag,
   content,
-  quotesItems,
+  testimonials,
   ...props
 }) => {
-  const slides = quotesItems.length > 3 ? 3 : quotesItems.length;
+  const slides = testimonials.length > 3 ? 3 : testimonials.length;
   const sliderSettings = {
     slidesToShow: slides,
     slidesToScroll: slides,
@@ -35,8 +35,8 @@ export const TestimonialsBlock = ({
         />
       )}
       <Slider {...sliderSettings}>
-        {quotesItems &&
-          quotesItems.map((quote, index) => {
+        {testimonials &&
+          testimonials.map((quote, index) => {
             const { author, position, picture, content } = quote;
             return (
               <div className="testimonial" key={index}>
