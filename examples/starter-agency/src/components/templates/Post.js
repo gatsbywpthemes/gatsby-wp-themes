@@ -1,10 +1,10 @@
 import React from "react"
 import { Layout } from "~/components/Layout"
-import { Sidebar } from "~/components/Sidebar"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import { Comments } from "@gatsbywpthemes/gatsby-theme-wp-comments/src"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { ParsedContent, ActivatePageScripts } from "~/utils"
+import { Image, Date } from "~/components/ui-components"
+import { Link } from "gatsby"
 import {
   ContentBlock,
   SectionsBlock,
@@ -28,15 +28,14 @@ const Post = ({ post, ctx }) => {
     uri,
     headlesswp,
     layoutBlocks: { blocks },
+    author,
+    categories,
+    tags,
   } = post
-  const { widgetAreas, layoutWidth } = useThemeOptions()
+  console.log("post", post)
 
-  const pageTemplate = headlesswp?.pageTemplate || "default"
-  const { sidebarWidgets } = widgetAreas
+  const { avatar: authorPic, name: authorName, uri: authorUri } = author.node
 
-  const hasSidebar = pageTemplate.includes("sidebar") && sidebarWidgets
-
-  const postWidth = layoutWidth.post || "xl"
   const featuredImage =
     post.featuredImage?.node.localFile.childImageSharp?.original
   return (
@@ -56,48 +55,76 @@ const Post = ({ post, ctx }) => {
       />
 
       <article>
-        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-        {blocks?.length > 0 &&
-          blocks.map((block, index) => {
-            let blockRef = { ...block, key: index }
-            switch (block.__typename) {
-              case "WpPost_Layoutblocks_Blocks_ContentBlock":
-                return <ContentBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_SectionsBlock":
-                return <SectionsBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_CoverBlock":
-                return <CoverBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_FeaturesBlock":
-                return <FeaturesBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_AccordionBlock":
-                return <AccordionBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_TestimonialsBlock":
-                return <TestimonialsBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_PricingBlock":
-                return <PricingBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_ProjectsBlock":
-                return <ProjectsBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_SpacerBlock":
-                return <SpacerBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_LogosBlock":
-                return <LogosBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_LastsPostsBlock":
-                return <LastsPostsBlock {...blockRef} />
-              case "WpPost_Layoutblocks_Blocks_GalleryPostsBlock":
-                return <GalleryBlock {...blockRef} />
-              default:
-                return null
-            }
-          })}
-        <div className="content">
-          <ActivatePageScripts />
-          <ParsedContent content={post.content} />
-        </div>
-        {hasSidebar && (
-          <div className={clsx("xl:col-span-1 col-span-4 mt-10 lg:mt-0")}>
-            <Sidebar widgets={sidebarWidgets} />
+        {post.featuredImage && (
+          <div className="relative">
+            <Image
+              img={post.featuredImage.node}
+              className="-mx-5 -mt-16 md:-mx-6 lg:-mx-10 h-[250px] lg:h-[400px] "
+            />
           </div>
         )}
+        <div
+          className={`max-w-[1200px] mx-auto bg-white pt-10 relative  ${
+            post.featuredImage && "relative lg:-top-[200px] lg:-mb-[200px]"
+          }`}
+        >
+          <div className="flex justify-center -mt-[90px] mb-10">
+            <img
+              src={authorPic.url}
+              alt={authorName}
+              className="border-4 border-white rounded-full"
+            />
+          </div>
+          <h1 className="mb-3 text-center">{post.title}</h1>
+          <div className="flex justify-center mb-10 text-neutral-600">
+            <div>
+              <Link to={authorUri} className="hover:text-highlight">
+                {" "}
+                {authorName}{" "}
+              </Link>
+              . <Date date={post.date} />
+            </div>
+          </div>
+          <div />
+
+          <div className="max-w-md mx-auto content">
+            <ActivatePageScripts />
+            <ParsedContent content={content} />
+
+            {blocks?.length > 0 &&
+              blocks.map((block, index) => {
+                let blockRef = { ...block, key: index }
+                switch (block.__typename) {
+                  case "WpPost_Layoutblocks_Blocks_ContentBlock":
+                    return <ContentBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_SectionsBlock":
+                    return <SectionsBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_CoverBlock":
+                    return <CoverBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_FeaturesBlock":
+                    return <FeaturesBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_AccordionBlock":
+                    return <AccordionBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_TestimonialsBlock":
+                    return <TestimonialsBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_PricingBlock":
+                    return <PricingBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_ProjectsBlock":
+                    return <ProjectsBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_SpacerBlock":
+                    return <SpacerBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_LogosBlock":
+                    return <LogosBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_LastsPostsBlock":
+                    return <LastsPostsBlock {...blockRef} />
+                  case "WpPost_Layoutblocks_Blocks_GalleryPostsBlock":
+                    return <GalleryBlock {...blockRef} />
+                  default:
+                    return null
+                }
+              })}
+          </div>
+        </div>
       </article>
       <Comments post={post} />
     </Layout>
