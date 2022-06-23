@@ -23,7 +23,6 @@ export const PostsList = ({ posts, ...props }) => {
     <div
       className={clsx(
         "posts-list",
-        // "center-container",
         "grid gap-10 md:grid-cols-2 xl:grid-cols-2"
       )}
       {...props}
