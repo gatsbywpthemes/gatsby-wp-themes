@@ -14,7 +14,7 @@ import {
   GalleryBlock,
 } from "@gatsbywpthemes/gatsby-theme-acf-builder/src"
 
-const Blocks = ({ blocks }) => {
+export const PageBlocks = ({ blocks }) => {
   return (
     <div>
       {blocks?.length > 0 &&
@@ -52,5 +52,3 @@ const Blocks = ({ blocks }) => {
     </div>
   )
 }
-
-export default Blocks

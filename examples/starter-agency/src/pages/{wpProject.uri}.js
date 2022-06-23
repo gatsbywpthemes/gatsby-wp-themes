@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Layout } from "~/components/Layout"
-import Blocks from "~/components/blocks"
+import { ProjectBlocks } from "~/components/blocks/ProjectBlocks"
 
 const ProjectPage = ({ data }) => {
   const { wpProject } = data
@@ -13,12 +13,14 @@ const ProjectPage = ({ data }) => {
     featuredImage,
   } = wpProject
 
+  console.log(blocks)
+
   return (
     <Layout>
       <div className="space-y-5">
         <h2>{title}</h2>
 
-        <Blocks blocks={blocks} />
+        <ProjectBlocks blocks={blocks} />
         <p dangerouslySetInnerHTML={{ __html: content }} />
         <div>
           Project url:{" "}

@@ -3,7 +3,7 @@ import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { ParsedContent, ActivatePageScripts } from "~/utils"
 import { PageTitle } from "~/components/ui-components"
-import Blocks from "~/components/blocks"
+import { PageBlocks } from "~/components/blocks/PageBlocks"
 
 const Page = ({ page, ctx }) => {
   const {
@@ -47,7 +47,7 @@ const Page = ({ page, ctx }) => {
           <ActivatePageScripts />
           <ParsedContent content={content} />
         </div>
-        <Blocks blocks={blocks} />
+        <PageBlocks blocks={blocks} />
       </article>
     </Layout>
   )

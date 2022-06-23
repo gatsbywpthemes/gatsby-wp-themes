@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Button } from "./ui-components";
+import { Heading, Button, Image } from "./ui-components";
 import { SubscribeForm } from "./SubscribeForm";
 
 export const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
@@ -10,7 +10,8 @@ export const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
       {...props}
     >
       {sections?.map((section, index) => {
-        const { headline, content, headlineTag, button, cssClass } = section;
+        const { headline, content, headlineTag, button, cssClass, image } =
+          section;
         const hasSubscribe = cssClass?.includes("subscribe");
 
         return (
@@ -28,6 +29,7 @@ export const SectionsBlock = ({ cssClass, anchorId, sections, ...props }) => {
                 dangerouslySetInnerHTML={{ __html: content }}
               />
             )}
+            {image && <Image img={image} />}
             {hasSubscribe && (
               <div className="subscribe-container">
                 <SubscribeForm />
