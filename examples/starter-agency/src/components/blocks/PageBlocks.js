@@ -43,7 +43,7 @@ export const PageBlocks = ({ blocks }) => {
               return <LogosBlock {...blockRef} />
             case "WpPage_Layoutblocks_Blocks_LastsPostsBlock":
               return <LastsPostsBlock {...blockRef} />
-            case "WpPage_Layoutblocks_Blocks_GalleryPostsBlock":
+            case "WpPage_Layoutblocks_Blocks_GalleryBlock":
               return <GalleryBlock {...blockRef} />
             default:
               return null

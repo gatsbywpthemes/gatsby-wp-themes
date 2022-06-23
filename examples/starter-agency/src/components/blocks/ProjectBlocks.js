@@ -43,7 +43,7 @@ export const ProjectBlocks = ({ blocks }) => {
               return <LogosBlock {...blockRef} />
             case "WpProject_Layoutblocks_Blocks_LastsPostsBlock":
               return <LastsPostsBlock {...blockRef} />
-            case "WpProject_Layoutblocks_Blocks_GalleryPostsBlock":
+            case "WpProject_Layoutblocks_Blocks_GalleryBlock":
               return <GalleryBlock {...blockRef} />
             default:
               return null
