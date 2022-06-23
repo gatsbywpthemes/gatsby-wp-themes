@@ -2,6 +2,7 @@ import React from "react"
 import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { ParsedContent, ActivatePageScripts } from "~/utils"
+import { PageTitle } from "~/components/ui-components"
 import {
   ContentBlock,
   SectionsBlock,
@@ -49,12 +50,11 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <article>
+      <article
+        className={`${pageTemplate === "default" && "max-w-md mx-auto"}`}
+      >
         {!skipTitle && !pageTemplate.includes("full") && (
-          <h1
-            dangerouslySetInnerHTML={{ __html: title }}
-            className="mb-10 text-center"
-          />
+          <PageTitle title={title} />
         )}
         <div className="content">
           <ActivatePageScripts />
