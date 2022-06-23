@@ -9,6 +9,7 @@
 @import "acfBlocks/spacer-block.css";
 @import "acfBlocks/logos-block.css";
 @import "acfBlocks/lasts-posts-block.css";
+@import "acfBlocks/gallery-block.css";
 
 @layer base {
   /* Menu */
