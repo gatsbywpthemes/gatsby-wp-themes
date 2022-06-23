@@ -1,4 +1,5 @@
 .gallery-block {
+  @apply py-28;
   @apply center-container;
   .gallery-item-container {
     @apply relative;

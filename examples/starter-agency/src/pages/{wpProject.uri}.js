@@ -49,12 +49,6 @@ const ProjectPage = ({ data }) => {
 
         <ProjectBlocks blocks={blocks} />
         <p dangerouslySetInnerHTML={{ __html: content }} />
-        <div>
-          Project url:{" "}
-          <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-            {projectUrl}
-          </a>
-        </div>
       </div>
     </Layout>
   )
