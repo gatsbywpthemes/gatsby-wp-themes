@@ -5,12 +5,13 @@
       @apply center-container;
     }
     .section-item {
-      @apply flex items-center gap-20 mb-20 last:mb-0 even:flex-row-reverse;
+      @apply items-center gap-20 mb-10 md:mb-20 md:flex last:mb-0 even:flex-row-reverse;
       .section-text,
       .section-image {
         @apply flex-1;
       }
       .section-text {
+        @apply mb-5 md:mb-0;
         .headline {
           @apply mb-5;
         }
