@@ -21,26 +21,23 @@ export const PostsList = ({ posts, ...props }) => {
 
   return (
     <div
-      className={clsx(
-        "posts-list",
-        "grid gap-10 md:grid-cols-2 xl:grid-cols-2"
-      )}
+      className={clsx("posts-list", "grid gap-10 sm:grid-cols-2")}
       {...props}
     >
       {posts?.nodes?.map((post) => {
         const { id, title, uri, excerpt, featuredImage } = post
         const image = featuredImage ? featuredImage.node : defaultImage
         return (
-          <div className="lg:-mb-24 post" key={id}>
+          <div className="md:-mb-24 post" key={id}>
             <Link to={uri}>
               <Image
                 img={image}
-                className="post-image-container lg:rounded-md rounded-t-md aspect-[16/9]"
+                className="post-image-container md:rounded-md rounded-t-md aspect-[16/9]"
                 imgClassName={clsx(
                   "post-image",
                   "hover:scale-110",
                   "transition duration-1000",
-                  "lg:rounded-md lg:shadow-md rounded-t-md "
+                  "md:rounded-md md:shadow-md rounded-t-md "
                 )}
               />
               <div
@@ -48,9 +45,9 @@ export const PostsList = ({ posts, ...props }) => {
                   "post-content",
                   "text-center",
                   "transition duration-500",
-                  "lg:bg-neutral-50 bg-neutral-100 rounded-b-md  mx-auto lg:max-w-[300px] xl:max-w-[500px] lg:rounded-md py-8 px-10 lg:shadow-md lg:hover:shadow-xl",
+                  "md:bg-neutral-50 bg-neutral-100 rounded-b-md  mx-auto md:max-w-[300px] xl:max-w-[500px] md:rounded-md py-8 px-10 md:shadow-md md:hover:shadow-xl",
 
-                  "lg:relative lg:-top-24"
+                  "md:relative md:-top-24"
                 )}
               >
                 <h3 className="text-base tracking-wider uppercase transition duration-500 headline sm:mb-2 sm:text-lg hover:text-highlight">
