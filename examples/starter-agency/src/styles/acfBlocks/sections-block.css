@@ -1,5 +1,5 @@
 .sections-block {
-  @apply py-28;
+  @apply py-16 md:py-28;
   &.project-sections {
     .sections-container {
       @apply center-container;
@@ -11,13 +11,13 @@
         @apply flex-1;
       }
       .section-text {
-        @apply mb-5 md:mb-0;
+        @apply mb-10 md:mb-0;
         .headline {
           @apply mb-5;
         }
       }
       .button-container {
-        @apply mt-10;
+        @apply mt-5 md:mt-10;
       }
       .button {
         @apply bg-black btn hover:bg-highlight;

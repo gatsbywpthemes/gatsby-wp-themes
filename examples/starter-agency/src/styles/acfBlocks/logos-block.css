@@ -1,5 +1,5 @@
 .logos-block {
-  @apply py-28;
+  @apply py-16 md:py-28;
   /* &.dark-section {
     @apply bg-neutral-100;
   } */
