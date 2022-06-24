@@ -1,6 +1,29 @@
 .sections-block {
   @apply py-28;
-  .section-item {
-    @apply relative;
+  &.project-sections {
+    .sections-container {
+      @apply center-container;
+    }
+    .section-item {
+      @apply flex items-center gap-20 mb-20 last:mb-0 even:flex-row-reverse;
+      .section-text,
+      .section-image {
+        @apply flex-1;
+      }
+      .section-text {
+        .headline {
+          @apply mb-5;
+        }
+      }
+      .button-container {
+        @apply mt-10;
+      }
+      .button {
+        @apply bg-black btn hover:bg-highlight;
+      }
+      .section-image {
+        @apply shadow-lg rounded-xl aspect-1;
+      }
+    }
   }
 }

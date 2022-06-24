@@ -50,18 +50,18 @@ export const SectionsBlock = ({
                     dangerouslySetInnerHTML={{ __html: content }}
                   />
                 )}
+                {hasSubscribe && (
+                  <div className="subscribe-container">
+                    <SubscribeForm />
+                  </div>
+                )}
+                {button && (
+                  <div className="button-container">
+                    <Button button={button} className="button" />
+                  </div>
+                )}
               </div>
-              {image && <Image img={image} />}
-              {hasSubscribe && (
-                <div className="subscribe-container">
-                  <SubscribeForm />
-                </div>
-              )}
-              {button && (
-                <div className="button-container">
-                  <Button button={button} className="button" />
-                </div>
-              )}
+              {image && <Image img={image} className="section-image" />}
             </section>
           );
         })}
