@@ -10,6 +10,7 @@
 @import "acfBlocks/logos-block.css";
 @import "acfBlocks/lasts-posts-block.css";
 @import "acfBlocks/gallery-block.css";
+@import "acfBlocks/sections-block.css";
 
 @layer base {
   /* Menu */

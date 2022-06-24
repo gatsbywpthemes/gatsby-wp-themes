@@ -44,12 +44,8 @@ const ProjectPage = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="space-y-5">
-        <h2>{title}</h2>
-
-        <ProjectBlocks blocks={blocks} />
-        <p dangerouslySetInnerHTML={{ __html: content }} />
-      </div>
+      <ProjectBlocks blocks={blocks} />
+      <p dangerouslySetInnerHTML={{ __html: content }} />
     </Layout>
   )
 }

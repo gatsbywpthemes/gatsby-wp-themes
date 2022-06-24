@@ -1,0 +1,6 @@
+.sections-block {
+  @apply py-28;
+  .section-item {
+    @apply relative;
+  }
+}
