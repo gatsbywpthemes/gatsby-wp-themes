@@ -36,19 +36,21 @@ export const SectionsBlock = ({
               key={index}
               className={`section-item ${cssClass ? cssClass : ""}`}
             >
-              {headline && (
-                <Heading
-                  tag={headlineTag}
-                  className="headline"
-                  dangerouslySetInnerHTML={{ __html: headline }}
-                />
-              )}
-              {content && (
-                <p
-                  className="content-text"
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
-              )}
+              <div className="section-text">
+                {headline && (
+                  <Heading
+                    tag={headlineTag}
+                    className="headline"
+                    dangerouslySetInnerHTML={{ __html: headline }}
+                  />
+                )}
+                {content && (
+                  <p
+                    className="content-text"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                  />
+                )}
+              </div>
               {image && <Image img={image} />}
               {hasSubscribe && (
                 <div className="subscribe-container">
