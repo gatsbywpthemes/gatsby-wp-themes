@@ -34,9 +34,15 @@ export const TeamBlock = ({
                 className={`team-member ${cssClass ? cssClass : ""}`}
                 key={index}
               >
-                {picture && <Image img={picture} className="image-container" />}
-                {name && <h3 className="member-name">{name}</h3>}
-                {position && <h4 className="position">{position}</h4>}
+                {picture && (
+                  <div className="member-pic-container">
+                    <Image img={picture} className="member-pic" />
+                  </div>
+                )}
+                <div className="name-position-container">
+                  {name && <h3 className="member-name">{name}</h3>}
+                  {position && <h4 className="position">{position}</h4>}
+                </div>
                 {description && (
                   <div className="member-description">{description}</div>
                 )}
@@ -51,7 +57,7 @@ export const TeamBlock = ({
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Image img={image} className="image-container" />
+                          <Image img={image} className="social-icon" />
                         </a>
                       );
                     })}

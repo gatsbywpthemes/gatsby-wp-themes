@@ -12,6 +12,7 @@
 @import "acfBlocks/gallery-block.css";
 @import "acfBlocks/sections-block.css";
 @import "acfBlocks/accordion-block.css";
+@import "acfBlocks/team-block.css";
 
 @layer base {
   /* Menu */
@@ -118,7 +119,7 @@ section {
     }
 
     .headline {
-      @apply mb-4 text-5xl;
+      @apply mb-4 text-4xl md:text-5xl;
     }
     .content-text {
       @apply max-w-[500px];
@@ -136,4 +137,9 @@ footer {
       @apply btn btn-small !bg-highlight border-2 border-highlight hover:!bg-black;
     }
   }
+}
+
+/* WordPress */
+.wp {
+  @apply py-20;
 }

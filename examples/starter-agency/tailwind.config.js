@@ -1,18 +1,8 @@
 const colors = require("tailwindcss/colors")
 const rem = (px) => px / 16 + "rem"
 
-const { slate, red, teal, purple } = colors
+const { slate, teal } = colors
 //palette
-// const light = slate[100],
-//   ultraLight = slate[50],
-//   dark = slate[800],
-//   ultraDark = slate[900],
-//   primary = teal[400],
-//   secondary = purple[500],
-//   highlight = red[500],
-//   mutted = slate[200],
-//   bg = ultraLight,
-//   text = ultraDark
 const primary = "black"
 const light = "white"
 const dark = "black"
@@ -21,6 +11,7 @@ const highlight = "#CC0063"
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  safelist: ["md:py-20", "py-10"],
   darkMode: "class",
   theme: {
     extend: {

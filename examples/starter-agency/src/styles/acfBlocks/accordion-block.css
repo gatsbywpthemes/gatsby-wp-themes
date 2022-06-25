@@ -1,6 +1,6 @@
 .accordion-block {
   &.faq {
-    @apply mt-5;
+    /* @apply mt-5; */
 
     .accordion {
     }
@@ -17,7 +17,7 @@
     @apply w-5 text-primary;
   }
   .accordion-trigger {
-    @apply flex justify-between w-full;
+    @apply flex items-center justify-between w-full;
     @apply p-5 border-b border-dashed border-neutral-800;
     @apply transition duration-300 hover:bg-neutral-100;
     h3 {
