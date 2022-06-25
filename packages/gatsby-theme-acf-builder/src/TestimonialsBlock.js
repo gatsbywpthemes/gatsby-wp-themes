@@ -14,7 +14,7 @@ export const TestimonialsBlock = ({
   testimonials,
   ...props
 }) => {
-  const slides = testimonials.length > 3 ? 3 : testimonials.length;
+  const slides = testimonials?.length > 3 ? 3 : testimonials?.length;
   const sliderSettings = {
     slidesToShow: slides,
     slidesToScroll: slides,

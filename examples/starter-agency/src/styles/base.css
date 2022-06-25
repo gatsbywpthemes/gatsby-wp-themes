@@ -25,6 +25,9 @@
   h6 {
     @apply text-xs font-heading leading-heading;
   }
+  p {
+    @apply mb-4;
+  }
   table {
     @apply mb-6;
   }

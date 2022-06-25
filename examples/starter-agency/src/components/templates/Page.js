@@ -14,6 +14,7 @@ const Page = ({ page, ctx }) => {
     headlesswp,
     layoutBlocks: { blocks },
   } = page
+  console.log("blocks", blocks)
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp?.original
