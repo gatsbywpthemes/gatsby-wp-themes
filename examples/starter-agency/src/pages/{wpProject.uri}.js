@@ -9,6 +9,7 @@ const ProjectPage = ({ data }) => {
   const { wpProject } = data
   const {
     title,
+    slug,
     content,
     projectFields: { projectUrl, projectShortDescription },
     layoutBlocks: { blocks },
@@ -21,7 +22,7 @@ const ProjectPage = ({ data }) => {
   //Styles are the same as the cover-block and can be found in /styles/acfBlocks/cover-block.css
 
   return (
-    <Layout type="project" className="w-full py-0">
+    <Layout type="project" className="w-full py-0" page={slug}>
       <div className="project-hero">
         <Image img={image} className="w-full h-screen" />
         <div className="overlay">
@@ -57,6 +58,7 @@ export const pageQuery = graphql`
     wpProject(uri: { eq: $uri }) {
       uri
       title
+      slug
       content
       featuredImage {
         node {

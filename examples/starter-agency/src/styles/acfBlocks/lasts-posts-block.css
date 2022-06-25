@@ -22,7 +22,7 @@
   .post-content {
     @apply transition duration-500;
     @apply text-center;
-    @apply bg-white rounded-b-md  mx-auto md:max-w-[300px] xl:max-w-[500px] md:rounded-md py-8 px-10 md:shadow-md md:hover:shadow-xl;
+    @apply bg-white rounded-b-md  mx-auto md:max-w-[300px] xl:max-w-[350px] md:rounded-md py-8 px-10 md:shadow-md md:hover:shadow-xl;
     @apply relative md:-top-20;
 
     .excerpt {
@@ -30,9 +30,9 @@
     }
   }
   .button-container {
-    @apply flex justify-center;
+    @apply relative flex justify-center top-10;
     .button {
-      @apply mt-10 bg-black btn hover:bg-highlight;
+      @apply bg-black btn hover:bg-highlight;
     }
   }
 }

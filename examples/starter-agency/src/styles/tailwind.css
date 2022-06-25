@@ -11,6 +11,7 @@
 @import "acfBlocks/lasts-posts-block.css";
 @import "acfBlocks/gallery-block.css";
 @import "acfBlocks/sections-block.css";
+@import "acfBlocks/accordion-block.css";
 
 @layer base {
   /* Menu */
@@ -107,7 +108,11 @@ section {
     }
   }
   > .intro {
-    @apply mb-16 center-container;
+    @apply mb-16;
+    .fullWidth &,
+    .w-full & {
+      @apply center-container;
+    }
     .spacer {
       @apply h-1 w-[100px] bg-highlight my-10;
     }

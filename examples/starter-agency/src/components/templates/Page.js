@@ -39,7 +39,7 @@ const Page = ({ page, ctx }) => {
         }
       />
       <article
-        className={`${pageTemplate === "default" && "max-w-md mx-auto"}`}
+        className={`${pageTemplate === "default" && "max-w-lg mx-auto"}`}
       >
         {!skipTitle && !pageTemplate.includes("full") && (
           <PageTitle title={title} />
