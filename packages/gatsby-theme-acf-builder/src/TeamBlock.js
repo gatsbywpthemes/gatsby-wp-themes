@@ -1,7 +1,8 @@
 import React from "react";
-import { Heading, Button, Image } from "./ui-components";
+import { Image } from "./ui-components";
+import { HeadlineContent } from "./HeadlineContent";
 
-const TeamBlock = ({
+export const TeamBlock = ({
   cssClass,
   anchorId,
   headline,
@@ -65,5 +66,3 @@ const TeamBlock = ({
     </section>
   );
 };
-
-export default TeamBlock;

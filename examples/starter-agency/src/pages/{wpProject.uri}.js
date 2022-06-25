@@ -80,6 +80,7 @@ export const pageQuery = graphql`
           ...projectSpacerBlock
           ...projectLogosBlock
           ...projectLastsPostsBlock
+          ...projectTeamBlock
         }
       }
       projectFields {

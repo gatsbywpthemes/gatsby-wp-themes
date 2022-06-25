@@ -12,6 +12,7 @@ import {
   LogosBlock,
   LastsPostsBlock,
   GalleryBlock,
+  TeamBlock,
 } from "@gatsbywpthemes/gatsby-theme-acf-builder/src"
 
 export const PageBlocks = ({ blocks }) => {
@@ -45,6 +46,8 @@ export const PageBlocks = ({ blocks }) => {
               return <LastsPostsBlock {...blockRef} />
             case "WpPage_Layoutblocks_Blocks_GalleryBlock":
               return <GalleryBlock {...blockRef} />
+            case "WpPage_Layoutblocks_Blocks_TeamBlock":
+              return <TeamBlock {...blockRef} />
             default:
               return null
           }

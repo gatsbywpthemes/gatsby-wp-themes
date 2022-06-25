@@ -23,6 +23,7 @@ export const fragments = graphql`
         ...postSpacerBlock
         ...postLogosBlock
         ...postLastsPostsBlock
+        ...postTeamBlock
       }
     }
     featuredImage {
