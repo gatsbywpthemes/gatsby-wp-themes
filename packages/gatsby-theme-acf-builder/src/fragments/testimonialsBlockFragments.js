@@ -7,6 +7,7 @@ export const fragment = graphql`
     content
     headline
     headlineTag
+    slidesPerView
     testimonials {
       author
       position
@@ -22,6 +23,7 @@ export const fragment = graphql`
     content
     headline
     headlineTag
+    slidesPerView
     testimonials {
       author
       position
@@ -37,6 +39,7 @@ export const fragment = graphql`
     content
     headline
     headlineTag
+    slidesPerView
     testimonials {
       author
       position

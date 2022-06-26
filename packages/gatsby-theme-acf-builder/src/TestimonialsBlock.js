@@ -12,14 +12,27 @@ export const TestimonialsBlock = ({
   headlineTag,
   content,
   testimonials,
+  slidesPerView,
   ...props
 }) => {
-  const slides = testimonials?.length > 3 ? 3 : testimonials?.length;
+  const slides =
+    testimonials?.length > slidesPerView ? slidesPerView : testimonials?.length;
   const sliderSettings = {
     slidesToShow: slides,
     slidesToScroll: slides,
+    speed: 2000,
+    autoPlaySpeed: 10000,
     autoplay: true,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <section
@@ -41,19 +54,23 @@ export const TestimonialsBlock = ({
             return (
               <div className="testimonial" key={index}>
                 {picture && (
-                  <Image
-                    img={picture}
-                    className="author-pic-container"
-                    imgClassName="author-pic"
-                  />
+                  <div className="header">
+                    <Image
+                      img={picture}
+                      className="author-pic-container"
+                      imgClassName="author-pic"
+                    />
+                  </div>
                 )}
-                <div
-                  className="testimonial-content"
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
-                <div className="author">
-                  <div className="author-name">{author}</div>
-                  <div className="author-position">{position}</div>
+                <div className="body">
+                  <div
+                    className="testimonial-content"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                  />
+                  <div className="author">
+                    <div className="author-name">{author}</div>
+                    <div className="author-position">{position}</div>
+                  </div>
                 </div>
               </div>
             );

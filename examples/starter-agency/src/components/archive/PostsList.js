@@ -36,7 +36,7 @@ export const PostsList = ({ posts, ...props }) => {
                 imgClassName={clsx(
                   "post-image",
                   "hover:scale-110",
-                  "transition duration-1000",
+                  "!transition !duration-1000",
                   "md:rounded-md md:shadow-md rounded-t-md "
                 )}
               />

@@ -17,7 +17,7 @@
   }
 
   .post-image {
-    @apply transition duration-1000 md:rounded-md md:shadow-md rounded-t-md hover:scale-110;
+    @apply !duration-1000 !transition md:rounded-md md:shadow-md rounded-t-md hover:scale-110;
   }
   .post-content {
     @apply transition duration-500;
@@ -37,5 +37,5 @@
   }
 }
 .posts-list .post-image {
-  @apply transition duration-1000;
+  @apply !transition !duration-1000 hover:scale-110;
 }
