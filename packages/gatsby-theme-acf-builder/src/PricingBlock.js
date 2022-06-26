@@ -35,34 +35,41 @@ export const PricingBlock = ({
                 className={`pricing-table ${cssClass ? cssClass : ""}`}
                 key={index}
               >
-                <Tooltip title={description} arrow distance={15}>
-                  <div className="title">{title}</div>
-                </Tooltip>
-                <div className="price">{price}</div>
-
-                <div className="features">
-                  {features &&
-                    features.map((item, index) => {
-                      const { description, feature } = item;
-                      return (
-                        <div className="feature-container" key={index}>
-                          <Tooltip
-                            className="description"
-                            title={description}
-                            arrow
-                            distance={15}
-                          >
-                            <div className="feature">{feature}</div>
-                          </Tooltip>
-                        </div>
-                      );
-                    })}
+                <div className="table-header">
+                  <Tooltip title={description} arrow distance={15}>
+                    <div className="title">{title}</div>
+                  </Tooltip>
+                  <div
+                    className="price"
+                    dangerouslySetInnerHTML={{ __html: price }}
+                  />
                 </div>
-                {productId && (
-                  <div className="button-container">
-                    <button>buy now</button>
+
+                <div className="table-body">
+                  <div className="features">
+                    {features &&
+                      features.map((item, index) => {
+                        const { description, feature } = item;
+                        return (
+                          <div className="feature-container" key={index}>
+                            <Tooltip
+                              className="description"
+                              title={description}
+                              arrow
+                              distance={15}
+                            >
+                              <div className="feature">{feature}</div>
+                            </Tooltip>
+                          </div>
+                        );
+                      })}
                   </div>
-                )}
+                  {productId && (
+                    <div className="button-container">
+                      <button>buy now</button>
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}

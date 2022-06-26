@@ -31,7 +31,7 @@
     }
     .name-position-container {
       @apply relative;
-      @apply after:content-[""] after:w-10 after:h-[2px] after:bg-highlight after:absolute after:inset-x-1/2 after:-bottom-3;
+      @apply after:w-10 after:h-[2px] after:bg-highlight after:absolute after:inset-x-1/2 after:-bottom-3;
     }
   }
 }

@@ -13,6 +13,7 @@
 @import "acfBlocks/sections-block.css";
 @import "acfBlocks/accordion-block.css";
 @import "acfBlocks/team-block.css";
+@import "acfBlocks/pricing-block.css";
 
 @layer base {
   /* Menu */
@@ -115,7 +116,7 @@ section {
       @apply center-container;
     }
     .spacer {
-      @apply h-1 w-[100px] bg-highlight my-10;
+      @apply h-[1px] w-[50px] bg-neutral-700 my-10;
     }
 
     .headline {
