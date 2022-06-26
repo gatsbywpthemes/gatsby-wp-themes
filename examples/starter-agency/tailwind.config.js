@@ -24,7 +24,7 @@ module.exports = {
       },
       fontFamily: {
         body: "Mulish, sans-serif",
-        heading: "Inter, sans-serif",
+        heading: "Roboto, sans-serif",
       },
       maxWidth: {
         xl: rem(1280),
