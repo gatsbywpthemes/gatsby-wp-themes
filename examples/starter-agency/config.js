@@ -1,4 +1,5 @@
 const config = {
+  addWordPressSearch: true,
   // pathPrefix: "",
   layoutWidth: {
     page: "lg",

@@ -64,12 +64,12 @@ module.exports = {
         /* footer */
         footerBg: "black",
         footerColor: "white",
-        // /* search */
-        // searchBg: "white",
-        // searchResultsHeaderBg: ultraDark,
-        // searchResultsHeaderColor: primary,
-        // searchResultsBg: bg,
-        // searchResultsColor: text,
+        /* search */
+        searchBg: "white",
+        searchResultsHeaderBg: highlight,
+        searchResultsHeaderColor: "white",
+        searchResultsBg: light,
+        searchResultsColor: dark,
         /* menu */
         mobileMenuBg: primary,
         mobileMenuColor: light,
