@@ -30,7 +30,6 @@ export const PostEntry = ({ post, ctx, ...props }) => {
     categories,
     tags,
   } = post
-  console.log(blocks)
 
   const { avatar: authorPic, name: authorName, uri: authorUri } = author.node
   return (
@@ -105,7 +104,7 @@ export const PostEntry = ({ post, ctx, ...props }) => {
             })}
 
           <PostEntryMeta post={post} />
-          <PrevNextPostNavigation ctx={ctx} />
+          <PrevNextPostNavigation prev={ctx.prev} next={ctx.next} />
         </div>
       </div>
     </article>

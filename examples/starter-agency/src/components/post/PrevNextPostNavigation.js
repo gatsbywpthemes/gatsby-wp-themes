@@ -14,7 +14,7 @@ const LinkButton = ({ className, ...props }) => {
     />
   )
 }
-const renderPreviousLink = ({ prev }) => {
+const renderPreviousLink = (prev) => {
   let previousLink = null
   if (!prev) {
     return (
@@ -40,7 +40,7 @@ const renderPreviousLink = ({ prev }) => {
   )
 }
 
-const renderNextLink = ({ next }) => {
+const renderNextLink = (next) => {
   if (next) {
     return (
       <div className="flex items-center group">
@@ -63,11 +63,11 @@ const renderNextLink = ({ next }) => {
   }
 }
 
-export const PrevNextPostNavigation = ({ ctx }) => {
+export const PrevNextPostNavigation = ({ prev, next, className = "" }) => {
   return (
-    <nav className="flex justify-between mt-16">
-      {renderPreviousLink(ctx)}
-      {renderNextLink(ctx)}
+    <nav className={`flex justify-between mt-16 ${className}`}>
+      {renderPreviousLink(prev)}
+      {renderNextLink(next)}
     </nav>
   )
 }
