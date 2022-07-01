@@ -3,12 +3,13 @@ import { graphql, Link } from "gatsby"
 import { Layout } from "~/components/Layout"
 import { PageTitle, Image } from "~/components/ui-components"
 import { IoAddSharp as PlusIcon } from "react-icons/io5"
+import { Pagination } from "~/components/archive/Pagination"
 
 const Projects = ({ data, pageContext }) => {
   const projects = data.allWpProject.nodes
   return (
     <Layout>
-      <PageTitle title="projects" />
+      <PageTitle title="projects" className="pb-5" />
       <div className="-mx-10">
         {projects.map((project, index) => {
           const {
@@ -20,14 +21,8 @@ const Projects = ({ data, pageContext }) => {
           return (
             <div
               key={index}
-              className="items-center md:flex even:flex-row-reverse"
+              className="items-center md:flex odd:flex-row-reverse"
             >
-              <Link to={uri} className="relative flex-1">
-                <Image img={featuredImage.node} className="relative aspect-1" />
-                <div className="absolute inset-0 flex items-center justify-center transition duration-500 bg-opacity-75 opacity-0 overlay bg-highlight hover:opacity-100">
-                  <PlusIcon className="text-white transition duration-1000 text-7xl hover:scale-150" />
-                </div>
-              </Link>
               <div className="flex-1">
                 <div className="p-10 space-y-3">
                   <h1>{title}</h1>
@@ -44,10 +39,17 @@ const Projects = ({ data, pageContext }) => {
                   )}
                 </div>
               </div>
+              <Link to={uri} className="relative flex-1">
+                <Image img={featuredImage.node} className="relative aspect-1" />
+                <div className="absolute inset-0 flex items-center justify-center transition duration-500 bg-opacity-75 opacity-0 overlay bg-highlight hover:opacity-100">
+                  <PlusIcon className="text-white transition duration-1000 text-7xl hover:scale-150" />
+                </div>
+              </Link>
             </div>
           )
         })}
       </div>
+      <Pagination ctx={pageContext} />
     </Layout>
   )
 }

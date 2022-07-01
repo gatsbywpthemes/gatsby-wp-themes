@@ -4,8 +4,6 @@ const projectsTemplate = path.resolve(`./src/templates/Projects.js`)
 const projectTemplate = path.resolve(`./src/templates/Project.js`)
 const PageSeoFromWP = require(`@gatsbywpthemes/gatsby-theme-wp-data/utils/seo/pageSeoFromWP`)
 
-// const gql = require("fake-tag")
-
 const GET_PROJECTS = `
   query ($limit: Int) {
     allWpProject(limit: $limit, sort: { order: DESC, fields: date }) {
@@ -43,13 +41,13 @@ module.exports = async ({ actions, graphql }) => {
     })
   })
 
-  // Create a blog page containing all "posts" and paginate.
+  // Create a projects page containing all "projects" and paginate.
 
   paginate({
     createPage,
     pathPrefix: "/projects",
     component: projectsTemplate,
     items: projects,
-    itemsPerPage: 12,
+    itemsPerPage: 4,
   })
 }
