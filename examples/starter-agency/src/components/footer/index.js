@@ -39,7 +39,7 @@ export const Footer = () => {
 
   return (
     <footer className={clsx(" bg-footerBg text-footerColor")}>
-      <div className="flex flex-wrap justify-between gap-8 py-10 center-container lg:flex-nowrap">
+      <div className="flex flex-wrap justify-center gap-8 py-10 center-container lg:flex-nowrap">
         <FooterColumn className="space-y-3" title="contact">
           <div className="flex">
             <HomeIcon className="mr-4 text-3xl" />
@@ -57,6 +57,10 @@ export const Footer = () => {
         </FooterColumn>
         <FooterColumn title="legal">
           <FooterMenu location="FOOTER_MENU_2" />
+        </FooterColumn>
+
+        <FooterColumn title="posts">
+          <FooterMenu location="FOOTER_MENU_3" />
         </FooterColumn>
         <FooterColumn title="Newsletter">
           <SubscribeForm />
