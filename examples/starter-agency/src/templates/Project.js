@@ -56,16 +56,18 @@ const Project = ({ data, pageContext }) => {
               className="content-text"
               dangerouslySetInnerHTML={{ __html: projectShortDescription }}
             />
-            <div className="button-container">
-              <a
-                className="button"
-                href="http://"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit project
-              </a>
-            </div>
+            {projectUrl && (
+              <div className="button-container">
+                <a
+                  className="button"
+                  href={projectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit project
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

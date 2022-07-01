@@ -80,7 +80,6 @@ const SubmenuH = ({ menuItem }) => {
 }
 
 export const Submenu = ({ menuItem, orientation }) => {
-  // console.log({ menuItem })
   return orientation === "H" ? (
     <SubmenuH menuItem={menuItem} />
   ) : (

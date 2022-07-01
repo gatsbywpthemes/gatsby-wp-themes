@@ -30,7 +30,6 @@ export const GalleryBlock = ({
           <LightboxWrapper>
             {gallery.map((img, index) => {
               const { altText } = img;
-              console.log(img);
               return (
                 <div className="gallery-item-container">
                   <Image

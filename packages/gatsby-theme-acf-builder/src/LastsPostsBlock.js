@@ -31,7 +31,6 @@ export const LastsPostsBlock = ({
   `);
 
   const posts = data.allWpPost?.nodes;
-  // const defaultImage = data.wp.themeOptions.defaultImages.postImage;
   const { postDefaultImage } = useDefaultImages();
 
   return (
