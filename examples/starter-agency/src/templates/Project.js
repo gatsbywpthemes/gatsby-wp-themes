@@ -9,7 +9,6 @@ import { useSeoGeneral } from "~/lib/hooks/useSeoGeneral"
 import { PrevNextPostNavigation } from "~/components/post/PrevNextPostNavigation"
 
 const Project = ({ data, pageContext }) => {
-  console.log("ctx", pageContext)
   const { wpProject } = data
   const {
     title,
