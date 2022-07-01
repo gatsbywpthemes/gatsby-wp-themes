@@ -31,7 +31,7 @@ export const GalleryBlock = ({
             {gallery.map((img, index) => {
               const { altText } = img;
               return (
-                <div className="gallery-item-container">
+                <div className="gallery-item-container" key={index}>
                   <Image
                     key={index}
                     img={img}
