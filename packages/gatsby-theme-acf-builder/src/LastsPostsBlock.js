@@ -17,6 +17,7 @@ export const LastsPostsBlock = ({
     query {
       allWpPost(limit: 6) {
         nodes {
+          id
           uri
           title
           excerpt

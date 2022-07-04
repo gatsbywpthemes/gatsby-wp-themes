@@ -54,7 +54,7 @@ export const PostEntry = ({ post, ctx, ...props }) => {
             className="border-4 border-white rounded-full"
           />
         </div>
-        <h1 className="mb-3 text-center">{post.title}</h1>
+        <h1 className="mb-3 text-center">{title}</h1>
         <div className="flex justify-center mb-10 text-neutral-600">
           <div>
             <Link to={authorUri} className="hover:text-highlight">
