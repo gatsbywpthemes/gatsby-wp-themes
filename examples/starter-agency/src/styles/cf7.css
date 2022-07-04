@@ -1,0 +1,63 @@
+.contact-form {
+  @apply w-full max-w-md p-10 mx-auto mb-10 rounded-lg shadow-lg;
+  input {
+    &[type="email"],
+    &[type="text"],
+    &[type="url"],
+    &[type="tel"],
+    &[type="number"] {
+      @apply w-full styled-input;
+    }
+    &[type="range"] {
+      @apply w-full;
+    }
+    &[type="file"] {
+      @apply py-3;
+    }
+    &[type="radio"],
+    &[type="checkbox"] {
+      @apply my-2 mr-1 text-highlight;
+    }
+    &[type="date"] {
+    }
+  }
+  .form-field {
+    @apply mb-4;
+    &.form-field-text {
+    }
+    &.form-field-email {
+    }
+    &.form-field-date {
+      input {
+        @apply w-1/2 ml-5;
+      }
+    }
+    &.form-field-file {
+      input {
+        @apply mx-3;
+      }
+    }
+    &.form-field-checkbox,
+    &.form-field-radio {
+      label {
+        @apply flex items-center;
+      }
+    }
+  }
+  textarea {
+    @apply w-full styled-input;
+  }
+  .submit-button-container {
+    @apply flex justify-end mt-5;
+  }
+  .submit-button {
+    @apply bg-black btn hover:bg-highlight;
+  }
+  .error,
+  .danger {
+    @apply p-5 text-center text-red-500 bg-red-200 rounded-lg;
+  }
+  .success {
+    @apply p-5 text-center text-green-800 bg-green-100 rounded-lg;
+  }
+}

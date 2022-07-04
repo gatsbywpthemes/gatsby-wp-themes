@@ -15,6 +15,7 @@
 @import "acfBlocks/team-block.css";
 @import "acfBlocks/pricing-block.css";
 @import "acfBlocks/testimonials-block.css";
+@import "cf7.css";
 
 @layer base {
   /* Menu */
