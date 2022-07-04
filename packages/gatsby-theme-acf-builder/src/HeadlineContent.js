@@ -1,5 +1,6 @@
-import React from "react"
-import { Heading } from "./ui-components"
+import React from "react";
+import { Heading } from "./ui-components";
+import { ParsedContent } from "./utils/ParsedContent";
 
 export const HeadlineContent = ({
   headline,
@@ -18,11 +19,10 @@ export const HeadlineContent = ({
         />
       )}
       {content && (
-        <div
-          dangerouslySetInnerHTML={{ __html: content }}
-          className="content-text"
-        />
+        <div className="content-text">
+          <ParsedContent content={content} />
+        </div>
       )}
     </div>
-  )
-}
+  );
+};

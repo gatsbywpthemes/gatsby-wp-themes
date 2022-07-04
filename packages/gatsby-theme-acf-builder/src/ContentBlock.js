@@ -1,6 +1,7 @@
 import React from "react";
 import { Heading, Button } from "./ui-components";
 import { SubscribeForm } from "./SubscribeForm";
+import { ParsedContent } from "./utils/ParsedContent";
 
 export const ContentBlock = ({
   cssClass,
@@ -28,10 +29,9 @@ export const ContentBlock = ({
           />
         )}
         {content && (
-          <div
-            dangerouslySetInnerHTML={{ __html: content }}
-            className="content-text"
-          />
+          <div className="content-text">
+            <ParsedContent content={content} />
+          </div>
         )}
         {hasSubscribe && (
           <div className="subscribe-container">

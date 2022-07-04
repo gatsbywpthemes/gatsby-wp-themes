@@ -2,6 +2,7 @@ import React from "react";
 import { Heading, Button, Image } from "./ui-components";
 import { SubscribeForm } from "./SubscribeForm";
 import { HeadlineContent } from "./HeadlineContent";
+import { ParsedContent } from "./utils/ParsedContent";
 
 export const SectionsBlock = ({
   cssClass,
@@ -45,10 +46,9 @@ export const SectionsBlock = ({
                   />
                 )}
                 {content && (
-                  <p
-                    className="content-text"
-                    dangerouslySetInnerHTML={{ __html: content }}
-                  />
+                  <div className="content-text">
+                    <ParsedContent content={content} />
+                  </div>
                 )}
                 {hasSubscribe && (
                   <div className="subscribe-container">

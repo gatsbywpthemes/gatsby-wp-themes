@@ -55,9 +55,15 @@
   }
   .error,
   .danger {
-    @apply p-5 text-center text-red-500 bg-red-200 rounded-lg;
+    @apply max-w-md p-5 mx-auto text-center text-red-500 bg-red-200 rounded-lg;
+    p {
+      @apply mb-0;
+    }
   }
-  .success {
-    @apply p-5 text-center text-green-800 bg-green-100 rounded-lg;
+}
+.wpcf7 .success {
+  @apply max-w-md p-5 mx-auto mt-10 font-semibold text-center text-green-800 bg-green-100 rounded-lg;
+  p {
+    @apply mb-0;
   }
 }
