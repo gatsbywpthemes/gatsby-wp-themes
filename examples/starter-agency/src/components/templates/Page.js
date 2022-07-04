@@ -12,12 +12,14 @@ const Page = ({ page, ctx }) => {
     content,
     uri,
     headlesswp,
+    template,
     layoutBlocks: { blocks },
   } = page
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp?.original
-  const pageTemplate = headlesswp?.pageTemplate || "default"
+  const pageTemplate = template?.templateName?.toLowerCase() || "default"
+  console.log(pageTemplate)
 
   const skipTitle = headlesswp?.skipTitle || false
 
