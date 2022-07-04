@@ -1,5 +1,4 @@
 .lasts-posts-block {
-  @apply py-16 md:py-28;
   .posts {
     @apply center-container;
     @apply grid gap-10 sm:grid-cols-2 xl:grid-cols-3;

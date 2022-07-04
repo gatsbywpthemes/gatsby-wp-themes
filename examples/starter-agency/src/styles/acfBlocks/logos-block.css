@@ -1,9 +1,4 @@
 .logos-block {
-  @apply py-16 md:py-28;
-  /* &.dark-section {
-    @apply bg-neutral-100;
-  } */
-
   .logos-container {
     @apply flex flex-wrap justify-center gap-5 center-container;
     .logo {

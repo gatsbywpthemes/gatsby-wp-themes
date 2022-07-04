@@ -1,5 +1,4 @@
 .projects-block {
-  @apply py-16 md:py-28;
   .projects {
     /* @apply center-container; */
     @apply grid px-[2px] gap-0.5 lg:grid-cols-3 sm:grid-cols-2;

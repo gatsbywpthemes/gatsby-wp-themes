@@ -1,5 +1,4 @@
 .features-block {
-  @apply py-16 md:py-28;
   &.services {
     .features-container {
       @apply center-container;
