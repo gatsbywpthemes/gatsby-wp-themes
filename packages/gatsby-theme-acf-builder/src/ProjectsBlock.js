@@ -1,7 +1,8 @@
 import React from "react";
 import { HeadlineContent } from "./HeadlineContent";
 import { Image } from "./ui-components";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link, graphql } from "gatsby";
+import { useDefaultImages } from "./hooks/useDefaultImages";
 
 export const ProjectsBlock = ({
   cssClass,
@@ -13,21 +14,7 @@ export const ProjectsBlock = ({
   allProjects,
   ...props
 }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      wp {
-        themeOptions {
-          defaultImages {
-            projectImage {
-              ...basicImage
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const defaultImage = data.wp.themeOptions.defaultImages.projectImage;
+  const { projectDefaultImage } = useDefaultImages();
   return (
     <section
       className={`projects-block ${cssClass ? cssClass : ""}`}
@@ -51,7 +38,9 @@ export const ProjectsBlock = ({
             featuredImage,
             tags,
           } = project;
-          const image = featuredImage ? featuredImage.node : defaultImage;
+          const image = featuredImage
+            ? featuredImage.node
+            : projectDefaultImage;
           return (
             <div className="project" key={id}>
               <Link to={uri}>

@@ -7,7 +7,7 @@ const DEFAULT_OPTIONS = {
   pathPrefix: '',
   paginationPrefix: 'page',
   addWordPressComments: true,
-  addWordPressSearch: false,
+  addWordPressSearch: true,
   gaTrackingId: null,
   gaOptions: {},
   googleTagManagerId: null,

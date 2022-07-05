@@ -29,26 +29,24 @@ export const GalleryBlock = ({
         <div className="gallery-items">
           <LightboxWrapper>
             {gallery.map((img, index) => {
-              const { caption, description } = img;
+              const { altText } = img;
               return (
-                <div className="gallery-item-container">
+                <div className="gallery-item-container" key={index}>
                   <Image
                     key={index}
                     img={img}
                     className="gallery-item"
                     imgClassName="img"
                   />
-                  {caption && (
-                    <div
-                      className="caption"
-                      dangerouslySetInnerHTML={{ __html: caption }}
-                    />
-                  )}
-                  {description && (
-                    <div
-                      className="description"
-                      dangerouslySetInnerHTML={{ __html: description }}
-                    />
+                  {altText && (
+                    <div className="image-overlay">
+                      {altText && (
+                        <div
+                          className="alt-text"
+                          dangerouslySetInnerHTML={{ __html: altText }}
+                        />
+                      )}
+                    </div>
                   )}
                 </div>
               );

@@ -1,18 +1,8 @@
 const colors = require("tailwindcss/colors")
 const rem = (px) => px / 16 + "rem"
 
-const { slate, red, teal, purple } = colors
+const { slate, teal } = colors
 //palette
-// const light = slate[100],
-//   ultraLight = slate[50],
-//   dark = slate[800],
-//   ultraDark = slate[900],
-//   primary = teal[400],
-//   secondary = purple[500],
-//   highlight = red[500],
-//   mutted = slate[200],
-//   bg = ultraLight,
-//   text = ultraDark
 const primary = "black"
 const light = "white"
 const dark = "black"
@@ -21,6 +11,7 @@ const highlight = "#CC0063"
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  safelist: ["md:py-20", "py-10", "py-18", "py-16", "md:py-28"],
   darkMode: "class",
   theme: {
     extend: {
@@ -33,7 +24,7 @@ module.exports = {
       },
       fontFamily: {
         body: "Mulish, sans-serif",
-        heading: "Inter, sans-serif",
+        heading: "Roboto, sans-serif",
       },
       maxWidth: {
         xl: rem(1280),
@@ -73,12 +64,12 @@ module.exports = {
         /* footer */
         footerBg: "black",
         footerColor: "white",
-        // /* search */
-        // searchBg: "white",
-        // searchResultsHeaderBg: ultraDark,
-        // searchResultsHeaderColor: primary,
-        // searchResultsBg: bg,
-        // searchResultsColor: text,
+        /* search */
+        searchBg: "white",
+        searchResultsHeaderBg: highlight,
+        searchResultsHeaderColor: "white",
+        searchResultsBg: light,
+        searchResultsColor: dark,
         /* menu */
         mobileMenuBg: primary,
         mobileMenuColor: light,

@@ -7,3 +7,4 @@ export const ThankYou = ({ message }) => {
     </div>
   )
 }
+https://gatsbywpthemes.com/

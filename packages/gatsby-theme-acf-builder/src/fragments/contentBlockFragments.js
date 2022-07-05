@@ -7,6 +7,9 @@ export const fragment = graphql`
     headline
     headlineTag
     content
+    image {
+      ...basicImage
+    }
     button {
       ...button
     }
@@ -17,6 +20,9 @@ export const fragment = graphql`
     headline
     headlineTag
     content
+    image {
+      ...basicImage
+    }
     button {
       ...button
     }
@@ -27,6 +33,9 @@ export const fragment = graphql`
     headline
     headlineTag
     content
+    image {
+      ...basicImage
+    }
     button {
       ...button
     }

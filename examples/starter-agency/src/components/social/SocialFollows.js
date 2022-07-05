@@ -27,7 +27,11 @@ import {
   FaYoutube,
 } from "react-icons/fa"
 
-export const SocialFollows = ({ iconClassName = "", ...props }) => {
+export const SocialFollows = ({
+  iconClassName = "",
+  className = "",
+  ...props
+}) => {
   const supportedIcons = [
     "behance",
     "codepen",
@@ -84,7 +88,10 @@ export const SocialFollows = ({ iconClassName = "", ...props }) => {
   const { socialFollowLinks: social } = useThemeOptions()
 
   return (
-    <div {...props}>
+    <div
+      className={`flex justify-center space-x-5 widget widget-socialFollow ${className}`}
+      {...props}
+    >
       {social &&
         social.map(({ name, url }) => {
           const index = supportedIcons.indexOf(name.toLowerCase())

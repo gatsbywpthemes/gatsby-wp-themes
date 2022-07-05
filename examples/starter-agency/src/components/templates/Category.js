@@ -1,7 +1,9 @@
 import React from "react"
 import { Layout } from "~/components/Layout"
-import { Link } from "gatsby"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
+import { PostsList } from "~/components/archive/PostsList"
+import { Pagination } from "~/components/archive/Pagination"
+import { PageTitle } from "~/components/ui-components"
 
 const Category = ({ category, ctx }) => {
   const { name, posts, uri, description } = category
@@ -16,14 +18,9 @@ const Category = ({ category, ctx }) => {
         seo={seo}
         uri={uri}
       />
-      <h1>Posts for: {name}</h1>
-      {posts?.nodes?.map((post) => {
-        return (
-          <h2 key={post.id}>
-            <Link to={`${post.uri}`}>{post.title}</Link>
-          </h2>
-        )
-      })}
+      <PageTitle title={`posts for: ${name}`} className="pb-5" />
+      <PostsList posts={posts} />
+      <Pagination ctx={ctx} />
     </Layout>
   )
 }

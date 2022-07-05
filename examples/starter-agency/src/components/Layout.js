@@ -7,7 +7,7 @@ import clsx from "clsx"
 
 export const Layout = ({ children, page, type = "page", ...props }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ""
-  const pageTemplate = page?.headlesswp?.pageTemplate
+  const pageTemplate = page?.template?.templateName?.toLowerCase() || "default"
 
   const fullWidthClass = pageTemplate === "full width" ? "fullWidth" : ""
   const devMode = process.env.NODE_ENV === "development"
@@ -30,6 +30,7 @@ export const Layout = ({ children, page, type = "page", ...props }) => {
         className={`${
           pageTemplate !== "full width" ? "py-16 center-container" : ""
         }`}
+        {...props}
       >
         {children}
       </main>

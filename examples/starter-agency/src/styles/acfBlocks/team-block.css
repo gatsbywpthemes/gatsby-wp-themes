@@ -1,0 +1,40 @@
+.team-block {
+  .team-container {
+    @apply grid gap-16 lg:grid-cols-2;
+  }
+  .team-member {
+    @appply max-w-[300px];
+    @apply p-10 shadow-lg rounded-xl bg-neutral-100;
+    .member-pic-container {
+      @apply flex justify-center;
+    }
+    .member-pic {
+      @apply mb-5 rounded-full aspect-1 max-w-[250px] shadow-xl;
+      picture {
+      }
+      img {
+        @apply rounded-full;
+      }
+    }
+    .social-container {
+      @apply flex justify-center gap-4 mt-5;
+    }
+    .social-icon {
+      @apply transition duration-500 opacity-50 w-7 hover:opacity-80;
+    }
+    .member-name,
+    .position {
+      @apply text-center;
+    }
+    .position {
+      @apply mb-5 text-base italic font-normal text-neutral-600;
+    }
+    .member-description {
+      @apply text-center;
+    }
+    .name-position-container {
+      @apply relative;
+      @apply after:w-10 after:h-[2px] after:bg-highlight after:absolute after:inset-x-1/2 after:-bottom-3;
+    }
+  }
+}

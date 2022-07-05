@@ -7,15 +7,15 @@
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
     "@gatsbywpthemes/gatsby-theme-blog-data": "*",
-    "gatsby": "^4.16.0",
+    "gatsby": "^4.17.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "gatsby-plugin-sass": "^5.16.0",
+    "gatsby-plugin-sass": "^5.17.0",
     "react-slick": "^0.29.0",
     "react-tippy": "^1.4.0",
-    "sass": "^1.52.1",
+    "sass": "^1.53.0",
     "simple-react-lightbox": "^3.6.9-0"
   }
 }

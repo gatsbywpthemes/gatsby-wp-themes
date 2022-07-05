@@ -1,9 +1,11 @@
-import React from "react"
+import React from "react";
 
 export const SubmitButton = ({ disabled, children }) => {
   return (
-    <button className="submit-button" type="submit" disabled={disabled}>
-      {children}
-    </button>
-  )
-}
+    <div className="submit-button-container">
+      <button className="submit-button" type="submit" disabled={disabled}>
+        {children}
+      </button>
+    </div>
+  );
+};

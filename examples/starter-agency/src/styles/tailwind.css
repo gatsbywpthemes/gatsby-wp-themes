@@ -9,6 +9,13 @@
 @import "acfBlocks/spacer-block.css";
 @import "acfBlocks/logos-block.css";
 @import "acfBlocks/lasts-posts-block.css";
+@import "acfBlocks/gallery-block.css";
+@import "acfBlocks/sections-block.css";
+@import "acfBlocks/accordion-block.css";
+@import "acfBlocks/team-block.css";
+@import "acfBlocks/pricing-block.css";
+@import "acfBlocks/testimonials-block.css";
+@import "cf7.css";
 
 @layer base {
   /* Menu */
@@ -65,7 +72,7 @@
   /* Components */
 
   .center-container {
-    @apply px-5 mx-auto md:px-6 lg:px-10 w-[100%];
+    @apply px-5  md:px-6 mx-auto lg:px-10  w-[100%];
   }
   /* .card {
     @apply rounded-lg shadow-lg bg-cardBg dark:bg-dark-cardBg;
@@ -105,13 +112,17 @@ section {
     }
   }
   > .intro {
-    @apply mb-16 center-container;
+    @apply mb-16;
+    .fullWidth &,
+    .w-full & {
+      @apply center-container;
+    }
     .spacer {
-      @apply h-[4px] w-[100px] bg-highlight my-10;
+      @apply h-[1px] w-[50px] bg-neutral-700 my-10;
     }
 
     .headline {
-      @apply mb-4 text-5xl;
+      @apply mb-4 text-4xl md:text-5xl;
     }
     .content-text {
       @apply max-w-[500px];
@@ -129,4 +140,9 @@ footer {
       @apply btn btn-small !bg-highlight border-2 border-highlight hover:!bg-black;
     }
   }
+}
+
+/* WordPress */
+.wp {
+  @apply py-20;
 }

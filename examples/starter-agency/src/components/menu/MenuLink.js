@@ -2,10 +2,11 @@ import React from "react"
 import slashes from "remove-trailing-slash"
 import { createLocalLink } from "~/utils"
 import { Link } from "gatsby"
-
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 
-export const MenuLink = ({ menuItem, ...props }) => {
+export const MenuLink = React.forwardRef((allProps, ref) => {
+  let { menuItem, ...props } = allProps
+
   const { wordPressUrl } = useThemeOptions()
   let url = menuItem.url
 
@@ -18,7 +19,7 @@ export const MenuLink = ({ menuItem, ...props }) => {
         ? { target: "_blank", rel: "noopener noreferrer" }
         : {}
     return (
-      <a href={menuItem.url} {...targetRelAttrs} {...props}>
+      <a ref={ref} href={menuItem.url} {...targetRelAttrs} {...props}>
         {menuItem.label}
       </a>
     )
@@ -27,11 +28,13 @@ export const MenuLink = ({ menuItem, ...props }) => {
       menuItem.url === wordPressUrl ? (
         <Link
           to="/"
+          ref={ref}
           dangerouslySetInnerHTML={{ __html: menuItem.label }}
           {...props}
         />
       ) : (
         <Link
+          ref={ref}
           to={createLocalLink(menuItem.url, slashes(wordPressUrl))}
           dangerouslySetInnerHTML={{ __html: menuItem.label }}
           {...props}
@@ -41,4 +44,4 @@ export const MenuLink = ({ menuItem, ...props }) => {
       menuItem.label
     )
   }
-}
+})

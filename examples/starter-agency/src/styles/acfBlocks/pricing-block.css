@@ -1,0 +1,48 @@
+.pricing-block {
+  .headline {
+  }
+  .content-text {
+  }
+}
+
+.tables-container {
+  @apply gap-7 lg:flex;
+}
+.pricing-table {
+  @apply lg:flex-1 max-w-full sm:max-w-[85%] mx-auto;
+  @apply mb-10 border p-7 border-neutral-300 rounded-xl lg:mb-0;
+
+  &.basic {
+  }
+  &.pro {
+    @apply border-4 border-highlight;
+  }
+  .title {
+    @apply inline-block mb-3 text-2xl font-bold;
+  }
+  .price {
+    @apply text-3xl font-bold uppercase;
+    @apply pb-5 mb-5 border-b border-dashed border-neutral-400;
+    span {
+      @apply text-sm font-light lowercase;
+    }
+  }
+  .features {
+    .feature-container {
+      .feature {
+        @apply inline-block py-[6px] text-base;
+        @apply relative pl-4;
+        @apply before:content-['*'] before:font-heading before:text-lg before:text-highlight before:absolute before:-left-1 before:top-2;
+      }
+    }
+  }
+  .table-body {
+    @apply flex flex-col justify-between h-[80%];
+  }
+  .button-container {
+    @apply flex justify-center mb-10 mt-7;
+    button {
+      @apply px-4 text-base bg-black btn w-[150px] hover:bg-highlight;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { HeadlineContent } from "./HeadlineContent";
 import { Image } from "./ui-components";
 import { Link, useStaticQuery, graphql } from "gatsby";
+import { useDefaultImages } from "./hooks/useDefaultImages";
 
 export const LastsPostsBlock = ({
   cssClass,
@@ -16,6 +17,7 @@ export const LastsPostsBlock = ({
     query {
       allWpPost(limit: 6) {
         nodes {
+          id
           uri
           title
           excerpt
@@ -26,20 +28,11 @@ export const LastsPostsBlock = ({
           }
         }
       }
-      wp {
-        themeOptions {
-          defaultImages {
-            postImage {
-              ...basicImage
-            }
-          }
-        }
-      }
     }
   `);
 
   const posts = data.allWpPost?.nodes;
-  const defaultImage = data.wp.themeOptions.defaultImages.postImage;
+  const { postDefaultImage } = useDefaultImages();
 
   return (
     <section
@@ -57,7 +50,8 @@ export const LastsPostsBlock = ({
       <div className="posts">
         {posts?.map((post) => {
           const { id, title, uri, excerpt, featuredImage } = post;
-          const image = featuredImage ? featuredImage.node : defaultImage;
+          const image = featuredImage ? featuredImage.node : postDefaultImage;
+
           return (
             <div className="post" key={id}>
               <Link to={uri}>

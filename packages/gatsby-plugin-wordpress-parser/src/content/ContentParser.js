@@ -1,38 +1,38 @@
-import React from "react"
-import parser from "html-react-parser"
+import React from "react";
+import parser from "html-react-parser";
 
 export default function ContentParser({ content, customFn = [] }) {
   if (typeof content === "undefined") {
     console.log(
       "ERROR: contentParser requires content parameter to be string but got undefined."
-    )
+    );
   }
 
   if (typeof content !== "string") {
-    return content
+    return content;
   }
-  if(content === ''){
-    return []
+  if (content === "") {
+    return [];
   }
 
-  customFn = Array.isArray(customFn) ? customFn : []
+  customFn = Array.isArray(customFn) ? customFn : [];
 
-  const replacementFunctions = customFn.concat([])
+  const replacementFunctions = customFn.concat([]);
 
   const firstFind = (d, args, array, index = 0) => {
     if (index < array.length - 1) {
-      return array[index](d, args) || firstFind(d, args, array, index + 1)
+      return array[index](d, args) || firstFind(d, args, array, index + 1);
     }
-    return array[index](d, args)
-  }
+    return array[index](d, args);
+  };
 
   const parserOptions = {
     replace: (domNode) => {
       return replacementFunctions.length
         ? firstFind(domNode, { parserOptions }, replacementFunctions)
-        : domNode
+        : domNode;
     },
-  }
+  };
 
-  return <>{parser(content, parserOptions)}</>
+  return <>{parser(content, parserOptions)}</>;
 }

@@ -2,20 +2,8 @@ import React from "react"
 import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { ParsedContent, ActivatePageScripts } from "~/utils"
-import {
-  ContentBlock,
-  SectionsBlock,
-  CoverBlock,
-  FeaturesBlock,
-  AccordionBlock,
-  TestimonialsBlock,
-  PricingBlock,
-  ProjectsBlock,
-  SpacerBlock,
-  LogosBlock,
-  LastsPostsBlock,
-  GalleryBlock,
-} from "@gatsbywpthemes/gatsby-theme-acf-builder/src"
+import { PageTitle } from "~/components/ui-components"
+import { PageBlocks } from "~/components/blocks/PageBlocks"
 
 const Page = ({ page, ctx }) => {
   const {
@@ -24,12 +12,14 @@ const Page = ({ page, ctx }) => {
     content,
     uri,
     headlesswp,
+    template,
     layoutBlocks: { blocks },
   } = page
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp?.original
-  const pageTemplate = headlesswp?.pageTemplate || "default"
+  const pageTemplate = template?.templateName?.toLowerCase() || "default"
+  console.log(pageTemplate)
 
   const skipTitle = headlesswp?.skipTitle || false
 
@@ -49,49 +39,17 @@ const Page = ({ page, ctx }) => {
           }
         }
       />
-      <article>
+      <article
+        className={`${pageTemplate === "default" && "max-w-lg mx-auto"}`}
+      >
         {!skipTitle && !pageTemplate.includes("full") && (
-          <h1
-            dangerouslySetInnerHTML={{ __html: title }}
-            className="mb-10 text-center"
-          />
+          <PageTitle title={title} />
         )}
         <div className="content">
           <ActivatePageScripts />
           <ParsedContent content={content} />
         </div>
-        {blocks?.length > 0 &&
-          blocks.map((block, index) => {
-            let blockRef = { ...block, key: index }
-            switch (block.__typename) {
-              case "WpPage_Layoutblocks_Blocks_ContentBlock":
-                return <ContentBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_SectionsBlock":
-                return <SectionsBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_CoverBlock":
-                return <CoverBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_FeaturesBlock":
-                return <FeaturesBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_AccordionBlock":
-                return <AccordionBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_TestimonialsBlock":
-                return <TestimonialsBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_PricingBlock":
-                return <PricingBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_ProjectsBlock":
-                return <ProjectsBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_SpacerBlock":
-                return <SpacerBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_LogosBlock":
-                return <LogosBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_LastsPostsBlock":
-                return <LastsPostsBlock {...blockRef} />
-              case "WpPage_Layoutblocks_Blocks_GalleryPostsBlock":
-                return <GalleryBlock {...blockRef} />
-              default:
-                return null
-            }
-          })}
+        <PageBlocks blocks={blocks} />
       </article>
     </Layout>
   )

@@ -42,8 +42,8 @@ export const LogosBlock = ({
           {logos.map((item, index) => {
             const { logo, url } = item;
             return (
-              <WithLink url={url}>
-                <div className="logo" key={index}>
+              <WithLink url={url} key={index}>
+                <div className="logo">
                   {logo && <Image img={logo} className="image-container" />}
                 </div>
               </WithLink>

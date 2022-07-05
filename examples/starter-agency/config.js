@@ -1,4 +1,5 @@
 const config = {
+  addWordPressSearch: true,
   // pathPrefix: "",
   layoutWidth: {
     page: "lg",
@@ -8,7 +9,7 @@ const config = {
   webfontsOptions: {
     fonts: {
       google: [
-        { family: "Inter", variants: ["400", "500", "600", "700"] },
+        { family: "Roboto", variants: ["400", "500", "600", "700"] },
         { family: "Mulish", variants: ["400", "600", "700"] },
       ],
     },

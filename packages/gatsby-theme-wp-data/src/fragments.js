@@ -12,7 +12,6 @@ export const fragments = graphql`
       templateName
     }
     headlesswp {
-      pageTemplate
       skipTitle
     }
 

@@ -3,7 +3,7 @@ import { Menu } from "~/components/menu"
 // import { ColorSwitch } from "./ColorSwitch"
 import { Branding } from "./Branding"
 import { Slidemenu } from "./SlideMenu"
-// import { SearchModal } from "~/components/search/SearchModal"
+import { SearchModal } from "~/components/search/SearchModal"
 import {
   useThemeOptions,
   useSiteSettings,
@@ -28,7 +28,7 @@ export const Header = ({ ...props }) => {
         <div className={"flex justify-between center-container items-center"}>
           <div className="flex space-x-3">
             <Branding title={siteSettings.title} />
-            {/* {search && <SearchModal />} */}
+            <SearchModal />
           </div>
           <div className="flex items-center space-x-5">
             <Menu orientation="H" className="hidden md:flex" />

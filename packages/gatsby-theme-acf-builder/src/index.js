@@ -10,3 +10,4 @@ export * from "./ProjectsBlock";
 export * from "./SectionsBlock";
 export * from "./SpacerBlock";
 export * from "./TestimonialsBlock";
+export * from "./TeamBlock";

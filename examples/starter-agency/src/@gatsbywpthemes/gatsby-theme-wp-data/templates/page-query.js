@@ -26,6 +26,7 @@ export const pageQuery = graphql`
           ...spacerBlock
           ...logosBlock
           ...lastsPostsBlock
+          ...teamBlock
         }
       }
       template {

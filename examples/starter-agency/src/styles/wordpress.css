@@ -3,10 +3,10 @@
   @apply mx-auto;
 }
 
-.content
+/* .content
   > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.content) {
   @apply max-w-4xl;
-}
+} */
 [class*="__inner-container"] > [style*="width: 100vw"],
 [class*="__inner-container"] > [style*="width:100vw"] {
   @apply !max-w-full;

@@ -7,7 +7,8 @@ export const fragment = graphql`
     content
     headline
     headlineTag
-    quotesItems {
+    slidesPerView
+    testimonials {
       author
       position
       content
@@ -22,7 +23,8 @@ export const fragment = graphql`
     content
     headline
     headlineTag
-    quotesItems {
+    slidesPerView
+    testimonials {
       author
       position
       content
@@ -37,7 +39,8 @@ export const fragment = graphql`
     content
     headline
     headlineTag
-    quotesItems {
+    slidesPerView
+    testimonials {
       author
       position
       content

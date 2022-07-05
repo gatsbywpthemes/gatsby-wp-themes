@@ -1,6 +1,8 @@
 import React from "react"
 import { Layout } from "~/components/Layout"
-import { Link } from "gatsby"
+import { PostsList } from "~/components/archive/PostsList"
+import { Pagination } from "~/components/archive/Pagination"
+import { PageTitle } from "~/components/ui-components"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
 const Tag = ({ tag, ctx }) => {
@@ -16,14 +18,9 @@ const Tag = ({ tag, ctx }) => {
         yoastSeo={yoastSeo}
         seo={seo}
       />
-      <h1>Posts for: {name}</h1>
-      {posts?.nodes?.map((post) => {
-        return (
-          <h2 key={post.id}>
-            <Link to={`${post.uri}`}>{post.title}</Link>
-          </h2>
-        )
-      })}
+      <PageTitle title={`posts for: ${name}`} className="pb-5" />
+      <PostsList posts={posts} />
+      <Pagination ctx={ctx} />
     </Layout>
   )
 }
