@@ -11,7 +11,15 @@ const highlight = "#CC0063"
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  safelist: ["md:py-20", "py-10", "py-18", "py-16", "md:py-28"],
+  safelist: [
+    "md:py-20",
+    "py-10",
+    "py-18",
+    "py-16",
+    "md:py-28",
+    "pt-16",
+    "md:pt-28",
+  ],
   darkMode: "class",
   theme: {
     extend: {

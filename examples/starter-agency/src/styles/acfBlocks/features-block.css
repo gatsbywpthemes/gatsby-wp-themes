@@ -7,7 +7,7 @@
     .feature {
       @apply space-y-4;
       img {
-        @apply max-w-[75px];
+        @apply max-w-[60px];
       }
       .intro {
         .headline {
