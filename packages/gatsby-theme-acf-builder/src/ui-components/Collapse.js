@@ -1,13 +1,10 @@
-import React, { useState } from "react"
-import Collapsible from "@kunukn/react-collapse"
-import {
-  PlusIcon as ClosedIcon,
-  MinusIcon as OpenIcon,
-} from "@heroicons/react/outline"
+import React, { useState } from "react";
+import Collapsible from "@kunukn/react-collapse";
+import { HiPlus as ClosedIcon, HiMinus as OpenIcon } from "react-icons/hi";
 
 export const Collapse = ({ trigger, children, className, ...props }) => {
-  const [open, setOpen] = useState(false)
-  const iconStyle = "w-5"
+  const [open, setOpen] = useState(false);
+  const iconStyle = "w-5";
 
   return (
     <div {...props}>
@@ -30,5 +27,5 @@ export const Collapse = ({ trigger, children, className, ...props }) => {
         {children}
       </Collapsible>
     </div>
-  )
-}
+  );
+};

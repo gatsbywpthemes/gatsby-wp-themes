@@ -1,1 +1,1 @@
-# @gatsbywpthemes/gatsby-theme-blog-data
+# @gatsbywpthemes/gatsby-theme-wp-data

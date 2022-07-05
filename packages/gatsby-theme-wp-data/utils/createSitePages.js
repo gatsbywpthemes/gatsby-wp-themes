@@ -29,7 +29,7 @@ module.exports = async ({ actions, graphql }, options) => {
       }
       if (options.pageCreateDebugOutput) {
         console.log(
-          `[@gatsbywpthemes/gatsby-theme-blog-data] create page: ${uri}`
+          `[@gatsbywpthemes/gatsby-theme-wp-data] create page: ${uri}`
         )
       }
       createPage({

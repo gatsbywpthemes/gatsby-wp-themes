@@ -36,11 +36,11 @@ const publishedPackages = [
     srcPath: "examples/starter-ginger",
     packagePath: "pro-themes-starters/ginger-theme-starters/starter-ginger",
   },
-  // {
-  //   name: "starter-ginger-dev",
-  //   srcPath: "examples/starter-ginger-dev",
-  //   packagePath: "pro-themes-starters/ginger-theme-starters/starter-ginger-dev",
-  // },
+  {
+    name: "starter-agency",
+    srcPath: "examples/starter-agency",
+    packagePath: "pro-themes-starters/agency-theme-starters/starter-agency",
+  },
   {
     name: "starter-ginger-kitchen",
     srcPath: "examples/starter-ginger-kitchen",
@@ -59,6 +59,7 @@ const subfoldersToCreate = [
   "base-theme-starters",
   "pro-themes-starters",
   "pro-themes-starters/ginger-theme-starters",
+  "pro-themes-starters/agency-theme-starters",
   // add here when new starters subfolder is added
 ]
   .map((el) => `user-starters/${el}`)

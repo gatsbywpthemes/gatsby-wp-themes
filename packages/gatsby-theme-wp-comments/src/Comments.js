@@ -1,11 +1,6 @@
-import React from "react"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
-import { WordPressComments } from "./WordPressComments"
+import React from "react";
+import { WordPressComments } from "./WordPressComments";
 
 export const Comments = ({ post }) => {
-  const { addWordPressComments } = useThemeOptions()
-  return (
-    !!addWordPressComments &&
-    post.commentStatus === "open" && <WordPressComments post={post} />
-  )
-}
+  return post.commentStatus === "open" && <WordPressComments post={post} />;
+};

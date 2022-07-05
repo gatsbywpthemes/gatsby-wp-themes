@@ -7,7 +7,7 @@ const NotFoundPage = () => {
     <Layout location="page" page="404">
       <Seo title="404: Not found" />
       <article className="text-center">
-        <h1 className="inline-block px-10 py-6 mb-10 border-8 border-double border-accentColor dark:border-dark-accentColor">
+        <h1 className="inline-block px-10 py-6 mb-10 border-8 border-double border-higlight">
           404
         </h1>
         <div className="text-sm font-bold tracking-wider uppercase entry-content">

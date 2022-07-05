@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { HeadlineContent } from "./HeadlineContent";
 import Collapsible from "@kunukn/react-collapse";
 import {
-  ChevronRightIcon as ClosedIcon,
-  ChevronDownIcon as OpenIcon,
-} from "@heroicons/react/outline";
+  HiChevronRight as ClosedIcon,
+  HiChevronDown as OpenIcon,
+} from "react-icons/hi";
 
 export const AccordionBlock = ({
   cssClass,
