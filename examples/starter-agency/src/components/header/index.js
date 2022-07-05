@@ -7,7 +7,7 @@ import { SearchModal } from "~/components/search/SearchModal"
 import {
   useThemeOptions,
   useSiteSettings,
-} from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+} from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import Headroom from "react-headroom"
 import clsx from "clsx"
 

@@ -2,7 +2,7 @@ import React from "react"
 import { Link, withPrefix } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import useDarkMode from "use-dark-mode"
-import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 
 export const Logo = () => {
   const { logo, darkModeLogo } = useThemeOptions()
