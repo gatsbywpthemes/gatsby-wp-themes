@@ -3,6 +3,7 @@ import { Layout } from "~/components/Layout"
 import { Comments } from "@gatsbywpthemes/gatsby-theme-wp-comments/src"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { PostEntry } from "~/components/post/PostEntry"
+import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 
 const Post = ({ post, ctx }) => {
   const {
@@ -17,6 +18,7 @@ const Post = ({ post, ctx }) => {
   } = post
 
   const { avatar: authorPic, name: authorName, uri: authorUri } = author.node
+  const { addWordPressComments } = useThemeOptions()
 
   const featuredImage =
     post.featuredImage?.node.localFile.childImageSharp?.original
@@ -36,7 +38,7 @@ const Post = ({ post, ctx }) => {
         }
       />
       <PostEntry post={post} ctx={ctx} />
-      <Comments post={post} />
+      {addWordPressComments && <Comments post={post} />}
     </Layout>
   )
 }

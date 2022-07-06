@@ -12,7 +12,7 @@ const Post = ({ post, ctx }) => {
   const { widgetAreas } = useThemeOptions()
 
   const pageTemplate = headlesswp?.pageTemplate || "default"
-  const { sidebarWidgets } = widgetAreas
+  const { sidebarWidgets, addWordPressComments } = widgetAreas
 
   const hasSidebar = pageTemplate.includes("sidebar") && sidebarWidgets
 
@@ -63,7 +63,7 @@ const Post = ({ post, ctx }) => {
           </div>
         )}
       </div>
-      <Comments post={post} />
+      {addWordPressComments && <Comments post={post} />}
     </Layout>
   )
 }

@@ -9,7 +9,7 @@ import clsx from "clsx"
 
 const Post = ({ post, ctx }) => {
   const { title, uri, headlesswp } = post
-  const { widgetAreas } = useThemeOptions()
+  const { widgetAreas, addWordPressComments } = useThemeOptions()
 
   const pageTemplate = headlesswp?.pageTemplate || "default"
   const { sidebarWidgets } = widgetAreas
@@ -63,7 +63,7 @@ const Post = ({ post, ctx }) => {
           </div>
         )}
       </div>
-      <Comments post={post} />
+      {addWordPressComments && <Comments post={post} />}
     </Layout>
   )
 }

@@ -65,7 +65,7 @@ const Post = ({ post, ctx }) => {
           </div>
         )}
       </div>
-      <Comments post={post} />
+      {addWordPressComments && <Comments post={post} />}
     </Layout>
   )
 }

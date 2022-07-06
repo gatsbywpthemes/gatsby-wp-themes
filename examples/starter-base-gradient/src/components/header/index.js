@@ -12,7 +12,7 @@ import Headroom from "react-headroom"
 import clsx from "clsx"
 
 export const Header = ({ ...props }) => {
-  const { addWordPressSearch: search, addColorModes } = useThemeOptions()
+  const { addColorModes } = useThemeOptions()
   const siteSettings = useSiteSettings()
 
   return (
@@ -28,7 +28,7 @@ export const Header = ({ ...props }) => {
         <div className={"flex justify-between center-container"}>
           <div className="flex space-x-3">
             <Branding title={siteSettings.title} />
-            {search && <SearchModal />}
+            <SearchModal />
           </div>
           <div className="flex items-center space-x-5">
             <Menu orientation="H" className="hidden md:flex" />
