@@ -1,7 +1,6 @@
 import React from "react"
 import { Layout } from "~/components/Layout"
-import { PostsList } from "~/components/archive/PostsList"
-import { Pagination } from "~/components/archive/Pagination"
+import { PostsList, Pagination, Description } from "~/components/archive"
 import { PageTitle } from "~/components/ui-components"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
@@ -19,6 +18,7 @@ const Tag = ({ tag, ctx }) => {
         seo={seo}
       />
       <PageTitle title={`posts for: ${name}`} className="pb-5" />
+      <Description description={description} />
       <PostsList posts={posts} />
       <Pagination ctx={ctx} />
     </Layout>
