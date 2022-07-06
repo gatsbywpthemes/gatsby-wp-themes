@@ -25,6 +25,7 @@
     "@gatsbywpthemes/gatsby-theme-wp-data": "^1.1.5",
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.1.2",
     "@headlessui/react": "^1.6.5",
+    "@kunukn/react-collapse": "^2.2.9",
     "fake-tag": "^4.0.0",
     "gatsby": "^4.17.2",
     "gatsby-plugin-mailchimp": "^5.2.2",
