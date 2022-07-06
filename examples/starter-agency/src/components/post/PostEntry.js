@@ -5,21 +5,8 @@ import { Date } from "./Date"
 import { Link } from "gatsby"
 import { PrevNextPostNavigation } from "./PrevNextPostNavigation"
 import { PostEntryMeta } from "./PostEntryMeta"
-// import Blocks from "~/components/Blocks"
-import {
-  ContentBlock,
-  SectionsBlock,
-  CoverBlock,
-  FeaturesBlock,
-  AccordionBlock,
-  TestimonialsBlock,
-  PricingBlock,
-  ProjectsBlock,
-  SpacerBlock,
-  LogosBlock,
-  LastsPostsBlock,
-  GalleryBlock,
-} from "@gatsbywpthemes/gatsby-theme-acf-builder/src"
+import { PostBlocks } from "~/components/blocks/PostBlocks"
+import { useBuilder } from "~/lib/hooks/useBuilder"
 
 export const PostEntry = ({ post, ctx, ...props }) => {
   const {
@@ -27,11 +14,11 @@ export const PostEntry = ({ post, ctx, ...props }) => {
     content,
     layoutBlocks: { blocks },
     author,
-    categories,
-    tags,
   } = post
 
   const { avatar: authorPic, name: authorName, uri: authorUri } = author.node
+
+  const { posts } = useBuilder()
   return (
     <article {...props}>
       {post.featuredImage && (
@@ -68,40 +55,14 @@ export const PostEntry = ({ post, ctx, ...props }) => {
 
         <div className="max-w-md mx-auto content">
           <ActivatePageScripts />
-          <ParsedContent content={content} />
-          {/* <Blocks blocks={blocks} /> */}
-          {blocks?.length > 0 &&
-            blocks.map((block, index) => {
-              let blockRef = { ...block, key: index }
-              switch (block.__typename) {
-                case "WpPage_Layoutblocks_Blocks_ContentBlock":
-                  return <ContentBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_SectionsBlock":
-                  return <SectionsBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_CoverBlock":
-                  return <CoverBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_FeaturesBlock":
-                  return <FeaturesBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_AccordionBlock":
-                  return <AccordionBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_TestimonialsBlock":
-                  return <TestimonialsBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_PricingBlock":
-                  return <PricingBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_ProjectsBlock":
-                  return <ProjectsBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_SpacerBlock":
-                  return <SpacerBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_LogosBlock":
-                  return <LogosBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_LastsPostsBlock":
-                  return <LastsPostsBlock {...blockRef} />
-                case "WpPage_Layoutblocks_Blocks_GalleryPostsBlock":
-                  return <GalleryBlock {...blockRef} />
-                default:
-                  return null
-              }
-            })}
+          {posts ? (
+            <PostBlocks blocks={blocks} />
+          ) : (
+            <div className="content">
+              <ActivatePageScripts />
+              <ParsedContent content={content} />
+            </div>
+          )}
 
           <PostEntryMeta post={post} />
           <PrevNextPostNavigation prev={ctx.prev} next={ctx.next} />

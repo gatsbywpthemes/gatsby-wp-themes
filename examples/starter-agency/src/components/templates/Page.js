@@ -4,6 +4,7 @@ import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { ParsedContent, ActivatePageScripts } from "~/utils"
 import { PageTitle } from "~/components/ui-components"
 import { PageBlocks } from "~/components/blocks/PageBlocks"
+import { useBuilder } from "~/lib/hooks/useBuilder"
 
 const Page = ({ page, ctx }) => {
   const {
@@ -19,7 +20,7 @@ const Page = ({ page, ctx }) => {
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp?.original
   const pageTemplate = template?.templateName?.toLowerCase() || "default"
-  console.log(pageTemplate)
+  const { pages } = useBuilder()
 
   const skipTitle = headlesswp?.skipTitle || false
 
@@ -45,11 +46,14 @@ const Page = ({ page, ctx }) => {
         {!skipTitle && !pageTemplate.includes("full") && (
           <PageTitle title={title} />
         )}
-        <div className="content">
-          <ActivatePageScripts />
-          <ParsedContent content={content} />
-        </div>
-        <PageBlocks blocks={blocks} />
+        {pages ? (
+          <PageBlocks blocks={blocks} />
+        ) : (
+          <div className="content">
+            <ActivatePageScripts />
+            <ParsedContent content={content} />
+          </div>
+        )}
       </article>
     </Layout>
   )

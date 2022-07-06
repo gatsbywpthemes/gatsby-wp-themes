@@ -7,6 +7,8 @@ import { ProjectBlocks } from "~/components/blocks/ProjectBlocks"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useSeoGeneral } from "~/lib/hooks/useSeoGeneral"
 import { PrevNextPostNavigation } from "~/components/post/PrevNextPostNavigation"
+import { ParsedContent, ActivatePageScripts } from "~/utils"
+import { useBuilder } from "~/lib/hooks/useBuilder"
 
 const Project = ({ data, pageContext }) => {
   const { wpProject } = data
@@ -20,6 +22,7 @@ const Project = ({ data, pageContext }) => {
     featuredImage,
   } = wpProject
 
+  const { projects } = useBuilder()
   const { projectDefaultImage } = useDefaultImages()
   const image = featuredImage ? featuredImage.node : projectDefaultImage
   const seoGeneral = useSeoGeneral()
@@ -71,8 +74,14 @@ const Project = ({ data, pageContext }) => {
           </div>
         </div>
       </div>
-      <ProjectBlocks blocks={blocks} />
-      {content && <p dangerouslySetInnerHTML={{ __html: content }} />}
+      {projects ? (
+        <ProjectBlocks blocks={blocks} />
+      ) : (
+        <div className="content">
+          <ActivatePageScripts />
+          <ParsedContent content={content} />
+        </div>
+      )}
       <PrevNextPostNavigation
         prev={pageContext?.prev}
         next={pageContext?.next}
