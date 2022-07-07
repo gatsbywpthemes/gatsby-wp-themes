@@ -1,6 +1,6 @@
 {
   "name": "@gatsbywpthemes/gatsby-plugin-gwpt-image",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "All the packages for gatsby image",
   "main": "index.js",
   "scripts": {
