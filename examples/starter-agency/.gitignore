@@ -83,3 +83,6 @@ packages/gatsby-theme-algolia
 #bit
 .bitmap
 .bit/
+
+#vscode
+.vscode/

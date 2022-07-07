@@ -33,7 +33,6 @@ module.exports = {
     `@gatsbywpthemes/gatsby-plugin-gwpt-tailwind`,
     `@gatsbywpthemes/gatsby-plugin-wpcf7`,
     `@gatsbywpthemes/gatsby-plugin-wp-seo`,
-    `@gatsbywpthemes/gatsby-theme-ui-components`,
     `@gatsbywpthemes/gatsby-theme-acf-builder`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
