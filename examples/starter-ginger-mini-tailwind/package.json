@@ -18,7 +18,7 @@
     "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.3.5",
     "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.1.4",
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.1.2",
-    "@headlessui/react": "^1.6.5",
+    "@headlessui/react": "^1.6.6",
     "@kunukn/react-collapse": "^2.2.9",
     "gatsby": "^4.17.2",
     "gatsby-plugin-use-dark-mode": "^1.4.0",
