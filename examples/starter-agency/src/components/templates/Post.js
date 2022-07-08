@@ -6,20 +6,8 @@ import { PostEntry } from "~/components/post/PostEntry"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 
 const Post = ({ post, ctx }) => {
-  const {
-    title,
-    content,
-    uri,
-    headlesswp,
-    layoutBlocks: { blocks },
-    author,
-    categories,
-    tags,
-  } = post
-
-  const { avatar: authorPic, name: authorName, uri: authorUri } = author.node
+  const { title, uri } = post
   const { addWordPressComments } = useThemeOptions()
-
   const featuredImage =
     post.featuredImage?.node.localFile.childImageSharp?.original
   return (

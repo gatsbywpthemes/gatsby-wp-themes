@@ -1,7 +1,6 @@
 import React from "react"
 import { Layout } from "~/components/Layout"
-import { PostsList } from "~/components/archive/PostsList"
-import { Pagination } from "~/components/archive/Pagination"
+import { PostsList, Description, Pagination } from "~/components/archive"
 import { PageTitle } from "~/components/ui-components"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 
@@ -19,6 +18,7 @@ const User = ({ user, ctx }) => {
         seo={seo}
       />
       <PageTitle title={`posts from: ${name}`} className="pb-5" />
+      {description && <Description description={description} />}
       <PostsList posts={posts} />
       <Pagination ctx={ctx} />
     </Layout>

@@ -1,18 +1,13 @@
 import React from "react"
 import { Menu } from "~/components/menu"
-// import { ColorSwitch } from "./ColorSwitch"
 import { Branding } from "./Branding"
 import { Slidemenu } from "./SlideMenu"
 import { SearchModal } from "~/components/search/SearchModal"
-import {
-  useThemeOptions,
-  useSiteSettings,
-} from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
+import { useSiteSettings } from "@gatsbywpthemes/gatsby-theme-wp-data/src/hooks"
 import Headroom from "react-headroom"
 import clsx from "clsx"
 
 export const Header = ({ ...props }) => {
-  const { addWordPressSearch: search, addColorModes } = useThemeOptions()
   const siteSettings = useSiteSettings()
 
   return (
@@ -33,7 +28,6 @@ export const Header = ({ ...props }) => {
           <div className="flex items-center space-x-5">
             <Menu orientation="H" className="hidden md:flex" />
             <Slidemenu className="md:hidden" />
-            {/* {addColorModes && <ColorSwitch />} */}
           </div>
         </div>
       </header>

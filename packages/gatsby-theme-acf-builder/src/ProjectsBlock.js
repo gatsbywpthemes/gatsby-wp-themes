@@ -1,7 +1,7 @@
 import React from "react";
 import { HeadlineContent } from "./HeadlineContent";
 import { Image } from "./ui-components";
-import { Link, graphql } from "gatsby";
+import { Link } from "gatsby";
 import { useDefaultImages } from "./hooks/useDefaultImages";
 
 export const ProjectsBlock = ({

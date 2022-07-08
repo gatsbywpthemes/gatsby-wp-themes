@@ -18,7 +18,7 @@ const Category = ({ category, ctx }) => {
         uri={uri}
       />
       <PageTitle title={`posts for: ${name}`} className="pb-5" />
-      <Description description={description} />
+      {description && <Description description={description} />}
       <PostsList posts={posts} />
       <Pagination ctx={ctx} />
     </Layout>

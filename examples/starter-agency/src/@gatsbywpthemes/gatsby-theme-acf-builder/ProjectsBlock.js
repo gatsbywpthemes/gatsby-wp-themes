@@ -53,7 +53,6 @@ export const ProjectsBlock = ({
             uri,
             projectFields: { projectUrl },
             featuredImage,
-            tags,
           } = project
           const image = featuredImage ? featuredImage.node : defaultImage
 

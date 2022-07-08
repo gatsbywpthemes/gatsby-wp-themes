@@ -1,6 +1,5 @@
 import React from "react"
 import { TaxonomyItem } from "./TaxonomyItem"
-import clsx from "clsx"
 import {
   IoFolderSharp as CatIcon,
   IoPricetags as TagIcon,
