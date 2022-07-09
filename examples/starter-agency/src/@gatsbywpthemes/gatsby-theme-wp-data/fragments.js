@@ -65,10 +65,11 @@ export const fragments = graphql`
   fragment GatsbyImageQuery_starter on WpMediaItem {
     altText
     sourceUrl
+    gatsbyImage(quality: 80, layout: FULL_WIDTH, width: 1000, aspectRatio: 1.5)
     localFile {
       publicURL
       childImageSharp {
-        gatsbyImageData(quality: 80, layout: FULL_WIDTH)
+        # gatsbyImageData(quality: 80, layout: FULL_WIDTH)
         original {
           height
           width

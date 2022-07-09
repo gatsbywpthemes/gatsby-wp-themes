@@ -2,10 +2,10 @@ import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export const Image = ({ img, loading = "lazy", ...props }) => {
-  return img.localFile.childImageSharp ? (
+  return img.localFile.gatsbyImage ? (
     <GatsbyImage
       loading={loading}
-      image={img.localFile.childImageSharp?.gatsbyImageData}
+      image={img.localFile.gatsbyImage}
       alt={img.altText}
       {...props}
     />
