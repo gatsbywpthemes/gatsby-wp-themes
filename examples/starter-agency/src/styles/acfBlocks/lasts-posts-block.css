@@ -36,5 +36,5 @@
   }
 }
 .posts-list .post-image {
-  @apply !transition !duration-1000 hover:scale-110;
+  /* @apply !transition !duration-1000 hover:scale-110; */
 }

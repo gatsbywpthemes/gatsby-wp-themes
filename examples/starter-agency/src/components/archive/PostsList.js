@@ -30,16 +30,18 @@ export const PostsList = ({ posts, ...props }) => {
         return (
           <div className="md:-mb-24 post" key={id}>
             <Link to={uri}>
-              <Image
-                img={image}
-                className="post-image-container md:rounded-md rounded-t-md aspect-[16/9]"
-                imgClassName={clsx(
-                  "post-image",
-                  "hover:scale-110",
-                  "!transition !duration-1000",
-                  "md:rounded-md md:shadow-md rounded-t-md "
-                )}
-              />
+              <div className="post-image-container md:rounded-md rounded-t-md aspect-w-16 aspect-h-9 ">
+                <Image
+                  img={image}
+                  className={clsx(
+                    "post-image",
+                    // "hover:scale-110",
+                    // "!transition !duration-1000",
+                    "md:rounded-md md:shadow-md rounded-t-md ",
+                    "object-cover object-top "
+                  )}
+                />
+              </div>
               <div
                 className={clsx(
                   "post-content",

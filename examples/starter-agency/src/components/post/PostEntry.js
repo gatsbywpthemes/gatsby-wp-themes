@@ -23,13 +23,10 @@ export const PostEntry = ({ post, ctx, ...props }) => {
     <article {...props}>
       {post.featuredImage && (
         <div className="relative">
-          <div className="w-full">
-            <Image
-              img={post.featuredImage.node}
-              className="-mx-5 -mt-16 md:-mx-6 lg:-mx-10 h-[250px] lg:h-[400px] w-full object-cover"
-              // imgClassName="object-cover"
-            />
-          </div>
+          <Image
+            img={post.featuredImage.node}
+            className=" h-[250px] lg:h-[400px] w-full object-cover object-top"
+          />
         </div>
       )}
       <div

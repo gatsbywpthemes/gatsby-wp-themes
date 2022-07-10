@@ -8,6 +8,9 @@ export const fragments = graphql`
     title
     excerpt
     date
+    template {
+      templateName
+    }
     layoutBlocks {
       blocks {
         __typename
