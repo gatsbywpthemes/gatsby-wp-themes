@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Button } from "./ui-components";
+import { Heading, Button, Image } from "./ui-components";
 import { SubscribeForm } from "./SubscribeForm";
 import { ParsedContent } from "./utils/ParsedContent";
 
@@ -10,6 +10,7 @@ export const ContentBlock = ({
   headlineTag,
   content,
   button,
+  image,
   ...props
 }) => {
   const hasSubscribe = cssClass?.includes("subscribe");
@@ -38,6 +39,7 @@ export const ContentBlock = ({
             <SubscribeForm />
           </div>
         )}
+        {image && <Image img={image} className="content-image" />}
         {button && (
           <div className="btn-container">
             <Button className="button" button={button} />
