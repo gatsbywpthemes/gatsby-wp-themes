@@ -9,7 +9,7 @@ export const fragment = graphql`
     content
     logos {
       logo {
-        ...basicImage
+        ...smallImage
       }
       url
     }
@@ -22,7 +22,7 @@ export const fragment = graphql`
     content
     logos {
       logo {
-        ...basicImage
+        ...smallImage
       }
       url
     }
@@ -35,7 +35,7 @@ export const fragment = graphql`
     content
     logos {
       logo {
-        ...basicImage
+        ...smallImage
       }
       url
     }

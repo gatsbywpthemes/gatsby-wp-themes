@@ -14,7 +14,7 @@ export const fragment = graphql`
       position
       social {
         image {
-          ...basicImage
+          ...smallImage
         }
         url
       }
@@ -36,7 +36,7 @@ export const fragment = graphql`
       position
       social {
         image {
-          ...basicImage
+          ...smallImage
         }
         url
       }
@@ -58,7 +58,7 @@ export const fragment = graphql`
       position
       social {
         image {
-          ...basicImage
+          ...smallImage
         }
         url
       }
