@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "starter-naked",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
@@ -17,7 +17,7 @@
     "@gatsbywpthemes/gatsby-plugin-gwpt-image": "^1.1.2",
     "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^1.4.0",
     "@gatsbywpthemes/gatsby-plugin-gwpt-utils": "^1.1.5",
-    "@gatsbywpthemes/gatsby-theme-acf-builder": "^2.3.0",
+    "@gatsbywpthemes/gatsby-theme-acf-builder": "^2.3.1",
     "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.1.5",
     "@gatsbywpthemes/gatsby-theme-wp-data": "^1.1.7",
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.1.3",
