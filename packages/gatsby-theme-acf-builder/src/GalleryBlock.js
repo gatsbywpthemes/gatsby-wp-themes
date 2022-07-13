@@ -2,7 +2,6 @@ import React from "react";
 import { Image } from "./ui-components";
 import { HeadlineContent } from "./HeadlineContent";
 import LightboxWrapper from "./LightboxWrapper";
-import { GatsbyImage } from "gatsby-plugin-image";
 
 export const GalleryBlock = ({
   cssClass,
@@ -33,18 +32,10 @@ export const GalleryBlock = ({
               const { altText } = img;
               return (
                 <div className="gallery-item-container" key={index}>
-                  {/* <Image
+                  <Image
                     img={img}
                     className="gallery-item"
                     imgClassName="img"
-                  /> */}
-
-                  <GatsbyImage
-                    loading="lazy"
-                    image={img?.localFile?.childImageSharp?.gatsbyImageData}
-                    className="gallery-item"
-                    imgClassName="img"
-                    alt={img.altText}
                   />
                   {altText && (
                     <div className="image-overlay">

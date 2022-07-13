@@ -7,7 +7,7 @@ export const fragment = graphql`
     headline
     headlineTag
     gallery {
-      ...basicImage
+      ...coverImage
     }
   }
   fragment postGalleryBlock on WpPost_Layoutblocks_Blocks_GalleryBlock {
@@ -17,7 +17,7 @@ export const fragment = graphql`
     headline
     headlineTag
     gallery {
-      ...basicImage
+      ...coverImage
     }
   }
   fragment projectGalleryBlock on WpProject_Layoutblocks_Blocks_GalleryBlock {
@@ -27,7 +27,7 @@ export const fragment = graphql`
     headline
     headlineTag
     gallery {
-      ...basicImage
+      ...coverImage
     }
   }
 `;
