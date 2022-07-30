@@ -15,7 +15,7 @@
     "@gatsbywpthemes/gatsby-plugin-gwpt-packages": "^2.1.6",
     "@gatsbywpthemes/gatsby-theme-wp-comments": "^1.1.5",
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.1.3",
-    "gatsby": "^4.17.2",
+    "gatsby": "^4.19.2",
     "gatsby-plugin-smoothscroll": "^1.2.0",
     "prismjs": "^1.28.0",
     "react": "^17.0.2",

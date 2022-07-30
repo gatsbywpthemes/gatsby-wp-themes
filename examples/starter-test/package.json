@@ -23,7 +23,7 @@
     "@gatsbywpthemes/gatsby-theme-wp-data": "^1.1.7",
     "@gatsbywpthemes/gatsby-theme-wp-search": "^1.1.3",
     "@headlessui/react": "^1.6.6",
-    "gatsby": "^4.18.0",
+    "gatsby": "^4.19.2",
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-use-dark-mode": "^1.5.0",
     "lodash.merge": "^4.6.2",
