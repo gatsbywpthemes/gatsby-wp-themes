@@ -19,8 +19,8 @@
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "@mdx-js/react": "^2.1.2",
-    "html-react-parser": "^3.0.0",
-    "react-hook-form": "^7.33.1"
+    "html-react-parser": "^3.0.1",
+    "react-hook-form": "^7.34.0"
   },
   "peerDependencies": {
     "gatsby": "^4.18.0",

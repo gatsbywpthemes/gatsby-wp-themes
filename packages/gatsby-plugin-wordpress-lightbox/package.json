@@ -21,7 +21,7 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "html-react-parser": "^2.0.0",
+    "html-react-parser": "^3.0.1",
     "simple-react-lightbox": "3.6.9-0"
   },
   "peerDependencies": {
