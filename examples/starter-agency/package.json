@@ -36,6 +36,7 @@
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.0",
     "react-icons": "^4.3.1",
+    "simple-react-lightbox": "^3.6.9-0",
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
