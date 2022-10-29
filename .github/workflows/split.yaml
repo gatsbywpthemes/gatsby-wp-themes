@@ -27,6 +27,8 @@ jobs:
             split_repository: "gatsby-theme-wp-search"
           - local_path: "gatsby-theme-acf-builder"
             split_repository: "gatsby-theme-acf-builder"
+          - local_path: "gatsby-theme-blog-data"
+            split_repository: "gatsby-theme-blog-data"
 
     steps:
       - uses: actions/checkout@v2
