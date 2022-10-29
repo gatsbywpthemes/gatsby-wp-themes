@@ -1,13 +1,13 @@
 {
-    resolve: {
-      modules: [...],
-      fallback: {
+  resolve: {
+    modules: [...],
+    fallback: {
 
-        "process": false,
-      }
-    },
-    entry: [...],
-    output: {...},
-    module: {
-      rules: [...]
-    },
+      "process": require.resolve("process/browser")
+    }
+  },
+  entry: [...],
+  output: {...},
+  module: {
+    rules: [...]
+  },
