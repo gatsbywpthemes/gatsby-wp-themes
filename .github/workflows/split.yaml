@@ -23,7 +23,7 @@ jobs:
             split_repository: "gatsby-plugin-gwpt-image"
           - local_path: "gatsby-plugin-gwpt-packages"
             split_repository: "gatsby-plugin-gwpt-packages"
-            - local_path: "gatsby-theme-wp-search"
+          - local_path: "gatsby-theme-wp-search"
             split_repository: "gatsby-theme-wp-search"
 
     steps:
