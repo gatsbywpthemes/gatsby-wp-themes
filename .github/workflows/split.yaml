@@ -25,6 +25,8 @@ jobs:
             split_repository: "gatsby-plugin-gwpt-packages"
           - local_path: "gatsby-theme-wp-search"
             split_repository: "gatsby-theme-wp-search"
+          - local_path: "gatsby-theme-acf-builder"
+            split_repository: "gatsby-theme-acf-builder"
 
     steps:
       - uses: actions/checkout@v2
