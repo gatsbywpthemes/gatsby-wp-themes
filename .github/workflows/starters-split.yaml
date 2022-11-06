@@ -1,0 +1,62 @@
+name: "Starters Split"
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "*"
+
+env:
+  # 1. for Github split
+  GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+jobs:
+  packages_split:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # define package to repository map
+        package:
+          - local_path: "base-theme-starters"
+            split_repository: "base-theme-starters"
+          - local_path: "pro-themes-starters"
+            split_repository: "pro-themes-starters"
+          - local_path: "starter-light"
+            split_repository: "starter-light-2"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # no tag
+      - if: "!startsWith(github.ref, 'refs/tags/')"
+        uses: "symplify/monorepo-split-github-action@2.1"
+        with:
+          # ↓ split "packages/easy-coding-standard" directory
+          package_directory: "user-starters/${{ matrix.package.local_path }}"
+
+          # ↓ into https://github.com/symplify/easy-coding-standard repository
+          repository_organization: "gatsbywpthemes"
+          repository_name: "${{ matrix.package.split_repository }}"
+
+          # ↓ the user signed under the split commit
+          user_name: "gatsbywpthemes"
+          user_email: "gatsbywpthemes@gmail.com"
+
+      # with tag
+      - if: "startsWith(github.ref, 'refs/tags/')"
+        uses: "symplify/monorepo-split-github-action@2.1"
+        with:
+          tag: ${GITHUB_REF#refs/tags/}
+
+          # ↓ split "packages/easy-coding-standard" directory
+          package_directory: "user-starters/${{ matrix.package.local_path }}"
+
+          # ↓ into https://github.com/symplify/easy-coding-standard repository
+          repository_organization: "gatsbywpthemes"
+          repository_name: "${{ matrix.package.split_repository }}"
+
+          # ↓ the user signed under the split commit
+          user_name: "gatsbywpthemes"
+          user_email: "gatsbywpthemes@gmail.com"
