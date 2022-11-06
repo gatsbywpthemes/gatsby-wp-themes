@@ -1,6 +1,6 @@
 {
   "name": "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind",
-  "version": "1.4.1",
+  "version": "3.0.0",
   "description": "packages for tailwindcss",
   "main": "index.js",
   "author": "Alexandra Spalato",

@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "starter-base-gradient-legacy",
-  "version": "2.0.25",
+  "version": "3.0.0",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
@@ -14,7 +14,7 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@gatsbywpthemes/gatsby-theme-wp-base": "^2.2.0",
+    "@gatsbywpthemes/gatsby-theme-wp-base": "^3.0.0",
     "autoprefixer": "^10.4.7",
     "gatsby": "^4.20.0",
     "gatsby-plugin-root-import": "^2.0.8",
