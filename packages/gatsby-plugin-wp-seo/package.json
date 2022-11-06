@@ -1,6 +1,6 @@
 {
   "name": "@gatsbywpthemes/gatsby-plugin-wp-seo",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A minimal boilerplate for the essential files Gatsby looks for in a plugin",
   "main": "index.js",
   "scripts": {
