@@ -19,9 +19,9 @@
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "gatsby-plugin-sharp": "^4.20.0",
-    "gatsby-source-filesystem": "^4.20.0",
-    "gatsby-transformer-sharp": "^4.20.0",
+    "gatsby-plugin-sharp": "^5.0.0",
+    "gatsby-source-filesystem": "^5.0.0",
+    "gatsby-transformer-sharp": "^5.0.0",
     "html-react-parser": "^3.0.1",
     "normalize-path": "^3.0.0"
   },
