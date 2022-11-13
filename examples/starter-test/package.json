@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "starter-test",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "dev": "rm -rf .cache && gatsby develop",
@@ -14,14 +14,14 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@gatsbywpthemes/gatsby-plugin-gwpt-image": "^3.0.0",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^3.0.0",
-    "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "^3.0.0",
-    "@gatsbywpthemes/gatsby-plugin-wp-seo": "^3.0.1",
-    "@gatsbywpthemes/gatsby-theme-ui-components": "^3.0.0",
-    "@gatsbywpthemes/gatsby-theme-wp-comments": "^3.0.0",
-    "@gatsbywpthemes/gatsby-theme-wp-data": "^3.0.0",
-    "@gatsbywpthemes/gatsby-theme-wp-search": "^3.0.0",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-image": "^3.1.0",
+    "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^3.1.0",
+    "@gatsbywpthemes/gatsby-plugin-wordpress-parser": "^3.1.0",
+    "@gatsbywpthemes/gatsby-plugin-wp-seo": "^3.1.0",
+    "@gatsbywpthemes/gatsby-theme-ui-components": "^3.1.0",
+    "@gatsbywpthemes/gatsby-theme-wp-comments": "^3.1.0",
+    "@gatsbywpthemes/gatsby-theme-wp-data": "^3.1.0",
+    "@gatsbywpthemes/gatsby-theme-wp-search": "^3.1.0",
     "@headlessui/react": "^1.6.6",
     "gatsby": "^4.20.0",
     "gatsby-plugin-mailchimp": "^5.2.2",
