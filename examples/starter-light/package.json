@@ -14,8 +14,8 @@
     "analyze": "rm -rf .cache && ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
-    "@gatsbywpthemes/gatsby-plugin-gwpt-packages-light": "^3.0.1",
-    "@gatsbywpthemes/gatsby-plugin-gwpt-tailwind": "^3.0.0",
+    "@gwpt-light/gatsby-plugin-gwpt-packages-light": "^3.0.1",
+    "@gwpt-light/gatsby-plugin-gwpt-tailwind-light": "^3.0.0",
     "@headlessui/react": "^1.6.6",
     "@kunukn/react-collapse": "^2.2.9",
     "gatsby": "^4.20.0",

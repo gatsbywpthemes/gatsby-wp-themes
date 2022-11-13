@@ -77,7 +77,7 @@ for (const package of publishedPackages) {
   );
 
   execSync(
-    "echo '@gatsbywpthemes:registry=https://npm.cloudsmith.io/gatsbywpthemes/gatsby-themes/\n//npm.cloudsmith.io/gatsbywpthemes/gatsby-themes/:_authToken=${GWPT_AUTH_TOKEN}\nalways-auth' > user-starters/" +
+    "echo '@gatsbywpthemes:registry=https://gatsbywpthemes.nodejs.pub/\n//gatsbywpthemes.nodejs.pub/:_authToken=${GWPT_AUTH_TOKEN}' > user-starters/" +
       package.packagePath +
       "/.npmrc"
   );

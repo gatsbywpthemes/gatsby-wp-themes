@@ -1,0 +1,27 @@
+{
+  "name": "@gwpt-light/gatsby-plugin-wp-seo-light",
+  "version": "3.0.1",
+  "description": "A minimal boilerplate for the essential files Gatsby looks for in a plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"No build script setup\""
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "author": "Paulina Hetman <info@pehaa.com>",
+  "license": "0BSD",
+  "dependencies": {
+    "normalize-path": "^3.0.0",
+    "react-helmet": "^6.1.0",
+    "remove-trailing-slash": "^0.1.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^4.18.0",
+    "react": "^18.2.0",
+    "react-dom": "^17.0.2"
+  },
+  "gitHead": "94c8dd5e197d45c9a3a060075237c00d549ffa5e"
+}
